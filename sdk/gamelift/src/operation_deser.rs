@@ -627,6 +627,23 @@ pub fn parse_create_fleet_error(
                 tmp
             }),
         },
+        "UnsupportedRegionException" => crate::error::CreateFleetError {
+            meta: generic,
+            kind: crate::error::CreateFleetErrorKind::UnsupportedRegionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_region_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::CreateFleetError::generic(generic),
     })
 }
@@ -742,6 +759,23 @@ pub fn parse_create_fleet_locations_error(
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetLocationsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedRegionException" => crate::error::CreateFleetLocationsError {
+            meta: generic,
+            kind: crate::error::CreateFleetLocationsErrorKind::UnsupportedRegionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_region_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFleetLocationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1083,6 +1117,23 @@ pub fn parse_create_game_session_error(
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedRegionException" => crate::error::CreateGameSessionError {
+            meta: generic,
+            kind: crate::error::CreateGameSessionErrorKind::UnsupportedRegionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_region_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGameSessionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2627,6 +2678,23 @@ pub fn parse_delete_fleet_locations_error(
                 tmp
             }),
         },
+        "UnsupportedRegionException" => crate::error::DeleteFleetLocationsError {
+            meta: generic,
+            kind: crate::error::DeleteFleetLocationsErrorKind::UnsupportedRegionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_region_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFleetLocationsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeleteFleetLocationsError::generic(generic),
     })
 }
@@ -3942,6 +4010,23 @@ pub fn parse_describe_ec2_instance_limits_error(
                 tmp
             }),
         },
+        "UnsupportedRegionException" => crate::error::DescribeEC2InstanceLimitsError {
+            meta: generic,
+            kind: crate::error::DescribeEC2InstanceLimitsErrorKind::UnsupportedRegionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_region_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEC2InstanceLimitsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeEC2InstanceLimitsError::generic(generic),
     })
 }
@@ -4384,6 +4469,27 @@ pub fn parse_describe_fleet_location_attributes_error(
                 tmp
             }),
         },
+        "UnsupportedRegionException" => crate::error::DescribeFleetLocationAttributesError {
+            meta: generic,
+            kind:
+                crate::error::DescribeFleetLocationAttributesErrorKind::UnsupportedRegionException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::unsupported_region_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationAttributesError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
         _ => crate::error::DescribeFleetLocationAttributesError::generic(generic),
     })
 }
@@ -4497,6 +4603,26 @@ pub fn parse_describe_fleet_location_capacity_error(
                 }
                 tmp
             }),
+        },
+        "UnsupportedRegionException" => crate::error::DescribeFleetLocationCapacityError {
+            meta: generic,
+            kind: crate::error::DescribeFleetLocationCapacityErrorKind::UnsupportedRegionException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::unsupported_region_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationCapacityError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
         },
         _ => crate::error::DescribeFleetLocationCapacityError::generic(generic),
     })
@@ -4614,6 +4740,27 @@ pub fn parse_describe_fleet_location_utilization_error(
                 }
                 tmp
             }),
+        },
+        "UnsupportedRegionException" => crate::error::DescribeFleetLocationUtilizationError {
+            meta: generic,
+            kind:
+                crate::error::DescribeFleetLocationUtilizationErrorKind::UnsupportedRegionException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::unsupported_region_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFleetLocationUtilizationError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
         },
         _ => crate::error::DescribeFleetLocationUtilizationError::generic(generic),
     })
@@ -5307,6 +5454,23 @@ pub fn parse_describe_game_session_details_error(
                 tmp
             }),
         },
+        "UnsupportedRegionException" => crate::error::DescribeGameSessionDetailsError {
+            meta: generic,
+            kind: crate::error::DescribeGameSessionDetailsErrorKind::UnsupportedRegionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_region_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionDetailsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeGameSessionDetailsError::generic(generic),
     })
 }
@@ -5658,6 +5822,23 @@ pub fn parse_describe_game_sessions_error(
                 tmp
             }),
         },
+        "UnsupportedRegionException" => crate::error::DescribeGameSessionsError {
+            meta: generic,
+            kind: crate::error::DescribeGameSessionsErrorKind::UnsupportedRegionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_region_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGameSessionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DescribeGameSessionsError::generic(generic),
     })
 }
@@ -5756,6 +5937,23 @@ pub fn parse_describe_instances_error(
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedRegionException" => crate::error::DescribeInstancesError {
+            meta: generic,
+            kind: crate::error::DescribeInstancesErrorKind::UnsupportedRegionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_region_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6399,6 +6597,23 @@ pub fn parse_describe_scaling_policies_error(
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedRegionException" => crate::error::DescribeScalingPoliciesError {
+            meta: generic,
+            kind: crate::error::DescribeScalingPoliciesErrorKind::UnsupportedRegionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_region_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8273,6 +8488,23 @@ pub fn parse_search_game_sessions_error(
                 tmp
             }),
         },
+        "UnsupportedRegionException" => crate::error::SearchGameSessionsError {
+            meta: generic,
+            kind: crate::error::SearchGameSessionsErrorKind::UnsupportedRegionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_region_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchGameSessionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::SearchGameSessionsError::generic(generic),
     })
 }
@@ -8371,6 +8603,23 @@ pub fn parse_start_fleet_actions_error(
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartFleetActionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedRegionException" => crate::error::StartFleetActionsError {
+            meta: generic,
+            kind: crate::error::StartFleetActionsErrorKind::UnsupportedRegionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_region_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartFleetActionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -8799,6 +9048,23 @@ pub fn parse_stop_fleet_actions_error(
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopFleetActionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedRegionException" => crate::error::StopFleetActionsError {
+            meta: generic,
+            kind: crate::error::StopFleetActionsErrorKind::UnsupportedRegionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_region_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopFleetActionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9840,6 +10106,23 @@ pub fn parse_update_fleet_capacity_error(
                     let mut output = crate::error::unauthorized_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetCapacityError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnsupportedRegionException" => crate::error::UpdateFleetCapacityError {
+            meta: generic,
+            kind: crate::error::UpdateFleetCapacityErrorKind::UnsupportedRegionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_region_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFleetCapacityError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

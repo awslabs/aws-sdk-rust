@@ -15,7 +15,7 @@ pub enum GetDeviceRegistrationErrorKind {
     /// <p>An internal failure occurred. Try your request again. If the problem
     /// persists, contact AWS customer support.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeviceRegistrationError {
@@ -78,7 +78,7 @@ impl GetDeviceRegistrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeviceRegistrationErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetDeviceRegistrationErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -111,7 +111,7 @@ pub enum SendHeartbeatErrorKind {
     /// <p>An internal failure occurred. Try your request again. If the problem
     /// persists, contact AWS customer support.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendHeartbeatError {
@@ -174,7 +174,7 @@ impl SendHeartbeatError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendHeartbeatErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `SendHeartbeatErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,

@@ -94,6 +94,19 @@ pub fn serialize_operation_crate_operation_create_channel_moderator(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_put_channel_membership_preferences(
+    input: &crate::input::PutChannelMembershipPreferencesInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_put_channel_membership_preferences_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_send_channel_message(
     input: &crate::input::SendChannelMessageInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {

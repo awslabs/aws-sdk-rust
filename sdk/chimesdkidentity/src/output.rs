@@ -2,6 +2,72 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateAppInstanceUserEndpointOutput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub app_instance_user_arn: std::option::Option<std::string::String>,
+    /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub endpoint_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateAppInstanceUserEndpointOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateAppInstanceUserEndpointOutput");
+        formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`UpdateAppInstanceUserEndpointOutput`](crate::output::UpdateAppInstanceUserEndpointOutput)
+pub mod update_app_instance_user_endpoint_output {
+    /// A builder for [`UpdateAppInstanceUserEndpointOutput`](crate::output::UpdateAppInstanceUserEndpointOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
+        pub(crate) endpoint_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_instance_user_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn set_app_instance_user_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.app_instance_user_arn = input;
+            self
+        }
+        /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateAppInstanceUserEndpointOutput`](crate::output::UpdateAppInstanceUserEndpointOutput)
+        pub fn build(self) -> crate::output::UpdateAppInstanceUserEndpointOutput {
+            crate::output::UpdateAppInstanceUserEndpointOutput {
+                app_instance_user_arn: self.app_instance_user_arn,
+                endpoint_id: self.endpoint_id,
+            }
+        }
+    }
+}
+impl UpdateAppInstanceUserEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAppInstanceUserEndpointOutput`](crate::output::UpdateAppInstanceUserEndpointOutput)
+    pub fn builder() -> crate::output::update_app_instance_user_endpoint_output::Builder {
+        crate::output::update_app_instance_user_endpoint_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppInstanceUserOutput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub app_instance_user_arn: std::option::Option<std::string::String>,
@@ -104,6 +170,132 @@ impl UpdateAppInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceOutput {}
+impl std::fmt::Debug for UntagResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UntagResourceOutput");
+        formatter.finish()
+    }
+}
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+pub mod untag_resource_output {
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        pub fn build(self) -> crate::output::UntagResourceOutput {
+            crate::output::UntagResourceOutput {}
+        }
+    }
+}
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceOutput {}
+impl std::fmt::Debug for TagResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TagResourceOutput");
+        formatter.finish()
+    }
+}
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+pub mod tag_resource_output {
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        pub fn build(self) -> crate::output::TagResourceOutput {
+            crate::output::TagResourceOutput {}
+        }
+    }
+}
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegisterAppInstanceUserEndpointOutput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub app_instance_user_arn: std::option::Option<std::string::String>,
+    /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub endpoint_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RegisterAppInstanceUserEndpointOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RegisterAppInstanceUserEndpointOutput");
+        formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`RegisterAppInstanceUserEndpointOutput`](crate::output::RegisterAppInstanceUserEndpointOutput)
+pub mod register_app_instance_user_endpoint_output {
+    /// A builder for [`RegisterAppInstanceUserEndpointOutput`](crate::output::RegisterAppInstanceUserEndpointOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
+        pub(crate) endpoint_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_instance_user_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn set_app_instance_user_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.app_instance_user_arn = input;
+            self
+        }
+        /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegisterAppInstanceUserEndpointOutput`](crate::output::RegisterAppInstanceUserEndpointOutput)
+        pub fn build(self) -> crate::output::RegisterAppInstanceUserEndpointOutput {
+            crate::output::RegisterAppInstanceUserEndpointOutput {
+                app_instance_user_arn: self.app_instance_user_arn,
+                endpoint_id: self.endpoint_id,
+            }
+        }
+    }
+}
+impl RegisterAppInstanceUserEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterAppInstanceUserEndpointOutput`](crate::output::RegisterAppInstanceUserEndpointOutput)
+    pub fn builder() -> crate::output::register_app_instance_user_endpoint_output::Builder {
+        crate::output::register_app_instance_user_endpoint_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAppInstanceRetentionSettingsOutput {
     /// <p>The time in days to retain data. Data type: number.</p>
     pub app_instance_retention_settings:
@@ -178,6 +370,61 @@ impl PutAppInstanceRetentionSettingsOutput {
     /// Creates a new builder-style object to manufacture [`PutAppInstanceRetentionSettingsOutput`](crate::output::PutAppInstanceRetentionSettingsOutput)
     pub fn builder() -> crate::output::put_app_instance_retention_settings_output::Builder {
         crate::output::put_app_instance_retention_settings_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceOutput {
+    /// <p>The tag key-value pairs.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl std::fmt::Debug for ListTagsForResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+pub mod list_tags_for_resource_output {
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag key-value pairs.</p>
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The tag key-value pairs.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        pub fn build(self) -> crate::output::ListTagsForResourceOutput {
+            crate::output::ListTagsForResourceOutput { tags: self.tags }
+        }
+    }
+}
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
     }
 }
 
@@ -273,6 +520,86 @@ impl ListAppInstanceUsersOutput {
     /// Creates a new builder-style object to manufacture [`ListAppInstanceUsersOutput`](crate::output::ListAppInstanceUsersOutput)
     pub fn builder() -> crate::output::list_app_instance_users_output::Builder {
         crate::output::list_app_instance_users_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAppInstanceUserEndpointsOutput {
+    /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
+    pub app_instance_user_endpoints:
+        std::option::Option<std::vec::Vec<crate::model::AppInstanceUserEndpointSummary>>,
+    /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListAppInstanceUserEndpointsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAppInstanceUserEndpointsOutput");
+        formatter.field(
+            "app_instance_user_endpoints",
+            &self.app_instance_user_endpoints,
+        );
+        formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`ListAppInstanceUserEndpointsOutput`](crate::output::ListAppInstanceUserEndpointsOutput)
+pub mod list_app_instance_user_endpoints_output {
+    /// A builder for [`ListAppInstanceUserEndpointsOutput`](crate::output::ListAppInstanceUserEndpointsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_instance_user_endpoints:
+            std::option::Option<std::vec::Vec<crate::model::AppInstanceUserEndpointSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `app_instance_user_endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_app_instance_user_endpoints`](Self::set_app_instance_user_endpoints).
+        ///
+        /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn app_instance_user_endpoints(
+            mut self,
+            input: impl Into<crate::model::AppInstanceUserEndpointSummary>,
+        ) -> Self {
+            let mut v = self.app_instance_user_endpoints.unwrap_or_default();
+            v.push(input.into());
+            self.app_instance_user_endpoints = Some(v);
+            self
+        }
+        /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn set_app_instance_user_endpoints(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AppInstanceUserEndpointSummary>>,
+        ) -> Self {
+            self.app_instance_user_endpoints = input;
+            self
+        }
+        /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAppInstanceUserEndpointsOutput`](crate::output::ListAppInstanceUserEndpointsOutput)
+        pub fn build(self) -> crate::output::ListAppInstanceUserEndpointsOutput {
+            crate::output::ListAppInstanceUserEndpointsOutput {
+                app_instance_user_endpoints: self.app_instance_user_endpoints,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListAppInstanceUserEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAppInstanceUserEndpointsOutput`](crate::output::ListAppInstanceUserEndpointsOutput)
+    pub fn builder() -> crate::output::list_app_instance_user_endpoints_output::Builder {
+        crate::output::list_app_instance_user_endpoints_output::Builder::default()
     }
 }
 
@@ -536,6 +863,67 @@ impl GetAppInstanceRetentionSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeAppInstanceUserEndpointOutput {
+    /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes,
+    /// allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
+    pub app_instance_user_endpoint: std::option::Option<crate::model::AppInstanceUserEndpoint>,
+}
+impl std::fmt::Debug for DescribeAppInstanceUserEndpointOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeAppInstanceUserEndpointOutput");
+        formatter.field(
+            "app_instance_user_endpoint",
+            &self.app_instance_user_endpoint,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DescribeAppInstanceUserEndpointOutput`](crate::output::DescribeAppInstanceUserEndpointOutput)
+pub mod describe_app_instance_user_endpoint_output {
+    /// A builder for [`DescribeAppInstanceUserEndpointOutput`](crate::output::DescribeAppInstanceUserEndpointOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_instance_user_endpoint:
+            std::option::Option<crate::model::AppInstanceUserEndpoint>,
+    }
+    impl Builder {
+        /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes,
+        /// allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
+        pub fn app_instance_user_endpoint(
+            mut self,
+            input: crate::model::AppInstanceUserEndpoint,
+        ) -> Self {
+            self.app_instance_user_endpoint = Some(input);
+            self
+        }
+        /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes,
+        /// allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
+        pub fn set_app_instance_user_endpoint(
+            mut self,
+            input: std::option::Option<crate::model::AppInstanceUserEndpoint>,
+        ) -> Self {
+            self.app_instance_user_endpoint = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeAppInstanceUserEndpointOutput`](crate::output::DescribeAppInstanceUserEndpointOutput)
+        pub fn build(self) -> crate::output::DescribeAppInstanceUserEndpointOutput {
+            crate::output::DescribeAppInstanceUserEndpointOutput {
+                app_instance_user_endpoint: self.app_instance_user_endpoint,
+            }
+        }
+    }
+}
+impl DescribeAppInstanceUserEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAppInstanceUserEndpointOutput`](crate::output::DescribeAppInstanceUserEndpointOutput)
+    pub fn builder() -> crate::output::describe_app_instance_user_endpoint_output::Builder {
+        crate::output::describe_app_instance_user_endpoint_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceUserOutput {
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
     pub app_instance_user: std::option::Option<crate::model::AppInstanceUser>,
@@ -692,6 +1080,36 @@ impl DescribeAppInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppInstanceOutput`](crate::output::DescribeAppInstanceOutput)
     pub fn builder() -> crate::output::describe_app_instance_output::Builder {
         crate::output::describe_app_instance_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeregisterAppInstanceUserEndpointOutput {}
+impl std::fmt::Debug for DeregisterAppInstanceUserEndpointOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeregisterAppInstanceUserEndpointOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeregisterAppInstanceUserEndpointOutput`](crate::output::DeregisterAppInstanceUserEndpointOutput)
+pub mod deregister_app_instance_user_endpoint_output {
+    /// A builder for [`DeregisterAppInstanceUserEndpointOutput`](crate::output::DeregisterAppInstanceUserEndpointOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeregisterAppInstanceUserEndpointOutput`](crate::output::DeregisterAppInstanceUserEndpointOutput)
+        pub fn build(self) -> crate::output::DeregisterAppInstanceUserEndpointOutput {
+            crate::output::DeregisterAppInstanceUserEndpointOutput {}
+        }
+    }
+}
+impl DeregisterAppInstanceUserEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`DeregisterAppInstanceUserEndpointOutput`](crate::output::DeregisterAppInstanceUserEndpointOutput)
+    pub fn builder() -> crate::output::deregister_app_instance_user_endpoint_output::Builder {
+        crate::output::deregister_app_instance_user_endpoint_output::Builder::default()
     }
 }
 

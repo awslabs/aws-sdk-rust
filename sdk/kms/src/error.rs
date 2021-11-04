@@ -31,7 +31,7 @@ pub enum CancelKeyDeletionErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelKeyDeletionError {
@@ -98,35 +98,35 @@ impl CancelKeyDeletionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelKeyDeletionErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `CancelKeyDeletionErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelKeyDeletionErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CancelKeyDeletionErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `CancelKeyDeletionErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelKeyDeletionErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `CancelKeyDeletionErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `CancelKeyDeletionErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelKeyDeletionErrorKind::KmsInternalException(_)
         )
     }
-    /// Returns true if the error kind is `CancelKeyDeletionErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `CancelKeyDeletionErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelKeyDeletionErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `CancelKeyDeletionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CancelKeyDeletionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CancelKeyDeletionErrorKind::NotFoundException(_))
     }
@@ -225,7 +225,7 @@ pub enum ConnectCustomKeyStoreErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be
     /// retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ConnectCustomKeyStoreError {
@@ -300,35 +300,35 @@ impl ConnectCustomKeyStoreError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException`.
+    /// Returns `true` if the error kind is `ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException`.
     pub fn is_cloud_hsm_cluster_invalid_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException`.
+    /// Returns `true` if the error kind is `ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException`.
     pub fn is_cloud_hsm_cluster_not_active_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_)
         )
     }
-    /// Returns true if the error kind is `ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException`.
+    /// Returns `true` if the error kind is `ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException`.
     pub fn is_custom_key_store_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException`.
+    /// Returns `true` if the error kind is `ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException`.
     pub fn is_custom_key_store_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ConnectCustomKeyStoreErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `ConnectCustomKeyStoreErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -392,7 +392,7 @@ pub enum CreateAliasErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAliasError {
@@ -461,40 +461,40 @@ impl CreateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(&self.kind, CreateAliasErrorKind::AlreadyExistsException(_))
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAliasErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::InvalidAliasNameException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::InvalidAliasNameException`.
     pub fn is_invalid_alias_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAliasErrorKind::InvalidAliasNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, CreateAliasErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAliasErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateAliasErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateAliasErrorKind::NotFoundException(_))
     }
@@ -588,7 +588,7 @@ pub enum CreateCustomKeyStoreErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be
     /// retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCustomKeyStoreError {
@@ -665,49 +665,49 @@ impl CreateCustomKeyStoreError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseException`.
+    /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseException`.
     pub fn is_cloud_hsm_cluster_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException`.
+    /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException`.
     pub fn is_cloud_hsm_cluster_invalid_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException`.
+    /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException`.
     pub fn is_cloud_hsm_cluster_not_active_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException`.
+    /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException`.
     pub fn is_cloud_hsm_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException`.
+    /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException`.
     pub fn is_custom_key_store_name_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorException`.
+    /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorException`.
     pub fn is_incorrect_trust_anchor_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomKeyStoreErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -773,7 +773,7 @@ pub enum CreateGrantErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGrantError {
@@ -843,44 +843,44 @@ impl CreateGrantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGrantErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `CreateGrantErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGrantErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGrantErrorKind::DisabledException`.
+    /// Returns `true` if the error kind is `CreateGrantErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(&self.kind, CreateGrantErrorKind::DisabledException(_))
     }
-    /// Returns true if the error kind is `CreateGrantErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `CreateGrantErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, CreateGrantErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `CreateGrantErrorKind::InvalidGrantTokenException`.
+    /// Returns `true` if the error kind is `CreateGrantErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGrantErrorKind::InvalidGrantTokenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGrantErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `CreateGrantErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, CreateGrantErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `CreateGrantErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `CreateGrantErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGrantErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGrantErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateGrantErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateGrantErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateGrantErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateGrantErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateGrantErrorKind::NotFoundException(_))
     }
@@ -995,7 +995,7 @@ pub enum CreateKeyErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified
     /// resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateKeyError {
@@ -1069,58 +1069,58 @@ impl CreateKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationException`.
+    /// Returns `true` if the error kind is `CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationException`.
     pub fn is_cloud_hsm_cluster_invalid_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateKeyErrorKind::CustomKeyStoreInvalidStateException`.
+    /// Returns `true` if the error kind is `CreateKeyErrorKind::CustomKeyStoreInvalidStateException`.
     pub fn is_custom_key_store_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateKeyErrorKind::CustomKeyStoreInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateKeyErrorKind::CustomKeyStoreNotFoundException`.
+    /// Returns `true` if the error kind is `CreateKeyErrorKind::CustomKeyStoreNotFoundException`.
     pub fn is_custom_key_store_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateKeyErrorKind::CustomKeyStoreNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateKeyErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `CreateKeyErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateKeyErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateKeyErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `CreateKeyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, CreateKeyErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `CreateKeyErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `CreateKeyErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, CreateKeyErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `CreateKeyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateKeyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateKeyErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateKeyErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `CreateKeyErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateKeyErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateKeyErrorKind::TagException`.
+    /// Returns `true` if the error kind is `CreateKeyErrorKind::TagException`.
     pub fn is_tag_exception(&self) -> bool {
         matches!(&self.kind, CreateKeyErrorKind::TagException(_))
     }
-    /// Returns true if the error kind is `CreateKeyErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `CreateKeyErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1214,7 +1214,7 @@ pub enum DecryptErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DecryptError {
@@ -1286,43 +1286,43 @@ impl DecryptError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DecryptErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `DecryptErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(&self.kind, DecryptErrorKind::DependencyTimeoutException(_))
     }
-    /// Returns true if the error kind is `DecryptErrorKind::DisabledException`.
+    /// Returns `true` if the error kind is `DecryptErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(&self.kind, DecryptErrorKind::DisabledException(_))
     }
-    /// Returns true if the error kind is `DecryptErrorKind::IncorrectKeyException`.
+    /// Returns `true` if the error kind is `DecryptErrorKind::IncorrectKeyException`.
     pub fn is_incorrect_key_exception(&self) -> bool {
         matches!(&self.kind, DecryptErrorKind::IncorrectKeyException(_))
     }
-    /// Returns true if the error kind is `DecryptErrorKind::InvalidCiphertextException`.
+    /// Returns `true` if the error kind is `DecryptErrorKind::InvalidCiphertextException`.
     pub fn is_invalid_ciphertext_exception(&self) -> bool {
         matches!(&self.kind, DecryptErrorKind::InvalidCiphertextException(_))
     }
-    /// Returns true if the error kind is `DecryptErrorKind::InvalidGrantTokenException`.
+    /// Returns `true` if the error kind is `DecryptErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
         matches!(&self.kind, DecryptErrorKind::InvalidGrantTokenException(_))
     }
-    /// Returns true if the error kind is `DecryptErrorKind::InvalidKeyUsageException`.
+    /// Returns `true` if the error kind is `DecryptErrorKind::InvalidKeyUsageException`.
     pub fn is_invalid_key_usage_exception(&self) -> bool {
         matches!(&self.kind, DecryptErrorKind::InvalidKeyUsageException(_))
     }
-    /// Returns true if the error kind is `DecryptErrorKind::KeyUnavailableException`.
+    /// Returns `true` if the error kind is `DecryptErrorKind::KeyUnavailableException`.
     pub fn is_key_unavailable_exception(&self) -> bool {
         matches!(&self.kind, DecryptErrorKind::KeyUnavailableException(_))
     }
-    /// Returns true if the error kind is `DecryptErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `DecryptErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, DecryptErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `DecryptErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `DecryptErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, DecryptErrorKind::KmsInvalidStateException(_))
     }
-    /// Returns true if the error kind is `DecryptErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DecryptErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DecryptErrorKind::NotFoundException(_))
     }
@@ -1374,7 +1374,7 @@ pub enum DeleteAliasErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAliasError {
@@ -1440,25 +1440,25 @@ impl DeleteAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAliasErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteAliasErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAliasErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAliasErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `DeleteAliasErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, DeleteAliasErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `DeleteAliasErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `DeleteAliasErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAliasErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAliasErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAliasErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteAliasErrorKind::NotFoundException(_))
     }
@@ -1521,7 +1521,7 @@ pub enum DeleteCustomKeyStoreErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be
     /// retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCustomKeyStoreError {
@@ -1589,28 +1589,28 @@ impl DeleteCustomKeyStoreError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCmKsException`.
+    /// Returns `true` if the error kind is `DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCmKsException`.
     pub fn is_custom_key_store_has_cm_ks_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCmKsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException`.
+    /// Returns `true` if the error kind is `DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException`.
     pub fn is_custom_key_store_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException`.
     pub fn is_custom_key_store_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomKeyStoreErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `DeleteCustomKeyStoreErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1667,7 +1667,7 @@ pub enum DeleteImportedKeyMaterialErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified
     /// resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteImportedKeyMaterialError {
@@ -1737,42 +1737,42 @@ impl DeleteImportedKeyMaterialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteImportedKeyMaterialErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteImportedKeyMaterialErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImportedKeyMaterialErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImportedKeyMaterialErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DeleteImportedKeyMaterialErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImportedKeyMaterialErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImportedKeyMaterialErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `DeleteImportedKeyMaterialErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImportedKeyMaterialErrorKind::KmsInternalException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImportedKeyMaterialErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `DeleteImportedKeyMaterialErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImportedKeyMaterialErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImportedKeyMaterialErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteImportedKeyMaterialErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteImportedKeyMaterialErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteImportedKeyMaterialErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DeleteImportedKeyMaterialErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1818,7 +1818,7 @@ pub enum DescribeCustomKeyStoresErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be
     /// retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCustomKeyStoresError {
@@ -1885,21 +1885,21 @@ impl DescribeCustomKeyStoresError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException`.
     pub fn is_custom_key_store_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCustomKeyStoresErrorKind::InvalidMarkerException`.
+    /// Returns `true` if the error kind is `DescribeCustomKeyStoresErrorKind::InvalidMarkerException`.
     pub fn is_invalid_marker_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCustomKeyStoresErrorKind::InvalidMarkerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCustomKeyStoresErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `DescribeCustomKeyStoresErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1945,7 +1945,7 @@ pub enum DescribeKeyErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeKeyError {
@@ -2011,22 +2011,22 @@ impl DescribeKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeKeyErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `DescribeKeyErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeKeyErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeKeyErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DescribeKeyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, DescribeKeyErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `DescribeKeyErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `DescribeKeyErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, DescribeKeyErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `DescribeKeyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeKeyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeKeyErrorKind::NotFoundException(_))
     }
@@ -2075,7 +2075,7 @@ pub enum DisableKeyErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableKeyError {
@@ -2142,26 +2142,26 @@ impl DisableKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableKeyErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `DisableKeyErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableKeyErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DisableKeyErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DisableKeyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, DisableKeyErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `DisableKeyErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `DisableKeyErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, DisableKeyErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `DisableKeyErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `DisableKeyErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, DisableKeyErrorKind::KmsInvalidStateException(_))
     }
-    /// Returns true if the error kind is `DisableKeyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DisableKeyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DisableKeyErrorKind::NotFoundException(_))
     }
@@ -2216,7 +2216,7 @@ pub enum DisableKeyRotationErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified
     /// resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableKeyRotationError {
@@ -2285,49 +2285,49 @@ impl DisableKeyRotationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableKeyRotationErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `DisableKeyRotationErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableKeyRotationErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DisableKeyRotationErrorKind::DisabledException`.
+    /// Returns `true` if the error kind is `DisableKeyRotationErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableKeyRotationErrorKind::DisabledException(_)
         )
     }
-    /// Returns true if the error kind is `DisableKeyRotationErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DisableKeyRotationErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableKeyRotationErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `DisableKeyRotationErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `DisableKeyRotationErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableKeyRotationErrorKind::KmsInternalException(_)
         )
     }
-    /// Returns true if the error kind is `DisableKeyRotationErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `DisableKeyRotationErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableKeyRotationErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `DisableKeyRotationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DisableKeyRotationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableKeyRotationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisableKeyRotationErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DisableKeyRotationErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2391,7 +2391,7 @@ pub enum DisconnectCustomKeyStoreErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be
     /// retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisconnectCustomKeyStoreError {
@@ -2460,21 +2460,21 @@ impl DisconnectCustomKeyStoreError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException`.
+    /// Returns `true` if the error kind is `DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException`.
     pub fn is_custom_key_store_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException`.
+    /// Returns `true` if the error kind is `DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException`.
     pub fn is_custom_key_store_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisconnectCustomKeyStoreErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `DisconnectCustomKeyStoreErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2532,7 +2532,7 @@ pub enum EnableKeyErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableKeyError {
@@ -2600,30 +2600,30 @@ impl EnableKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableKeyErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `EnableKeyErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableKeyErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `EnableKeyErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `EnableKeyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, EnableKeyErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `EnableKeyErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `EnableKeyErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, EnableKeyErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `EnableKeyErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `EnableKeyErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, EnableKeyErrorKind::KmsInvalidStateException(_))
     }
-    /// Returns true if the error kind is `EnableKeyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `EnableKeyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, EnableKeyErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `EnableKeyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `EnableKeyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, EnableKeyErrorKind::NotFoundException(_))
     }
@@ -2679,7 +2679,7 @@ pub enum EnableKeyRotationErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified
     /// resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableKeyRotationError {
@@ -2748,43 +2748,43 @@ impl EnableKeyRotationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableKeyRotationErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `EnableKeyRotationErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableKeyRotationErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `EnableKeyRotationErrorKind::DisabledException`.
+    /// Returns `true` if the error kind is `EnableKeyRotationErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(&self.kind, EnableKeyRotationErrorKind::DisabledException(_))
     }
-    /// Returns true if the error kind is `EnableKeyRotationErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `EnableKeyRotationErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableKeyRotationErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `EnableKeyRotationErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `EnableKeyRotationErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableKeyRotationErrorKind::KmsInternalException(_)
         )
     }
-    /// Returns true if the error kind is `EnableKeyRotationErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `EnableKeyRotationErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableKeyRotationErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `EnableKeyRotationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `EnableKeyRotationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, EnableKeyRotationErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `EnableKeyRotationErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `EnableKeyRotationErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2861,7 +2861,7 @@ pub enum EncryptErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EncryptError {
@@ -2931,35 +2931,35 @@ impl EncryptError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EncryptErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `EncryptErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(&self.kind, EncryptErrorKind::DependencyTimeoutException(_))
     }
-    /// Returns true if the error kind is `EncryptErrorKind::DisabledException`.
+    /// Returns `true` if the error kind is `EncryptErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(&self.kind, EncryptErrorKind::DisabledException(_))
     }
-    /// Returns true if the error kind is `EncryptErrorKind::InvalidGrantTokenException`.
+    /// Returns `true` if the error kind is `EncryptErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
         matches!(&self.kind, EncryptErrorKind::InvalidGrantTokenException(_))
     }
-    /// Returns true if the error kind is `EncryptErrorKind::InvalidKeyUsageException`.
+    /// Returns `true` if the error kind is `EncryptErrorKind::InvalidKeyUsageException`.
     pub fn is_invalid_key_usage_exception(&self) -> bool {
         matches!(&self.kind, EncryptErrorKind::InvalidKeyUsageException(_))
     }
-    /// Returns true if the error kind is `EncryptErrorKind::KeyUnavailableException`.
+    /// Returns `true` if the error kind is `EncryptErrorKind::KeyUnavailableException`.
     pub fn is_key_unavailable_exception(&self) -> bool {
         matches!(&self.kind, EncryptErrorKind::KeyUnavailableException(_))
     }
-    /// Returns true if the error kind is `EncryptErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `EncryptErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, EncryptErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `EncryptErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `EncryptErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, EncryptErrorKind::KmsInvalidStateException(_))
     }
-    /// Returns true if the error kind is `EncryptErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `EncryptErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, EncryptErrorKind::NotFoundException(_))
     }
@@ -3034,7 +3034,7 @@ pub enum GenerateDataKeyErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateDataKeyError {
@@ -3104,53 +3104,53 @@ impl GenerateDataKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GenerateDataKeyErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyErrorKind::DisabledException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(&self.kind, GenerateDataKeyErrorKind::DisabledException(_))
     }
-    /// Returns true if the error kind is `GenerateDataKeyErrorKind::InvalidGrantTokenException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyErrorKind::InvalidGrantTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyErrorKind::InvalidKeyUsageException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyErrorKind::InvalidKeyUsageException`.
     pub fn is_invalid_key_usage_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyErrorKind::InvalidKeyUsageException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyErrorKind::KeyUnavailableException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyErrorKind::KeyUnavailableException`.
     pub fn is_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyErrorKind::KeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyErrorKind::KmsInternalException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GenerateDataKeyErrorKind::NotFoundException(_))
     }
@@ -3228,7 +3228,7 @@ pub enum GenerateDataKeyPairErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified
     /// resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateDataKeyPairError {
@@ -3299,63 +3299,63 @@ impl GenerateDataKeyPairError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GenerateDataKeyPairErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyPairErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyPairErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyPairErrorKind::DisabledException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyPairErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyPairErrorKind::DisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyPairErrorKind::InvalidGrantTokenException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyPairErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyPairErrorKind::InvalidGrantTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyPairErrorKind::InvalidKeyUsageException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyPairErrorKind::InvalidKeyUsageException`.
     pub fn is_invalid_key_usage_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyPairErrorKind::InvalidKeyUsageException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyPairErrorKind::KeyUnavailableException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyPairErrorKind::KeyUnavailableException`.
     pub fn is_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyPairErrorKind::KeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyPairErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyPairErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyPairErrorKind::KmsInternalException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyPairErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyPairErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyPairErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyPairErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyPairErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyPairErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyPairErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyPairErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3437,7 +3437,7 @@ pub enum GenerateDataKeyPairWithoutPlaintextErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified
     /// resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateDataKeyPairWithoutPlaintextError {
@@ -3529,63 +3529,63 @@ impl GenerateDataKeyPairWithoutPlaintextError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageException`.
     pub fn is_invalid_key_usage_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableException`.
     pub fn is_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInternalException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3680,7 +3680,7 @@ pub enum GenerateDataKeyWithoutPlaintextErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateDataKeyWithoutPlaintextError {
@@ -3763,56 +3763,56 @@ impl GenerateDataKeyWithoutPlaintextError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::DisabledException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyWithoutPlaintextErrorKind::DisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageException`.
     pub fn is_invalid_key_usage_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableException`.
     pub fn is_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyWithoutPlaintextErrorKind::KmsInternalException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateDataKeyWithoutPlaintextErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3890,7 +3890,7 @@ pub enum GenerateRandomErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be
     /// retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateRandomError {
@@ -3956,28 +3956,28 @@ impl GenerateRandomError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GenerateRandomErrorKind::CustomKeyStoreInvalidStateException`.
+    /// Returns `true` if the error kind is `GenerateRandomErrorKind::CustomKeyStoreInvalidStateException`.
     pub fn is_custom_key_store_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateRandomErrorKind::CustomKeyStoreInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateRandomErrorKind::CustomKeyStoreNotFoundException`.
+    /// Returns `true` if the error kind is `GenerateRandomErrorKind::CustomKeyStoreNotFoundException`.
     pub fn is_custom_key_store_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateRandomErrorKind::CustomKeyStoreNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateRandomErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `GenerateRandomErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateRandomErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateRandomErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `GenerateRandomErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, GenerateRandomErrorKind::KmsInternalException(_))
     }
@@ -4026,7 +4026,7 @@ pub enum GetKeyPolicyErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetKeyPolicyError {
@@ -4093,29 +4093,29 @@ impl GetKeyPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetKeyPolicyErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `GetKeyPolicyErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetKeyPolicyErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `GetKeyPolicyErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `GetKeyPolicyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, GetKeyPolicyErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `GetKeyPolicyErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `GetKeyPolicyErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, GetKeyPolicyErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `GetKeyPolicyErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `GetKeyPolicyErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetKeyPolicyErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `GetKeyPolicyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetKeyPolicyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetKeyPolicyErrorKind::NotFoundException(_))
     }
@@ -4168,7 +4168,7 @@ pub enum GetKeyRotationStatusErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified
     /// resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetKeyRotationStatusError {
@@ -4236,42 +4236,42 @@ impl GetKeyRotationStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetKeyRotationStatusErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `GetKeyRotationStatusErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetKeyRotationStatusErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `GetKeyRotationStatusErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `GetKeyRotationStatusErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetKeyRotationStatusErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `GetKeyRotationStatusErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `GetKeyRotationStatusErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetKeyRotationStatusErrorKind::KmsInternalException(_)
         )
     }
-    /// Returns true if the error kind is `GetKeyRotationStatusErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `GetKeyRotationStatusErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetKeyRotationStatusErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `GetKeyRotationStatusErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetKeyRotationStatusErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetKeyRotationStatusErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetKeyRotationStatusErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `GetKeyRotationStatusErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4328,7 +4328,7 @@ pub enum GetParametersForImportErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified
     /// resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetParametersForImportError {
@@ -4396,42 +4396,42 @@ impl GetParametersForImportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetParametersForImportErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `GetParametersForImportErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetParametersForImportErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `GetParametersForImportErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `GetParametersForImportErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetParametersForImportErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `GetParametersForImportErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `GetParametersForImportErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetParametersForImportErrorKind::KmsInternalException(_)
         )
     }
-    /// Returns true if the error kind is `GetParametersForImportErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `GetParametersForImportErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetParametersForImportErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `GetParametersForImportErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetParametersForImportErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetParametersForImportErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetParametersForImportErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `GetParametersForImportErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4513,7 +4513,7 @@ pub enum GetPublicKeyErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified
     /// resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPublicKeyError {
@@ -4585,58 +4585,58 @@ impl GetPublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPublicKeyErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `GetPublicKeyErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPublicKeyErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `GetPublicKeyErrorKind::DisabledException`.
+    /// Returns `true` if the error kind is `GetPublicKeyErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(&self.kind, GetPublicKeyErrorKind::DisabledException(_))
     }
-    /// Returns true if the error kind is `GetPublicKeyErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `GetPublicKeyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, GetPublicKeyErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `GetPublicKeyErrorKind::InvalidGrantTokenException`.
+    /// Returns `true` if the error kind is `GetPublicKeyErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPublicKeyErrorKind::InvalidGrantTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetPublicKeyErrorKind::InvalidKeyUsageException`.
+    /// Returns `true` if the error kind is `GetPublicKeyErrorKind::InvalidKeyUsageException`.
     pub fn is_invalid_key_usage_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPublicKeyErrorKind::InvalidKeyUsageException(_)
         )
     }
-    /// Returns true if the error kind is `GetPublicKeyErrorKind::KeyUnavailableException`.
+    /// Returns `true` if the error kind is `GetPublicKeyErrorKind::KeyUnavailableException`.
     pub fn is_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPublicKeyErrorKind::KeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetPublicKeyErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `GetPublicKeyErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, GetPublicKeyErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `GetPublicKeyErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `GetPublicKeyErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPublicKeyErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `GetPublicKeyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetPublicKeyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetPublicKeyErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetPublicKeyErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `GetPublicKeyErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4713,7 +4713,7 @@ pub enum ImportKeyMaterialErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified
     /// resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportKeyMaterialError {
@@ -4785,67 +4785,67 @@ impl ImportKeyMaterialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportKeyMaterialErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportKeyMaterialErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ImportKeyMaterialErrorKind::ExpiredImportTokenException`.
+    /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::ExpiredImportTokenException`.
     pub fn is_expired_import_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportKeyMaterialErrorKind::ExpiredImportTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ImportKeyMaterialErrorKind::IncorrectKeyMaterialException`.
+    /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::IncorrectKeyMaterialException`.
     pub fn is_incorrect_key_material_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportKeyMaterialErrorKind::IncorrectKeyMaterialException(_)
         )
     }
-    /// Returns true if the error kind is `ImportKeyMaterialErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportKeyMaterialErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ImportKeyMaterialErrorKind::InvalidCiphertextException`.
+    /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::InvalidCiphertextException`.
     pub fn is_invalid_ciphertext_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportKeyMaterialErrorKind::InvalidCiphertextException(_)
         )
     }
-    /// Returns true if the error kind is `ImportKeyMaterialErrorKind::InvalidImportTokenException`.
+    /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::InvalidImportTokenException`.
     pub fn is_invalid_import_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportKeyMaterialErrorKind::InvalidImportTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ImportKeyMaterialErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportKeyMaterialErrorKind::KmsInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ImportKeyMaterialErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportKeyMaterialErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `ImportKeyMaterialErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ImportKeyMaterialErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ImportKeyMaterialErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4899,7 +4899,7 @@ pub enum ListAliasesErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAliasesError {
@@ -4966,26 +4966,26 @@ impl ListAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAliasesErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `ListAliasesErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAliasesErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ListAliasesErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListAliasesErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, ListAliasesErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `ListAliasesErrorKind::InvalidMarkerException`.
+    /// Returns `true` if the error kind is `ListAliasesErrorKind::InvalidMarkerException`.
     pub fn is_invalid_marker_exception(&self) -> bool {
         matches!(&self.kind, ListAliasesErrorKind::InvalidMarkerException(_))
     }
-    /// Returns true if the error kind is `ListAliasesErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `ListAliasesErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, ListAliasesErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `ListAliasesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListAliasesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListAliasesErrorKind::NotFoundException(_))
     }
@@ -5040,7 +5040,7 @@ pub enum ListGrantsErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGrantsError {
@@ -5109,34 +5109,34 @@ impl ListGrantsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGrantsErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `ListGrantsErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGrantsErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ListGrantsErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListGrantsErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, ListGrantsErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `ListGrantsErrorKind::InvalidGrantIdException`.
+    /// Returns `true` if the error kind is `ListGrantsErrorKind::InvalidGrantIdException`.
     pub fn is_invalid_grant_id_exception(&self) -> bool {
         matches!(&self.kind, ListGrantsErrorKind::InvalidGrantIdException(_))
     }
-    /// Returns true if the error kind is `ListGrantsErrorKind::InvalidMarkerException`.
+    /// Returns `true` if the error kind is `ListGrantsErrorKind::InvalidMarkerException`.
     pub fn is_invalid_marker_exception(&self) -> bool {
         matches!(&self.kind, ListGrantsErrorKind::InvalidMarkerException(_))
     }
-    /// Returns true if the error kind is `ListGrantsErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `ListGrantsErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, ListGrantsErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `ListGrantsErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `ListGrantsErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, ListGrantsErrorKind::KmsInvalidStateException(_))
     }
-    /// Returns true if the error kind is `ListGrantsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListGrantsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListGrantsErrorKind::NotFoundException(_))
     }
@@ -5188,7 +5188,7 @@ pub enum ListKeyPoliciesErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListKeyPoliciesError {
@@ -5255,32 +5255,32 @@ impl ListKeyPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListKeyPoliciesErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `ListKeyPoliciesErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListKeyPoliciesErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ListKeyPoliciesErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListKeyPoliciesErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, ListKeyPoliciesErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `ListKeyPoliciesErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `ListKeyPoliciesErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListKeyPoliciesErrorKind::KmsInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListKeyPoliciesErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `ListKeyPoliciesErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListKeyPoliciesErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `ListKeyPoliciesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListKeyPoliciesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListKeyPoliciesErrorKind::NotFoundException(_))
     }
@@ -5320,7 +5320,7 @@ pub enum ListKeysErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be
     /// retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListKeysError {
@@ -5385,15 +5385,15 @@ impl ListKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListKeysErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `ListKeysErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(&self.kind, ListKeysErrorKind::DependencyTimeoutException(_))
     }
-    /// Returns true if the error kind is `ListKeysErrorKind::InvalidMarkerException`.
+    /// Returns `true` if the error kind is `ListKeysErrorKind::InvalidMarkerException`.
     pub fn is_invalid_marker_exception(&self) -> bool {
         matches!(&self.kind, ListKeysErrorKind::InvalidMarkerException(_))
     }
-    /// Returns true if the error kind is `ListKeysErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `ListKeysErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, ListKeysErrorKind::KmsInternalException(_))
     }
@@ -5434,7 +5434,7 @@ pub enum ListResourceTagsErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourceTagsError {
@@ -5500,28 +5500,28 @@ impl ListResourceTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResourceTagsErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListResourceTagsErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceTagsErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceTagsErrorKind::InvalidMarkerException`.
+    /// Returns `true` if the error kind is `ListResourceTagsErrorKind::InvalidMarkerException`.
     pub fn is_invalid_marker_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceTagsErrorKind::InvalidMarkerException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceTagsErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `ListResourceTagsErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceTagsErrorKind::KmsInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceTagsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListResourceTagsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListResourceTagsErrorKind::NotFoundException(_))
     }
@@ -5566,7 +5566,7 @@ pub enum ListRetirableGrantsErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRetirableGrantsError {
@@ -5633,35 +5633,35 @@ impl ListRetirableGrantsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRetirableGrantsErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `ListRetirableGrantsErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRetirableGrantsErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ListRetirableGrantsErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListRetirableGrantsErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRetirableGrantsErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListRetirableGrantsErrorKind::InvalidMarkerException`.
+    /// Returns `true` if the error kind is `ListRetirableGrantsErrorKind::InvalidMarkerException`.
     pub fn is_invalid_marker_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRetirableGrantsErrorKind::InvalidMarkerException(_)
         )
     }
-    /// Returns true if the error kind is `ListRetirableGrantsErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `ListRetirableGrantsErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRetirableGrantsErrorKind::KmsInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListRetirableGrantsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListRetirableGrantsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5723,7 +5723,7 @@ pub enum PutKeyPolicyErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified
     /// resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutKeyPolicyError {
@@ -5793,44 +5793,44 @@ impl PutKeyPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutKeyPolicyErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `PutKeyPolicyErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutKeyPolicyErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `PutKeyPolicyErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `PutKeyPolicyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, PutKeyPolicyErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `PutKeyPolicyErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `PutKeyPolicyErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, PutKeyPolicyErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `PutKeyPolicyErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `PutKeyPolicyErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutKeyPolicyErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `PutKeyPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutKeyPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, PutKeyPolicyErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `PutKeyPolicyErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `PutKeyPolicyErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutKeyPolicyErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `PutKeyPolicyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutKeyPolicyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutKeyPolicyErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `PutKeyPolicyErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `PutKeyPolicyErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5920,7 +5920,7 @@ pub enum ReEncryptErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReEncryptError {
@@ -5992,52 +5992,52 @@ impl ReEncryptError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ReEncryptErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `ReEncryptErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReEncryptErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ReEncryptErrorKind::DisabledException`.
+    /// Returns `true` if the error kind is `ReEncryptErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(&self.kind, ReEncryptErrorKind::DisabledException(_))
     }
-    /// Returns true if the error kind is `ReEncryptErrorKind::IncorrectKeyException`.
+    /// Returns `true` if the error kind is `ReEncryptErrorKind::IncorrectKeyException`.
     pub fn is_incorrect_key_exception(&self) -> bool {
         matches!(&self.kind, ReEncryptErrorKind::IncorrectKeyException(_))
     }
-    /// Returns true if the error kind is `ReEncryptErrorKind::InvalidCiphertextException`.
+    /// Returns `true` if the error kind is `ReEncryptErrorKind::InvalidCiphertextException`.
     pub fn is_invalid_ciphertext_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReEncryptErrorKind::InvalidCiphertextException(_)
         )
     }
-    /// Returns true if the error kind is `ReEncryptErrorKind::InvalidGrantTokenException`.
+    /// Returns `true` if the error kind is `ReEncryptErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReEncryptErrorKind::InvalidGrantTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ReEncryptErrorKind::InvalidKeyUsageException`.
+    /// Returns `true` if the error kind is `ReEncryptErrorKind::InvalidKeyUsageException`.
     pub fn is_invalid_key_usage_exception(&self) -> bool {
         matches!(&self.kind, ReEncryptErrorKind::InvalidKeyUsageException(_))
     }
-    /// Returns true if the error kind is `ReEncryptErrorKind::KeyUnavailableException`.
+    /// Returns `true` if the error kind is `ReEncryptErrorKind::KeyUnavailableException`.
     pub fn is_key_unavailable_exception(&self) -> bool {
         matches!(&self.kind, ReEncryptErrorKind::KeyUnavailableException(_))
     }
-    /// Returns true if the error kind is `ReEncryptErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `ReEncryptErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, ReEncryptErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `ReEncryptErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `ReEncryptErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, ReEncryptErrorKind::KmsInvalidStateException(_))
     }
-    /// Returns true if the error kind is `ReEncryptErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ReEncryptErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ReEncryptErrorKind::NotFoundException(_))
     }
@@ -6105,7 +6105,7 @@ pub enum ReplicateKeyErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified
     /// resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReplicateKeyError {
@@ -6177,49 +6177,49 @@ impl ReplicateKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ReplicateKeyErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `ReplicateKeyErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(&self.kind, ReplicateKeyErrorKind::AlreadyExistsException(_))
     }
-    /// Returns true if the error kind is `ReplicateKeyErrorKind::DisabledException`.
+    /// Returns `true` if the error kind is `ReplicateKeyErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(&self.kind, ReplicateKeyErrorKind::DisabledException(_))
     }
-    /// Returns true if the error kind is `ReplicateKeyErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ReplicateKeyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, ReplicateKeyErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `ReplicateKeyErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `ReplicateKeyErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, ReplicateKeyErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `ReplicateKeyErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `ReplicateKeyErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReplicateKeyErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `ReplicateKeyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ReplicateKeyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ReplicateKeyErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `ReplicateKeyErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `ReplicateKeyErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReplicateKeyErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `ReplicateKeyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ReplicateKeyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ReplicateKeyErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ReplicateKeyErrorKind::TagException`.
+    /// Returns `true` if the error kind is `ReplicateKeyErrorKind::TagException`.
     pub fn is_tag_exception(&self) -> bool {
         matches!(&self.kind, ReplicateKeyErrorKind::TagException(_))
     }
-    /// Returns true if the error kind is `ReplicateKeyErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `ReplicateKeyErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6281,7 +6281,7 @@ pub enum RetireGrantErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RetireGrantError {
@@ -6350,40 +6350,40 @@ impl RetireGrantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RetireGrantErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `RetireGrantErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             RetireGrantErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `RetireGrantErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `RetireGrantErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, RetireGrantErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `RetireGrantErrorKind::InvalidGrantIdException`.
+    /// Returns `true` if the error kind is `RetireGrantErrorKind::InvalidGrantIdException`.
     pub fn is_invalid_grant_id_exception(&self) -> bool {
         matches!(&self.kind, RetireGrantErrorKind::InvalidGrantIdException(_))
     }
-    /// Returns true if the error kind is `RetireGrantErrorKind::InvalidGrantTokenException`.
+    /// Returns `true` if the error kind is `RetireGrantErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             RetireGrantErrorKind::InvalidGrantTokenException(_)
         )
     }
-    /// Returns true if the error kind is `RetireGrantErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `RetireGrantErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, RetireGrantErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `RetireGrantErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `RetireGrantErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             RetireGrantErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `RetireGrantErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RetireGrantErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, RetireGrantErrorKind::NotFoundException(_))
     }
@@ -6437,7 +6437,7 @@ pub enum RevokeGrantErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RevokeGrantError {
@@ -6505,33 +6505,33 @@ impl RevokeGrantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RevokeGrantErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `RevokeGrantErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeGrantErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeGrantErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `RevokeGrantErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, RevokeGrantErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `RevokeGrantErrorKind::InvalidGrantIdException`.
+    /// Returns `true` if the error kind is `RevokeGrantErrorKind::InvalidGrantIdException`.
     pub fn is_invalid_grant_id_exception(&self) -> bool {
         matches!(&self.kind, RevokeGrantErrorKind::InvalidGrantIdException(_))
     }
-    /// Returns true if the error kind is `RevokeGrantErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `RevokeGrantErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, RevokeGrantErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `RevokeGrantErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `RevokeGrantErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeGrantErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeGrantErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RevokeGrantErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, RevokeGrantErrorKind::NotFoundException(_))
     }
@@ -6582,7 +6582,7 @@ pub enum ScheduleKeyDeletionErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ScheduleKeyDeletionError {
@@ -6649,35 +6649,35 @@ impl ScheduleKeyDeletionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ScheduleKeyDeletionErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `ScheduleKeyDeletionErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ScheduleKeyDeletionErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ScheduleKeyDeletionErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ScheduleKeyDeletionErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ScheduleKeyDeletionErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ScheduleKeyDeletionErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `ScheduleKeyDeletionErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ScheduleKeyDeletionErrorKind::KmsInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ScheduleKeyDeletionErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `ScheduleKeyDeletionErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ScheduleKeyDeletionErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `ScheduleKeyDeletionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ScheduleKeyDeletionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6752,7 +6752,7 @@ pub enum SignErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SignError {
@@ -6822,35 +6822,35 @@ impl SignError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SignErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `SignErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(&self.kind, SignErrorKind::DependencyTimeoutException(_))
     }
-    /// Returns true if the error kind is `SignErrorKind::DisabledException`.
+    /// Returns `true` if the error kind is `SignErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(&self.kind, SignErrorKind::DisabledException(_))
     }
-    /// Returns true if the error kind is `SignErrorKind::InvalidGrantTokenException`.
+    /// Returns `true` if the error kind is `SignErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
         matches!(&self.kind, SignErrorKind::InvalidGrantTokenException(_))
     }
-    /// Returns true if the error kind is `SignErrorKind::InvalidKeyUsageException`.
+    /// Returns `true` if the error kind is `SignErrorKind::InvalidKeyUsageException`.
     pub fn is_invalid_key_usage_exception(&self) -> bool {
         matches!(&self.kind, SignErrorKind::InvalidKeyUsageException(_))
     }
-    /// Returns true if the error kind is `SignErrorKind::KeyUnavailableException`.
+    /// Returns `true` if the error kind is `SignErrorKind::KeyUnavailableException`.
     pub fn is_key_unavailable_exception(&self) -> bool {
         matches!(&self.kind, SignErrorKind::KeyUnavailableException(_))
     }
-    /// Returns true if the error kind is `SignErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `SignErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, SignErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `SignErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `SignErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, SignErrorKind::KmsInvalidStateException(_))
     }
-    /// Returns true if the error kind is `SignErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `SignErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, SignErrorKind::NotFoundException(_))
     }
@@ -6905,7 +6905,7 @@ pub enum TagResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request was rejected because one or more tags are not valid.</p>
     TagException(crate::error::TagException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -6973,30 +6973,30 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TagException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TagException`.
     pub fn is_tag_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TagException(_))
     }
@@ -7046,7 +7046,7 @@ pub enum UntagResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request was rejected because one or more tags are not valid.</p>
     TagException(crate::error::TagException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -7113,26 +7113,26 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TagException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TagException`.
     pub fn is_tag_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::TagException(_))
     }
@@ -7182,7 +7182,7 @@ pub enum UpdateAliasErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAliasError {
@@ -7249,29 +7249,29 @@ impl UpdateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAliasErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateAliasErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAliasErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAliasErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `UpdateAliasErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, UpdateAliasErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `UpdateAliasErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `UpdateAliasErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAliasErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAliasErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateAliasErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, UpdateAliasErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `UpdateAliasErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAliasErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateAliasErrorKind::NotFoundException(_))
     }
@@ -7386,7 +7386,7 @@ pub enum UpdateCustomKeyStoreErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be
     /// retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCustomKeyStoreError {
@@ -7468,56 +7468,56 @@ impl UpdateCustomKeyStoreError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException`.
+    /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException`.
     pub fn is_cloud_hsm_cluster_invalid_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException`.
+    /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException`.
     pub fn is_cloud_hsm_cluster_not_active_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException`.
     pub fn is_cloud_hsm_cluster_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedException`.
+    /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedException`.
     pub fn is_cloud_hsm_cluster_not_related_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException`.
+    /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException`.
     pub fn is_custom_key_store_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException`.
+    /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException`.
     pub fn is_custom_key_store_name_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException`.
     pub fn is_custom_key_store_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCustomKeyStoreErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7581,7 +7581,7 @@ pub enum UpdateKeyDescriptionErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateKeyDescriptionError {
@@ -7648,35 +7648,35 @@ impl UpdateKeyDescriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateKeyDescriptionErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateKeyDescriptionErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateKeyDescriptionErrorKind::DependencyTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateKeyDescriptionErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `UpdateKeyDescriptionErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateKeyDescriptionErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateKeyDescriptionErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `UpdateKeyDescriptionErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateKeyDescriptionErrorKind::KmsInternalException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateKeyDescriptionErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `UpdateKeyDescriptionErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateKeyDescriptionErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateKeyDescriptionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateKeyDescriptionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7731,7 +7731,7 @@ pub enum UpdatePrimaryRegionErrorKind {
     /// <p>The request was rejected because a specified parameter is not supported or a specified
     /// resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePrimaryRegionError {
@@ -7799,42 +7799,42 @@ impl UpdatePrimaryRegionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePrimaryRegionErrorKind::DisabledException`.
+    /// Returns `true` if the error kind is `UpdatePrimaryRegionErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePrimaryRegionErrorKind::DisabledException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePrimaryRegionErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `UpdatePrimaryRegionErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePrimaryRegionErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePrimaryRegionErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `UpdatePrimaryRegionErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePrimaryRegionErrorKind::KmsInternalException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePrimaryRegionErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `UpdatePrimaryRegionErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePrimaryRegionErrorKind::KmsInvalidStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePrimaryRegionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePrimaryRegionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePrimaryRegionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePrimaryRegionErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `UpdatePrimaryRegionErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7914,7 +7914,7 @@ pub enum VerifyErrorKind {
     /// <p>The request was rejected because the specified entity or resource could not be
     /// found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for VerifyError {
@@ -7985,39 +7985,39 @@ impl VerifyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `VerifyErrorKind::DependencyTimeoutException`.
+    /// Returns `true` if the error kind is `VerifyErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(&self.kind, VerifyErrorKind::DependencyTimeoutException(_))
     }
-    /// Returns true if the error kind is `VerifyErrorKind::DisabledException`.
+    /// Returns `true` if the error kind is `VerifyErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(&self.kind, VerifyErrorKind::DisabledException(_))
     }
-    /// Returns true if the error kind is `VerifyErrorKind::InvalidGrantTokenException`.
+    /// Returns `true` if the error kind is `VerifyErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
         matches!(&self.kind, VerifyErrorKind::InvalidGrantTokenException(_))
     }
-    /// Returns true if the error kind is `VerifyErrorKind::InvalidKeyUsageException`.
+    /// Returns `true` if the error kind is `VerifyErrorKind::InvalidKeyUsageException`.
     pub fn is_invalid_key_usage_exception(&self) -> bool {
         matches!(&self.kind, VerifyErrorKind::InvalidKeyUsageException(_))
     }
-    /// Returns true if the error kind is `VerifyErrorKind::KeyUnavailableException`.
+    /// Returns `true` if the error kind is `VerifyErrorKind::KeyUnavailableException`.
     pub fn is_key_unavailable_exception(&self) -> bool {
         matches!(&self.kind, VerifyErrorKind::KeyUnavailableException(_))
     }
-    /// Returns true if the error kind is `VerifyErrorKind::KmsInternalException`.
+    /// Returns `true` if the error kind is `VerifyErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(&self.kind, VerifyErrorKind::KmsInternalException(_))
     }
-    /// Returns true if the error kind is `VerifyErrorKind::KmsInvalidSignatureException`.
+    /// Returns `true` if the error kind is `VerifyErrorKind::KmsInvalidSignatureException`.
     pub fn is_kms_invalid_signature_exception(&self) -> bool {
         matches!(&self.kind, VerifyErrorKind::KmsInvalidSignatureException(_))
     }
-    /// Returns true if the error kind is `VerifyErrorKind::KmsInvalidStateException`.
+    /// Returns `true` if the error kind is `VerifyErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(&self.kind, VerifyErrorKind::KmsInvalidStateException(_))
     }
-    /// Returns true if the error kind is `VerifyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `VerifyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, VerifyErrorKind::NotFoundException(_))
     }

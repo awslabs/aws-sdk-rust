@@ -80,15 +80,82 @@ pub fn serialize_structure_crate_input_put_app_instance_retention_settings_input
     }
 }
 
+pub fn serialize_structure_crate_input_register_app_instance_user_endpoint_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::RegisterAppInstanceUserEndpointInput,
+) {
+    if let Some(var_20) = &input.allow_messages {
+        object.key("AllowMessages").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.client_request_token {
+        object.key("ClientRequestToken").string(var_21);
+    }
+    if let Some(var_22) = &input.endpoint_attributes {
+        let mut object_23 = object.key("EndpointAttributes").start_object();
+        crate::json_ser::serialize_structure_crate_model_endpoint_attributes(
+            &mut object_23,
+            var_22,
+        );
+        object_23.finish();
+    }
+    if let Some(var_24) = &input.name {
+        object.key("Name").string(var_24);
+    }
+    if let Some(var_25) = &input.resource_arn {
+        object.key("ResourceArn").string(var_25);
+    }
+    if let Some(var_26) = &input.r#type {
+        object.key("Type").string(var_26.as_str());
+    }
+}
+
+pub fn serialize_structure_crate_input_tag_resource_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::TagResourceInput,
+) {
+    if let Some(var_27) = &input.resource_arn {
+        object.key("ResourceARN").string(var_27);
+    }
+    if let Some(var_28) = &input.tags {
+        let mut array_29 = object.key("Tags").start_array();
+        for item_30 in var_28 {
+            {
+                let mut object_31 = array_29.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_31, item_30);
+                object_31.finish();
+            }
+        }
+        array_29.finish();
+    }
+}
+
+pub fn serialize_structure_crate_input_untag_resource_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::UntagResourceInput,
+) {
+    if let Some(var_32) = &input.resource_arn {
+        object.key("ResourceARN").string(var_32);
+    }
+    if let Some(var_33) = &input.tag_keys {
+        let mut array_34 = object.key("TagKeys").start_array();
+        for item_35 in var_33 {
+            {
+                array_34.value().string(item_35);
+            }
+        }
+        array_34.finish();
+    }
+}
+
 pub fn serialize_structure_crate_input_update_app_instance_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateAppInstanceInput,
 ) {
-    if let Some(var_20) = &input.metadata {
-        object.key("Metadata").string(var_20);
+    if let Some(var_36) = &input.metadata {
+        object.key("Metadata").string(var_36);
     }
-    if let Some(var_21) = &input.name {
-        object.key("Name").string(var_21);
+    if let Some(var_37) = &input.name {
+        object.key("Name").string(var_37);
     }
 }
 
@@ -96,11 +163,23 @@ pub fn serialize_structure_crate_input_update_app_instance_user_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateAppInstanceUserInput,
 ) {
-    if let Some(var_22) = &input.metadata {
-        object.key("Metadata").string(var_22);
+    if let Some(var_38) = &input.metadata {
+        object.key("Metadata").string(var_38);
     }
-    if let Some(var_23) = &input.name {
-        object.key("Name").string(var_23);
+    if let Some(var_39) = &input.name {
+        object.key("Name").string(var_39);
+    }
+}
+
+pub fn serialize_structure_crate_input_update_app_instance_user_endpoint_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::UpdateAppInstanceUserEndpointInput,
+) {
+    if let Some(var_40) = &input.allow_messages {
+        object.key("AllowMessages").string(var_40.as_str());
+    }
+    if let Some(var_41) = &input.name {
+        object.key("Name").string(var_41);
     }
 }
 
@@ -108,11 +187,11 @@ pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
 ) {
-    if let Some(var_24) = &input.key {
-        object.key("Key").string(var_24);
+    if let Some(var_42) = &input.key {
+        object.key("Key").string(var_42);
     }
-    if let Some(var_25) = &input.value {
-        object.key("Value").string(var_25);
+    if let Some(var_43) = &input.value {
+        object.key("Value").string(var_43);
     }
 }
 
@@ -120,13 +199,25 @@ pub fn serialize_structure_crate_model_app_instance_retention_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AppInstanceRetentionSettings,
 ) {
-    if let Some(var_26) = &input.channel_retention_settings {
-        let mut object_27 = object.key("ChannelRetentionSettings").start_object();
+    if let Some(var_44) = &input.channel_retention_settings {
+        let mut object_45 = object.key("ChannelRetentionSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_channel_retention_settings(
-            &mut object_27,
-            var_26,
+            &mut object_45,
+            var_44,
         );
-        object_27.finish();
+        object_45.finish();
+    }
+}
+
+pub fn serialize_structure_crate_model_endpoint_attributes(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::EndpointAttributes,
+) {
+    if let Some(var_46) = &input.device_token {
+        object.key("DeviceToken").string(var_46);
+    }
+    if let Some(var_47) = &input.voip_device_token {
+        object.key("VoipDeviceToken").string(var_47);
     }
 }
 
@@ -134,10 +225,10 @@ pub fn serialize_structure_crate_model_channel_retention_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ChannelRetentionSettings,
 ) {
-    if let Some(var_28) = &input.retention_days {
+    if let Some(var_48) = &input.retention_days {
         object.key("RetentionDays").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_28).into()),
+            aws_smithy_types::Number::NegInt((*var_48).into()),
         );
     }
 }

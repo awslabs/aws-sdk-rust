@@ -164,8 +164,8 @@ pub enum EntitlementValue {
     StringValue(std::string::String),
 }
 impl EntitlementValue {
-    /// Tries to convert the enum instance into its [`EntitlementValue`](crate::model::EntitlementValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`BooleanValue`](crate::model::EntitlementValue::BooleanValue), extracting the inner [`bool`](bool).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
         if let EntitlementValue::BooleanValue(val) = &self {
             Ok(&val)
@@ -173,12 +173,12 @@ impl EntitlementValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `EntitlementValue` variant.
+    /// Returns true if this is a [`BooleanValue`](crate::model::EntitlementValue::BooleanValue).
     pub fn is_boolean_value(&self) -> bool {
         self.as_boolean_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`EntitlementValue`](crate::model::EntitlementValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`DoubleValue`](crate::model::EntitlementValue::DoubleValue), extracting the inner [`f64`](f64).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
         if let EntitlementValue::DoubleValue(val) = &self {
             Ok(&val)
@@ -186,12 +186,12 @@ impl EntitlementValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `EntitlementValue` variant.
+    /// Returns true if this is a [`DoubleValue`](crate::model::EntitlementValue::DoubleValue).
     pub fn is_double_value(&self) -> bool {
         self.as_double_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`EntitlementValue`](crate::model::EntitlementValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`IntegerValue`](crate::model::EntitlementValue::IntegerValue), extracting the inner [`i32`](i32).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_integer_value(&self) -> std::result::Result<&i32, &Self> {
         if let EntitlementValue::IntegerValue(val) = &self {
             Ok(&val)
@@ -199,12 +199,12 @@ impl EntitlementValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `EntitlementValue` variant.
+    /// Returns true if this is a [`IntegerValue`](crate::model::EntitlementValue::IntegerValue).
     pub fn is_integer_value(&self) -> bool {
         self.as_integer_value().is_ok()
     }
-    /// Tries to convert the enum instance into its [`EntitlementValue`](crate::model::EntitlementValue) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`StringValue`](crate::model::EntitlementValue::StringValue), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let EntitlementValue::StringValue(val) = &self {
             Ok(&val)
@@ -212,7 +212,7 @@ impl EntitlementValue {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `EntitlementValue` variant.
+    /// Returns true if this is a [`StringValue`](crate::model::EntitlementValue::StringValue).
     pub fn is_string_value(&self) -> bool {
         self.as_string_value().is_ok()
     }

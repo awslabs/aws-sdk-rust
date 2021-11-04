@@ -209,7 +209,7 @@ pub enum AcceptHandshakeErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptHandshakeError {
@@ -284,74 +284,74 @@ impl AcceptHandshakeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AcceptHandshakeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AcceptHandshakeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptHandshakeErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptHandshakeErrorKind::AccessDeniedForDependencyException`.
+    /// Returns `true` if the error kind is `AcceptHandshakeErrorKind::AccessDeniedForDependencyException`.
     pub fn is_access_denied_for_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptHandshakeErrorKind::AccessDeniedForDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptHandshakeErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `AcceptHandshakeErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptHandshakeErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptHandshakeErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `AcceptHandshakeErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptHandshakeErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptHandshakeErrorKind::HandshakeAlreadyInStateException`.
+    /// Returns `true` if the error kind is `AcceptHandshakeErrorKind::HandshakeAlreadyInStateException`.
     pub fn is_handshake_already_in_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptHandshakeErrorKind::HandshakeAlreadyInStateException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptHandshakeErrorKind::HandshakeConstraintViolationException`.
+    /// Returns `true` if the error kind is `AcceptHandshakeErrorKind::HandshakeConstraintViolationException`.
     pub fn is_handshake_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptHandshakeErrorKind::HandshakeConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptHandshakeErrorKind::HandshakeNotFoundException`.
+    /// Returns `true` if the error kind is `AcceptHandshakeErrorKind::HandshakeNotFoundException`.
     pub fn is_handshake_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptHandshakeErrorKind::HandshakeNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptHandshakeErrorKind::InvalidHandshakeTransitionException`.
+    /// Returns `true` if the error kind is `AcceptHandshakeErrorKind::InvalidHandshakeTransitionException`.
     pub fn is_invalid_handshake_transition_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptHandshakeErrorKind::InvalidHandshakeTransitionException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptHandshakeErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AcceptHandshakeErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptHandshakeErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptHandshakeErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `AcceptHandshakeErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, AcceptHandshakeErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `AcceptHandshakeErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AcceptHandshakeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -702,7 +702,7 @@ pub enum AttachPolicyErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachPolicyError {
@@ -777,82 +777,82 @@ impl AttachPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, AttachPolicyErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachPolicyErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachPolicyErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachPolicyErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::DuplicatePolicyAttachmentException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::DuplicatePolicyAttachmentException`.
     pub fn is_duplicate_policy_attachment_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachPolicyErrorKind::DuplicatePolicyAttachmentException(_)
         )
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, AttachPolicyErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::PolicyChangesInProgressException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::PolicyChangesInProgressException`.
     pub fn is_policy_changes_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachPolicyErrorKind::PolicyChangesInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::PolicyNotFoundException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::PolicyNotFoundException`.
     pub fn is_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachPolicyErrorKind::PolicyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::PolicyTypeNotEnabledException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::PolicyTypeNotEnabledException`.
     pub fn is_policy_type_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachPolicyErrorKind::PolicyTypeNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, AttachPolicyErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::TargetNotFoundException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::TargetNotFoundException`.
     pub fn is_target_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachPolicyErrorKind::TargetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachPolicyErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1024,7 +1024,7 @@ pub enum CancelHandshakeErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelHandshakeError {
@@ -1094,53 +1094,53 @@ impl CancelHandshakeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelHandshakeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CancelHandshakeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelHandshakeErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CancelHandshakeErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CancelHandshakeErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelHandshakeErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CancelHandshakeErrorKind::HandshakeAlreadyInStateException`.
+    /// Returns `true` if the error kind is `CancelHandshakeErrorKind::HandshakeAlreadyInStateException`.
     pub fn is_handshake_already_in_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelHandshakeErrorKind::HandshakeAlreadyInStateException(_)
         )
     }
-    /// Returns true if the error kind is `CancelHandshakeErrorKind::HandshakeNotFoundException`.
+    /// Returns `true` if the error kind is `CancelHandshakeErrorKind::HandshakeNotFoundException`.
     pub fn is_handshake_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelHandshakeErrorKind::HandshakeNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CancelHandshakeErrorKind::InvalidHandshakeTransitionException`.
+    /// Returns `true` if the error kind is `CancelHandshakeErrorKind::InvalidHandshakeTransitionException`.
     pub fn is_invalid_handshake_transition_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelHandshakeErrorKind::InvalidHandshakeTransitionException(_)
         )
     }
-    /// Returns true if the error kind is `CancelHandshakeErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CancelHandshakeErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelHandshakeErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CancelHandshakeErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CancelHandshakeErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CancelHandshakeErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CancelHandshakeErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CancelHandshakeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1477,7 +1477,7 @@ pub enum CreateAccountErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAccountError {
@@ -1548,54 +1548,54 @@ impl CreateAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAccountErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateAccountErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateAccountErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateAccountErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `CreateAccountErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccountErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccountErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateAccountErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccountErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccountErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `CreateAccountErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccountErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccountErrorKind::FinalizingOrganizationException`.
+    /// Returns `true` if the error kind is `CreateAccountErrorKind::FinalizingOrganizationException`.
     pub fn is_finalizing_organization_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccountErrorKind::FinalizingOrganizationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccountErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateAccountErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateAccountErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreateAccountErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateAccountErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateAccountErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateAccountErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateAccountErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccountErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccountErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `CreateAccountErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1933,7 +1933,7 @@ pub enum CreateGovCloudAccountErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGovCloudAccountError {
@@ -2012,63 +2012,63 @@ impl CreateGovCloudAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGovCloudAccountErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateGovCloudAccountErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGovCloudAccountErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGovCloudAccountErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `CreateGovCloudAccountErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGovCloudAccountErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGovCloudAccountErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateGovCloudAccountErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGovCloudAccountErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGovCloudAccountErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `CreateGovCloudAccountErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGovCloudAccountErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGovCloudAccountErrorKind::FinalizingOrganizationException`.
+    /// Returns `true` if the error kind is `CreateGovCloudAccountErrorKind::FinalizingOrganizationException`.
     pub fn is_finalizing_organization_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGovCloudAccountErrorKind::FinalizingOrganizationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGovCloudAccountErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateGovCloudAccountErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGovCloudAccountErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGovCloudAccountErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateGovCloudAccountErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGovCloudAccountErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGovCloudAccountErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateGovCloudAccountErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGovCloudAccountErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGovCloudAccountErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `CreateGovCloudAccountErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2406,7 +2406,7 @@ pub enum CreateOrganizationErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateOrganizationError {
@@ -2478,53 +2478,53 @@ impl CreateOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateOrganizationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateOrganizationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrganizationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrganizationErrorKind::AccessDeniedForDependencyException`.
+    /// Returns `true` if the error kind is `CreateOrganizationErrorKind::AccessDeniedForDependencyException`.
     pub fn is_access_denied_for_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrganizationErrorKind::AccessDeniedForDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrganizationErrorKind::AlreadyInOrganizationException`.
+    /// Returns `true` if the error kind is `CreateOrganizationErrorKind::AlreadyInOrganizationException`.
     pub fn is_already_in_organization_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrganizationErrorKind::AlreadyInOrganizationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrganizationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateOrganizationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrganizationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrganizationErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `CreateOrganizationErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrganizationErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrganizationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateOrganizationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrganizationErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrganizationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateOrganizationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateOrganizationErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateOrganizationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateOrganizationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2858,7 +2858,7 @@ pub enum CreateOrganizationalUnitErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateOrganizationalUnitError {
@@ -2937,63 +2937,63 @@ impl CreateOrganizationalUnitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateOrganizationalUnitErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateOrganizationalUnitErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrganizationalUnitErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrganizationalUnitErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `CreateOrganizationalUnitErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrganizationalUnitErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrganizationalUnitErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateOrganizationalUnitErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrganizationalUnitErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrganizationalUnitErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `CreateOrganizationalUnitErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrganizationalUnitErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrganizationalUnitErrorKind::DuplicateOrganizationalUnitException`.
+    /// Returns `true` if the error kind is `CreateOrganizationalUnitErrorKind::DuplicateOrganizationalUnitException`.
     pub fn is_duplicate_organizational_unit_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrganizationalUnitErrorKind::DuplicateOrganizationalUnitException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrganizationalUnitErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateOrganizationalUnitErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrganizationalUnitErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrganizationalUnitErrorKind::ParentNotFoundException`.
+    /// Returns `true` if the error kind is `CreateOrganizationalUnitErrorKind::ParentNotFoundException`.
     pub fn is_parent_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrganizationalUnitErrorKind::ParentNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrganizationalUnitErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateOrganizationalUnitErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrganizationalUnitErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrganizationalUnitErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateOrganizationalUnitErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3348,7 +3348,7 @@ pub enum CreatePolicyErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePolicyError {
@@ -3423,68 +3423,68 @@ impl CreatePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreatePolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreatePolicyErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreatePolicyErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `CreatePolicyErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePolicyErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePolicyErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreatePolicyErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePolicyErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePolicyErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `CreatePolicyErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePolicyErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePolicyErrorKind::DuplicatePolicyException`.
+    /// Returns `true` if the error kind is `CreatePolicyErrorKind::DuplicatePolicyException`.
     pub fn is_duplicate_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePolicyErrorKind::DuplicatePolicyException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreatePolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreatePolicyErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreatePolicyErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `CreatePolicyErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePolicyErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePolicyErrorKind::PolicyTypeNotAvailableForOrganizationException`.
+    /// Returns `true` if the error kind is `CreatePolicyErrorKind::PolicyTypeNotAvailableForOrganizationException`.
     pub fn is_policy_type_not_available_for_organization_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePolicyErrorKind::PolicyTypeNotAvailableForOrganizationException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePolicyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreatePolicyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreatePolicyErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreatePolicyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreatePolicyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePolicyErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePolicyErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `CreatePolicyErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3656,7 +3656,7 @@ pub enum DeclineHandshakeErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeclineHandshakeError {
@@ -3726,53 +3726,53 @@ impl DeclineHandshakeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeclineHandshakeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeclineHandshakeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeclineHandshakeErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeclineHandshakeErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeclineHandshakeErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeclineHandshakeErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeclineHandshakeErrorKind::HandshakeAlreadyInStateException`.
+    /// Returns `true` if the error kind is `DeclineHandshakeErrorKind::HandshakeAlreadyInStateException`.
     pub fn is_handshake_already_in_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeclineHandshakeErrorKind::HandshakeAlreadyInStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeclineHandshakeErrorKind::HandshakeNotFoundException`.
+    /// Returns `true` if the error kind is `DeclineHandshakeErrorKind::HandshakeNotFoundException`.
     pub fn is_handshake_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeclineHandshakeErrorKind::HandshakeNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeclineHandshakeErrorKind::InvalidHandshakeTransitionException`.
+    /// Returns `true` if the error kind is `DeclineHandshakeErrorKind::InvalidHandshakeTransitionException`.
     pub fn is_invalid_handshake_transition_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeclineHandshakeErrorKind::InvalidHandshakeTransitionException(_)
         )
     }
-    /// Returns true if the error kind is `DeclineHandshakeErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeclineHandshakeErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeclineHandshakeErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeclineHandshakeErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeclineHandshakeErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeclineHandshakeErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeclineHandshakeErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeclineHandshakeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3936,7 +3936,7 @@ pub enum DeleteOrganizationErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteOrganizationError {
@@ -4005,46 +4005,46 @@ impl DeleteOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteOrganizationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOrganizationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOrganizationErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOrganizationErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOrganizationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOrganizationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOrganizationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOrganizationErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOrganizationErrorKind::OrganizationNotEmptyException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationErrorKind::OrganizationNotEmptyException`.
     pub fn is_organization_not_empty_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOrganizationErrorKind::OrganizationNotEmptyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOrganizationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteOrganizationErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteOrganizationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4210,7 +4210,7 @@ pub enum DeleteOrganizationalUnitErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteOrganizationalUnitError {
@@ -4288,56 +4288,56 @@ impl DeleteOrganizationalUnitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteOrganizationalUnitErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationalUnitErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOrganizationalUnitErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOrganizationalUnitErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationalUnitErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOrganizationalUnitErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOrganizationalUnitErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationalUnitErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOrganizationalUnitErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOrganizationalUnitErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationalUnitErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOrganizationalUnitErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOrganizationalUnitErrorKind::OrganizationalUnitNotEmptyException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationalUnitErrorKind::OrganizationalUnitNotEmptyException`.
     pub fn is_organizational_unit_not_empty_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOrganizationalUnitErrorKind::OrganizationalUnitNotEmptyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOrganizationalUnitErrorKind::OrganizationalUnitNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationalUnitErrorKind::OrganizationalUnitNotFoundException`.
     pub fn is_organizational_unit_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOrganizationalUnitErrorKind::OrganizationalUnitNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOrganizationalUnitErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationalUnitErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOrganizationalUnitErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOrganizationalUnitErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationalUnitErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4513,7 +4513,7 @@ pub enum DeletePolicyErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePolicyError {
@@ -4584,51 +4584,51 @@ impl DeletePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeletePolicyErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePolicyErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePolicyErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeletePolicyErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::PolicyInUseException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::PolicyInUseException`.
     pub fn is_policy_in_use_exception(&self) -> bool {
         matches!(&self.kind, DeletePolicyErrorKind::PolicyInUseException(_))
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::PolicyNotFoundException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::PolicyNotFoundException`.
     pub fn is_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePolicyErrorKind::PolicyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeletePolicyErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePolicyErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePolicyErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `DeletePolicyErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4967,7 +4967,7 @@ pub enum DeregisterDelegatedAdministratorErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterDelegatedAdministratorError {
@@ -5060,70 +5060,70 @@ impl DeregisterDelegatedAdministratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterDelegatedAdministratorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeregisterDelegatedAdministratorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterDelegatedAdministratorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterDelegatedAdministratorErrorKind::AccountNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterDelegatedAdministratorErrorKind::AccountNotFoundException`.
     pub fn is_account_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterDelegatedAdministratorErrorKind::AccountNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterDelegatedAdministratorErrorKind::AccountNotRegisteredException`.
+    /// Returns `true` if the error kind is `DeregisterDelegatedAdministratorErrorKind::AccountNotRegisteredException`.
     pub fn is_account_not_registered_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterDelegatedAdministratorErrorKind::AccountNotRegisteredException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterDelegatedAdministratorErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `DeregisterDelegatedAdministratorErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterDelegatedAdministratorErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterDelegatedAdministratorErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeregisterDelegatedAdministratorErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterDelegatedAdministratorErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterDelegatedAdministratorErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `DeregisterDelegatedAdministratorErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterDelegatedAdministratorErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterDelegatedAdministratorErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeregisterDelegatedAdministratorErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterDelegatedAdministratorErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterDelegatedAdministratorErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeregisterDelegatedAdministratorErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterDelegatedAdministratorErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterDelegatedAdministratorErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeregisterDelegatedAdministratorErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterDelegatedAdministratorErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterDelegatedAdministratorErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `DeregisterDelegatedAdministratorErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5305,7 +5305,7 @@ pub enum DescribeAccountErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccountError {
@@ -5373,39 +5373,39 @@ impl DescribeAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAccountErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeAccountErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccountErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccountErrorKind::AccountNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAccountErrorKind::AccountNotFoundException`.
     pub fn is_account_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccountErrorKind::AccountNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccountErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `DescribeAccountErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccountErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccountErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeAccountErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccountErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccountErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DescribeAccountErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DescribeAccountErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DescribeAccountErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeAccountErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5566,7 +5566,7 @@ pub enum DescribeCreateAccountStatusErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCreateAccountStatusError {
@@ -5641,49 +5641,49 @@ impl DescribeCreateAccountStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCreateAccountStatusErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeCreateAccountStatusErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCreateAccountStatusErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCreateAccountStatusErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `DescribeCreateAccountStatusErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCreateAccountStatusErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCreateAccountStatusErrorKind::CreateAccountStatusNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeCreateAccountStatusErrorKind::CreateAccountStatusNotFoundException`.
     pub fn is_create_account_status_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCreateAccountStatusErrorKind::CreateAccountStatusNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCreateAccountStatusErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeCreateAccountStatusErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCreateAccountStatusErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCreateAccountStatusErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DescribeCreateAccountStatusErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCreateAccountStatusErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCreateAccountStatusErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeCreateAccountStatusErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCreateAccountStatusErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCreateAccountStatusErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `DescribeCreateAccountStatusErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6025,7 +6025,7 @@ pub enum DescribeEffectivePolicyErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEffectivePolicyError {
@@ -6102,63 +6102,63 @@ impl DescribeEffectivePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEffectivePolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeEffectivePolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEffectivePolicyErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEffectivePolicyErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `DescribeEffectivePolicyErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEffectivePolicyErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEffectivePolicyErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `DescribeEffectivePolicyErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEffectivePolicyErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEffectivePolicyErrorKind::EffectivePolicyNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeEffectivePolicyErrorKind::EffectivePolicyNotFoundException`.
     pub fn is_effective_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEffectivePolicyErrorKind::EffectivePolicyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEffectivePolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeEffectivePolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEffectivePolicyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEffectivePolicyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DescribeEffectivePolicyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEffectivePolicyErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEffectivePolicyErrorKind::TargetNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeEffectivePolicyErrorKind::TargetNotFoundException`.
     pub fn is_target_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEffectivePolicyErrorKind::TargetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEffectivePolicyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeEffectivePolicyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEffectivePolicyErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEffectivePolicyErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `DescribeEffectivePolicyErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6325,7 +6325,7 @@ pub enum DescribeHandshakeErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeHandshakeError {
@@ -6393,39 +6393,39 @@ impl DescribeHandshakeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeHandshakeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeHandshakeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHandshakeErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHandshakeErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DescribeHandshakeErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHandshakeErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHandshakeErrorKind::HandshakeNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeHandshakeErrorKind::HandshakeNotFoundException`.
     pub fn is_handshake_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHandshakeErrorKind::HandshakeNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHandshakeErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeHandshakeErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHandshakeErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHandshakeErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DescribeHandshakeErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DescribeHandshakeErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DescribeHandshakeErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeHandshakeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6481,7 +6481,7 @@ pub enum DescribeOrganizationErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOrganizationError {
@@ -6550,35 +6550,35 @@ impl DescribeOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeOrganizationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6738,7 +6738,7 @@ pub enum DescribeOrganizationalUnitErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOrganizationalUnitError {
@@ -6810,42 +6810,42 @@ impl DescribeOrganizationalUnitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeOrganizationalUnitErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationalUnitErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationalUnitErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationalUnitErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationalUnitErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationalUnitErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationalUnitErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationalUnitErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationalUnitErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationalUnitErrorKind::OrganizationalUnitNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationalUnitErrorKind::OrganizationalUnitNotFoundException`.
     pub fn is_organizational_unit_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationalUnitErrorKind::OrganizationalUnitNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationalUnitErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationalUnitErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationalUnitErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationalUnitErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationalUnitErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7009,7 +7009,7 @@ pub enum DescribePolicyErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePolicyError {
@@ -7078,46 +7078,46 @@ impl DescribePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribePolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePolicyErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePolicyErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `DescribePolicyErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePolicyErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribePolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePolicyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePolicyErrorKind::PolicyNotFoundException`.
+    /// Returns `true` if the error kind is `DescribePolicyErrorKind::PolicyNotFoundException`.
     pub fn is_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePolicyErrorKind::PolicyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePolicyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DescribePolicyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DescribePolicyErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DescribePolicyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribePolicyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePolicyErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePolicyErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `DescribePolicyErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7458,7 +7458,7 @@ pub enum DetachPolicyErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachPolicyError {
@@ -7532,75 +7532,75 @@ impl DetachPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DetachPolicyErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachPolicyErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachPolicyErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachPolicyErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DetachPolicyErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::PolicyChangesInProgressException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::PolicyChangesInProgressException`.
     pub fn is_policy_changes_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachPolicyErrorKind::PolicyChangesInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::PolicyNotAttachedException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::PolicyNotAttachedException`.
     pub fn is_policy_not_attached_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachPolicyErrorKind::PolicyNotAttachedException(_)
         )
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::PolicyNotFoundException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::PolicyNotFoundException`.
     pub fn is_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachPolicyErrorKind::PolicyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DetachPolicyErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::TargetNotFoundException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::TargetNotFoundException`.
     pub fn is_target_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachPolicyErrorKind::TargetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachPolicyErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7936,7 +7936,7 @@ pub enum DisableAWSServiceAccessErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableAWSServiceAccessError {
@@ -8012,56 +8012,56 @@ impl DisableAWSServiceAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableAWSServiceAccessErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisableAWSServiceAccessErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableAWSServiceAccessErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisableAWSServiceAccessErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `DisableAWSServiceAccessErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableAWSServiceAccessErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DisableAWSServiceAccessErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DisableAWSServiceAccessErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableAWSServiceAccessErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DisableAWSServiceAccessErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `DisableAWSServiceAccessErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableAWSServiceAccessErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `DisableAWSServiceAccessErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DisableAWSServiceAccessErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableAWSServiceAccessErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DisableAWSServiceAccessErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DisableAWSServiceAccessErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableAWSServiceAccessErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DisableAWSServiceAccessErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DisableAWSServiceAccessErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableAWSServiceAccessErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DisableAWSServiceAccessErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `DisableAWSServiceAccessErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8410,7 +8410,7 @@ pub enum DisablePolicyTypeErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisablePolicyTypeError {
@@ -8483,74 +8483,74 @@ impl DisablePolicyTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisablePolicyTypeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisablePolicyTypeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisablePolicyTypeErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisablePolicyTypeErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `DisablePolicyTypeErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisablePolicyTypeErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DisablePolicyTypeErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DisablePolicyTypeErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisablePolicyTypeErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DisablePolicyTypeErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `DisablePolicyTypeErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisablePolicyTypeErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `DisablePolicyTypeErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DisablePolicyTypeErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisablePolicyTypeErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DisablePolicyTypeErrorKind::PolicyChangesInProgressException`.
+    /// Returns `true` if the error kind is `DisablePolicyTypeErrorKind::PolicyChangesInProgressException`.
     pub fn is_policy_changes_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisablePolicyTypeErrorKind::PolicyChangesInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DisablePolicyTypeErrorKind::PolicyTypeNotEnabledException`.
+    /// Returns `true` if the error kind is `DisablePolicyTypeErrorKind::PolicyTypeNotEnabledException`.
     pub fn is_policy_type_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisablePolicyTypeErrorKind::PolicyTypeNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `DisablePolicyTypeErrorKind::RootNotFoundException`.
+    /// Returns `true` if the error kind is `DisablePolicyTypeErrorKind::RootNotFoundException`.
     pub fn is_root_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisablePolicyTypeErrorKind::RootNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisablePolicyTypeErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DisablePolicyTypeErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DisablePolicyTypeErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DisablePolicyTypeErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DisablePolicyTypeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisablePolicyTypeErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `DisablePolicyTypeErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `DisablePolicyTypeErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8773,7 +8773,7 @@ pub enum EnableAllFeaturesErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableAllFeaturesError {
@@ -8844,46 +8844,46 @@ impl EnableAllFeaturesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableAllFeaturesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `EnableAllFeaturesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableAllFeaturesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `EnableAllFeaturesErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `EnableAllFeaturesErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableAllFeaturesErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `EnableAllFeaturesErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `EnableAllFeaturesErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableAllFeaturesErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `EnableAllFeaturesErrorKind::HandshakeConstraintViolationException`.
+    /// Returns `true` if the error kind is `EnableAllFeaturesErrorKind::HandshakeConstraintViolationException`.
     pub fn is_handshake_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableAllFeaturesErrorKind::HandshakeConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `EnableAllFeaturesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `EnableAllFeaturesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableAllFeaturesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `EnableAllFeaturesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `EnableAllFeaturesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, EnableAllFeaturesErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `EnableAllFeaturesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `EnableAllFeaturesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9216,7 +9216,7 @@ pub enum EnableAWSServiceAccessErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableAWSServiceAccessError {
@@ -9292,56 +9292,56 @@ impl EnableAWSServiceAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableAWSServiceAccessErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `EnableAWSServiceAccessErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableAWSServiceAccessErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `EnableAWSServiceAccessErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `EnableAWSServiceAccessErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableAWSServiceAccessErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `EnableAWSServiceAccessErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `EnableAWSServiceAccessErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableAWSServiceAccessErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `EnableAWSServiceAccessErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `EnableAWSServiceAccessErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableAWSServiceAccessErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `EnableAWSServiceAccessErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `EnableAWSServiceAccessErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableAWSServiceAccessErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `EnableAWSServiceAccessErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `EnableAWSServiceAccessErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableAWSServiceAccessErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `EnableAWSServiceAccessErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `EnableAWSServiceAccessErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableAWSServiceAccessErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `EnableAWSServiceAccessErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `EnableAWSServiceAccessErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9694,7 +9694,7 @@ pub enum EnablePolicyTypeErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnablePolicyTypeError {
@@ -9770,81 +9770,81 @@ impl EnablePolicyTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnablePolicyTypeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `EnablePolicyTypeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnablePolicyTypeErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `EnablePolicyTypeErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `EnablePolicyTypeErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnablePolicyTypeErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `EnablePolicyTypeErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `EnablePolicyTypeErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnablePolicyTypeErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `EnablePolicyTypeErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `EnablePolicyTypeErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnablePolicyTypeErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `EnablePolicyTypeErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `EnablePolicyTypeErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnablePolicyTypeErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `EnablePolicyTypeErrorKind::PolicyChangesInProgressException`.
+    /// Returns `true` if the error kind is `EnablePolicyTypeErrorKind::PolicyChangesInProgressException`.
     pub fn is_policy_changes_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnablePolicyTypeErrorKind::PolicyChangesInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `EnablePolicyTypeErrorKind::PolicyTypeAlreadyEnabledException`.
+    /// Returns `true` if the error kind is `EnablePolicyTypeErrorKind::PolicyTypeAlreadyEnabledException`.
     pub fn is_policy_type_already_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnablePolicyTypeErrorKind::PolicyTypeAlreadyEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `EnablePolicyTypeErrorKind::PolicyTypeNotAvailableForOrganizationException`.
+    /// Returns `true` if the error kind is `EnablePolicyTypeErrorKind::PolicyTypeNotAvailableForOrganizationException`.
     pub fn is_policy_type_not_available_for_organization_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnablePolicyTypeErrorKind::PolicyTypeNotAvailableForOrganizationException(_)
         )
     }
-    /// Returns true if the error kind is `EnablePolicyTypeErrorKind::RootNotFoundException`.
+    /// Returns `true` if the error kind is `EnablePolicyTypeErrorKind::RootNotFoundException`.
     pub fn is_root_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnablePolicyTypeErrorKind::RootNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `EnablePolicyTypeErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `EnablePolicyTypeErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, EnablePolicyTypeErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `EnablePolicyTypeErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `EnablePolicyTypeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnablePolicyTypeErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `EnablePolicyTypeErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `EnablePolicyTypeErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10256,7 +10256,7 @@ pub enum InviteAccountToOrganizationErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InviteAccountToOrganizationError {
@@ -10343,77 +10343,77 @@ impl InviteAccountToOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InviteAccountToOrganizationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `InviteAccountToOrganizationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             InviteAccountToOrganizationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `InviteAccountToOrganizationErrorKind::AccountOwnerNotVerifiedException`.
+    /// Returns `true` if the error kind is `InviteAccountToOrganizationErrorKind::AccountOwnerNotVerifiedException`.
     pub fn is_account_owner_not_verified_exception(&self) -> bool {
         matches!(
             &self.kind,
             InviteAccountToOrganizationErrorKind::AccountOwnerNotVerifiedException(_)
         )
     }
-    /// Returns true if the error kind is `InviteAccountToOrganizationErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `InviteAccountToOrganizationErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             InviteAccountToOrganizationErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `InviteAccountToOrganizationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `InviteAccountToOrganizationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             InviteAccountToOrganizationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `InviteAccountToOrganizationErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `InviteAccountToOrganizationErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             InviteAccountToOrganizationErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `InviteAccountToOrganizationErrorKind::DuplicateHandshakeException`.
+    /// Returns `true` if the error kind is `InviteAccountToOrganizationErrorKind::DuplicateHandshakeException`.
     pub fn is_duplicate_handshake_exception(&self) -> bool {
         matches!(
             &self.kind,
             InviteAccountToOrganizationErrorKind::DuplicateHandshakeException(_)
         )
     }
-    /// Returns true if the error kind is `InviteAccountToOrganizationErrorKind::FinalizingOrganizationException`.
+    /// Returns `true` if the error kind is `InviteAccountToOrganizationErrorKind::FinalizingOrganizationException`.
     pub fn is_finalizing_organization_exception(&self) -> bool {
         matches!(
             &self.kind,
             InviteAccountToOrganizationErrorKind::FinalizingOrganizationException(_)
         )
     }
-    /// Returns true if the error kind is `InviteAccountToOrganizationErrorKind::HandshakeConstraintViolationException`.
+    /// Returns `true` if the error kind is `InviteAccountToOrganizationErrorKind::HandshakeConstraintViolationException`.
     pub fn is_handshake_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             InviteAccountToOrganizationErrorKind::HandshakeConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `InviteAccountToOrganizationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `InviteAccountToOrganizationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             InviteAccountToOrganizationErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `InviteAccountToOrganizationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `InviteAccountToOrganizationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             InviteAccountToOrganizationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `InviteAccountToOrganizationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `InviteAccountToOrganizationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10768,7 +10768,7 @@ pub enum LeaveOrganizationErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for LeaveOrganizationError {
@@ -10841,60 +10841,60 @@ impl LeaveOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `LeaveOrganizationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `LeaveOrganizationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             LeaveOrganizationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `LeaveOrganizationErrorKind::AccountNotFoundException`.
+    /// Returns `true` if the error kind is `LeaveOrganizationErrorKind::AccountNotFoundException`.
     pub fn is_account_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             LeaveOrganizationErrorKind::AccountNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `LeaveOrganizationErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `LeaveOrganizationErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             LeaveOrganizationErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `LeaveOrganizationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `LeaveOrganizationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             LeaveOrganizationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `LeaveOrganizationErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `LeaveOrganizationErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             LeaveOrganizationErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `LeaveOrganizationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `LeaveOrganizationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             LeaveOrganizationErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `LeaveOrganizationErrorKind::MasterCannotLeaveOrganizationException`.
+    /// Returns `true` if the error kind is `LeaveOrganizationErrorKind::MasterCannotLeaveOrganizationException`.
     pub fn is_master_cannot_leave_organization_exception(&self) -> bool {
         matches!(
             &self.kind,
             LeaveOrganizationErrorKind::MasterCannotLeaveOrganizationException(_)
         )
     }
-    /// Returns true if the error kind is `LeaveOrganizationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `LeaveOrganizationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, LeaveOrganizationErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `LeaveOrganizationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `LeaveOrganizationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11055,7 +11055,7 @@ pub enum ListAccountsErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAccountsError {
@@ -11122,26 +11122,26 @@ impl ListAccountsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAccountsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAccountsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListAccountsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListAccountsErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `ListAccountsErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountsErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListAccountsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, ListAccountsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `ListAccountsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListAccountsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListAccountsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ListAccountsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListAccountsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11298,7 +11298,7 @@ pub enum ListAccountsForParentErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAccountsForParentError {
@@ -11368,42 +11368,42 @@ impl ListAccountsForParentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAccountsForParentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAccountsForParentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountsForParentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountsForParentErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `ListAccountsForParentErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountsForParentErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountsForParentErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListAccountsForParentErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountsForParentErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountsForParentErrorKind::ParentNotFoundException`.
+    /// Returns `true` if the error kind is `ListAccountsForParentErrorKind::ParentNotFoundException`.
     pub fn is_parent_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountsForParentErrorKind::ParentNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountsForParentErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListAccountsForParentErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccountsForParentErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccountsForParentErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListAccountsForParentErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11732,7 +11732,7 @@ pub enum ListAWSServiceAccessForOrganizationErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAWSServiceAccessForOrganizationError {
@@ -11816,49 +11816,49 @@ impl ListAWSServiceAccessForOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAWSServiceAccessForOrganizationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAWSServiceAccessForOrganizationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAWSServiceAccessForOrganizationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAWSServiceAccessForOrganizationErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `ListAWSServiceAccessForOrganizationErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAWSServiceAccessForOrganizationErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ListAWSServiceAccessForOrganizationErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `ListAWSServiceAccessForOrganizationErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAWSServiceAccessForOrganizationErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `ListAWSServiceAccessForOrganizationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListAWSServiceAccessForOrganizationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAWSServiceAccessForOrganizationErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListAWSServiceAccessForOrganizationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListAWSServiceAccessForOrganizationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAWSServiceAccessForOrganizationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListAWSServiceAccessForOrganizationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListAWSServiceAccessForOrganizationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAWSServiceAccessForOrganizationErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListAWSServiceAccessForOrganizationErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `ListAWSServiceAccessForOrganizationErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12031,7 +12031,7 @@ pub enum ListChildrenErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListChildrenError {
@@ -12099,33 +12099,33 @@ impl ListChildrenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListChildrenErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListChildrenErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListChildrenErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListChildrenErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `ListChildrenErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChildrenErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ListChildrenErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListChildrenErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, ListChildrenErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `ListChildrenErrorKind::ParentNotFoundException`.
+    /// Returns `true` if the error kind is `ListChildrenErrorKind::ParentNotFoundException`.
     pub fn is_parent_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChildrenErrorKind::ParentNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListChildrenErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListChildrenErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListChildrenErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ListChildrenErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListChildrenErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12283,7 +12283,7 @@ pub enum ListCreateAccountStatusErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCreateAccountStatusError {
@@ -12355,42 +12355,42 @@ impl ListCreateAccountStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCreateAccountStatusErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListCreateAccountStatusErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCreateAccountStatusErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListCreateAccountStatusErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `ListCreateAccountStatusErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCreateAccountStatusErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ListCreateAccountStatusErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListCreateAccountStatusErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCreateAccountStatusErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListCreateAccountStatusErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListCreateAccountStatusErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCreateAccountStatusErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListCreateAccountStatusErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListCreateAccountStatusErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCreateAccountStatusErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListCreateAccountStatusErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `ListCreateAccountStatusErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12721,7 +12721,7 @@ pub enum ListDelegatedAdministratorsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDelegatedAdministratorsError {
@@ -12796,49 +12796,49 @@ impl ListDelegatedAdministratorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDelegatedAdministratorsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListDelegatedAdministratorsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDelegatedAdministratorsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListDelegatedAdministratorsErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `ListDelegatedAdministratorsErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDelegatedAdministratorsErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ListDelegatedAdministratorsErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `ListDelegatedAdministratorsErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDelegatedAdministratorsErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `ListDelegatedAdministratorsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListDelegatedAdministratorsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDelegatedAdministratorsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListDelegatedAdministratorsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListDelegatedAdministratorsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDelegatedAdministratorsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListDelegatedAdministratorsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListDelegatedAdministratorsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDelegatedAdministratorsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListDelegatedAdministratorsErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `ListDelegatedAdministratorsErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13178,7 +13178,7 @@ pub enum ListDelegatedServicesForAccountErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDelegatedServicesForAccountError {
@@ -13268,63 +13268,63 @@ impl ListDelegatedServicesForAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDelegatedServicesForAccountErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListDelegatedServicesForAccountErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDelegatedServicesForAccountErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListDelegatedServicesForAccountErrorKind::AccountNotFoundException`.
+    /// Returns `true` if the error kind is `ListDelegatedServicesForAccountErrorKind::AccountNotFoundException`.
     pub fn is_account_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDelegatedServicesForAccountErrorKind::AccountNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListDelegatedServicesForAccountErrorKind::AccountNotRegisteredException`.
+    /// Returns `true` if the error kind is `ListDelegatedServicesForAccountErrorKind::AccountNotRegisteredException`.
     pub fn is_account_not_registered_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDelegatedServicesForAccountErrorKind::AccountNotRegisteredException(_)
         )
     }
-    /// Returns true if the error kind is `ListDelegatedServicesForAccountErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `ListDelegatedServicesForAccountErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDelegatedServicesForAccountErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ListDelegatedServicesForAccountErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `ListDelegatedServicesForAccountErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDelegatedServicesForAccountErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `ListDelegatedServicesForAccountErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListDelegatedServicesForAccountErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDelegatedServicesForAccountErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListDelegatedServicesForAccountErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListDelegatedServicesForAccountErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDelegatedServicesForAccountErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListDelegatedServicesForAccountErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListDelegatedServicesForAccountErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDelegatedServicesForAccountErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListDelegatedServicesForAccountErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `ListDelegatedServicesForAccountErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13495,7 +13495,7 @@ pub enum ListHandshakesForAccountErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListHandshakesForAccountError {
@@ -13564,35 +13564,35 @@ impl ListHandshakesForAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListHandshakesForAccountErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListHandshakesForAccountErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListHandshakesForAccountErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListHandshakesForAccountErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `ListHandshakesForAccountErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListHandshakesForAccountErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `ListHandshakesForAccountErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListHandshakesForAccountErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListHandshakesForAccountErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListHandshakesForAccountErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListHandshakesForAccountErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListHandshakesForAccountErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListHandshakesForAccountErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListHandshakesForAccountErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13752,7 +13752,7 @@ pub enum ListHandshakesForOrganizationErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListHandshakesForOrganizationError {
@@ -13829,42 +13829,42 @@ impl ListHandshakesForOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListHandshakesForOrganizationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListHandshakesForOrganizationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListHandshakesForOrganizationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListHandshakesForOrganizationErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `ListHandshakesForOrganizationErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListHandshakesForOrganizationErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ListHandshakesForOrganizationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `ListHandshakesForOrganizationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListHandshakesForOrganizationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `ListHandshakesForOrganizationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListHandshakesForOrganizationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListHandshakesForOrganizationErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListHandshakesForOrganizationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListHandshakesForOrganizationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListHandshakesForOrganizationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListHandshakesForOrganizationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListHandshakesForOrganizationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14028,7 +14028,7 @@ pub enum ListOrganizationalUnitsForParentErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOrganizationalUnitsForParentError {
@@ -14109,42 +14109,42 @@ impl ListOrganizationalUnitsForParentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOrganizationalUnitsForParentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListOrganizationalUnitsForParentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOrganizationalUnitsForParentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListOrganizationalUnitsForParentErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `ListOrganizationalUnitsForParentErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOrganizationalUnitsForParentErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ListOrganizationalUnitsForParentErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListOrganizationalUnitsForParentErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOrganizationalUnitsForParentErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListOrganizationalUnitsForParentErrorKind::ParentNotFoundException`.
+    /// Returns `true` if the error kind is `ListOrganizationalUnitsForParentErrorKind::ParentNotFoundException`.
     pub fn is_parent_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOrganizationalUnitsForParentErrorKind::ParentNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListOrganizationalUnitsForParentErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListOrganizationalUnitsForParentErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOrganizationalUnitsForParentErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListOrganizationalUnitsForParentErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListOrganizationalUnitsForParentErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14313,7 +14313,7 @@ pub enum ListParentsErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListParentsError {
@@ -14381,30 +14381,30 @@ impl ListParentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListParentsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListParentsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListParentsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListParentsErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `ListParentsErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListParentsErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ListParentsErrorKind::ChildNotFoundException`.
+    /// Returns `true` if the error kind is `ListParentsErrorKind::ChildNotFoundException`.
     pub fn is_child_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListParentsErrorKind::ChildNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListParentsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListParentsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, ListParentsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `ListParentsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListParentsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListParentsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ListParentsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListParentsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14562,7 +14562,7 @@ pub enum ListPoliciesErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPoliciesError {
@@ -14630,33 +14630,33 @@ impl ListPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPoliciesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListPoliciesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListPoliciesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListPoliciesErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `ListPoliciesErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPoliciesErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ListPoliciesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListPoliciesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, ListPoliciesErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `ListPoliciesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListPoliciesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListPoliciesErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ListPoliciesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListPoliciesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPoliciesErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListPoliciesErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `ListPoliciesErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14817,7 +14817,7 @@ pub enum ListPoliciesForTargetErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPoliciesForTargetError {
@@ -14890,49 +14890,49 @@ impl ListPoliciesForTargetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPoliciesForTargetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListPoliciesForTargetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPoliciesForTargetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListPoliciesForTargetErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `ListPoliciesForTargetErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPoliciesForTargetErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ListPoliciesForTargetErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListPoliciesForTargetErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPoliciesForTargetErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListPoliciesForTargetErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListPoliciesForTargetErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPoliciesForTargetErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListPoliciesForTargetErrorKind::TargetNotFoundException`.
+    /// Returns `true` if the error kind is `ListPoliciesForTargetErrorKind::TargetNotFoundException`.
     pub fn is_target_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPoliciesForTargetErrorKind::TargetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListPoliciesForTargetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListPoliciesForTargetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPoliciesForTargetErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListPoliciesForTargetErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `ListPoliciesForTargetErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15091,7 +15091,7 @@ pub enum ListRootsErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRootsError {
@@ -15158,26 +15158,26 @@ impl ListRootsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRootsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListRootsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListRootsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListRootsErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `ListRootsErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRootsErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ListRootsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListRootsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, ListRootsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `ListRootsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListRootsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ListRootsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ListRootsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListRootsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, ListRootsErrorKind::TooManyRequestsException(_))
     }
@@ -15332,7 +15332,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -15402,42 +15402,42 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::TargetNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::TargetNotFoundException`.
     pub fn is_target_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::TargetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15597,7 +15597,7 @@ pub enum ListTargetsForPolicyErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTargetsForPolicyError {
@@ -15668,49 +15668,49 @@ impl ListTargetsForPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTargetsForPolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTargetsForPolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTargetsForPolicyErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTargetsForPolicyErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `ListTargetsForPolicyErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTargetsForPolicyErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `ListTargetsForPolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListTargetsForPolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTargetsForPolicyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListTargetsForPolicyErrorKind::PolicyNotFoundException`.
+    /// Returns `true` if the error kind is `ListTargetsForPolicyErrorKind::PolicyNotFoundException`.
     pub fn is_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTargetsForPolicyErrorKind::PolicyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTargetsForPolicyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ListTargetsForPolicyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTargetsForPolicyErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListTargetsForPolicyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListTargetsForPolicyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTargetsForPolicyErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListTargetsForPolicyErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `ListTargetsForPolicyErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15884,7 +15884,7 @@ pub enum MoveAccountErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for MoveAccountError {
@@ -15956,61 +15956,61 @@ impl MoveAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `MoveAccountErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `MoveAccountErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, MoveAccountErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `MoveAccountErrorKind::AccountNotFoundException`.
+    /// Returns `true` if the error kind is `MoveAccountErrorKind::AccountNotFoundException`.
     pub fn is_account_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             MoveAccountErrorKind::AccountNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `MoveAccountErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `MoveAccountErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             MoveAccountErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `MoveAccountErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `MoveAccountErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             MoveAccountErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `MoveAccountErrorKind::DestinationParentNotFoundException`.
+    /// Returns `true` if the error kind is `MoveAccountErrorKind::DestinationParentNotFoundException`.
     pub fn is_destination_parent_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             MoveAccountErrorKind::DestinationParentNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `MoveAccountErrorKind::DuplicateAccountException`.
+    /// Returns `true` if the error kind is `MoveAccountErrorKind::DuplicateAccountException`.
     pub fn is_duplicate_account_exception(&self) -> bool {
         matches!(
             &self.kind,
             MoveAccountErrorKind::DuplicateAccountException(_)
         )
     }
-    /// Returns true if the error kind is `MoveAccountErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `MoveAccountErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, MoveAccountErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `MoveAccountErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `MoveAccountErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, MoveAccountErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `MoveAccountErrorKind::SourceParentNotFoundException`.
+    /// Returns `true` if the error kind is `MoveAccountErrorKind::SourceParentNotFoundException`.
     pub fn is_source_parent_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             MoveAccountErrorKind::SourceParentNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `MoveAccountErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `MoveAccountErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16351,7 +16351,7 @@ pub enum RegisterDelegatedAdministratorErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterDelegatedAdministratorError {
@@ -16440,70 +16440,70 @@ impl RegisterDelegatedAdministratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterDelegatedAdministratorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RegisterDelegatedAdministratorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDelegatedAdministratorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDelegatedAdministratorErrorKind::AccountAlreadyRegisteredException`.
+    /// Returns `true` if the error kind is `RegisterDelegatedAdministratorErrorKind::AccountAlreadyRegisteredException`.
     pub fn is_account_already_registered_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDelegatedAdministratorErrorKind::AccountAlreadyRegisteredException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDelegatedAdministratorErrorKind::AccountNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterDelegatedAdministratorErrorKind::AccountNotFoundException`.
     pub fn is_account_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDelegatedAdministratorErrorKind::AccountNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDelegatedAdministratorErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `RegisterDelegatedAdministratorErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDelegatedAdministratorErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDelegatedAdministratorErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `RegisterDelegatedAdministratorErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDelegatedAdministratorErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDelegatedAdministratorErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `RegisterDelegatedAdministratorErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDelegatedAdministratorErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDelegatedAdministratorErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `RegisterDelegatedAdministratorErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDelegatedAdministratorErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDelegatedAdministratorErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `RegisterDelegatedAdministratorErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDelegatedAdministratorErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDelegatedAdministratorErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RegisterDelegatedAdministratorErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDelegatedAdministratorErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDelegatedAdministratorErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `RegisterDelegatedAdministratorErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16857,7 +16857,7 @@ pub enum RemoveAccountFromOrganizationErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveAccountFromOrganizationError {
@@ -16943,63 +16943,63 @@ impl RemoveAccountFromOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveAccountFromOrganizationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RemoveAccountFromOrganizationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAccountFromOrganizationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAccountFromOrganizationErrorKind::AccountNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveAccountFromOrganizationErrorKind::AccountNotFoundException`.
     pub fn is_account_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAccountFromOrganizationErrorKind::AccountNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAccountFromOrganizationErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `RemoveAccountFromOrganizationErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAccountFromOrganizationErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAccountFromOrganizationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `RemoveAccountFromOrganizationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAccountFromOrganizationErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAccountFromOrganizationErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `RemoveAccountFromOrganizationErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAccountFromOrganizationErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAccountFromOrganizationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `RemoveAccountFromOrganizationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAccountFromOrganizationErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAccountFromOrganizationErrorKind::MasterCannotLeaveOrganizationException`.
+    /// Returns `true` if the error kind is `RemoveAccountFromOrganizationErrorKind::MasterCannotLeaveOrganizationException`.
     pub fn is_master_cannot_leave_organization_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAccountFromOrganizationErrorKind::MasterCannotLeaveOrganizationException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAccountFromOrganizationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `RemoveAccountFromOrganizationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAccountFromOrganizationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAccountFromOrganizationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RemoveAccountFromOrganizationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17345,7 +17345,7 @@ pub enum TagResourceErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -17415,44 +17415,44 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TargetNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TargetNotFoundException`.
     pub fn is_target_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TargetNotFoundException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17785,7 +17785,7 @@ pub enum UntagResourceErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -17855,47 +17855,47 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TargetNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TargetNotFoundException`.
     pub fn is_target_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::TargetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18061,7 +18061,7 @@ pub enum UpdateOrganizationalUnitErrorKind {
     /// <i>AWS Organizations User Guide.</i>
     /// </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateOrganizationalUnitError {
@@ -18139,56 +18139,56 @@ impl UpdateOrganizationalUnitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateOrganizationalUnitErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateOrganizationalUnitErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOrganizationalUnitErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOrganizationalUnitErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `UpdateOrganizationalUnitErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOrganizationalUnitErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOrganizationalUnitErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateOrganizationalUnitErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOrganizationalUnitErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOrganizationalUnitErrorKind::DuplicateOrganizationalUnitException`.
+    /// Returns `true` if the error kind is `UpdateOrganizationalUnitErrorKind::DuplicateOrganizationalUnitException`.
     pub fn is_duplicate_organizational_unit_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOrganizationalUnitErrorKind::DuplicateOrganizationalUnitException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOrganizationalUnitErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateOrganizationalUnitErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOrganizationalUnitErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOrganizationalUnitErrorKind::OrganizationalUnitNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateOrganizationalUnitErrorKind::OrganizationalUnitNotFoundException`.
     pub fn is_organizational_unit_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOrganizationalUnitErrorKind::OrganizationalUnitNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOrganizationalUnitErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateOrganizationalUnitErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOrganizationalUnitErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOrganizationalUnitErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateOrganizationalUnitErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18541,7 +18541,7 @@ pub enum UpdatePolicyErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This action isn't available in the current AWS Region.</p>
     UnsupportedApiEndpointException(crate::error::UnsupportedApiEndpointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePolicyError {
@@ -18615,75 +18615,75 @@ impl UpdatePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdatePolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdatePolicyErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdatePolicyErrorKind::AwsOrganizationsNotInUseException`.
+    /// Returns `true` if the error kind is `UpdatePolicyErrorKind::AwsOrganizationsNotInUseException`.
     pub fn is_aws_organizations_not_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePolicyErrorKind::AwsOrganizationsNotInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePolicyErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdatePolicyErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePolicyErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePolicyErrorKind::ConstraintViolationException`.
+    /// Returns `true` if the error kind is `UpdatePolicyErrorKind::ConstraintViolationException`.
     pub fn is_constraint_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePolicyErrorKind::ConstraintViolationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePolicyErrorKind::DuplicatePolicyException`.
+    /// Returns `true` if the error kind is `UpdatePolicyErrorKind::DuplicatePolicyException`.
     pub fn is_duplicate_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePolicyErrorKind::DuplicatePolicyException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdatePolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, UpdatePolicyErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `UpdatePolicyErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `UpdatePolicyErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePolicyErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePolicyErrorKind::PolicyChangesInProgressException`.
+    /// Returns `true` if the error kind is `UpdatePolicyErrorKind::PolicyChangesInProgressException`.
     pub fn is_policy_changes_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePolicyErrorKind::PolicyChangesInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePolicyErrorKind::PolicyNotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePolicyErrorKind::PolicyNotFoundException`.
     pub fn is_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePolicyErrorKind::PolicyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePolicyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdatePolicyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, UpdatePolicyErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `UpdatePolicyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdatePolicyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePolicyErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePolicyErrorKind::UnsupportedApiEndpointException`.
+    /// Returns `true` if the error kind is `UpdatePolicyErrorKind::UnsupportedApiEndpointException`.
     pub fn is_unsupported_api_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,

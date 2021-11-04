@@ -22,7 +22,7 @@ pub enum CreateApplicationErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateApplicationError {
@@ -89,32 +89,32 @@ impl CreateApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateApplicationErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -158,7 +158,7 @@ pub enum CreateApplicationVersionErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateApplicationVersionError {
@@ -227,35 +227,35 @@ impl CreateApplicationVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateApplicationVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateApplicationVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationVersionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationVersionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateApplicationVersionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationVersionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationVersionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateApplicationVersionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationVersionErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationVersionErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateApplicationVersionErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationVersionErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationVersionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateApplicationVersionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -297,7 +297,7 @@ pub enum CreateCloudFormationChangeSetErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCloudFormationChangeSetError {
@@ -370,28 +370,28 @@ impl CreateCloudFormationChangeSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCloudFormationChangeSetErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateCloudFormationChangeSetErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCloudFormationChangeSetErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCloudFormationChangeSetErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateCloudFormationChangeSetErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCloudFormationChangeSetErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCloudFormationChangeSetErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateCloudFormationChangeSetErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCloudFormationChangeSetErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCloudFormationChangeSetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateCloudFormationChangeSetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -438,7 +438,7 @@ pub enum CreateCloudFormationTemplateErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCloudFormationTemplateError {
@@ -509,35 +509,35 @@ impl CreateCloudFormationTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCloudFormationTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateCloudFormationTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCloudFormationTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCloudFormationTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateCloudFormationTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCloudFormationTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCloudFormationTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateCloudFormationTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCloudFormationTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCloudFormationTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateCloudFormationTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCloudFormationTemplateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCloudFormationTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateCloudFormationTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -585,7 +585,7 @@ pub enum DeleteApplicationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApplicationError {
@@ -653,36 +653,36 @@ impl DeleteApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteApplicationErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteApplicationErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -727,7 +727,7 @@ pub enum GetApplicationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApplicationError {
@@ -794,26 +794,26 @@ impl GetApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetApplicationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetApplicationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetApplicationErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetApplicationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetApplicationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetApplicationErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetApplicationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetApplicationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetApplicationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetApplicationErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetApplicationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetApplicationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -857,7 +857,7 @@ pub enum GetApplicationPolicyErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApplicationPolicyError {
@@ -924,35 +924,35 @@ impl GetApplicationPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetApplicationPolicyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetApplicationPolicyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationPolicyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationPolicyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetApplicationPolicyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationPolicyErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationPolicyErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetApplicationPolicyErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationPolicyErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationPolicyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetApplicationPolicyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationPolicyErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationPolicyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetApplicationPolicyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -996,7 +996,7 @@ pub enum GetCloudFormationTemplateErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCloudFormationTemplateError {
@@ -1065,35 +1065,35 @@ impl GetCloudFormationTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCloudFormationTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetCloudFormationTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCloudFormationTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetCloudFormationTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetCloudFormationTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCloudFormationTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetCloudFormationTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetCloudFormationTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCloudFormationTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetCloudFormationTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetCloudFormationTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCloudFormationTemplateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCloudFormationTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetCloudFormationTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1139,7 +1139,7 @@ pub enum ListApplicationDependenciesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListApplicationDependenciesError {
@@ -1208,35 +1208,35 @@ impl ListApplicationDependenciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListApplicationDependenciesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListApplicationDependenciesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationDependenciesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationDependenciesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListApplicationDependenciesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationDependenciesErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationDependenciesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListApplicationDependenciesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationDependenciesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationDependenciesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListApplicationDependenciesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationDependenciesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationDependenciesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListApplicationDependenciesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1280,7 +1280,7 @@ pub enum ListApplicationsErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The resource (for example, an access policy statement) specified in the request doesn't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListApplicationsError {
@@ -1346,25 +1346,25 @@ impl ListApplicationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListApplicationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListApplicationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListApplicationsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListApplicationsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListApplicationsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListApplicationsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListApplicationsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListApplicationsErrorKind::NotFoundException(_))
     }
@@ -1404,7 +1404,7 @@ pub enum ListApplicationVersionsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListApplicationVersionsError {
@@ -1471,35 +1471,35 @@ impl ListApplicationVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListApplicationVersionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListApplicationVersionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationVersionsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationVersionsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListApplicationVersionsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationVersionsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationVersionsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListApplicationVersionsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationVersionsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationVersionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListApplicationVersionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationVersionsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationVersionsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListApplicationVersionsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1543,7 +1543,7 @@ pub enum PutApplicationPolicyErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutApplicationPolicyError {
@@ -1610,35 +1610,35 @@ impl PutApplicationPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutApplicationPolicyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutApplicationPolicyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutApplicationPolicyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutApplicationPolicyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutApplicationPolicyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutApplicationPolicyErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PutApplicationPolicyErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `PutApplicationPolicyErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutApplicationPolicyErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PutApplicationPolicyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutApplicationPolicyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutApplicationPolicyErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutApplicationPolicyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutApplicationPolicyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1682,7 +1682,7 @@ pub enum UnshareApplicationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UnshareApplicationError {
@@ -1749,35 +1749,35 @@ impl UnshareApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UnshareApplicationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UnshareApplicationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnshareApplicationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UnshareApplicationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UnshareApplicationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnshareApplicationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UnshareApplicationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UnshareApplicationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnshareApplicationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UnshareApplicationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UnshareApplicationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnshareApplicationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UnshareApplicationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UnshareApplicationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1823,7 +1823,7 @@ pub enum UpdateApplicationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client is sending more than the allowed number of requests per unit of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApplicationError {
@@ -1891,36 +1891,36 @@ impl UpdateApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateApplicationErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateApplicationErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateApplicationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateApplicationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

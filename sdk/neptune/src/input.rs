@@ -37,13 +37,13 @@ pub mod add_role_to_db_cluster_input {
             self
         }
         /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with.
-        /// For the list of supported feature names, see <a>DBEngineVersion</a>.</p>
+        /// For the list of supported feature names, see <a href="neptune/latest/userguide/api-other-apis.html#DBEngineVersion">DBEngineVersion</a>.</p>
         pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.feature_name = Some(input.into());
             self
         }
         /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with.
-        /// For the list of supported feature names, see <a>DBEngineVersion</a>.</p>
+        /// For the list of supported feature names, see <a href="neptune/latest/userguide/api-other-apis.html#DBEngineVersion">DBEngineVersion</a>.</p>
         pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.feature_name = input;
             self
@@ -70,7 +70,7 @@ pub type AddRoleToDbClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl AddRoleToDbClusterInput {
     /// Consumes the builder and constructs an Operation<[`AddRoleToDBCluster`](crate::operation::AddRoleToDBCluster)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -102,6 +102,7 @@ impl AddRoleToDbClusterInput {
             input: &crate::input::AddRoleToDbClusterInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -159,9 +160,10 @@ impl AddRoleToDbClusterInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -275,7 +277,7 @@ pub type AddSourceIdentifierToSubscriptionInputOperationRetryAlias = aws_http::A
 impl AddSourceIdentifierToSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`AddSourceIdentifierToSubscription`](crate::operation::AddSourceIdentifierToSubscription)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -307,6 +309,7 @@ impl AddSourceIdentifierToSubscriptionInput {
             input: &crate::input::AddSourceIdentifierToSubscriptionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -362,9 +365,10 @@ impl AddSourceIdentifierToSubscriptionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -447,7 +451,7 @@ pub type AddTagsToResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl AddTagsToResourceInput {
     /// Consumes the builder and constructs an Operation<[`AddTagsToResource`](crate::operation::AddTagsToResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -479,6 +483,7 @@ impl AddTagsToResourceInput {
             input: &crate::input::AddTagsToResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -536,9 +541,10 @@ impl AddTagsToResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -665,7 +671,7 @@ pub type ApplyPendingMaintenanceActionInputOperationRetryAlias = aws_http::AwsEr
 impl ApplyPendingMaintenanceActionInput {
     /// Consumes the builder and constructs an Operation<[`ApplyPendingMaintenanceAction`](crate::operation::ApplyPendingMaintenanceAction)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -697,6 +703,7 @@ impl ApplyPendingMaintenanceActionInput {
             input: &crate::input::ApplyPendingMaintenanceActionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -752,9 +759,10 @@ impl ApplyPendingMaintenanceActionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -949,7 +957,7 @@ pub type CopyDbClusterParameterGroupInputOperationRetryAlias = aws_http::AwsErro
 impl CopyDbClusterParameterGroupInput {
     /// Consumes the builder and constructs an Operation<[`CopyDBClusterParameterGroup`](crate::operation::CopyDBClusterParameterGroup)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -981,6 +989,7 @@ impl CopyDbClusterParameterGroupInput {
             input: &crate::input::CopyDbClusterParameterGroupInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1036,9 +1045,10 @@ impl CopyDbClusterParameterGroupInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1263,7 +1273,7 @@ pub type CopyDbClusterSnapshotInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl CopyDbClusterSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`CopyDBClusterSnapshot`](crate::operation::CopyDBClusterSnapshot)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1295,6 +1305,7 @@ impl CopyDbClusterSnapshotInput {
             input: &crate::input::CopyDbClusterSnapshotInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1354,9 +1365,10 @@ impl CopyDbClusterSnapshotInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1538,7 +1550,7 @@ pub type CopyDbParameterGroupInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl CopyDbParameterGroupInput {
     /// Consumes the builder and constructs an Operation<[`CopyDBParameterGroup`](crate::operation::CopyDBParameterGroup)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1570,6 +1582,7 @@ impl CopyDbParameterGroupInput {
             input: &crate::input::CopyDbParameterGroupInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1629,9 +1642,10 @@ impl CopyDbParameterGroupInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2275,7 +2289,7 @@ pub type CreateDbClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl CreateDbClusterInput {
     /// Consumes the builder and constructs an Operation<[`CreateDBCluster`](crate::operation::CreateDBCluster)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2307,6 +2321,7 @@ impl CreateDbClusterInput {
             input: &crate::input::CreateDbClusterInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2364,9 +2379,10 @@ impl CreateDbClusterInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2527,7 +2543,7 @@ pub type CreateDbClusterEndpointInputOperationRetryAlias = aws_http::AwsErrorRet
 impl CreateDbClusterEndpointInput {
     /// Consumes the builder and constructs an Operation<[`CreateDBClusterEndpoint`](crate::operation::CreateDBClusterEndpoint)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2559,6 +2575,7 @@ impl CreateDbClusterEndpointInput {
             input: &crate::input::CreateDbClusterEndpointInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2618,9 +2635,10 @@ impl CreateDbClusterEndpointInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2754,7 +2772,7 @@ pub type CreateDbClusterParameterGroupInputOperationRetryAlias = aws_http::AwsEr
 impl CreateDbClusterParameterGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateDBClusterParameterGroup`](crate::operation::CreateDBClusterParameterGroup)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2786,6 +2804,7 @@ impl CreateDbClusterParameterGroupInput {
             input: &crate::input::CreateDbClusterParameterGroupInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2841,9 +2860,10 @@ impl CreateDbClusterParameterGroupInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2989,7 +3009,7 @@ pub type CreateDbClusterSnapshotInputOperationRetryAlias = aws_http::AwsErrorRet
 impl CreateDbClusterSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`CreateDBClusterSnapshot`](crate::operation::CreateDBClusterSnapshot)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3021,6 +3041,7 @@ impl CreateDbClusterSnapshotInput {
             input: &crate::input::CreateDbClusterSnapshotInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3080,9 +3101,10 @@ impl CreateDbClusterSnapshotInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3991,7 +4013,7 @@ pub type CreateDbInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl CreateDbInstanceInput {
     /// Consumes the builder and constructs an Operation<[`CreateDBInstance`](crate::operation::CreateDBInstance)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4023,6 +4045,7 @@ impl CreateDbInstanceInput {
             input: &crate::input::CreateDbInstanceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4080,9 +4103,10 @@ impl CreateDbInstanceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4222,7 +4246,7 @@ pub type CreateDbParameterGroupInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl CreateDbParameterGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateDBParameterGroup`](crate::operation::CreateDBParameterGroup)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4254,6 +4278,7 @@ impl CreateDbParameterGroupInput {
             input: &crate::input::CreateDbParameterGroupInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4313,9 +4338,10 @@ impl CreateDbParameterGroupInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4441,7 +4467,7 @@ pub type CreateDbSubnetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl CreateDbSubnetGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateDBSubnetGroup`](crate::operation::CreateDBSubnetGroup)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4473,6 +4499,7 @@ impl CreateDbSubnetGroupInput {
             input: &crate::input::CreateDbSubnetGroupInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4530,9 +4557,10 @@ impl CreateDbSubnetGroupInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4767,7 +4795,7 @@ pub type CreateEventSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRet
 impl CreateEventSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`CreateEventSubscription`](crate::operation::CreateEventSubscription)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4799,6 +4827,7 @@ impl CreateEventSubscriptionInput {
             input: &crate::input::CreateEventSubscriptionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4858,9 +4887,10 @@ impl CreateEventSubscriptionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5014,7 +5044,7 @@ pub type DeleteDbClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl DeleteDbClusterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDBCluster`](crate::operation::DeleteDBCluster)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5046,6 +5076,7 @@ impl DeleteDbClusterInput {
             input: &crate::input::DeleteDbClusterInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5103,9 +5134,10 @@ impl DeleteDbClusterInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5167,7 +5199,7 @@ pub type DeleteDbClusterEndpointInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DeleteDbClusterEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDBClusterEndpoint`](crate::operation::DeleteDBClusterEndpoint)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5199,6 +5231,7 @@ impl DeleteDbClusterEndpointInput {
             input: &crate::input::DeleteDbClusterEndpointInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5258,9 +5291,10 @@ impl DeleteDbClusterEndpointInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5346,7 +5380,7 @@ pub type DeleteDbClusterParameterGroupInputOperationRetryAlias = aws_http::AwsEr
 impl DeleteDbClusterParameterGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDBClusterParameterGroup`](crate::operation::DeleteDBClusterParameterGroup)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5378,6 +5412,7 @@ impl DeleteDbClusterParameterGroupInput {
             input: &crate::input::DeleteDbClusterParameterGroupInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5433,9 +5468,10 @@ impl DeleteDbClusterParameterGroupInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5501,7 +5537,7 @@ pub type DeleteDbClusterSnapshotInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DeleteDbClusterSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDBClusterSnapshot`](crate::operation::DeleteDBClusterSnapshot)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5533,6 +5569,7 @@ impl DeleteDbClusterSnapshotInput {
             input: &crate::input::DeleteDbClusterSnapshotInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5592,9 +5629,10 @@ impl DeleteDbClusterSnapshotInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5760,7 +5798,7 @@ pub type DeleteDbInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DeleteDbInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDBInstance`](crate::operation::DeleteDBInstance)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5792,6 +5830,7 @@ impl DeleteDbInstanceInput {
             input: &crate::input::DeleteDbInstanceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5849,9 +5888,10 @@ impl DeleteDbInstanceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -5933,7 +5973,7 @@ pub type DeleteDbParameterGroupInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl DeleteDbParameterGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDBParameterGroup`](crate::operation::DeleteDBParameterGroup)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5965,6 +6005,7 @@ impl DeleteDbParameterGroupInput {
             input: &crate::input::DeleteDbParameterGroupInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6024,9 +6065,10 @@ impl DeleteDbParameterGroupInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6098,7 +6140,7 @@ pub type DeleteDbSubnetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DeleteDbSubnetGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDBSubnetGroup`](crate::operation::DeleteDBSubnetGroup)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6130,6 +6172,7 @@ impl DeleteDbSubnetGroupInput {
             input: &crate::input::DeleteDbSubnetGroupInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6187,9 +6230,10 @@ impl DeleteDbSubnetGroupInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6248,7 +6292,7 @@ pub type DeleteEventSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DeleteEventSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEventSubscription`](crate::operation::DeleteEventSubscription)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6280,6 +6324,7 @@ impl DeleteEventSubscriptionInput {
             input: &crate::input::DeleteEventSubscriptionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6339,9 +6384,10 @@ impl DeleteEventSubscriptionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6499,7 +6545,7 @@ pub type DescribeDbClusterEndpointsInputOperationRetryAlias = aws_http::AwsError
 impl DescribeDbClusterEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDBClusterEndpoints`](crate::operation::DescribeDBClusterEndpoints)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6531,6 +6577,7 @@ impl DescribeDbClusterEndpointsInput {
             input: &crate::input::DescribeDbClusterEndpointsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6586,9 +6633,10 @@ impl DescribeDbClusterEndpointsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6721,7 +6769,7 @@ pub type DescribeDbClusterParameterGroupsInputOperationRetryAlias = aws_http::Aw
 impl DescribeDbClusterParameterGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDBClusterParameterGroups`](crate::operation::DescribeDBClusterParameterGroups)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6753,6 +6801,7 @@ impl DescribeDbClusterParameterGroupsInput {
             input: &crate::input::DescribeDbClusterParameterGroupsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6808,9 +6857,10 @@ impl DescribeDbClusterParameterGroupsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6957,7 +7007,7 @@ pub type DescribeDbClusterParametersInputOperationRetryAlias = aws_http::AwsErro
 impl DescribeDbClusterParametersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDBClusterParameters`](crate::operation::DescribeDBClusterParameters)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6989,6 +7039,7 @@ impl DescribeDbClusterParametersInput {
             input: &crate::input::DescribeDbClusterParametersInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7044,9 +7095,10 @@ impl DescribeDbClusterParametersInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7209,7 +7261,7 @@ pub type DescribeDbClustersInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl DescribeDbClustersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDBClusters`](crate::operation::DescribeDBClusters)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7241,6 +7293,7 @@ impl DescribeDbClustersInput {
             input: &crate::input::DescribeDbClustersInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7298,9 +7351,10 @@ impl DescribeDbClustersInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7363,7 +7417,7 @@ pub type DescribeDbClusterSnapshotAttributesInputOperationRetryAlias =
 impl DescribeDbClusterSnapshotAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDBClusterSnapshotAttributes`](crate::operation::DescribeDBClusterSnapshotAttributes)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7395,6 +7449,7 @@ impl DescribeDbClusterSnapshotAttributesInput {
             input: &crate::input::DescribeDbClusterSnapshotAttributesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7450,9 +7505,10 @@ impl DescribeDbClusterSnapshotAttributesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7563,7 +7619,7 @@ pub mod describe_db_cluster_snapshots_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS
+        /// <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon
         /// account.</p>
         /// </li>
         /// <li>
@@ -7601,7 +7657,7 @@ pub mod describe_db_cluster_snapshots_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS
+        /// <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon
         /// account.</p>
         /// </li>
         /// <li>
@@ -7685,7 +7741,7 @@ pub mod describe_db_cluster_snapshots_input {
             self.marker = input;
             self
         }
-        /// <p>True to include shared manual DB cluster snapshots from other Amazon accounts that this AWS
+        /// <p>True to include shared manual DB cluster snapshots from other Amazon accounts that this Amazon
         /// account has been given permission to copy or restore, and otherwise false. The default is
         /// <code>false</code>.</p>
         /// <p>You can give an Amazon account permission to restore a manual DB cluster snapshot from
@@ -7695,7 +7751,7 @@ pub mod describe_db_cluster_snapshots_input {
             self.include_shared = Some(input);
             self
         }
-        /// <p>True to include shared manual DB cluster snapshots from other Amazon accounts that this AWS
+        /// <p>True to include shared manual DB cluster snapshots from other Amazon accounts that this Amazon
         /// account has been given permission to copy or restore, and otherwise false. The default is
         /// <code>false</code>.</p>
         /// <p>You can give an Amazon account permission to restore a manual DB cluster snapshot from
@@ -7749,7 +7805,7 @@ pub type DescribeDbClusterSnapshotsInputOperationRetryAlias = aws_http::AwsError
 impl DescribeDbClusterSnapshotsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDBClusterSnapshots`](crate::operation::DescribeDBClusterSnapshots)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7781,6 +7837,7 @@ impl DescribeDbClusterSnapshotsInput {
             input: &crate::input::DescribeDbClusterSnapshotsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7836,9 +7893,10 @@ impl DescribeDbClusterSnapshotsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8046,7 +8104,7 @@ pub type DescribeDbEngineVersionsInputOperationRetryAlias = aws_http::AwsErrorRe
 impl DescribeDbEngineVersionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDBEngineVersions`](crate::operation::DescribeDBEngineVersions)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8078,6 +8136,7 @@ impl DescribeDbEngineVersionsInput {
             input: &crate::input::DescribeDbEngineVersionsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8137,9 +8196,10 @@ impl DescribeDbEngineVersionsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8302,7 +8362,7 @@ pub type DescribeDbInstancesInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DescribeDbInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDBInstances`](crate::operation::DescribeDBInstances)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8334,6 +8394,7 @@ impl DescribeDbInstancesInput {
             input: &crate::input::DescribeDbInstancesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8391,9 +8452,10 @@ impl DescribeDbInstancesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8521,7 +8583,7 @@ pub type DescribeDbParameterGroupsInputOperationRetryAlias = aws_http::AwsErrorR
 impl DescribeDbParameterGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDBParameterGroups`](crate::operation::DescribeDBParameterGroups)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8553,6 +8615,7 @@ impl DescribeDbParameterGroupsInput {
             input: &crate::input::DescribeDbParameterGroupsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8612,9 +8675,10 @@ impl DescribeDbParameterGroupsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8759,7 +8823,7 @@ pub type DescribeDbParametersInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl DescribeDbParametersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDBParameters`](crate::operation::DescribeDBParameters)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8791,6 +8855,7 @@ impl DescribeDbParametersInput {
             input: &crate::input::DescribeDbParametersInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8848,9 +8913,10 @@ impl DescribeDbParametersInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -8965,7 +9031,7 @@ pub type DescribeDbSubnetGroupsInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl DescribeDbSubnetGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDBSubnetGroups`](crate::operation::DescribeDBSubnetGroups)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -8997,6 +9063,7 @@ impl DescribeDbSubnetGroupsInput {
             input: &crate::input::DescribeDbSubnetGroupsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9056,9 +9123,10 @@ impl DescribeDbSubnetGroupsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9179,7 +9247,7 @@ pub type DescribeEngineDefaultClusterParametersInputOperationRetryAlias =
 impl DescribeEngineDefaultClusterParametersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEngineDefaultClusterParameters`](crate::operation::DescribeEngineDefaultClusterParameters)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9211,6 +9279,7 @@ impl DescribeEngineDefaultClusterParametersInput {
             input: &crate::input::DescribeEngineDefaultClusterParametersInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9266,9 +9335,10 @@ impl DescribeEngineDefaultClusterParametersInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9386,7 +9456,7 @@ pub type DescribeEngineDefaultParametersInputOperationRetryAlias = aws_http::Aws
 impl DescribeEngineDefaultParametersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEngineDefaultParameters`](crate::operation::DescribeEngineDefaultParameters)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9418,6 +9488,7 @@ impl DescribeEngineDefaultParametersInput {
             input: &crate::input::DescribeEngineDefaultParametersInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9473,9 +9544,10 @@ impl DescribeEngineDefaultParametersInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9554,7 +9626,7 @@ pub type DescribeEventCategoriesInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DescribeEventCategoriesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventCategories`](crate::operation::DescribeEventCategories)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9586,6 +9658,7 @@ impl DescribeEventCategoriesInput {
             input: &crate::input::DescribeEventCategoriesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9645,9 +9718,10 @@ impl DescribeEventCategoriesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9910,7 +9984,7 @@ pub type DescribeEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeEventsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEvents`](crate::operation::DescribeEvents)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -9942,6 +10016,7 @@ impl DescribeEventsInput {
             input: &crate::input::DescribeEventsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -9998,9 +10073,10 @@ impl DescribeEventsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -10116,7 +10192,7 @@ pub type DescribeEventSubscriptionsInputOperationRetryAlias = aws_http::AwsError
 impl DescribeEventSubscriptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventSubscriptions`](crate::operation::DescribeEventSubscriptions)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -10148,6 +10224,7 @@ impl DescribeEventSubscriptionsInput {
             input: &crate::input::DescribeEventSubscriptionsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -10207,9 +10284,10 @@ impl DescribeEventSubscriptionsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -10387,7 +10465,7 @@ pub type DescribeOrderableDbInstanceOptionsInputOperationRetryAlias = aws_http::
 impl DescribeOrderableDbInstanceOptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrderableDBInstanceOptions`](crate::operation::DescribeOrderableDBInstanceOptions)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -10419,6 +10497,7 @@ impl DescribeOrderableDbInstanceOptionsInput {
             input: &crate::input::DescribeOrderableDbInstanceOptionsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -10474,9 +10553,10 @@ impl DescribeOrderableDbInstanceOptionsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -10626,7 +10706,7 @@ pub type DescribePendingMaintenanceActionsInputOperationRetryAlias = aws_http::A
 impl DescribePendingMaintenanceActionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribePendingMaintenanceActions`](crate::operation::DescribePendingMaintenanceActions)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -10658,6 +10738,7 @@ impl DescribePendingMaintenanceActionsInput {
             input: &crate::input::DescribePendingMaintenanceActionsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -10713,9 +10794,10 @@ impl DescribePendingMaintenanceActionsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -10775,7 +10857,7 @@ pub type DescribeValidDbInstanceModificationsInputOperationRetryAlias =
 impl DescribeValidDbInstanceModificationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeValidDBInstanceModifications`](crate::operation::DescribeValidDBInstanceModifications)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -10807,6 +10889,7 @@ impl DescribeValidDbInstanceModificationsInput {
             input: &crate::input::DescribeValidDbInstanceModificationsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -10862,9 +10945,10 @@ impl DescribeValidDbInstanceModificationsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -10958,7 +11042,7 @@ pub type FailoverDbClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl FailoverDbClusterInput {
     /// Consumes the builder and constructs an Operation<[`FailoverDBCluster`](crate::operation::FailoverDBCluster)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -10990,6 +11074,7 @@ impl FailoverDbClusterInput {
             input: &crate::input::FailoverDbClusterInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -11047,9 +11132,10 @@ impl FailoverDbClusterInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -11132,7 +11218,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -11164,6 +11250,7 @@ impl ListTagsForResourceInput {
             input: &crate::input::ListTagsForResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -11221,9 +11308,10 @@ impl ListTagsForResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -11260,6 +11348,8 @@ pub mod modify_db_cluster_input {
         pub(crate) cloudwatch_logs_export_configuration:
             std::option::Option<crate::model::CloudwatchLogsExportConfiguration>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
+        pub(crate) allow_major_version_upgrade: std::option::Option<bool>,
+        pub(crate) db_instance_parameter_group_name: std::option::Option<std::string::String>,
         pub(crate) deletion_protection: std::option::Option<bool>,
         pub(crate) copy_tags_to_snapshot: std::option::Option<bool>,
     }
@@ -11612,6 +11702,72 @@ pub mod modify_db_cluster_input {
             self.engine_version = input;
             self
         }
+        /// <p>A value that indicates whether upgrades between different major versions are allowed.</p>
+        /// <p>Constraints: You must set the allow-major-version-upgrade flag when providing an
+        /// <code>EngineVersion</code> parameter that uses a different major version than the DB cluster's current
+        /// version.</p>
+        pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
+            self.allow_major_version_upgrade = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether upgrades between different major versions are allowed.</p>
+        /// <p>Constraints: You must set the allow-major-version-upgrade flag when providing an
+        /// <code>EngineVersion</code> parameter that uses a different major version than the DB cluster's current
+        /// version.</p>
+        pub fn set_allow_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.allow_major_version_upgrade = input;
+            self
+        }
+        /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p>
+        /// <note>
+        /// <p>When you apply a parameter group using <code>DBInstanceParameterGroupName</code>,
+        /// parameter changes aren't applied during the next maintenance window but instead are
+        /// applied immediately.</p>
+        /// </note>
+        /// <p>Default: The existing name setting</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The DB parameter group must be in the same DB parameter group family as
+        /// the target DB cluster version.</p>
+        /// </li>
+        /// <li>
+        /// <p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with
+        /// the <code>AllowMajorVersionUpgrade</code> parameter.</p>
+        /// </li>
+        /// </ul>
+        pub fn db_instance_parameter_group_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.db_instance_parameter_group_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p>
+        /// <note>
+        /// <p>When you apply a parameter group using <code>DBInstanceParameterGroupName</code>,
+        /// parameter changes aren't applied during the next maintenance window but instead are
+        /// applied immediately.</p>
+        /// </note>
+        /// <p>Default: The existing name setting</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The DB parameter group must be in the same DB parameter group family as
+        /// the target DB cluster version.</p>
+        /// </li>
+        /// <li>
+        /// <p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with
+        /// the <code>AllowMajorVersionUpgrade</code> parameter.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_db_instance_parameter_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_instance_parameter_group_name = input;
+            self
+        }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection is disabled.</p>
@@ -11664,6 +11820,8 @@ pub mod modify_db_cluster_input {
                 enable_iam_database_authentication: self.enable_iam_database_authentication,
                 cloudwatch_logs_export_configuration: self.cloudwatch_logs_export_configuration,
                 engine_version: self.engine_version,
+                allow_major_version_upgrade: self.allow_major_version_upgrade.unwrap_or_default(),
+                db_instance_parameter_group_name: self.db_instance_parameter_group_name,
                 deletion_protection: self.deletion_protection,
                 copy_tags_to_snapshot: self.copy_tags_to_snapshot,
             })
@@ -11677,7 +11835,7 @@ pub type ModifyDbClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl ModifyDbClusterInput {
     /// Consumes the builder and constructs an Operation<[`ModifyDBCluster`](crate::operation::ModifyDBCluster)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -11709,6 +11867,7 @@ impl ModifyDbClusterInput {
             input: &crate::input::ModifyDbClusterInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -11766,9 +11925,10 @@ impl ModifyDbClusterInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -11891,7 +12051,7 @@ pub type ModifyDbClusterEndpointInputOperationRetryAlias = aws_http::AwsErrorRet
 impl ModifyDbClusterEndpointInput {
     /// Consumes the builder and constructs an Operation<[`ModifyDBClusterEndpoint`](crate::operation::ModifyDBClusterEndpoint)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -11923,6 +12083,7 @@ impl ModifyDbClusterEndpointInput {
             input: &crate::input::ModifyDbClusterEndpointInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -11982,9 +12143,10 @@ impl ModifyDbClusterEndpointInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -12067,7 +12229,7 @@ pub type ModifyDbClusterParameterGroupInputOperationRetryAlias = aws_http::AwsEr
 impl ModifyDbClusterParameterGroupInput {
     /// Consumes the builder and constructs an Operation<[`ModifyDBClusterParameterGroup`](crate::operation::ModifyDBClusterParameterGroup)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -12099,6 +12261,7 @@ impl ModifyDbClusterParameterGroupInput {
             input: &crate::input::ModifyDbClusterParameterGroupInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -12154,9 +12317,10 @@ impl ModifyDbClusterParameterGroupInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -12226,7 +12390,7 @@ pub mod modify_db_cluster_snapshot_attribute_input {
         /// <p>To authorize other Amazon accounts to copy or restore a manual DB cluster snapshot, set this
         /// list to include one or more Amazon account IDs, or <code>all</code> to make the manual DB cluster
         /// snapshot restorable by any Amazon account. Do not add the <code>all</code> value for any manual
-        /// DB cluster snapshots that contain private information that you don't want available to all AWS
+        /// DB cluster snapshots that contain private information that you don't want available to all Amazon
         /// accounts.</p>
         pub fn values_to_add(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values_to_add.unwrap_or_default();
@@ -12239,7 +12403,7 @@ pub mod modify_db_cluster_snapshot_attribute_input {
         /// <p>To authorize other Amazon accounts to copy or restore a manual DB cluster snapshot, set this
         /// list to include one or more Amazon account IDs, or <code>all</code> to make the manual DB cluster
         /// snapshot restorable by any Amazon account. Do not add the <code>all</code> value for any manual
-        /// DB cluster snapshots that contain private information that you don't want available to all AWS
+        /// DB cluster snapshots that contain private information that you don't want available to all Amazon
         /// accounts.</p>
         pub fn set_values_to_add(
             mut self,
@@ -12303,7 +12467,7 @@ pub type ModifyDbClusterSnapshotAttributeInputOperationRetryAlias = aws_http::Aw
 impl ModifyDbClusterSnapshotAttributeInput {
     /// Consumes the builder and constructs an Operation<[`ModifyDBClusterSnapshotAttribute`](crate::operation::ModifyDBClusterSnapshotAttribute)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -12335,6 +12499,7 @@ impl ModifyDbClusterSnapshotAttributeInput {
             input: &crate::input::ModifyDbClusterSnapshotAttributeInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -12390,9 +12555,10 @@ impl ModifyDbClusterSnapshotAttributeInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -12490,7 +12656,7 @@ pub mod modify_db_instance_input {
             self
         }
         /// <p>The new compute and memory capacity of the DB instance, for example,
-        /// <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+        /// <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon
         /// Regions.</p>
         /// <p>If you modify the DB instance class, an outage occurs during the change. The change is
         /// applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified
@@ -12501,7 +12667,7 @@ pub mod modify_db_instance_input {
             self
         }
         /// <p>The new compute and memory capacity of the DB instance, for example,
-        /// <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+        /// <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon
         /// Regions.</p>
         /// <p>If you modify the DB instance class, an outage occurs during the change. The change is
         /// applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified
@@ -13258,7 +13424,7 @@ pub type ModifyDbInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl ModifyDbInstanceInput {
     /// Consumes the builder and constructs an Operation<[`ModifyDBInstance`](crate::operation::ModifyDBInstance)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -13290,6 +13456,7 @@ impl ModifyDbInstanceInput {
             input: &crate::input::ModifyDbInstanceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -13347,9 +13514,10 @@ impl ModifyDbInstanceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -13458,7 +13626,7 @@ pub type ModifyDbParameterGroupInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl ModifyDbParameterGroupInput {
     /// Consumes the builder and constructs an Operation<[`ModifyDBParameterGroup`](crate::operation::ModifyDBParameterGroup)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -13490,6 +13658,7 @@ impl ModifyDbParameterGroupInput {
             input: &crate::input::ModifyDbParameterGroupInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -13549,9 +13718,10 @@ impl ModifyDbParameterGroupInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -13656,7 +13826,7 @@ pub type ModifyDbSubnetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ModifyDbSubnetGroupInput {
     /// Consumes the builder and constructs an Operation<[`ModifyDBSubnetGroup`](crate::operation::ModifyDBSubnetGroup)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -13688,6 +13858,7 @@ impl ModifyDbSubnetGroupInput {
             input: &crate::input::ModifyDbSubnetGroupInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -13745,9 +13916,10 @@ impl ModifyDbSubnetGroupInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -13882,7 +14054,7 @@ pub type ModifyEventSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRet
 impl ModifyEventSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`ModifyEventSubscription`](crate::operation::ModifyEventSubscription)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -13914,6 +14086,7 @@ impl ModifyEventSubscriptionInput {
             input: &crate::input::ModifyEventSubscriptionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -13973,9 +14146,10 @@ impl ModifyEventSubscriptionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14034,7 +14208,7 @@ pub type PromoteReadReplicaDbClusterInputOperationRetryAlias = aws_http::AwsErro
 impl PromoteReadReplicaDbClusterInput {
     /// Consumes the builder and constructs an Operation<[`PromoteReadReplicaDBCluster`](crate::operation::PromoteReadReplicaDBCluster)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -14066,6 +14240,7 @@ impl PromoteReadReplicaDbClusterInput {
             input: &crate::input::PromoteReadReplicaDbClusterInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14121,9 +14296,10 @@ impl PromoteReadReplicaDbClusterInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14209,7 +14385,7 @@ pub type RebootDbInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl RebootDbInstanceInput {
     /// Consumes the builder and constructs an Operation<[`RebootDBInstance`](crate::operation::RebootDBInstance)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -14241,6 +14417,7 @@ impl RebootDbInstanceInput {
             input: &crate::input::RebootDbInstanceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14298,9 +14475,10 @@ impl RebootDbInstanceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14353,13 +14531,13 @@ pub mod remove_role_from_db_cluster_input {
             self
         }
         /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from.
-        /// For the list of supported feature names, see <a>DBEngineVersion</a>.</p>
+        /// For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
         pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.feature_name = Some(input.into());
             self
         }
         /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from.
-        /// For the list of supported feature names, see <a>DBEngineVersion</a>.</p>
+        /// For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
         pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.feature_name = input;
             self
@@ -14387,7 +14565,7 @@ pub type RemoveRoleFromDbClusterInputOperationRetryAlias = aws_http::AwsErrorRet
 impl RemoveRoleFromDbClusterInput {
     /// Consumes the builder and constructs an Operation<[`RemoveRoleFromDBCluster`](crate::operation::RemoveRoleFromDBCluster)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -14419,6 +14597,7 @@ impl RemoveRoleFromDbClusterInput {
             input: &crate::input::RemoveRoleFromDbClusterInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14478,9 +14657,10 @@ impl RemoveRoleFromDbClusterInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14559,7 +14739,7 @@ pub type RemoveSourceIdentifierFromSubscriptionInputOperationRetryAlias =
 impl RemoveSourceIdentifierFromSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`RemoveSourceIdentifierFromSubscription`](crate::operation::RemoveSourceIdentifierFromSubscription)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -14591,6 +14771,7 @@ impl RemoveSourceIdentifierFromSubscriptionInput {
             input: &crate::input::RemoveSourceIdentifierFromSubscriptionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14646,9 +14827,10 @@ impl RemoveSourceIdentifierFromSubscriptionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14731,7 +14913,7 @@ pub type RemoveTagsFromResourceInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl RemoveTagsFromResourceInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTagsFromResource`](crate::operation::RemoveTagsFromResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -14763,6 +14945,7 @@ impl RemoveTagsFromResourceInput {
             input: &crate::input::RemoveTagsFromResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14822,9 +15005,10 @@ impl RemoveTagsFromResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -14929,7 +15113,7 @@ pub type ResetDbClusterParameterGroupInputOperationRetryAlias = aws_http::AwsErr
 impl ResetDbClusterParameterGroupInput {
     /// Consumes the builder and constructs an Operation<[`ResetDBClusterParameterGroup`](crate::operation::ResetDBClusterParameterGroup)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -14961,6 +15145,7 @@ impl ResetDbClusterParameterGroupInput {
             input: &crate::input::ResetDbClusterParameterGroupInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -15016,9 +15201,10 @@ impl ResetDbClusterParameterGroupInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -15137,7 +15323,7 @@ pub type ResetDbParameterGroupInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl ResetDbParameterGroupInput {
     /// Consumes the builder and constructs an Operation<[`ResetDBParameterGroup`](crate::operation::ResetDBParameterGroup)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -15169,6 +15355,7 @@ impl ResetDbParameterGroupInput {
             input: &crate::input::ResetDbParameterGroupInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -15228,9 +15415,10 @@ impl ResetDbParameterGroupInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -15679,7 +15867,7 @@ pub type RestoreDbClusterFromSnapshotInputOperationRetryAlias = aws_http::AwsErr
 impl RestoreDbClusterFromSnapshotInput {
     /// Consumes the builder and constructs an Operation<[`RestoreDBClusterFromSnapshot`](crate::operation::RestoreDBClusterFromSnapshot)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -15711,6 +15899,7 @@ impl RestoreDbClusterFromSnapshotInput {
             input: &crate::input::RestoreDbClusterFromSnapshotInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -15766,9 +15955,10 @@ impl RestoreDbClusterFromSnapshotInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -16250,7 +16440,7 @@ pub type RestoreDbClusterToPointInTimeInputOperationRetryAlias = aws_http::AwsEr
 impl RestoreDbClusterToPointInTimeInput {
     /// Consumes the builder and constructs an Operation<[`RestoreDBClusterToPointInTime`](crate::operation::RestoreDBClusterToPointInTime)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -16282,6 +16472,7 @@ impl RestoreDbClusterToPointInTimeInput {
             input: &crate::input::RestoreDbClusterToPointInTimeInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -16337,9 +16528,10 @@ impl RestoreDbClusterToPointInTimeInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -16399,7 +16591,7 @@ pub type StartDbClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StartDbClusterInput {
     /// Consumes the builder and constructs an Operation<[`StartDBCluster`](crate::operation::StartDBCluster)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -16431,6 +16623,7 @@ impl StartDbClusterInput {
             input: &crate::input::StartDbClusterInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -16488,9 +16681,10 @@ impl StartDbClusterInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -16550,7 +16744,7 @@ pub type StopDbClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StopDbClusterInput {
     /// Consumes the builder and constructs an Operation<[`StopDBCluster`](crate::operation::StopDBCluster)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -16582,6 +16776,7 @@ impl StopDbClusterInput {
             input: &crate::input::StopDbClusterInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -16638,9 +16833,10 @@ impl StopDbClusterInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -17113,7 +17309,7 @@ pub struct RemoveRoleFromDbClusterInput {
     /// example <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from.
-    /// For the list of supported feature names, see <a>DBEngineVersion</a>.</p>
+    /// For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
     pub feature_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RemoveRoleFromDbClusterInput {
@@ -17278,7 +17474,7 @@ pub struct ModifyDbInstanceInput {
     /// <p>Not supported by Neptune.</p>
     pub allocated_storage: std::option::Option<i32>,
     /// <p>The new compute and memory capacity of the DB instance, for example,
-    /// <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+    /// <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon
     /// Regions.</p>
     /// <p>If you modify the DB instance class, an outage occurs during the change. The change is
     /// applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified
@@ -17573,7 +17769,7 @@ pub struct ModifyDbClusterSnapshotAttributeInput {
     /// <p>To authorize other Amazon accounts to copy or restore a manual DB cluster snapshot, set this
     /// list to include one or more Amazon account IDs, or <code>all</code> to make the manual DB cluster
     /// snapshot restorable by any Amazon account. Do not add the <code>all</code> value for any manual
-    /// DB cluster snapshots that contain private information that you don't want available to all AWS
+    /// DB cluster snapshots that contain private information that you don't want available to all Amazon
     /// accounts.</p>
     pub values_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of DB cluster snapshot attributes to remove from the attribute specified by
@@ -17762,6 +17958,30 @@ pub struct ModifyDbClusterInput {
     /// <p>For a list of valid engine versions, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon
     /// Neptune</a>, or call <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
     pub engine_version: std::option::Option<std::string::String>,
+    /// <p>A value that indicates whether upgrades between different major versions are allowed.</p>
+    /// <p>Constraints: You must set the allow-major-version-upgrade flag when providing an
+    /// <code>EngineVersion</code> parameter that uses a different major version than the DB cluster's current
+    /// version.</p>
+    pub allow_major_version_upgrade: bool,
+    /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p>
+    /// <note>
+    /// <p>When you apply a parameter group using <code>DBInstanceParameterGroupName</code>,
+    /// parameter changes aren't applied during the next maintenance window but instead are
+    /// applied immediately.</p>
+    /// </note>
+    /// <p>Default: The existing name setting</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The DB parameter group must be in the same DB parameter group family as
+    /// the target DB cluster version.</p>
+    /// </li>
+    /// <li>
+    /// <p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with
+    /// the <code>AllowMajorVersionUpgrade</code> parameter.</p>
+    /// </li>
+    /// </ul>
+    pub db_instance_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
     /// The database can't be deleted when deletion protection is enabled. By default,
     /// deletion protection is disabled.</p>
@@ -17801,6 +18021,14 @@ impl std::fmt::Debug for ModifyDbClusterInput {
             &self.cloudwatch_logs_export_configuration,
         );
         formatter.field("engine_version", &self.engine_version);
+        formatter.field(
+            "allow_major_version_upgrade",
+            &self.allow_major_version_upgrade,
+        );
+        formatter.field(
+            "db_instance_parameter_group_name",
+            &self.db_instance_parameter_group_name,
+        );
         formatter.field("deletion_protection", &self.deletion_protection);
         formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
         formatter.finish()
@@ -18418,7 +18646,7 @@ pub struct DescribeDbClusterSnapshotsInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS
+    /// <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon
     /// account.</p>
     /// </li>
     /// <li>
@@ -18456,7 +18684,7 @@ pub struct DescribeDbClusterSnapshotsInput {
     /// includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
     /// </p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>True to include shared manual DB cluster snapshots from other Amazon accounts that this AWS
+    /// <p>True to include shared manual DB cluster snapshots from other Amazon accounts that this Amazon
     /// account has been given permission to copy or restore, and otherwise false. The default is
     /// <code>false</code>.</p>
     /// <p>You can give an Amazon account permission to restore a manual DB cluster snapshot from
@@ -20019,7 +20247,7 @@ pub struct AddRoleToDbClusterInput {
     /// for example <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with.
-    /// For the list of supported feature names, see <a>DBEngineVersion</a>.</p>
+    /// For the list of supported feature names, see <a href="neptune/latest/userguide/api-other-apis.html#DBEngineVersion">DBEngineVersion</a>.</p>
     pub feature_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AddRoleToDbClusterInput {

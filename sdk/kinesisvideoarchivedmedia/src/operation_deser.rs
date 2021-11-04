@@ -526,7 +526,7 @@ pub fn parse_get_media_for_fragment_list(
         let _ = response;
         output = output.set_content_type(
             crate::http_serde::deser_header_get_media_for_fragment_list_get_media_for_fragment_list_output_content_type(response.headers())
-                                        .map_err(|_|crate::error::GetMediaForFragmentListError::unhandled("Failed to parse ContentType from header `Content-Type"))?
+                                    .map_err(|_|crate::error::GetMediaForFragmentListError::unhandled("Failed to parse ContentType from header `Content-Type"))?
         );
         output = output.set_payload(
             Some(crate::http_serde::deser_payload_get_media_for_fragment_list_get_media_for_fragment_list_output_payload(response.body_mut())?)

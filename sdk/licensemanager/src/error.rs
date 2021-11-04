@@ -27,7 +27,7 @@ pub enum AcceptGrantErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptGrantError {
@@ -96,40 +96,40 @@ impl AcceptGrantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AcceptGrantErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AcceptGrantErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, AcceptGrantErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `AcceptGrantErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `AcceptGrantErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(&self.kind, AcceptGrantErrorKind::AuthorizationException(_))
     }
-    /// Returns true if the error kind is `AcceptGrantErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `AcceptGrantErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptGrantErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptGrantErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `AcceptGrantErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptGrantErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptGrantErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `AcceptGrantErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptGrantErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptGrantErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `AcceptGrantErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(&self.kind, AcceptGrantErrorKind::ServerInternalException(_))
     }
-    /// Returns true if the error kind is `AcceptGrantErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AcceptGrantErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, AcceptGrantErrorKind::ValidationException(_))
     }
@@ -179,7 +179,7 @@ pub enum CheckInLicenseErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CheckInLicenseError {
@@ -249,53 +249,53 @@ impl CheckInLicenseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CheckInLicenseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CheckInLicenseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckInLicenseErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CheckInLicenseErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `CheckInLicenseErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckInLicenseErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `CheckInLicenseErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CheckInLicenseErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CheckInLicenseErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CheckInLicenseErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CheckInLicenseErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckInLicenseErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CheckInLicenseErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `CheckInLicenseErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckInLicenseErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CheckInLicenseErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CheckInLicenseErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckInLicenseErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CheckInLicenseErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `CheckInLicenseErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckInLicenseErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `CheckInLicenseErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CheckInLicenseErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CheckInLicenseErrorKind::ValidationException(_))
     }
@@ -354,7 +354,7 @@ pub enum CheckoutBorrowLicenseErrorKind {
     ),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CheckoutBorrowLicenseError {
@@ -429,77 +429,77 @@ impl CheckoutBorrowLicenseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CheckoutBorrowLicenseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckoutBorrowLicenseErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CheckoutBorrowLicenseErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckoutBorrowLicenseErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `CheckoutBorrowLicenseErrorKind::EntitlementNotAllowedException`.
+    /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::EntitlementNotAllowedException`.
     pub fn is_entitlement_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckoutBorrowLicenseErrorKind::EntitlementNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `CheckoutBorrowLicenseErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckoutBorrowLicenseErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CheckoutBorrowLicenseErrorKind::NoEntitlementsAllowedException`.
+    /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::NoEntitlementsAllowedException`.
     pub fn is_no_entitlements_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckoutBorrowLicenseErrorKind::NoEntitlementsAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `CheckoutBorrowLicenseErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckoutBorrowLicenseErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CheckoutBorrowLicenseErrorKind::RedirectException`.
+    /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::RedirectException`.
     pub fn is_redirect_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckoutBorrowLicenseErrorKind::RedirectException(_)
         )
     }
-    /// Returns true if the error kind is `CheckoutBorrowLicenseErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckoutBorrowLicenseErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CheckoutBorrowLicenseErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckoutBorrowLicenseErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `CheckoutBorrowLicenseErrorKind::UnsupportedDigitalSignatureMethodException`.
+    /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::UnsupportedDigitalSignatureMethodException`.
     pub fn is_unsupported_digital_signature_method_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckoutBorrowLicenseErrorKind::UnsupportedDigitalSignatureMethodException(_)
         )
     }
-    /// Returns true if the error kind is `CheckoutBorrowLicenseErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -564,7 +564,7 @@ pub enum CheckoutLicenseErrorKind {
     ),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CheckoutLicenseError {
@@ -638,67 +638,67 @@ impl CheckoutLicenseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CheckoutLicenseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckoutLicenseErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CheckoutLicenseErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckoutLicenseErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `CheckoutLicenseErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckoutLicenseErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CheckoutLicenseErrorKind::NoEntitlementsAllowedException`.
+    /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::NoEntitlementsAllowedException`.
     pub fn is_no_entitlements_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckoutLicenseErrorKind::NoEntitlementsAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `CheckoutLicenseErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckoutLicenseErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CheckoutLicenseErrorKind::RedirectException`.
+    /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::RedirectException`.
     pub fn is_redirect_exception(&self) -> bool {
         matches!(&self.kind, CheckoutLicenseErrorKind::RedirectException(_))
     }
-    /// Returns true if the error kind is `CheckoutLicenseErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckoutLicenseErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CheckoutLicenseErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckoutLicenseErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `CheckoutLicenseErrorKind::UnsupportedDigitalSignatureMethodException`.
+    /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::UnsupportedDigitalSignatureMethodException`.
     pub fn is_unsupported_digital_signature_method_exception(&self) -> bool {
         matches!(
             &self.kind,
             CheckoutLicenseErrorKind::UnsupportedDigitalSignatureMethodException(_)
         )
     }
-    /// Returns true if the error kind is `CheckoutLicenseErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CheckoutLicenseErrorKind::ValidationException(_))
     }
@@ -751,7 +751,7 @@ pub enum CreateGrantErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGrantError {
@@ -820,40 +820,40 @@ impl CreateGrantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGrantErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateGrantErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateGrantErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateGrantErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `CreateGrantErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(&self.kind, CreateGrantErrorKind::AuthorizationException(_))
     }
-    /// Returns true if the error kind is `CreateGrantErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateGrantErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGrantErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGrantErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateGrantErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGrantErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGrantErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateGrantErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGrantErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGrantErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `CreateGrantErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(&self.kind, CreateGrantErrorKind::ServerInternalException(_))
     }
-    /// Returns true if the error kind is `CreateGrantErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateGrantErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateGrantErrorKind::ValidationException(_))
     }
@@ -901,7 +901,7 @@ pub enum CreateGrantVersionErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGrantVersionError {
@@ -970,49 +970,49 @@ impl CreateGrantVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGrantVersionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateGrantVersionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGrantVersionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGrantVersionErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `CreateGrantVersionErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGrantVersionErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGrantVersionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateGrantVersionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGrantVersionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGrantVersionErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateGrantVersionErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGrantVersionErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGrantVersionErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateGrantVersionErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGrantVersionErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGrantVersionErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `CreateGrantVersionErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGrantVersionErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGrantVersionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateGrantVersionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1063,7 +1063,7 @@ pub enum CreateLicenseErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLicenseError {
@@ -1132,43 +1132,43 @@ impl CreateLicenseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLicenseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateLicenseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateLicenseErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateLicenseErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `CreateLicenseErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateLicenseErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateLicenseErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseErrorKind::RedirectException`.
+    /// Returns `true` if the error kind is `CreateLicenseErrorKind::RedirectException`.
     pub fn is_redirect_exception(&self) -> bool {
         matches!(&self.kind, CreateLicenseErrorKind::RedirectException(_))
     }
-    /// Returns true if the error kind is `CreateLicenseErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `CreateLicenseErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateLicenseErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateLicenseErrorKind::ValidationException(_))
     }
@@ -1214,7 +1214,7 @@ pub enum CreateLicenseConfigurationErrorKind {
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLicenseConfigurationError {
@@ -1288,42 +1288,42 @@ impl CreateLicenseConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLicenseConfigurationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateLicenseConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseConfigurationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseConfigurationErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `CreateLicenseConfigurationErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseConfigurationErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseConfigurationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateLicenseConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseConfigurationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseConfigurationErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateLicenseConfigurationErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseConfigurationErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseConfigurationErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateLicenseConfigurationErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseConfigurationErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseConfigurationErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `CreateLicenseConfigurationErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1375,7 +1375,7 @@ pub enum CreateLicenseConversionTaskForResourceErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLicenseConversionTaskForResourceError {
@@ -1458,42 +1458,42 @@ impl CreateLicenseConversionTaskForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLicenseConversionTaskForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateLicenseConversionTaskForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseConversionTaskForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseConversionTaskForResourceErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `CreateLicenseConversionTaskForResourceErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseConversionTaskForResourceErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseConversionTaskForResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateLicenseConversionTaskForResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseConversionTaskForResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseConversionTaskForResourceErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateLicenseConversionTaskForResourceErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseConversionTaskForResourceErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseConversionTaskForResourceErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `CreateLicenseConversionTaskForResourceErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseConversionTaskForResourceErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseConversionTaskForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateLicenseConversionTaskForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1559,7 +1559,7 @@ pub enum CreateLicenseManagerReportGeneratorErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLicenseManagerReportGeneratorError {
@@ -1648,56 +1648,56 @@ impl CreateLicenseManagerReportGeneratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseManagerReportGeneratorErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseManagerReportGeneratorErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1769,7 +1769,7 @@ pub enum CreateLicenseVersionErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLicenseVersionError {
@@ -1839,56 +1839,56 @@ impl CreateLicenseVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLicenseVersionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateLicenseVersionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseVersionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseVersionErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `CreateLicenseVersionErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseVersionErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseVersionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateLicenseVersionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseVersionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseVersionErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateLicenseVersionErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseVersionErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseVersionErrorKind::RedirectException`.
+    /// Returns `true` if the error kind is `CreateLicenseVersionErrorKind::RedirectException`.
     pub fn is_redirect_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseVersionErrorKind::RedirectException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseVersionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateLicenseVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseVersionErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `CreateLicenseVersionErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLicenseVersionErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLicenseVersionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateLicenseVersionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1942,7 +1942,7 @@ pub enum CreateTokenErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTokenError {
@@ -2012,44 +2012,44 @@ impl CreateTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateTokenErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(&self.kind, CreateTokenErrorKind::AuthorizationException(_))
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTokenErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::RedirectException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::RedirectException`.
     pub fn is_redirect_exception(&self) -> bool {
         matches!(&self.kind, CreateTokenErrorKind::RedirectException(_))
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTokenErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTokenErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(&self.kind, CreateTokenErrorKind::ServerInternalException(_))
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateTokenErrorKind::ValidationException(_))
     }
@@ -2098,7 +2098,7 @@ pub enum DeleteGrantErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGrantError {
@@ -2167,40 +2167,40 @@ impl DeleteGrantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGrantErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteGrantErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteGrantErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteGrantErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `DeleteGrantErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(&self.kind, DeleteGrantErrorKind::AuthorizationException(_))
     }
-    /// Returns true if the error kind is `DeleteGrantErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteGrantErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGrantErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGrantErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteGrantErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGrantErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGrantErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteGrantErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGrantErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGrantErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `DeleteGrantErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(&self.kind, DeleteGrantErrorKind::ServerInternalException(_))
     }
-    /// Returns true if the error kind is `DeleteGrantErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteGrantErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteGrantErrorKind::ValidationException(_))
     }
@@ -2250,7 +2250,7 @@ pub enum DeleteLicenseErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLicenseError {
@@ -2320,47 +2320,47 @@ impl DeleteLicenseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLicenseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteLicenseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteLicenseErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteLicenseErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `DeleteLicenseErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLicenseErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLicenseErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteLicenseErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteLicenseErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteLicenseErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteLicenseErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLicenseErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLicenseErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteLicenseErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLicenseErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLicenseErrorKind::RedirectException`.
+    /// Returns `true` if the error kind is `DeleteLicenseErrorKind::RedirectException`.
     pub fn is_redirect_exception(&self) -> bool {
         matches!(&self.kind, DeleteLicenseErrorKind::RedirectException(_))
     }
-    /// Returns true if the error kind is `DeleteLicenseErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `DeleteLicenseErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLicenseErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLicenseErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteLicenseErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteLicenseErrorKind::ValidationException(_))
     }
@@ -2405,7 +2405,7 @@ pub enum DeleteLicenseConfigurationErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLicenseConfigurationError {
@@ -2476,35 +2476,35 @@ impl DeleteLicenseConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLicenseConfigurationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteLicenseConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLicenseConfigurationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLicenseConfigurationErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `DeleteLicenseConfigurationErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLicenseConfigurationErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLicenseConfigurationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteLicenseConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLicenseConfigurationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLicenseConfigurationErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteLicenseConfigurationErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLicenseConfigurationErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLicenseConfigurationErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `DeleteLicenseConfigurationErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2557,7 +2557,7 @@ pub enum DeleteLicenseManagerReportGeneratorErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLicenseManagerReportGeneratorError {
@@ -2646,56 +2646,56 @@ impl DeleteLicenseManagerReportGeneratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLicenseManagerReportGeneratorErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLicenseManagerReportGeneratorErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2765,7 +2765,7 @@ pub enum DeleteTokenErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTokenError {
@@ -2834,37 +2834,37 @@ impl DeleteTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTokenErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteTokenErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteTokenErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteTokenErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `DeleteTokenErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(&self.kind, DeleteTokenErrorKind::AuthorizationException(_))
     }
-    /// Returns true if the error kind is `DeleteTokenErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteTokenErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTokenErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTokenErrorKind::RedirectException`.
+    /// Returns `true` if the error kind is `DeleteTokenErrorKind::RedirectException`.
     pub fn is_redirect_exception(&self) -> bool {
         matches!(&self.kind, DeleteTokenErrorKind::RedirectException(_))
     }
-    /// Returns true if the error kind is `DeleteTokenErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTokenErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTokenErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTokenErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `DeleteTokenErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(&self.kind, DeleteTokenErrorKind::ServerInternalException(_))
     }
-    /// Returns true if the error kind is `DeleteTokenErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteTokenErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteTokenErrorKind::ValidationException(_))
     }
@@ -2912,7 +2912,7 @@ pub enum ExtendLicenseConsumptionErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExtendLicenseConsumptionError {
@@ -2983,49 +2983,49 @@ impl ExtendLicenseConsumptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExtendLicenseConsumptionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ExtendLicenseConsumptionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExtendLicenseConsumptionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ExtendLicenseConsumptionErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `ExtendLicenseConsumptionErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExtendLicenseConsumptionErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `ExtendLicenseConsumptionErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ExtendLicenseConsumptionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExtendLicenseConsumptionErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ExtendLicenseConsumptionErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `ExtendLicenseConsumptionErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExtendLicenseConsumptionErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ExtendLicenseConsumptionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ExtendLicenseConsumptionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExtendLicenseConsumptionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ExtendLicenseConsumptionErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ExtendLicenseConsumptionErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExtendLicenseConsumptionErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ExtendLicenseConsumptionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ExtendLicenseConsumptionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3074,7 +3074,7 @@ pub enum GetAccessTokenErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccessTokenError {
@@ -3141,35 +3141,35 @@ impl GetAccessTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAccessTokenErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetAccessTokenErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccessTokenErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccessTokenErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `GetAccessTokenErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccessTokenErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccessTokenErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetAccessTokenErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccessTokenErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccessTokenErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `GetAccessTokenErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccessTokenErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccessTokenErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetAccessTokenErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetAccessTokenErrorKind::ValidationException(_))
     }
@@ -3215,7 +3215,7 @@ pub enum GetGrantErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGrantError {
@@ -3284,37 +3284,37 @@ impl GetGrantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGrantErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetGrantErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetGrantErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetGrantErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `GetGrantErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(&self.kind, GetGrantErrorKind::AuthorizationException(_))
     }
-    /// Returns true if the error kind is `GetGrantErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetGrantErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGrantErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetGrantErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetGrantErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetGrantErrorKind::RateLimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetGrantErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `GetGrantErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGrantErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetGrantErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `GetGrantErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(&self.kind, GetGrantErrorKind::ServerInternalException(_))
     }
-    /// Returns true if the error kind is `GetGrantErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetGrantErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetGrantErrorKind::ValidationException(_))
     }
@@ -3360,7 +3360,7 @@ pub enum GetLicenseErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLicenseError {
@@ -3428,33 +3428,33 @@ impl GetLicenseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLicenseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLicenseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetLicenseErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetLicenseErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `GetLicenseErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(&self.kind, GetLicenseErrorKind::AuthorizationException(_))
     }
-    /// Returns true if the error kind is `GetLicenseErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetLicenseErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetLicenseErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `GetLicenseErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(&self.kind, GetLicenseErrorKind::ServerInternalException(_))
     }
-    /// Returns true if the error kind is `GetLicenseErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetLicenseErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetLicenseErrorKind::ValidationException(_))
     }
@@ -3497,7 +3497,7 @@ pub enum GetLicenseConfigurationErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLicenseConfigurationError {
@@ -3566,35 +3566,35 @@ impl GetLicenseConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLicenseConfigurationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLicenseConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseConfigurationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseConfigurationErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `GetLicenseConfigurationErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseConfigurationErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseConfigurationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetLicenseConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseConfigurationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseConfigurationErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetLicenseConfigurationErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseConfigurationErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseConfigurationErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `GetLicenseConfigurationErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3641,7 +3641,7 @@ pub enum GetLicenseConversionTaskErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLicenseConversionTaskError {
@@ -3710,35 +3710,35 @@ impl GetLicenseConversionTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLicenseConversionTaskErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLicenseConversionTaskErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseConversionTaskErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseConversionTaskErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `GetLicenseConversionTaskErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseConversionTaskErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseConversionTaskErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetLicenseConversionTaskErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseConversionTaskErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseConversionTaskErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetLicenseConversionTaskErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseConversionTaskErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseConversionTaskErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `GetLicenseConversionTaskErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3791,7 +3791,7 @@ pub enum GetLicenseManagerReportGeneratorErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLicenseManagerReportGeneratorError {
@@ -3878,56 +3878,56 @@ impl GetLicenseManagerReportGeneratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLicenseManagerReportGeneratorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLicenseManagerReportGeneratorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseManagerReportGeneratorErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `GetLicenseManagerReportGeneratorErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseManagerReportGeneratorErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseManagerReportGeneratorErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetLicenseManagerReportGeneratorErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `GetLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseManagerReportGeneratorErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `GetLicenseManagerReportGeneratorErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseManagerReportGeneratorErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseManagerReportGeneratorErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetLicenseManagerReportGeneratorErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3991,7 +3991,7 @@ pub enum GetLicenseUsageErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLicenseUsageError {
@@ -4059,42 +4059,42 @@ impl GetLicenseUsageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLicenseUsageErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLicenseUsageErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseUsageErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseUsageErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `GetLicenseUsageErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseUsageErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseUsageErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetLicenseUsageErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseUsageErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseUsageErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetLicenseUsageErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseUsageErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseUsageErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `GetLicenseUsageErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLicenseUsageErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `GetLicenseUsageErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetLicenseUsageErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetLicenseUsageErrorKind::ValidationException(_))
     }
@@ -4135,7 +4135,7 @@ pub enum GetServiceSettingsErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServiceSettingsError {
@@ -4201,28 +4201,28 @@ impl GetServiceSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetServiceSettingsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetServiceSettingsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceSettingsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceSettingsErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `GetServiceSettingsErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceSettingsErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceSettingsErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `GetServiceSettingsErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceSettingsErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceSettingsErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `GetServiceSettingsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4268,7 +4268,7 @@ pub enum ListAssociationsForLicenseConfigurationErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssociationsForLicenseConfigurationError {
@@ -4351,42 +4351,42 @@ impl ListAssociationsForLicenseConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssociationsForLicenseConfigurationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAssociationsForLicenseConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssociationsForLicenseConfigurationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssociationsForLicenseConfigurationErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `ListAssociationsForLicenseConfigurationErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssociationsForLicenseConfigurationErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssociationsForLicenseConfigurationErrorKind::FilterLimitExceededException`.
+    /// Returns `true` if the error kind is `ListAssociationsForLicenseConfigurationErrorKind::FilterLimitExceededException`.
     pub fn is_filter_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssociationsForLicenseConfigurationErrorKind::FilterLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssociationsForLicenseConfigurationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListAssociationsForLicenseConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssociationsForLicenseConfigurationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssociationsForLicenseConfigurationErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListAssociationsForLicenseConfigurationErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssociationsForLicenseConfigurationErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssociationsForLicenseConfigurationErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListAssociationsForLicenseConfigurationErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4450,7 +4450,7 @@ pub enum ListDistributedGrantsErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDistributedGrantsError {
@@ -4519,49 +4519,49 @@ impl ListDistributedGrantsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDistributedGrantsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListDistributedGrantsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDistributedGrantsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListDistributedGrantsErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `ListDistributedGrantsErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDistributedGrantsErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `ListDistributedGrantsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListDistributedGrantsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDistributedGrantsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListDistributedGrantsErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListDistributedGrantsErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDistributedGrantsErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListDistributedGrantsErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `ListDistributedGrantsErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDistributedGrantsErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListDistributedGrantsErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListDistributedGrantsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDistributedGrantsErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListDistributedGrantsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListDistributedGrantsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4608,7 +4608,7 @@ pub enum ListFailuresForLicenseConfigurationOperationsErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFailuresForLicenseConfigurationOperationsError {
@@ -4692,21 +4692,21 @@ impl ListFailuresForLicenseConfigurationOperationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFailuresForLicenseConfigurationOperationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListFailuresForLicenseConfigurationOperationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFailuresForLicenseConfigurationOperationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListFailuresForLicenseConfigurationOperationsErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `ListFailuresForLicenseConfigurationOperationsErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFailuresForLicenseConfigurationOperationsErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `ListFailuresForLicenseConfigurationOperationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListFailuresForLicenseConfigurationOperationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4715,14 +4715,14 @@ impl ListFailuresForLicenseConfigurationOperationsError {
             )
         )
     }
-    /// Returns true if the error kind is `ListFailuresForLicenseConfigurationOperationsErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListFailuresForLicenseConfigurationOperationsErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFailuresForLicenseConfigurationOperationsErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListFailuresForLicenseConfigurationOperationsErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListFailuresForLicenseConfigurationOperationsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4781,7 +4781,7 @@ pub enum ListLicenseConfigurationsErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLicenseConfigurationsError {
@@ -4853,42 +4853,42 @@ impl ListLicenseConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLicenseConfigurationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListLicenseConfigurationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseConfigurationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseConfigurationsErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `ListLicenseConfigurationsErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseConfigurationsErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseConfigurationsErrorKind::FilterLimitExceededException`.
+    /// Returns `true` if the error kind is `ListLicenseConfigurationsErrorKind::FilterLimitExceededException`.
     pub fn is_filter_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseConfigurationsErrorKind::FilterLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseConfigurationsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListLicenseConfigurationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseConfigurationsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseConfigurationsErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListLicenseConfigurationsErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseConfigurationsErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseConfigurationsErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListLicenseConfigurationsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4938,7 +4938,7 @@ pub enum ListLicenseConversionTasksErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLicenseConversionTasksError {
@@ -5009,35 +5009,35 @@ impl ListLicenseConversionTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLicenseConversionTasksErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListLicenseConversionTasksErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseConversionTasksErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseConversionTasksErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `ListLicenseConversionTasksErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseConversionTasksErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseConversionTasksErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListLicenseConversionTasksErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseConversionTasksErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseConversionTasksErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListLicenseConversionTasksErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseConversionTasksErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseConversionTasksErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListLicenseConversionTasksErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5090,7 +5090,7 @@ pub enum ListLicenseManagerReportGeneratorsErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLicenseManagerReportGeneratorsError {
@@ -5179,56 +5179,56 @@ impl ListLicenseManagerReportGeneratorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseManagerReportGeneratorsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseManagerReportGeneratorsErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseManagerReportGeneratorsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseManagerReportGeneratorsErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseManagerReportGeneratorsErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseManagerReportGeneratorsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseManagerReportGeneratorsErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5294,7 +5294,7 @@ pub enum ListLicensesErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLicensesError {
@@ -5362,36 +5362,36 @@ impl ListLicensesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLicensesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListLicensesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListLicensesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListLicensesErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `ListLicensesErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(&self.kind, ListLicensesErrorKind::AuthorizationException(_))
     }
-    /// Returns true if the error kind is `ListLicensesErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListLicensesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicensesErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicensesErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListLicensesErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicensesErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicensesErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListLicensesErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicensesErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicensesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListLicensesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListLicensesErrorKind::ValidationException(_))
     }
@@ -5434,7 +5434,7 @@ pub enum ListLicenseSpecificationsForResourceErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLicenseSpecificationsForResourceError {
@@ -5514,35 +5514,35 @@ impl ListLicenseSpecificationsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLicenseSpecificationsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListLicenseSpecificationsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseSpecificationsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseSpecificationsForResourceErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `ListLicenseSpecificationsForResourceErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseSpecificationsForResourceErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseSpecificationsForResourceErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListLicenseSpecificationsForResourceErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseSpecificationsForResourceErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseSpecificationsForResourceErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListLicenseSpecificationsForResourceErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5599,7 +5599,7 @@ pub enum ListLicenseVersionsErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLicenseVersionsError {
@@ -5666,35 +5666,35 @@ impl ListLicenseVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLicenseVersionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListLicenseVersionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseVersionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseVersionsErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `ListLicenseVersionsErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseVersionsErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseVersionsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListLicenseVersionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseVersionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseVersionsErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListLicenseVersionsErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLicenseVersionsErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListLicenseVersionsErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListLicenseVersionsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5743,7 +5743,7 @@ pub enum ListReceivedGrantsErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReceivedGrantsError {
@@ -5812,49 +5812,49 @@ impl ListReceivedGrantsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListReceivedGrantsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListReceivedGrantsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReceivedGrantsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListReceivedGrantsErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `ListReceivedGrantsErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReceivedGrantsErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `ListReceivedGrantsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListReceivedGrantsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReceivedGrantsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListReceivedGrantsErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListReceivedGrantsErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReceivedGrantsErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListReceivedGrantsErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `ListReceivedGrantsErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReceivedGrantsErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListReceivedGrantsErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListReceivedGrantsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReceivedGrantsErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListReceivedGrantsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListReceivedGrantsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5905,7 +5905,7 @@ pub enum ListReceivedLicensesErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReceivedLicensesError {
@@ -5974,49 +5974,49 @@ impl ListReceivedLicensesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListReceivedLicensesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListReceivedLicensesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReceivedLicensesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListReceivedLicensesErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `ListReceivedLicensesErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReceivedLicensesErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `ListReceivedLicensesErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListReceivedLicensesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReceivedLicensesErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListReceivedLicensesErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListReceivedLicensesErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReceivedLicensesErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListReceivedLicensesErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `ListReceivedLicensesErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReceivedLicensesErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListReceivedLicensesErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListReceivedLicensesErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReceivedLicensesErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListReceivedLicensesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListReceivedLicensesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6067,7 +6067,7 @@ pub enum ListResourceInventoryErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourceInventoryError {
@@ -6136,49 +6136,49 @@ impl ListResourceInventoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResourceInventoryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListResourceInventoryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceInventoryErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceInventoryErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `ListResourceInventoryErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceInventoryErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceInventoryErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `ListResourceInventoryErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceInventoryErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceInventoryErrorKind::FilterLimitExceededException`.
+    /// Returns `true` if the error kind is `ListResourceInventoryErrorKind::FilterLimitExceededException`.
     pub fn is_filter_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceInventoryErrorKind::FilterLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceInventoryErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListResourceInventoryErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceInventoryErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceInventoryErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListResourceInventoryErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceInventoryErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceInventoryErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListResourceInventoryErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6225,7 +6225,7 @@ pub enum ListTagsForResourceErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -6292,35 +6292,35 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6365,7 +6365,7 @@ pub enum ListTokensErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTokensError {
@@ -6432,26 +6432,26 @@ impl ListTokensError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTokensErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTokensErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListTokensErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListTokensErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `ListTokensErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(&self.kind, ListTokensErrorKind::AuthorizationException(_))
     }
-    /// Returns true if the error kind is `ListTokensErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListTokensErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTokensErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListTokensErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListTokensErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(&self.kind, ListTokensErrorKind::ServerInternalException(_))
     }
-    /// Returns true if the error kind is `ListTokensErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTokensErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListTokensErrorKind::ValidationException(_))
     }
@@ -6495,7 +6495,7 @@ pub enum ListUsageForLicenseConfigurationErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUsageForLicenseConfigurationError {
@@ -6578,42 +6578,42 @@ impl ListUsageForLicenseConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUsageForLicenseConfigurationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListUsageForLicenseConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUsageForLicenseConfigurationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListUsageForLicenseConfigurationErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `ListUsageForLicenseConfigurationErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUsageForLicenseConfigurationErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `ListUsageForLicenseConfigurationErrorKind::FilterLimitExceededException`.
+    /// Returns `true` if the error kind is `ListUsageForLicenseConfigurationErrorKind::FilterLimitExceededException`.
     pub fn is_filter_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUsageForLicenseConfigurationErrorKind::FilterLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListUsageForLicenseConfigurationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListUsageForLicenseConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUsageForLicenseConfigurationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListUsageForLicenseConfigurationErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `ListUsageForLicenseConfigurationErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUsageForLicenseConfigurationErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListUsageForLicenseConfigurationErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListUsageForLicenseConfigurationErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6675,7 +6675,7 @@ pub enum RejectGrantErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RejectGrantError {
@@ -6744,40 +6744,40 @@ impl RejectGrantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RejectGrantErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RejectGrantErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, RejectGrantErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `RejectGrantErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `RejectGrantErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(&self.kind, RejectGrantErrorKind::AuthorizationException(_))
     }
-    /// Returns true if the error kind is `RejectGrantErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `RejectGrantErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectGrantErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `RejectGrantErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `RejectGrantErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectGrantErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RejectGrantErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `RejectGrantErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectGrantErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RejectGrantErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `RejectGrantErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(&self.kind, RejectGrantErrorKind::ServerInternalException(_))
     }
-    /// Returns true if the error kind is `RejectGrantErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RejectGrantErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, RejectGrantErrorKind::ValidationException(_))
     }
@@ -6821,7 +6821,7 @@ pub enum TagResourceErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -6888,29 +6888,29 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AuthorizationException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ServerInternalException(_))
     }
@@ -6952,7 +6952,7 @@ pub enum UntagResourceErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -7019,32 +7019,32 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7091,7 +7091,7 @@ pub enum UpdateLicenseConfigurationErrorKind {
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLicenseConfigurationError {
@@ -7165,42 +7165,42 @@ impl UpdateLicenseConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLicenseConfigurationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateLicenseConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLicenseConfigurationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLicenseConfigurationErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `UpdateLicenseConfigurationErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLicenseConfigurationErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLicenseConfigurationErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateLicenseConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLicenseConfigurationErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLicenseConfigurationErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateLicenseConfigurationErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLicenseConfigurationErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLicenseConfigurationErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateLicenseConfigurationErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLicenseConfigurationErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLicenseConfigurationErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `UpdateLicenseConfigurationErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7256,7 +7256,7 @@ pub enum UpdateLicenseManagerReportGeneratorErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLicenseManagerReportGeneratorError {
@@ -7345,56 +7345,56 @@ impl UpdateLicenseManagerReportGeneratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLicenseManagerReportGeneratorErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLicenseManagerReportGeneratorErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7466,7 +7466,7 @@ pub enum UpdateLicenseSpecificationsForResourceErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLicenseSpecificationsForResourceError {
@@ -7552,49 +7552,49 @@ impl UpdateLicenseSpecificationsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLicenseSpecificationsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLicenseSpecificationsForResourceErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLicenseSpecificationsForResourceErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::LicenseUsageException`.
+    /// Returns `true` if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::LicenseUsageException`.
     pub fn is_license_usage_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLicenseSpecificationsForResourceErrorKind::LicenseUsageException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLicenseSpecificationsForResourceErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7657,7 +7657,7 @@ pub enum UpdateServiceSettingsErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateServiceSettingsError {
@@ -7724,35 +7724,35 @@ impl UpdateServiceSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateServiceSettingsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateServiceSettingsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceSettingsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceSettingsErrorKind::AuthorizationException`.
+    /// Returns `true` if the error kind is `UpdateServiceSettingsErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceSettingsErrorKind::AuthorizationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceSettingsErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateServiceSettingsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceSettingsErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceSettingsErrorKind::RateLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateServiceSettingsErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceSettingsErrorKind::RateLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceSettingsErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `UpdateServiceSettingsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,

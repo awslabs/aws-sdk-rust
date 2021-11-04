@@ -18,7 +18,7 @@ pub enum AddListenerCertificatesErrorKind {
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// <p>You've reached the limit on the number of certificates per load balancer.</p>
     TooManyCertificatesException(crate::error::TooManyCertificatesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddListenerCertificatesError {
@@ -83,21 +83,21 @@ impl AddListenerCertificatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddListenerCertificatesErrorKind::CertificateNotFoundException`.
+    /// Returns `true` if the error kind is `AddListenerCertificatesErrorKind::CertificateNotFoundException`.
     pub fn is_certificate_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddListenerCertificatesErrorKind::CertificateNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddListenerCertificatesErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `AddListenerCertificatesErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddListenerCertificatesErrorKind::ListenerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddListenerCertificatesErrorKind::TooManyCertificatesException`.
+    /// Returns `true` if the error kind is `AddListenerCertificatesErrorKind::TooManyCertificatesException`.
     pub fn is_too_many_certificates_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -141,7 +141,7 @@ pub enum AddTagsErrorKind {
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
     /// <p>You've reached the limit on the number of tags per load balancer.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddTagsError {
@@ -209,33 +209,33 @@ impl AddTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::DuplicateTagKeysException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::DuplicateTagKeysException(_))
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::ListenerNotFoundException(_))
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::LoadBalancerNotFoundException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsErrorKind::LoadBalancerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::RuleNotFoundException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::RuleNotFoundException`.
     pub fn is_rule_not_found_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::RuleNotFoundException(_))
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::TargetGroupNotFoundException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsErrorKind::TargetGroupNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::TooManyTagsException(_))
     }
@@ -310,7 +310,7 @@ pub enum CreateListenerErrorKind {
     ),
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateListenerError {
@@ -394,123 +394,123 @@ impl CreateListenerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::AlpnPolicyNotSupportedException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::AlpnPolicyNotSupportedException`.
     pub fn is_alpn_policy_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::AlpnPolicyNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::CertificateNotFoundException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::CertificateNotFoundException`.
     pub fn is_certificate_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::CertificateNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::DuplicateListenerException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::DuplicateListenerException`.
     pub fn is_duplicate_listener_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::DuplicateListenerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::IncompatibleProtocolsException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::IncompatibleProtocolsException`.
     pub fn is_incompatible_protocols_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::IncompatibleProtocolsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::InvalidLoadBalancerActionException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::InvalidLoadBalancerActionException`.
     pub fn is_invalid_load_balancer_action_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::InvalidLoadBalancerActionException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::LoadBalancerNotFoundException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::LoadBalancerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::SslPolicyNotFoundException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::SslPolicyNotFoundException`.
     pub fn is_ssl_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::SslPolicyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::TargetGroupAssociationLimitException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::TargetGroupAssociationLimitException`.
     pub fn is_target_group_association_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::TargetGroupAssociationLimitException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::TargetGroupNotFoundException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::TargetGroupNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::TooManyActionsException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::TooManyActionsException`.
     pub fn is_too_many_actions_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::TooManyActionsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::TooManyCertificatesException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::TooManyCertificatesException`.
     pub fn is_too_many_certificates_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::TooManyCertificatesException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::TooManyListenersException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::TooManyListenersException`.
     pub fn is_too_many_listeners_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::TooManyListenersException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::TooManyRegistrationsForTargetIdException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::TooManyRegistrationsForTargetIdException`.
     pub fn is_too_many_registrations_for_target_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::TooManyRegistrationsForTargetIdException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, CreateListenerErrorKind::TooManyTagsException(_))
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::TooManyTargetsException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::TooManyTargetsException`.
     pub fn is_too_many_targets_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::TooManyTargetsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException`.
     pub fn is_too_many_unique_target_groups_per_load_balancer_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::UnsupportedProtocolException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::UnsupportedProtocolException`.
     pub fn is_unsupported_protocol_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -588,7 +588,7 @@ pub enum CreateLoadBalancerErrorKind {
     TooManyLoadBalancersException(crate::error::TooManyLoadBalancersException),
     /// <p>You've reached the limit on the number of tags per load balancer.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLoadBalancerError {
@@ -669,91 +669,91 @@ impl CreateLoadBalancerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::AllocationIdNotFoundException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::AllocationIdNotFoundException`.
     pub fn is_allocation_id_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::AllocationIdNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::AvailabilityZoneNotSupportedException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::AvailabilityZoneNotSupportedException`.
     pub fn is_availability_zone_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::AvailabilityZoneNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::DuplicateLoadBalancerNameException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::DuplicateLoadBalancerNameException`.
     pub fn is_duplicate_load_balancer_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::DuplicateLoadBalancerNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::DuplicateTagKeysException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::DuplicateTagKeysException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::InvalidSchemeException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::InvalidSchemeException`.
     pub fn is_invalid_scheme_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::InvalidSchemeException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::InvalidSecurityGroupException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::InvalidSecurityGroupException`.
     pub fn is_invalid_security_group_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::InvalidSecurityGroupException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::InvalidSubnetException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::InvalidSubnetException`.
     pub fn is_invalid_subnet_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::InvalidSubnetException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::SubnetNotFoundException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::SubnetNotFoundException`.
     pub fn is_subnet_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::SubnetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::TooManyLoadBalancersException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::TooManyLoadBalancersException`.
     pub fn is_too_many_load_balancers_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::TooManyLoadBalancersException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -837,7 +837,7 @@ pub enum CreateRuleErrorKind {
     ),
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRuleError {
@@ -916,90 +916,90 @@ impl CreateRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::IncompatibleProtocolsException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::IncompatibleProtocolsException`.
     pub fn is_incompatible_protocols_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleErrorKind::IncompatibleProtocolsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::InvalidLoadBalancerActionException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::InvalidLoadBalancerActionException`.
     pub fn is_invalid_load_balancer_action_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleErrorKind::InvalidLoadBalancerActionException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleErrorKind::ListenerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::PriorityInUseException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::PriorityInUseException`.
     pub fn is_priority_in_use_exception(&self) -> bool {
         matches!(&self.kind, CreateRuleErrorKind::PriorityInUseException(_))
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::TargetGroupAssociationLimitException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::TargetGroupAssociationLimitException`.
     pub fn is_target_group_association_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleErrorKind::TargetGroupAssociationLimitException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::TargetGroupNotFoundException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleErrorKind::TargetGroupNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::TooManyActionsException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::TooManyActionsException`.
     pub fn is_too_many_actions_exception(&self) -> bool {
         matches!(&self.kind, CreateRuleErrorKind::TooManyActionsException(_))
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::TooManyRegistrationsForTargetIdException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::TooManyRegistrationsForTargetIdException`.
     pub fn is_too_many_registrations_for_target_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleErrorKind::TooManyRegistrationsForTargetIdException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::TooManyRulesException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::TooManyRulesException`.
     pub fn is_too_many_rules_exception(&self) -> bool {
         matches!(&self.kind, CreateRuleErrorKind::TooManyRulesException(_))
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, CreateRuleErrorKind::TooManyTagsException(_))
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::TooManyTargetGroupsException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::TooManyTargetGroupsException`.
     pub fn is_too_many_target_groups_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleErrorKind::TooManyTargetGroupsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::TooManyTargetsException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::TooManyTargetsException`.
     pub fn is_too_many_targets_exception(&self) -> bool {
         matches!(&self.kind, CreateRuleErrorKind::TooManyTargetsException(_))
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException`.
     pub fn is_too_many_unique_target_groups_per_load_balancer_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRuleErrorKind::UnsupportedProtocolException`.
+    /// Returns `true` if the error kind is `CreateRuleErrorKind::UnsupportedProtocolException`.
     pub fn is_unsupported_protocol_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1054,7 +1054,7 @@ pub enum CreateTargetGroupErrorKind {
     /// <p>You've reached the limit on the number of target groups for your Amazon Web Services
     /// account.</p>
     TooManyTargetGroupsException(crate::error::TooManyTargetGroupsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTargetGroupError {
@@ -1122,28 +1122,28 @@ impl CreateTargetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTargetGroupErrorKind::DuplicateTargetGroupNameException`.
+    /// Returns `true` if the error kind is `CreateTargetGroupErrorKind::DuplicateTargetGroupNameException`.
     pub fn is_duplicate_target_group_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTargetGroupErrorKind::DuplicateTargetGroupNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTargetGroupErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `CreateTargetGroupErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTargetGroupErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTargetGroupErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreateTargetGroupErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTargetGroupErrorKind::TooManyTagsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTargetGroupErrorKind::TooManyTargetGroupsException`.
+    /// Returns `true` if the error kind is `CreateTargetGroupErrorKind::TooManyTargetGroupsException`.
     pub fn is_too_many_target_groups_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1182,7 +1182,7 @@ pub enum DeleteListenerErrorKind {
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// <p>A specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteListenerError {
@@ -1246,14 +1246,14 @@ impl DeleteListenerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteListenerErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteListenerErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteListenerErrorKind::ListenerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteListenerErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteListenerErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1290,7 +1290,7 @@ pub enum DeleteLoadBalancerErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>A specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLoadBalancerError {
@@ -1355,21 +1355,21 @@ impl DeleteLoadBalancerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerErrorKind::LoadBalancerNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoadBalancerErrorKind::LoadBalancerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoadBalancerErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1405,7 +1405,7 @@ pub enum DeleteRuleErrorKind {
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
     /// <p>The specified rule does not exist.</p>
     RuleNotFoundException(crate::error::RuleNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRuleError {
@@ -1469,14 +1469,14 @@ impl DeleteRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRuleErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DeleteRuleErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRuleErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRuleErrorKind::RuleNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRuleErrorKind::RuleNotFoundException`.
     pub fn is_rule_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteRuleErrorKind::RuleNotFoundException(_))
     }
@@ -1506,7 +1506,7 @@ pub struct DeleteTargetGroupError {
 pub enum DeleteTargetGroupErrorKind {
     /// <p>A specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTargetGroupError {
@@ -1569,7 +1569,7 @@ impl DeleteTargetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTargetGroupErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteTargetGroupErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1604,7 +1604,7 @@ pub enum DeregisterTargetsErrorKind {
     InvalidTargetException(crate::error::InvalidTargetException),
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterTargetsError {
@@ -1668,14 +1668,14 @@ impl DeregisterTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterTargetsErrorKind::InvalidTargetException`.
+    /// Returns `true` if the error kind is `DeregisterTargetsErrorKind::InvalidTargetException`.
     pub fn is_invalid_target_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterTargetsErrorKind::InvalidTargetException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterTargetsErrorKind::TargetGroupNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterTargetsErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1706,7 +1706,7 @@ pub struct DescribeAccountLimitsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountLimitsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccountLimitsError {
@@ -1792,7 +1792,7 @@ pub struct DescribeListenerCertificatesError {
 pub enum DescribeListenerCertificatesErrorKind {
     /// <p>The specified listener does not exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeListenerCertificatesError {
@@ -1857,7 +1857,7 @@ impl DescribeListenerCertificatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeListenerCertificatesErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeListenerCertificatesErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1895,7 +1895,7 @@ pub enum DescribeListenersErrorKind {
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeListenersError {
@@ -1960,21 +1960,21 @@ impl DescribeListenersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeListenersErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeListenersErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeListenersErrorKind::ListenerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeListenersErrorKind::LoadBalancerNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeListenersErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeListenersErrorKind::LoadBalancerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeListenersErrorKind::UnsupportedProtocolException`.
+    /// Returns `true` if the error kind is `DescribeListenersErrorKind::UnsupportedProtocolException`.
     pub fn is_unsupported_protocol_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2008,7 +2008,7 @@ pub struct DescribeLoadBalancerAttributesError {
 pub enum DescribeLoadBalancerAttributesErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLoadBalancerAttributesError {
@@ -2076,7 +2076,7 @@ impl DescribeLoadBalancerAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2110,7 +2110,7 @@ pub struct DescribeLoadBalancersError {
 pub enum DescribeLoadBalancersErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLoadBalancersError {
@@ -2173,7 +2173,7 @@ impl DescribeLoadBalancersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLoadBalancersErrorKind::LoadBalancerNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeLoadBalancersErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2209,7 +2209,7 @@ pub enum DescribeRulesErrorKind {
     RuleNotFoundException(crate::error::RuleNotFoundException),
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRulesError {
@@ -2274,18 +2274,18 @@ impl DescribeRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRulesErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRulesErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRulesErrorKind::ListenerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRulesErrorKind::RuleNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRulesErrorKind::RuleNotFoundException`.
     pub fn is_rule_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeRulesErrorKind::RuleNotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeRulesErrorKind::UnsupportedProtocolException`.
+    /// Returns `true` if the error kind is `DescribeRulesErrorKind::UnsupportedProtocolException`.
     pub fn is_unsupported_protocol_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2319,7 +2319,7 @@ pub struct DescribeSSLPoliciesError {
 pub enum DescribeSSLPoliciesErrorKind {
     /// <p>The specified SSL policy does not exist.</p>
     SslPolicyNotFoundException(crate::error::SslPolicyNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSSLPoliciesError {
@@ -2382,7 +2382,7 @@ impl DescribeSSLPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSSLPoliciesErrorKind::SslPolicyNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeSSLPoliciesErrorKind::SslPolicyNotFoundException`.
     pub fn is_ssl_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2420,7 +2420,7 @@ pub enum DescribeTagsErrorKind {
     RuleNotFoundException(crate::error::RuleNotFoundException),
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTagsError {
@@ -2486,25 +2486,25 @@ impl DescribeTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTagsErrorKind::ListenerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::LoadBalancerNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTagsErrorKind::LoadBalancerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::RuleNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::RuleNotFoundException`.
     pub fn is_rule_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeTagsErrorKind::RuleNotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::TargetGroupNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2539,7 +2539,7 @@ pub struct DescribeTargetGroupAttributesError {
 pub enum DescribeTargetGroupAttributesErrorKind {
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTargetGroupAttributesError {
@@ -2607,7 +2607,7 @@ impl DescribeTargetGroupAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTargetGroupAttributesErrorKind::TargetGroupNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTargetGroupAttributesErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2643,7 +2643,7 @@ pub enum DescribeTargetGroupsErrorKind {
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTargetGroupsError {
@@ -2707,14 +2707,14 @@ impl DescribeTargetGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTargetGroupsErrorKind::LoadBalancerNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTargetGroupsErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTargetGroupsErrorKind::LoadBalancerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTargetGroupsErrorKind::TargetGroupNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTargetGroupsErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2753,7 +2753,7 @@ pub enum DescribeTargetHealthErrorKind {
     InvalidTargetException(crate::error::InvalidTargetException),
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTargetHealthError {
@@ -2818,21 +2818,21 @@ impl DescribeTargetHealthError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTargetHealthErrorKind::HealthUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeTargetHealthErrorKind::HealthUnavailableException`.
     pub fn is_health_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTargetHealthErrorKind::HealthUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTargetHealthErrorKind::InvalidTargetException`.
+    /// Returns `true` if the error kind is `DescribeTargetHealthErrorKind::InvalidTargetException`.
     pub fn is_invalid_target_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTargetHealthErrorKind::InvalidTargetException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTargetHealthErrorKind::TargetGroupNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTargetHealthErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2905,7 +2905,7 @@ pub enum ModifyListenerErrorKind {
     ),
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyListenerError {
@@ -2988,119 +2988,119 @@ impl ModifyListenerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyListenerErrorKind::AlpnPolicyNotSupportedException`.
+    /// Returns `true` if the error kind is `ModifyListenerErrorKind::AlpnPolicyNotSupportedException`.
     pub fn is_alpn_policy_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyListenerErrorKind::AlpnPolicyNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyListenerErrorKind::CertificateNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyListenerErrorKind::CertificateNotFoundException`.
     pub fn is_certificate_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyListenerErrorKind::CertificateNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyListenerErrorKind::DuplicateListenerException`.
+    /// Returns `true` if the error kind is `ModifyListenerErrorKind::DuplicateListenerException`.
     pub fn is_duplicate_listener_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyListenerErrorKind::DuplicateListenerException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyListenerErrorKind::IncompatibleProtocolsException`.
+    /// Returns `true` if the error kind is `ModifyListenerErrorKind::IncompatibleProtocolsException`.
     pub fn is_incompatible_protocols_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyListenerErrorKind::IncompatibleProtocolsException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyListenerErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `ModifyListenerErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyListenerErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyListenerErrorKind::InvalidLoadBalancerActionException`.
+    /// Returns `true` if the error kind is `ModifyListenerErrorKind::InvalidLoadBalancerActionException`.
     pub fn is_invalid_load_balancer_action_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyListenerErrorKind::InvalidLoadBalancerActionException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyListenerErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyListenerErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyListenerErrorKind::ListenerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyListenerErrorKind::SslPolicyNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyListenerErrorKind::SslPolicyNotFoundException`.
     pub fn is_ssl_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyListenerErrorKind::SslPolicyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyListenerErrorKind::TargetGroupAssociationLimitException`.
+    /// Returns `true` if the error kind is `ModifyListenerErrorKind::TargetGroupAssociationLimitException`.
     pub fn is_target_group_association_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyListenerErrorKind::TargetGroupAssociationLimitException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyListenerErrorKind::TargetGroupNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyListenerErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyListenerErrorKind::TargetGroupNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyListenerErrorKind::TooManyActionsException`.
+    /// Returns `true` if the error kind is `ModifyListenerErrorKind::TooManyActionsException`.
     pub fn is_too_many_actions_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyListenerErrorKind::TooManyActionsException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyListenerErrorKind::TooManyCertificatesException`.
+    /// Returns `true` if the error kind is `ModifyListenerErrorKind::TooManyCertificatesException`.
     pub fn is_too_many_certificates_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyListenerErrorKind::TooManyCertificatesException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyListenerErrorKind::TooManyListenersException`.
+    /// Returns `true` if the error kind is `ModifyListenerErrorKind::TooManyListenersException`.
     pub fn is_too_many_listeners_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyListenerErrorKind::TooManyListenersException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyListenerErrorKind::TooManyRegistrationsForTargetIdException`.
+    /// Returns `true` if the error kind is `ModifyListenerErrorKind::TooManyRegistrationsForTargetIdException`.
     pub fn is_too_many_registrations_for_target_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyListenerErrorKind::TooManyRegistrationsForTargetIdException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyListenerErrorKind::TooManyTargetsException`.
+    /// Returns `true` if the error kind is `ModifyListenerErrorKind::TooManyTargetsException`.
     pub fn is_too_many_targets_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyListenerErrorKind::TooManyTargetsException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException`.
+    /// Returns `true` if the error kind is `ModifyListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException`.
     pub fn is_too_many_unique_target_groups_per_load_balancer_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyListenerErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyListenerErrorKind::UnsupportedProtocolException`.
+    /// Returns `true` if the error kind is `ModifyListenerErrorKind::UnsupportedProtocolException`.
     pub fn is_unsupported_protocol_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3154,7 +3154,7 @@ pub enum ModifyLoadBalancerAttributesErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>The specified load balancer does not exist.</p>
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyLoadBalancerAttributesError {
@@ -3222,14 +3222,14 @@ impl ModifyLoadBalancerAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyLoadBalancerAttributesErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `ModifyLoadBalancerAttributesErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyLoadBalancerAttributesErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyLoadBalancerAttributesErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3293,7 +3293,7 @@ pub enum ModifyRuleErrorKind {
     ),
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyRuleError {
@@ -3368,68 +3368,68 @@ impl ModifyRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyRuleErrorKind::IncompatibleProtocolsException`.
+    /// Returns `true` if the error kind is `ModifyRuleErrorKind::IncompatibleProtocolsException`.
     pub fn is_incompatible_protocols_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyRuleErrorKind::IncompatibleProtocolsException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyRuleErrorKind::InvalidLoadBalancerActionException`.
+    /// Returns `true` if the error kind is `ModifyRuleErrorKind::InvalidLoadBalancerActionException`.
     pub fn is_invalid_load_balancer_action_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyRuleErrorKind::InvalidLoadBalancerActionException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyRuleErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `ModifyRuleErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyRuleErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyRuleErrorKind::RuleNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyRuleErrorKind::RuleNotFoundException`.
     pub fn is_rule_not_found_exception(&self) -> bool {
         matches!(&self.kind, ModifyRuleErrorKind::RuleNotFoundException(_))
     }
-    /// Returns true if the error kind is `ModifyRuleErrorKind::TargetGroupAssociationLimitException`.
+    /// Returns `true` if the error kind is `ModifyRuleErrorKind::TargetGroupAssociationLimitException`.
     pub fn is_target_group_association_limit_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyRuleErrorKind::TargetGroupAssociationLimitException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyRuleErrorKind::TargetGroupNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyRuleErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyRuleErrorKind::TargetGroupNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyRuleErrorKind::TooManyActionsException`.
+    /// Returns `true` if the error kind is `ModifyRuleErrorKind::TooManyActionsException`.
     pub fn is_too_many_actions_exception(&self) -> bool {
         matches!(&self.kind, ModifyRuleErrorKind::TooManyActionsException(_))
     }
-    /// Returns true if the error kind is `ModifyRuleErrorKind::TooManyRegistrationsForTargetIdException`.
+    /// Returns `true` if the error kind is `ModifyRuleErrorKind::TooManyRegistrationsForTargetIdException`.
     pub fn is_too_many_registrations_for_target_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyRuleErrorKind::TooManyRegistrationsForTargetIdException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyRuleErrorKind::TooManyTargetsException`.
+    /// Returns `true` if the error kind is `ModifyRuleErrorKind::TooManyTargetsException`.
     pub fn is_too_many_targets_exception(&self) -> bool {
         matches!(&self.kind, ModifyRuleErrorKind::TooManyTargetsException(_))
     }
-    /// Returns true if the error kind is `ModifyRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException`.
+    /// Returns `true` if the error kind is `ModifyRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException`.
     pub fn is_too_many_unique_target_groups_per_load_balancer_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyRuleErrorKind::TooManyUniqueTargetGroupsPerLoadBalancerException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyRuleErrorKind::UnsupportedProtocolException`.
+    /// Returns `true` if the error kind is `ModifyRuleErrorKind::UnsupportedProtocolException`.
     pub fn is_unsupported_protocol_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3475,7 +3475,7 @@ pub enum ModifyTargetGroupErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyTargetGroupError {
@@ -3541,14 +3541,14 @@ impl ModifyTargetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyTargetGroupErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `ModifyTargetGroupErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyTargetGroupErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyTargetGroupErrorKind::TargetGroupNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyTargetGroupErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3585,7 +3585,7 @@ pub enum ModifyTargetGroupAttributesErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyTargetGroupAttributesError {
@@ -3653,14 +3653,14 @@ impl ModifyTargetGroupAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyTargetGroupAttributesErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `ModifyTargetGroupAttributesErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyTargetGroupAttributesErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyTargetGroupAttributesErrorKind::TargetGroupNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyTargetGroupAttributesErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3707,7 +3707,7 @@ pub enum RegisterTargetsErrorKind {
     ),
     /// <p>You've reached the limit on the number of targets.</p>
     TooManyTargetsException(crate::error::TooManyTargetsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterTargetsError {
@@ -3775,28 +3775,28 @@ impl RegisterTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterTargetsErrorKind::InvalidTargetException`.
+    /// Returns `true` if the error kind is `RegisterTargetsErrorKind::InvalidTargetException`.
     pub fn is_invalid_target_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterTargetsErrorKind::InvalidTargetException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterTargetsErrorKind::TargetGroupNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterTargetsErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterTargetsErrorKind::TargetGroupNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterTargetsErrorKind::TooManyRegistrationsForTargetIdException`.
+    /// Returns `true` if the error kind is `RegisterTargetsErrorKind::TooManyRegistrationsForTargetIdException`.
     pub fn is_too_many_registrations_for_target_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterTargetsErrorKind::TooManyRegistrationsForTargetIdException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterTargetsErrorKind::TooManyTargetsException`.
+    /// Returns `true` if the error kind is `RegisterTargetsErrorKind::TooManyTargetsException`.
     pub fn is_too_many_targets_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3835,7 +3835,7 @@ pub enum RemoveListenerCertificatesErrorKind {
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// <p>This operation is not allowed.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveListenerCertificatesError {
@@ -3901,14 +3901,14 @@ impl RemoveListenerCertificatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveListenerCertificatesErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveListenerCertificatesErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveListenerCertificatesErrorKind::ListenerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveListenerCertificatesErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `RemoveListenerCertificatesErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3951,7 +3951,7 @@ pub enum RemoveTagsErrorKind {
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
     /// <p>You've reached the limit on the number of tags per load balancer.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveTagsError {
@@ -4018,32 +4018,32 @@ impl RemoveTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsErrorKind::ListenerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::LoadBalancerNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsErrorKind::LoadBalancerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::RuleNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::RuleNotFoundException`.
     pub fn is_rule_not_found_exception(&self) -> bool {
         matches!(&self.kind, RemoveTagsErrorKind::RuleNotFoundException(_))
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::TargetGroupNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::TargetGroupNotFoundException`.
     pub fn is_target_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveTagsErrorKind::TargetGroupNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, RemoveTagsErrorKind::TooManyTagsException(_))
     }
@@ -4080,7 +4080,7 @@ pub enum SetIpAddressTypeErrorKind {
     InvalidSubnetException(crate::error::InvalidSubnetException),
     /// <p>The specified load balancer does not exist.</p>
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetIpAddressTypeError {
@@ -4147,21 +4147,21 @@ impl SetIpAddressTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetIpAddressTypeErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `SetIpAddressTypeErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetIpAddressTypeErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `SetIpAddressTypeErrorKind::InvalidSubnetException`.
+    /// Returns `true` if the error kind is `SetIpAddressTypeErrorKind::InvalidSubnetException`.
     pub fn is_invalid_subnet_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetIpAddressTypeErrorKind::InvalidSubnetException(_)
         )
     }
-    /// Returns true if the error kind is `SetIpAddressTypeErrorKind::LoadBalancerNotFoundException`.
+    /// Returns `true` if the error kind is `SetIpAddressTypeErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4199,7 +4199,7 @@ pub enum SetRulePrioritiesErrorKind {
     PriorityInUseException(crate::error::PriorityInUseException),
     /// <p>The specified rule does not exist.</p>
     RuleNotFoundException(crate::error::RuleNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetRulePrioritiesError {
@@ -4264,21 +4264,21 @@ impl SetRulePrioritiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetRulePrioritiesErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `SetRulePrioritiesErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetRulePrioritiesErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `SetRulePrioritiesErrorKind::PriorityInUseException`.
+    /// Returns `true` if the error kind is `SetRulePrioritiesErrorKind::PriorityInUseException`.
     pub fn is_priority_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetRulePrioritiesErrorKind::PriorityInUseException(_)
         )
     }
-    /// Returns true if the error kind is `SetRulePrioritiesErrorKind::RuleNotFoundException`.
+    /// Returns `true` if the error kind is `SetRulePrioritiesErrorKind::RuleNotFoundException`.
     pub fn is_rule_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4316,7 +4316,7 @@ pub enum SetSecurityGroupsErrorKind {
     InvalidSecurityGroupException(crate::error::InvalidSecurityGroupException),
     /// <p>The specified load balancer does not exist.</p>
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetSecurityGroupsError {
@@ -4383,21 +4383,21 @@ impl SetSecurityGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetSecurityGroupsErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `SetSecurityGroupsErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetSecurityGroupsErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `SetSecurityGroupsErrorKind::InvalidSecurityGroupException`.
+    /// Returns `true` if the error kind is `SetSecurityGroupsErrorKind::InvalidSecurityGroupException`.
     pub fn is_invalid_security_group_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetSecurityGroupsErrorKind::InvalidSecurityGroupException(_)
         )
     }
-    /// Returns true if the error kind is `SetSecurityGroupsErrorKind::LoadBalancerNotFoundException`.
+    /// Returns `true` if the error kind is `SetSecurityGroupsErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4443,7 +4443,7 @@ pub enum SetSubnetsErrorKind {
     LoadBalancerNotFoundException(crate::error::LoadBalancerNotFoundException),
     /// <p>The specified subnet does not exist.</p>
     SubnetNotFoundException(crate::error::SubnetNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetSubnetsError {
@@ -4511,39 +4511,39 @@ impl SetSubnetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetSubnetsErrorKind::AllocationIdNotFoundException`.
+    /// Returns `true` if the error kind is `SetSubnetsErrorKind::AllocationIdNotFoundException`.
     pub fn is_allocation_id_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetSubnetsErrorKind::AllocationIdNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetSubnetsErrorKind::AvailabilityZoneNotSupportedException`.
+    /// Returns `true` if the error kind is `SetSubnetsErrorKind::AvailabilityZoneNotSupportedException`.
     pub fn is_availability_zone_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetSubnetsErrorKind::AvailabilityZoneNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `SetSubnetsErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `SetSubnetsErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetSubnetsErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `SetSubnetsErrorKind::InvalidSubnetException`.
+    /// Returns `true` if the error kind is `SetSubnetsErrorKind::InvalidSubnetException`.
     pub fn is_invalid_subnet_exception(&self) -> bool {
         matches!(&self.kind, SetSubnetsErrorKind::InvalidSubnetException(_))
     }
-    /// Returns true if the error kind is `SetSubnetsErrorKind::LoadBalancerNotFoundException`.
+    /// Returns `true` if the error kind is `SetSubnetsErrorKind::LoadBalancerNotFoundException`.
     pub fn is_load_balancer_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetSubnetsErrorKind::LoadBalancerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetSubnetsErrorKind::SubnetNotFoundException`.
+    /// Returns `true` if the error kind is `SetSubnetsErrorKind::SubnetNotFoundException`.
     pub fn is_subnet_not_found_exception(&self) -> bool {
         matches!(&self.kind, SetSubnetsErrorKind::SubnetNotFoundException(_))
     }

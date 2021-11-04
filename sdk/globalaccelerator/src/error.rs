@@ -26,7 +26,7 @@ pub enum AddCustomRoutingEndpointsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddCustomRoutingEndpointsError {
@@ -101,49 +101,49 @@ impl AddCustomRoutingEndpointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddCustomRoutingEndpointsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AddCustomRoutingEndpointsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddCustomRoutingEndpointsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AddCustomRoutingEndpointsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `AddCustomRoutingEndpointsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddCustomRoutingEndpointsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AddCustomRoutingEndpointsErrorKind::EndpointAlreadyExistsException`.
+    /// Returns `true` if the error kind is `AddCustomRoutingEndpointsErrorKind::EndpointAlreadyExistsException`.
     pub fn is_endpoint_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddCustomRoutingEndpointsErrorKind::EndpointAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `AddCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException`.
+    /// Returns `true` if the error kind is `AddCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddCustomRoutingEndpointsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `AddCustomRoutingEndpointsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddCustomRoutingEndpointsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AddCustomRoutingEndpointsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `AddCustomRoutingEndpointsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddCustomRoutingEndpointsErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `AddCustomRoutingEndpointsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AddCustomRoutingEndpointsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -196,7 +196,7 @@ pub enum AdvertiseByoipCidrErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AdvertiseByoipCidrError {
@@ -263,35 +263,35 @@ impl AdvertiseByoipCidrError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AdvertiseByoipCidrErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AdvertiseByoipCidrErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdvertiseByoipCidrErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AdvertiseByoipCidrErrorKind::ByoipCidrNotFoundException`.
+    /// Returns `true` if the error kind is `AdvertiseByoipCidrErrorKind::ByoipCidrNotFoundException`.
     pub fn is_byoip_cidr_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdvertiseByoipCidrErrorKind::ByoipCidrNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AdvertiseByoipCidrErrorKind::IncorrectCidrStateException`.
+    /// Returns `true` if the error kind is `AdvertiseByoipCidrErrorKind::IncorrectCidrStateException`.
     pub fn is_incorrect_cidr_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdvertiseByoipCidrErrorKind::IncorrectCidrStateException(_)
         )
     }
-    /// Returns true if the error kind is `AdvertiseByoipCidrErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `AdvertiseByoipCidrErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AdvertiseByoipCidrErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AdvertiseByoipCidrErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `AdvertiseByoipCidrErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -329,7 +329,7 @@ pub enum AllowCustomRoutingTrafficErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AllowCustomRoutingTrafficError {
@@ -395,14 +395,14 @@ impl AllowCustomRoutingTrafficError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AllowCustomRoutingTrafficErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `AllowCustomRoutingTrafficErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -441,7 +441,7 @@ pub enum CreateAcceleratorErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAcceleratorError {
@@ -506,21 +506,21 @@ impl CreateAcceleratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAcceleratorErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `CreateAcceleratorErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAcceleratorErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAcceleratorErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `CreateAcceleratorErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAcceleratorErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAcceleratorErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAcceleratorErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -560,7 +560,7 @@ pub enum CreateCustomRoutingAcceleratorErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCustomRoutingAcceleratorError {
@@ -635,28 +635,28 @@ impl CreateCustomRoutingAcceleratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCustomRoutingAcceleratorErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateCustomRoutingAcceleratorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomRoutingAcceleratorErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `CreateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomRoutingAcceleratorErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `CreateCustomRoutingAcceleratorErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomRoutingAcceleratorErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateCustomRoutingAcceleratorErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -709,7 +709,7 @@ pub enum CreateCustomRoutingEndpointGroupErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCustomRoutingEndpointGroupError {
@@ -798,56 +798,56 @@ impl CreateCustomRoutingEndpointGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomRoutingEndpointGroupErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomRoutingEndpointGroupErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::EndpointGroupAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::EndpointGroupAlreadyExistsException`.
     pub fn is_endpoint_group_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomRoutingEndpointGroupErrorKind::EndpointGroupAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::InvalidPortRangeException`.
+    /// Returns `true` if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::InvalidPortRangeException`.
     pub fn is_invalid_port_range_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomRoutingEndpointGroupErrorKind::InvalidPortRangeException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomRoutingEndpointGroupErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `CreateCustomRoutingEndpointGroupErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -910,7 +910,7 @@ pub enum CreateCustomRoutingListenerErrorKind {
     InvalidPortRangeException(crate::error::InvalidPortRangeException),
     /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCustomRoutingListenerError {
@@ -983,35 +983,35 @@ impl CreateCustomRoutingListenerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCustomRoutingListenerErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `CreateCustomRoutingListenerErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomRoutingListenerErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomRoutingListenerErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `CreateCustomRoutingListenerErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomRoutingListenerErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomRoutingListenerErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `CreateCustomRoutingListenerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomRoutingListenerErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomRoutingListenerErrorKind::InvalidPortRangeException`.
+    /// Returns `true` if the error kind is `CreateCustomRoutingListenerErrorKind::InvalidPortRangeException`.
     pub fn is_invalid_port_range_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomRoutingListenerErrorKind::InvalidPortRangeException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomRoutingListenerErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateCustomRoutingListenerErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1063,7 +1063,7 @@ pub enum CreateEndpointGroupErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEndpointGroupError {
@@ -1134,49 +1134,49 @@ impl CreateEndpointGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEndpointGroupErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `CreateEndpointGroupErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointGroupErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateEndpointGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointGroupErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointGroupErrorKind::EndpointGroupAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateEndpointGroupErrorKind::EndpointGroupAlreadyExistsException`.
     pub fn is_endpoint_group_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointGroupErrorKind::EndpointGroupAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointGroupErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `CreateEndpointGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointGroupErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointGroupErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `CreateEndpointGroupErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointGroupErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointGroupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateEndpointGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointGroupErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointGroupErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `CreateEndpointGroupErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1224,7 +1224,7 @@ pub enum CreateListenerErrorKind {
     InvalidPortRangeException(crate::error::InvalidPortRangeException),
     /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateListenerError {
@@ -1291,35 +1291,35 @@ impl CreateListenerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::InvalidPortRangeException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::InvalidPortRangeException`.
     pub fn is_invalid_port_range_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateListenerErrorKind::InvalidPortRangeException(_)
         )
     }
-    /// Returns true if the error kind is `CreateListenerErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateListenerErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1364,7 +1364,7 @@ pub enum DeleteAcceleratorErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAcceleratorError {
@@ -1431,35 +1431,35 @@ impl DeleteAcceleratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAcceleratorErrorKind::AcceleratorNotDisabledException`.
+    /// Returns `true` if the error kind is `DeleteAcceleratorErrorKind::AcceleratorNotDisabledException`.
     pub fn is_accelerator_not_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAcceleratorErrorKind::AcceleratorNotDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAcceleratorErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAcceleratorErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAcceleratorErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAcceleratorErrorKind::AssociatedListenerFoundException`.
+    /// Returns `true` if the error kind is `DeleteAcceleratorErrorKind::AssociatedListenerFoundException`.
     pub fn is_associated_listener_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAcceleratorErrorKind::AssociatedListenerFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAcceleratorErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DeleteAcceleratorErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAcceleratorErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAcceleratorErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DeleteAcceleratorErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1504,7 +1504,7 @@ pub enum DeleteCustomRoutingAcceleratorErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCustomRoutingAcceleratorError {
@@ -1584,35 +1584,35 @@ impl DeleteCustomRoutingAcceleratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotDisabledException`.
+    /// Returns `true` if the error kind is `DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotDisabledException`.
     pub fn is_accelerator_not_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomRoutingAcceleratorErrorKind::AssociatedListenerFoundException`.
+    /// Returns `true` if the error kind is `DeleteCustomRoutingAcceleratorErrorKind::AssociatedListenerFoundException`.
     pub fn is_associated_listener_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomRoutingAcceleratorErrorKind::AssociatedListenerFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomRoutingAcceleratorErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DeleteCustomRoutingAcceleratorErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomRoutingAcceleratorErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DeleteCustomRoutingAcceleratorErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1662,7 +1662,7 @@ pub enum DeleteCustomRoutingEndpointGroupErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCustomRoutingEndpointGroupError {
@@ -1736,21 +1736,21 @@ impl DeleteCustomRoutingEndpointGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DeleteCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomRoutingEndpointGroupErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DeleteCustomRoutingEndpointGroupErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1797,7 +1797,7 @@ pub enum DeleteCustomRoutingListenerErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCustomRoutingListenerError {
@@ -1869,28 +1869,28 @@ impl DeleteCustomRoutingListenerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCustomRoutingListenerErrorKind::AssociatedEndpointGroupFoundException`.
+    /// Returns `true` if the error kind is `DeleteCustomRoutingListenerErrorKind::AssociatedEndpointGroupFoundException`.
     pub fn is_associated_endpoint_group_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomRoutingListenerErrorKind::AssociatedEndpointGroupFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomRoutingListenerErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DeleteCustomRoutingListenerErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomRoutingListenerErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomRoutingListenerErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DeleteCustomRoutingListenerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomRoutingListenerErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomRoutingListenerErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteCustomRoutingListenerErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1933,7 +1933,7 @@ pub enum DeleteEndpointGroupErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEndpointGroupError {
@@ -1998,21 +1998,21 @@ impl DeleteEndpointGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEndpointGroupErrorKind::EndpointGroupNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteEndpointGroupErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEndpointGroupErrorKind::EndpointGroupNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEndpointGroupErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DeleteEndpointGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEndpointGroupErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEndpointGroupErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DeleteEndpointGroupErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2053,7 +2053,7 @@ pub enum DeleteListenerErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteListenerError {
@@ -2119,28 +2119,28 @@ impl DeleteListenerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteListenerErrorKind::AssociatedEndpointGroupFoundException`.
+    /// Returns `true` if the error kind is `DeleteListenerErrorKind::AssociatedEndpointGroupFoundException`.
     pub fn is_associated_endpoint_group_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteListenerErrorKind::AssociatedEndpointGroupFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteListenerErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DeleteListenerErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteListenerErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteListenerErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DeleteListenerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteListenerErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteListenerErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteListenerErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2177,7 +2177,7 @@ pub enum DenyCustomRoutingTrafficErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DenyCustomRoutingTrafficError {
@@ -2243,14 +2243,14 @@ impl DenyCustomRoutingTrafficError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DenyCustomRoutingTrafficErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DenyCustomRoutingTrafficErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DenyCustomRoutingTrafficErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DenyCustomRoutingTrafficErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DenyCustomRoutingTrafficErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2294,7 +2294,7 @@ pub enum DeprovisionByoipCidrErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeprovisionByoipCidrError {
@@ -2361,35 +2361,35 @@ impl DeprovisionByoipCidrError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeprovisionByoipCidrErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeprovisionByoipCidrErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeprovisionByoipCidrErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeprovisionByoipCidrErrorKind::ByoipCidrNotFoundException`.
+    /// Returns `true` if the error kind is `DeprovisionByoipCidrErrorKind::ByoipCidrNotFoundException`.
     pub fn is_byoip_cidr_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeprovisionByoipCidrErrorKind::ByoipCidrNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeprovisionByoipCidrErrorKind::IncorrectCidrStateException`.
+    /// Returns `true` if the error kind is `DeprovisionByoipCidrErrorKind::IncorrectCidrStateException`.
     pub fn is_incorrect_cidr_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeprovisionByoipCidrErrorKind::IncorrectCidrStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeprovisionByoipCidrErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DeprovisionByoipCidrErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeprovisionByoipCidrErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeprovisionByoipCidrErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DeprovisionByoipCidrErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2429,7 +2429,7 @@ pub enum DescribeAcceleratorErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAcceleratorError {
@@ -2494,21 +2494,21 @@ impl DescribeAcceleratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAcceleratorErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAcceleratorErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAcceleratorErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAcceleratorErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DescribeAcceleratorErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAcceleratorErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAcceleratorErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DescribeAcceleratorErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2546,7 +2546,7 @@ pub enum DescribeAcceleratorAttributesErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAcceleratorAttributesError {
@@ -2620,21 +2620,21 @@ impl DescribeAcceleratorAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAcceleratorAttributesErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAcceleratorAttributesErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAcceleratorAttributesErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DescribeAcceleratorAttributesErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAcceleratorAttributesErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAcceleratorAttributesErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DescribeAcceleratorAttributesErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2678,7 +2678,7 @@ pub enum DescribeCustomRoutingAcceleratorErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCustomRoutingAcceleratorError {
@@ -2752,21 +2752,21 @@ impl DescribeCustomRoutingAcceleratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCustomRoutingAcceleratorErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DescribeCustomRoutingAcceleratorErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCustomRoutingAcceleratorErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DescribeCustomRoutingAcceleratorErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2810,7 +2810,7 @@ pub enum DescribeCustomRoutingAcceleratorAttributesErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCustomRoutingAcceleratorAttributesError {
@@ -2884,21 +2884,21 @@ impl DescribeCustomRoutingAcceleratorAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DescribeCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DescribeCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2944,7 +2944,7 @@ pub enum DescribeCustomRoutingEndpointGroupErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCustomRoutingEndpointGroupError {
@@ -3018,21 +3018,21 @@ impl DescribeCustomRoutingEndpointGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DescribeCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCustomRoutingEndpointGroupErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DescribeCustomRoutingEndpointGroupErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3076,7 +3076,7 @@ pub enum DescribeCustomRoutingListenerErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCustomRoutingListenerError {
@@ -3150,21 +3150,21 @@ impl DescribeCustomRoutingListenerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCustomRoutingListenerErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DescribeCustomRoutingListenerErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCustomRoutingListenerErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCustomRoutingListenerErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DescribeCustomRoutingListenerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCustomRoutingListenerErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCustomRoutingListenerErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeCustomRoutingListenerErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3208,7 +3208,7 @@ pub enum DescribeEndpointGroupErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEndpointGroupError {
@@ -3273,21 +3273,21 @@ impl DescribeEndpointGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEndpointGroupErrorKind::EndpointGroupNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeEndpointGroupErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEndpointGroupErrorKind::EndpointGroupNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEndpointGroupErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DescribeEndpointGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEndpointGroupErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEndpointGroupErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DescribeEndpointGroupErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3325,7 +3325,7 @@ pub enum DescribeListenerErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeListenerError {
@@ -3390,21 +3390,21 @@ impl DescribeListenerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeListenerErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DescribeListenerErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeListenerErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeListenerErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DescribeListenerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeListenerErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeListenerErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeListenerErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3442,7 +3442,7 @@ pub enum ListAcceleratorsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAcceleratorsError {
@@ -3507,21 +3507,21 @@ impl ListAcceleratorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAcceleratorsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListAcceleratorsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAcceleratorsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListAcceleratorsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListAcceleratorsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAcceleratorsErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListAcceleratorsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListAcceleratorsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3561,7 +3561,7 @@ pub enum ListByoipCidrsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListByoipCidrsError {
@@ -3627,28 +3627,28 @@ impl ListByoipCidrsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListByoipCidrsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListByoipCidrsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListByoipCidrsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListByoipCidrsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListByoipCidrsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListByoipCidrsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListByoipCidrsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListByoipCidrsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListByoipCidrsErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListByoipCidrsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListByoipCidrsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3687,7 +3687,7 @@ pub enum ListCustomRoutingAcceleratorsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCustomRoutingAcceleratorsError {
@@ -3761,21 +3761,21 @@ impl ListCustomRoutingAcceleratorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCustomRoutingAcceleratorsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingAcceleratorsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomRoutingAcceleratorsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomRoutingAcceleratorsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingAcceleratorsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomRoutingAcceleratorsErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomRoutingAcceleratorsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingAcceleratorsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3821,7 +3821,7 @@ pub enum ListCustomRoutingEndpointGroupsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCustomRoutingEndpointGroupsError {
@@ -3898,28 +3898,28 @@ impl ListCustomRoutingEndpointGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCustomRoutingEndpointGroupsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingEndpointGroupsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomRoutingEndpointGroupsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomRoutingEndpointGroupsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingEndpointGroupsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomRoutingEndpointGroupsErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomRoutingEndpointGroupsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingEndpointGroupsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomRoutingEndpointGroupsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomRoutingEndpointGroupsErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingEndpointGroupsErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3968,7 +3968,7 @@ pub enum ListCustomRoutingListenersErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCustomRoutingListenersError {
@@ -4038,28 +4038,28 @@ impl ListCustomRoutingListenersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCustomRoutingListenersErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingListenersErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomRoutingListenersErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomRoutingListenersErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingListenersErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomRoutingListenersErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomRoutingListenersErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingListenersErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomRoutingListenersErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomRoutingListenersErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingListenersErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4106,7 +4106,7 @@ pub enum ListCustomRoutingPortMappingsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCustomRoutingPortMappingsError {
@@ -4186,35 +4186,35 @@ impl ListCustomRoutingPortMappingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCustomRoutingPortMappingsErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingPortMappingsErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomRoutingPortMappingsErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomRoutingPortMappingsErrorKind::EndpointGroupNotFoundException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingPortMappingsErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomRoutingPortMappingsErrorKind::EndpointGroupNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomRoutingPortMappingsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingPortMappingsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomRoutingPortMappingsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomRoutingPortMappingsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingPortMappingsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomRoutingPortMappingsErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomRoutingPortMappingsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingPortMappingsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4266,7 +4266,7 @@ pub enum ListCustomRoutingPortMappingsByDestinationErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCustomRoutingPortMappingsByDestinationError {
@@ -4343,28 +4343,28 @@ impl ListCustomRoutingPortMappingsByDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCustomRoutingPortMappingsByDestinationErrorKind::EndpointNotFoundException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingPortMappingsByDestinationErrorKind::EndpointNotFoundException`.
     pub fn is_endpoint_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomRoutingPortMappingsByDestinationErrorKind::EndpointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomRoutingPortMappingsByDestinationErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingPortMappingsByDestinationErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomRoutingPortMappingsByDestinationErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4415,7 +4415,7 @@ pub enum ListEndpointGroupsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEndpointGroupsError {
@@ -4481,28 +4481,28 @@ impl ListEndpointGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEndpointGroupsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListEndpointGroupsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEndpointGroupsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListEndpointGroupsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListEndpointGroupsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEndpointGroupsErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListEndpointGroupsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListEndpointGroupsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEndpointGroupsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListEndpointGroupsErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `ListEndpointGroupsErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4543,7 +4543,7 @@ pub enum ListListenersErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>There isn't another item to return.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListListenersError {
@@ -4609,28 +4609,28 @@ impl ListListenersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListListenersErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `ListListenersErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListListenersErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListListenersErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListListenersErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListListenersErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListListenersErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListListenersErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListListenersErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ListListenersErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListListenersErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4669,7 +4669,7 @@ pub enum ListTagsForResourceErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -4734,21 +4734,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4791,7 +4791,7 @@ pub enum ProvisionByoipCidrErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ProvisionByoipCidrError {
@@ -4858,35 +4858,35 @@ impl ProvisionByoipCidrError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ProvisionByoipCidrErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ProvisionByoipCidrErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ProvisionByoipCidrErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ProvisionByoipCidrErrorKind::IncorrectCidrStateException`.
+    /// Returns `true` if the error kind is `ProvisionByoipCidrErrorKind::IncorrectCidrStateException`.
     pub fn is_incorrect_cidr_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ProvisionByoipCidrErrorKind::IncorrectCidrStateException(_)
         )
     }
-    /// Returns true if the error kind is `ProvisionByoipCidrErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ProvisionByoipCidrErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ProvisionByoipCidrErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ProvisionByoipCidrErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `ProvisionByoipCidrErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             ProvisionByoipCidrErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `ProvisionByoipCidrErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ProvisionByoipCidrErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4932,7 +4932,7 @@ pub enum RemoveCustomRoutingEndpointsErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveCustomRoutingEndpointsError {
@@ -5008,42 +5008,42 @@ impl RemoveCustomRoutingEndpointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveCustomRoutingEndpointsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RemoveCustomRoutingEndpointsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveCustomRoutingEndpointsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveCustomRoutingEndpointsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `RemoveCustomRoutingEndpointsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveCustomRoutingEndpointsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveCustomRoutingEndpointsErrorKind::EndpointNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveCustomRoutingEndpointsErrorKind::EndpointNotFoundException`.
     pub fn is_endpoint_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveCustomRoutingEndpointsErrorKind::EndpointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveCustomRoutingEndpointsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `RemoveCustomRoutingEndpointsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveCustomRoutingEndpointsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveCustomRoutingEndpointsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `RemoveCustomRoutingEndpointsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5090,7 +5090,7 @@ pub enum TagResourceErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -5155,21 +5155,21 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5207,7 +5207,7 @@ pub enum UntagResourceErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -5272,21 +5272,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5324,7 +5324,7 @@ pub enum UpdateAcceleratorErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAcceleratorError {
@@ -5389,21 +5389,21 @@ impl UpdateAcceleratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAcceleratorErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAcceleratorErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAcceleratorErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAcceleratorErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UpdateAcceleratorErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAcceleratorErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAcceleratorErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `UpdateAcceleratorErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5443,7 +5443,7 @@ pub enum UpdateAcceleratorAttributesErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAcceleratorAttributesError {
@@ -5513,28 +5513,28 @@ impl UpdateAcceleratorAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAcceleratorAttributesErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAcceleratorAttributesErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAcceleratorAttributesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateAcceleratorAttributesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAcceleratorAttributesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAcceleratorAttributesErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UpdateAcceleratorAttributesErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAcceleratorAttributesErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAcceleratorAttributesErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `UpdateAcceleratorAttributesErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5577,7 +5577,7 @@ pub enum UpdateCustomRoutingAcceleratorErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCustomRoutingAcceleratorError {
@@ -5651,21 +5651,21 @@ impl UpdateCustomRoutingAcceleratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UpdateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCustomRoutingAcceleratorErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `UpdateCustomRoutingAcceleratorErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5711,7 +5711,7 @@ pub enum UpdateCustomRoutingAcceleratorAttributesErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCustomRoutingAcceleratorAttributesError {
@@ -5788,28 +5788,28 @@ impl UpdateCustomRoutingAcceleratorAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException`.
     pub fn is_accelerator_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCustomRoutingAcceleratorAttributesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateCustomRoutingAcceleratorAttributesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCustomRoutingAcceleratorAttributesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UpdateCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `UpdateCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5862,7 +5862,7 @@ pub enum UpdateCustomRoutingListenerErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCustomRoutingListenerError {
@@ -5935,35 +5935,35 @@ impl UpdateCustomRoutingListenerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCustomRoutingListenerErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UpdateCustomRoutingListenerErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCustomRoutingListenerErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCustomRoutingListenerErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `UpdateCustomRoutingListenerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCustomRoutingListenerErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCustomRoutingListenerErrorKind::InvalidPortRangeException`.
+    /// Returns `true` if the error kind is `UpdateCustomRoutingListenerErrorKind::InvalidPortRangeException`.
     pub fn is_invalid_port_range_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCustomRoutingListenerErrorKind::InvalidPortRangeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCustomRoutingListenerErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateCustomRoutingListenerErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCustomRoutingListenerErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCustomRoutingListenerErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateCustomRoutingListenerErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6009,7 +6009,7 @@ pub enum UpdateEndpointGroupErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEndpointGroupError {
@@ -6076,35 +6076,35 @@ impl UpdateEndpointGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEndpointGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateEndpointGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEndpointGroupErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEndpointGroupErrorKind::EndpointGroupNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateEndpointGroupErrorKind::EndpointGroupNotFoundException`.
     pub fn is_endpoint_group_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEndpointGroupErrorKind::EndpointGroupNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEndpointGroupErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UpdateEndpointGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEndpointGroupErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEndpointGroupErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `UpdateEndpointGroupErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEndpointGroupErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEndpointGroupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateEndpointGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6148,7 +6148,7 @@ pub enum UpdateListenerErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateListenerError {
@@ -6215,35 +6215,35 @@ impl UpdateListenerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateListenerErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UpdateListenerErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateListenerErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateListenerErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `UpdateListenerErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateListenerErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateListenerErrorKind::InvalidPortRangeException`.
+    /// Returns `true` if the error kind is `UpdateListenerErrorKind::InvalidPortRangeException`.
     pub fn is_invalid_port_range_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateListenerErrorKind::InvalidPortRangeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateListenerErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateListenerErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateListenerErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateListenerErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateListenerErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6288,7 +6288,7 @@ pub enum WithdrawByoipCidrErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for WithdrawByoipCidrError {
@@ -6355,35 +6355,35 @@ impl WithdrawByoipCidrError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `WithdrawByoipCidrErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `WithdrawByoipCidrErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             WithdrawByoipCidrErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `WithdrawByoipCidrErrorKind::ByoipCidrNotFoundException`.
+    /// Returns `true` if the error kind is `WithdrawByoipCidrErrorKind::ByoipCidrNotFoundException`.
     pub fn is_byoip_cidr_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             WithdrawByoipCidrErrorKind::ByoipCidrNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `WithdrawByoipCidrErrorKind::IncorrectCidrStateException`.
+    /// Returns `true` if the error kind is `WithdrawByoipCidrErrorKind::IncorrectCidrStateException`.
     pub fn is_incorrect_cidr_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             WithdrawByoipCidrErrorKind::IncorrectCidrStateException(_)
         )
     }
-    /// Returns true if the error kind is `WithdrawByoipCidrErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `WithdrawByoipCidrErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             WithdrawByoipCidrErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `WithdrawByoipCidrErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `WithdrawByoipCidrErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,

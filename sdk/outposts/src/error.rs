@@ -24,7 +24,7 @@ pub enum CreateOrderErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateOrderError {
@@ -92,30 +92,30 @@ impl CreateOrderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateOrderErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateOrderErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateOrderErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateOrderErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateOrderErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateOrderErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateOrderErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateOrderErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, CreateOrderErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `CreateOrderErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateOrderErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateOrderErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateOrderErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateOrderErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrderErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrderErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateOrderErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateOrderErrorKind::ValidationException(_))
     }
@@ -159,7 +159,7 @@ pub enum CreateOutpostErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateOutpostError {
@@ -227,33 +227,33 @@ impl CreateOutpostError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateOutpostErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateOutpostErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateOutpostErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateOutpostErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateOutpostErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateOutpostErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateOutpostErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateOutpostErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOutpostErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOutpostErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateOutpostErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateOutpostErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateOutpostErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateOutpostErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOutpostErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOutpostErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateOutpostErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateOutpostErrorKind::ValidationException(_))
     }
@@ -295,7 +295,7 @@ pub enum DeleteOutpostErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteOutpostError {
@@ -362,26 +362,26 @@ impl DeleteOutpostError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteOutpostErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteOutpostErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteOutpostErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteOutpostErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteOutpostErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteOutpostErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteOutpostErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteOutpostErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOutpostErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOutpostErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteOutpostErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteOutpostErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteOutpostErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteOutpostErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteOutpostErrorKind::ValidationException(_))
     }
@@ -422,7 +422,7 @@ pub enum DeleteSiteErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSiteError {
@@ -489,23 +489,23 @@ impl DeleteSiteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSiteErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteSiteErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteSiteErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteSiteErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteSiteErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteSiteErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteSiteErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteSiteErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteSiteErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `DeleteSiteErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSiteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteSiteErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteSiteErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteSiteErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteSiteErrorKind::ValidationException(_))
     }
@@ -544,7 +544,7 @@ pub enum GetOutpostErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOutpostError {
@@ -610,19 +610,19 @@ impl GetOutpostError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOutpostErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetOutpostErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetOutpostErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetOutpostErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetOutpostErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, GetOutpostErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `GetOutpostErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetOutpostErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetOutpostErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetOutpostErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetOutpostErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetOutpostErrorKind::ValidationException(_))
     }
@@ -660,7 +660,7 @@ pub enum GetOutpostInstanceTypesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOutpostInstanceTypesError {
@@ -726,28 +726,28 @@ impl GetOutpostInstanceTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOutpostInstanceTypesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetOutpostInstanceTypesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOutpostInstanceTypesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetOutpostInstanceTypesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetOutpostInstanceTypesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOutpostInstanceTypesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetOutpostInstanceTypesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetOutpostInstanceTypesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOutpostInstanceTypesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetOutpostInstanceTypesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetOutpostInstanceTypesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -786,7 +786,7 @@ pub enum ListOutpostsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOutpostsError {
@@ -851,18 +851,18 @@ impl ListOutpostsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOutpostsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListOutpostsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListOutpostsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListOutpostsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListOutpostsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOutpostsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListOutpostsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListOutpostsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListOutpostsErrorKind::ValidationException(_))
     }
@@ -897,7 +897,7 @@ pub enum ListSitesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSitesError {
@@ -962,15 +962,15 @@ impl ListSitesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSitesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListSitesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListSitesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListSitesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListSitesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListSitesErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListSitesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListSitesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListSitesErrorKind::ValidationException(_))
     }
@@ -1005,7 +1005,7 @@ pub enum ListTagsForResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1070,21 +1070,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1122,7 +1122,7 @@ pub enum TagResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -1187,15 +1187,15 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -1230,7 +1230,7 @@ pub enum UntagResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -1295,18 +1295,18 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }

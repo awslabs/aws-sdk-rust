@@ -33,7 +33,7 @@ pub enum CreateGatewayRouteErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGatewayRouteError {
@@ -114,56 +114,56 @@ impl CreateGatewayRouteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGatewayRouteErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateGatewayRouteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGatewayRouteErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGatewayRouteErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateGatewayRouteErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGatewayRouteErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGatewayRouteErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateGatewayRouteErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGatewayRouteErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGatewayRouteErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateGatewayRouteErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGatewayRouteErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGatewayRouteErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateGatewayRouteErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGatewayRouteErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGatewayRouteErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateGatewayRouteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGatewayRouteErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGatewayRouteErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateGatewayRouteErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGatewayRouteErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGatewayRouteErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateGatewayRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -221,7 +221,7 @@ pub enum CreateMeshErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMeshError {
@@ -302,41 +302,41 @@ impl CreateMeshError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMeshErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateMeshErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateMeshErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateMeshErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateMeshErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateMeshErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateMeshErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateMeshErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateMeshErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateMeshErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateMeshErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeshErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMeshErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateMeshErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateMeshErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateMeshErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateMeshErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateMeshErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateMeshErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateMeshErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMeshErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMeshErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateMeshErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, CreateMeshErrorKind::TooManyRequestsException(_))
     }
@@ -391,7 +391,7 @@ pub enum CreateRouteErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRouteError {
@@ -472,41 +472,41 @@ impl CreateRouteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRouteErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateRouteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateRouteErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateRouteErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateRouteErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateRouteErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateRouteErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateRouteErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateRouteErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateRouteErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateRouteErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRouteErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRouteErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateRouteErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateRouteErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateRouteErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateRouteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateRouteErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateRouteErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateRouteErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRouteErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRouteErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -564,7 +564,7 @@ pub enum CreateVirtualGatewayErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVirtualGatewayError {
@@ -645,56 +645,56 @@ impl CreateVirtualGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateVirtualGatewayErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateVirtualGatewayErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualGatewayErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualGatewayErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateVirtualGatewayErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualGatewayErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualGatewayErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateVirtualGatewayErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualGatewayErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualGatewayErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateVirtualGatewayErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualGatewayErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualGatewayErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateVirtualGatewayErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualGatewayErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualGatewayErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateVirtualGatewayErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualGatewayErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualGatewayErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateVirtualGatewayErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualGatewayErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualGatewayErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateVirtualGatewayErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -752,7 +752,7 @@ pub enum CreateVirtualNodeErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVirtualNodeError {
@@ -833,50 +833,50 @@ impl CreateVirtualNodeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateVirtualNodeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateVirtualNodeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualNodeErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualNodeErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateVirtualNodeErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateVirtualNodeErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateVirtualNodeErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateVirtualNodeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualNodeErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualNodeErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateVirtualNodeErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualNodeErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualNodeErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateVirtualNodeErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualNodeErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualNodeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateVirtualNodeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateVirtualNodeErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateVirtualNodeErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateVirtualNodeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualNodeErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualNodeErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateVirtualNodeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -934,7 +934,7 @@ pub enum CreateVirtualRouterErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVirtualRouterError {
@@ -1015,56 +1015,56 @@ impl CreateVirtualRouterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateVirtualRouterErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateVirtualRouterErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualRouterErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualRouterErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateVirtualRouterErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualRouterErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualRouterErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateVirtualRouterErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualRouterErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualRouterErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateVirtualRouterErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualRouterErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualRouterErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateVirtualRouterErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualRouterErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualRouterErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateVirtualRouterErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualRouterErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualRouterErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateVirtualRouterErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualRouterErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualRouterErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateVirtualRouterErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1122,7 +1122,7 @@ pub enum CreateVirtualServiceErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVirtualServiceError {
@@ -1203,56 +1203,56 @@ impl CreateVirtualServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateVirtualServiceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateVirtualServiceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualServiceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualServiceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateVirtualServiceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualServiceErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualServiceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateVirtualServiceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualServiceErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualServiceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateVirtualServiceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualServiceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualServiceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateVirtualServiceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualServiceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualServiceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateVirtualServiceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualServiceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualServiceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateVirtualServiceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualServiceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualServiceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateVirtualServiceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1307,7 +1307,7 @@ pub enum DeleteGatewayRouteErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGatewayRouteError {
@@ -1387,49 +1387,49 @@ impl DeleteGatewayRouteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGatewayRouteErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteGatewayRouteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGatewayRouteErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGatewayRouteErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteGatewayRouteErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGatewayRouteErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGatewayRouteErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteGatewayRouteErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGatewayRouteErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGatewayRouteErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteGatewayRouteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGatewayRouteErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGatewayRouteErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteGatewayRouteErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGatewayRouteErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGatewayRouteErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteGatewayRouteErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGatewayRouteErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGatewayRouteErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteGatewayRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1483,7 +1483,7 @@ pub enum DeleteMeshErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMeshError {
@@ -1563,37 +1563,37 @@ impl DeleteMeshError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMeshErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteMeshErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteMeshErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteMeshErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteMeshErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteMeshErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteMeshErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteMeshErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMeshErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMeshErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMeshErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteMeshErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteMeshErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteMeshErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, DeleteMeshErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `DeleteMeshErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteMeshErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMeshErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMeshErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteMeshErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, DeleteMeshErrorKind::TooManyRequestsException(_))
     }
@@ -1644,7 +1644,7 @@ pub enum DeleteRouteErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRouteError {
@@ -1724,37 +1724,37 @@ impl DeleteRouteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRouteErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteRouteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteRouteErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteRouteErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteRouteErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteRouteErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteRouteErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteRouteErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRouteErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRouteErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRouteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteRouteErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteRouteErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteRouteErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, DeleteRouteErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `DeleteRouteErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteRouteErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRouteErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRouteErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1808,7 +1808,7 @@ pub enum DeleteVirtualGatewayErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVirtualGatewayError {
@@ -1888,49 +1888,49 @@ impl DeleteVirtualGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVirtualGatewayErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteVirtualGatewayErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualGatewayErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualGatewayErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteVirtualGatewayErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualGatewayErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualGatewayErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteVirtualGatewayErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualGatewayErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualGatewayErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVirtualGatewayErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualGatewayErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualGatewayErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteVirtualGatewayErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualGatewayErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualGatewayErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteVirtualGatewayErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualGatewayErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualGatewayErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteVirtualGatewayErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1984,7 +1984,7 @@ pub enum DeleteVirtualNodeErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVirtualNodeError {
@@ -2064,46 +2064,46 @@ impl DeleteVirtualNodeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVirtualNodeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteVirtualNodeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualNodeErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualNodeErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteVirtualNodeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualNodeErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualNodeErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteVirtualNodeErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualNodeErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualNodeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVirtualNodeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteVirtualNodeErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteVirtualNodeErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteVirtualNodeErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualNodeErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualNodeErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteVirtualNodeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualNodeErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualNodeErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteVirtualNodeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2157,7 +2157,7 @@ pub enum DeleteVirtualRouterErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVirtualRouterError {
@@ -2237,49 +2237,49 @@ impl DeleteVirtualRouterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVirtualRouterErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteVirtualRouterErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualRouterErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualRouterErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteVirtualRouterErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualRouterErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualRouterErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteVirtualRouterErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualRouterErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualRouterErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVirtualRouterErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualRouterErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualRouterErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteVirtualRouterErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualRouterErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualRouterErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteVirtualRouterErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualRouterErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualRouterErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteVirtualRouterErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2333,7 +2333,7 @@ pub enum DeleteVirtualServiceErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVirtualServiceError {
@@ -2413,49 +2413,49 @@ impl DeleteVirtualServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVirtualServiceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteVirtualServiceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualServiceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualServiceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteVirtualServiceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualServiceErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualServiceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteVirtualServiceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualServiceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualServiceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVirtualServiceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualServiceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualServiceErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteVirtualServiceErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualServiceErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualServiceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteVirtualServiceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualServiceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualServiceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteVirtualServiceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2506,7 +2506,7 @@ pub enum DescribeGatewayRouteErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGatewayRouteError {
@@ -2585,42 +2585,42 @@ impl DescribeGatewayRouteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGatewayRouteErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeGatewayRouteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGatewayRouteErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGatewayRouteErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeGatewayRouteErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGatewayRouteErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGatewayRouteErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeGatewayRouteErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGatewayRouteErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGatewayRouteErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeGatewayRouteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGatewayRouteErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGatewayRouteErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeGatewayRouteErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGatewayRouteErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGatewayRouteErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeGatewayRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2670,7 +2670,7 @@ pub enum DescribeMeshErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMeshError {
@@ -2749,33 +2749,33 @@ impl DescribeMeshError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMeshErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeMeshErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DescribeMeshErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DescribeMeshErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeMeshErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DescribeMeshErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DescribeMeshErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeMeshErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMeshErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMeshErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeMeshErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeMeshErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeMeshErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeMeshErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMeshErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMeshErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeMeshErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2825,7 +2825,7 @@ pub enum DescribeRouteErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRouteError {
@@ -2904,33 +2904,33 @@ impl DescribeRouteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRouteErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeRouteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DescribeRouteErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DescribeRouteErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeRouteErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DescribeRouteErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DescribeRouteErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeRouteErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRouteErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRouteErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRouteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeRouteErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeRouteErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeRouteErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRouteErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRouteErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2980,7 +2980,7 @@ pub enum DescribeVirtualGatewayErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVirtualGatewayError {
@@ -3059,42 +3059,42 @@ impl DescribeVirtualGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeVirtualGatewayErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeVirtualGatewayErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualGatewayErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualGatewayErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeVirtualGatewayErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualGatewayErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualGatewayErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeVirtualGatewayErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualGatewayErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualGatewayErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeVirtualGatewayErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualGatewayErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualGatewayErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeVirtualGatewayErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualGatewayErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualGatewayErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeVirtualGatewayErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3144,7 +3144,7 @@ pub enum DescribeVirtualNodeErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVirtualNodeError {
@@ -3223,42 +3223,42 @@ impl DescribeVirtualNodeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeVirtualNodeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeVirtualNodeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualNodeErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualNodeErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeVirtualNodeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualNodeErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualNodeErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeVirtualNodeErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualNodeErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualNodeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeVirtualNodeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualNodeErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualNodeErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeVirtualNodeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualNodeErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualNodeErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeVirtualNodeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3308,7 +3308,7 @@ pub enum DescribeVirtualRouterErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVirtualRouterError {
@@ -3387,42 +3387,42 @@ impl DescribeVirtualRouterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeVirtualRouterErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeVirtualRouterErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualRouterErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualRouterErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeVirtualRouterErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualRouterErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualRouterErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeVirtualRouterErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualRouterErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualRouterErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeVirtualRouterErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualRouterErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualRouterErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeVirtualRouterErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualRouterErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualRouterErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeVirtualRouterErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3472,7 +3472,7 @@ pub enum DescribeVirtualServiceErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVirtualServiceError {
@@ -3551,42 +3551,42 @@ impl DescribeVirtualServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeVirtualServiceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeVirtualServiceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualServiceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualServiceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeVirtualServiceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualServiceErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualServiceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeVirtualServiceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualServiceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualServiceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeVirtualServiceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualServiceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualServiceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeVirtualServiceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualServiceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualServiceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeVirtualServiceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3636,7 +3636,7 @@ pub enum ListGatewayRoutesErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGatewayRoutesError {
@@ -3715,39 +3715,39 @@ impl ListGatewayRoutesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGatewayRoutesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListGatewayRoutesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGatewayRoutesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListGatewayRoutesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListGatewayRoutesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGatewayRoutesErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListGatewayRoutesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListGatewayRoutesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGatewayRoutesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListGatewayRoutesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListGatewayRoutesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListGatewayRoutesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListGatewayRoutesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListGatewayRoutesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGatewayRoutesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListGatewayRoutesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListGatewayRoutesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3797,7 +3797,7 @@ pub enum ListMeshesErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMeshesError {
@@ -3876,33 +3876,33 @@ impl ListMeshesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMeshesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListMeshesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListMeshesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListMeshesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListMeshesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListMeshesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListMeshesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListMeshesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMeshesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListMeshesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListMeshesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListMeshesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListMeshesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListMeshesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMeshesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListMeshesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListMeshesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, ListMeshesErrorKind::TooManyRequestsException(_))
     }
@@ -3949,7 +3949,7 @@ pub enum ListRoutesErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRoutesError {
@@ -4028,33 +4028,33 @@ impl ListRoutesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRoutesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListRoutesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListRoutesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListRoutesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListRoutesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListRoutesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListRoutesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListRoutesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRoutesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListRoutesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListRoutesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListRoutesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListRoutesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListRoutesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRoutesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListRoutesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListRoutesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, ListRoutesErrorKind::TooManyRequestsException(_))
     }
@@ -4101,7 +4101,7 @@ pub enum ListTagsForResourceErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -4180,42 +4180,42 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4265,7 +4265,7 @@ pub enum ListVirtualGatewaysErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVirtualGatewaysError {
@@ -4344,42 +4344,42 @@ impl ListVirtualGatewaysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListVirtualGatewaysErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListVirtualGatewaysErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualGatewaysErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualGatewaysErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListVirtualGatewaysErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualGatewaysErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualGatewaysErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListVirtualGatewaysErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualGatewaysErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualGatewaysErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListVirtualGatewaysErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualGatewaysErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualGatewaysErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListVirtualGatewaysErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualGatewaysErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualGatewaysErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListVirtualGatewaysErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4429,7 +4429,7 @@ pub enum ListVirtualNodesErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVirtualNodesError {
@@ -4508,36 +4508,36 @@ impl ListVirtualNodesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListVirtualNodesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListVirtualNodesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualNodesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualNodesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListVirtualNodesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListVirtualNodesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListVirtualNodesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListVirtualNodesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualNodesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualNodesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListVirtualNodesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListVirtualNodesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListVirtualNodesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListVirtualNodesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualNodesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualNodesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListVirtualNodesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4587,7 +4587,7 @@ pub enum ListVirtualRoutersErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVirtualRoutersError {
@@ -4666,42 +4666,42 @@ impl ListVirtualRoutersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListVirtualRoutersErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListVirtualRoutersErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualRoutersErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualRoutersErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListVirtualRoutersErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualRoutersErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualRoutersErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListVirtualRoutersErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualRoutersErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualRoutersErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListVirtualRoutersErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualRoutersErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualRoutersErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListVirtualRoutersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualRoutersErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualRoutersErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListVirtualRoutersErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4751,7 +4751,7 @@ pub enum ListVirtualServicesErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVirtualServicesError {
@@ -4830,42 +4830,42 @@ impl ListVirtualServicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListVirtualServicesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListVirtualServicesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualServicesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualServicesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListVirtualServicesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualServicesErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualServicesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListVirtualServicesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualServicesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualServicesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListVirtualServicesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualServicesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualServicesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListVirtualServicesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualServicesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualServicesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListVirtualServicesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4919,7 +4919,7 @@ pub enum TagResourceErrorKind {
     /// limit is 50 user tags per resource. You must reduce the number of tags in the request. None
     /// of the tags in this request were applied.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -4999,40 +4999,40 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
     }
@@ -5080,7 +5080,7 @@ pub enum UntagResourceErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -5159,33 +5159,33 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5241,7 +5241,7 @@ pub enum UpdateGatewayRouteErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGatewayRouteError {
@@ -5322,56 +5322,56 @@ impl UpdateGatewayRouteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGatewayRouteErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateGatewayRouteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewayRouteErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewayRouteErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateGatewayRouteErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewayRouteErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewayRouteErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateGatewayRouteErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewayRouteErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewayRouteErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateGatewayRouteErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewayRouteErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewayRouteErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateGatewayRouteErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewayRouteErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewayRouteErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGatewayRouteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewayRouteErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewayRouteErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateGatewayRouteErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewayRouteErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewayRouteErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateGatewayRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5426,7 +5426,7 @@ pub enum UpdateMeshErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMeshError {
@@ -5506,37 +5506,37 @@ impl UpdateMeshError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateMeshErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateMeshErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateMeshErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateMeshErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateMeshErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateMeshErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateMeshErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateMeshErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateMeshErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateMeshErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateMeshErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMeshErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMeshErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateMeshErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateMeshErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateMeshErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateMeshErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMeshErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMeshErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateMeshErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, UpdateMeshErrorKind::TooManyRequestsException(_))
     }
@@ -5590,7 +5590,7 @@ pub enum UpdateRouteErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRouteError {
@@ -5671,41 +5671,41 @@ impl UpdateRouteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRouteErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateRouteErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateRouteErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateRouteErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateRouteErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateRouteErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateRouteErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateRouteErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateRouteErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateRouteErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateRouteErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRouteErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRouteErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateRouteErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, UpdateRouteErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `UpdateRouteErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRouteErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateRouteErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateRouteErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateRouteErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRouteErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRouteErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateRouteErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5763,7 +5763,7 @@ pub enum UpdateVirtualGatewayErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateVirtualGatewayError {
@@ -5844,56 +5844,56 @@ impl UpdateVirtualGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateVirtualGatewayErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateVirtualGatewayErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualGatewayErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualGatewayErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateVirtualGatewayErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualGatewayErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualGatewayErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateVirtualGatewayErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualGatewayErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualGatewayErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateVirtualGatewayErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualGatewayErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualGatewayErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateVirtualGatewayErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualGatewayErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualGatewayErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateVirtualGatewayErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualGatewayErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualGatewayErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateVirtualGatewayErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualGatewayErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualGatewayErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateVirtualGatewayErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5951,7 +5951,7 @@ pub enum UpdateVirtualNodeErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateVirtualNodeError {
@@ -6032,50 +6032,50 @@ impl UpdateVirtualNodeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateVirtualNodeErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateVirtualNodeErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualNodeErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualNodeErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateVirtualNodeErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateVirtualNodeErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateVirtualNodeErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateVirtualNodeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualNodeErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualNodeErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateVirtualNodeErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualNodeErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualNodeErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateVirtualNodeErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualNodeErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualNodeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateVirtualNodeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateVirtualNodeErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateVirtualNodeErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateVirtualNodeErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualNodeErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualNodeErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateVirtualNodeErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6133,7 +6133,7 @@ pub enum UpdateVirtualRouterErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateVirtualRouterError {
@@ -6214,56 +6214,56 @@ impl UpdateVirtualRouterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateVirtualRouterErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateVirtualRouterErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualRouterErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualRouterErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateVirtualRouterErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualRouterErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualRouterErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateVirtualRouterErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualRouterErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualRouterErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateVirtualRouterErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualRouterErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualRouterErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateVirtualRouterErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualRouterErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualRouterErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateVirtualRouterErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualRouterErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualRouterErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateVirtualRouterErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualRouterErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualRouterErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateVirtualRouterErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6321,7 +6321,7 @@ pub enum UpdateVirtualServiceErrorKind {
     /// account. For best results, use an increasing or variable sleep interval between
     /// requests.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateVirtualServiceError {
@@ -6402,56 +6402,56 @@ impl UpdateVirtualServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateVirtualServiceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateVirtualServiceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualServiceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualServiceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateVirtualServiceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualServiceErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualServiceErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateVirtualServiceErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualServiceErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualServiceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateVirtualServiceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualServiceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualServiceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateVirtualServiceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualServiceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualServiceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateVirtualServiceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualServiceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualServiceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateVirtualServiceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVirtualServiceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVirtualServiceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateVirtualServiceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

@@ -26,7 +26,7 @@ pub enum CancelJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelJobError {
@@ -94,30 +94,30 @@ impl CancelJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelJobErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CancelJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CancelJobErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CancelJobErrorKind::IncompatibleVersionException`.
+    /// Returns `true` if the error kind is `CancelJobErrorKind::IncompatibleVersionException`.
     pub fn is_incompatible_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelJobErrorKind::IncompatibleVersionException(_)
         )
     }
-    /// Returns true if the error kind is `CancelJobErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CancelJobErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, CancelJobErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `CancelJobErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CancelJobErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(&self.kind, CancelJobErrorKind::ResourceInUseException(_))
     }
-    /// Returns true if the error kind is `CancelJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CancelJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, CancelJobErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `CancelJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CancelJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CancelJobErrorKind::ValidationException(_))
     }
@@ -163,7 +163,7 @@ pub enum CreateJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateJobError {
@@ -231,30 +231,30 @@ impl CreateJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::IncompatibleVersionException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::IncompatibleVersionException`.
     pub fn is_incompatible_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateJobErrorKind::IncompatibleVersionException(_)
         )
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::ValidationException(_))
     }
@@ -300,7 +300,7 @@ pub enum CreatePipelineErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePipelineError {
@@ -368,42 +368,42 @@ impl CreatePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePipelineErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::IncompatibleVersionException`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::IncompatibleVersionException`.
     pub fn is_incompatible_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePipelineErrorKind::IncompatibleVersionException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePipelineErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePipelineErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePipelineErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreatePipelineErrorKind::ValidationException(_))
     }
@@ -446,7 +446,7 @@ pub enum CreatePresetErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePresetError {
@@ -513,29 +513,29 @@ impl CreatePresetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePresetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreatePresetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreatePresetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreatePresetErrorKind::IncompatibleVersionException`.
+    /// Returns `true` if the error kind is `CreatePresetErrorKind::IncompatibleVersionException`.
     pub fn is_incompatible_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePresetErrorKind::IncompatibleVersionException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePresetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreatePresetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePresetErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePresetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreatePresetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreatePresetErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreatePresetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreatePresetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreatePresetErrorKind::ValidationException(_))
     }
@@ -580,7 +580,7 @@ pub enum DeletePipelineErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePipelineError {
@@ -648,42 +648,42 @@ impl DeletePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePipelineErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeletePipelineErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePipelineErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePipelineErrorKind::IncompatibleVersionException`.
+    /// Returns `true` if the error kind is `DeletePipelineErrorKind::IncompatibleVersionException`.
     pub fn is_incompatible_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePipelineErrorKind::IncompatibleVersionException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePipelineErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeletePipelineErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePipelineErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePipelineErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeletePipelineErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePipelineErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePipelineErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeletePipelineErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePipelineErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePipelineErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeletePipelineErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeletePipelineErrorKind::ValidationException(_))
     }
@@ -726,7 +726,7 @@ pub enum DeletePresetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePresetError {
@@ -793,32 +793,32 @@ impl DeletePresetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePresetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeletePresetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeletePresetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeletePresetErrorKind::IncompatibleVersionException`.
+    /// Returns `true` if the error kind is `DeletePresetErrorKind::IncompatibleVersionException`.
     pub fn is_incompatible_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePresetErrorKind::IncompatibleVersionException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePresetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeletePresetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePresetErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePresetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeletePresetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePresetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePresetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeletePresetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeletePresetErrorKind::ValidationException(_))
     }
@@ -860,7 +860,7 @@ pub enum ListJobsByPipelineErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListJobsByPipelineError {
@@ -927,35 +927,35 @@ impl ListJobsByPipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListJobsByPipelineErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListJobsByPipelineErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListJobsByPipelineErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListJobsByPipelineErrorKind::IncompatibleVersionException`.
+    /// Returns `true` if the error kind is `ListJobsByPipelineErrorKind::IncompatibleVersionException`.
     pub fn is_incompatible_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListJobsByPipelineErrorKind::IncompatibleVersionException(_)
         )
     }
-    /// Returns true if the error kind is `ListJobsByPipelineErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListJobsByPipelineErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListJobsByPipelineErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListJobsByPipelineErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListJobsByPipelineErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListJobsByPipelineErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListJobsByPipelineErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListJobsByPipelineErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1000,7 +1000,7 @@ pub enum ListJobsByStatusErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListJobsByStatusError {
@@ -1067,35 +1067,35 @@ impl ListJobsByStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListJobsByStatusErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListJobsByStatusErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListJobsByStatusErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListJobsByStatusErrorKind::IncompatibleVersionException`.
+    /// Returns `true` if the error kind is `ListJobsByStatusErrorKind::IncompatibleVersionException`.
     pub fn is_incompatible_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListJobsByStatusErrorKind::IncompatibleVersionException(_)
         )
     }
-    /// Returns true if the error kind is `ListJobsByStatusErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListJobsByStatusErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListJobsByStatusErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListJobsByStatusErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListJobsByStatusErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListJobsByStatusErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListJobsByStatusErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListJobsByStatusErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1137,7 +1137,7 @@ pub enum ListPipelinesErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPipelinesError {
@@ -1203,25 +1203,25 @@ impl ListPipelinesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPipelinesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListPipelinesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListPipelinesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListPipelinesErrorKind::IncompatibleVersionException`.
+    /// Returns `true` if the error kind is `ListPipelinesErrorKind::IncompatibleVersionException`.
     pub fn is_incompatible_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPipelinesErrorKind::IncompatibleVersionException(_)
         )
     }
-    /// Returns true if the error kind is `ListPipelinesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListPipelinesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPipelinesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListPipelinesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListPipelinesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListPipelinesErrorKind::ValidationException(_))
     }
@@ -1259,7 +1259,7 @@ pub enum ListPresetsErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPresetsError {
@@ -1325,25 +1325,25 @@ impl ListPresetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPresetsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListPresetsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListPresetsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListPresetsErrorKind::IncompatibleVersionException`.
+    /// Returns `true` if the error kind is `ListPresetsErrorKind::IncompatibleVersionException`.
     pub fn is_incompatible_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPresetsErrorKind::IncompatibleVersionException(_)
         )
     }
-    /// Returns true if the error kind is `ListPresetsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListPresetsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPresetsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListPresetsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListPresetsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListPresetsErrorKind::ValidationException(_))
     }
@@ -1384,7 +1384,7 @@ pub enum ReadJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReadJobError {
@@ -1451,26 +1451,26 @@ impl ReadJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ReadJobErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ReadJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ReadJobErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ReadJobErrorKind::IncompatibleVersionException`.
+    /// Returns `true` if the error kind is `ReadJobErrorKind::IncompatibleVersionException`.
     pub fn is_incompatible_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReadJobErrorKind::IncompatibleVersionException(_)
         )
     }
-    /// Returns true if the error kind is `ReadJobErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ReadJobErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, ReadJobErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `ReadJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ReadJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, ReadJobErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `ReadJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ReadJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ReadJobErrorKind::ValidationException(_))
     }
@@ -1512,7 +1512,7 @@ pub enum ReadPipelineErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReadPipelineError {
@@ -1579,32 +1579,32 @@ impl ReadPipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ReadPipelineErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ReadPipelineErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ReadPipelineErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ReadPipelineErrorKind::IncompatibleVersionException`.
+    /// Returns `true` if the error kind is `ReadPipelineErrorKind::IncompatibleVersionException`.
     pub fn is_incompatible_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReadPipelineErrorKind::IncompatibleVersionException(_)
         )
     }
-    /// Returns true if the error kind is `ReadPipelineErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ReadPipelineErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReadPipelineErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ReadPipelineErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ReadPipelineErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReadPipelineErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ReadPipelineErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ReadPipelineErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ReadPipelineErrorKind::ValidationException(_))
     }
@@ -1646,7 +1646,7 @@ pub enum ReadPresetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReadPresetError {
@@ -1713,29 +1713,29 @@ impl ReadPresetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ReadPresetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ReadPresetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ReadPresetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ReadPresetErrorKind::IncompatibleVersionException`.
+    /// Returns `true` if the error kind is `ReadPresetErrorKind::IncompatibleVersionException`.
     pub fn is_incompatible_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReadPresetErrorKind::IncompatibleVersionException(_)
         )
     }
-    /// Returns true if the error kind is `ReadPresetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ReadPresetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, ReadPresetErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `ReadPresetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ReadPresetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReadPresetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ReadPresetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ReadPresetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ReadPresetErrorKind::ValidationException(_))
     }
@@ -1777,7 +1777,7 @@ pub enum TestRoleErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TestRoleError {
@@ -1844,26 +1844,26 @@ impl TestRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TestRoleErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TestRoleErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TestRoleErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TestRoleErrorKind::IncompatibleVersionException`.
+    /// Returns `true` if the error kind is `TestRoleErrorKind::IncompatibleVersionException`.
     pub fn is_incompatible_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRoleErrorKind::IncompatibleVersionException(_)
         )
     }
-    /// Returns true if the error kind is `TestRoleErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `TestRoleErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, TestRoleErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `TestRoleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TestRoleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, TestRoleErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `TestRoleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TestRoleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TestRoleErrorKind::ValidationException(_))
     }
@@ -1908,7 +1908,7 @@ pub enum UpdatePipelineErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePipelineError {
@@ -1976,42 +1976,42 @@ impl UpdatePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePipelineErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdatePipelineErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineErrorKind::IncompatibleVersionException`.
+    /// Returns `true` if the error kind is `UpdatePipelineErrorKind::IncompatibleVersionException`.
     pub fn is_incompatible_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineErrorKind::IncompatibleVersionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdatePipelineErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdatePipelineErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePipelineErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdatePipelineErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdatePipelineErrorKind::ValidationException(_))
     }
@@ -2057,7 +2057,7 @@ pub enum UpdatePipelineNotificationsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePipelineNotificationsError {
@@ -2129,42 +2129,42 @@ impl UpdatePipelineNotificationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePipelineNotificationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdatePipelineNotificationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineNotificationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineNotificationsErrorKind::IncompatibleVersionException`.
+    /// Returns `true` if the error kind is `UpdatePipelineNotificationsErrorKind::IncompatibleVersionException`.
     pub fn is_incompatible_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineNotificationsErrorKind::IncompatibleVersionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineNotificationsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdatePipelineNotificationsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineNotificationsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineNotificationsErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdatePipelineNotificationsErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineNotificationsErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineNotificationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePipelineNotificationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineNotificationsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineNotificationsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdatePipelineNotificationsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2215,7 +2215,7 @@ pub enum UpdatePipelineStatusErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more required parameter values were not provided in the request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePipelineStatusError {
@@ -2283,42 +2283,42 @@ impl UpdatePipelineStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePipelineStatusErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdatePipelineStatusErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineStatusErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineStatusErrorKind::IncompatibleVersionException`.
+    /// Returns `true` if the error kind is `UpdatePipelineStatusErrorKind::IncompatibleVersionException`.
     pub fn is_incompatible_version_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineStatusErrorKind::IncompatibleVersionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineStatusErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdatePipelineStatusErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineStatusErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineStatusErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `UpdatePipelineStatusErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineStatusErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineStatusErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePipelineStatusErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineStatusErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineStatusErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdatePipelineStatusErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

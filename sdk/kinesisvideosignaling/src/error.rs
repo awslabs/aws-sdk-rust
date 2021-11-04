@@ -27,7 +27,7 @@ pub enum GetIceServerConfigErrorKind {
     /// for 45 minutes. Client should reconnect to the channel to continue sending/receiving
     /// messages.</p>
     SessionExpiredException(crate::error::SessionExpiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIceServerConfigError {
@@ -95,42 +95,42 @@ impl GetIceServerConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetIceServerConfigErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `GetIceServerConfigErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIceServerConfigErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetIceServerConfigErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `GetIceServerConfigErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIceServerConfigErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetIceServerConfigErrorKind::InvalidClientException`.
+    /// Returns `true` if the error kind is `GetIceServerConfigErrorKind::InvalidClientException`.
     pub fn is_invalid_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIceServerConfigErrorKind::InvalidClientException(_)
         )
     }
-    /// Returns true if the error kind is `GetIceServerConfigErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetIceServerConfigErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIceServerConfigErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `GetIceServerConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetIceServerConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetIceServerConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetIceServerConfigErrorKind::SessionExpiredException`.
+    /// Returns `true` if the error kind is `GetIceServerConfigErrorKind::SessionExpiredException`.
     pub fn is_session_expired_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -174,7 +174,7 @@ pub enum SendAlexaOfferToMasterErrorKind {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>The specified resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendAlexaOfferToMasterError {
@@ -240,28 +240,28 @@ impl SendAlexaOfferToMasterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendAlexaOfferToMasterErrorKind::ClientLimitExceededException`.
+    /// Returns `true` if the error kind is `SendAlexaOfferToMasterErrorKind::ClientLimitExceededException`.
     pub fn is_client_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendAlexaOfferToMasterErrorKind::ClientLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `SendAlexaOfferToMasterErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `SendAlexaOfferToMasterErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendAlexaOfferToMasterErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `SendAlexaOfferToMasterErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `SendAlexaOfferToMasterErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendAlexaOfferToMasterErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `SendAlexaOfferToMasterErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SendAlexaOfferToMasterErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

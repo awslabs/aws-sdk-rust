@@ -309,7 +309,8 @@ impl GetTranscriptOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAttachmentOutput {
-    /// <p>The pre-signed URL using which file would be downloaded from Amazon S3 by the API caller.</p>
+    /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response
+    /// to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
     pub url: std::option::Option<std::string::String>,
     /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub url_expiry: std::option::Option<std::string::String>,
@@ -332,12 +333,14 @@ pub mod get_attachment_output {
         pub(crate) url_expiry: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The pre-signed URL using which file would be downloaded from Amazon S3 by the API caller.</p>
+        /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response
+        /// to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// <p>The pre-signed URL using which file would be downloaded from Amazon S3 by the API caller.</p>
+        /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response
+        /// to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self

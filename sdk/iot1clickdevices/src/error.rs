@@ -18,7 +18,7 @@ pub enum ClaimDevicesByClaimCodeErrorKind {
     InternalFailureException(crate::error::InternalFailureException),
     #[allow(missing_docs)] // documentation missing in model
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ClaimDevicesByClaimCodeError {
@@ -83,21 +83,21 @@ impl ClaimDevicesByClaimCodeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ClaimDevicesByClaimCodeErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ClaimDevicesByClaimCodeErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ClaimDevicesByClaimCodeErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ClaimDevicesByClaimCodeErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ClaimDevicesByClaimCodeErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ClaimDevicesByClaimCodeErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ClaimDevicesByClaimCodeErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ClaimDevicesByClaimCodeErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -135,7 +135,7 @@ pub enum DescribeDeviceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDeviceError {
@@ -200,21 +200,21 @@ impl DescribeDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDeviceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeDeviceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDeviceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDeviceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeDeviceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDeviceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -256,7 +256,7 @@ pub enum FinalizeDeviceClaimErrorKind {
     ResourceConflictException(crate::error::ResourceConflictException),
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for FinalizeDeviceClaimError {
@@ -323,35 +323,35 @@ impl FinalizeDeviceClaimError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `FinalizeDeviceClaimErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `FinalizeDeviceClaimErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             FinalizeDeviceClaimErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `FinalizeDeviceClaimErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `FinalizeDeviceClaimErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             FinalizeDeviceClaimErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `FinalizeDeviceClaimErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `FinalizeDeviceClaimErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             FinalizeDeviceClaimErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `FinalizeDeviceClaimErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `FinalizeDeviceClaimErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             FinalizeDeviceClaimErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `FinalizeDeviceClaimErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `FinalizeDeviceClaimErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -391,7 +391,7 @@ pub enum GetDeviceMethodsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeviceMethodsError {
@@ -456,21 +456,21 @@ impl GetDeviceMethodsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeviceMethodsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetDeviceMethodsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeviceMethodsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeviceMethodsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetDeviceMethodsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeviceMethodsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeviceMethodsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDeviceMethodsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -510,7 +510,7 @@ pub enum InitiateDeviceClaimErrorKind {
     ResourceConflictException(crate::error::ResourceConflictException),
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InitiateDeviceClaimError {
@@ -576,28 +576,28 @@ impl InitiateDeviceClaimError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InitiateDeviceClaimErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `InitiateDeviceClaimErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateDeviceClaimErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateDeviceClaimErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `InitiateDeviceClaimErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateDeviceClaimErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateDeviceClaimErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `InitiateDeviceClaimErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateDeviceClaimErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateDeviceClaimErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `InitiateDeviceClaimErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -642,7 +642,7 @@ pub enum InvokeDeviceMethodErrorKind {
     ResourceConflictException(crate::error::ResourceConflictException),
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InvokeDeviceMethodError {
@@ -710,42 +710,42 @@ impl InvokeDeviceMethodError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InvokeDeviceMethodErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `InvokeDeviceMethodErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeDeviceMethodErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeDeviceMethodErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `InvokeDeviceMethodErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeDeviceMethodErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeDeviceMethodErrorKind::PreconditionFailedException`.
+    /// Returns `true` if the error kind is `InvokeDeviceMethodErrorKind::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeDeviceMethodErrorKind::PreconditionFailedException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeDeviceMethodErrorKind::RangeNotSatisfiableException`.
+    /// Returns `true` if the error kind is `InvokeDeviceMethodErrorKind::RangeNotSatisfiableException`.
     pub fn is_range_not_satisfiable_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeDeviceMethodErrorKind::RangeNotSatisfiableException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeDeviceMethodErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `InvokeDeviceMethodErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvokeDeviceMethodErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `InvokeDeviceMethodErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `InvokeDeviceMethodErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -788,7 +788,7 @@ pub enum ListDeviceEventsErrorKind {
     RangeNotSatisfiableException(crate::error::RangeNotSatisfiableException),
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeviceEventsError {
@@ -854,28 +854,28 @@ impl ListDeviceEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDeviceEventsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListDeviceEventsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeviceEventsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeviceEventsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListDeviceEventsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeviceEventsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeviceEventsErrorKind::RangeNotSatisfiableException`.
+    /// Returns `true` if the error kind is `ListDeviceEventsErrorKind::RangeNotSatisfiableException`.
     pub fn is_range_not_satisfiable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeviceEventsErrorKind::RangeNotSatisfiableException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeviceEventsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListDeviceEventsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -914,7 +914,7 @@ pub enum ListDevicesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     #[allow(missing_docs)] // documentation missing in model
     RangeNotSatisfiableException(crate::error::RangeNotSatisfiableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDevicesError {
@@ -979,18 +979,18 @@ impl ListDevicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevicesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListDevicesErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `ListDevicesErrorKind::RangeNotSatisfiableException`.
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::RangeNotSatisfiableException`.
     pub fn is_range_not_satisfiable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1026,7 +1026,7 @@ pub enum ListTagsForResourceErrorKind {
     InternalFailureException(crate::error::InternalFailureException),
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1090,14 +1090,14 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1134,7 +1134,7 @@ pub enum TagResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -1199,18 +1199,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1248,7 +1248,7 @@ pub enum UnclaimDeviceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UnclaimDeviceError {
@@ -1313,21 +1313,21 @@ impl UnclaimDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UnclaimDeviceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UnclaimDeviceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnclaimDeviceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UnclaimDeviceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UnclaimDeviceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnclaimDeviceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UnclaimDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UnclaimDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1365,7 +1365,7 @@ pub enum UntagResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -1430,21 +1430,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1482,7 +1482,7 @@ pub enum UpdateDeviceStateErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     #[allow(missing_docs)] // documentation missing in model
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDeviceStateError {
@@ -1547,21 +1547,21 @@ impl UpdateDeviceStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDeviceStateErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateDeviceStateErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeviceStateErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeviceStateErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateDeviceStateErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDeviceStateErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDeviceStateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDeviceStateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

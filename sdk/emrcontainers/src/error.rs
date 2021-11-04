@@ -16,7 +16,7 @@ pub enum CancelJobRunErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>There are invalid parameters in the client request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelJobRunError {
@@ -80,14 +80,14 @@ impl CancelJobRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelJobRunErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CancelJobRunErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelJobRunErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CancelJobRunErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CancelJobRunErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CancelJobRunErrorKind::ValidationException(_))
     }
@@ -121,7 +121,7 @@ pub enum CreateManagedEndpointErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>There are invalid parameters in the client request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateManagedEndpointError {
@@ -186,21 +186,21 @@ impl CreateManagedEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateManagedEndpointErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateManagedEndpointErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateManagedEndpointErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateManagedEndpointErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateManagedEndpointErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateManagedEndpointErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateManagedEndpointErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateManagedEndpointErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -238,7 +238,7 @@ pub enum CreateVirtualClusterErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>There are invalid parameters in the client request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVirtualClusterError {
@@ -303,21 +303,21 @@ impl CreateVirtualClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateVirtualClusterErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateVirtualClusterErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualClusterErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualClusterErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateVirtualClusterErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVirtualClusterErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVirtualClusterErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateVirtualClusterErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -353,7 +353,7 @@ pub enum DeleteManagedEndpointErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>There are invalid parameters in the client request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteManagedEndpointError {
@@ -417,14 +417,14 @@ impl DeleteManagedEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteManagedEndpointErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteManagedEndpointErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteManagedEndpointErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteManagedEndpointErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteManagedEndpointErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -459,7 +459,7 @@ pub enum DeleteVirtualClusterErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>There are invalid parameters in the client request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVirtualClusterError {
@@ -523,14 +523,14 @@ impl DeleteVirtualClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVirtualClusterErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteVirtualClusterErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVirtualClusterErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVirtualClusterErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteVirtualClusterErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -567,7 +567,7 @@ pub enum DescribeJobRunErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>There are invalid parameters in the client request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJobRunError {
@@ -632,21 +632,21 @@ impl DescribeJobRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeJobRunErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeJobRunErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeJobRunErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeJobRunErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeJobRunErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeJobRunErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeJobRunErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeJobRunErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeJobRunErrorKind::ValidationException(_))
     }
@@ -681,7 +681,7 @@ pub enum DescribeManagedEndpointErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>There are invalid parameters in the client request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeManagedEndpointError {
@@ -746,21 +746,21 @@ impl DescribeManagedEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeManagedEndpointErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeManagedEndpointErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeManagedEndpointErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeManagedEndpointErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeManagedEndpointErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeManagedEndpointErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeManagedEndpointErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeManagedEndpointErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -798,7 +798,7 @@ pub enum DescribeVirtualClusterErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>There are invalid parameters in the client request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVirtualClusterError {
@@ -863,21 +863,21 @@ impl DescribeVirtualClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeVirtualClusterErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeVirtualClusterErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualClusterErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualClusterErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeVirtualClusterErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVirtualClusterErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVirtualClusterErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeVirtualClusterErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -913,7 +913,7 @@ pub enum ListJobRunsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>There are invalid parameters in the client request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListJobRunsError {
@@ -977,11 +977,11 @@ impl ListJobRunsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListJobRunsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListJobRunsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListJobRunsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListJobRunsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListJobRunsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListJobRunsErrorKind::ValidationException(_))
     }
@@ -1013,7 +1013,7 @@ pub enum ListManagedEndpointsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>There are invalid parameters in the client request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListManagedEndpointsError {
@@ -1077,14 +1077,14 @@ impl ListManagedEndpointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListManagedEndpointsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListManagedEndpointsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListManagedEndpointsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListManagedEndpointsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListManagedEndpointsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1121,7 +1121,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>There are invalid parameters in the client request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1186,21 +1186,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1236,7 +1236,7 @@ pub enum ListVirtualClustersErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>There are invalid parameters in the client request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVirtualClustersError {
@@ -1300,14 +1300,14 @@ impl ListVirtualClustersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListVirtualClustersErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListVirtualClustersErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVirtualClustersErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListVirtualClustersErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListVirtualClustersErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1344,7 +1344,7 @@ pub enum StartJobRunErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>There are invalid parameters in the client request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartJobRunError {
@@ -1409,18 +1409,18 @@ impl StartJobRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartJobRunErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartJobRunErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, StartJobRunErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `StartJobRunErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartJobRunErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartJobRunErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartJobRunErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartJobRunErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StartJobRunErrorKind::ValidationException(_))
     }
@@ -1455,7 +1455,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>There are invalid parameters in the client request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -1520,18 +1520,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -1566,7 +1566,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>There are invalid parameters in the client request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -1631,21 +1631,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }

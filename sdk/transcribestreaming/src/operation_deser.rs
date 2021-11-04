@@ -14,54 +14,54 @@ pub fn parse_start_medical_stream_transcription(
         let _ = response;
         output = output.set_content_identification_type(
             crate::http_serde::deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_content_identification_type(response.headers())
-                                        .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse ContentIdentificationType from header `x-amzn-transcribe-content-identification-type"))?
+                                    .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse ContentIdentificationType from header `x-amzn-transcribe-content-identification-type"))?
         );
         output = output.set_enable_channel_identification(
             crate::http_serde::deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_enable_channel_identification(response.headers())
-                                        .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse EnableChannelIdentification from header `x-amzn-transcribe-enable-channel-identification"))?
+                                    .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse EnableChannelIdentification from header `x-amzn-transcribe-enable-channel-identification"))?
         );
         output = output.set_language_code(
             crate::http_serde::deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_language_code(response.headers())
-                                        .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse LanguageCode from header `x-amzn-transcribe-language-code"))?
+                                    .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse LanguageCode from header `x-amzn-transcribe-language-code"))?
         );
         output = output.set_media_encoding(
             crate::http_serde::deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_media_encoding(response.headers())
-                                        .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse MediaEncoding from header `x-amzn-transcribe-media-encoding"))?
+                                    .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse MediaEncoding from header `x-amzn-transcribe-media-encoding"))?
         );
         output = output.set_media_sample_rate_hertz(
             crate::http_serde::deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_media_sample_rate_hertz(response.headers())
-                                        .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse MediaSampleRateHertz from header `x-amzn-transcribe-sample-rate"))?
+                                    .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse MediaSampleRateHertz from header `x-amzn-transcribe-sample-rate"))?
         );
         output = output.set_number_of_channels(
             crate::http_serde::deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_number_of_channels(response.headers())
-                                        .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse NumberOfChannels from header `x-amzn-transcribe-number-of-channels"))?
+                                    .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse NumberOfChannels from header `x-amzn-transcribe-number-of-channels"))?
         );
         output = output.set_request_id(
             crate::http_serde::deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_request_id(response.headers())
-                                        .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse RequestId from header `x-amzn-request-id"))?
+                                    .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse RequestId from header `x-amzn-request-id"))?
         );
         output = output.set_session_id(
             crate::http_serde::deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_session_id(response.headers())
-                                        .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse SessionId from header `x-amzn-transcribe-session-id"))?
+                                    .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse SessionId from header `x-amzn-transcribe-session-id"))?
         );
         output = output.set_show_speaker_label(
             crate::http_serde::deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_show_speaker_label(response.headers())
-                                        .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse ShowSpeakerLabel from header `x-amzn-transcribe-show-speaker-label"))?
+                                    .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse ShowSpeakerLabel from header `x-amzn-transcribe-show-speaker-label"))?
         );
         output = output.set_specialty(
             crate::http_serde::deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_specialty(response.headers())
-                                        .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse Specialty from header `x-amzn-transcribe-specialty"))?
+                                    .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse Specialty from header `x-amzn-transcribe-specialty"))?
         );
         output = output.set_transcript_result_stream(
             Some(crate::http_serde::deser_payload_start_medical_stream_transcription_start_medical_stream_transcription_output_transcript_result_stream(response.body_mut())?)
         );
         output = output.set_type(
             crate::http_serde::deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_type(response.headers())
-                                        .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse Type from header `x-amzn-transcribe-type"))?
+                                    .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse Type from header `x-amzn-transcribe-type"))?
         );
         output = output.set_vocabulary_name(
             crate::http_serde::deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_vocabulary_name(response.headers())
-                                        .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse VocabularyName from header `x-amzn-transcribe-vocabulary-name"))?
+                                    .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse VocabularyName from header `x-amzn-transcribe-vocabulary-name"))?
         );
         output
             .build()
@@ -197,70 +197,74 @@ pub fn parse_start_stream_transcription(
         let _ = response;
         output = output.set_content_identification_type(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_content_identification_type(response.headers())
-                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse ContentIdentificationType from header `x-amzn-transcribe-content-identification-type"))?
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse ContentIdentificationType from header `x-amzn-transcribe-content-identification-type"))?
         );
         output = output.set_content_redaction_type(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_content_redaction_type(response.headers())
-                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse ContentRedactionType from header `x-amzn-transcribe-content-redaction-type"))?
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse ContentRedactionType from header `x-amzn-transcribe-content-redaction-type"))?
         );
         output = output.set_enable_channel_identification(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_enable_channel_identification(response.headers())
-                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse EnableChannelIdentification from header `x-amzn-transcribe-enable-channel-identification"))?
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse EnableChannelIdentification from header `x-amzn-transcribe-enable-channel-identification"))?
         );
         output = output.set_enable_partial_results_stabilization(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_enable_partial_results_stabilization(response.headers())
-                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse EnablePartialResultsStabilization from header `x-amzn-transcribe-enable-partial-results-stabilization"))?
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse EnablePartialResultsStabilization from header `x-amzn-transcribe-enable-partial-results-stabilization"))?
         );
         output = output.set_language_code(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_language_code(response.headers())
-                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse LanguageCode from header `x-amzn-transcribe-language-code"))?
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse LanguageCode from header `x-amzn-transcribe-language-code"))?
+        );
+        output = output.set_language_model_name(
+            crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_language_model_name(response.headers())
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse LanguageModelName from header `x-amzn-transcribe-language-model-name"))?
         );
         output = output.set_media_encoding(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_media_encoding(response.headers())
-                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse MediaEncoding from header `x-amzn-transcribe-media-encoding"))?
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse MediaEncoding from header `x-amzn-transcribe-media-encoding"))?
         );
         output = output.set_media_sample_rate_hertz(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_media_sample_rate_hertz(response.headers())
-                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse MediaSampleRateHertz from header `x-amzn-transcribe-sample-rate"))?
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse MediaSampleRateHertz from header `x-amzn-transcribe-sample-rate"))?
         );
         output = output.set_number_of_channels(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_number_of_channels(response.headers())
-                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse NumberOfChannels from header `x-amzn-transcribe-number-of-channels"))?
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse NumberOfChannels from header `x-amzn-transcribe-number-of-channels"))?
         );
         output = output.set_partial_results_stability(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_partial_results_stability(response.headers())
-                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse PartialResultsStability from header `x-amzn-transcribe-partial-results-stability"))?
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse PartialResultsStability from header `x-amzn-transcribe-partial-results-stability"))?
         );
         output = output.set_pii_entity_types(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_pii_entity_types(response.headers())
-                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse PiiEntityTypes from header `x-amzn-transcribe-pii-entity-types"))?
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse PiiEntityTypes from header `x-amzn-transcribe-pii-entity-types"))?
         );
         output = output.set_request_id(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_request_id(response.headers())
-                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse RequestId from header `x-amzn-request-id"))?
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse RequestId from header `x-amzn-request-id"))?
         );
         output = output.set_session_id(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_session_id(response.headers())
-                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse SessionId from header `x-amzn-transcribe-session-id"))?
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse SessionId from header `x-amzn-transcribe-session-id"))?
         );
         output = output.set_show_speaker_label(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_show_speaker_label(response.headers())
-                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse ShowSpeakerLabel from header `x-amzn-transcribe-show-speaker-label"))?
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse ShowSpeakerLabel from header `x-amzn-transcribe-show-speaker-label"))?
         );
         output = output.set_transcript_result_stream(
             Some(crate::http_serde::deser_payload_start_stream_transcription_start_stream_transcription_output_transcript_result_stream(response.body_mut())?)
         );
         output = output.set_vocabulary_filter_method(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_filter_method(response.headers())
-                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse VocabularyFilterMethod from header `x-amzn-transcribe-vocabulary-filter-method"))?
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse VocabularyFilterMethod from header `x-amzn-transcribe-vocabulary-filter-method"))?
         );
         output = output.set_vocabulary_filter_name(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_filter_name(response.headers())
-                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse VocabularyFilterName from header `x-amzn-transcribe-vocabulary-filter-name"))?
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse VocabularyFilterName from header `x-amzn-transcribe-vocabulary-filter-name"))?
         );
         output = output.set_vocabulary_name(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_name(response.headers())
-                                        .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse VocabularyName from header `x-amzn-transcribe-vocabulary-name"))?
+                                    .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse VocabularyName from header `x-amzn-transcribe-vocabulary-name"))?
         );
         output
             .build()

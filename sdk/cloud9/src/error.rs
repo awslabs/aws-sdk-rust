@@ -26,7 +26,7 @@ pub enum CreateEnvironmentEC2ErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEnvironmentEC2Error {
@@ -95,49 +95,49 @@ impl CreateEnvironmentEC2Error {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEnvironmentEC2ErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentEC2ErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentEC2ErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentEC2ErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentEC2ErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentEC2ErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentEC2ErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentEC2ErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentEC2ErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentEC2ErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentEC2ErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentEC2ErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentEC2ErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentEC2ErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentEC2ErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentEC2ErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentEC2ErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentEC2ErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentEC2ErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentEC2ErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -187,7 +187,7 @@ pub enum CreateEnvironmentMembershipErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEnvironmentMembershipError {
@@ -258,49 +258,49 @@ impl CreateEnvironmentMembershipError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEnvironmentMembershipErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentMembershipErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentMembershipErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentMembershipErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentMembershipErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentMembershipErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentMembershipErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentMembershipErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentMembershipErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentMembershipErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentMembershipErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentMembershipErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentMembershipErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentMembershipErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentMembershipErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentMembershipErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentMembershipErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentMembershipErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentMembershipErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentMembershipErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -352,7 +352,7 @@ pub enum DeleteEnvironmentErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEnvironmentError {
@@ -421,43 +421,43 @@ impl DeleteEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEnvironmentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEnvironmentErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEnvironmentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteEnvironmentErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteEnvironmentErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEnvironmentErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEnvironmentErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEnvironmentErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEnvironmentErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEnvironmentErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEnvironmentErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteEnvironmentErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteEnvironmentErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -507,7 +507,7 @@ pub enum DeleteEnvironmentMembershipErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEnvironmentMembershipError {
@@ -578,49 +578,49 @@ impl DeleteEnvironmentMembershipError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEnvironmentMembershipErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentMembershipErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEnvironmentMembershipErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEnvironmentMembershipErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentMembershipErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEnvironmentMembershipErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEnvironmentMembershipErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentMembershipErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEnvironmentMembershipErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEnvironmentMembershipErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentMembershipErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEnvironmentMembershipErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEnvironmentMembershipErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentMembershipErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEnvironmentMembershipErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEnvironmentMembershipErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentMembershipErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEnvironmentMembershipErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEnvironmentMembershipErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteEnvironmentMembershipErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -672,7 +672,7 @@ pub enum DescribeEnvironmentMembershipsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEnvironmentMembershipsError {
@@ -750,49 +750,49 @@ impl DescribeEnvironmentMembershipsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEnvironmentMembershipsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentMembershipsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentMembershipsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentMembershipsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentMembershipsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentMembershipsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentMembershipsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentMembershipsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentMembershipsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentMembershipsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentMembershipsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentMembershipsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentMembershipsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentMembershipsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentMembershipsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentMembershipsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentMembershipsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentMembershipsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentMembershipsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentMembershipsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -846,7 +846,7 @@ pub enum DescribeEnvironmentsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEnvironmentsError {
@@ -915,49 +915,49 @@ impl DescribeEnvironmentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEnvironmentsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1007,7 +1007,7 @@ pub enum DescribeEnvironmentStatusErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEnvironmentStatusError {
@@ -1078,49 +1078,49 @@ impl DescribeEnvironmentStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEnvironmentStatusErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentStatusErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentStatusErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentStatusErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentStatusErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentStatusErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentStatusErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentStatusErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentStatusErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentStatusErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentStatusErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentStatusErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentStatusErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentStatusErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentStatusErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentStatusErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentStatusErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentStatusErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentStatusErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentStatusErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1172,7 +1172,7 @@ pub enum ListEnvironmentsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEnvironmentsError {
@@ -1241,40 +1241,40 @@ impl ListEnvironmentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEnvironmentsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListEnvironmentsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEnvironmentsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListEnvironmentsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListEnvironmentsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, ListEnvironmentsErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `ListEnvironmentsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListEnvironmentsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListEnvironmentsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListEnvironmentsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListEnvironmentsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEnvironmentsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListEnvironmentsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListEnvironmentsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEnvironmentsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListEnvironmentsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListEnvironmentsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListEnvironmentsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListEnvironmentsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListEnvironmentsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1316,7 +1316,7 @@ pub enum ListTagsForResourceErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The target resource cannot be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1381,21 +1381,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1435,7 +1435,7 @@ pub enum TagResourceErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The target resource cannot be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -1501,25 +1501,25 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConcurrentAccessException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConcurrentAccessException`.
     pub fn is_concurrent_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ConcurrentAccessException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
@@ -1557,7 +1557,7 @@ pub enum UntagResourceErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The target resource cannot be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -1623,25 +1623,25 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConcurrentAccessException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConcurrentAccessException`.
     pub fn is_concurrent_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ConcurrentAccessException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
@@ -1685,7 +1685,7 @@ pub enum UpdateEnvironmentErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEnvironmentError {
@@ -1754,43 +1754,43 @@ impl UpdateEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEnvironmentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnvironmentErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnvironmentErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateEnvironmentErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateEnvironmentErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnvironmentErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnvironmentErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnvironmentErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnvironmentErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnvironmentErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnvironmentErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateEnvironmentErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateEnvironmentErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1840,7 +1840,7 @@ pub enum UpdateEnvironmentMembershipErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Too many service requests were made over the given time period.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEnvironmentMembershipError {
@@ -1911,49 +1911,49 @@ impl UpdateEnvironmentMembershipError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEnvironmentMembershipErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentMembershipErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnvironmentMembershipErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnvironmentMembershipErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentMembershipErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnvironmentMembershipErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnvironmentMembershipErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentMembershipErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnvironmentMembershipErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnvironmentMembershipErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentMembershipErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnvironmentMembershipErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnvironmentMembershipErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentMembershipErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnvironmentMembershipErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnvironmentMembershipErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentMembershipErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnvironmentMembershipErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnvironmentMembershipErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentMembershipErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

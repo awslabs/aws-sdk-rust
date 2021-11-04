@@ -18,7 +18,7 @@ pub enum AssociateFileSystemAliasesErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateFileSystemAliasesError {
@@ -83,21 +83,21 @@ impl AssociateFileSystemAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateFileSystemAliasesErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `AssociateFileSystemAliasesErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(
             &self.kind,
             AssociateFileSystemAliasesErrorKind::BadRequest(_)
         )
     }
-    /// Returns true if the error kind is `AssociateFileSystemAliasesErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `AssociateFileSystemAliasesErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             AssociateFileSystemAliasesErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `AssociateFileSystemAliasesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `AssociateFileSystemAliasesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -139,7 +139,7 @@ pub enum CancelDataRepositoryTaskErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelDataRepositoryTaskError {
@@ -206,32 +206,32 @@ impl CancelDataRepositoryTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelDataRepositoryTaskErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `CancelDataRepositoryTaskErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, CancelDataRepositoryTaskErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `CancelDataRepositoryTaskErrorKind::DataRepositoryTaskEnded`.
+    /// Returns `true` if the error kind is `CancelDataRepositoryTaskErrorKind::DataRepositoryTaskEnded`.
     pub fn is_data_repository_task_ended(&self) -> bool {
         matches!(
             &self.kind,
             CancelDataRepositoryTaskErrorKind::DataRepositoryTaskEnded(_)
         )
     }
-    /// Returns true if the error kind is `CancelDataRepositoryTaskErrorKind::DataRepositoryTaskNotFound`.
+    /// Returns `true` if the error kind is `CancelDataRepositoryTaskErrorKind::DataRepositoryTaskNotFound`.
     pub fn is_data_repository_task_not_found(&self) -> bool {
         matches!(
             &self.kind,
             CancelDataRepositoryTaskErrorKind::DataRepositoryTaskNotFound(_)
         )
     }
-    /// Returns true if the error kind is `CancelDataRepositoryTaskErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CancelDataRepositoryTaskErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CancelDataRepositoryTaskErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CancelDataRepositoryTaskErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `CancelDataRepositoryTaskErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -296,7 +296,7 @@ pub enum CopyBackupErrorKind {
     SourceBackupUnavailable(crate::error::SourceBackupUnavailable),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopyBackupError {
@@ -369,53 +369,53 @@ impl CopyBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CopyBackupErrorKind::BackupNotFound`.
+    /// Returns `true` if the error kind is `CopyBackupErrorKind::BackupNotFound`.
     pub fn is_backup_not_found(&self) -> bool {
         matches!(&self.kind, CopyBackupErrorKind::BackupNotFound(_))
     }
-    /// Returns true if the error kind is `CopyBackupErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `CopyBackupErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, CopyBackupErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `CopyBackupErrorKind::IncompatibleParameterError`.
+    /// Returns `true` if the error kind is `CopyBackupErrorKind::IncompatibleParameterError`.
     pub fn is_incompatible_parameter_error(&self) -> bool {
         matches!(
             &self.kind,
             CopyBackupErrorKind::IncompatibleParameterError(_)
         )
     }
-    /// Returns true if the error kind is `CopyBackupErrorKind::IncompatibleRegionForMultiAz`.
+    /// Returns `true` if the error kind is `CopyBackupErrorKind::IncompatibleRegionForMultiAz`.
     pub fn is_incompatible_region_for_multi_az(&self) -> bool {
         matches!(
             &self.kind,
             CopyBackupErrorKind::IncompatibleRegionForMultiAz(_)
         )
     }
-    /// Returns true if the error kind is `CopyBackupErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CopyBackupErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CopyBackupErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `CopyBackupErrorKind::InvalidDestinationKmsKey`.
+    /// Returns `true` if the error kind is `CopyBackupErrorKind::InvalidDestinationKmsKey`.
     pub fn is_invalid_destination_kms_key(&self) -> bool {
         matches!(&self.kind, CopyBackupErrorKind::InvalidDestinationKmsKey(_))
     }
-    /// Returns true if the error kind is `CopyBackupErrorKind::InvalidRegion`.
+    /// Returns `true` if the error kind is `CopyBackupErrorKind::InvalidRegion`.
     pub fn is_invalid_region(&self) -> bool {
         matches!(&self.kind, CopyBackupErrorKind::InvalidRegion(_))
     }
-    /// Returns true if the error kind is `CopyBackupErrorKind::InvalidSourceKmsKey`.
+    /// Returns `true` if the error kind is `CopyBackupErrorKind::InvalidSourceKmsKey`.
     pub fn is_invalid_source_kms_key(&self) -> bool {
         matches!(&self.kind, CopyBackupErrorKind::InvalidSourceKmsKey(_))
     }
-    /// Returns true if the error kind is `CopyBackupErrorKind::ServiceLimitExceeded`.
+    /// Returns `true` if the error kind is `CopyBackupErrorKind::ServiceLimitExceeded`.
     pub fn is_service_limit_exceeded(&self) -> bool {
         matches!(&self.kind, CopyBackupErrorKind::ServiceLimitExceeded(_))
     }
-    /// Returns true if the error kind is `CopyBackupErrorKind::SourceBackupUnavailable`.
+    /// Returns `true` if the error kind is `CopyBackupErrorKind::SourceBackupUnavailable`.
     pub fn is_source_backup_unavailable(&self) -> bool {
         matches!(&self.kind, CopyBackupErrorKind::SourceBackupUnavailable(_))
     }
-    /// Returns true if the error kind is `CopyBackupErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `CopyBackupErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(&self.kind, CopyBackupErrorKind::UnsupportedOperation(_))
     }
@@ -472,7 +472,7 @@ pub enum CreateBackupErrorKind {
     UnsupportedOperation(crate::error::UnsupportedOperation),
     /// <p>No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.</p>
     VolumeNotFound(crate::error::VolumeNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBackupError {
@@ -542,38 +542,38 @@ impl CreateBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::BackupInProgress`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::BackupInProgress`.
     pub fn is_backup_in_progress(&self) -> bool {
         matches!(&self.kind, CreateBackupErrorKind::BackupInProgress(_))
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, CreateBackupErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(&self.kind, CreateBackupErrorKind::FileSystemNotFound(_))
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::IncompatibleParameterError`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::IncompatibleParameterError`.
     pub fn is_incompatible_parameter_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackupErrorKind::IncompatibleParameterError(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CreateBackupErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::ServiceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::ServiceLimitExceeded`.
     pub fn is_service_limit_exceeded(&self) -> bool {
         matches!(&self.kind, CreateBackupErrorKind::ServiceLimitExceeded(_))
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(&self.kind, CreateBackupErrorKind::UnsupportedOperation(_))
     }
-    /// Returns true if the error kind is `CreateBackupErrorKind::VolumeNotFound`.
+    /// Returns `true` if the error kind is `CreateBackupErrorKind::VolumeNotFound`.
     pub fn is_volume_not_found(&self) -> bool {
         matches!(&self.kind, CreateBackupErrorKind::VolumeNotFound(_))
     }
@@ -625,7 +625,7 @@ pub enum CreateDataRepositoryTaskErrorKind {
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDataRepositoryTaskError {
@@ -694,46 +694,46 @@ impl CreateDataRepositoryTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDataRepositoryTaskErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `CreateDataRepositoryTaskErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, CreateDataRepositoryTaskErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `CreateDataRepositoryTaskErrorKind::DataRepositoryTaskExecuting`.
+    /// Returns `true` if the error kind is `CreateDataRepositoryTaskErrorKind::DataRepositoryTaskExecuting`.
     pub fn is_data_repository_task_executing(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataRepositoryTaskErrorKind::DataRepositoryTaskExecuting(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataRepositoryTaskErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `CreateDataRepositoryTaskErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataRepositoryTaskErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataRepositoryTaskErrorKind::IncompatibleParameterError`.
+    /// Returns `true` if the error kind is `CreateDataRepositoryTaskErrorKind::IncompatibleParameterError`.
     pub fn is_incompatible_parameter_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataRepositoryTaskErrorKind::IncompatibleParameterError(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataRepositoryTaskErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateDataRepositoryTaskErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataRepositoryTaskErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataRepositoryTaskErrorKind::ServiceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateDataRepositoryTaskErrorKind::ServiceLimitExceeded`.
     pub fn is_service_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataRepositoryTaskErrorKind::ServiceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataRepositoryTaskErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `CreateDataRepositoryTaskErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -792,7 +792,7 @@ pub enum CreateFileSystemErrorKind {
     /// <p>An error indicating that a particular service limit was exceeded. You can increase
     /// some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFileSystemError {
@@ -864,61 +864,61 @@ impl CreateFileSystemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFileSystemErrorKind::ActiveDirectoryError`.
+    /// Returns `true` if the error kind is `CreateFileSystemErrorKind::ActiveDirectoryError`.
     pub fn is_active_directory_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemErrorKind::ActiveDirectoryError(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `CreateFileSystemErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, CreateFileSystemErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `CreateFileSystemErrorKind::IncompatibleParameterError`.
+    /// Returns `true` if the error kind is `CreateFileSystemErrorKind::IncompatibleParameterError`.
     pub fn is_incompatible_parameter_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemErrorKind::IncompatibleParameterError(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateFileSystemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemErrorKind::InvalidExportPath`.
+    /// Returns `true` if the error kind is `CreateFileSystemErrorKind::InvalidExportPath`.
     pub fn is_invalid_export_path(&self) -> bool {
         matches!(&self.kind, CreateFileSystemErrorKind::InvalidExportPath(_))
     }
-    /// Returns true if the error kind is `CreateFileSystemErrorKind::InvalidImportPath`.
+    /// Returns `true` if the error kind is `CreateFileSystemErrorKind::InvalidImportPath`.
     pub fn is_invalid_import_path(&self) -> bool {
         matches!(&self.kind, CreateFileSystemErrorKind::InvalidImportPath(_))
     }
-    /// Returns true if the error kind is `CreateFileSystemErrorKind::InvalidNetworkSettings`.
+    /// Returns `true` if the error kind is `CreateFileSystemErrorKind::InvalidNetworkSettings`.
     pub fn is_invalid_network_settings(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemErrorKind::InvalidNetworkSettings(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemErrorKind::InvalidPerUnitStorageThroughput`.
+    /// Returns `true` if the error kind is `CreateFileSystemErrorKind::InvalidPerUnitStorageThroughput`.
     pub fn is_invalid_per_unit_storage_throughput(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemErrorKind::InvalidPerUnitStorageThroughput(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemErrorKind::MissingFileSystemConfiguration`.
+    /// Returns `true` if the error kind is `CreateFileSystemErrorKind::MissingFileSystemConfiguration`.
     pub fn is_missing_file_system_configuration(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemErrorKind::MissingFileSystemConfiguration(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemErrorKind::ServiceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateFileSystemErrorKind::ServiceLimitExceeded`.
     pub fn is_service_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -978,7 +978,7 @@ pub enum CreateFileSystemFromBackupErrorKind {
     /// <p>An error indicating that a particular service limit was exceeded. You can increase
     /// some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFileSystemFromBackupError {
@@ -1055,63 +1055,63 @@ impl CreateFileSystemFromBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFileSystemFromBackupErrorKind::ActiveDirectoryError`.
+    /// Returns `true` if the error kind is `CreateFileSystemFromBackupErrorKind::ActiveDirectoryError`.
     pub fn is_active_directory_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemFromBackupErrorKind::ActiveDirectoryError(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemFromBackupErrorKind::BackupNotFound`.
+    /// Returns `true` if the error kind is `CreateFileSystemFromBackupErrorKind::BackupNotFound`.
     pub fn is_backup_not_found(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemFromBackupErrorKind::BackupNotFound(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemFromBackupErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `CreateFileSystemFromBackupErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemFromBackupErrorKind::BadRequest(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemFromBackupErrorKind::IncompatibleParameterError`.
+    /// Returns `true` if the error kind is `CreateFileSystemFromBackupErrorKind::IncompatibleParameterError`.
     pub fn is_incompatible_parameter_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemFromBackupErrorKind::IncompatibleParameterError(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemFromBackupErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateFileSystemFromBackupErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemFromBackupErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemFromBackupErrorKind::InvalidNetworkSettings`.
+    /// Returns `true` if the error kind is `CreateFileSystemFromBackupErrorKind::InvalidNetworkSettings`.
     pub fn is_invalid_network_settings(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemFromBackupErrorKind::InvalidNetworkSettings(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemFromBackupErrorKind::InvalidPerUnitStorageThroughput`.
+    /// Returns `true` if the error kind is `CreateFileSystemFromBackupErrorKind::InvalidPerUnitStorageThroughput`.
     pub fn is_invalid_per_unit_storage_throughput(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemFromBackupErrorKind::InvalidPerUnitStorageThroughput(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemFromBackupErrorKind::MissingFileSystemConfiguration`.
+    /// Returns `true` if the error kind is `CreateFileSystemFromBackupErrorKind::MissingFileSystemConfiguration`.
     pub fn is_missing_file_system_configuration(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemFromBackupErrorKind::MissingFileSystemConfiguration(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemFromBackupErrorKind::ServiceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateFileSystemFromBackupErrorKind::ServiceLimitExceeded`.
     pub fn is_service_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -1170,7 +1170,7 @@ pub enum CreateStorageVirtualMachineErrorKind {
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStorageVirtualMachineError {
@@ -1241,49 +1241,49 @@ impl CreateStorageVirtualMachineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStorageVirtualMachineErrorKind::ActiveDirectoryError`.
+    /// Returns `true` if the error kind is `CreateStorageVirtualMachineErrorKind::ActiveDirectoryError`.
     pub fn is_active_directory_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateStorageVirtualMachineErrorKind::ActiveDirectoryError(_)
         )
     }
-    /// Returns true if the error kind is `CreateStorageVirtualMachineErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `CreateStorageVirtualMachineErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(
             &self.kind,
             CreateStorageVirtualMachineErrorKind::BadRequest(_)
         )
     }
-    /// Returns true if the error kind is `CreateStorageVirtualMachineErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `CreateStorageVirtualMachineErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             CreateStorageVirtualMachineErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `CreateStorageVirtualMachineErrorKind::IncompatibleParameterError`.
+    /// Returns `true` if the error kind is `CreateStorageVirtualMachineErrorKind::IncompatibleParameterError`.
     pub fn is_incompatible_parameter_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateStorageVirtualMachineErrorKind::IncompatibleParameterError(_)
         )
     }
-    /// Returns true if the error kind is `CreateStorageVirtualMachineErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateStorageVirtualMachineErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateStorageVirtualMachineErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateStorageVirtualMachineErrorKind::ServiceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateStorageVirtualMachineErrorKind::ServiceLimitExceeded`.
     pub fn is_service_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateStorageVirtualMachineErrorKind::ServiceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateStorageVirtualMachineErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `CreateStorageVirtualMachineErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -1340,7 +1340,7 @@ pub enum CreateVolumeErrorKind {
     StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVolumeError {
@@ -1410,44 +1410,44 @@ impl CreateVolumeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateVolumeErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `CreateVolumeErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, CreateVolumeErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `CreateVolumeErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `CreateVolumeErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(&self.kind, CreateVolumeErrorKind::FileSystemNotFound(_))
     }
-    /// Returns true if the error kind is `CreateVolumeErrorKind::IncompatibleParameterError`.
+    /// Returns `true` if the error kind is `CreateVolumeErrorKind::IncompatibleParameterError`.
     pub fn is_incompatible_parameter_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateVolumeErrorKind::IncompatibleParameterError(_)
         )
     }
-    /// Returns true if the error kind is `CreateVolumeErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateVolumeErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CreateVolumeErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `CreateVolumeErrorKind::MissingVolumeConfiguration`.
+    /// Returns `true` if the error kind is `CreateVolumeErrorKind::MissingVolumeConfiguration`.
     pub fn is_missing_volume_configuration(&self) -> bool {
         matches!(
             &self.kind,
             CreateVolumeErrorKind::MissingVolumeConfiguration(_)
         )
     }
-    /// Returns true if the error kind is `CreateVolumeErrorKind::ServiceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateVolumeErrorKind::ServiceLimitExceeded`.
     pub fn is_service_limit_exceeded(&self) -> bool {
         matches!(&self.kind, CreateVolumeErrorKind::ServiceLimitExceeded(_))
     }
-    /// Returns true if the error kind is `CreateVolumeErrorKind::StorageVirtualMachineNotFound`.
+    /// Returns `true` if the error kind is `CreateVolumeErrorKind::StorageVirtualMachineNotFound`.
     pub fn is_storage_virtual_machine_not_found(&self) -> bool {
         matches!(
             &self.kind,
             CreateVolumeErrorKind::StorageVirtualMachineNotFound(_)
         )
     }
-    /// Returns true if the error kind is `CreateVolumeErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `CreateVolumeErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(&self.kind, CreateVolumeErrorKind::UnsupportedOperation(_))
     }
@@ -1500,7 +1500,7 @@ pub enum CreateVolumeFromBackupErrorKind {
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// <p>No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.</p>
     StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVolumeFromBackupError {
@@ -1570,53 +1570,53 @@ impl CreateVolumeFromBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateVolumeFromBackupErrorKind::BackupNotFound`.
+    /// Returns `true` if the error kind is `CreateVolumeFromBackupErrorKind::BackupNotFound`.
     pub fn is_backup_not_found(&self) -> bool {
         matches!(
             &self.kind,
             CreateVolumeFromBackupErrorKind::BackupNotFound(_)
         )
     }
-    /// Returns true if the error kind is `CreateVolumeFromBackupErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `CreateVolumeFromBackupErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, CreateVolumeFromBackupErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `CreateVolumeFromBackupErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `CreateVolumeFromBackupErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             CreateVolumeFromBackupErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `CreateVolumeFromBackupErrorKind::IncompatibleParameterError`.
+    /// Returns `true` if the error kind is `CreateVolumeFromBackupErrorKind::IncompatibleParameterError`.
     pub fn is_incompatible_parameter_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateVolumeFromBackupErrorKind::IncompatibleParameterError(_)
         )
     }
-    /// Returns true if the error kind is `CreateVolumeFromBackupErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateVolumeFromBackupErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateVolumeFromBackupErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateVolumeFromBackupErrorKind::MissingVolumeConfiguration`.
+    /// Returns `true` if the error kind is `CreateVolumeFromBackupErrorKind::MissingVolumeConfiguration`.
     pub fn is_missing_volume_configuration(&self) -> bool {
         matches!(
             &self.kind,
             CreateVolumeFromBackupErrorKind::MissingVolumeConfiguration(_)
         )
     }
-    /// Returns true if the error kind is `CreateVolumeFromBackupErrorKind::ServiceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateVolumeFromBackupErrorKind::ServiceLimitExceeded`.
     pub fn is_service_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateVolumeFromBackupErrorKind::ServiceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateVolumeFromBackupErrorKind::StorageVirtualMachineNotFound`.
+    /// Returns `true` if the error kind is `CreateVolumeFromBackupErrorKind::StorageVirtualMachineNotFound`.
     pub fn is_storage_virtual_machine_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -1671,7 +1671,7 @@ pub enum DeleteBackupErrorKind {
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBackupError {
@@ -1740,34 +1740,34 @@ impl DeleteBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::BackupBeingCopied`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::BackupBeingCopied`.
     pub fn is_backup_being_copied(&self) -> bool {
         matches!(&self.kind, DeleteBackupErrorKind::BackupBeingCopied(_))
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::BackupInProgress`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::BackupInProgress`.
     pub fn is_backup_in_progress(&self) -> bool {
         matches!(&self.kind, DeleteBackupErrorKind::BackupInProgress(_))
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::BackupNotFound`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::BackupNotFound`.
     pub fn is_backup_not_found(&self) -> bool {
         matches!(&self.kind, DeleteBackupErrorKind::BackupNotFound(_))
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::BackupRestoring`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::BackupRestoring`.
     pub fn is_backup_restoring(&self) -> bool {
         matches!(&self.kind, DeleteBackupErrorKind::BackupRestoring(_))
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, DeleteBackupErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::IncompatibleParameterError`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::IncompatibleParameterError`.
     pub fn is_incompatible_parameter_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackupErrorKind::IncompatibleParameterError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackupErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteBackupErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteBackupErrorKind::InternalServerError(_))
     }
@@ -1813,7 +1813,7 @@ pub enum DeleteFileSystemErrorKind {
     /// <p>An error indicating that a particular service limit was exceeded. You can increase
     /// some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFileSystemError {
@@ -1880,29 +1880,29 @@ impl DeleteFileSystemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFileSystemErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DeleteFileSystemErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, DeleteFileSystemErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `DeleteFileSystemErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `DeleteFileSystemErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(&self.kind, DeleteFileSystemErrorKind::FileSystemNotFound(_))
     }
-    /// Returns true if the error kind is `DeleteFileSystemErrorKind::IncompatibleParameterError`.
+    /// Returns `true` if the error kind is `DeleteFileSystemErrorKind::IncompatibleParameterError`.
     pub fn is_incompatible_parameter_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileSystemErrorKind::IncompatibleParameterError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileSystemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteFileSystemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileSystemErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileSystemErrorKind::ServiceLimitExceeded`.
+    /// Returns `true` if the error kind is `DeleteFileSystemErrorKind::ServiceLimitExceeded`.
     pub fn is_service_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -1946,7 +1946,7 @@ pub enum DeleteStorageVirtualMachineErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.</p>
     StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStorageVirtualMachineError {
@@ -2016,28 +2016,28 @@ impl DeleteStorageVirtualMachineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteStorageVirtualMachineErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DeleteStorageVirtualMachineErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStorageVirtualMachineErrorKind::BadRequest(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStorageVirtualMachineErrorKind::IncompatibleParameterError`.
+    /// Returns `true` if the error kind is `DeleteStorageVirtualMachineErrorKind::IncompatibleParameterError`.
     pub fn is_incompatible_parameter_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStorageVirtualMachineErrorKind::IncompatibleParameterError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStorageVirtualMachineErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteStorageVirtualMachineErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteStorageVirtualMachineErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteStorageVirtualMachineErrorKind::StorageVirtualMachineNotFound`.
+    /// Returns `true` if the error kind is `DeleteStorageVirtualMachineErrorKind::StorageVirtualMachineNotFound`.
     pub fn is_storage_virtual_machine_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -2084,7 +2084,7 @@ pub enum DeleteVolumeErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.</p>
     VolumeNotFound(crate::error::VolumeNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVolumeError {
@@ -2150,22 +2150,22 @@ impl DeleteVolumeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVolumeErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DeleteVolumeErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, DeleteVolumeErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `DeleteVolumeErrorKind::IncompatibleParameterError`.
+    /// Returns `true` if the error kind is `DeleteVolumeErrorKind::IncompatibleParameterError`.
     pub fn is_incompatible_parameter_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVolumeErrorKind::IncompatibleParameterError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVolumeErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteVolumeErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteVolumeErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DeleteVolumeErrorKind::VolumeNotFound`.
+    /// Returns `true` if the error kind is `DeleteVolumeErrorKind::VolumeNotFound`.
     pub fn is_volume_not_found(&self) -> bool {
         matches!(&self.kind, DeleteVolumeErrorKind::VolumeNotFound(_))
     }
@@ -2205,7 +2205,7 @@ pub enum DescribeBackupsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.</p>
     VolumeNotFound(crate::error::VolumeNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBackupsError {
@@ -2272,23 +2272,23 @@ impl DescribeBackupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBackupsErrorKind::BackupNotFound`.
+    /// Returns `true` if the error kind is `DescribeBackupsErrorKind::BackupNotFound`.
     pub fn is_backup_not_found(&self) -> bool {
         matches!(&self.kind, DescribeBackupsErrorKind::BackupNotFound(_))
     }
-    /// Returns true if the error kind is `DescribeBackupsErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DescribeBackupsErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, DescribeBackupsErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `DescribeBackupsErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `DescribeBackupsErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(&self.kind, DescribeBackupsErrorKind::FileSystemNotFound(_))
     }
-    /// Returns true if the error kind is `DescribeBackupsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeBackupsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeBackupsErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DescribeBackupsErrorKind::VolumeNotFound`.
+    /// Returns `true` if the error kind is `DescribeBackupsErrorKind::VolumeNotFound`.
     pub fn is_volume_not_found(&self) -> bool {
         matches!(&self.kind, DescribeBackupsErrorKind::VolumeNotFound(_))
     }
@@ -2327,7 +2327,7 @@ pub enum DescribeDataRepositoryTasksErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDataRepositoryTasksError {
@@ -2395,28 +2395,28 @@ impl DescribeDataRepositoryTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDataRepositoryTasksErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DescribeDataRepositoryTasksErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataRepositoryTasksErrorKind::BadRequest(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataRepositoryTasksErrorKind::DataRepositoryTaskNotFound`.
+    /// Returns `true` if the error kind is `DescribeDataRepositoryTasksErrorKind::DataRepositoryTaskNotFound`.
     pub fn is_data_repository_task_not_found(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataRepositoryTasksErrorKind::DataRepositoryTaskNotFound(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataRepositoryTasksErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `DescribeDataRepositoryTasksErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataRepositoryTasksErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataRepositoryTasksErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeDataRepositoryTasksErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -2457,7 +2457,7 @@ pub enum DescribeFileSystemAliasesErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFileSystemAliasesError {
@@ -2522,21 +2522,21 @@ impl DescribeFileSystemAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFileSystemAliasesErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DescribeFileSystemAliasesErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFileSystemAliasesErrorKind::BadRequest(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFileSystemAliasesErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `DescribeFileSystemAliasesErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFileSystemAliasesErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFileSystemAliasesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeFileSystemAliasesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -2574,7 +2574,7 @@ pub enum DescribeFileSystemsErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFileSystemsError {
@@ -2639,18 +2639,18 @@ impl DescribeFileSystemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFileSystemsErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DescribeFileSystemsErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, DescribeFileSystemsErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `DescribeFileSystemsErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `DescribeFileSystemsErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFileSystemsErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFileSystemsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeFileSystemsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -2688,7 +2688,7 @@ pub enum DescribeStorageVirtualMachinesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.</p>
     StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStorageVirtualMachinesError {
@@ -2758,21 +2758,21 @@ impl DescribeStorageVirtualMachinesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStorageVirtualMachinesErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DescribeStorageVirtualMachinesErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStorageVirtualMachinesErrorKind::BadRequest(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStorageVirtualMachinesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeStorageVirtualMachinesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStorageVirtualMachinesErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStorageVirtualMachinesErrorKind::StorageVirtualMachineNotFound`.
+    /// Returns `true` if the error kind is `DescribeStorageVirtualMachinesErrorKind::StorageVirtualMachineNotFound`.
     pub fn is_storage_virtual_machine_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -2812,7 +2812,7 @@ pub enum DescribeVolumesErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.</p>
     VolumeNotFound(crate::error::VolumeNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVolumesError {
@@ -2877,15 +2877,15 @@ impl DescribeVolumesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeVolumesErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DescribeVolumesErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, DescribeVolumesErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `DescribeVolumesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeVolumesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeVolumesErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `DescribeVolumesErrorKind::VolumeNotFound`.
+    /// Returns `true` if the error kind is `DescribeVolumesErrorKind::VolumeNotFound`.
     pub fn is_volume_not_found(&self) -> bool {
         matches!(&self.kind, DescribeVolumesErrorKind::VolumeNotFound(_))
     }
@@ -2920,7 +2920,7 @@ pub enum DisassociateFileSystemAliasesErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateFileSystemAliasesError {
@@ -2988,21 +2988,21 @@ impl DisassociateFileSystemAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateFileSystemAliasesErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DisassociateFileSystemAliasesErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFileSystemAliasesErrorKind::BadRequest(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFileSystemAliasesErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `DisassociateFileSystemAliasesErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFileSystemAliasesErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFileSystemAliasesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DisassociateFileSystemAliasesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -3045,7 +3045,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceDoesNotSupportTagging(crate::error::ResourceDoesNotSupportTagging),
     /// <p>The resource specified by the Amazon Resource Name (ARN) can't be found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -3112,32 +3112,32 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, ListTagsForResourceErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotServiceResourceError`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotServiceResourceError`.
     pub fn is_not_service_resource_error(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::NotServiceResourceError(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceDoesNotSupportTagging`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceDoesNotSupportTagging`.
     pub fn is_resource_does_not_support_tagging(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceDoesNotSupportTagging(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -3182,7 +3182,7 @@ pub enum TagResourceErrorKind {
     ResourceDoesNotSupportTagging(crate::error::ResourceDoesNotSupportTagging),
     /// <p>The resource specified by the Amazon Resource Name (ARN) can't be found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3249,26 +3249,26 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotServiceResourceError`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotServiceResourceError`.
     pub fn is_not_service_resource_error(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotServiceResourceError(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceDoesNotSupportTagging`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceDoesNotSupportTagging`.
     pub fn is_resource_does_not_support_tagging(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceDoesNotSupportTagging(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ResourceNotFound(_))
     }
@@ -3310,7 +3310,7 @@ pub enum UntagResourceErrorKind {
     ResourceDoesNotSupportTagging(crate::error::ResourceDoesNotSupportTagging),
     /// <p>The resource specified by the Amazon Resource Name (ARN) can't be found.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3377,29 +3377,29 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotServiceResourceError`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotServiceResourceError`.
     pub fn is_not_service_resource_error(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::NotServiceResourceError(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceDoesNotSupportTagging`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceDoesNotSupportTagging`.
     pub fn is_resource_does_not_support_tagging(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceDoesNotSupportTagging(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFound`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFound`.
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ResourceNotFound(_))
     }
@@ -3447,7 +3447,7 @@ pub enum UpdateFileSystemErrorKind {
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFileSystemError {
@@ -3516,43 +3516,43 @@ impl UpdateFileSystemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFileSystemErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `UpdateFileSystemErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, UpdateFileSystemErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `UpdateFileSystemErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `UpdateFileSystemErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(&self.kind, UpdateFileSystemErrorKind::FileSystemNotFound(_))
     }
-    /// Returns true if the error kind is `UpdateFileSystemErrorKind::IncompatibleParameterError`.
+    /// Returns `true` if the error kind is `UpdateFileSystemErrorKind::IncompatibleParameterError`.
     pub fn is_incompatible_parameter_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFileSystemErrorKind::IncompatibleParameterError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFileSystemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateFileSystemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFileSystemErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFileSystemErrorKind::MissingFileSystemConfiguration`.
+    /// Returns `true` if the error kind is `UpdateFileSystemErrorKind::MissingFileSystemConfiguration`.
     pub fn is_missing_file_system_configuration(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFileSystemErrorKind::MissingFileSystemConfiguration(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFileSystemErrorKind::ServiceLimitExceeded`.
+    /// Returns `true` if the error kind is `UpdateFileSystemErrorKind::ServiceLimitExceeded`.
     pub fn is_service_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFileSystemErrorKind::ServiceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFileSystemErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `UpdateFileSystemErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -3600,7 +3600,7 @@ pub enum UpdateStorageVirtualMachineErrorKind {
     StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStorageVirtualMachineError {
@@ -3671,35 +3671,35 @@ impl UpdateStorageVirtualMachineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateStorageVirtualMachineErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `UpdateStorageVirtualMachineErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStorageVirtualMachineErrorKind::BadRequest(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStorageVirtualMachineErrorKind::IncompatibleParameterError`.
+    /// Returns `true` if the error kind is `UpdateStorageVirtualMachineErrorKind::IncompatibleParameterError`.
     pub fn is_incompatible_parameter_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStorageVirtualMachineErrorKind::IncompatibleParameterError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStorageVirtualMachineErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateStorageVirtualMachineErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStorageVirtualMachineErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStorageVirtualMachineErrorKind::StorageVirtualMachineNotFound`.
+    /// Returns `true` if the error kind is `UpdateStorageVirtualMachineErrorKind::StorageVirtualMachineNotFound`.
     pub fn is_storage_virtual_machine_not_found(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStorageVirtualMachineErrorKind::StorageVirtualMachineNotFound(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStorageVirtualMachineErrorKind::UnsupportedOperation`.
+    /// Returns `true` if the error kind is `UpdateStorageVirtualMachineErrorKind::UnsupportedOperation`.
     pub fn is_unsupported_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -3749,7 +3749,7 @@ pub enum UpdateVolumeErrorKind {
     MissingVolumeConfiguration(crate::error::MissingVolumeConfiguration),
     /// <p>No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.</p>
     VolumeNotFound(crate::error::VolumeNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateVolumeError {
@@ -3816,29 +3816,29 @@ impl UpdateVolumeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateVolumeErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `UpdateVolumeErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, UpdateVolumeErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `UpdateVolumeErrorKind::IncompatibleParameterError`.
+    /// Returns `true` if the error kind is `UpdateVolumeErrorKind::IncompatibleParameterError`.
     pub fn is_incompatible_parameter_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVolumeErrorKind::IncompatibleParameterError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVolumeErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateVolumeErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, UpdateVolumeErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `UpdateVolumeErrorKind::MissingVolumeConfiguration`.
+    /// Returns `true` if the error kind is `UpdateVolumeErrorKind::MissingVolumeConfiguration`.
     pub fn is_missing_volume_configuration(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVolumeErrorKind::MissingVolumeConfiguration(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVolumeErrorKind::VolumeNotFound`.
+    /// Returns `true` if the error kind is `UpdateVolumeErrorKind::VolumeNotFound`.
     pub fn is_volume_not_found(&self) -> bool {
         matches!(&self.kind, UpdateVolumeErrorKind::VolumeNotFound(_))
     }

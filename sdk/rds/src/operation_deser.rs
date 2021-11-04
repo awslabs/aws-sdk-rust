@@ -1401,6 +1401,92 @@ pub fn parse_create_custom_availability_zone_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_custom_db_engine_version_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateCustomDbEngineVersionOutput,
+    crate::error::CreateCustomDBEngineVersionError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateCustomDBEngineVersionError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateCustomDBEngineVersionError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "CustomDBEngineVersionAlreadyExistsFault" => crate::error::CreateCustomDBEngineVersionError { meta: generic, kind: crate::error::CreateCustomDBEngineVersionErrorKind::CustomDbEngineVersionAlreadyExistsFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::custom_db_engine_version_already_exists_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_custom_db_engine_version_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomDBEngineVersionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "CustomDBEngineVersionQuotaExceededFault" => crate::error::CreateCustomDBEngineVersionError { meta: generic, kind: crate::error::CreateCustomDBEngineVersionErrorKind::CustomDbEngineVersionQuotaExceededFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::custom_db_engine_version_quota_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_custom_db_engine_version_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomDBEngineVersionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "KMSKeyNotAccessibleFault" => crate::error::CreateCustomDBEngineVersionError { meta: generic, kind: crate::error::CreateCustomDBEngineVersionErrorKind::KmsKeyNotAccessibleFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::kms_key_not_accessible_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_kms_key_not_accessible_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomDBEngineVersionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::CreateCustomDBEngineVersionError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_custom_db_engine_version_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateCustomDbEngineVersionOutput,
+    crate::error::CreateCustomDBEngineVersionError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_custom_db_engine_version_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_create_custom_db_engine_version(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateCustomDBEngineVersionError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateDbClusterOutput, crate::error::CreateDBClusterError> {
@@ -3882,6 +3968,78 @@ pub fn parse_delete_custom_availability_zone_response(
             output,
         )
         .map_err(crate::error::DeleteCustomAvailabilityZoneError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_custom_db_engine_version_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteCustomDbEngineVersionOutput,
+    crate::error::DeleteCustomDBEngineVersionError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteCustomDBEngineVersionError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteCustomDBEngineVersionError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "CustomDBEngineVersionNotFoundFault" => crate::error::DeleteCustomDBEngineVersionError { meta: generic, kind: crate::error::DeleteCustomDBEngineVersionErrorKind::CustomDbEngineVersionNotFoundFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::custom_db_engine_version_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_custom_db_engine_version_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomDBEngineVersionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidCustomDBEngineVersionStateFault" => crate::error::DeleteCustomDBEngineVersionError { meta: generic, kind: crate::error::DeleteCustomDBEngineVersionErrorKind::InvalidCustomDbEngineVersionStateFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_custom_db_engine_version_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_custom_db_engine_version_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomDBEngineVersionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DeleteCustomDBEngineVersionError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_custom_db_engine_version_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteCustomDbEngineVersionOutput,
+    crate::error::DeleteCustomDBEngineVersionError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_custom_db_engine_version_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_delete_custom_db_engine_version(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteCustomDBEngineVersionError::unhandled)?;
         output.build()
     })
 }
@@ -8215,6 +8373,78 @@ pub fn parse_modify_current_db_cluster_capacity_response(
                 output,
             )
             .map_err(crate::error::ModifyCurrentDBClusterCapacityError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_custom_db_engine_version_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyCustomDbEngineVersionOutput,
+    crate::error::ModifyCustomDBEngineVersionError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ModifyCustomDBEngineVersionError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ModifyCustomDBEngineVersionError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "CustomDBEngineVersionNotFoundFault" => crate::error::ModifyCustomDBEngineVersionError { meta: generic, kind: crate::error::ModifyCustomDBEngineVersionErrorKind::CustomDbEngineVersionNotFoundFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::custom_db_engine_version_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_custom_db_engine_version_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCustomDBEngineVersionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidCustomDBEngineVersionStateFault" => crate::error::ModifyCustomDBEngineVersionError { meta: generic, kind: crate::error::ModifyCustomDBEngineVersionErrorKind::InvalidCustomDbEngineVersionStateFault({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_custom_db_engine_version_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_custom_db_engine_version_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCustomDBEngineVersionError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::ModifyCustomDBEngineVersionError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_custom_db_engine_version_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyCustomDbEngineVersionOutput,
+    crate::error::ModifyCustomDBEngineVersionError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::modify_custom_db_engine_version_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_custom_db_engine_version(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifyCustomDBEngineVersionError::unhandled)?;
         output.build()
     })
 }

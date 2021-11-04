@@ -3,21 +3,15 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again.
-    /// </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated
+    /// administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// An internal service error occurred during the processing of your request. Try again later.
-    /// </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again
+    /// later. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request cannot be found.
-    /// </p>
+    /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The request has invalid or missing parameters.
-    /// </p>
+    /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -362,6 +356,30 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DeleteAssessmentFrameworkShareError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DeleteAssessmentFrameworkShareError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeleteAssessmentFrameworkShareErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::DeleteAssessmentFrameworkShareErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::DeleteAssessmentFrameworkShareErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::DeleteAssessmentFrameworkShareErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::DeleteAssessmentFrameworkShareErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -918,6 +936,33 @@ where
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::ListAssessmentFrameworkShareRequestsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListAssessmentFrameworkShareRequestsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListAssessmentFrameworkShareRequestsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::ListAssessmentFrameworkShareRequestsErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::ListAssessmentFrameworkShareRequestsErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::ListAssessmentFrameworkShareRequestsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAssessmentReportsError, R>>
     for Error
 where
@@ -1117,6 +1162,36 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartAssessmentFrameworkShareError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::StartAssessmentFrameworkShareError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::StartAssessmentFrameworkShareErrorKind::AccessDeniedException(
+                    inner,
+                ) => Error::AccessDeniedException(inner),
+                crate::error::StartAssessmentFrameworkShareErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::StartAssessmentFrameworkShareErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::StartAssessmentFrameworkShareErrorKind::ValidationException(
+                    inner,
+                ) => Error::ValidationException(inner),
+                crate::error::StartAssessmentFrameworkShareErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1270,6 +1345,30 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::UpdateAssessmentFrameworkShareError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::UpdateAssessmentFrameworkShareError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateAssessmentFrameworkShareErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::UpdateAssessmentFrameworkShareErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::UpdateAssessmentFrameworkShareErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateAssessmentFrameworkShareErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::UpdateAssessmentFrameworkShareErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

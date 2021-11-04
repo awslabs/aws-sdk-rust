@@ -27,7 +27,7 @@ pub enum AddProfilePermissionErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddProfilePermissionError {
@@ -96,49 +96,49 @@ impl AddProfilePermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddProfilePermissionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AddProfilePermissionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddProfilePermissionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AddProfilePermissionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `AddProfilePermissionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddProfilePermissionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AddProfilePermissionErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `AddProfilePermissionErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddProfilePermissionErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AddProfilePermissionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AddProfilePermissionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddProfilePermissionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddProfilePermissionErrorKind::ServiceLimitExceededException`.
+    /// Returns `true` if the error kind is `AddProfilePermissionErrorKind::ServiceLimitExceededException`.
     pub fn is_service_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddProfilePermissionErrorKind::ServiceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AddProfilePermissionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `AddProfilePermissionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddProfilePermissionErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `AddProfilePermissionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AddProfilePermissionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -183,7 +183,7 @@ pub enum CancelSigningProfileErrorKind {
     /// <p>The allowed number of job-signing requests has been exceeded.</p>
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelSigningProfileError {
@@ -249,28 +249,28 @@ impl CancelSigningProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelSigningProfileErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CancelSigningProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelSigningProfileErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CancelSigningProfileErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `CancelSigningProfileErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelSigningProfileErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CancelSigningProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CancelSigningProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelSigningProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CancelSigningProfileErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CancelSigningProfileErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -312,7 +312,7 @@ pub enum DescribeSigningJobErrorKind {
     /// <p>The allowed number of job-signing requests has been exceeded.</p>
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSigningJobError {
@@ -378,28 +378,28 @@ impl DescribeSigningJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSigningJobErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeSigningJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSigningJobErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSigningJobErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DescribeSigningJobErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSigningJobErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSigningJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeSigningJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSigningJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSigningJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeSigningJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -441,7 +441,7 @@ pub enum GetSigningPlatformErrorKind {
     /// <p>The allowed number of job-signing requests has been exceeded.</p>
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSigningPlatformError {
@@ -507,28 +507,28 @@ impl GetSigningPlatformError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSigningPlatformErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetSigningPlatformErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSigningPlatformErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetSigningPlatformErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `GetSigningPlatformErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSigningPlatformErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSigningPlatformErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetSigningPlatformErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSigningPlatformErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSigningPlatformErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetSigningPlatformErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -570,7 +570,7 @@ pub enum GetSigningProfileErrorKind {
     /// <p>The allowed number of job-signing requests has been exceeded.</p>
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSigningProfileError {
@@ -636,28 +636,28 @@ impl GetSigningProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSigningProfileErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetSigningProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSigningProfileErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetSigningProfileErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `GetSigningProfileErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSigningProfileErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSigningProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetSigningProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSigningProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSigningProfileErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetSigningProfileErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -701,7 +701,7 @@ pub enum ListProfilePermissionsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProfilePermissionsError {
@@ -768,35 +768,35 @@ impl ListProfilePermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProfilePermissionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListProfilePermissionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProfilePermissionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListProfilePermissionsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListProfilePermissionsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProfilePermissionsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListProfilePermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListProfilePermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProfilePermissionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListProfilePermissionsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListProfilePermissionsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProfilePermissionsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListProfilePermissionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListProfilePermissionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -839,7 +839,7 @@ pub enum ListSigningJobsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSigningJobsError {
@@ -905,28 +905,28 @@ impl ListSigningJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSigningJobsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListSigningJobsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSigningJobsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListSigningJobsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListSigningJobsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSigningJobsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListSigningJobsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListSigningJobsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSigningJobsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListSigningJobsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListSigningJobsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListSigningJobsErrorKind::ValidationException(_))
     }
@@ -965,7 +965,7 @@ pub enum ListSigningPlatformsErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSigningPlatformsError {
@@ -1031,28 +1031,28 @@ impl ListSigningPlatformsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSigningPlatformsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListSigningPlatformsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSigningPlatformsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListSigningPlatformsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListSigningPlatformsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSigningPlatformsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListSigningPlatformsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListSigningPlatformsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSigningPlatformsErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListSigningPlatformsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListSigningPlatformsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1092,7 +1092,7 @@ pub enum ListSigningProfilesErrorKind {
     /// <p>The allowed number of job-signing requests has been exceeded.</p>
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSigningProfilesError {
@@ -1157,21 +1157,21 @@ impl ListSigningProfilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSigningProfilesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListSigningProfilesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSigningProfilesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListSigningProfilesErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListSigningProfilesErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSigningProfilesErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListSigningProfilesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListSigningProfilesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1213,7 +1213,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The allowed number of job-signing requests has been exceeded.</p>
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1279,28 +1279,28 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1344,7 +1344,7 @@ pub enum PutSigningProfileErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutSigningProfileError {
@@ -1411,35 +1411,35 @@ impl PutSigningProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutSigningProfileErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutSigningProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSigningProfileErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutSigningProfileErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `PutSigningProfileErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSigningProfileErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PutSigningProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutSigningProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSigningProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutSigningProfileErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutSigningProfileErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSigningProfileErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `PutSigningProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutSigningProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1486,7 +1486,7 @@ pub enum RemoveProfilePermissionErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveProfilePermissionError {
@@ -1556,42 +1556,42 @@ impl RemoveProfilePermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveProfilePermissionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RemoveProfilePermissionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveProfilePermissionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveProfilePermissionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `RemoveProfilePermissionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveProfilePermissionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveProfilePermissionErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `RemoveProfilePermissionErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveProfilePermissionErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveProfilePermissionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveProfilePermissionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveProfilePermissionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveProfilePermissionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RemoveProfilePermissionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveProfilePermissionErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveProfilePermissionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RemoveProfilePermissionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1637,7 +1637,7 @@ pub enum RevokeSignatureErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RevokeSignatureError {
@@ -1704,35 +1704,35 @@ impl RevokeSignatureError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RevokeSignatureErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RevokeSignatureErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeSignatureErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeSignatureErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `RevokeSignatureErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeSignatureErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeSignatureErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RevokeSignatureErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeSignatureErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeSignatureErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RevokeSignatureErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeSignatureErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeSignatureErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RevokeSignatureErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, RevokeSignatureErrorKind::ValidationException(_))
     }
@@ -1774,7 +1774,7 @@ pub enum RevokeSigningProfileErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RevokeSigningProfileError {
@@ -1841,35 +1841,35 @@ impl RevokeSigningProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RevokeSigningProfileErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RevokeSigningProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeSigningProfileErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeSigningProfileErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `RevokeSigningProfileErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeSigningProfileErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeSigningProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RevokeSigningProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeSigningProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeSigningProfileErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RevokeSigningProfileErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeSigningProfileErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeSigningProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RevokeSigningProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1917,7 +1917,7 @@ pub enum StartSigningJobErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartSigningJobError {
@@ -1985,39 +1985,39 @@ impl StartSigningJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartSigningJobErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartSigningJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSigningJobErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartSigningJobErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `StartSigningJobErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSigningJobErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `StartSigningJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartSigningJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSigningJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartSigningJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartSigningJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, StartSigningJobErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `StartSigningJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `StartSigningJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSigningJobErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `StartSigningJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartSigningJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StartSigningJobErrorKind::ValidationException(_))
     }
@@ -2059,7 +2059,7 @@ pub enum TagResourceErrorKind {
     /// <p>The allowed number of job-signing requests has been exceeded.</p>
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2125,22 +2125,22 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2183,7 +2183,7 @@ pub enum UntagResourceErrorKind {
     /// <p>The allowed number of job-signing requests has been exceeded.</p>
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2249,22 +2249,22 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

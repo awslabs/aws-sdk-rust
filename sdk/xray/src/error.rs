@@ -16,7 +16,7 @@ pub enum BatchGetTracesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetTracesError {
@@ -80,14 +80,14 @@ impl BatchGetTracesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetTracesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `BatchGetTracesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetTracesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetTracesErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `BatchGetTracesErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, BatchGetTracesErrorKind::ThrottledException(_))
     }
@@ -119,7 +119,7 @@ pub enum CreateGroupErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGroupError {
@@ -183,11 +183,11 @@ impl CreateGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, CreateGroupErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, CreateGroupErrorKind::ThrottledException(_))
     }
@@ -221,7 +221,7 @@ pub enum CreateSamplingRuleErrorKind {
     RuleLimitExceededException(crate::error::RuleLimitExceededException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSamplingRuleError {
@@ -286,21 +286,21 @@ impl CreateSamplingRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSamplingRuleErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateSamplingRuleErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSamplingRuleErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSamplingRuleErrorKind::RuleLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateSamplingRuleErrorKind::RuleLimitExceededException`.
     pub fn is_rule_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSamplingRuleErrorKind::RuleLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSamplingRuleErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `CreateSamplingRuleErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -336,7 +336,7 @@ pub enum DeleteGroupErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGroupError {
@@ -400,11 +400,11 @@ impl DeleteGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteGroupErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, DeleteGroupErrorKind::ThrottledException(_))
     }
@@ -436,7 +436,7 @@ pub enum DeleteSamplingRuleErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSamplingRuleError {
@@ -500,14 +500,14 @@ impl DeleteSamplingRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSamplingRuleErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteSamplingRuleErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSamplingRuleErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSamplingRuleErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `DeleteSamplingRuleErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -542,7 +542,7 @@ pub enum GetEncryptionConfigErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEncryptionConfigError {
@@ -606,14 +606,14 @@ impl GetEncryptionConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEncryptionConfigErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetEncryptionConfigErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEncryptionConfigErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetEncryptionConfigErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetEncryptionConfigErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -648,7 +648,7 @@ pub enum GetGroupErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGroupError {
@@ -712,11 +712,11 @@ impl GetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGroupErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetGroupErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, GetGroupErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `GetGroupErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetGroupErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, GetGroupErrorKind::ThrottledException(_))
     }
@@ -748,7 +748,7 @@ pub enum GetGroupsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGroupsError {
@@ -812,11 +812,11 @@ impl GetGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGroupsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetGroupsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, GetGroupsErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `GetGroupsErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetGroupsErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, GetGroupsErrorKind::ThrottledException(_))
     }
@@ -848,7 +848,7 @@ pub enum GetInsightErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInsightError {
@@ -912,11 +912,11 @@ impl GetInsightError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInsightErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetInsightErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, GetInsightErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `GetInsightErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetInsightErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, GetInsightErrorKind::ThrottledException(_))
     }
@@ -948,7 +948,7 @@ pub enum GetInsightEventsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInsightEventsError {
@@ -1012,14 +1012,14 @@ impl GetInsightEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInsightEventsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetInsightEventsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInsightEventsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetInsightEventsErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetInsightEventsErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, GetInsightEventsErrorKind::ThrottledException(_))
     }
@@ -1051,7 +1051,7 @@ pub enum GetInsightImpactGraphErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInsightImpactGraphError {
@@ -1115,14 +1115,14 @@ impl GetInsightImpactGraphError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInsightImpactGraphErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetInsightImpactGraphErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInsightImpactGraphErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetInsightImpactGraphErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetInsightImpactGraphErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1157,7 +1157,7 @@ pub enum GetInsightSummariesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInsightSummariesError {
@@ -1221,14 +1221,14 @@ impl GetInsightSummariesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInsightSummariesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetInsightSummariesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInsightSummariesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetInsightSummariesErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetInsightSummariesErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1263,7 +1263,7 @@ pub enum GetSamplingRulesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSamplingRulesError {
@@ -1327,14 +1327,14 @@ impl GetSamplingRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSamplingRulesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetSamplingRulesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSamplingRulesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetSamplingRulesErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetSamplingRulesErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, GetSamplingRulesErrorKind::ThrottledException(_))
     }
@@ -1366,7 +1366,7 @@ pub enum GetSamplingStatisticSummariesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSamplingStatisticSummariesError {
@@ -1435,14 +1435,14 @@ impl GetSamplingStatisticSummariesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSamplingStatisticSummariesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetSamplingStatisticSummariesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSamplingStatisticSummariesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetSamplingStatisticSummariesErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetSamplingStatisticSummariesErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1477,7 +1477,7 @@ pub enum GetSamplingTargetsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSamplingTargetsError {
@@ -1541,14 +1541,14 @@ impl GetSamplingTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSamplingTargetsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetSamplingTargetsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSamplingTargetsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetSamplingTargetsErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetSamplingTargetsErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1583,7 +1583,7 @@ pub enum GetServiceGraphErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServiceGraphError {
@@ -1647,14 +1647,14 @@ impl GetServiceGraphError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetServiceGraphErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetServiceGraphErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceGraphErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceGraphErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetServiceGraphErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, GetServiceGraphErrorKind::ThrottledException(_))
     }
@@ -1686,7 +1686,7 @@ pub enum GetTimeSeriesServiceStatisticsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTimeSeriesServiceStatisticsError {
@@ -1755,14 +1755,14 @@ impl GetTimeSeriesServiceStatisticsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTimeSeriesServiceStatisticsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetTimeSeriesServiceStatisticsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTimeSeriesServiceStatisticsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetTimeSeriesServiceStatisticsErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetTimeSeriesServiceStatisticsErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1799,7 +1799,7 @@ pub enum GetTraceGraphErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTraceGraphError {
@@ -1863,14 +1863,14 @@ impl GetTraceGraphError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTraceGraphErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetTraceGraphErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTraceGraphErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetTraceGraphErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetTraceGraphErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, GetTraceGraphErrorKind::ThrottledException(_))
     }
@@ -1902,7 +1902,7 @@ pub enum GetTraceSummariesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTraceSummariesError {
@@ -1966,14 +1966,14 @@ impl GetTraceSummariesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTraceSummariesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetTraceSummariesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTraceSummariesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetTraceSummariesErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `GetTraceSummariesErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2011,7 +2011,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2076,21 +2076,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2126,7 +2126,7 @@ pub enum PutEncryptionConfigErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutEncryptionConfigError {
@@ -2190,14 +2190,14 @@ impl PutEncryptionConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutEncryptionConfigErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PutEncryptionConfigErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEncryptionConfigErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutEncryptionConfigErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `PutEncryptionConfigErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2232,7 +2232,7 @@ pub enum PutTelemetryRecordsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutTelemetryRecordsError {
@@ -2296,14 +2296,14 @@ impl PutTelemetryRecordsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutTelemetryRecordsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PutTelemetryRecordsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutTelemetryRecordsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutTelemetryRecordsErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `PutTelemetryRecordsErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2338,7 +2338,7 @@ pub enum PutTraceSegmentsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutTraceSegmentsError {
@@ -2402,14 +2402,14 @@ impl PutTraceSegmentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutTraceSegmentsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PutTraceSegmentsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutTraceSegmentsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutTraceSegmentsErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `PutTraceSegmentsErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, PutTraceSegmentsErrorKind::ThrottledException(_))
     }
@@ -2446,7 +2446,7 @@ pub enum TagResourceErrorKind {
     ThrottledException(crate::error::ThrottledException),
     /// <p>You have exceeded the maximum number of tags you can apply to this resource.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2512,22 +2512,22 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ThrottledException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
     }
@@ -2564,7 +2564,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2629,21 +2629,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ThrottledException(_))
     }
@@ -2676,7 +2676,7 @@ pub enum UpdateGroupErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGroupError {
@@ -2740,11 +2740,11 @@ impl UpdateGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateGroupErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(&self.kind, UpdateGroupErrorKind::ThrottledException(_))
     }
@@ -2776,7 +2776,7 @@ pub enum UpdateSamplingRuleErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSamplingRuleError {
@@ -2840,14 +2840,14 @@ impl UpdateSamplingRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSamplingRuleErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateSamplingRuleErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSamplingRuleErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSamplingRuleErrorKind::ThrottledException`.
+    /// Returns `true` if the error kind is `UpdateSamplingRuleErrorKind::ThrottledException`.
     pub fn is_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,

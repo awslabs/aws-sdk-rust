@@ -26,26 +26,32 @@ pub fn serialize_structure_crate_input_create_application_input(
         }
         array_6.finish();
     }
+    if let Some(var_9) = &input.auto_config_enabled {
+        object.key("AutoConfigEnabled").boolean(*var_9);
+    }
+    if let Some(var_10) = &input.auto_create {
+        object.key("AutoCreate").boolean(*var_10);
+    }
 }
 
 pub fn serialize_structure_crate_input_create_component_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateComponentInput,
 ) {
-    if let Some(var_9) = &input.resource_group_name {
-        object.key("ResourceGroupName").string(var_9);
+    if let Some(var_11) = &input.resource_group_name {
+        object.key("ResourceGroupName").string(var_11);
     }
-    if let Some(var_10) = &input.component_name {
-        object.key("ComponentName").string(var_10);
+    if let Some(var_12) = &input.component_name {
+        object.key("ComponentName").string(var_12);
     }
-    if let Some(var_11) = &input.resource_list {
-        let mut array_12 = object.key("ResourceList").start_array();
-        for item_13 in var_11 {
+    if let Some(var_13) = &input.resource_list {
+        let mut array_14 = object.key("ResourceList").start_array();
+        for item_15 in var_13 {
             {
-                array_12.value().string(item_13);
+                array_14.value().string(item_15);
             }
         }
-        array_12.finish();
+        array_14.finish();
     }
 }
 
@@ -53,17 +59,17 @@ pub fn serialize_structure_crate_input_create_log_pattern_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateLogPatternInput,
 ) {
-    if let Some(var_14) = &input.resource_group_name {
-        object.key("ResourceGroupName").string(var_14);
+    if let Some(var_16) = &input.resource_group_name {
+        object.key("ResourceGroupName").string(var_16);
     }
-    if let Some(var_15) = &input.pattern_set_name {
-        object.key("PatternSetName").string(var_15);
+    if let Some(var_17) = &input.pattern_set_name {
+        object.key("PatternSetName").string(var_17);
     }
-    if let Some(var_16) = &input.pattern_name {
-        object.key("PatternName").string(var_16);
+    if let Some(var_18) = &input.pattern_name {
+        object.key("PatternName").string(var_18);
     }
-    if let Some(var_17) = &input.pattern {
-        object.key("Pattern").string(var_17);
+    if let Some(var_19) = &input.pattern {
+        object.key("Pattern").string(var_19);
     }
     {
         object.key("Rank").number(
@@ -77,8 +83,8 @@ pub fn serialize_structure_crate_input_delete_application_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteApplicationInput,
 ) {
-    if let Some(var_18) = &input.resource_group_name {
-        object.key("ResourceGroupName").string(var_18);
+    if let Some(var_20) = &input.resource_group_name {
+        object.key("ResourceGroupName").string(var_20);
     }
 }
 
@@ -86,11 +92,11 @@ pub fn serialize_structure_crate_input_delete_component_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteComponentInput,
 ) {
-    if let Some(var_19) = &input.resource_group_name {
-        object.key("ResourceGroupName").string(var_19);
+    if let Some(var_21) = &input.resource_group_name {
+        object.key("ResourceGroupName").string(var_21);
     }
-    if let Some(var_20) = &input.component_name {
-        object.key("ComponentName").string(var_20);
+    if let Some(var_22) = &input.component_name {
+        object.key("ComponentName").string(var_22);
     }
 }
 
@@ -98,14 +104,14 @@ pub fn serialize_structure_crate_input_delete_log_pattern_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteLogPatternInput,
 ) {
-    if let Some(var_21) = &input.resource_group_name {
-        object.key("ResourceGroupName").string(var_21);
+    if let Some(var_23) = &input.resource_group_name {
+        object.key("ResourceGroupName").string(var_23);
     }
-    if let Some(var_22) = &input.pattern_set_name {
-        object.key("PatternSetName").string(var_22);
+    if let Some(var_24) = &input.pattern_set_name {
+        object.key("PatternSetName").string(var_24);
     }
-    if let Some(var_23) = &input.pattern_name {
-        object.key("PatternName").string(var_23);
+    if let Some(var_25) = &input.pattern_name {
+        object.key("PatternName").string(var_25);
     }
 }
 
@@ -113,26 +119,14 @@ pub fn serialize_structure_crate_input_describe_application_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeApplicationInput,
 ) {
-    if let Some(var_24) = &input.resource_group_name {
-        object.key("ResourceGroupName").string(var_24);
+    if let Some(var_26) = &input.resource_group_name {
+        object.key("ResourceGroupName").string(var_26);
     }
 }
 
 pub fn serialize_structure_crate_input_describe_component_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeComponentInput,
-) {
-    if let Some(var_25) = &input.resource_group_name {
-        object.key("ResourceGroupName").string(var_25);
-    }
-    if let Some(var_26) = &input.component_name {
-        object.key("ComponentName").string(var_26);
-    }
-}
-
-pub fn serialize_structure_crate_input_describe_component_configuration_input(
-    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::input::DescribeComponentConfigurationInput,
 ) {
     if let Some(var_27) = &input.resource_group_name {
         object.key("ResourceGroupName").string(var_27);
@@ -142,9 +136,9 @@ pub fn serialize_structure_crate_input_describe_component_configuration_input(
     }
 }
 
-pub fn serialize_structure_crate_input_describe_component_configuration_recommendation_input(
+pub fn serialize_structure_crate_input_describe_component_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::input::DescribeComponentConfigurationRecommendationInput,
+    input: &crate::input::DescribeComponentConfigurationInput,
 ) {
     if let Some(var_29) = &input.resource_group_name {
         object.key("ResourceGroupName").string(var_29);
@@ -152,8 +146,20 @@ pub fn serialize_structure_crate_input_describe_component_configuration_recommen
     if let Some(var_30) = &input.component_name {
         object.key("ComponentName").string(var_30);
     }
-    if let Some(var_31) = &input.tier {
-        object.key("Tier").string(var_31.as_str());
+}
+
+pub fn serialize_structure_crate_input_describe_component_configuration_recommendation_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::DescribeComponentConfigurationRecommendationInput,
+) {
+    if let Some(var_31) = &input.resource_group_name {
+        object.key("ResourceGroupName").string(var_31);
+    }
+    if let Some(var_32) = &input.component_name {
+        object.key("ComponentName").string(var_32);
+    }
+    if let Some(var_33) = &input.tier {
+        object.key("Tier").string(var_33.as_str());
     }
 }
 
@@ -161,14 +167,14 @@ pub fn serialize_structure_crate_input_describe_log_pattern_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeLogPatternInput,
 ) {
-    if let Some(var_32) = &input.resource_group_name {
-        object.key("ResourceGroupName").string(var_32);
+    if let Some(var_34) = &input.resource_group_name {
+        object.key("ResourceGroupName").string(var_34);
     }
-    if let Some(var_33) = &input.pattern_set_name {
-        object.key("PatternSetName").string(var_33);
+    if let Some(var_35) = &input.pattern_set_name {
+        object.key("PatternSetName").string(var_35);
     }
-    if let Some(var_34) = &input.pattern_name {
-        object.key("PatternName").string(var_34);
+    if let Some(var_36) = &input.pattern_name {
+        object.key("PatternName").string(var_36);
     }
 }
 
@@ -176,8 +182,8 @@ pub fn serialize_structure_crate_input_describe_observation_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeObservationInput,
 ) {
-    if let Some(var_35) = &input.observation_id {
-        object.key("ObservationId").string(var_35);
+    if let Some(var_37) = &input.observation_id {
+        object.key("ObservationId").string(var_37);
     }
 }
 
@@ -185,8 +191,8 @@ pub fn serialize_structure_crate_input_describe_problem_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeProblemInput,
 ) {
-    if let Some(var_36) = &input.problem_id {
-        object.key("ProblemId").string(var_36);
+    if let Some(var_38) = &input.problem_id {
+        object.key("ProblemId").string(var_38);
     }
 }
 
@@ -194,8 +200,8 @@ pub fn serialize_structure_crate_input_describe_problem_observations_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeProblemObservationsInput,
 ) {
-    if let Some(var_37) = &input.problem_id {
-        object.key("ProblemId").string(var_37);
+    if let Some(var_39) = &input.problem_id {
+        object.key("ProblemId").string(var_39);
     }
 }
 
@@ -203,14 +209,14 @@ pub fn serialize_structure_crate_input_list_applications_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListApplicationsInput,
 ) {
-    if let Some(var_38) = &input.max_results {
+    if let Some(var_40) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_38).into()),
+            aws_smithy_types::Number::NegInt((*var_40).into()),
         );
     }
-    if let Some(var_39) = &input.next_token {
-        object.key("NextToken").string(var_39);
+    if let Some(var_41) = &input.next_token {
+        object.key("NextToken").string(var_41);
     }
 }
 
@@ -218,17 +224,17 @@ pub fn serialize_structure_crate_input_list_components_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListComponentsInput,
 ) {
-    if let Some(var_40) = &input.resource_group_name {
-        object.key("ResourceGroupName").string(var_40);
+    if let Some(var_42) = &input.resource_group_name {
+        object.key("ResourceGroupName").string(var_42);
     }
-    if let Some(var_41) = &input.max_results {
+    if let Some(var_43) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_41).into()),
+            aws_smithy_types::Number::NegInt((*var_43).into()),
         );
     }
-    if let Some(var_42) = &input.next_token {
-        object.key("NextToken").string(var_42);
+    if let Some(var_44) = &input.next_token {
+        object.key("NextToken").string(var_44);
     }
 }
 
@@ -236,30 +242,30 @@ pub fn serialize_structure_crate_input_list_configuration_history_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListConfigurationHistoryInput,
 ) {
-    if let Some(var_43) = &input.resource_group_name {
-        object.key("ResourceGroupName").string(var_43);
+    if let Some(var_45) = &input.resource_group_name {
+        object.key("ResourceGroupName").string(var_45);
     }
-    if let Some(var_44) = &input.start_time {
+    if let Some(var_46) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_44, aws_smithy_types::instant::Format::EpochSeconds);
+            .instant(var_46, aws_smithy_types::instant::Format::EpochSeconds);
     }
-    if let Some(var_45) = &input.end_time {
+    if let Some(var_47) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_45, aws_smithy_types::instant::Format::EpochSeconds);
+            .instant(var_47, aws_smithy_types::instant::Format::EpochSeconds);
     }
-    if let Some(var_46) = &input.event_status {
-        object.key("EventStatus").string(var_46.as_str());
+    if let Some(var_48) = &input.event_status {
+        object.key("EventStatus").string(var_48.as_str());
     }
-    if let Some(var_47) = &input.max_results {
+    if let Some(var_49) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_47).into()),
+            aws_smithy_types::Number::NegInt((*var_49).into()),
         );
     }
-    if let Some(var_48) = &input.next_token {
-        object.key("NextToken").string(var_48);
+    if let Some(var_50) = &input.next_token {
+        object.key("NextToken").string(var_50);
     }
 }
 
@@ -267,20 +273,20 @@ pub fn serialize_structure_crate_input_list_log_patterns_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListLogPatternsInput,
 ) {
-    if let Some(var_49) = &input.resource_group_name {
-        object.key("ResourceGroupName").string(var_49);
+    if let Some(var_51) = &input.resource_group_name {
+        object.key("ResourceGroupName").string(var_51);
     }
-    if let Some(var_50) = &input.pattern_set_name {
-        object.key("PatternSetName").string(var_50);
+    if let Some(var_52) = &input.pattern_set_name {
+        object.key("PatternSetName").string(var_52);
     }
-    if let Some(var_51) = &input.max_results {
+    if let Some(var_53) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_51).into()),
+            aws_smithy_types::Number::NegInt((*var_53).into()),
         );
     }
-    if let Some(var_52) = &input.next_token {
-        object.key("NextToken").string(var_52);
+    if let Some(var_54) = &input.next_token {
+        object.key("NextToken").string(var_54);
     }
 }
 
@@ -288,17 +294,17 @@ pub fn serialize_structure_crate_input_list_log_pattern_sets_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListLogPatternSetsInput,
 ) {
-    if let Some(var_53) = &input.resource_group_name {
-        object.key("ResourceGroupName").string(var_53);
+    if let Some(var_55) = &input.resource_group_name {
+        object.key("ResourceGroupName").string(var_55);
     }
-    if let Some(var_54) = &input.max_results {
+    if let Some(var_56) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_54).into()),
+            aws_smithy_types::Number::NegInt((*var_56).into()),
         );
     }
-    if let Some(var_55) = &input.next_token {
-        object.key("NextToken").string(var_55);
+    if let Some(var_57) = &input.next_token {
+        object.key("NextToken").string(var_57);
     }
 }
 
@@ -306,27 +312,30 @@ pub fn serialize_structure_crate_input_list_problems_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListProblemsInput,
 ) {
-    if let Some(var_56) = &input.resource_group_name {
-        object.key("ResourceGroupName").string(var_56);
+    if let Some(var_58) = &input.resource_group_name {
+        object.key("ResourceGroupName").string(var_58);
     }
-    if let Some(var_57) = &input.start_time {
+    if let Some(var_59) = &input.start_time {
         object
             .key("StartTime")
-            .instant(var_57, aws_smithy_types::instant::Format::EpochSeconds);
+            .instant(var_59, aws_smithy_types::instant::Format::EpochSeconds);
     }
-    if let Some(var_58) = &input.end_time {
+    if let Some(var_60) = &input.end_time {
         object
             .key("EndTime")
-            .instant(var_58, aws_smithy_types::instant::Format::EpochSeconds);
+            .instant(var_60, aws_smithy_types::instant::Format::EpochSeconds);
     }
-    if let Some(var_59) = &input.max_results {
+    if let Some(var_61) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_59).into()),
+            aws_smithy_types::Number::NegInt((*var_61).into()),
         );
     }
-    if let Some(var_60) = &input.next_token {
-        object.key("NextToken").string(var_60);
+    if let Some(var_62) = &input.next_token {
+        object.key("NextToken").string(var_62);
+    }
+    if let Some(var_63) = &input.component_name {
+        object.key("ComponentName").string(var_63);
     }
 }
 
@@ -334,8 +343,8 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
 ) {
-    if let Some(var_61) = &input.resource_arn {
-        object.key("ResourceARN").string(var_61);
+    if let Some(var_64) = &input.resource_arn {
+        object.key("ResourceARN").string(var_64);
     }
 }
 
@@ -343,19 +352,19 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
 ) {
-    if let Some(var_62) = &input.resource_arn {
-        object.key("ResourceARN").string(var_62);
+    if let Some(var_65) = &input.resource_arn {
+        object.key("ResourceARN").string(var_65);
     }
-    if let Some(var_63) = &input.tags {
-        let mut array_64 = object.key("Tags").start_array();
-        for item_65 in var_63 {
+    if let Some(var_66) = &input.tags {
+        let mut array_67 = object.key("Tags").start_array();
+        for item_68 in var_66 {
             {
-                let mut object_66 = array_64.value().start_object();
-                crate::json_ser::serialize_structure_crate_model_tag(&mut object_66, item_65);
-                object_66.finish();
+                let mut object_69 = array_67.value().start_object();
+                crate::json_ser::serialize_structure_crate_model_tag(&mut object_69, item_68);
+                object_69.finish();
             }
         }
-        array_64.finish();
+        array_67.finish();
     }
 }
 
@@ -363,17 +372,17 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
 ) {
-    if let Some(var_67) = &input.resource_arn {
-        object.key("ResourceARN").string(var_67);
+    if let Some(var_70) = &input.resource_arn {
+        object.key("ResourceARN").string(var_70);
     }
-    if let Some(var_68) = &input.tag_keys {
-        let mut array_69 = object.key("TagKeys").start_array();
-        for item_70 in var_68 {
+    if let Some(var_71) = &input.tag_keys {
+        let mut array_72 = object.key("TagKeys").start_array();
+        for item_73 in var_71 {
             {
-                array_69.value().string(item_70);
+                array_72.value().string(item_73);
             }
         }
-        array_69.finish();
+        array_72.finish();
     }
 }
 
@@ -381,20 +390,23 @@ pub fn serialize_structure_crate_input_update_application_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateApplicationInput,
 ) {
-    if let Some(var_71) = &input.resource_group_name {
-        object.key("ResourceGroupName").string(var_71);
+    if let Some(var_74) = &input.resource_group_name {
+        object.key("ResourceGroupName").string(var_74);
     }
-    if let Some(var_72) = &input.ops_center_enabled {
-        object.key("OpsCenterEnabled").boolean(*var_72);
+    if let Some(var_75) = &input.ops_center_enabled {
+        object.key("OpsCenterEnabled").boolean(*var_75);
     }
-    if let Some(var_73) = &input.cwe_monitor_enabled {
-        object.key("CWEMonitorEnabled").boolean(*var_73);
+    if let Some(var_76) = &input.cwe_monitor_enabled {
+        object.key("CWEMonitorEnabled").boolean(*var_76);
     }
-    if let Some(var_74) = &input.ops_item_sns_topic_arn {
-        object.key("OpsItemSNSTopicArn").string(var_74);
+    if let Some(var_77) = &input.ops_item_sns_topic_arn {
+        object.key("OpsItemSNSTopicArn").string(var_77);
     }
-    if let Some(var_75) = &input.remove_sns_topic {
-        object.key("RemoveSNSTopic").boolean(*var_75);
+    if let Some(var_78) = &input.remove_sns_topic {
+        object.key("RemoveSNSTopic").boolean(*var_78);
+    }
+    if let Some(var_79) = &input.auto_config_enabled {
+        object.key("AutoConfigEnabled").boolean(*var_79);
     }
 }
 
@@ -402,23 +414,23 @@ pub fn serialize_structure_crate_input_update_component_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateComponentInput,
 ) {
-    if let Some(var_76) = &input.resource_group_name {
-        object.key("ResourceGroupName").string(var_76);
+    if let Some(var_80) = &input.resource_group_name {
+        object.key("ResourceGroupName").string(var_80);
     }
-    if let Some(var_77) = &input.component_name {
-        object.key("ComponentName").string(var_77);
+    if let Some(var_81) = &input.component_name {
+        object.key("ComponentName").string(var_81);
     }
-    if let Some(var_78) = &input.new_component_name {
-        object.key("NewComponentName").string(var_78);
+    if let Some(var_82) = &input.new_component_name {
+        object.key("NewComponentName").string(var_82);
     }
-    if let Some(var_79) = &input.resource_list {
-        let mut array_80 = object.key("ResourceList").start_array();
-        for item_81 in var_79 {
+    if let Some(var_83) = &input.resource_list {
+        let mut array_84 = object.key("ResourceList").start_array();
+        for item_85 in var_83 {
             {
-                array_80.value().string(item_81);
+                array_84.value().string(item_85);
             }
         }
-        array_80.finish();
+        array_84.finish();
     }
 }
 
@@ -426,20 +438,23 @@ pub fn serialize_structure_crate_input_update_component_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateComponentConfigurationInput,
 ) {
-    if let Some(var_82) = &input.resource_group_name {
-        object.key("ResourceGroupName").string(var_82);
+    if let Some(var_86) = &input.resource_group_name {
+        object.key("ResourceGroupName").string(var_86);
     }
-    if let Some(var_83) = &input.component_name {
-        object.key("ComponentName").string(var_83);
+    if let Some(var_87) = &input.component_name {
+        object.key("ComponentName").string(var_87);
     }
-    if let Some(var_84) = &input.monitor {
-        object.key("Monitor").boolean(*var_84);
+    if let Some(var_88) = &input.monitor {
+        object.key("Monitor").boolean(*var_88);
     }
-    if let Some(var_85) = &input.tier {
-        object.key("Tier").string(var_85.as_str());
+    if let Some(var_89) = &input.tier {
+        object.key("Tier").string(var_89.as_str());
     }
-    if let Some(var_86) = &input.component_configuration {
-        object.key("ComponentConfiguration").string(var_86);
+    if let Some(var_90) = &input.component_configuration {
+        object.key("ComponentConfiguration").string(var_90);
+    }
+    if let Some(var_91) = &input.auto_config_enabled {
+        object.key("AutoConfigEnabled").boolean(*var_91);
     }
 }
 
@@ -447,17 +462,17 @@ pub fn serialize_structure_crate_input_update_log_pattern_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateLogPatternInput,
 ) {
-    if let Some(var_87) = &input.resource_group_name {
-        object.key("ResourceGroupName").string(var_87);
+    if let Some(var_92) = &input.resource_group_name {
+        object.key("ResourceGroupName").string(var_92);
     }
-    if let Some(var_88) = &input.pattern_set_name {
-        object.key("PatternSetName").string(var_88);
+    if let Some(var_93) = &input.pattern_set_name {
+        object.key("PatternSetName").string(var_93);
     }
-    if let Some(var_89) = &input.pattern_name {
-        object.key("PatternName").string(var_89);
+    if let Some(var_94) = &input.pattern_name {
+        object.key("PatternName").string(var_94);
     }
-    if let Some(var_90) = &input.pattern {
-        object.key("Pattern").string(var_90);
+    if let Some(var_95) = &input.pattern {
+        object.key("Pattern").string(var_95);
     }
     if input.rank != 0 {
         object.key("Rank").number(
@@ -471,10 +486,10 @@ pub fn serialize_structure_crate_model_tag(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
 ) {
-    if let Some(var_91) = &input.key {
-        object.key("Key").string(var_91);
+    if let Some(var_96) = &input.key {
+        object.key("Key").string(var_96);
     }
-    if let Some(var_92) = &input.value {
-        object.key("Value").string(var_92);
+    if let Some(var_97) = &input.value {
+        object.key("Value").string(var_97);
     }
 }

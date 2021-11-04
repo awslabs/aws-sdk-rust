@@ -24,7 +24,7 @@ pub enum AssociateConnectionAliasErrorKind {
     ResourceAssociatedException(crate::error::ResourceAssociatedException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateConnectionAliasError {
@@ -98,42 +98,42 @@ impl AssociateConnectionAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateConnectionAliasErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateConnectionAliasErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateConnectionAliasErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateConnectionAliasErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `AssociateConnectionAliasErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateConnectionAliasErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateConnectionAliasErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `AssociateConnectionAliasErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateConnectionAliasErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateConnectionAliasErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `AssociateConnectionAliasErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateConnectionAliasErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateConnectionAliasErrorKind::ResourceAssociatedException`.
+    /// Returns `true` if the error kind is `AssociateConnectionAliasErrorKind::ResourceAssociatedException`.
     pub fn is_resource_associated_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateConnectionAliasErrorKind::ResourceAssociatedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateConnectionAliasErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateConnectionAliasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -186,7 +186,7 @@ pub enum AssociateIpGroupsErrorKind {
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateIpGroupsError {
@@ -254,42 +254,42 @@ impl AssociateIpGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateIpGroupsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateIpGroupsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateIpGroupsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateIpGroupsErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `AssociateIpGroupsErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateIpGroupsErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateIpGroupsErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `AssociateIpGroupsErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateIpGroupsErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateIpGroupsErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `AssociateIpGroupsErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateIpGroupsErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateIpGroupsErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `AssociateIpGroupsErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateIpGroupsErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateIpGroupsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateIpGroupsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -334,7 +334,7 @@ pub enum AuthorizeIpRulesErrorKind {
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AuthorizeIpRulesError {
@@ -401,35 +401,35 @@ impl AuthorizeIpRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AuthorizeIpRulesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AuthorizeIpRulesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeIpRulesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeIpRulesErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `AuthorizeIpRulesErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeIpRulesErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeIpRulesErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `AuthorizeIpRulesErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeIpRulesErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeIpRulesErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `AuthorizeIpRulesErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeIpRulesErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeIpRulesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AuthorizeIpRulesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -477,7 +477,7 @@ pub enum CopyWorkspaceImageErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The specified resource is not available.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopyWorkspaceImageError {
@@ -546,49 +546,49 @@ impl CopyWorkspaceImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CopyWorkspaceImageErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CopyWorkspaceImageErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopyWorkspaceImageErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CopyWorkspaceImageErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `CopyWorkspaceImageErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopyWorkspaceImageErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `CopyWorkspaceImageErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `CopyWorkspaceImageErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopyWorkspaceImageErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `CopyWorkspaceImageErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CopyWorkspaceImageErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopyWorkspaceImageErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CopyWorkspaceImageErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CopyWorkspaceImageErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopyWorkspaceImageErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CopyWorkspaceImageErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CopyWorkspaceImageErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopyWorkspaceImageErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CopyWorkspaceImageErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `CopyWorkspaceImageErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -636,7 +636,7 @@ pub enum CreateConnectionAliasErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>Your resource limits have been exceeded.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConnectionAliasError {
@@ -706,42 +706,42 @@ impl CreateConnectionAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConnectionAliasErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateConnectionAliasErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionAliasErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionAliasErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `CreateConnectionAliasErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionAliasErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionAliasErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `CreateConnectionAliasErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionAliasErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionAliasErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `CreateConnectionAliasErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionAliasErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionAliasErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateConnectionAliasErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConnectionAliasErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConnectionAliasErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateConnectionAliasErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -786,7 +786,7 @@ pub enum CreateIpGroupErrorKind {
     ResourceCreationFailedException(crate::error::ResourceCreationFailedException),
     /// <p>Your resource limits have been exceeded.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateIpGroupError {
@@ -853,32 +853,32 @@ impl CreateIpGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateIpGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateIpGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateIpGroupErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateIpGroupErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `CreateIpGroupErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIpGroupErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIpGroupErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateIpGroupErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIpGroupErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIpGroupErrorKind::ResourceCreationFailedException`.
+    /// Returns `true` if the error kind is `CreateIpGroupErrorKind::ResourceCreationFailedException`.
     pub fn is_resource_creation_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIpGroupErrorKind::ResourceCreationFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIpGroupErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateIpGroupErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -918,7 +918,7 @@ pub enum CreateTagsErrorKind {
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTagsError {
@@ -983,21 +983,21 @@ impl CreateTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTagsErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTagsErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1043,7 +1043,7 @@ pub enum CreateUpdatedWorkspaceImageErrorKind {
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUpdatedWorkspaceImageError {
@@ -1124,49 +1124,49 @@ impl CreateUpdatedWorkspaceImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUpdatedWorkspaceImageErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateUpdatedWorkspaceImageErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUpdatedWorkspaceImageErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUpdatedWorkspaceImageErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `CreateUpdatedWorkspaceImageErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUpdatedWorkspaceImageErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUpdatedWorkspaceImageErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `CreateUpdatedWorkspaceImageErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUpdatedWorkspaceImageErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUpdatedWorkspaceImageErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `CreateUpdatedWorkspaceImageErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUpdatedWorkspaceImageErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUpdatedWorkspaceImageErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateUpdatedWorkspaceImageErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUpdatedWorkspaceImageErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUpdatedWorkspaceImageErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateUpdatedWorkspaceImageErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUpdatedWorkspaceImageErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUpdatedWorkspaceImageErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateUpdatedWorkspaceImageErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1224,7 +1224,7 @@ pub enum CreateWorkspaceBundleErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The specified resource is not available.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWorkspaceBundleError {
@@ -1294,42 +1294,42 @@ impl CreateWorkspaceBundleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWorkspaceBundleErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateWorkspaceBundleErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkspaceBundleErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkspaceBundleErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `CreateWorkspaceBundleErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkspaceBundleErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkspaceBundleErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateWorkspaceBundleErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkspaceBundleErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkspaceBundleErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateWorkspaceBundleErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkspaceBundleErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkspaceBundleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateWorkspaceBundleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkspaceBundleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkspaceBundleErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateWorkspaceBundleErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1368,7 +1368,7 @@ pub enum CreateWorkspacesErrorKind {
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
     /// <p>Your resource limits have been exceeded.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWorkspacesError {
@@ -1432,14 +1432,14 @@ impl CreateWorkspacesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWorkspacesErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `CreateWorkspacesErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkspacesErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkspacesErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateWorkspacesErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1482,7 +1482,7 @@ pub enum DeleteConnectionAliasErrorKind {
     ResourceAssociatedException(crate::error::ResourceAssociatedException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConnectionAliasError {
@@ -1552,42 +1552,42 @@ impl DeleteConnectionAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConnectionAliasErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteConnectionAliasErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectionAliasErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectionAliasErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `DeleteConnectionAliasErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectionAliasErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectionAliasErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `DeleteConnectionAliasErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectionAliasErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectionAliasErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `DeleteConnectionAliasErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectionAliasErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectionAliasErrorKind::ResourceAssociatedException`.
+    /// Returns `true` if the error kind is `DeleteConnectionAliasErrorKind::ResourceAssociatedException`.
     pub fn is_resource_associated_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConnectionAliasErrorKind::ResourceAssociatedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConnectionAliasErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteConnectionAliasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1630,7 +1630,7 @@ pub enum DeleteIpGroupErrorKind {
     ResourceAssociatedException(crate::error::ResourceAssociatedException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteIpGroupError {
@@ -1696,25 +1696,25 @@ impl DeleteIpGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteIpGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteIpGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteIpGroupErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteIpGroupErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `DeleteIpGroupErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIpGroupErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIpGroupErrorKind::ResourceAssociatedException`.
+    /// Returns `true` if the error kind is `DeleteIpGroupErrorKind::ResourceAssociatedException`.
     pub fn is_resource_associated_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIpGroupErrorKind::ResourceAssociatedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIpGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteIpGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1751,7 +1751,7 @@ pub enum DeleteTagsErrorKind {
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTagsError {
@@ -1815,14 +1815,14 @@ impl DeleteTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTagsErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1861,7 +1861,7 @@ pub enum DeleteWorkspaceBundleErrorKind {
     ResourceAssociatedException(crate::error::ResourceAssociatedException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWorkspaceBundleError {
@@ -1929,28 +1929,28 @@ impl DeleteWorkspaceBundleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteWorkspaceBundleErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceBundleErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorkspaceBundleErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorkspaceBundleErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceBundleErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorkspaceBundleErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorkspaceBundleErrorKind::ResourceAssociatedException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceBundleErrorKind::ResourceAssociatedException`.
     pub fn is_resource_associated_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorkspaceBundleErrorKind::ResourceAssociatedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorkspaceBundleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceBundleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1989,7 +1989,7 @@ pub enum DeleteWorkspaceImageErrorKind {
     InvalidResourceStateException(crate::error::InvalidResourceStateException),
     /// <p>The resource is associated with a directory.</p>
     ResourceAssociatedException(crate::error::ResourceAssociatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWorkspaceImageError {
@@ -2054,21 +2054,21 @@ impl DeleteWorkspaceImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteWorkspaceImageErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceImageErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorkspaceImageErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorkspaceImageErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceImageErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorkspaceImageErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorkspaceImageErrorKind::ResourceAssociatedException`.
+    /// Returns `true` if the error kind is `DeleteWorkspaceImageErrorKind::ResourceAssociatedException`.
     pub fn is_resource_associated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2110,7 +2110,7 @@ pub enum DeregisterWorkspaceDirectoryErrorKind {
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterWorkspaceDirectoryError {
@@ -2185,35 +2185,35 @@ impl DeregisterWorkspaceDirectoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterWorkspaceDirectoryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeregisterWorkspaceDirectoryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterWorkspaceDirectoryErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterWorkspaceDirectoryErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `DeregisterWorkspaceDirectoryErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterWorkspaceDirectoryErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterWorkspaceDirectoryErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `DeregisterWorkspaceDirectoryErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterWorkspaceDirectoryErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterWorkspaceDirectoryErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `DeregisterWorkspaceDirectoryErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterWorkspaceDirectoryErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterWorkspaceDirectoryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterWorkspaceDirectoryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2257,7 +2257,7 @@ pub struct DescribeAccountError {
 pub enum DescribeAccountErrorKind {
     /// <p>The user is not authorized to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccountError {
@@ -2320,7 +2320,7 @@ impl DescribeAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAccountErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeAccountErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2352,7 +2352,7 @@ pub struct DescribeAccountModificationsError {
 pub enum DescribeAccountModificationsErrorKind {
     /// <p>The user is not authorized to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccountModificationsError {
@@ -2415,7 +2415,7 @@ impl DescribeAccountModificationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAccountModificationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeAccountModificationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2451,7 +2451,7 @@ pub enum DescribeClientPropertiesErrorKind {
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClientPropertiesError {
@@ -2518,21 +2518,21 @@ impl DescribeClientPropertiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeClientPropertiesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeClientPropertiesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClientPropertiesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClientPropertiesErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `DescribeClientPropertiesErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClientPropertiesErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClientPropertiesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeClientPropertiesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2572,7 +2572,7 @@ pub enum DescribeConnectionAliasesErrorKind {
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
     /// <p>This operation is not supported.</p>
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConnectionAliasesError {
@@ -2641,21 +2641,21 @@ impl DescribeConnectionAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConnectionAliasesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeConnectionAliasesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectionAliasesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectionAliasesErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `DescribeConnectionAliasesErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectionAliasesErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectionAliasesErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `DescribeConnectionAliasesErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2699,7 +2699,7 @@ pub enum DescribeConnectionAliasPermissionsErrorKind {
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConnectionAliasPermissionsError {
@@ -2776,28 +2776,28 @@ impl DescribeConnectionAliasPermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConnectionAliasPermissionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeConnectionAliasPermissionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectionAliasPermissionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectionAliasPermissionsErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `DescribeConnectionAliasPermissionsErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectionAliasPermissionsErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectionAliasPermissionsErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `DescribeConnectionAliasPermissionsErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeConnectionAliasPermissionsErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeConnectionAliasPermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeConnectionAliasPermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2842,7 +2842,7 @@ pub enum DescribeIpGroupsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeIpGroupsError {
@@ -2906,14 +2906,14 @@ impl DescribeIpGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeIpGroupsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeIpGroupsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIpGroupsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIpGroupsErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `DescribeIpGroupsErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2946,7 +2946,7 @@ pub struct DescribeTagsError {
 pub enum DescribeTagsErrorKind {
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTagsError {
@@ -3009,7 +3009,7 @@ impl DescribeTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3041,7 +3041,7 @@ pub struct DescribeWorkspaceBundlesError {
 pub enum DescribeWorkspaceBundlesErrorKind {
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorkspaceBundlesError {
@@ -3106,7 +3106,7 @@ impl DescribeWorkspaceBundlesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorkspaceBundlesErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceBundlesErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3140,7 +3140,7 @@ pub struct DescribeWorkspaceDirectoriesError {
 pub enum DescribeWorkspaceDirectoriesErrorKind {
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorkspaceDirectoriesError {
@@ -3205,7 +3205,7 @@ impl DescribeWorkspaceDirectoriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorkspaceDirectoriesErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceDirectoriesErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3243,7 +3243,7 @@ pub enum DescribeWorkspaceImagePermissionsErrorKind {
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorkspaceImagePermissionsError {
@@ -3317,21 +3317,21 @@ impl DescribeWorkspaceImagePermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorkspaceImagePermissionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceImagePermissionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkspaceImagePermissionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkspaceImagePermissionsErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceImagePermissionsErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkspaceImagePermissionsErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkspaceImagePermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceImagePermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3371,7 +3371,7 @@ pub struct DescribeWorkspaceImagesError {
 pub enum DescribeWorkspaceImagesErrorKind {
     /// <p>The user is not authorized to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorkspaceImagesError {
@@ -3434,7 +3434,7 @@ impl DescribeWorkspaceImagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorkspaceImagesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceImagesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3468,7 +3468,7 @@ pub enum DescribeWorkspacesErrorKind {
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
     /// <p>The specified resource is not available.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorkspacesError {
@@ -3532,14 +3532,14 @@ impl DescribeWorkspacesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorkspacesErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `DescribeWorkspacesErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkspacesErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkspacesErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeWorkspacesErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3572,7 +3572,7 @@ pub struct DescribeWorkspacesConnectionStatusError {
 pub enum DescribeWorkspacesConnectionStatusErrorKind {
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorkspacesConnectionStatusError {
@@ -3640,7 +3640,7 @@ impl DescribeWorkspacesConnectionStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorkspacesConnectionStatusErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `DescribeWorkspacesConnectionStatusErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3678,7 +3678,7 @@ pub enum DescribeWorkspaceSnapshotsErrorKind {
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorkspaceSnapshotsError {
@@ -3745,21 +3745,21 @@ impl DescribeWorkspaceSnapshotsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorkspaceSnapshotsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceSnapshotsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkspaceSnapshotsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkspaceSnapshotsErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceSnapshotsErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkspaceSnapshotsErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkspaceSnapshotsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeWorkspaceSnapshotsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3803,7 +3803,7 @@ pub enum DisassociateConnectionAliasErrorKind {
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateConnectionAliasError {
@@ -3878,35 +3878,35 @@ impl DisassociateConnectionAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateConnectionAliasErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisassociateConnectionAliasErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateConnectionAliasErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateConnectionAliasErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `DisassociateConnectionAliasErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateConnectionAliasErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateConnectionAliasErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `DisassociateConnectionAliasErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateConnectionAliasErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateConnectionAliasErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `DisassociateConnectionAliasErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateConnectionAliasErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateConnectionAliasErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateConnectionAliasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3954,7 +3954,7 @@ pub enum DisassociateIpGroupsErrorKind {
     InvalidResourceStateException(crate::error::InvalidResourceStateException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateIpGroupsError {
@@ -4020,28 +4020,28 @@ impl DisassociateIpGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateIpGroupsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisassociateIpGroupsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateIpGroupsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateIpGroupsErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `DisassociateIpGroupsErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateIpGroupsErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateIpGroupsErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `DisassociateIpGroupsErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateIpGroupsErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateIpGroupsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateIpGroupsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4086,7 +4086,7 @@ pub enum ImportWorkspaceImageErrorKind {
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportWorkspaceImageError {
@@ -4154,42 +4154,42 @@ impl ImportWorkspaceImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportWorkspaceImageErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ImportWorkspaceImageErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportWorkspaceImageErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ImportWorkspaceImageErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `ImportWorkspaceImageErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportWorkspaceImageErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `ImportWorkspaceImageErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `ImportWorkspaceImageErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportWorkspaceImageErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `ImportWorkspaceImageErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `ImportWorkspaceImageErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportWorkspaceImageErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `ImportWorkspaceImageErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `ImportWorkspaceImageErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportWorkspaceImageErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ImportWorkspaceImageErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ImportWorkspaceImageErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4228,7 +4228,7 @@ pub enum ListAvailableManagementCidrRangesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAvailableManagementCidrRangesError {
@@ -4299,14 +4299,14 @@ impl ListAvailableManagementCidrRangesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAvailableManagementCidrRangesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAvailableManagementCidrRangesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAvailableManagementCidrRangesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAvailableManagementCidrRangesErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `ListAvailableManagementCidrRangesErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4353,7 +4353,7 @@ pub enum MigrateWorkspaceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The specified resource is not available.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for MigrateWorkspaceError {
@@ -4421,42 +4421,42 @@ impl MigrateWorkspaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `MigrateWorkspaceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `MigrateWorkspaceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             MigrateWorkspaceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `MigrateWorkspaceErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `MigrateWorkspaceErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             MigrateWorkspaceErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `MigrateWorkspaceErrorKind::OperationInProgressException`.
+    /// Returns `true` if the error kind is `MigrateWorkspaceErrorKind::OperationInProgressException`.
     pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             MigrateWorkspaceErrorKind::OperationInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `MigrateWorkspaceErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `MigrateWorkspaceErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             MigrateWorkspaceErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `MigrateWorkspaceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `MigrateWorkspaceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             MigrateWorkspaceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `MigrateWorkspaceErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `MigrateWorkspaceErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4501,7 +4501,7 @@ pub enum ModifyAccountErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The specified resource is not available.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyAccountError {
@@ -4568,32 +4568,32 @@ impl ModifyAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyAccountErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ModifyAccountErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ModifyAccountErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ModifyAccountErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `ModifyAccountErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyAccountErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyAccountErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `ModifyAccountErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyAccountErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyAccountErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyAccountErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyAccountErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyAccountErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `ModifyAccountErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4633,7 +4633,7 @@ pub enum ModifyClientPropertiesErrorKind {
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyClientPropertiesError {
@@ -4700,21 +4700,21 @@ impl ModifyClientPropertiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyClientPropertiesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ModifyClientPropertiesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClientPropertiesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClientPropertiesErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `ModifyClientPropertiesErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClientPropertiesErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClientPropertiesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyClientPropertiesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4754,7 +4754,7 @@ pub enum ModifySelfservicePermissionsErrorKind {
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifySelfservicePermissionsError {
@@ -4823,21 +4823,21 @@ impl ModifySelfservicePermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifySelfservicePermissionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ModifySelfservicePermissionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifySelfservicePermissionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ModifySelfservicePermissionsErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `ModifySelfservicePermissionsErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifySelfservicePermissionsErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `ModifySelfservicePermissionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ModifySelfservicePermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4877,7 +4877,7 @@ pub enum ModifyWorkspaceAccessPropertiesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyWorkspaceAccessPropertiesError {
@@ -4948,14 +4948,14 @@ impl ModifyWorkspaceAccessPropertiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyWorkspaceAccessPropertiesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ModifyWorkspaceAccessPropertiesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyWorkspaceAccessPropertiesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyWorkspaceAccessPropertiesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyWorkspaceAccessPropertiesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4996,7 +4996,7 @@ pub enum ModifyWorkspaceCreationPropertiesErrorKind {
     OperationNotSupportedException(crate::error::OperationNotSupportedException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyWorkspaceCreationPropertiesError {
@@ -5073,28 +5073,28 @@ impl ModifyWorkspaceCreationPropertiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyWorkspaceCreationPropertiesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ModifyWorkspaceCreationPropertiesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyWorkspaceCreationPropertiesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyWorkspaceCreationPropertiesErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `ModifyWorkspaceCreationPropertiesErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyWorkspaceCreationPropertiesErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyWorkspaceCreationPropertiesErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `ModifyWorkspaceCreationPropertiesErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyWorkspaceCreationPropertiesErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyWorkspaceCreationPropertiesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyWorkspaceCreationPropertiesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5153,7 +5153,7 @@ pub enum ModifyWorkspacePropertiesErrorKind {
     UnsupportedWorkspaceConfigurationException(
         crate::error::UnsupportedWorkspaceConfigurationException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyWorkspacePropertiesError {
@@ -5232,49 +5232,49 @@ impl ModifyWorkspacePropertiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyWorkspacePropertiesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ModifyWorkspacePropertiesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyWorkspacePropertiesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyWorkspacePropertiesErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `ModifyWorkspacePropertiesErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyWorkspacePropertiesErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyWorkspacePropertiesErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `ModifyWorkspacePropertiesErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyWorkspacePropertiesErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyWorkspacePropertiesErrorKind::OperationInProgressException`.
+    /// Returns `true` if the error kind is `ModifyWorkspacePropertiesErrorKind::OperationInProgressException`.
     pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyWorkspacePropertiesErrorKind::OperationInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyWorkspacePropertiesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyWorkspacePropertiesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyWorkspacePropertiesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyWorkspacePropertiesErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `ModifyWorkspacePropertiesErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyWorkspacePropertiesErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyWorkspacePropertiesErrorKind::UnsupportedWorkspaceConfigurationException`.
+    /// Returns `true` if the error kind is `ModifyWorkspacePropertiesErrorKind::UnsupportedWorkspaceConfigurationException`.
     pub fn is_unsupported_workspace_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5326,7 +5326,7 @@ pub enum ModifyWorkspaceStateErrorKind {
     InvalidResourceStateException(crate::error::InvalidResourceStateException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyWorkspaceStateError {
@@ -5391,21 +5391,21 @@ impl ModifyWorkspaceStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyWorkspaceStateErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `ModifyWorkspaceStateErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyWorkspaceStateErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyWorkspaceStateErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `ModifyWorkspaceStateErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyWorkspaceStateErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyWorkspaceStateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyWorkspaceStateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5437,7 +5437,7 @@ pub struct RebootWorkspacesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RebootWorkspacesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RebootWorkspacesError {
@@ -5521,7 +5521,7 @@ pub struct RebuildWorkspacesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RebuildWorkspacesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RebuildWorkspacesError {
@@ -5627,7 +5627,7 @@ pub enum RegisterWorkspaceDirectoryErrorKind {
     /// <p>The workspaces_DefaultRole role could not be found. If this is the first time you are registering a directory, you
     /// will need to create the workspaces_DefaultRole role before you can register a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role">Creating the workspaces_DefaultRole Role</a>.</p>
     WorkspacesDefaultRoleNotFoundException(crate::error::WorkspacesDefaultRoleNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterWorkspaceDirectoryError {
@@ -5709,56 +5709,56 @@ impl RegisterWorkspaceDirectoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterWorkspaceDirectoryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RegisterWorkspaceDirectoryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterWorkspaceDirectoryErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterWorkspaceDirectoryErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `RegisterWorkspaceDirectoryErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterWorkspaceDirectoryErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterWorkspaceDirectoryErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `RegisterWorkspaceDirectoryErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterWorkspaceDirectoryErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterWorkspaceDirectoryErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `RegisterWorkspaceDirectoryErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterWorkspaceDirectoryErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterWorkspaceDirectoryErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `RegisterWorkspaceDirectoryErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterWorkspaceDirectoryErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterWorkspaceDirectoryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterWorkspaceDirectoryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterWorkspaceDirectoryErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterWorkspaceDirectoryErrorKind::UnsupportedNetworkConfigurationException`.
+    /// Returns `true` if the error kind is `RegisterWorkspaceDirectoryErrorKind::UnsupportedNetworkConfigurationException`.
     pub fn is_unsupported_network_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterWorkspaceDirectoryErrorKind::UnsupportedNetworkConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterWorkspaceDirectoryErrorKind::WorkspacesDefaultRoleNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterWorkspaceDirectoryErrorKind::WorkspacesDefaultRoleNotFoundException`.
     pub fn is_workspaces_default_role_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5813,7 +5813,7 @@ pub enum RestoreWorkspaceErrorKind {
     InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreWorkspaceError {
@@ -5878,21 +5878,21 @@ impl RestoreWorkspaceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreWorkspaceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RestoreWorkspaceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreWorkspaceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreWorkspaceErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `RestoreWorkspaceErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreWorkspaceErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreWorkspaceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RestoreWorkspaceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5932,7 +5932,7 @@ pub enum RevokeIpRulesErrorKind {
     InvalidResourceStateException(crate::error::InvalidResourceStateException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RevokeIpRulesError {
@@ -5998,25 +5998,25 @@ impl RevokeIpRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RevokeIpRulesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RevokeIpRulesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, RevokeIpRulesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `RevokeIpRulesErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `RevokeIpRulesErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeIpRulesErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeIpRulesErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `RevokeIpRulesErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             RevokeIpRulesErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `RevokeIpRulesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RevokeIpRulesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6049,7 +6049,7 @@ pub struct StartWorkspacesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartWorkspacesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartWorkspacesError {
@@ -6133,7 +6133,7 @@ pub struct StopWorkspacesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopWorkspacesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopWorkspacesError {
@@ -6217,7 +6217,7 @@ pub struct TerminateWorkspacesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TerminateWorkspacesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TerminateWorkspacesError {
@@ -6315,7 +6315,7 @@ pub enum UpdateConnectionAliasPermissionErrorKind {
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConnectionAliasPermissionError {
@@ -6401,49 +6401,49 @@ impl UpdateConnectionAliasPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConnectionAliasPermissionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateConnectionAliasPermissionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectionAliasPermissionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectionAliasPermissionErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `UpdateConnectionAliasPermissionErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectionAliasPermissionErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectionAliasPermissionErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `UpdateConnectionAliasPermissionErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectionAliasPermissionErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectionAliasPermissionErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `UpdateConnectionAliasPermissionErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectionAliasPermissionErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectionAliasPermissionErrorKind::ResourceAssociatedException`.
+    /// Returns `true` if the error kind is `UpdateConnectionAliasPermissionErrorKind::ResourceAssociatedException`.
     pub fn is_resource_associated_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectionAliasPermissionErrorKind::ResourceAssociatedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectionAliasPermissionErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateConnectionAliasPermissionErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConnectionAliasPermissionErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConnectionAliasPermissionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateConnectionAliasPermissionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6501,7 +6501,7 @@ pub enum UpdateRulesOfIpGroupErrorKind {
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRulesOfIpGroupError {
@@ -6568,35 +6568,35 @@ impl UpdateRulesOfIpGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRulesOfIpGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateRulesOfIpGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRulesOfIpGroupErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRulesOfIpGroupErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `UpdateRulesOfIpGroupErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRulesOfIpGroupErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRulesOfIpGroupErrorKind::InvalidResourceStateException`.
+    /// Returns `true` if the error kind is `UpdateRulesOfIpGroupErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRulesOfIpGroupErrorKind::InvalidResourceStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRulesOfIpGroupErrorKind::ResourceLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateRulesOfIpGroupErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRulesOfIpGroupErrorKind::ResourceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRulesOfIpGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRulesOfIpGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6638,7 +6638,7 @@ pub enum UpdateWorkspaceBundleErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The specified resource is not available.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateWorkspaceBundleError {
@@ -6706,28 +6706,28 @@ impl UpdateWorkspaceBundleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateWorkspaceBundleErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceBundleErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceBundleErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceBundleErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceBundleErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceBundleErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceBundleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceBundleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceBundleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceBundleErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceBundleErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6770,7 +6770,7 @@ pub enum UpdateWorkspaceImagePermissionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The specified resource is not available.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateWorkspaceImagePermissionError {
@@ -6848,35 +6848,35 @@ impl UpdateWorkspaceImagePermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateWorkspaceImagePermissionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceImagePermissionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceImagePermissionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceImagePermissionErrorKind::InvalidParameterValuesException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceImagePermissionErrorKind::InvalidParameterValuesException`.
     pub fn is_invalid_parameter_values_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceImagePermissionErrorKind::InvalidParameterValuesException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceImagePermissionErrorKind::OperationNotSupportedException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceImagePermissionErrorKind::OperationNotSupportedException`.
     pub fn is_operation_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceImagePermissionErrorKind::OperationNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceImagePermissionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceImagePermissionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkspaceImagePermissionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkspaceImagePermissionErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateWorkspaceImagePermissionErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,

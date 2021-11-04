@@ -26,7 +26,7 @@ pub enum AssociateDelegateToResourceErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateDelegateToResourceError {
@@ -99,35 +99,35 @@ impl AssociateDelegateToResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateDelegateToResourceErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateDelegateToResourceErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDelegateToResourceErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDelegateToResourceErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `AssociateDelegateToResourceErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDelegateToResourceErrorKind::EntityStateException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDelegateToResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AssociateDelegateToResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDelegateToResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDelegateToResourceErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateDelegateToResourceErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDelegateToResourceErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDelegateToResourceErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `AssociateDelegateToResourceErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -187,7 +187,7 @@ pub enum AssociateMemberToGroupErrorKind {
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateMemberToGroupError {
@@ -259,56 +259,56 @@ impl AssociateMemberToGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateMemberToGroupErrorKind::DirectoryServiceAuthenticationFailedException`.
+    /// Returns `true` if the error kind is `AssociateMemberToGroupErrorKind::DirectoryServiceAuthenticationFailedException`.
     pub fn is_directory_service_authentication_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateMemberToGroupErrorKind::DirectoryServiceAuthenticationFailedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateMemberToGroupErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `AssociateMemberToGroupErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateMemberToGroupErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateMemberToGroupErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateMemberToGroupErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateMemberToGroupErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateMemberToGroupErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `AssociateMemberToGroupErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateMemberToGroupErrorKind::EntityStateException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateMemberToGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AssociateMemberToGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateMemberToGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateMemberToGroupErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateMemberToGroupErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateMemberToGroupErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateMemberToGroupErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `AssociateMemberToGroupErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateMemberToGroupErrorKind::OrganizationStateException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateMemberToGroupErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `AssociateMemberToGroupErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -358,7 +358,7 @@ pub enum CancelMailboxExportJobErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelMailboxExportJobError {
@@ -424,28 +424,28 @@ impl CancelMailboxExportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelMailboxExportJobErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `CancelMailboxExportJobErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelMailboxExportJobErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CancelMailboxExportJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CancelMailboxExportJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelMailboxExportJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CancelMailboxExportJobErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `CancelMailboxExportJobErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelMailboxExportJobErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CancelMailboxExportJobErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `CancelMailboxExportJobErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -502,7 +502,7 @@ pub enum CreateAliasErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAliasError {
@@ -573,54 +573,54 @@ impl CreateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::EmailAddressInUseException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::EmailAddressInUseException`.
     pub fn is_email_address_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAliasErrorKind::EmailAddressInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateAliasErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(&self.kind, CreateAliasErrorKind::EntityStateException(_))
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAliasErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateAliasErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::MailDomainNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::MailDomainNotFoundException`.
     pub fn is_mail_domain_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAliasErrorKind::MailDomainNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::MailDomainStateException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::MailDomainStateException`.
     pub fn is_mail_domain_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAliasErrorKind::MailDomainStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAliasErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -678,7 +678,7 @@ pub enum CreateGroupErrorKind {
     ReservedNameException(crate::error::ReservedNameException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGroupError {
@@ -750,53 +750,53 @@ impl CreateGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::DirectoryServiceAuthenticationFailedException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::DirectoryServiceAuthenticationFailedException`.
     pub fn is_directory_service_authentication_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupErrorKind::DirectoryServiceAuthenticationFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::NameAvailabilityException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::NameAvailabilityException`.
     pub fn is_name_availability_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupErrorKind::NameAvailabilityException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupErrorKind::OrganizationStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::ReservedNameException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::ReservedNameException`.
     pub fn is_reserved_name_exception(&self) -> bool {
         matches!(&self.kind, CreateGroupErrorKind::ReservedNameException(_))
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -845,7 +845,7 @@ pub enum CreateMobileDeviceAccessRuleErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMobileDeviceAccessRuleError {
@@ -917,28 +917,28 @@ impl CreateMobileDeviceAccessRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMobileDeviceAccessRuleErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateMobileDeviceAccessRuleErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMobileDeviceAccessRuleErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMobileDeviceAccessRuleErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateMobileDeviceAccessRuleErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMobileDeviceAccessRuleErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMobileDeviceAccessRuleErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `CreateMobileDeviceAccessRuleErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMobileDeviceAccessRuleErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMobileDeviceAccessRuleErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `CreateMobileDeviceAccessRuleErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -987,7 +987,7 @@ pub enum CreateOrganizationErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The user, group, or resource name isn't unique in Amazon WorkMail.</p>
     NameAvailabilityException(crate::error::NameAvailabilityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateOrganizationError {
@@ -1054,35 +1054,35 @@ impl CreateOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateOrganizationErrorKind::DirectoryInUseException`.
+    /// Returns `true` if the error kind is `CreateOrganizationErrorKind::DirectoryInUseException`.
     pub fn is_directory_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrganizationErrorKind::DirectoryInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrganizationErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `CreateOrganizationErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrganizationErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrganizationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateOrganizationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrganizationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrganizationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateOrganizationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateOrganizationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateOrganizationErrorKind::NameAvailabilityException`.
+    /// Returns `true` if the error kind is `CreateOrganizationErrorKind::NameAvailabilityException`.
     pub fn is_name_availability_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1134,7 +1134,7 @@ pub enum CreateResourceErrorKind {
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>This user, group, or resource name is not allowed in Amazon WorkMail.</p>
     ReservedNameException(crate::error::ReservedNameException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateResourceError {
@@ -1205,49 +1205,49 @@ impl CreateResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::DirectoryServiceAuthenticationFailedException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::DirectoryServiceAuthenticationFailedException`.
     pub fn is_directory_service_authentication_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::DirectoryServiceAuthenticationFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::NameAvailabilityException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::NameAvailabilityException`.
     pub fn is_name_availability_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::NameAvailabilityException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::OrganizationStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::ReservedNameException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::ReservedNameException`.
     pub fn is_reserved_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1308,7 +1308,7 @@ pub enum CreateUserErrorKind {
     ReservedNameException(crate::error::ReservedNameException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUserError {
@@ -1381,57 +1381,57 @@ impl CreateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::DirectoryServiceAuthenticationFailedException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::DirectoryServiceAuthenticationFailedException`.
     pub fn is_directory_service_authentication_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::DirectoryServiceAuthenticationFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::InvalidPasswordException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::InvalidPasswordException`.
     pub fn is_invalid_password_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::InvalidPasswordException(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::NameAvailabilityException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::NameAvailabilityException`.
     pub fn is_name_availability_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::NameAvailabilityException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::OrganizationStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::ReservedNameException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::ReservedNameException`.
     pub fn is_reserved_name_exception(&self) -> bool {
         matches!(&self.kind, CreateUserErrorKind::ReservedNameException(_))
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1477,7 +1477,7 @@ pub enum DeleteAccessControlRuleErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccessControlRuleError {
@@ -1543,14 +1543,14 @@ impl DeleteAccessControlRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAccessControlRuleErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAccessControlRuleErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccessControlRuleErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccessControlRuleErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DeleteAccessControlRuleErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1595,7 +1595,7 @@ pub enum DeleteAliasErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAliasError {
@@ -1662,29 +1662,29 @@ impl DeleteAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAliasErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAliasErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteAliasErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteAliasErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `DeleteAliasErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(&self.kind, DeleteAliasErrorKind::EntityStateException(_))
     }
-    /// Returns true if the error kind is `DeleteAliasErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteAliasErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAliasErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAliasErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAliasErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAliasErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAliasErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DeleteAliasErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1737,7 +1737,7 @@ pub enum DeleteGroupErrorKind {
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGroupError {
@@ -1808,46 +1808,46 @@ impl DeleteGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::DirectoryServiceAuthenticationFailedException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::DirectoryServiceAuthenticationFailedException`.
     pub fn is_directory_service_authentication_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupErrorKind::DirectoryServiceAuthenticationFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(&self.kind, DeleteGroupErrorKind::EntityStateException(_))
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupErrorKind::OrganizationStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1899,7 +1899,7 @@ pub enum DeleteMailboxPermissionsErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMailboxPermissionsError {
@@ -1968,35 +1968,35 @@ impl DeleteMailboxPermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMailboxPermissionsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMailboxPermissionsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMailboxPermissionsErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMailboxPermissionsErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `DeleteMailboxPermissionsErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMailboxPermissionsErrorKind::EntityStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMailboxPermissionsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteMailboxPermissionsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMailboxPermissionsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMailboxPermissionsErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMailboxPermissionsErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMailboxPermissionsErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMailboxPermissionsErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DeleteMailboxPermissionsErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2043,7 +2043,7 @@ pub enum DeleteMobileDeviceAccessOverrideErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMobileDeviceAccessOverrideError {
@@ -2120,28 +2120,28 @@ impl DeleteMobileDeviceAccessOverrideError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMobileDeviceAccessOverrideErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMobileDeviceAccessOverrideErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMobileDeviceAccessOverrideErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMobileDeviceAccessOverrideErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteMobileDeviceAccessOverrideErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMobileDeviceAccessOverrideErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMobileDeviceAccessOverrideErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DeleteMobileDeviceAccessOverrideErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2190,7 +2190,7 @@ pub enum DeleteMobileDeviceAccessRuleErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMobileDeviceAccessRuleError {
@@ -2261,21 +2261,21 @@ impl DeleteMobileDeviceAccessRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMobileDeviceAccessRuleErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteMobileDeviceAccessRuleErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMobileDeviceAccessRuleErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMobileDeviceAccessRuleErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMobileDeviceAccessRuleErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMobileDeviceAccessRuleErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMobileDeviceAccessRuleErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DeleteMobileDeviceAccessRuleErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2321,7 +2321,7 @@ pub enum DeleteOrganizationErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteOrganizationError {
@@ -2386,21 +2386,21 @@ impl DeleteOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteOrganizationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOrganizationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOrganizationErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteOrganizationErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteOrganizationErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DeleteOrganizationErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2443,7 +2443,7 @@ pub enum DeleteResourceErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResourceError {
@@ -2509,25 +2509,25 @@ impl DeleteResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(&self.kind, DeleteResourceErrorKind::EntityStateException(_))
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2568,7 +2568,7 @@ pub enum DeleteRetentionPolicyErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRetentionPolicyError {
@@ -2633,21 +2633,21 @@ impl DeleteRetentionPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRetentionPolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteRetentionPolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRetentionPolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRetentionPolicyErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRetentionPolicyErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRetentionPolicyErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRetentionPolicyErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DeleteRetentionPolicyErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2698,7 +2698,7 @@ pub enum DeleteUserErrorKind {
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserError {
@@ -2769,46 +2769,46 @@ impl DeleteUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::DirectoryServiceAuthenticationFailedException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::DirectoryServiceAuthenticationFailedException`.
     pub fn is_directory_service_authentication_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::DirectoryServiceAuthenticationFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::EntityStateException(_))
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::OrganizationStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2860,7 +2860,7 @@ pub enum DeregisterFromWorkMailErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterFromWorkMailError {
@@ -2927,35 +2927,35 @@ impl DeregisterFromWorkMailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterFromWorkMailErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterFromWorkMailErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterFromWorkMailErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterFromWorkMailErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `DeregisterFromWorkMailErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterFromWorkMailErrorKind::EntityStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterFromWorkMailErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeregisterFromWorkMailErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterFromWorkMailErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterFromWorkMailErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterFromWorkMailErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterFromWorkMailErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterFromWorkMailErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DeregisterFromWorkMailErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3002,7 +3002,7 @@ pub enum DeregisterMailDomainErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterMailDomainError {
@@ -3071,35 +3071,35 @@ impl DeregisterMailDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterMailDomainErrorKind::InvalidCustomSesConfigurationException`.
+    /// Returns `true` if the error kind is `DeregisterMailDomainErrorKind::InvalidCustomSesConfigurationException`.
     pub fn is_invalid_custom_ses_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterMailDomainErrorKind::InvalidCustomSesConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterMailDomainErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeregisterMailDomainErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterMailDomainErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterMailDomainErrorKind::MailDomainInUseException`.
+    /// Returns `true` if the error kind is `DeregisterMailDomainErrorKind::MailDomainInUseException`.
     pub fn is_mail_domain_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterMailDomainErrorKind::MailDomainInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterMailDomainErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterMailDomainErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterMailDomainErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterMailDomainErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DeregisterMailDomainErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3146,7 +3146,7 @@ pub enum DescribeGroupErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGroupError {
@@ -3212,28 +3212,28 @@ impl DescribeGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGroupErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeGroupErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGroupErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGroupErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeGroupErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGroupErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGroupErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DescribeGroupErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3272,7 +3272,7 @@ pub enum DescribeInboundDmarcSettingsErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInboundDmarcSettingsError {
@@ -3340,14 +3340,14 @@ impl DescribeInboundDmarcSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInboundDmarcSettingsErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeInboundDmarcSettingsErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInboundDmarcSettingsErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInboundDmarcSettingsErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DescribeInboundDmarcSettingsErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3393,7 +3393,7 @@ pub enum DescribeMailboxExportJobErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMailboxExportJobError {
@@ -3461,28 +3461,28 @@ impl DescribeMailboxExportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMailboxExportJobErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeMailboxExportJobErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMailboxExportJobErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMailboxExportJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeMailboxExportJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMailboxExportJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMailboxExportJobErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeMailboxExportJobErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMailboxExportJobErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMailboxExportJobErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DescribeMailboxExportJobErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3522,7 +3522,7 @@ pub enum DescribeOrganizationErrorKind {
     /// <p>An operation received a valid organization identifier that either doesn't belong or
     /// exist in the system.</p>
     OrganizationNotFoundException(crate::error::OrganizationNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOrganizationError {
@@ -3586,14 +3586,14 @@ impl DescribeOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeOrganizationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3635,7 +3635,7 @@ pub enum DescribeResourceErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeResourceError {
@@ -3701,28 +3701,28 @@ impl DescribeResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeResourceErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeResourceErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeResourceErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeResourceErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeResourceErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeResourceErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeResourceErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DescribeResourceErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3766,7 +3766,7 @@ pub enum DescribeUserErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUserError {
@@ -3832,28 +3832,28 @@ impl DescribeUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUserErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUserErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DescribeUserErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3900,7 +3900,7 @@ pub enum DisassociateDelegateFromResourceErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateDelegateFromResourceError {
@@ -3980,35 +3980,35 @@ impl DisassociateDelegateFromResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateDelegateFromResourceErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateDelegateFromResourceErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDelegateFromResourceErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDelegateFromResourceErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `DisassociateDelegateFromResourceErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDelegateFromResourceErrorKind::EntityStateException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDelegateFromResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DisassociateDelegateFromResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDelegateFromResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDelegateFromResourceErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateDelegateFromResourceErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDelegateFromResourceErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDelegateFromResourceErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DisassociateDelegateFromResourceErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4072,7 +4072,7 @@ pub enum DisassociateMemberFromGroupErrorKind {
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateMemberFromGroupError {
@@ -4154,56 +4154,56 @@ impl DisassociateMemberFromGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateMemberFromGroupErrorKind::DirectoryServiceAuthenticationFailedException`.
+    /// Returns `true` if the error kind is `DisassociateMemberFromGroupErrorKind::DirectoryServiceAuthenticationFailedException`.
     pub fn is_directory_service_authentication_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateMemberFromGroupErrorKind::DirectoryServiceAuthenticationFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateMemberFromGroupErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `DisassociateMemberFromGroupErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateMemberFromGroupErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateMemberFromGroupErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateMemberFromGroupErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateMemberFromGroupErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateMemberFromGroupErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `DisassociateMemberFromGroupErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateMemberFromGroupErrorKind::EntityStateException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateMemberFromGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DisassociateMemberFromGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateMemberFromGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateMemberFromGroupErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateMemberFromGroupErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateMemberFromGroupErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateMemberFromGroupErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `DisassociateMemberFromGroupErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateMemberFromGroupErrorKind::OrganizationStateException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateMemberFromGroupErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `DisassociateMemberFromGroupErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4261,7 +4261,7 @@ pub enum GetAccessControlEffectErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccessControlEffectError {
@@ -4327,28 +4327,28 @@ impl GetAccessControlEffectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAccessControlEffectErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetAccessControlEffectErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccessControlEffectErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccessControlEffectErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetAccessControlEffectErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccessControlEffectErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccessControlEffectErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `GetAccessControlEffectErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAccessControlEffectErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAccessControlEffectErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `GetAccessControlEffectErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4392,7 +4392,7 @@ pub enum GetDefaultRetentionPolicyErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDefaultRetentionPolicyError {
@@ -4460,28 +4460,28 @@ impl GetDefaultRetentionPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDefaultRetentionPolicyErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetDefaultRetentionPolicyErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDefaultRetentionPolicyErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDefaultRetentionPolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetDefaultRetentionPolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDefaultRetentionPolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetDefaultRetentionPolicyErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `GetDefaultRetentionPolicyErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDefaultRetentionPolicyErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDefaultRetentionPolicyErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `GetDefaultRetentionPolicyErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4525,7 +4525,7 @@ pub enum GetMailboxDetailsErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMailboxDetailsError {
@@ -4590,21 +4590,21 @@ impl GetMailboxDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMailboxDetailsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetMailboxDetailsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMailboxDetailsErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetMailboxDetailsErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `GetMailboxDetailsErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMailboxDetailsErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetMailboxDetailsErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `GetMailboxDetailsErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4646,7 +4646,7 @@ pub enum GetMailDomainErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMailDomainError {
@@ -4712,28 +4712,28 @@ impl GetMailDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMailDomainErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetMailDomainErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMailDomainErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetMailDomainErrorKind::MailDomainNotFoundException`.
+    /// Returns `true` if the error kind is `GetMailDomainErrorKind::MailDomainNotFoundException`.
     pub fn is_mail_domain_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMailDomainErrorKind::MailDomainNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetMailDomainErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `GetMailDomainErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMailDomainErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetMailDomainErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `GetMailDomainErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4774,7 +4774,7 @@ pub enum GetMobileDeviceAccessEffectErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMobileDeviceAccessEffectError {
@@ -4845,21 +4845,21 @@ impl GetMobileDeviceAccessEffectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMobileDeviceAccessEffectErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetMobileDeviceAccessEffectErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMobileDeviceAccessEffectErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetMobileDeviceAccessEffectErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `GetMobileDeviceAccessEffectErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMobileDeviceAccessEffectErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetMobileDeviceAccessEffectErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `GetMobileDeviceAccessEffectErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4908,7 +4908,7 @@ pub enum GetMobileDeviceAccessOverrideErrorKind {
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>The resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMobileDeviceAccessOverrideError {
@@ -4988,35 +4988,35 @@ impl GetMobileDeviceAccessOverrideError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMobileDeviceAccessOverrideErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `GetMobileDeviceAccessOverrideErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMobileDeviceAccessOverrideErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetMobileDeviceAccessOverrideErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetMobileDeviceAccessOverrideErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMobileDeviceAccessOverrideErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `GetMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetMobileDeviceAccessOverrideErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `GetMobileDeviceAccessOverrideErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMobileDeviceAccessOverrideErrorKind::OrganizationStateException(_)
         )
     }
-    /// Returns true if the error kind is `GetMobileDeviceAccessOverrideErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetMobileDeviceAccessOverrideErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5064,7 +5064,7 @@ pub enum ListAccessControlRulesErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAccessControlRulesError {
@@ -5128,14 +5128,14 @@ impl ListAccessControlRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAccessControlRulesErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `ListAccessControlRulesErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccessControlRulesErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccessControlRulesErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `ListAccessControlRulesErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5180,7 +5180,7 @@ pub enum ListAliasesErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAliasesError {
@@ -5247,29 +5247,29 @@ impl ListAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAliasesErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `ListAliasesErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListAliasesErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListAliasesErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `ListAliasesErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(&self.kind, ListAliasesErrorKind::EntityStateException(_))
     }
-    /// Returns true if the error kind is `ListAliasesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListAliasesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAliasesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListAliasesErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `ListAliasesErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAliasesErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAliasesErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `ListAliasesErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5317,7 +5317,7 @@ pub enum ListGroupMembersErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGroupMembersError {
@@ -5384,35 +5384,35 @@ impl ListGroupMembersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGroupMembersErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `ListGroupMembersErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupMembersErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupMembersErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `ListGroupMembersErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupMembersErrorKind::EntityStateException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupMembersErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListGroupMembersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupMembersErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupMembersErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `ListGroupMembersErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupMembersErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupMembersErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `ListGroupMembersErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5457,7 +5457,7 @@ pub enum ListGroupsErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGroupsError {
@@ -5523,25 +5523,25 @@ impl ListGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListGroupsErrorKind::EntityNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupsErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5582,7 +5582,7 @@ pub enum ListMailboxExportJobsErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMailboxExportJobsError {
@@ -5647,21 +5647,21 @@ impl ListMailboxExportJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMailboxExportJobsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListMailboxExportJobsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMailboxExportJobsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListMailboxExportJobsErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `ListMailboxExportJobsErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMailboxExportJobsErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListMailboxExportJobsErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `ListMailboxExportJobsErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5704,7 +5704,7 @@ pub enum ListMailboxPermissionsErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMailboxPermissionsError {
@@ -5770,28 +5770,28 @@ impl ListMailboxPermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMailboxPermissionsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `ListMailboxPermissionsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMailboxPermissionsErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListMailboxPermissionsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListMailboxPermissionsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMailboxPermissionsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListMailboxPermissionsErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `ListMailboxPermissionsErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMailboxPermissionsErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListMailboxPermissionsErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `ListMailboxPermissionsErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5832,7 +5832,7 @@ pub enum ListMailDomainsErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMailDomainsError {
@@ -5897,21 +5897,21 @@ impl ListMailDomainsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMailDomainsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListMailDomainsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMailDomainsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListMailDomainsErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `ListMailDomainsErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMailDomainsErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListMailDomainsErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `ListMailDomainsErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5954,7 +5954,7 @@ pub enum ListMobileDeviceAccessOverridesErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMobileDeviceAccessOverridesError {
@@ -6031,28 +6031,28 @@ impl ListMobileDeviceAccessOverridesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMobileDeviceAccessOverridesErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `ListMobileDeviceAccessOverridesErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMobileDeviceAccessOverridesErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListMobileDeviceAccessOverridesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListMobileDeviceAccessOverridesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMobileDeviceAccessOverridesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListMobileDeviceAccessOverridesErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `ListMobileDeviceAccessOverridesErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMobileDeviceAccessOverridesErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListMobileDeviceAccessOverridesErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `ListMobileDeviceAccessOverridesErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6101,7 +6101,7 @@ pub enum ListMobileDeviceAccessRulesErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMobileDeviceAccessRulesError {
@@ -6172,21 +6172,21 @@ impl ListMobileDeviceAccessRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMobileDeviceAccessRulesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListMobileDeviceAccessRulesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMobileDeviceAccessRulesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListMobileDeviceAccessRulesErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `ListMobileDeviceAccessRulesErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMobileDeviceAccessRulesErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListMobileDeviceAccessRulesErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `ListMobileDeviceAccessRulesErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6224,7 +6224,7 @@ pub struct ListOrganizationsError {
 pub enum ListOrganizationsErrorKind {
     /// <p>One or more of the input parameters don't match the service's restrictions.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOrganizationsError {
@@ -6287,7 +6287,7 @@ impl ListOrganizationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOrganizationsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListOrganizationsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6331,7 +6331,7 @@ pub enum ListResourceDelegatesErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourceDelegatesError {
@@ -6398,35 +6398,35 @@ impl ListResourceDelegatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResourceDelegatesErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `ListResourceDelegatesErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceDelegatesErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceDelegatesErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `ListResourceDelegatesErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceDelegatesErrorKind::EntityStateException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceDelegatesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListResourceDelegatesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceDelegatesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceDelegatesErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `ListResourceDelegatesErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceDelegatesErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceDelegatesErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `ListResourceDelegatesErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6468,7 +6468,7 @@ pub enum ListResourcesErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourcesError {
@@ -6533,21 +6533,21 @@ impl ListResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6581,7 +6581,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>The resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -6644,7 +6644,7 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6682,7 +6682,7 @@ pub enum ListUsersErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListUsersError {
@@ -6747,18 +6747,18 @@ impl ListUsersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, ListUsersErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListUsersErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListUsersErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `ListUsersErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6803,7 +6803,7 @@ pub enum PutAccessControlRuleErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAccessControlRuleError {
@@ -6870,35 +6870,35 @@ impl PutAccessControlRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAccessControlRuleErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `PutAccessControlRuleErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAccessControlRuleErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutAccessControlRuleErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutAccessControlRuleErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAccessControlRuleErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutAccessControlRuleErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutAccessControlRuleErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAccessControlRuleErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutAccessControlRuleErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `PutAccessControlRuleErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAccessControlRuleErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutAccessControlRuleErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `PutAccessControlRuleErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6938,7 +6938,7 @@ pub enum PutInboundDmarcSettingsErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutInboundDmarcSettingsError {
@@ -7004,14 +7004,14 @@ impl PutInboundDmarcSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutInboundDmarcSettingsErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `PutInboundDmarcSettingsErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInboundDmarcSettingsErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutInboundDmarcSettingsErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `PutInboundDmarcSettingsErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7056,7 +7056,7 @@ pub enum PutMailboxPermissionsErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutMailboxPermissionsError {
@@ -7123,35 +7123,35 @@ impl PutMailboxPermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutMailboxPermissionsErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `PutMailboxPermissionsErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMailboxPermissionsErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutMailboxPermissionsErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `PutMailboxPermissionsErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMailboxPermissionsErrorKind::EntityStateException(_)
         )
     }
-    /// Returns true if the error kind is `PutMailboxPermissionsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutMailboxPermissionsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMailboxPermissionsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutMailboxPermissionsErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `PutMailboxPermissionsErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMailboxPermissionsErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutMailboxPermissionsErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `PutMailboxPermissionsErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7199,7 +7199,7 @@ pub enum PutMobileDeviceAccessOverrideErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutMobileDeviceAccessOverrideError {
@@ -7277,35 +7277,35 @@ impl PutMobileDeviceAccessOverrideError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutMobileDeviceAccessOverrideErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `PutMobileDeviceAccessOverrideErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMobileDeviceAccessOverrideErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutMobileDeviceAccessOverrideErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `PutMobileDeviceAccessOverrideErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMobileDeviceAccessOverrideErrorKind::EntityStateException(_)
         )
     }
-    /// Returns true if the error kind is `PutMobileDeviceAccessOverrideErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutMobileDeviceAccessOverrideErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMobileDeviceAccessOverrideErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `PutMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMobileDeviceAccessOverrideErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutMobileDeviceAccessOverrideErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `PutMobileDeviceAccessOverrideErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7355,7 +7355,7 @@ pub enum PutRetentionPolicyErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRetentionPolicyError {
@@ -7421,28 +7421,28 @@ impl PutRetentionPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutRetentionPolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutRetentionPolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRetentionPolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutRetentionPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutRetentionPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRetentionPolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutRetentionPolicyErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `PutRetentionPolicyErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRetentionPolicyErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutRetentionPolicyErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `PutRetentionPolicyErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7487,7 +7487,7 @@ pub enum RegisterMailDomainErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterMailDomainError {
@@ -7554,35 +7554,35 @@ impl RegisterMailDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterMailDomainErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RegisterMailDomainErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterMailDomainErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterMailDomainErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `RegisterMailDomainErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterMailDomainErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterMailDomainErrorKind::MailDomainInUseException`.
+    /// Returns `true` if the error kind is `RegisterMailDomainErrorKind::MailDomainInUseException`.
     pub fn is_mail_domain_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterMailDomainErrorKind::MailDomainInUseException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterMailDomainErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterMailDomainErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterMailDomainErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterMailDomainErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `RegisterMailDomainErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7647,7 +7647,7 @@ pub enum RegisterToWorkMailErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterToWorkMailError {
@@ -7722,77 +7722,77 @@ impl RegisterToWorkMailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterToWorkMailErrorKind::DirectoryServiceAuthenticationFailedException`.
+    /// Returns `true` if the error kind is `RegisterToWorkMailErrorKind::DirectoryServiceAuthenticationFailedException`.
     pub fn is_directory_service_authentication_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterToWorkMailErrorKind::DirectoryServiceAuthenticationFailedException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterToWorkMailErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `RegisterToWorkMailErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterToWorkMailErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterToWorkMailErrorKind::EmailAddressInUseException`.
+    /// Returns `true` if the error kind is `RegisterToWorkMailErrorKind::EmailAddressInUseException`.
     pub fn is_email_address_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterToWorkMailErrorKind::EmailAddressInUseException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterToWorkMailErrorKind::EntityAlreadyRegisteredException`.
+    /// Returns `true` if the error kind is `RegisterToWorkMailErrorKind::EntityAlreadyRegisteredException`.
     pub fn is_entity_already_registered_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterToWorkMailErrorKind::EntityAlreadyRegisteredException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterToWorkMailErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterToWorkMailErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterToWorkMailErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterToWorkMailErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `RegisterToWorkMailErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterToWorkMailErrorKind::EntityStateException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterToWorkMailErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RegisterToWorkMailErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterToWorkMailErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterToWorkMailErrorKind::MailDomainNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterToWorkMailErrorKind::MailDomainNotFoundException`.
     pub fn is_mail_domain_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterToWorkMailErrorKind::MailDomainNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterToWorkMailErrorKind::MailDomainStateException`.
+    /// Returns `true` if the error kind is `RegisterToWorkMailErrorKind::MailDomainStateException`.
     pub fn is_mail_domain_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterToWorkMailErrorKind::MailDomainStateException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterToWorkMailErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterToWorkMailErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterToWorkMailErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterToWorkMailErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `RegisterToWorkMailErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7859,7 +7859,7 @@ pub enum ResetPasswordErrorKind {
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetPasswordError {
@@ -7932,60 +7932,60 @@ impl ResetPasswordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResetPasswordErrorKind::DirectoryServiceAuthenticationFailedException`.
+    /// Returns `true` if the error kind is `ResetPasswordErrorKind::DirectoryServiceAuthenticationFailedException`.
     pub fn is_directory_service_authentication_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetPasswordErrorKind::DirectoryServiceAuthenticationFailedException(_)
         )
     }
-    /// Returns true if the error kind is `ResetPasswordErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `ResetPasswordErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetPasswordErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ResetPasswordErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `ResetPasswordErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetPasswordErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ResetPasswordErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `ResetPasswordErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(&self.kind, ResetPasswordErrorKind::EntityStateException(_))
     }
-    /// Returns true if the error kind is `ResetPasswordErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ResetPasswordErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetPasswordErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ResetPasswordErrorKind::InvalidPasswordException`.
+    /// Returns `true` if the error kind is `ResetPasswordErrorKind::InvalidPasswordException`.
     pub fn is_invalid_password_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetPasswordErrorKind::InvalidPasswordException(_)
         )
     }
-    /// Returns true if the error kind is `ResetPasswordErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `ResetPasswordErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetPasswordErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ResetPasswordErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `ResetPasswordErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetPasswordErrorKind::OrganizationStateException(_)
         )
     }
-    /// Returns true if the error kind is `ResetPasswordErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `ResetPasswordErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8038,7 +8038,7 @@ pub enum StartMailboxExportJobErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartMailboxExportJobError {
@@ -8105,35 +8105,35 @@ impl StartMailboxExportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartMailboxExportJobErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `StartMailboxExportJobErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMailboxExportJobErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartMailboxExportJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartMailboxExportJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMailboxExportJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartMailboxExportJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartMailboxExportJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMailboxExportJobErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartMailboxExportJobErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `StartMailboxExportJobErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMailboxExportJobErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartMailboxExportJobErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `StartMailboxExportJobErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8174,7 +8174,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The resource can have up to 50 user-applied tags.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -8239,21 +8239,21 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::OrganizationStateException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
     }
@@ -8284,7 +8284,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>The resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -8347,7 +8347,7 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8390,7 +8390,7 @@ pub enum UpdateDefaultMailDomainErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDefaultMailDomainError {
@@ -8459,35 +8459,35 @@ impl UpdateDefaultMailDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDefaultMailDomainErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateDefaultMailDomainErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDefaultMailDomainErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDefaultMailDomainErrorKind::MailDomainNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDefaultMailDomainErrorKind::MailDomainNotFoundException`.
     pub fn is_mail_domain_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDefaultMailDomainErrorKind::MailDomainNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDefaultMailDomainErrorKind::MailDomainStateException`.
+    /// Returns `true` if the error kind is `UpdateDefaultMailDomainErrorKind::MailDomainStateException`.
     pub fn is_mail_domain_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDefaultMailDomainErrorKind::MailDomainStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDefaultMailDomainErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDefaultMailDomainErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDefaultMailDomainErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDefaultMailDomainErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `UpdateDefaultMailDomainErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8535,7 +8535,7 @@ pub enum UpdateMailboxQuotaErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMailboxQuotaError {
@@ -8602,35 +8602,35 @@ impl UpdateMailboxQuotaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateMailboxQuotaErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateMailboxQuotaErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMailboxQuotaErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMailboxQuotaErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `UpdateMailboxQuotaErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMailboxQuotaErrorKind::EntityStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMailboxQuotaErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateMailboxQuotaErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMailboxQuotaErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMailboxQuotaErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateMailboxQuotaErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMailboxQuotaErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMailboxQuotaErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `UpdateMailboxQuotaErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8675,7 +8675,7 @@ pub enum UpdateMobileDeviceAccessRuleErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMobileDeviceAccessRuleError {
@@ -8747,28 +8747,28 @@ impl UpdateMobileDeviceAccessRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateMobileDeviceAccessRuleErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateMobileDeviceAccessRuleErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMobileDeviceAccessRuleErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMobileDeviceAccessRuleErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateMobileDeviceAccessRuleErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMobileDeviceAccessRuleErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMobileDeviceAccessRuleErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateMobileDeviceAccessRuleErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMobileDeviceAccessRuleErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMobileDeviceAccessRuleErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `UpdateMobileDeviceAccessRuleErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8837,7 +8837,7 @@ pub enum UpdatePrimaryEmailAddressErrorKind {
     OrganizationStateException(crate::error::OrganizationStateException),
     /// <p>You can't perform a write operation against a read-only directory.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePrimaryEmailAddressError {
@@ -8920,77 +8920,77 @@ impl UpdatePrimaryEmailAddressError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePrimaryEmailAddressErrorKind::DirectoryServiceAuthenticationFailedException`.
+    /// Returns `true` if the error kind is `UpdatePrimaryEmailAddressErrorKind::DirectoryServiceAuthenticationFailedException`.
     pub fn is_directory_service_authentication_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePrimaryEmailAddressErrorKind::DirectoryServiceAuthenticationFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePrimaryEmailAddressErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `UpdatePrimaryEmailAddressErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePrimaryEmailAddressErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePrimaryEmailAddressErrorKind::EmailAddressInUseException`.
+    /// Returns `true` if the error kind is `UpdatePrimaryEmailAddressErrorKind::EmailAddressInUseException`.
     pub fn is_email_address_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePrimaryEmailAddressErrorKind::EmailAddressInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePrimaryEmailAddressErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePrimaryEmailAddressErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePrimaryEmailAddressErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePrimaryEmailAddressErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `UpdatePrimaryEmailAddressErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePrimaryEmailAddressErrorKind::EntityStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePrimaryEmailAddressErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdatePrimaryEmailAddressErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePrimaryEmailAddressErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePrimaryEmailAddressErrorKind::MailDomainNotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePrimaryEmailAddressErrorKind::MailDomainNotFoundException`.
     pub fn is_mail_domain_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePrimaryEmailAddressErrorKind::MailDomainNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePrimaryEmailAddressErrorKind::MailDomainStateException`.
+    /// Returns `true` if the error kind is `UpdatePrimaryEmailAddressErrorKind::MailDomainStateException`.
     pub fn is_mail_domain_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePrimaryEmailAddressErrorKind::MailDomainStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePrimaryEmailAddressErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePrimaryEmailAddressErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePrimaryEmailAddressErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePrimaryEmailAddressErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `UpdatePrimaryEmailAddressErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePrimaryEmailAddressErrorKind::OrganizationStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePrimaryEmailAddressErrorKind::UnsupportedOperationException`.
+    /// Returns `true` if the error kind is `UpdatePrimaryEmailAddressErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9066,7 +9066,7 @@ pub enum UpdateResourceErrorKind {
     /// <p>The organization must have a valid state to perform certain
     /// operations on the organization or its members.</p>
     OrganizationStateException(crate::error::OrganizationStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateResourceError {
@@ -9138,67 +9138,67 @@ impl UpdateResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::DirectoryUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::DirectoryUnavailableException`.
     pub fn is_directory_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::DirectoryUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::EmailAddressInUseException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::EmailAddressInUseException`.
     pub fn is_email_address_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::EmailAddressInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::EntityNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::EntityNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::EntityStateException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::EntityStateException`.
     pub fn is_entity_state_exception(&self) -> bool {
         matches!(&self.kind, UpdateResourceErrorKind::EntityStateException(_))
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::InvalidConfigurationException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::InvalidConfigurationException`.
     pub fn is_invalid_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::InvalidConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::MailDomainNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::MailDomainNotFoundException`.
     pub fn is_mail_domain_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::MailDomainNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::MailDomainStateException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::MailDomainStateException`.
     pub fn is_mail_domain_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::MailDomainStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::NameAvailabilityException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::NameAvailabilityException`.
     pub fn is_name_availability_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::NameAvailabilityException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::OrganizationNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::OrganizationNotFoundException`.
     pub fn is_organization_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::OrganizationNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::OrganizationStateException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::OrganizationStateException`.
     pub fn is_organization_state_exception(&self) -> bool {
         matches!(
             &self.kind,

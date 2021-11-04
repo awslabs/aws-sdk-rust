@@ -668,35 +668,35 @@ pub fn parse_recognize_utterance(
         );
         output = output.set_content_type(
             crate::http_serde::deser_header_recognize_utterance_recognize_utterance_output_content_type(response.headers())
-                                        .map_err(|_|crate::error::RecognizeUtteranceError::unhandled("Failed to parse contentType from header `Content-Type"))?
+                                    .map_err(|_|crate::error::RecognizeUtteranceError::unhandled("Failed to parse contentType from header `Content-Type"))?
         );
         output = output.set_input_mode(
             crate::http_serde::deser_header_recognize_utterance_recognize_utterance_output_input_mode(response.headers())
-                                        .map_err(|_|crate::error::RecognizeUtteranceError::unhandled("Failed to parse inputMode from header `x-amz-lex-input-mode"))?
+                                    .map_err(|_|crate::error::RecognizeUtteranceError::unhandled("Failed to parse inputMode from header `x-amz-lex-input-mode"))?
         );
         output = output.set_input_transcript(
             crate::http_serde::deser_header_recognize_utterance_recognize_utterance_output_input_transcript(response.headers())
-                                        .map_err(|_|crate::error::RecognizeUtteranceError::unhandled("Failed to parse inputTranscript from header `x-amz-lex-input-transcript"))?
+                                    .map_err(|_|crate::error::RecognizeUtteranceError::unhandled("Failed to parse inputTranscript from header `x-amz-lex-input-transcript"))?
         );
         output = output.set_interpretations(
             crate::http_serde::deser_header_recognize_utterance_recognize_utterance_output_interpretations(response.headers())
-                                        .map_err(|_|crate::error::RecognizeUtteranceError::unhandled("Failed to parse interpretations from header `x-amz-lex-interpretations"))?
+                                    .map_err(|_|crate::error::RecognizeUtteranceError::unhandled("Failed to parse interpretations from header `x-amz-lex-interpretations"))?
         );
         output = output.set_messages(
             crate::http_serde::deser_header_recognize_utterance_recognize_utterance_output_messages(response.headers())
-                                        .map_err(|_|crate::error::RecognizeUtteranceError::unhandled("Failed to parse messages from header `x-amz-lex-messages"))?
+                                    .map_err(|_|crate::error::RecognizeUtteranceError::unhandled("Failed to parse messages from header `x-amz-lex-messages"))?
         );
         output = output.set_request_attributes(
             crate::http_serde::deser_header_recognize_utterance_recognize_utterance_output_request_attributes(response.headers())
-                                        .map_err(|_|crate::error::RecognizeUtteranceError::unhandled("Failed to parse requestAttributes from header `x-amz-lex-request-attributes"))?
+                                    .map_err(|_|crate::error::RecognizeUtteranceError::unhandled("Failed to parse requestAttributes from header `x-amz-lex-request-attributes"))?
         );
         output = output.set_session_id(
             crate::http_serde::deser_header_recognize_utterance_recognize_utterance_output_session_id(response.headers())
-                                        .map_err(|_|crate::error::RecognizeUtteranceError::unhandled("Failed to parse sessionId from header `x-amz-lex-session-id"))?
+                                    .map_err(|_|crate::error::RecognizeUtteranceError::unhandled("Failed to parse sessionId from header `x-amz-lex-session-id"))?
         );
         output = output.set_session_state(
             crate::http_serde::deser_header_recognize_utterance_recognize_utterance_output_session_state(response.headers())
-                                        .map_err(|_|crate::error::RecognizeUtteranceError::unhandled("Failed to parse sessionState from header `x-amz-lex-session-state"))?
+                                    .map_err(|_|crate::error::RecognizeUtteranceError::unhandled("Failed to parse sessionState from header `x-amz-lex-session-state"))?
         );
         output.build()
     })

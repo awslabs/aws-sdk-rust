@@ -246,10 +246,10 @@ pub enum ImdsError {
 
     /// IO Error
     ///
-    /// An error occurred comunication with IMDS
+    /// An error occurred communication with IMDS
     IoError(Box<dyn Error + Send + Sync + 'static>),
 
-    /// An unexpected error occured communicating with IMDS
+    /// An unexpected error occurred communicating with IMDS
     Unexpected(Box<dyn Error + Send + Sync + 'static>),
 }
 
@@ -270,11 +270,11 @@ impl Display for ImdsError {
                 response
             ),
             ImdsError::IoError(err) => {
-                write!(f, "An IO error occured communicating with IMDS: {}", err)
+                write!(f, "An IO error occurred communicating with IMDS: {}", err)
             }
             ImdsError::Unexpected(err) => write!(
                 f,
-                "An unexpected error occured communicating with IMDS: {}",
+                "An unexpected error occurred communicating with IMDS: {}",
                 err
             ),
         }
@@ -413,7 +413,7 @@ pub enum BuildError {
     /// The endpoint mode was invalid
     InvalidEndpointMode(InvalidEndpointMode),
 
-    /// The AWS Profile (eg. `~/.aws/config`) was invalid
+    /// The AWS Profile (e.g. `~/.aws/config`) was invalid
     InvalidProfile(ProfileParseError),
 
     /// The specified endpoint was not a valid URI

@@ -18,7 +18,7 @@ pub enum DeleteConnectionErrorKind {
     GoneException(crate::error::GoneException),
     /// <p>The client is sending more than the allowed number of requests per unit of time or the WebSocket client side buffer is full.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConnectionError {
@@ -83,15 +83,15 @@ impl DeleteConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteConnectionErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::GoneException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::GoneException`.
     pub fn is_gone_exception(&self) -> bool {
         matches!(&self.kind, DeleteConnectionErrorKind::GoneException(_))
     }
-    /// Returns true if the error kind is `DeleteConnectionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteConnectionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -129,7 +129,7 @@ pub enum GetConnectionErrorKind {
     GoneException(crate::error::GoneException),
     /// <p>The client is sending more than the allowed number of requests per unit of time or the WebSocket client side buffer is full.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConnectionError {
@@ -194,15 +194,15 @@ impl GetConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConnectionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetConnectionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetConnectionErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetConnectionErrorKind::GoneException`.
+    /// Returns `true` if the error kind is `GetConnectionErrorKind::GoneException`.
     pub fn is_gone_exception(&self) -> bool {
         matches!(&self.kind, GetConnectionErrorKind::GoneException(_))
     }
-    /// Returns true if the error kind is `GetConnectionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetConnectionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -242,7 +242,7 @@ pub enum PostToConnectionErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The data has exceeded the maximum size allowed.</p>
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PostToConnectionError {
@@ -308,22 +308,22 @@ impl PostToConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PostToConnectionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PostToConnectionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, PostToConnectionErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `PostToConnectionErrorKind::GoneException`.
+    /// Returns `true` if the error kind is `PostToConnectionErrorKind::GoneException`.
     pub fn is_gone_exception(&self) -> bool {
         matches!(&self.kind, PostToConnectionErrorKind::GoneException(_))
     }
-    /// Returns true if the error kind is `PostToConnectionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PostToConnectionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostToConnectionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PostToConnectionErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `PostToConnectionErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,

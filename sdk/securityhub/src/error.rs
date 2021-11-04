@@ -25,7 +25,7 @@ pub enum AcceptAdministratorInvitationErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptAdministratorInvitationError {
@@ -97,35 +97,35 @@ impl AcceptAdministratorInvitationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AcceptAdministratorInvitationErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `AcceptAdministratorInvitationErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptAdministratorInvitationErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptAdministratorInvitationErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `AcceptAdministratorInvitationErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptAdministratorInvitationErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptAdministratorInvitationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AcceptAdministratorInvitationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptAdministratorInvitationErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptAdministratorInvitationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AcceptAdministratorInvitationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptAdministratorInvitationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptAdministratorInvitationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AcceptAdministratorInvitationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -174,7 +174,7 @@ pub enum AcceptInvitationErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptInvitationError {
@@ -241,32 +241,32 @@ impl AcceptInvitationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AcceptInvitationErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `AcceptInvitationErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, AcceptInvitationErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `AcceptInvitationErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `AcceptInvitationErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptInvitationErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptInvitationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AcceptInvitationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptInvitationErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptInvitationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AcceptInvitationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptInvitationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptInvitationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AcceptInvitationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -311,7 +311,7 @@ pub enum BatchDisableStandardsErrorKind {
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
     /// account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDisableStandardsError {
@@ -377,28 +377,28 @@ impl BatchDisableStandardsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDisableStandardsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `BatchDisableStandardsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDisableStandardsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDisableStandardsErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `BatchDisableStandardsErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDisableStandardsErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDisableStandardsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchDisableStandardsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDisableStandardsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDisableStandardsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `BatchDisableStandardsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -442,7 +442,7 @@ pub enum BatchEnableStandardsErrorKind {
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
     /// account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchEnableStandardsError {
@@ -508,28 +508,28 @@ impl BatchEnableStandardsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchEnableStandardsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `BatchEnableStandardsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchEnableStandardsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `BatchEnableStandardsErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `BatchEnableStandardsErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchEnableStandardsErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `BatchEnableStandardsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchEnableStandardsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchEnableStandardsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `BatchEnableStandardsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `BatchEnableStandardsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -573,7 +573,7 @@ pub enum BatchImportFindingsErrorKind {
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
     /// account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchImportFindingsError {
@@ -639,28 +639,28 @@ impl BatchImportFindingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchImportFindingsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `BatchImportFindingsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchImportFindingsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `BatchImportFindingsErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `BatchImportFindingsErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchImportFindingsErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `BatchImportFindingsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchImportFindingsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchImportFindingsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `BatchImportFindingsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `BatchImportFindingsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -704,7 +704,7 @@ pub enum BatchUpdateFindingsErrorKind {
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
     /// account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchUpdateFindingsError {
@@ -770,28 +770,28 @@ impl BatchUpdateFindingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchUpdateFindingsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `BatchUpdateFindingsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateFindingsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateFindingsErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `BatchUpdateFindingsErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateFindingsErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateFindingsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchUpdateFindingsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchUpdateFindingsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `BatchUpdateFindingsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `BatchUpdateFindingsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -837,7 +837,7 @@ pub enum CreateActionTargetErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateActionTargetError {
@@ -904,35 +904,35 @@ impl CreateActionTargetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateActionTargetErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateActionTargetErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateActionTargetErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `CreateActionTargetErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `CreateActionTargetErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateActionTargetErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `CreateActionTargetErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateActionTargetErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateActionTargetErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateActionTargetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateActionTargetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateActionTargetErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateActionTargetErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `CreateActionTargetErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -949,6 +949,148 @@ impl std::error::Error for CreateActionTargetError {
             CreateActionTargetErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateActionTargetErrorKind::ResourceConflictException(_inner) => Some(_inner),
             CreateActionTargetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateFindingAggregator` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateFindingAggregatorError {
+    /// Kind of error that occurred.
+    pub kind: CreateFindingAggregatorErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateFindingAggregator` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateFindingAggregatorErrorKind {
+    /// <p>You don't have permission to perform the action specified in the request.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Internal server error.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
+    /// for the account, or the account does not have permission to perform this action.</p>
+    InvalidAccessException(crate::error::InvalidAccessException),
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
+    /// input parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
+    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateFindingAggregatorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateFindingAggregatorErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateFindingAggregatorErrorKind::InternalException(_inner) => _inner.fmt(f),
+            CreateFindingAggregatorErrorKind::InvalidAccessException(_inner) => _inner.fmt(f),
+            CreateFindingAggregatorErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            CreateFindingAggregatorErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateFindingAggregatorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateFindingAggregatorError {
+    fn code(&self) -> Option<&str> {
+        CreateFindingAggregatorError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateFindingAggregatorError {
+    /// Creates a new `CreateFindingAggregatorError`.
+    pub fn new(kind: CreateFindingAggregatorErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateFindingAggregatorError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateFindingAggregatorErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateFindingAggregatorError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateFindingAggregatorErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateFindingAggregatorErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFindingAggregatorErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateFindingAggregatorErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFindingAggregatorErrorKind::InternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateFindingAggregatorErrorKind::InvalidAccessException`.
+    pub fn is_invalid_access_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFindingAggregatorErrorKind::InvalidAccessException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateFindingAggregatorErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFindingAggregatorErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateFindingAggregatorErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFindingAggregatorErrorKind::LimitExceededException(_)
+        )
+    }
+}
+impl std::error::Error for CreateFindingAggregatorError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateFindingAggregatorErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateFindingAggregatorErrorKind::InternalException(_inner) => Some(_inner),
+            CreateFindingAggregatorErrorKind::InvalidAccessException(_inner) => Some(_inner),
+            CreateFindingAggregatorErrorKind::InvalidInputException(_inner) => Some(_inner),
+            CreateFindingAggregatorErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateFindingAggregatorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -979,7 +1121,7 @@ pub enum CreateInsightErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInsightError {
@@ -1046,29 +1188,29 @@ impl CreateInsightError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateInsightErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateInsightErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, CreateInsightErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `CreateInsightErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `CreateInsightErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInsightErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInsightErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateInsightErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateInsightErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreateInsightErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateInsightErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInsightErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInsightErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `CreateInsightErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1115,7 +1257,7 @@ pub enum CreateMembersErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMembersError {
@@ -1182,29 +1324,29 @@ impl CreateMembersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMembersErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateMembersErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, CreateMembersErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `CreateMembersErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `CreateMembersErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMembersErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMembersErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateMembersErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateMembersErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreateMembersErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateMembersErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMembersErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMembersErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `CreateMembersErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1248,7 +1390,7 @@ pub enum DeclineInvitationsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeclineInvitationsError {
@@ -1314,28 +1456,28 @@ impl DeclineInvitationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeclineInvitationsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeclineInvitationsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeclineInvitationsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DeclineInvitationsErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `DeclineInvitationsErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeclineInvitationsErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `DeclineInvitationsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeclineInvitationsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeclineInvitationsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeclineInvitationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeclineInvitationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1378,7 +1520,7 @@ pub enum DeleteActionTargetErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteActionTargetError {
@@ -1444,28 +1586,28 @@ impl DeleteActionTargetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteActionTargetErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteActionTargetErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteActionTargetErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteActionTargetErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `DeleteActionTargetErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteActionTargetErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteActionTargetErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteActionTargetErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteActionTargetErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteActionTargetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteActionTargetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1481,6 +1623,159 @@ impl std::error::Error for DeleteActionTargetError {
             DeleteActionTargetErrorKind::InvalidInputException(_inner) => Some(_inner),
             DeleteActionTargetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteActionTargetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteFindingAggregator` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteFindingAggregatorError {
+    /// Kind of error that occurred.
+    pub kind: DeleteFindingAggregatorErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteFindingAggregator` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteFindingAggregatorErrorKind {
+    /// <p>You don't have permission to perform the action specified in the request.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Internal server error.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
+    /// for the account, or the account does not have permission to perform this action.</p>
+    InvalidAccessException(crate::error::InvalidAccessException),
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
+    /// input parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
+    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The request was rejected because we can't find the specified resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteFindingAggregatorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteFindingAggregatorErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteFindingAggregatorErrorKind::InternalException(_inner) => _inner.fmt(f),
+            DeleteFindingAggregatorErrorKind::InvalidAccessException(_inner) => _inner.fmt(f),
+            DeleteFindingAggregatorErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            DeleteFindingAggregatorErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteFindingAggregatorErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteFindingAggregatorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteFindingAggregatorError {
+    fn code(&self) -> Option<&str> {
+        DeleteFindingAggregatorError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteFindingAggregatorError {
+    /// Creates a new `DeleteFindingAggregatorError`.
+    pub fn new(kind: DeleteFindingAggregatorErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteFindingAggregatorError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteFindingAggregatorErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteFindingAggregatorError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteFindingAggregatorErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteFindingAggregatorErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFindingAggregatorErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteFindingAggregatorErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFindingAggregatorErrorKind::InternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteFindingAggregatorErrorKind::InvalidAccessException`.
+    pub fn is_invalid_access_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFindingAggregatorErrorKind::InvalidAccessException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteFindingAggregatorErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFindingAggregatorErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteFindingAggregatorErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFindingAggregatorErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteFindingAggregatorErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFindingAggregatorErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteFindingAggregatorError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteFindingAggregatorErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteFindingAggregatorErrorKind::InternalException(_inner) => Some(_inner),
+            DeleteFindingAggregatorErrorKind::InvalidAccessException(_inner) => Some(_inner),
+            DeleteFindingAggregatorErrorKind::InvalidInputException(_inner) => Some(_inner),
+            DeleteFindingAggregatorErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteFindingAggregatorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteFindingAggregatorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1511,7 +1806,7 @@ pub enum DeleteInsightErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInsightError {
@@ -1578,29 +1873,29 @@ impl DeleteInsightError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteInsightErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteInsightErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DeleteInsightErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DeleteInsightErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `DeleteInsightErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInsightErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInsightErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteInsightErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeleteInsightErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DeleteInsightErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteInsightErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInsightErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInsightErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteInsightErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1647,7 +1942,7 @@ pub enum DeleteInvitationsErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInvitationsError {
@@ -1714,32 +2009,32 @@ impl DeleteInvitationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteInvitationsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteInvitationsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DeleteInvitationsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DeleteInvitationsErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `DeleteInvitationsErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInvitationsErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInvitationsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteInvitationsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInvitationsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInvitationsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteInvitationsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInvitationsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInvitationsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteInvitationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1786,7 +2081,7 @@ pub enum DeleteMembersErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMembersError {
@@ -1853,29 +2148,29 @@ impl DeleteMembersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMembersErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteMembersErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DeleteMembersErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DeleteMembersErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `DeleteMembersErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMembersErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMembersErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteMembersErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeleteMembersErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DeleteMembersErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteMembersErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMembersErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMembersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMembersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1919,7 +2214,7 @@ pub enum DescribeActionTargetsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeActionTargetsError {
@@ -1985,28 +2280,28 @@ impl DescribeActionTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeActionTargetsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeActionTargetsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeActionTargetsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeActionTargetsErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `DescribeActionTargetsErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeActionTargetsErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeActionTargetsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeActionTargetsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeActionTargetsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeActionTargetsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeActionTargetsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2052,7 +2347,7 @@ pub enum DescribeHubErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeHubError {
@@ -2119,23 +2414,23 @@ impl DescribeHubError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeHubErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeHubErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DescribeHubErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DescribeHubErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `DescribeHubErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(&self.kind, DescribeHubErrorKind::InvalidAccessException(_))
     }
-    /// Returns true if the error kind is `DescribeHubErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeHubErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DescribeHubErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DescribeHubErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DescribeHubErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, DescribeHubErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `DescribeHubErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeHubErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2180,7 +2475,7 @@ pub enum DescribeOrganizationConfigurationErrorKind {
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
     /// account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOrganizationConfigurationError {
@@ -2255,28 +2550,28 @@ impl DescribeOrganizationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeOrganizationConfigurationErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConfigurationErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationConfigurationErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationConfigurationErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConfigurationErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationConfigurationErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationConfigurationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConfigurationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeOrganizationConfigurationErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeOrganizationConfigurationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DescribeOrganizationConfigurationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2326,7 +2621,7 @@ pub enum DescribeProductsErrorKind {
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
     /// account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProductsError {
@@ -2392,25 +2687,25 @@ impl DescribeProductsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProductsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeProductsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DescribeProductsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DescribeProductsErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `DescribeProductsErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProductsErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProductsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeProductsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProductsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProductsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DescribeProductsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2451,7 +2746,7 @@ pub enum DescribeStandardsErrorKind {
     /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
     /// input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStandardsError {
@@ -2516,18 +2811,18 @@ impl DescribeStandardsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStandardsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeStandardsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DescribeStandardsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DescribeStandardsErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `DescribeStandardsErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStandardsErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStandardsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeStandardsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2569,7 +2864,7 @@ pub enum DescribeStandardsControlsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStandardsControlsError {
@@ -2635,28 +2930,28 @@ impl DescribeStandardsControlsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStandardsControlsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeStandardsControlsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStandardsControlsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStandardsControlsErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `DescribeStandardsControlsErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStandardsControlsErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStandardsControlsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeStandardsControlsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStandardsControlsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStandardsControlsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeStandardsControlsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2702,7 +2997,7 @@ pub enum DisableImportFindingsForProductErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableImportFindingsForProductError {
@@ -2780,35 +3075,35 @@ impl DisableImportFindingsForProductError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableImportFindingsForProductErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DisableImportFindingsForProductErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableImportFindingsForProductErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DisableImportFindingsForProductErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `DisableImportFindingsForProductErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableImportFindingsForProductErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `DisableImportFindingsForProductErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DisableImportFindingsForProductErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableImportFindingsForProductErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DisableImportFindingsForProductErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DisableImportFindingsForProductErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableImportFindingsForProductErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DisableImportFindingsForProductErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisableImportFindingsForProductErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2859,7 +3154,7 @@ pub enum DisableOrganizationAdminAccountErrorKind {
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
     /// account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableOrganizationAdminAccountError {
@@ -2934,28 +3229,28 @@ impl DisableOrganizationAdminAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableOrganizationAdminAccountErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DisableOrganizationAdminAccountErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableOrganizationAdminAccountErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DisableOrganizationAdminAccountErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `DisableOrganizationAdminAccountErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableOrganizationAdminAccountErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `DisableOrganizationAdminAccountErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DisableOrganizationAdminAccountErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableOrganizationAdminAccountErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DisableOrganizationAdminAccountErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DisableOrganizationAdminAccountErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3002,7 +3297,7 @@ pub enum DisableSecurityHubErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableSecurityHubError {
@@ -3068,28 +3363,28 @@ impl DisableSecurityHubError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableSecurityHubErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DisableSecurityHubErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableSecurityHubErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DisableSecurityHubErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `DisableSecurityHubErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableSecurityHubErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `DisableSecurityHubErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DisableSecurityHubErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableSecurityHubErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DisableSecurityHubErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisableSecurityHubErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3135,7 +3430,7 @@ pub enum DisassociateFromAdministratorAccountErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateFromAdministratorAccountError {
@@ -3215,35 +3510,35 @@ impl DisassociateFromAdministratorAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateFromAdministratorAccountErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DisassociateFromAdministratorAccountErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFromAdministratorAccountErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFromAdministratorAccountErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `DisassociateFromAdministratorAccountErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFromAdministratorAccountErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFromAdministratorAccountErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DisassociateFromAdministratorAccountErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFromAdministratorAccountErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFromAdministratorAccountErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DisassociateFromAdministratorAccountErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFromAdministratorAccountErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFromAdministratorAccountErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateFromAdministratorAccountErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3302,7 +3597,7 @@ pub enum DisassociateFromMasterAccountErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateFromMasterAccountError {
@@ -3374,35 +3669,35 @@ impl DisassociateFromMasterAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateFromMasterAccountErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DisassociateFromMasterAccountErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFromMasterAccountErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFromMasterAccountErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `DisassociateFromMasterAccountErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFromMasterAccountErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFromMasterAccountErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DisassociateFromMasterAccountErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFromMasterAccountErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFromMasterAccountErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DisassociateFromMasterAccountErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFromMasterAccountErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFromMasterAccountErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateFromMasterAccountErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3451,7 +3746,7 @@ pub enum DisassociateMembersErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateMembersError {
@@ -3518,35 +3813,35 @@ impl DisassociateMembersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateMembersErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DisassociateMembersErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateMembersErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateMembersErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `DisassociateMembersErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateMembersErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateMembersErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DisassociateMembersErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateMembersErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateMembersErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DisassociateMembersErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateMembersErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateMembersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateMembersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3593,7 +3888,7 @@ pub enum EnableImportFindingsForProductErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableImportFindingsForProductError {
@@ -3669,35 +3964,35 @@ impl EnableImportFindingsForProductError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableImportFindingsForProductErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `EnableImportFindingsForProductErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableImportFindingsForProductErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `EnableImportFindingsForProductErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `EnableImportFindingsForProductErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableImportFindingsForProductErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `EnableImportFindingsForProductErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `EnableImportFindingsForProductErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableImportFindingsForProductErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `EnableImportFindingsForProductErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `EnableImportFindingsForProductErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableImportFindingsForProductErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `EnableImportFindingsForProductErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `EnableImportFindingsForProductErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3744,7 +4039,7 @@ pub enum EnableOrganizationAdminAccountErrorKind {
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
     /// account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableOrganizationAdminAccountError {
@@ -3817,28 +4112,28 @@ impl EnableOrganizationAdminAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableOrganizationAdminAccountErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `EnableOrganizationAdminAccountErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableOrganizationAdminAccountErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `EnableOrganizationAdminAccountErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `EnableOrganizationAdminAccountErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableOrganizationAdminAccountErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `EnableOrganizationAdminAccountErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `EnableOrganizationAdminAccountErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableOrganizationAdminAccountErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `EnableOrganizationAdminAccountErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `EnableOrganizationAdminAccountErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3883,7 +4178,7 @@ pub enum EnableSecurityHubErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableSecurityHubError {
@@ -3950,32 +4245,32 @@ impl EnableSecurityHubError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableSecurityHubErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `EnableSecurityHubErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableSecurityHubErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `EnableSecurityHubErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `EnableSecurityHubErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, EnableSecurityHubErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `EnableSecurityHubErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `EnableSecurityHubErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableSecurityHubErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `EnableSecurityHubErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `EnableSecurityHubErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableSecurityHubErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `EnableSecurityHubErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `EnableSecurityHubErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4022,7 +4317,7 @@ pub enum GetAdministratorAccountErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAdministratorAccountError {
@@ -4089,35 +4384,35 @@ impl GetAdministratorAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAdministratorAccountErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `GetAdministratorAccountErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAdministratorAccountErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `GetAdministratorAccountErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `GetAdministratorAccountErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAdministratorAccountErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `GetAdministratorAccountErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetAdministratorAccountErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAdministratorAccountErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetAdministratorAccountErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetAdministratorAccountErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAdministratorAccountErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetAdministratorAccountErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetAdministratorAccountErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4162,7 +4457,7 @@ pub enum GetEnabledStandardsErrorKind {
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
     /// account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEnabledStandardsError {
@@ -4228,28 +4523,28 @@ impl GetEnabledStandardsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEnabledStandardsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `GetEnabledStandardsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEnabledStandardsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `GetEnabledStandardsErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `GetEnabledStandardsErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEnabledStandardsErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `GetEnabledStandardsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetEnabledStandardsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEnabledStandardsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetEnabledStandardsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetEnabledStandardsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4265,6 +4560,159 @@ impl std::error::Error for GetEnabledStandardsError {
             GetEnabledStandardsErrorKind::InvalidInputException(_inner) => Some(_inner),
             GetEnabledStandardsErrorKind::LimitExceededException(_inner) => Some(_inner),
             GetEnabledStandardsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetFindingAggregator` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetFindingAggregatorError {
+    /// Kind of error that occurred.
+    pub kind: GetFindingAggregatorErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetFindingAggregator` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetFindingAggregatorErrorKind {
+    /// <p>You don't have permission to perform the action specified in the request.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Internal server error.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
+    /// for the account, or the account does not have permission to perform this action.</p>
+    InvalidAccessException(crate::error::InvalidAccessException),
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
+    /// input parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
+    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The request was rejected because we can't find the specified resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetFindingAggregatorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetFindingAggregatorErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetFindingAggregatorErrorKind::InternalException(_inner) => _inner.fmt(f),
+            GetFindingAggregatorErrorKind::InvalidAccessException(_inner) => _inner.fmt(f),
+            GetFindingAggregatorErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetFindingAggregatorErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            GetFindingAggregatorErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetFindingAggregatorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetFindingAggregatorError {
+    fn code(&self) -> Option<&str> {
+        GetFindingAggregatorError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetFindingAggregatorError {
+    /// Creates a new `GetFindingAggregatorError`.
+    pub fn new(kind: GetFindingAggregatorErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetFindingAggregatorError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetFindingAggregatorErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetFindingAggregatorError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetFindingAggregatorErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetFindingAggregatorErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFindingAggregatorErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetFindingAggregatorErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFindingAggregatorErrorKind::InternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetFindingAggregatorErrorKind::InvalidAccessException`.
+    pub fn is_invalid_access_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFindingAggregatorErrorKind::InvalidAccessException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetFindingAggregatorErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFindingAggregatorErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetFindingAggregatorErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFindingAggregatorErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetFindingAggregatorErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFindingAggregatorErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for GetFindingAggregatorError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetFindingAggregatorErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetFindingAggregatorErrorKind::InternalException(_inner) => Some(_inner),
+            GetFindingAggregatorErrorKind::InvalidAccessException(_inner) => Some(_inner),
+            GetFindingAggregatorErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetFindingAggregatorErrorKind::LimitExceededException(_inner) => Some(_inner),
+            GetFindingAggregatorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetFindingAggregatorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -4293,7 +4741,7 @@ pub enum GetFindingsErrorKind {
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
     /// account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFindingsError {
@@ -4359,19 +4807,19 @@ impl GetFindingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFindingsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `GetFindingsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, GetFindingsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `GetFindingsErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `GetFindingsErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(&self.kind, GetFindingsErrorKind::InvalidAccessException(_))
     }
-    /// Returns true if the error kind is `GetFindingsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetFindingsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetFindingsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetFindingsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetFindingsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetFindingsErrorKind::LimitExceededException(_))
     }
@@ -4414,7 +4862,7 @@ pub enum GetInsightResultsErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInsightResultsError {
@@ -4481,32 +4929,32 @@ impl GetInsightResultsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInsightResultsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `GetInsightResultsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, GetInsightResultsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `GetInsightResultsErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `GetInsightResultsErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInsightResultsErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `GetInsightResultsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetInsightResultsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInsightResultsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetInsightResultsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetInsightResultsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInsightResultsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetInsightResultsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetInsightResultsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4553,7 +5001,7 @@ pub enum GetInsightsErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInsightsError {
@@ -4620,23 +5068,23 @@ impl GetInsightsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInsightsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `GetInsightsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, GetInsightsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `GetInsightsErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `GetInsightsErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(&self.kind, GetInsightsErrorKind::InvalidAccessException(_))
     }
-    /// Returns true if the error kind is `GetInsightsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetInsightsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetInsightsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetInsightsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetInsightsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetInsightsErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetInsightsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetInsightsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4681,7 +5129,7 @@ pub enum GetInvitationsCountErrorKind {
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
     /// account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInvitationsCountError {
@@ -4747,28 +5195,28 @@ impl GetInvitationsCountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInvitationsCountErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `GetInvitationsCountErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInvitationsCountErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `GetInvitationsCountErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `GetInvitationsCountErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInvitationsCountErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `GetInvitationsCountErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetInvitationsCountErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInvitationsCountErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetInvitationsCountErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetInvitationsCountErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4814,7 +5262,7 @@ pub enum GetMasterAccountErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMasterAccountError {
@@ -4881,32 +5329,32 @@ impl GetMasterAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMasterAccountErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `GetMasterAccountErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, GetMasterAccountErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `GetMasterAccountErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `GetMasterAccountErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMasterAccountErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `GetMasterAccountErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetMasterAccountErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMasterAccountErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetMasterAccountErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetMasterAccountErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMasterAccountErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetMasterAccountErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetMasterAccountErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4953,7 +5401,7 @@ pub enum GetMembersErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMembersError {
@@ -5020,23 +5468,23 @@ impl GetMembersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMembersErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `GetMembersErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, GetMembersErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `GetMembersErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `GetMembersErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(&self.kind, GetMembersErrorKind::InvalidAccessException(_))
     }
-    /// Returns true if the error kind is `GetMembersErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetMembersErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetMembersErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetMembersErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetMembersErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetMembersErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetMembersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetMembersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5083,7 +5531,7 @@ pub enum InviteMembersErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InviteMembersError {
@@ -5150,29 +5598,29 @@ impl InviteMembersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InviteMembersErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `InviteMembersErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, InviteMembersErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `InviteMembersErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `InviteMembersErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             InviteMembersErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `InviteMembersErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `InviteMembersErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, InviteMembersErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `InviteMembersErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `InviteMembersErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             InviteMembersErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `InviteMembersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `InviteMembersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5214,7 +5662,7 @@ pub enum ListEnabledProductsForImportErrorKind {
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
     /// account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEnabledProductsForImportError {
@@ -5279,21 +5727,21 @@ impl ListEnabledProductsForImportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEnabledProductsForImportErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListEnabledProductsForImportErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEnabledProductsForImportErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListEnabledProductsForImportErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `ListEnabledProductsForImportErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEnabledProductsForImportErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `ListEnabledProductsForImportErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListEnabledProductsForImportErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5308,6 +5756,148 @@ impl std::error::Error for ListEnabledProductsForImportError {
             ListEnabledProductsForImportErrorKind::InvalidAccessException(_inner) => Some(_inner),
             ListEnabledProductsForImportErrorKind::LimitExceededException(_inner) => Some(_inner),
             ListEnabledProductsForImportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListFindingAggregators` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListFindingAggregatorsError {
+    /// Kind of error that occurred.
+    pub kind: ListFindingAggregatorsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListFindingAggregators` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListFindingAggregatorsErrorKind {
+    /// <p>You don't have permission to perform the action specified in the request.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Internal server error.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
+    /// for the account, or the account does not have permission to perform this action.</p>
+    InvalidAccessException(crate::error::InvalidAccessException),
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
+    /// input parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
+    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListFindingAggregatorsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListFindingAggregatorsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListFindingAggregatorsErrorKind::InternalException(_inner) => _inner.fmt(f),
+            ListFindingAggregatorsErrorKind::InvalidAccessException(_inner) => _inner.fmt(f),
+            ListFindingAggregatorsErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            ListFindingAggregatorsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            ListFindingAggregatorsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListFindingAggregatorsError {
+    fn code(&self) -> Option<&str> {
+        ListFindingAggregatorsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListFindingAggregatorsError {
+    /// Creates a new `ListFindingAggregatorsError`.
+    pub fn new(kind: ListFindingAggregatorsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListFindingAggregatorsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListFindingAggregatorsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListFindingAggregatorsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListFindingAggregatorsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListFindingAggregatorsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFindingAggregatorsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListFindingAggregatorsErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFindingAggregatorsErrorKind::InternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListFindingAggregatorsErrorKind::InvalidAccessException`.
+    pub fn is_invalid_access_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFindingAggregatorsErrorKind::InvalidAccessException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListFindingAggregatorsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFindingAggregatorsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListFindingAggregatorsErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFindingAggregatorsErrorKind::LimitExceededException(_)
+        )
+    }
+}
+impl std::error::Error for ListFindingAggregatorsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListFindingAggregatorsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListFindingAggregatorsErrorKind::InternalException(_inner) => Some(_inner),
+            ListFindingAggregatorsErrorKind::InvalidAccessException(_inner) => Some(_inner),
+            ListFindingAggregatorsErrorKind::InvalidInputException(_inner) => Some(_inner),
+            ListFindingAggregatorsErrorKind::LimitExceededException(_inner) => Some(_inner),
+            ListFindingAggregatorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5336,7 +5926,7 @@ pub enum ListInvitationsErrorKind {
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
     /// account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInvitationsError {
@@ -5402,25 +5992,25 @@ impl ListInvitationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInvitationsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListInvitationsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, ListInvitationsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `ListInvitationsErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `ListInvitationsErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInvitationsErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `ListInvitationsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListInvitationsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInvitationsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListInvitationsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListInvitationsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5464,7 +6054,7 @@ pub enum ListMembersErrorKind {
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
     /// account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMembersError {
@@ -5530,19 +6120,19 @@ impl ListMembersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMembersErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListMembersErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, ListMembersErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `ListMembersErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `ListMembersErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(&self.kind, ListMembersErrorKind::InvalidAccessException(_))
     }
-    /// Returns true if the error kind is `ListMembersErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListMembersErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, ListMembersErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `ListMembersErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListMembersErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ListMembersErrorKind::LimitExceededException(_))
     }
@@ -5583,7 +6173,7 @@ pub enum ListOrganizationAdminAccountsErrorKind {
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
     /// account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOrganizationAdminAccountsError {
@@ -5652,28 +6242,28 @@ impl ListOrganizationAdminAccountsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOrganizationAdminAccountsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListOrganizationAdminAccountsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOrganizationAdminAccountsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListOrganizationAdminAccountsErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `ListOrganizationAdminAccountsErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOrganizationAdminAccountsErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `ListOrganizationAdminAccountsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListOrganizationAdminAccountsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOrganizationAdminAccountsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListOrganizationAdminAccountsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListOrganizationAdminAccountsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5713,7 +6303,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -5778,21 +6368,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5831,7 +6421,7 @@ pub enum TagResourceErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -5896,15 +6486,15 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5943,7 +6533,7 @@ pub enum UntagResourceErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -6008,15 +6598,15 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6058,7 +6648,7 @@ pub enum UpdateActionTargetErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateActionTargetError {
@@ -6124,28 +6714,28 @@ impl UpdateActionTargetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateActionTargetErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateActionTargetErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateActionTargetErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateActionTargetErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `UpdateActionTargetErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateActionTargetErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateActionTargetErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateActionTargetErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateActionTargetErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateActionTargetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateActionTargetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6161,6 +6751,159 @@ impl std::error::Error for UpdateActionTargetError {
             UpdateActionTargetErrorKind::InvalidInputException(_inner) => Some(_inner),
             UpdateActionTargetErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateActionTargetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateFindingAggregator` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateFindingAggregatorError {
+    /// Kind of error that occurred.
+    pub kind: UpdateFindingAggregatorErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateFindingAggregator` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateFindingAggregatorErrorKind {
+    /// <p>You don't have permission to perform the action specified in the request.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Internal server error.</p>
+    InternalException(crate::error::InternalException),
+    /// <p>There is an issue with the account used to make the request. Either Security Hub is not enabled
+    /// for the account, or the account does not have permission to perform this action.</p>
+    InvalidAccessException(crate::error::InvalidAccessException),
+    /// <p>The request was rejected because you supplied an invalid or out-of-range value for an
+    /// input parameter.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
+    /// account or throttling limits. The error code describes the limit exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The request was rejected because we can't find the specified resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateFindingAggregatorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateFindingAggregatorErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateFindingAggregatorErrorKind::InternalException(_inner) => _inner.fmt(f),
+            UpdateFindingAggregatorErrorKind::InvalidAccessException(_inner) => _inner.fmt(f),
+            UpdateFindingAggregatorErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UpdateFindingAggregatorErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateFindingAggregatorErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateFindingAggregatorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateFindingAggregatorError {
+    fn code(&self) -> Option<&str> {
+        UpdateFindingAggregatorError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateFindingAggregatorError {
+    /// Creates a new `UpdateFindingAggregatorError`.
+    pub fn new(kind: UpdateFindingAggregatorErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateFindingAggregatorError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateFindingAggregatorErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateFindingAggregatorError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateFindingAggregatorErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateFindingAggregatorErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFindingAggregatorErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateFindingAggregatorErrorKind::InternalException`.
+    pub fn is_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFindingAggregatorErrorKind::InternalException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateFindingAggregatorErrorKind::InvalidAccessException`.
+    pub fn is_invalid_access_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFindingAggregatorErrorKind::InvalidAccessException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateFindingAggregatorErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFindingAggregatorErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateFindingAggregatorErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFindingAggregatorErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateFindingAggregatorErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFindingAggregatorErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateFindingAggregatorError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateFindingAggregatorErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateFindingAggregatorErrorKind::InternalException(_inner) => Some(_inner),
+            UpdateFindingAggregatorErrorKind::InvalidAccessException(_inner) => Some(_inner),
+            UpdateFindingAggregatorErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UpdateFindingAggregatorErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateFindingAggregatorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateFindingAggregatorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -6191,7 +6934,7 @@ pub enum UpdateFindingsErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFindingsError {
@@ -6258,32 +7001,32 @@ impl UpdateFindingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFindingsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateFindingsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, UpdateFindingsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `UpdateFindingsErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `UpdateFindingsErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFindingsErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFindingsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateFindingsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFindingsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFindingsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateFindingsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFindingsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFindingsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFindingsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6330,7 +7073,7 @@ pub enum UpdateInsightErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateInsightError {
@@ -6397,29 +7140,29 @@ impl UpdateInsightError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateInsightErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateInsightErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, UpdateInsightErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `UpdateInsightErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `UpdateInsightErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInsightErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInsightErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateInsightErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, UpdateInsightErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `UpdateInsightErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateInsightErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInsightErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInsightErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateInsightErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6464,7 +7207,7 @@ pub enum UpdateOrganizationConfigurationErrorKind {
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
     /// account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateOrganizationConfigurationError {
@@ -6539,28 +7282,28 @@ impl UpdateOrganizationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateOrganizationConfigurationErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateOrganizationConfigurationErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOrganizationConfigurationErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOrganizationConfigurationErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `UpdateOrganizationConfigurationErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOrganizationConfigurationErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOrganizationConfigurationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateOrganizationConfigurationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateOrganizationConfigurationErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateOrganizationConfigurationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateOrganizationConfigurationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6610,7 +7353,7 @@ pub enum UpdateSecurityHubConfigurationErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSecurityHubConfigurationError {
@@ -6686,35 +7429,35 @@ impl UpdateSecurityHubConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSecurityHubConfigurationErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateSecurityHubConfigurationErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSecurityHubConfigurationErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSecurityHubConfigurationErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `UpdateSecurityHubConfigurationErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSecurityHubConfigurationErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSecurityHubConfigurationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateSecurityHubConfigurationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSecurityHubConfigurationErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSecurityHubConfigurationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateSecurityHubConfigurationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSecurityHubConfigurationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSecurityHubConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSecurityHubConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6760,7 +7503,7 @@ pub enum UpdateStandardsControlErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStandardsControlError {
@@ -6826,28 +7569,28 @@ impl UpdateStandardsControlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateStandardsControlErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateStandardsControlErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStandardsControlErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStandardsControlErrorKind::InvalidAccessException`.
+    /// Returns `true` if the error kind is `UpdateStandardsControlErrorKind::InvalidAccessException`.
     pub fn is_invalid_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStandardsControlErrorKind::InvalidAccessException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStandardsControlErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateStandardsControlErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateStandardsControlErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateStandardsControlErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateStandardsControlErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7265,85 +8008,6 @@ impl LimitExceededException {
     }
 }
 
-/// <p>The resource specified in the request conflicts with an existing resource.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceConflictException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
-    pub code: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceConflictException");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
-    }
-}
-impl ResourceConflictException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ResourceConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceConflictException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ResourceConflictException {}
-/// See [`ResourceConflictException`](crate::error::ResourceConflictException)
-pub mod resource_conflict_exception {
-    /// A builder for [`ResourceConflictException`](crate::error::ResourceConflictException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) code: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.code = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ResourceConflictException`](crate::error::ResourceConflictException)
-        pub fn build(self) -> crate::error::ResourceConflictException {
-            crate::error::ResourceConflictException {
-                message: self.message,
-                code: self.code,
-            }
-        }
-    }
-}
-impl ResourceConflictException {
-    /// Creates a new builder-style object to manufacture [`ResourceConflictException`](crate::error::ResourceConflictException)
-    pub fn builder() -> crate::error::resource_conflict_exception::Builder {
-        crate::error::resource_conflict_exception::Builder::default()
-    }
-}
-
 /// <p>You don't have permission to perform the action specified in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7370,8 +8034,8 @@ impl AccessDeniedException {
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -7420,5 +8084,84 @@ impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException)
     pub fn builder() -> crate::error::access_denied_exception::Builder {
         crate::error::access_denied_exception::Builder::default()
+    }
+}
+
+/// <p>The resource specified in the request conflicts with an existing resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceConflictException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub code: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ResourceConflictException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceConflictException");
+        formatter.field("message", &self.message);
+        formatter.field("code", &self.code);
+        formatter.finish()
+    }
+}
+impl ResourceConflictException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourceConflictException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourceConflictException")?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourceConflictException {}
+/// See [`ResourceConflictException`](crate::error::ResourceConflictException)
+pub mod resource_conflict_exception {
+    /// A builder for [`ResourceConflictException`](crate::error::ResourceConflictException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceConflictException`](crate::error::ResourceConflictException)
+        pub fn build(self) -> crate::error::ResourceConflictException {
+            crate::error::ResourceConflictException {
+                message: self.message,
+                code: self.code,
+            }
+        }
+    }
+}
+impl ResourceConflictException {
+    /// Creates a new builder-style object to manufacture [`ResourceConflictException`](crate::error::ResourceConflictException)
+    pub fn builder() -> crate::error::resource_conflict_exception::Builder {
+        crate::error::resource_conflict_exception::Builder::default()
     }
 }

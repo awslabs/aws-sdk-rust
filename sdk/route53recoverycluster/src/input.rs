@@ -42,7 +42,7 @@ pub type GetRoutingControlStateInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl GetRoutingControlStateInput {
     /// Consumes the builder and constructs an Operation<[`GetRoutingControlState`](crate::operation::GetRoutingControlState)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -74,6 +74,7 @@ impl GetRoutingControlStateInput {
             input: &crate::input::GetRoutingControlStateInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -138,9 +139,10 @@ impl GetRoutingControlStateInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -214,7 +216,7 @@ pub type UpdateRoutingControlStateInputOperationRetryAlias = aws_http::AwsErrorR
 impl UpdateRoutingControlStateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoutingControlState`](crate::operation::UpdateRoutingControlState)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -246,6 +248,7 @@ impl UpdateRoutingControlStateInput {
             input: &crate::input::UpdateRoutingControlStateInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -310,9 +313,10 @@ impl UpdateRoutingControlStateInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -383,7 +387,7 @@ pub type UpdateRoutingControlStatesInputOperationRetryAlias = aws_http::AwsError
 impl UpdateRoutingControlStatesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoutingControlStates`](crate::operation::UpdateRoutingControlStates)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -415,6 +419,7 @@ impl UpdateRoutingControlStatesInput {
             input: &crate::input::UpdateRoutingControlStatesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -475,9 +480,10 @@ impl UpdateRoutingControlStatesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,

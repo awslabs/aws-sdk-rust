@@ -1240,6 +1240,40 @@ impl aws_smithy_http::response::ParseStrictResponse for PutStudioMembers {
     }
 }
 
+/// Operation shape for `StartStreamingSession`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_streaming_session`](crate::client::Client::start_streaming_session).
+///
+/// See [`crate::client::fluent_builders::StartStreamingSession`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartStreamingSession {
+    _private: (),
+}
+impl StartStreamingSession {
+    /// Creates a new builder-style object to manufacture [`StartStreamingSessionInput`](crate::input::StartStreamingSessionInput)
+    pub fn builder() -> crate::input::start_streaming_session_input::Builder {
+        crate::input::start_streaming_session_input::Builder::default()
+    }
+    /// Creates a new `StartStreamingSession` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartStreamingSession {
+    type Output = std::result::Result<
+        crate::output::StartStreamingSessionOutput,
+        crate::error::StartStreamingSessionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_streaming_session_error(response)
+        } else {
+            crate::operation_deser::parse_start_streaming_session_response(response)
+        }
+    }
+}
+
 /// Operation shape for `StartStudioSSOConfigurationRepair`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1270,6 +1304,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StartStudioSSOConfigurat
             crate::operation_deser::parse_start_studio_sso_configuration_repair_error(response)
         } else {
             crate::operation_deser::parse_start_studio_sso_configuration_repair_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StopStreamingSession`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`stop_streaming_session`](crate::client::Client::stop_streaming_session).
+///
+/// See [`crate::client::fluent_builders::StopStreamingSession`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StopStreamingSession {
+    _private: (),
+}
+impl StopStreamingSession {
+    /// Creates a new builder-style object to manufacture [`StopStreamingSessionInput`](crate::input::StopStreamingSessionInput)
+    pub fn builder() -> crate::input::stop_streaming_session_input::Builder {
+        crate::input::stop_streaming_session_input::Builder::default()
+    }
+    /// Creates a new `StopStreamingSession` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StopStreamingSession {
+    type Output = std::result::Result<
+        crate::output::StopStreamingSessionOutput,
+        crate::error::StopStreamingSessionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_streaming_session_error(response)
+        } else {
+            crate::operation_deser::parse_stop_streaming_session_response(response)
         }
     }
 }

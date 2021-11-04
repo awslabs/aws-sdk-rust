@@ -39,7 +39,7 @@ pub enum AcceptResourceShareInvitationErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptResourceShareInvitationError {
@@ -136,35 +136,35 @@ impl AcceptResourceShareInvitationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AcceptResourceShareInvitationErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `AcceptResourceShareInvitationErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptResourceShareInvitationErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptResourceShareInvitationErrorKind::InvalidClientTokenException`.
+    /// Returns `true` if the error kind is `AcceptResourceShareInvitationErrorKind::InvalidClientTokenException`.
     pub fn is_invalid_client_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptResourceShareInvitationErrorKind::InvalidClientTokenException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptResourceShareInvitationErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `AcceptResourceShareInvitationErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptResourceShareInvitationErrorKind::MalformedArnException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptResourceShareInvitationErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `AcceptResourceShareInvitationErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptResourceShareInvitationErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptResourceShareInvitationErrorKind::ResourceShareInvitationAlreadyAcceptedException`.
+    /// Returns `true` if the error kind is `AcceptResourceShareInvitationErrorKind::ResourceShareInvitationAlreadyAcceptedException`.
     pub fn is_resource_share_invitation_already_accepted_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -173,7 +173,7 @@ impl AcceptResourceShareInvitationError {
             )
         )
     }
-    /// Returns true if the error kind is `AcceptResourceShareInvitationErrorKind::ResourceShareInvitationAlreadyRejectedException`.
+    /// Returns `true` if the error kind is `AcceptResourceShareInvitationErrorKind::ResourceShareInvitationAlreadyRejectedException`.
     pub fn is_resource_share_invitation_already_rejected_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -182,28 +182,28 @@ impl AcceptResourceShareInvitationError {
             )
         )
     }
-    /// Returns true if the error kind is `AcceptResourceShareInvitationErrorKind::ResourceShareInvitationArnNotFoundException`.
+    /// Returns `true` if the error kind is `AcceptResourceShareInvitationErrorKind::ResourceShareInvitationArnNotFoundException`.
     pub fn is_resource_share_invitation_arn_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptResourceShareInvitationErrorKind::ResourceShareInvitationArnNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptResourceShareInvitationErrorKind::ResourceShareInvitationExpiredException`.
+    /// Returns `true` if the error kind is `AcceptResourceShareInvitationErrorKind::ResourceShareInvitationExpiredException`.
     pub fn is_resource_share_invitation_expired_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptResourceShareInvitationErrorKind::ResourceShareInvitationExpiredException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptResourceShareInvitationErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `AcceptResourceShareInvitationErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptResourceShareInvitationErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptResourceShareInvitationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `AcceptResourceShareInvitationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -285,7 +285,7 @@ pub enum AssociateResourceShareErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateResourceShareError {
@@ -365,70 +365,70 @@ impl AssociateResourceShareError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateResourceShareErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `AssociateResourceShareErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResourceShareErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResourceShareErrorKind::InvalidClientTokenException`.
+    /// Returns `true` if the error kind is `AssociateResourceShareErrorKind::InvalidClientTokenException`.
     pub fn is_invalid_client_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResourceShareErrorKind::InvalidClientTokenException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResourceShareErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AssociateResourceShareErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResourceShareErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResourceShareErrorKind::InvalidStateTransitionException`.
+    /// Returns `true` if the error kind is `AssociateResourceShareErrorKind::InvalidStateTransitionException`.
     pub fn is_invalid_state_transition_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResourceShareErrorKind::InvalidStateTransitionException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResourceShareErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `AssociateResourceShareErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResourceShareErrorKind::MalformedArnException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResourceShareErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `AssociateResourceShareErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResourceShareErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResourceShareErrorKind::ResourceShareLimitExceededException`.
+    /// Returns `true` if the error kind is `AssociateResourceShareErrorKind::ResourceShareLimitExceededException`.
     pub fn is_resource_share_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResourceShareErrorKind::ResourceShareLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResourceShareErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `AssociateResourceShareErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResourceShareErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResourceShareErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `AssociateResourceShareErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResourceShareErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResourceShareErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `AssociateResourceShareErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -487,7 +487,7 @@ pub enum AssociateResourceSharePermissionErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateResourceSharePermissionError {
@@ -573,49 +573,49 @@ impl AssociateResourceSharePermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateResourceSharePermissionErrorKind::InvalidClientTokenException`.
+    /// Returns `true` if the error kind is `AssociateResourceSharePermissionErrorKind::InvalidClientTokenException`.
     pub fn is_invalid_client_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResourceSharePermissionErrorKind::InvalidClientTokenException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResourceSharePermissionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AssociateResourceSharePermissionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResourceSharePermissionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResourceSharePermissionErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `AssociateResourceSharePermissionErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResourceSharePermissionErrorKind::MalformedArnException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResourceSharePermissionErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `AssociateResourceSharePermissionErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResourceSharePermissionErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResourceSharePermissionErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `AssociateResourceSharePermissionErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResourceSharePermissionErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResourceSharePermissionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `AssociateResourceSharePermissionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResourceSharePermissionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResourceSharePermissionErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `AssociateResourceSharePermissionErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -688,7 +688,7 @@ pub enum CreateResourceShareErrorKind {
     TagPolicyViolationException(crate::error::TagPolicyViolationException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateResourceShareError {
@@ -765,77 +765,77 @@ impl CreateResourceShareError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateResourceShareErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateResourceShareErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceShareErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceShareErrorKind::InvalidClientTokenException`.
+    /// Returns `true` if the error kind is `CreateResourceShareErrorKind::InvalidClientTokenException`.
     pub fn is_invalid_client_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceShareErrorKind::InvalidClientTokenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceShareErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateResourceShareErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceShareErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceShareErrorKind::InvalidStateTransitionException`.
+    /// Returns `true` if the error kind is `CreateResourceShareErrorKind::InvalidStateTransitionException`.
     pub fn is_invalid_state_transition_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceShareErrorKind::InvalidStateTransitionException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceShareErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `CreateResourceShareErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceShareErrorKind::MalformedArnException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceShareErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `CreateResourceShareErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceShareErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceShareErrorKind::ResourceShareLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateResourceShareErrorKind::ResourceShareLimitExceededException`.
     pub fn is_resource_share_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceShareErrorKind::ResourceShareLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceShareErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `CreateResourceShareErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceShareErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceShareErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateResourceShareErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceShareErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceShareErrorKind::TagPolicyViolationException`.
+    /// Returns `true` if the error kind is `CreateResourceShareErrorKind::TagPolicyViolationException`.
     pub fn is_tag_policy_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceShareErrorKind::TagPolicyViolationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceShareErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `CreateResourceShareErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -898,7 +898,7 @@ pub enum DeleteResourceShareErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResourceShareError {
@@ -971,63 +971,63 @@ impl DeleteResourceShareError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResourceShareErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `DeleteResourceShareErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceShareErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceShareErrorKind::InvalidClientTokenException`.
+    /// Returns `true` if the error kind is `DeleteResourceShareErrorKind::InvalidClientTokenException`.
     pub fn is_invalid_client_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceShareErrorKind::InvalidClientTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceShareErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteResourceShareErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceShareErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceShareErrorKind::InvalidStateTransitionException`.
+    /// Returns `true` if the error kind is `DeleteResourceShareErrorKind::InvalidStateTransitionException`.
     pub fn is_invalid_state_transition_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceShareErrorKind::InvalidStateTransitionException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceShareErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `DeleteResourceShareErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceShareErrorKind::MalformedArnException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceShareErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DeleteResourceShareErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceShareErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceShareErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `DeleteResourceShareErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceShareErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceShareErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteResourceShareErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceShareErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceShareErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `DeleteResourceShareErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1088,7 +1088,7 @@ pub enum DisassociateResourceShareErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateResourceShareError {
@@ -1172,70 +1172,70 @@ impl DisassociateResourceShareError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateResourceShareErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `DisassociateResourceShareErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResourceShareErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResourceShareErrorKind::InvalidClientTokenException`.
+    /// Returns `true` if the error kind is `DisassociateResourceShareErrorKind::InvalidClientTokenException`.
     pub fn is_invalid_client_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResourceShareErrorKind::InvalidClientTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResourceShareErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DisassociateResourceShareErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResourceShareErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResourceShareErrorKind::InvalidStateTransitionException`.
+    /// Returns `true` if the error kind is `DisassociateResourceShareErrorKind::InvalidStateTransitionException`.
     pub fn is_invalid_state_transition_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResourceShareErrorKind::InvalidStateTransitionException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResourceShareErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `DisassociateResourceShareErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResourceShareErrorKind::MalformedArnException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResourceShareErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DisassociateResourceShareErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResourceShareErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResourceShareErrorKind::ResourceShareLimitExceededException`.
+    /// Returns `true` if the error kind is `DisassociateResourceShareErrorKind::ResourceShareLimitExceededException`.
     pub fn is_resource_share_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResourceShareErrorKind::ResourceShareLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResourceShareErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `DisassociateResourceShareErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResourceShareErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResourceShareErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DisassociateResourceShareErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResourceShareErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResourceShareErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `DisassociateResourceShareErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1298,7 +1298,7 @@ pub enum DisassociateResourceSharePermissionErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateResourceSharePermissionError {
@@ -1387,56 +1387,56 @@ impl DisassociateResourceSharePermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateResourceSharePermissionErrorKind::InvalidClientTokenException`.
+    /// Returns `true` if the error kind is `DisassociateResourceSharePermissionErrorKind::InvalidClientTokenException`.
     pub fn is_invalid_client_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResourceSharePermissionErrorKind::InvalidClientTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResourceSharePermissionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DisassociateResourceSharePermissionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResourceSharePermissionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResourceSharePermissionErrorKind::InvalidStateTransitionException`.
+    /// Returns `true` if the error kind is `DisassociateResourceSharePermissionErrorKind::InvalidStateTransitionException`.
     pub fn is_invalid_state_transition_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResourceSharePermissionErrorKind::InvalidStateTransitionException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResourceSharePermissionErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `DisassociateResourceSharePermissionErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResourceSharePermissionErrorKind::MalformedArnException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResourceSharePermissionErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DisassociateResourceSharePermissionErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResourceSharePermissionErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResourceSharePermissionErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `DisassociateResourceSharePermissionErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResourceSharePermissionErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResourceSharePermissionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DisassociateResourceSharePermissionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResourceSharePermissionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResourceSharePermissionErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `DisassociateResourceSharePermissionErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1497,7 +1497,7 @@ pub enum EnableSharingWithAwsOrganizationErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableSharingWithAwsOrganizationError {
@@ -1571,21 +1571,21 @@ impl EnableSharingWithAwsOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableSharingWithAwsOrganizationErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `EnableSharingWithAwsOrganizationErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableSharingWithAwsOrganizationErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `EnableSharingWithAwsOrganizationErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `EnableSharingWithAwsOrganizationErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableSharingWithAwsOrganizationErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `EnableSharingWithAwsOrganizationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `EnableSharingWithAwsOrganizationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1635,7 +1635,7 @@ pub enum GetPermissionErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPermissionError {
@@ -1703,39 +1703,39 @@ impl GetPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPermissionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetPermissionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPermissionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetPermissionErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `GetPermissionErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(&self.kind, GetPermissionErrorKind::MalformedArnException(_))
     }
-    /// Returns true if the error kind is `GetPermissionErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `GetPermissionErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPermissionErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `GetPermissionErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `GetPermissionErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPermissionErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `GetPermissionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetPermissionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPermissionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetPermissionErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `GetPermissionErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1782,7 +1782,7 @@ pub enum GetResourcePoliciesErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourcePoliciesError {
@@ -1850,42 +1850,42 @@ impl GetResourcePoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourcePoliciesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetResourcePoliciesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePoliciesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePoliciesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetResourcePoliciesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePoliciesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePoliciesErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `GetResourcePoliciesErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePoliciesErrorKind::MalformedArnException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePoliciesErrorKind::ResourceArnNotFoundException`.
+    /// Returns `true` if the error kind is `GetResourcePoliciesErrorKind::ResourceArnNotFoundException`.
     pub fn is_resource_arn_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePoliciesErrorKind::ResourceArnNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePoliciesErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `GetResourcePoliciesErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePoliciesErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePoliciesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetResourcePoliciesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1934,7 +1934,7 @@ pub enum GetResourceShareAssociationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourceShareAssociationsError {
@@ -2013,49 +2013,49 @@ impl GetResourceShareAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourceShareAssociationsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetResourceShareAssociationsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceShareAssociationsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceShareAssociationsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetResourceShareAssociationsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceShareAssociationsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceShareAssociationsErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `GetResourceShareAssociationsErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceShareAssociationsErrorKind::MalformedArnException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceShareAssociationsErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `GetResourceShareAssociationsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceShareAssociationsErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceShareAssociationsErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `GetResourceShareAssociationsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceShareAssociationsErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceShareAssociationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetResourceShareAssociationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceShareAssociationsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceShareAssociationsErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `GetResourceShareAssociationsErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2117,7 +2117,7 @@ pub enum GetResourceShareInvitationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourceShareInvitationsError {
@@ -2197,56 +2197,56 @@ impl GetResourceShareInvitationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourceShareInvitationsErrorKind::InvalidMaxResultsException`.
+    /// Returns `true` if the error kind is `GetResourceShareInvitationsErrorKind::InvalidMaxResultsException`.
     pub fn is_invalid_max_results_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceShareInvitationsErrorKind::InvalidMaxResultsException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceShareInvitationsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetResourceShareInvitationsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceShareInvitationsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceShareInvitationsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetResourceShareInvitationsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceShareInvitationsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceShareInvitationsErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `GetResourceShareInvitationsErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceShareInvitationsErrorKind::MalformedArnException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceShareInvitationsErrorKind::ResourceShareInvitationArnNotFoundException`.
+    /// Returns `true` if the error kind is `GetResourceShareInvitationsErrorKind::ResourceShareInvitationArnNotFoundException`.
     pub fn is_resource_share_invitation_arn_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceShareInvitationsErrorKind::ResourceShareInvitationArnNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceShareInvitationsErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `GetResourceShareInvitationsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceShareInvitationsErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceShareInvitationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetResourceShareInvitationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceShareInvitationsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceShareInvitationsErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `GetResourceShareInvitationsErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2301,7 +2301,7 @@ pub enum GetResourceSharesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourceSharesError {
@@ -2369,42 +2369,42 @@ impl GetResourceSharesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourceSharesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetResourceSharesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceSharesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceSharesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetResourceSharesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceSharesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceSharesErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `GetResourceSharesErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceSharesErrorKind::MalformedArnException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceSharesErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `GetResourceSharesErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceSharesErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceSharesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetResourceSharesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceSharesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceSharesErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `GetResourceSharesErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2461,7 +2461,7 @@ pub enum ListPendingInvitationResourcesErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPendingInvitationResourcesError {
@@ -2555,60 +2555,60 @@ impl ListPendingInvitationResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPendingInvitationResourcesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListPendingInvitationResourcesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPendingInvitationResourcesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListPendingInvitationResourcesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListPendingInvitationResourcesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPendingInvitationResourcesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListPendingInvitationResourcesErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `ListPendingInvitationResourcesErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPendingInvitationResourcesErrorKind::MalformedArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListPendingInvitationResourcesErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `ListPendingInvitationResourcesErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPendingInvitationResourcesErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListPendingInvitationResourcesErrorKind::ResourceShareInvitationAlreadyRejectedException`.
+    /// Returns `true` if the error kind is `ListPendingInvitationResourcesErrorKind::ResourceShareInvitationAlreadyRejectedException`.
     pub fn is_resource_share_invitation_already_rejected_exception(&self) -> bool {
         matches!(&self.kind, ListPendingInvitationResourcesErrorKind::ResourceShareInvitationAlreadyRejectedException(_))
     }
-    /// Returns true if the error kind is `ListPendingInvitationResourcesErrorKind::ResourceShareInvitationArnNotFoundException`.
+    /// Returns `true` if the error kind is `ListPendingInvitationResourcesErrorKind::ResourceShareInvitationArnNotFoundException`.
     pub fn is_resource_share_invitation_arn_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPendingInvitationResourcesErrorKind::ResourceShareInvitationArnNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListPendingInvitationResourcesErrorKind::ResourceShareInvitationExpiredException`.
+    /// Returns `true` if the error kind is `ListPendingInvitationResourcesErrorKind::ResourceShareInvitationExpiredException`.
     pub fn is_resource_share_invitation_expired_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPendingInvitationResourcesErrorKind::ResourceShareInvitationExpiredException(_)
         )
     }
-    /// Returns true if the error kind is `ListPendingInvitationResourcesErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListPendingInvitationResourcesErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPendingInvitationResourcesErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListPendingInvitationResourcesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListPendingInvitationResourcesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2676,7 +2676,7 @@ pub enum ListPermissionsErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPermissionsError {
@@ -2743,35 +2743,35 @@ impl ListPermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPermissionsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListPermissionsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPermissionsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListPermissionsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListPermissionsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPermissionsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListPermissionsErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `ListPermissionsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPermissionsErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `ListPermissionsErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListPermissionsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPermissionsErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListPermissionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListPermissionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2817,7 +2817,7 @@ pub enum ListPrincipalsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPrincipalsError {
@@ -2885,42 +2885,42 @@ impl ListPrincipalsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPrincipalsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListPrincipalsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPrincipalsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListPrincipalsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListPrincipalsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPrincipalsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListPrincipalsErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `ListPrincipalsErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPrincipalsErrorKind::MalformedArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListPrincipalsErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListPrincipalsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPrincipalsErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListPrincipalsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListPrincipalsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPrincipalsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListPrincipalsErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `ListPrincipalsErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2969,7 +2969,7 @@ pub enum ListResourcesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourcesError {
@@ -3038,46 +3038,46 @@ impl ListResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::InvalidResourceTypeException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::InvalidResourceTypeException`.
     pub fn is_invalid_resource_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::InvalidResourceTypeException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(&self.kind, ListResourcesErrorKind::MalformedArnException(_))
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3127,7 +3127,7 @@ pub enum ListResourceSharePermissionsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourceSharePermissionsError {
@@ -3206,49 +3206,49 @@ impl ListResourceSharePermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResourceSharePermissionsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListResourceSharePermissionsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceSharePermissionsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceSharePermissionsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListResourceSharePermissionsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceSharePermissionsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceSharePermissionsErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `ListResourceSharePermissionsErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceSharePermissionsErrorKind::MalformedArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceSharePermissionsErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `ListResourceSharePermissionsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceSharePermissionsErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceSharePermissionsErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListResourceSharePermissionsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceSharePermissionsErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceSharePermissionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListResourceSharePermissionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceSharePermissionsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceSharePermissionsErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `ListResourceSharePermissionsErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3300,7 +3300,7 @@ pub enum ListResourceTypesErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourceTypesError {
@@ -3366,28 +3366,28 @@ impl ListResourceTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResourceTypesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListResourceTypesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceTypesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceTypesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListResourceTypesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceTypesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceTypesErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `ListResourceTypesErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourceTypesErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourceTypesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListResourceTypesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3436,7 +3436,7 @@ pub enum PromoteResourceShareCreatedFromPolicyErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PromoteResourceShareCreatedFromPolicyError {
@@ -3525,56 +3525,56 @@ impl PromoteResourceShareCreatedFromPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PromoteResourceShareCreatedFromPolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PromoteResourceShareCreatedFromPolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PromoteResourceShareCreatedFromPolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PromoteResourceShareCreatedFromPolicyErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `PromoteResourceShareCreatedFromPolicyErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             PromoteResourceShareCreatedFromPolicyErrorKind::MalformedArnException(_)
         )
     }
-    /// Returns true if the error kind is `PromoteResourceShareCreatedFromPolicyErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `PromoteResourceShareCreatedFromPolicyErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PromoteResourceShareCreatedFromPolicyErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PromoteResourceShareCreatedFromPolicyErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `PromoteResourceShareCreatedFromPolicyErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             PromoteResourceShareCreatedFromPolicyErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `PromoteResourceShareCreatedFromPolicyErrorKind::ResourceShareLimitExceededException`.
+    /// Returns `true` if the error kind is `PromoteResourceShareCreatedFromPolicyErrorKind::ResourceShareLimitExceededException`.
     pub fn is_resource_share_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PromoteResourceShareCreatedFromPolicyErrorKind::ResourceShareLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PromoteResourceShareCreatedFromPolicyErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `PromoteResourceShareCreatedFromPolicyErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             PromoteResourceShareCreatedFromPolicyErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `PromoteResourceShareCreatedFromPolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PromoteResourceShareCreatedFromPolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PromoteResourceShareCreatedFromPolicyErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PromoteResourceShareCreatedFromPolicyErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `PromoteResourceShareCreatedFromPolicyErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3656,7 +3656,7 @@ pub enum RejectResourceShareInvitationErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RejectResourceShareInvitationError {
@@ -3753,35 +3753,35 @@ impl RejectResourceShareInvitationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RejectResourceShareInvitationErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `RejectResourceShareInvitationErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectResourceShareInvitationErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `RejectResourceShareInvitationErrorKind::InvalidClientTokenException`.
+    /// Returns `true` if the error kind is `RejectResourceShareInvitationErrorKind::InvalidClientTokenException`.
     pub fn is_invalid_client_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectResourceShareInvitationErrorKind::InvalidClientTokenException(_)
         )
     }
-    /// Returns true if the error kind is `RejectResourceShareInvitationErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `RejectResourceShareInvitationErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectResourceShareInvitationErrorKind::MalformedArnException(_)
         )
     }
-    /// Returns true if the error kind is `RejectResourceShareInvitationErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `RejectResourceShareInvitationErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectResourceShareInvitationErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `RejectResourceShareInvitationErrorKind::ResourceShareInvitationAlreadyAcceptedException`.
+    /// Returns `true` if the error kind is `RejectResourceShareInvitationErrorKind::ResourceShareInvitationAlreadyAcceptedException`.
     pub fn is_resource_share_invitation_already_accepted_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3790,7 +3790,7 @@ impl RejectResourceShareInvitationError {
             )
         )
     }
-    /// Returns true if the error kind is `RejectResourceShareInvitationErrorKind::ResourceShareInvitationAlreadyRejectedException`.
+    /// Returns `true` if the error kind is `RejectResourceShareInvitationErrorKind::ResourceShareInvitationAlreadyRejectedException`.
     pub fn is_resource_share_invitation_already_rejected_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3799,28 +3799,28 @@ impl RejectResourceShareInvitationError {
             )
         )
     }
-    /// Returns true if the error kind is `RejectResourceShareInvitationErrorKind::ResourceShareInvitationArnNotFoundException`.
+    /// Returns `true` if the error kind is `RejectResourceShareInvitationErrorKind::ResourceShareInvitationArnNotFoundException`.
     pub fn is_resource_share_invitation_arn_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectResourceShareInvitationErrorKind::ResourceShareInvitationArnNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RejectResourceShareInvitationErrorKind::ResourceShareInvitationExpiredException`.
+    /// Returns `true` if the error kind is `RejectResourceShareInvitationErrorKind::ResourceShareInvitationExpiredException`.
     pub fn is_resource_share_invitation_expired_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectResourceShareInvitationErrorKind::ResourceShareInvitationExpiredException(_)
         )
     }
-    /// Returns true if the error kind is `RejectResourceShareInvitationErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `RejectResourceShareInvitationErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             RejectResourceShareInvitationErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `RejectResourceShareInvitationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `RejectResourceShareInvitationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3897,7 +3897,7 @@ pub enum TagResourceErrorKind {
     TagPolicyViolationException(crate::error::TagPolicyViolationException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3967,50 +3967,50 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::MalformedArnException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceArnNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceArnNotFoundException`.
     pub fn is_resource_arn_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceArnNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ServerInternalException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TagLimitExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TagLimitExceededException`.
     pub fn is_tag_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::TagLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TagPolicyViolationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TagPolicyViolationException`.
     pub fn is_tag_policy_violation_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::TagPolicyViolationException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4053,7 +4053,7 @@ pub enum UntagResourceErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -4118,21 +4118,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4183,7 +4183,7 @@ pub enum UpdateResourceShareErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateResourceShareError {
@@ -4258,63 +4258,63 @@ impl UpdateResourceShareError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateResourceShareErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `UpdateResourceShareErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceShareErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceShareErrorKind::InvalidClientTokenException`.
+    /// Returns `true` if the error kind is `UpdateResourceShareErrorKind::InvalidClientTokenException`.
     pub fn is_invalid_client_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceShareErrorKind::InvalidClientTokenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceShareErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateResourceShareErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceShareErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceShareErrorKind::MalformedArnException`.
+    /// Returns `true` if the error kind is `UpdateResourceShareErrorKind::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceShareErrorKind::MalformedArnException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceShareErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `UpdateResourceShareErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceShareErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceShareErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `UpdateResourceShareErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceShareErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceShareErrorKind::ServerInternalException`.
+    /// Returns `true` if the error kind is `UpdateResourceShareErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceShareErrorKind::ServerInternalException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceShareErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateResourceShareErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceShareErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceShareErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `UpdateResourceShareErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,

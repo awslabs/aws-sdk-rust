@@ -26,7 +26,7 @@ pub enum AssociateFirewallRuleGroupErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateFirewallRuleGroupError {
@@ -97,49 +97,49 @@ impl AssociateFirewallRuleGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateFirewallRuleGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateFirewallRuleGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateFirewallRuleGroupErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateFirewallRuleGroupErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `AssociateFirewallRuleGroupErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateFirewallRuleGroupErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateFirewallRuleGroupErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `AssociateFirewallRuleGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateFirewallRuleGroupErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateFirewallRuleGroupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AssociateFirewallRuleGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateFirewallRuleGroupErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateFirewallRuleGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateFirewallRuleGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateFirewallRuleGroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateFirewallRuleGroupErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AssociateFirewallRuleGroupErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateFirewallRuleGroupErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateFirewallRuleGroupErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AssociateFirewallRuleGroupErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -191,7 +191,7 @@ pub enum AssociateResolverEndpointIpAddressErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateResolverEndpointIpAddressError {
@@ -277,49 +277,49 @@ impl AssociateResolverEndpointIpAddressError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateResolverEndpointIpAddressErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `AssociateResolverEndpointIpAddressErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverEndpointIpAddressErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverEndpointIpAddressErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AssociateResolverEndpointIpAddressErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverEndpointIpAddressErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverEndpointIpAddressErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `AssociateResolverEndpointIpAddressErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverEndpointIpAddressErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverEndpointIpAddressErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AssociateResolverEndpointIpAddressErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverEndpointIpAddressErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverEndpointIpAddressErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `AssociateResolverEndpointIpAddressErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverEndpointIpAddressErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverEndpointIpAddressErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateResolverEndpointIpAddressErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverEndpointIpAddressErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverEndpointIpAddressErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AssociateResolverEndpointIpAddressErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -385,7 +385,7 @@ pub enum AssociateResolverQueryLogConfigErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateResolverQueryLogConfigError {
@@ -472,56 +472,56 @@ impl AssociateResolverQueryLogConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateResolverQueryLogConfigErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateResolverQueryLogConfigErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverQueryLogConfigErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverQueryLogConfigErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `AssociateResolverQueryLogConfigErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverQueryLogConfigErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverQueryLogConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AssociateResolverQueryLogConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverQueryLogConfigErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverQueryLogConfigErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `AssociateResolverQueryLogConfigErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverQueryLogConfigErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverQueryLogConfigErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AssociateResolverQueryLogConfigErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverQueryLogConfigErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverQueryLogConfigErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `AssociateResolverQueryLogConfigErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverQueryLogConfigErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverQueryLogConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateResolverQueryLogConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverQueryLogConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverQueryLogConfigErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AssociateResolverQueryLogConfigErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -586,7 +586,7 @@ pub enum AssociateResolverRuleErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateResolverRuleError {
@@ -656,56 +656,56 @@ impl AssociateResolverRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateResolverRuleErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `AssociateResolverRuleErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverRuleErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverRuleErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AssociateResolverRuleErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverRuleErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverRuleErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `AssociateResolverRuleErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverRuleErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverRuleErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AssociateResolverRuleErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverRuleErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverRuleErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `AssociateResolverRuleErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverRuleErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateResolverRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverRuleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverRuleErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `AssociateResolverRuleErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateResolverRuleErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateResolverRuleErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AssociateResolverRuleErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -752,7 +752,7 @@ pub enum CreateFirewallDomainListErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFirewallDomainListError {
@@ -821,35 +821,35 @@ impl CreateFirewallDomainListError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFirewallDomainListErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateFirewallDomainListErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFirewallDomainListErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFirewallDomainListErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `CreateFirewallDomainListErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFirewallDomainListErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFirewallDomainListErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateFirewallDomainListErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFirewallDomainListErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFirewallDomainListErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateFirewallDomainListErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFirewallDomainListErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFirewallDomainListErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateFirewallDomainListErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -897,7 +897,7 @@ pub enum CreateFirewallRuleErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFirewallRuleError {
@@ -965,42 +965,42 @@ impl CreateFirewallRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFirewallRuleErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateFirewallRuleErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFirewallRuleErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFirewallRuleErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `CreateFirewallRuleErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFirewallRuleErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFirewallRuleErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateFirewallRuleErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFirewallRuleErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFirewallRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateFirewallRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFirewallRuleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFirewallRuleErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateFirewallRuleErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFirewallRuleErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFirewallRuleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateFirewallRuleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1045,7 +1045,7 @@ pub enum CreateFirewallRuleGroupErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFirewallRuleGroupError {
@@ -1114,35 +1114,35 @@ impl CreateFirewallRuleGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFirewallRuleGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateFirewallRuleGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFirewallRuleGroupErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFirewallRuleGroupErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `CreateFirewallRuleGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFirewallRuleGroupErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFirewallRuleGroupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateFirewallRuleGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFirewallRuleGroupErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFirewallRuleGroupErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateFirewallRuleGroupErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFirewallRuleGroupErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFirewallRuleGroupErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateFirewallRuleGroupErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1190,7 +1190,7 @@ pub enum CreateResolverEndpointErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateResolverEndpointError {
@@ -1259,49 +1259,49 @@ impl CreateResolverEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateResolverEndpointErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `CreateResolverEndpointErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverEndpointErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverEndpointErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateResolverEndpointErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverEndpointErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverEndpointErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateResolverEndpointErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverEndpointErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverEndpointErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateResolverEndpointErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverEndpointErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverEndpointErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateResolverEndpointErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverEndpointErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverEndpointErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateResolverEndpointErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverEndpointErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverEndpointErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateResolverEndpointErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1353,7 +1353,7 @@ pub enum CreateResolverQueryLogConfigErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateResolverQueryLogConfigError {
@@ -1429,56 +1429,56 @@ impl CreateResolverQueryLogConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateResolverQueryLogConfigErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateResolverQueryLogConfigErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverQueryLogConfigErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverQueryLogConfigErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `CreateResolverQueryLogConfigErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverQueryLogConfigErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverQueryLogConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateResolverQueryLogConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverQueryLogConfigErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverQueryLogConfigErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateResolverQueryLogConfigErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverQueryLogConfigErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverQueryLogConfigErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateResolverQueryLogConfigErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverQueryLogConfigErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverQueryLogConfigErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateResolverQueryLogConfigErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverQueryLogConfigErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverQueryLogConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateResolverQueryLogConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverQueryLogConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverQueryLogConfigErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateResolverQueryLogConfigErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1537,7 +1537,7 @@ pub enum CreateResolverRuleErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateResolverRuleError {
@@ -1607,56 +1607,56 @@ impl CreateResolverRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateResolverRuleErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `CreateResolverRuleErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverRuleErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverRuleErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateResolverRuleErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverRuleErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverRuleErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateResolverRuleErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverRuleErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverRuleErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateResolverRuleErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverRuleErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverRuleErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateResolverRuleErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverRuleErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateResolverRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverRuleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverRuleErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateResolverRuleErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResolverRuleErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResolverRuleErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateResolverRuleErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1703,7 +1703,7 @@ pub enum DeleteFirewallDomainListErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFirewallDomainListError {
@@ -1772,35 +1772,35 @@ impl DeleteFirewallDomainListError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFirewallDomainListErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteFirewallDomainListErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFirewallDomainListErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFirewallDomainListErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteFirewallDomainListErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFirewallDomainListErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFirewallDomainListErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DeleteFirewallDomainListErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFirewallDomainListErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFirewallDomainListErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFirewallDomainListErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFirewallDomainListErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFirewallDomainListErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteFirewallDomainListErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1844,7 +1844,7 @@ pub enum DeleteFirewallRuleErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFirewallRuleError {
@@ -1910,28 +1910,28 @@ impl DeleteFirewallRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFirewallRuleErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteFirewallRuleErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFirewallRuleErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFirewallRuleErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DeleteFirewallRuleErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFirewallRuleErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFirewallRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFirewallRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFirewallRuleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFirewallRuleErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteFirewallRuleErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1976,7 +1976,7 @@ pub enum DeleteFirewallRuleGroupErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFirewallRuleGroupError {
@@ -2046,42 +2046,42 @@ impl DeleteFirewallRuleGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFirewallRuleGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteFirewallRuleGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFirewallRuleGroupErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFirewallRuleGroupErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteFirewallRuleGroupErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFirewallRuleGroupErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFirewallRuleGroupErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DeleteFirewallRuleGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFirewallRuleGroupErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFirewallRuleGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFirewallRuleGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFirewallRuleGroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFirewallRuleGroupErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteFirewallRuleGroupErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFirewallRuleGroupErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFirewallRuleGroupErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteFirewallRuleGroupErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2126,7 +2126,7 @@ pub enum DeleteResolverEndpointErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResolverEndpointError {
@@ -2193,35 +2193,35 @@ impl DeleteResolverEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResolverEndpointErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DeleteResolverEndpointErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResolverEndpointErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResolverEndpointErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteResolverEndpointErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResolverEndpointErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResolverEndpointErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteResolverEndpointErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResolverEndpointErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResolverEndpointErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteResolverEndpointErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResolverEndpointErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResolverEndpointErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteResolverEndpointErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2267,7 +2267,7 @@ pub enum DeleteResolverQueryLogConfigErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResolverQueryLogConfigError {
@@ -2341,42 +2341,42 @@ impl DeleteResolverQueryLogConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResolverQueryLogConfigErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteResolverQueryLogConfigErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResolverQueryLogConfigErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResolverQueryLogConfigErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DeleteResolverQueryLogConfigErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResolverQueryLogConfigErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResolverQueryLogConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteResolverQueryLogConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResolverQueryLogConfigErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResolverQueryLogConfigErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteResolverQueryLogConfigErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResolverQueryLogConfigErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResolverQueryLogConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteResolverQueryLogConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResolverQueryLogConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResolverQueryLogConfigErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteResolverQueryLogConfigErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2427,7 +2427,7 @@ pub enum DeleteResolverRuleErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResolverRuleError {
@@ -2494,35 +2494,35 @@ impl DeleteResolverRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResolverRuleErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DeleteResolverRuleErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResolverRuleErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResolverRuleErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteResolverRuleErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResolverRuleErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResolverRuleErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `DeleteResolverRuleErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResolverRuleErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResolverRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteResolverRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResolverRuleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResolverRuleErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteResolverRuleErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2568,7 +2568,7 @@ pub enum DisassociateFirewallRuleGroupErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateFirewallRuleGroupError {
@@ -2643,42 +2643,42 @@ impl DisassociateFirewallRuleGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateFirewallRuleGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisassociateFirewallRuleGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFirewallRuleGroupErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFirewallRuleGroupErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DisassociateFirewallRuleGroupErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFirewallRuleGroupErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFirewallRuleGroupErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DisassociateFirewallRuleGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFirewallRuleGroupErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFirewallRuleGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateFirewallRuleGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFirewallRuleGroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFirewallRuleGroupErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DisassociateFirewallRuleGroupErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateFirewallRuleGroupErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateFirewallRuleGroupErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DisassociateFirewallRuleGroupErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2729,7 +2729,7 @@ pub enum DisassociateResolverEndpointIpAddressErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateResolverEndpointIpAddressError {
@@ -2812,42 +2812,42 @@ impl DisassociateResolverEndpointIpAddressError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateResolverEndpointIpAddressErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DisassociateResolverEndpointIpAddressErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResolverEndpointIpAddressErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResolverEndpointIpAddressErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DisassociateResolverEndpointIpAddressErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResolverEndpointIpAddressErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResolverEndpointIpAddressErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DisassociateResolverEndpointIpAddressErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResolverEndpointIpAddressErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResolverEndpointIpAddressErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `DisassociateResolverEndpointIpAddressErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResolverEndpointIpAddressErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResolverEndpointIpAddressErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateResolverEndpointIpAddressErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResolverEndpointIpAddressErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResolverEndpointIpAddressErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DisassociateResolverEndpointIpAddressErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2908,7 +2908,7 @@ pub enum DisassociateResolverQueryLogConfigErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateResolverQueryLogConfigError {
@@ -2991,42 +2991,42 @@ impl DisassociateResolverQueryLogConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateResolverQueryLogConfigErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisassociateResolverQueryLogConfigErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResolverQueryLogConfigErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResolverQueryLogConfigErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DisassociateResolverQueryLogConfigErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResolverQueryLogConfigErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResolverQueryLogConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DisassociateResolverQueryLogConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResolverQueryLogConfigErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResolverQueryLogConfigErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DisassociateResolverQueryLogConfigErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResolverQueryLogConfigErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResolverQueryLogConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateResolverQueryLogConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResolverQueryLogConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResolverQueryLogConfigErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DisassociateResolverQueryLogConfigErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3081,7 +3081,7 @@ pub enum DisassociateResolverRuleErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateResolverRuleError {
@@ -3149,28 +3149,28 @@ impl DisassociateResolverRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateResolverRuleErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DisassociateResolverRuleErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResolverRuleErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResolverRuleErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DisassociateResolverRuleErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResolverRuleErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResolverRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateResolverRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateResolverRuleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateResolverRuleErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DisassociateResolverRuleErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3215,7 +3215,7 @@ pub enum GetFirewallConfigErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFirewallConfigError {
@@ -3282,35 +3282,35 @@ impl GetFirewallConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFirewallConfigErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetFirewallConfigErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFirewallConfigErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetFirewallConfigErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `GetFirewallConfigErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFirewallConfigErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetFirewallConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetFirewallConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFirewallConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetFirewallConfigErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetFirewallConfigErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFirewallConfigErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetFirewallConfigErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetFirewallConfigErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3352,7 +3352,7 @@ pub enum GetFirewallDomainListErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFirewallDomainListError {
@@ -3418,28 +3418,28 @@ impl GetFirewallDomainListError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFirewallDomainListErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetFirewallDomainListErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFirewallDomainListErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetFirewallDomainListErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `GetFirewallDomainListErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFirewallDomainListErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetFirewallDomainListErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetFirewallDomainListErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFirewallDomainListErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetFirewallDomainListErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetFirewallDomainListErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3480,7 +3480,7 @@ pub enum GetFirewallRuleGroupErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFirewallRuleGroupError {
@@ -3546,28 +3546,28 @@ impl GetFirewallRuleGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFirewallRuleGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetFirewallRuleGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFirewallRuleGroupErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetFirewallRuleGroupErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `GetFirewallRuleGroupErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFirewallRuleGroupErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetFirewallRuleGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetFirewallRuleGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFirewallRuleGroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetFirewallRuleGroupErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetFirewallRuleGroupErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3608,7 +3608,7 @@ pub enum GetFirewallRuleGroupAssociationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFirewallRuleGroupAssociationError {
@@ -3683,28 +3683,28 @@ impl GetFirewallRuleGroupAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFirewallRuleGroupAssociationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetFirewallRuleGroupAssociationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFirewallRuleGroupAssociationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetFirewallRuleGroupAssociationErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `GetFirewallRuleGroupAssociationErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFirewallRuleGroupAssociationErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetFirewallRuleGroupAssociationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetFirewallRuleGroupAssociationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFirewallRuleGroupAssociationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetFirewallRuleGroupAssociationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetFirewallRuleGroupAssociationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3751,7 +3751,7 @@ pub enum GetFirewallRuleGroupPolicyErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFirewallRuleGroupPolicyError {
@@ -3820,35 +3820,35 @@ impl GetFirewallRuleGroupPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFirewallRuleGroupPolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetFirewallRuleGroupPolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFirewallRuleGroupPolicyErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetFirewallRuleGroupPolicyErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `GetFirewallRuleGroupPolicyErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFirewallRuleGroupPolicyErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetFirewallRuleGroupPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetFirewallRuleGroupPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFirewallRuleGroupPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetFirewallRuleGroupPolicyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetFirewallRuleGroupPolicyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFirewallRuleGroupPolicyErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetFirewallRuleGroupPolicyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetFirewallRuleGroupPolicyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3867,6 +3867,145 @@ impl std::error::Error for GetFirewallRuleGroupPolicyError {
             GetFirewallRuleGroupPolicyErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetFirewallRuleGroupPolicyErrorKind::ValidationException(_inner) => Some(_inner),
             GetFirewallRuleGroupPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetResolverConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetResolverConfigError {
+    /// Kind of error that occurred.
+    pub kind: GetResolverConfigErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetResolverConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetResolverConfigErrorKind {
+    /// <p>The current account doesn't have the IAM permissions required to perform the specified Resolver operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>We encountered an unknown error. Try again in a few minutes.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>One or more parameters in this request are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The specified resource doesn't exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request was throttled. Try again in a few minutes.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetResolverConfigError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetResolverConfigErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetResolverConfigErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
+            GetResolverConfigErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            GetResolverConfigErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetResolverConfigErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetResolverConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetResolverConfigError {
+    fn code(&self) -> Option<&str> {
+        GetResolverConfigError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetResolverConfigError {
+    /// Creates a new `GetResolverConfigError`.
+    pub fn new(kind: GetResolverConfigErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetResolverConfigError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetResolverConfigErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetResolverConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetResolverConfigErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetResolverConfigErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResolverConfigErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResolverConfigErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResolverConfigErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResolverConfigErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResolverConfigErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResolverConfigErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResolverConfigErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetResolverConfigErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResolverConfigErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for GetResolverConfigError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetResolverConfigErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetResolverConfigErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
+            GetResolverConfigErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            GetResolverConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetResolverConfigErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetResolverConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3896,7 +4035,7 @@ pub enum GetResolverDnssecConfigErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResolverDnssecConfigError {
@@ -3966,42 +4105,42 @@ impl GetResolverDnssecConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResolverDnssecConfigErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetResolverDnssecConfigErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverDnssecConfigErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverDnssecConfigErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `GetResolverDnssecConfigErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverDnssecConfigErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverDnssecConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetResolverDnssecConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverDnssecConfigErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverDnssecConfigErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetResolverDnssecConfigErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverDnssecConfigErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverDnssecConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetResolverDnssecConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverDnssecConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverDnssecConfigErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetResolverDnssecConfigErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4044,7 +4183,7 @@ pub enum GetResolverEndpointErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResolverEndpointError {
@@ -4110,28 +4249,28 @@ impl GetResolverEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResolverEndpointErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `GetResolverEndpointErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverEndpointErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverEndpointErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetResolverEndpointErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverEndpointErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverEndpointErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetResolverEndpointErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverEndpointErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverEndpointErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetResolverEndpointErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4176,7 +4315,7 @@ pub enum GetResolverQueryLogConfigErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResolverQueryLogConfigError {
@@ -4246,42 +4385,42 @@ impl GetResolverQueryLogConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResolverQueryLogConfigErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetResolverQueryLogConfigErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverQueryLogConfigErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverQueryLogConfigErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `GetResolverQueryLogConfigErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverQueryLogConfigErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverQueryLogConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetResolverQueryLogConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverQueryLogConfigErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverQueryLogConfigErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetResolverQueryLogConfigErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverQueryLogConfigErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverQueryLogConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetResolverQueryLogConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverQueryLogConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverQueryLogConfigErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetResolverQueryLogConfigErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4330,7 +4469,7 @@ pub enum GetResolverQueryLogConfigAssociationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResolverQueryLogConfigAssociationError {
@@ -4413,42 +4552,42 @@ impl GetResolverQueryLogConfigAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResolverQueryLogConfigAssociationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetResolverQueryLogConfigAssociationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverQueryLogConfigAssociationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverQueryLogConfigAssociationErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `GetResolverQueryLogConfigAssociationErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverQueryLogConfigAssociationErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverQueryLogConfigAssociationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetResolverQueryLogConfigAssociationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverQueryLogConfigAssociationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverQueryLogConfigAssociationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetResolverQueryLogConfigAssociationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverQueryLogConfigAssociationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverQueryLogConfigAssociationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetResolverQueryLogConfigAssociationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverQueryLogConfigAssociationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverQueryLogConfigAssociationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetResolverQueryLogConfigAssociationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4507,7 +4646,7 @@ pub enum GetResolverQueryLogConfigPolicyErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource doesn't exist.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResolverQueryLogConfigPolicyError {
@@ -4587,35 +4726,35 @@ impl GetResolverQueryLogConfigPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResolverQueryLogConfigPolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetResolverQueryLogConfigPolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverQueryLogConfigPolicyErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverQueryLogConfigPolicyErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `GetResolverQueryLogConfigPolicyErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverQueryLogConfigPolicyErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverQueryLogConfigPolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetResolverQueryLogConfigPolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverQueryLogConfigPolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverQueryLogConfigPolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetResolverQueryLogConfigPolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverQueryLogConfigPolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverQueryLogConfigPolicyErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `GetResolverQueryLogConfigPolicyErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4665,7 +4804,7 @@ pub enum GetResolverRuleErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResolverRuleError {
@@ -4731,28 +4870,28 @@ impl GetResolverRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResolverRuleErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `GetResolverRuleErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverRuleErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverRuleErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetResolverRuleErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverRuleErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetResolverRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverRuleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverRuleErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetResolverRuleErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetResolverRuleErrorKind::ThrottlingException(_))
     }
@@ -4790,7 +4929,7 @@ pub enum GetResolverRuleAssociationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResolverRuleAssociationError {
@@ -4858,28 +4997,28 @@ impl GetResolverRuleAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResolverRuleAssociationErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `GetResolverRuleAssociationErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverRuleAssociationErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverRuleAssociationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetResolverRuleAssociationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverRuleAssociationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverRuleAssociationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetResolverRuleAssociationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverRuleAssociationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverRuleAssociationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetResolverRuleAssociationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4920,7 +5059,7 @@ pub enum GetResolverRulePolicyErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource doesn't exist.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResolverRulePolicyError {
@@ -4985,21 +5124,21 @@ impl GetResolverRulePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResolverRulePolicyErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `GetResolverRulePolicyErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverRulePolicyErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverRulePolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetResolverRulePolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResolverRulePolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetResolverRulePolicyErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `GetResolverRulePolicyErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5045,7 +5184,7 @@ pub enum ImportFirewallDomainsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportFirewallDomainsError {
@@ -5114,49 +5253,49 @@ impl ImportFirewallDomainsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportFirewallDomainsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ImportFirewallDomainsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportFirewallDomainsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ImportFirewallDomainsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ImportFirewallDomainsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportFirewallDomainsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ImportFirewallDomainsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ImportFirewallDomainsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportFirewallDomainsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ImportFirewallDomainsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ImportFirewallDomainsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportFirewallDomainsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ImportFirewallDomainsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ImportFirewallDomainsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportFirewallDomainsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ImportFirewallDomainsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ImportFirewallDomainsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportFirewallDomainsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ImportFirewallDomainsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ImportFirewallDomainsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5200,7 +5339,7 @@ pub enum ListFirewallConfigsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFirewallConfigsError {
@@ -5266,28 +5405,28 @@ impl ListFirewallConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFirewallConfigsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListFirewallConfigsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallConfigsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallConfigsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListFirewallConfigsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallConfigsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallConfigsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListFirewallConfigsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallConfigsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallConfigsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListFirewallConfigsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5328,7 +5467,7 @@ pub enum ListFirewallDomainListsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFirewallDomainListsError {
@@ -5396,28 +5535,28 @@ impl ListFirewallDomainListsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFirewallDomainListsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListFirewallDomainListsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallDomainListsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallDomainListsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListFirewallDomainListsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallDomainListsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallDomainListsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListFirewallDomainListsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallDomainListsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallDomainListsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListFirewallDomainListsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5460,7 +5599,7 @@ pub enum ListFirewallDomainsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFirewallDomainsError {
@@ -5527,35 +5666,35 @@ impl ListFirewallDomainsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFirewallDomainsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListFirewallDomainsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallDomainsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallDomainsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListFirewallDomainsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallDomainsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallDomainsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListFirewallDomainsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallDomainsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallDomainsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListFirewallDomainsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallDomainsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallDomainsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListFirewallDomainsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5597,7 +5736,7 @@ pub enum ListFirewallRuleGroupAssociationsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFirewallRuleGroupAssociationsError {
@@ -5674,28 +5813,28 @@ impl ListFirewallRuleGroupAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFirewallRuleGroupAssociationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListFirewallRuleGroupAssociationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallRuleGroupAssociationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallRuleGroupAssociationsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListFirewallRuleGroupAssociationsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallRuleGroupAssociationsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallRuleGroupAssociationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListFirewallRuleGroupAssociationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallRuleGroupAssociationsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallRuleGroupAssociationsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListFirewallRuleGroupAssociationsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5740,7 +5879,7 @@ pub enum ListFirewallRuleGroupsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFirewallRuleGroupsError {
@@ -5806,28 +5945,28 @@ impl ListFirewallRuleGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFirewallRuleGroupsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListFirewallRuleGroupsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallRuleGroupsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallRuleGroupsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListFirewallRuleGroupsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallRuleGroupsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallRuleGroupsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListFirewallRuleGroupsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallRuleGroupsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallRuleGroupsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListFirewallRuleGroupsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5870,7 +6009,7 @@ pub enum ListFirewallRulesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFirewallRulesError {
@@ -5937,35 +6076,35 @@ impl ListFirewallRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFirewallRulesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListFirewallRulesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallRulesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallRulesErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListFirewallRulesErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallRulesErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallRulesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListFirewallRulesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallRulesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallRulesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListFirewallRulesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFirewallRulesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListFirewallRulesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListFirewallRulesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5982,6 +6121,156 @@ impl std::error::Error for ListFirewallRulesError {
             ListFirewallRulesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListFirewallRulesErrorKind::ValidationException(_inner) => Some(_inner),
             ListFirewallRulesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListResolverConfigs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListResolverConfigsError {
+    /// Kind of error that occurred.
+    pub kind: ListResolverConfigsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListResolverConfigs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListResolverConfigsErrorKind {
+    /// <p>The current account doesn't have the IAM permissions required to perform the specified Resolver operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>We encountered an unknown error. Try again in a few minutes.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>The value that you specified for <code>NextToken</code> in a <code>List</code> request isn't valid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>One or more parameters in this request are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request is invalid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The request was throttled. Try again in a few minutes.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListResolverConfigsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListResolverConfigsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListResolverConfigsErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
+            ListResolverConfigsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListResolverConfigsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListResolverConfigsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListResolverConfigsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListResolverConfigsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListResolverConfigsError {
+    fn code(&self) -> Option<&str> {
+        ListResolverConfigsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListResolverConfigsError {
+    /// Creates a new `ListResolverConfigsError`.
+    pub fn new(kind: ListResolverConfigsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListResolverConfigsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListResolverConfigsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListResolverConfigsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListResolverConfigsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListResolverConfigsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResolverConfigsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListResolverConfigsErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResolverConfigsErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListResolverConfigsErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResolverConfigsErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListResolverConfigsErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResolverConfigsErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListResolverConfigsErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResolverConfigsErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListResolverConfigsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListResolverConfigsErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for ListResolverConfigsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListResolverConfigsErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListResolverConfigsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
+            ListResolverConfigsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListResolverConfigsErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListResolverConfigsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListResolverConfigsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListResolverConfigsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -6011,7 +6300,7 @@ pub enum ListResolverDnssecConfigsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResolverDnssecConfigsError {
@@ -6081,42 +6370,42 @@ impl ListResolverDnssecConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResolverDnssecConfigsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListResolverDnssecConfigsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverDnssecConfigsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverDnssecConfigsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListResolverDnssecConfigsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverDnssecConfigsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverDnssecConfigsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListResolverDnssecConfigsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverDnssecConfigsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverDnssecConfigsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListResolverDnssecConfigsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverDnssecConfigsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverDnssecConfigsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListResolverDnssecConfigsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverDnssecConfigsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverDnssecConfigsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListResolverDnssecConfigsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6163,7 +6452,7 @@ pub enum ListResolverEndpointIpAddressesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResolverEndpointIpAddressesError {
@@ -6241,35 +6530,35 @@ impl ListResolverEndpointIpAddressesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResolverEndpointIpAddressesErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListResolverEndpointIpAddressesErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverEndpointIpAddressesErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverEndpointIpAddressesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListResolverEndpointIpAddressesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverEndpointIpAddressesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverEndpointIpAddressesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListResolverEndpointIpAddressesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverEndpointIpAddressesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverEndpointIpAddressesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListResolverEndpointIpAddressesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverEndpointIpAddressesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverEndpointIpAddressesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListResolverEndpointIpAddressesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6321,7 +6610,7 @@ pub enum ListResolverEndpointsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResolverEndpointsError {
@@ -6388,35 +6677,35 @@ impl ListResolverEndpointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResolverEndpointsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListResolverEndpointsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverEndpointsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverEndpointsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListResolverEndpointsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverEndpointsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverEndpointsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListResolverEndpointsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverEndpointsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverEndpointsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListResolverEndpointsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverEndpointsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverEndpointsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListResolverEndpointsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6462,7 +6751,7 @@ pub enum ListResolverQueryLogConfigAssociationsErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResolverQueryLogConfigAssociationsError {
@@ -6545,42 +6834,42 @@ impl ListResolverQueryLogConfigAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResolverQueryLogConfigAssociationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListResolverQueryLogConfigAssociationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverQueryLogConfigAssociationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverQueryLogConfigAssociationsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListResolverQueryLogConfigAssociationsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverQueryLogConfigAssociationsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverQueryLogConfigAssociationsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListResolverQueryLogConfigAssociationsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverQueryLogConfigAssociationsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverQueryLogConfigAssociationsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListResolverQueryLogConfigAssociationsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverQueryLogConfigAssociationsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverQueryLogConfigAssociationsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListResolverQueryLogConfigAssociationsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverQueryLogConfigAssociationsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverQueryLogConfigAssociationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListResolverQueryLogConfigAssociationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6641,7 +6930,7 @@ pub enum ListResolverQueryLogConfigsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResolverQueryLogConfigsError {
@@ -6715,42 +7004,42 @@ impl ListResolverQueryLogConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResolverQueryLogConfigsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListResolverQueryLogConfigsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverQueryLogConfigsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverQueryLogConfigsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListResolverQueryLogConfigsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverQueryLogConfigsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverQueryLogConfigsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListResolverQueryLogConfigsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverQueryLogConfigsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverQueryLogConfigsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListResolverQueryLogConfigsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverQueryLogConfigsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverQueryLogConfigsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListResolverQueryLogConfigsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverQueryLogConfigsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverQueryLogConfigsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListResolverQueryLogConfigsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6797,7 +7086,7 @@ pub enum ListResolverRuleAssociationsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResolverRuleAssociationsError {
@@ -6870,35 +7159,35 @@ impl ListResolverRuleAssociationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResolverRuleAssociationsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListResolverRuleAssociationsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverRuleAssociationsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverRuleAssociationsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListResolverRuleAssociationsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverRuleAssociationsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverRuleAssociationsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListResolverRuleAssociationsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverRuleAssociationsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverRuleAssociationsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListResolverRuleAssociationsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverRuleAssociationsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverRuleAssociationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListResolverRuleAssociationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6948,7 +7237,7 @@ pub enum ListResolverRulesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResolverRulesError {
@@ -7015,35 +7304,35 @@ impl ListResolverRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResolverRulesErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListResolverRulesErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverRulesErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverRulesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListResolverRulesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverRulesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverRulesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListResolverRulesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverRulesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverRulesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListResolverRulesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResolverRulesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListResolverRulesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListResolverRulesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7089,7 +7378,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -7157,42 +7446,42 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7237,7 +7526,7 @@ pub enum PutFirewallRuleGroupPolicyErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutFirewallRuleGroupPolicyError {
@@ -7306,35 +7595,35 @@ impl PutFirewallRuleGroupPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutFirewallRuleGroupPolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutFirewallRuleGroupPolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFirewallRuleGroupPolicyErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutFirewallRuleGroupPolicyErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `PutFirewallRuleGroupPolicyErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFirewallRuleGroupPolicyErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PutFirewallRuleGroupPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutFirewallRuleGroupPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFirewallRuleGroupPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutFirewallRuleGroupPolicyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutFirewallRuleGroupPolicyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFirewallRuleGroupPolicyErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `PutFirewallRuleGroupPolicyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutFirewallRuleGroupPolicyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7382,7 +7671,7 @@ pub enum PutResolverQueryLogConfigPolicyErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource doesn't exist.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutResolverQueryLogConfigPolicyError {
@@ -7465,42 +7754,42 @@ impl PutResolverQueryLogConfigPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutResolverQueryLogConfigPolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutResolverQueryLogConfigPolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResolverQueryLogConfigPolicyErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutResolverQueryLogConfigPolicyErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `PutResolverQueryLogConfigPolicyErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResolverQueryLogConfigPolicyErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PutResolverQueryLogConfigPolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutResolverQueryLogConfigPolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResolverQueryLogConfigPolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutResolverQueryLogConfigPolicyErrorKind::InvalidPolicyDocument`.
+    /// Returns `true` if the error kind is `PutResolverQueryLogConfigPolicyErrorKind::InvalidPolicyDocument`.
     pub fn is_invalid_policy_document(&self) -> bool {
         matches!(
             &self.kind,
             PutResolverQueryLogConfigPolicyErrorKind::InvalidPolicyDocument(_)
         )
     }
-    /// Returns true if the error kind is `PutResolverQueryLogConfigPolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PutResolverQueryLogConfigPolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResolverQueryLogConfigPolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutResolverQueryLogConfigPolicyErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `PutResolverQueryLogConfigPolicyErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7551,7 +7840,7 @@ pub enum PutResolverRulePolicyErrorKind {
     InvalidPolicyDocument(crate::error::InvalidPolicyDocument),
     /// <p>The specified resource doesn't exist.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutResolverRulePolicyError {
@@ -7617,28 +7906,28 @@ impl PutResolverRulePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutResolverRulePolicyErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `PutResolverRulePolicyErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResolverRulePolicyErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PutResolverRulePolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutResolverRulePolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResolverRulePolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutResolverRulePolicyErrorKind::InvalidPolicyDocument`.
+    /// Returns `true` if the error kind is `PutResolverRulePolicyErrorKind::InvalidPolicyDocument`.
     pub fn is_invalid_policy_document(&self) -> bool {
         matches!(
             &self.kind,
             PutResolverRulePolicyErrorKind::InvalidPolicyDocument(_)
         )
     }
-    /// Returns true if the error kind is `PutResolverRulePolicyErrorKind::UnknownResourceException`.
+    /// Returns `true` if the error kind is `PutResolverRulePolicyErrorKind::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7685,7 +7974,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -7754,40 +8043,40 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidTagException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidTagException`.
     pub fn is_invalid_tag_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidTagException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
     }
@@ -7830,7 +8119,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -7897,35 +8186,35 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
     }
@@ -7966,7 +8255,7 @@ pub enum UpdateFirewallConfigErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFirewallConfigError {
@@ -8033,35 +8322,35 @@ impl UpdateFirewallConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFirewallConfigErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateFirewallConfigErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallConfigErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallConfigErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UpdateFirewallConfigErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallConfigErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFirewallConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallConfigErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateFirewallConfigErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallConfigErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallConfigErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateFirewallConfigErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8109,7 +8398,7 @@ pub enum UpdateFirewallDomainsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFirewallDomainsError {
@@ -8178,49 +8467,49 @@ impl UpdateFirewallDomainsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFirewallDomainsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateFirewallDomainsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallDomainsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallDomainsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateFirewallDomainsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallDomainsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallDomainsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UpdateFirewallDomainsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallDomainsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallDomainsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateFirewallDomainsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallDomainsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallDomainsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFirewallDomainsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallDomainsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallDomainsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateFirewallDomainsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallDomainsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallDomainsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateFirewallDomainsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8268,7 +8557,7 @@ pub enum UpdateFirewallRuleErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFirewallRuleError {
@@ -8336,42 +8625,42 @@ impl UpdateFirewallRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFirewallRuleErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateFirewallRuleErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallRuleErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallRuleErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateFirewallRuleErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallRuleErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallRuleErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UpdateFirewallRuleErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallRuleErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFirewallRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallRuleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallRuleErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateFirewallRuleErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallRuleErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallRuleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateFirewallRuleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8418,7 +8707,7 @@ pub enum UpdateFirewallRuleGroupAssociationErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p></p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFirewallRuleGroupAssociationError {
@@ -8499,42 +8788,42 @@ impl UpdateFirewallRuleGroupAssociationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFirewallRuleGroupAssociationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateFirewallRuleGroupAssociationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallRuleGroupAssociationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallRuleGroupAssociationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateFirewallRuleGroupAssociationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallRuleGroupAssociationErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallRuleGroupAssociationErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UpdateFirewallRuleGroupAssociationErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallRuleGroupAssociationErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallRuleGroupAssociationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFirewallRuleGroupAssociationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallRuleGroupAssociationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallRuleGroupAssociationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateFirewallRuleGroupAssociationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFirewallRuleGroupAssociationErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFirewallRuleGroupAssociationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateFirewallRuleGroupAssociationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8566,6 +8855,178 @@ impl std::error::Error for UpdateFirewallRuleGroupAssociationError {
     }
 }
 
+/// Error type for the `UpdateResolverConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateResolverConfigError {
+    /// Kind of error that occurred.
+    pub kind: UpdateResolverConfigErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateResolverConfig` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateResolverConfigErrorKind {
+    /// <p>The current account doesn't have the IAM permissions required to perform the specified Resolver operation.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>We encountered an unknown error. Try again in a few minutes.</p>
+    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    /// <p>One or more parameters in this request are not valid.</p>
+    InvalidParameterException(crate::error::InvalidParameterException),
+    /// <p>The request is invalid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The request caused one or more limits to be exceeded.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The specified resource doesn't exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The specified resource isn't available.</p>
+    ResourceUnavailableException(crate::error::ResourceUnavailableException),
+    /// <p>The request was throttled. Try again in a few minutes.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateResolverConfigError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateResolverConfigErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateResolverConfigErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
+            UpdateResolverConfigErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateResolverConfigErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            UpdateResolverConfigErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateResolverConfigErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateResolverConfigErrorKind::ResourceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateResolverConfigErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateResolverConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateResolverConfigError {
+    fn code(&self) -> Option<&str> {
+        UpdateResolverConfigError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateResolverConfigError {
+    /// Creates a new `UpdateResolverConfigError`.
+    pub fn new(kind: UpdateResolverConfigErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateResolverConfigError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateResolverConfigErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateResolverConfigError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateResolverConfigErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateResolverConfigErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResolverConfigErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResolverConfigErrorKind::InternalServiceErrorException`.
+    pub fn is_internal_service_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResolverConfigErrorKind::InternalServiceErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResolverConfigErrorKind::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResolverConfigErrorKind::InvalidParameterException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResolverConfigErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResolverConfigErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResolverConfigErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResolverConfigErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResolverConfigErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResolverConfigErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResolverConfigErrorKind::ResourceUnavailableException`.
+    pub fn is_resource_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResolverConfigErrorKind::ResourceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateResolverConfigErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResolverConfigErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateResolverConfigError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateResolverConfigErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateResolverConfigErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
+            UpdateResolverConfigErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateResolverConfigErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            UpdateResolverConfigErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateResolverConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateResolverConfigErrorKind::ResourceUnavailableException(_inner) => Some(_inner),
+            UpdateResolverConfigErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateResolverConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `UpdateResolverDnssecConfig` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8591,7 +9052,7 @@ pub enum UpdateResolverDnssecConfigErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateResolverDnssecConfigError {
@@ -8661,42 +9122,42 @@ impl UpdateResolverDnssecConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateResolverDnssecConfigErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateResolverDnssecConfigErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResolverDnssecConfigErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResolverDnssecConfigErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UpdateResolverDnssecConfigErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResolverDnssecConfigErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResolverDnssecConfigErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateResolverDnssecConfigErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResolverDnssecConfigErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResolverDnssecConfigErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateResolverDnssecConfigErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResolverDnssecConfigErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResolverDnssecConfigErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateResolverDnssecConfigErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResolverDnssecConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResolverDnssecConfigErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateResolverDnssecConfigErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8743,7 +9204,7 @@ pub enum UpdateResolverEndpointErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateResolverEndpointError {
@@ -8810,35 +9271,35 @@ impl UpdateResolverEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateResolverEndpointErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UpdateResolverEndpointErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResolverEndpointErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResolverEndpointErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateResolverEndpointErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResolverEndpointErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResolverEndpointErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateResolverEndpointErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResolverEndpointErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResolverEndpointErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateResolverEndpointErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResolverEndpointErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResolverEndpointErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateResolverEndpointErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8886,7 +9347,7 @@ pub enum UpdateResolverRuleErrorKind {
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateResolverRuleError {
@@ -8955,49 +9416,49 @@ impl UpdateResolverRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateResolverRuleErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UpdateResolverRuleErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResolverRuleErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResolverRuleErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateResolverRuleErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResolverRuleErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResolverRuleErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateResolverRuleErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResolverRuleErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResolverRuleErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateResolverRuleErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResolverRuleErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResolverRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateResolverRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResolverRuleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResolverRuleErrorKind::ResourceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateResolverRuleErrorKind::ResourceUnavailableException`.
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResolverRuleErrorKind::ResourceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResolverRuleErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateResolverRuleErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,

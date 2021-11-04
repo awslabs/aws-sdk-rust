@@ -181,6 +181,15 @@ where
     pub fn create_realtime_log_config(&self) -> fluent_builders::CreateRealtimeLogConfig<C, M, R> {
         fluent_builders::CreateRealtimeLogConfig::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `CreateResponseHeadersPolicy` operation.
+    ///
+    /// See [`CreateResponseHeadersPolicy`](crate::client::fluent_builders::CreateResponseHeadersPolicy) for more information about the
+    /// operation and its arguments.
+    pub fn create_response_headers_policy(
+        &self,
+    ) -> fluent_builders::CreateResponseHeadersPolicy<C, M, R> {
+        fluent_builders::CreateResponseHeadersPolicy::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `CreateStreamingDistribution` operation.
     ///
     /// See [`CreateStreamingDistribution`](crate::client::fluent_builders::CreateStreamingDistribution) for more information about the
@@ -285,6 +294,15 @@ where
     /// operation and its arguments.
     pub fn delete_realtime_log_config(&self) -> fluent_builders::DeleteRealtimeLogConfig<C, M, R> {
         fluent_builders::DeleteRealtimeLogConfig::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DeleteResponseHeadersPolicy` operation.
+    ///
+    /// See [`DeleteResponseHeadersPolicy`](crate::client::fluent_builders::DeleteResponseHeadersPolicy) for more information about the
+    /// operation and its arguments.
+    pub fn delete_response_headers_policy(
+        &self,
+    ) -> fluent_builders::DeleteResponseHeadersPolicy<C, M, R> {
+        fluent_builders::DeleteResponseHeadersPolicy::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `DeleteStreamingDistribution` operation.
     ///
@@ -456,6 +474,24 @@ where
     pub fn get_realtime_log_config(&self) -> fluent_builders::GetRealtimeLogConfig<C, M, R> {
         fluent_builders::GetRealtimeLogConfig::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `GetResponseHeadersPolicy` operation.
+    ///
+    /// See [`GetResponseHeadersPolicy`](crate::client::fluent_builders::GetResponseHeadersPolicy) for more information about the
+    /// operation and its arguments.
+    pub fn get_response_headers_policy(
+        &self,
+    ) -> fluent_builders::GetResponseHeadersPolicy<C, M, R> {
+        fluent_builders::GetResponseHeadersPolicy::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetResponseHeadersPolicyConfig` operation.
+    ///
+    /// See [`GetResponseHeadersPolicyConfig`](crate::client::fluent_builders::GetResponseHeadersPolicyConfig) for more information about the
+    /// operation and its arguments.
+    pub fn get_response_headers_policy_config(
+        &self,
+    ) -> fluent_builders::GetResponseHeadersPolicyConfig<C, M, R> {
+        fluent_builders::GetResponseHeadersPolicyConfig::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `GetStreamingDistribution` operation.
     ///
     /// See [`GetStreamingDistribution`](crate::client::fluent_builders::GetStreamingDistribution) for more information about the
@@ -538,6 +574,15 @@ where
     ) -> fluent_builders::ListDistributionsByRealtimeLogConfig<C, M, R> {
         fluent_builders::ListDistributionsByRealtimeLogConfig::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ListDistributionsByResponseHeadersPolicyId` operation.
+    ///
+    /// See [`ListDistributionsByResponseHeadersPolicyId`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId) for more information about the
+    /// operation and its arguments.
+    pub fn list_distributions_by_response_headers_policy_id(
+        &self,
+    ) -> fluent_builders::ListDistributionsByResponseHeadersPolicyId<C, M, R> {
+        fluent_builders::ListDistributionsByResponseHeadersPolicyId::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ListDistributionsByWebACLId` operation.
     ///
     /// See [`ListDistributionsByWebACLId`](crate::client::fluent_builders::ListDistributionsByWebACLId) for more information about the
@@ -608,6 +653,15 @@ where
     /// operation and its arguments.
     pub fn list_realtime_log_configs(&self) -> fluent_builders::ListRealtimeLogConfigs<C, M, R> {
         fluent_builders::ListRealtimeLogConfigs::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListResponseHeadersPolicies` operation.
+    ///
+    /// See [`ListResponseHeadersPolicies`](crate::client::fluent_builders::ListResponseHeadersPolicies) for more information about the
+    /// operation and its arguments.
+    pub fn list_response_headers_policies(
+        &self,
+    ) -> fluent_builders::ListResponseHeadersPolicies<C, M, R> {
+        fluent_builders::ListResponseHeadersPolicies::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListStreamingDistributions` operation.
     ///
@@ -731,6 +785,15 @@ where
     pub fn update_realtime_log_config(&self) -> fluent_builders::UpdateRealtimeLogConfig<C, M, R> {
         fluent_builders::UpdateRealtimeLogConfig::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `UpdateResponseHeadersPolicy` operation.
+    ///
+    /// See [`UpdateResponseHeadersPolicy`](crate::client::fluent_builders::UpdateResponseHeadersPolicy) for more information about the
+    /// operation and its arguments.
+    pub fn update_response_headers_policy(
+        &self,
+    ) -> fluent_builders::UpdateResponseHeadersPolicy<C, M, R> {
+        fluent_builders::UpdateResponseHeadersPolicy::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `UpdateStreamingDistribution` operation.
     ///
     /// See [`UpdateStreamingDistribution`](crate::client::fluent_builders::UpdateStreamingDistribution) for more information about the
@@ -810,9 +873,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the distribution that you’re associating the alias with.</p>
@@ -910,9 +976,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>A cache policy configuration.</p>
@@ -985,9 +1054,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The current configuration information for the identity.</p>
@@ -1072,9 +1144,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The distribution's configuration information.</p>
@@ -1142,9 +1217,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The distribution's configuration information. </p>
@@ -1215,9 +1293,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The request to create a new field-level encryption configuration.</p>
@@ -1288,9 +1369,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The request to create a field-level encryption profile.</p>
@@ -1371,9 +1455,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>A name to identify the function.</p>
@@ -1468,9 +1555,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The distribution's id.</p>
@@ -1558,9 +1648,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>A key group configuration.</p>
@@ -1631,9 +1724,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the distribution that you are enabling metrics for.</p>
@@ -1743,9 +1839,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>An origin request policy configuration.</p>
@@ -1816,9 +1915,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>A CloudFront public key configuration.</p>
@@ -1889,9 +1991,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `EndPoints`.
@@ -1959,6 +2064,91 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateResponseHeadersPolicy`.
+    ///
+    /// <p>Creates a response headers policy.</p>
+    /// <p>A response headers policy contains information about a set of HTTP response headers
+    /// and their values. To create a response headers policy, you provide some metadata about
+    /// the policy, and a set of configurations that specify the response headers.</p>
+    /// <p>After you create a response headers policy, you can use its ID to attach it to one or more
+    /// cache behaviors in a CloudFront distribution. When it’s attached to a cache behavior, CloudFront
+    /// adds the headers in the policy to HTTP responses that it sends for requests that match
+    /// the cache behavior.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct CreateResponseHeadersPolicy<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_response_headers_policy_input::Builder,
+    }
+    impl<C, M, R> CreateResponseHeadersPolicy<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateResponseHeadersPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateResponseHeadersPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateResponseHeadersPolicyError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateResponseHeadersPolicyInputOperationOutputAlias,
+                crate::output::CreateResponseHeadersPolicyOutput,
+                crate::error::CreateResponseHeadersPolicyError,
+                crate::input::CreateResponseHeadersPolicyInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Contains metadata about the response headers policy, and a set of configurations that
+        /// specify the response headers.</p>
+        pub fn response_headers_policy_config(
+            mut self,
+            inp: crate::model::ResponseHeadersPolicyConfig,
+        ) -> Self {
+            self.inner = self.inner.response_headers_policy_config(inp);
+            self
+        }
+        /// <p>Contains metadata about the response headers policy, and a set of configurations that
+        /// specify the response headers.</p>
+        pub fn set_response_headers_policy_config(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_response_headers_policy_config(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateStreamingDistribution`.
     ///
     /// <p>This API is deprecated.
@@ -2012,9 +2202,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The streaming distribution's configuration information.</p>
@@ -2089,9 +2282,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p> The streaming distribution's configuration information. </p>
@@ -2170,9 +2366,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the cache policy that you are deleting. To get the
@@ -2257,9 +2456,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The origin access identity's ID.</p>
@@ -2336,9 +2538,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The distribution ID. </p>
@@ -2415,9 +2620,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the configuration you want to delete from CloudFront.</p>
@@ -2494,9 +2702,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Request the ID of the profile you want to delete from CloudFront.</p>
@@ -2579,9 +2790,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the function that you are deleting.</p>
@@ -2664,9 +2878,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the key group that you are deleting. To get the identifier, use
@@ -2747,9 +2964,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the distribution that you are disabling metrics for.</p>
@@ -2823,9 +3043,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the origin request policy that you are deleting. To get the
@@ -2908,9 +3131,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the public key you want to remove from CloudFront.</p>
@@ -2993,9 +3219,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the real-time log configuration to delete.</p>
@@ -3016,6 +3245,102 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the real-time log configuration to delete.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteResponseHeadersPolicy`.
+    ///
+    /// <p>Deletes a response headers policy.</p>
+    /// <p>You cannot delete a response headers policy if it’s attached to a cache behavior.
+    /// First update your distributions to remove the response headers policy from all cache
+    /// behaviors, then delete the response headers policy.</p>
+    /// <p>To delete a response headers policy, you must provide the policy’s identifier and
+    /// version. To get these values, you can use <code>ListResponseHeadersPolicies</code> or
+    /// <code>GetResponseHeadersPolicy</code>. </p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteResponseHeadersPolicy<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_response_headers_policy_input::Builder,
+    }
+    impl<C, M, R> DeleteResponseHeadersPolicy<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteResponseHeadersPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteResponseHeadersPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteResponseHeadersPolicyError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteResponseHeadersPolicyInputOperationOutputAlias,
+                crate::output::DeleteResponseHeadersPolicyOutput,
+                crate::error::DeleteResponseHeadersPolicyError,
+                crate::input::DeleteResponseHeadersPolicyInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier for the response headers policy that you are deleting.</p>
+        /// <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The identifier for the response headers policy that you are deleting.</p>
+        /// <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The version of the response headers policy that you are deleting.</p>
+        /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can
+        /// get using <code>ListResponseHeadersPolicies</code>,
+        /// <code>GetResponseHeadersPolicy</code>, or
+        /// <code>GetResponseHeadersPolicyConfig</code>.</p>
+        pub fn if_match(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(inp);
+            self
+        }
+        /// <p>The version of the response headers policy that you are deleting.</p>
+        /// <p>The version is the response headers policy’s <code>ETag</code> value, which you can
+        /// get using <code>ListResponseHeadersPolicies</code>,
+        /// <code>GetResponseHeadersPolicy</code>, or
+        /// <code>GetResponseHeadersPolicyConfig</code>.</p>
+        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_if_match(input);
             self
         }
     }
@@ -3117,9 +3442,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The distribution ID. </p>
@@ -3200,9 +3528,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the function that you are getting information about.</p>
@@ -3293,9 +3624,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the cache policy. If the cache policy is attached to a
@@ -3373,9 +3707,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the cache policy. If the cache policy is attached to a
@@ -3448,9 +3785,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identity's ID.</p>
@@ -3517,9 +3857,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identity's ID. </p>
@@ -3584,9 +3927,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
@@ -3651,9 +3997,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
@@ -3718,9 +4067,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Request the ID for the field-level encryption configuration information.</p>
@@ -3785,9 +4137,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Request the ID for the field-level encryption configuration information.</p>
@@ -3852,9 +4207,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Get the ID for the field-level encryption profile information.</p>
@@ -3921,9 +4279,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Get the ID for the field-level encryption profile configuration information.</p>
@@ -3991,9 +4352,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the function whose code you are getting.</p>
@@ -4071,9 +4435,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The distribution's ID.</p>
@@ -4158,9 +4525,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the key group that you are getting. To get the identifier, use
@@ -4232,9 +4602,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the key group whose configuration you are getting. To get the
@@ -4302,9 +4675,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of the distribution that you are getting metrics information for.</p>
@@ -4385,9 +4761,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the origin request policy. If the origin request policy is
@@ -4466,9 +4845,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the origin request policy. If the origin request policy is
@@ -4541,9 +4923,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the public key you are getting.</p>
@@ -4608,9 +4993,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the public key whose configuration you are getting.</p>
@@ -4678,9 +5066,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the real-time log configuration to get.</p>
@@ -4701,6 +5092,179 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the real-time log configuration to get.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetResponseHeadersPolicy`.
+    ///
+    /// <p>Gets a response headers policy, including metadata (the policy’s identifier and the date and
+    /// time when the policy was last modified).</p>
+    /// <p>To get a response headers policy, you must provide the policy’s identifier. If the
+    /// response headers policy is attached to a distribution’s cache behavior, you can get the
+    /// policy’s identifier using <code>ListDistributions</code> or
+    /// <code>GetDistribution</code>. If the response headers policy is not attached to a cache
+    /// behavior, you can get the identifier using
+    /// <code>ListResponseHeadersPolicies</code>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetResponseHeadersPolicy<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_response_headers_policy_input::Builder,
+    }
+    impl<C, M, R> GetResponseHeadersPolicy<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetResponseHeadersPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetResponseHeadersPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetResponseHeadersPolicyError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetResponseHeadersPolicyInputOperationOutputAlias,
+                crate::output::GetResponseHeadersPolicyOutput,
+                crate::error::GetResponseHeadersPolicyError,
+                crate::input::GetResponseHeadersPolicyInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier for the response headers policy.</p>
+        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
+        /// get the policy’s identifier using <code>ListDistributions</code> or
+        /// <code>GetDistribution</code>. If the response headers policy is not attached to a
+        /// cache behavior, you can get the identifier using
+        /// <code>ListResponseHeadersPolicies</code>.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The identifier for the response headers policy.</p>
+        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
+        /// get the policy’s identifier using <code>ListDistributions</code> or
+        /// <code>GetDistribution</code>. If the response headers policy is not attached to a
+        /// cache behavior, you can get the identifier using
+        /// <code>ListResponseHeadersPolicies</code>.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetResponseHeadersPolicyConfig`.
+    ///
+    /// <p>Gets a response headers policy configuration.</p>
+    /// <p>To get a response headers policy configuration, you must provide the policy’s
+    /// identifier. If the response headers policy is attached to a distribution’s cache
+    /// behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+    /// <code>GetDistribution</code>. If the response headers policy is not attached to a
+    /// cache behavior, you can get the identifier using
+    /// <code>ListResponseHeadersPolicies</code>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct GetResponseHeadersPolicyConfig<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_response_headers_policy_config_input::Builder,
+    }
+    impl<C, M, R> GetResponseHeadersPolicyConfig<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetResponseHeadersPolicyConfig`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetResponseHeadersPolicyConfigOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetResponseHeadersPolicyConfigError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetResponseHeadersPolicyConfigInputOperationOutputAlias,
+                crate::output::GetResponseHeadersPolicyConfigOutput,
+                crate::error::GetResponseHeadersPolicyConfigError,
+                crate::input::GetResponseHeadersPolicyConfigInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier for the response headers policy.</p>
+        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
+        /// get the policy’s identifier using <code>ListDistributions</code> or
+        /// <code>GetDistribution</code>. If the response headers policy is not attached to a
+        /// cache behavior, you can get the identifier using
+        /// <code>ListResponseHeadersPolicies</code>.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The identifier for the response headers policy.</p>
+        /// <p>If the response headers policy is attached to a distribution’s cache behavior, you can
+        /// get the policy’s identifier using <code>ListDistributions</code> or
+        /// <code>GetDistribution</code>. If the response headers policy is not attached to a
+        /// cache behavior, you can get the identifier using
+        /// <code>ListResponseHeadersPolicies</code>.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
             self
         }
     }
@@ -4755,9 +5319,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The streaming distribution's ID.</p>
@@ -4822,9 +5389,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The streaming distribution's ID.</p>
@@ -4842,7 +5412,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets a list of cache policies.</p>
     /// <p>You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or
-    /// only the custom policies created in your account.</p>
+    /// only the custom policies created in your Amazon Web Services account.</p>
     /// <p>You can optionally specify the maximum number of items to receive in the response. If
     /// the total number of items in the list exceeds the maximum that you specify, or the
     /// default maximum, the response is paginated. To get the next page of items, send a
@@ -4896,9 +5466,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>A filter to return only the specified kinds of cache policies. Valid values
@@ -4910,7 +5483,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>custom</code> – Returns only the custom policies created in your account.</p>
+        /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         pub fn r#type(mut self, inp: crate::model::CachePolicyType) -> Self {
@@ -4926,7 +5499,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>custom</code> – Returns only the custom policies created in your account.</p>
+        /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         pub fn set_type(
@@ -5016,9 +5589,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Use this when paginating results to indicate where to begin in your list of origin
@@ -5125,9 +5701,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that
@@ -5233,9 +5812,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Use this when paginating results to indicate where to begin in your list of
@@ -5324,9 +5906,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Use this field when paginating results to indicate where to begin in your list of
@@ -5426,9 +6011,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Use this field when paginating results to indicate where to begin in your list of
@@ -5527,9 +6115,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Use this field when paginating results to indicate where to begin in your list of
@@ -5636,9 +6227,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Use this field when paginating results to indicate where to begin in your list of
@@ -5698,6 +6292,115 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListDistributionsByResponseHeadersPolicyId`.
+    ///
+    /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that’s
+    /// associated with the specified response headers policy.</p>
+    /// <p>You can optionally specify the maximum number of items to receive in the response. If
+    /// the total number of items in the list exceeds the maximum that you specify, or the
+    /// default maximum, the response is paginated. To get the next page of items, send a
+    /// subsequent request that specifies the <code>NextMarker</code> value from the current
+    /// response as the <code>Marker</code> value in the subsequent request.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListDistributionsByResponseHeadersPolicyId<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_distributions_by_response_headers_policy_id_input::Builder,
+    }
+    impl<C, M, R> ListDistributionsByResponseHeadersPolicyId<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListDistributionsByResponseHeadersPolicyId`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListDistributionsByResponseHeadersPolicyIdOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListDistributionsByResponseHeadersPolicyIdError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListDistributionsByResponseHeadersPolicyIdInputOperationOutputAlias,
+                crate::output::ListDistributionsByResponseHeadersPolicyIdOutput,
+                crate::error::ListDistributionsByResponseHeadersPolicyIdError,
+                crate::input::ListDistributionsByResponseHeadersPolicyIdInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Use this field when paginating results to indicate where to begin in your list of
+        /// distribution IDs. The response includes distribution IDs in the list that occur after
+        /// the marker. To get the next page of the list, set this field’s value to the value of
+        /// <code>NextMarker</code> from the current page’s response.</p>
+        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(inp);
+            self
+        }
+        /// <p>Use this field when paginating results to indicate where to begin in your list of
+        /// distribution IDs. The response includes distribution IDs in the list that occur after
+        /// the marker. To get the next page of the list, set this field’s value to the value of
+        /// <code>NextMarker</code> from the current page’s response.</p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
+            self
+        }
+        /// <p>The maximum number of distribution IDs that you want to get in the response.</p>
+        pub fn max_items(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_items(inp);
+            self
+        }
+        /// <p>The maximum number of distribution IDs that you want to get in the response.</p>
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
+            self
+        }
+        /// <p>The ID of the response headers policy whose associated distribution IDs you want to
+        /// list.</p>
+        pub fn response_headers_policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.response_headers_policy_id(inp);
+            self
+        }
+        /// <p>The ID of the response headers policy whose associated distribution IDs you want to
+        /// list.</p>
+        pub fn set_response_headers_policy_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_response_headers_policy_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListDistributionsByWebACLId`.
     ///
     /// <p>List the distributions that are associated with a specified WAF web ACL.</p>
@@ -5749,9 +6452,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If
@@ -5850,9 +6556,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that
@@ -5931,9 +6640,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that
@@ -5963,7 +6675,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListFunctions`.
     ///
-    /// <p>Gets a list of all CloudFront functions in your account.</p>
+    /// <p>Gets a list of all CloudFront functions in your Amazon Web Services account.</p>
     /// <p>You can optionally apply a filter to return only the functions that are in the
     /// specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     /// <p>You can optionally specify the maximum number of items to receive in the response. If
@@ -6019,9 +6731,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Use this field when paginating results to indicate where to begin in your list of
@@ -6117,9 +6832,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The distribution's ID.</p>
@@ -6224,9 +6942,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Use this field when paginating results to indicate where to begin in your list of key
@@ -6260,7 +6981,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets a list of origin request policies.</p>
     /// <p>You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or
-    /// only the custom policies created in your account.</p>
+    /// only the custom policies created in your Amazon Web Services account.</p>
     /// <p>You can optionally specify the maximum number of items to receive in the response. If
     /// the total number of items in the list exceeds the maximum that you specify, or the
     /// default maximum, the response is paginated. To get the next page of items, send a
@@ -6314,9 +7035,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>A filter to return only the specified kinds of origin request policies. Valid values
@@ -6328,7 +7052,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>custom</code> – Returns only the custom policies created in your account.</p>
+        /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         pub fn r#type(mut self, inp: crate::model::OriginRequestPolicyType) -> Self {
@@ -6344,7 +7068,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>custom</code> – Returns only the custom policies created in your account.</p>
+        /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         pub fn set_type(
@@ -6432,9 +7156,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that
@@ -6518,9 +7245,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of real-time log configurations that you want in the response.</p>
@@ -6547,6 +7277,136 @@ pub mod fluent_builders {
         /// value of <code>NextMarker</code> from the current page’s response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListResponseHeadersPolicies`.
+    ///
+    /// <p>Gets a list of response headers policies.</p>
+    /// <p>You can optionally apply a filter to get only the managed policies created by Amazon Web Services,
+    /// or only the custom policies created in your Amazon Web Services account.</p>
+    /// <p>You can optionally specify the maximum number of items to receive in the response. If
+    /// the total number of items in the list exceeds the maximum that you specify, or the
+    /// default maximum, the response is paginated. To get the next page of items, send a
+    /// subsequent request that specifies the <code>NextMarker</code> value from the current
+    /// response as the <code>Marker</code> value in the subsequent request.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListResponseHeadersPolicies<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_response_headers_policies_input::Builder,
+    }
+    impl<C, M, R> ListResponseHeadersPolicies<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListResponseHeadersPolicies`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListResponseHeadersPoliciesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListResponseHeadersPoliciesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListResponseHeadersPoliciesInputOperationOutputAlias,
+                crate::output::ListResponseHeadersPoliciesOutput,
+                crate::error::ListResponseHeadersPoliciesError,
+                crate::input::ListResponseHeadersPoliciesInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A filter to get only the specified kind of response headers policies. Valid values
+        /// are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>custom</code> – Gets only the custom policies created in your
+        /// Amazon Web Services account.</p>
+        /// </li>
+        /// </ul>
+        pub fn r#type(mut self, inp: crate::model::ResponseHeadersPolicyType) -> Self {
+            self.inner = self.inner.r#type(inp);
+            self
+        }
+        /// <p>A filter to get only the specified kind of response headers policies. Valid values
+        /// are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>custom</code> – Gets only the custom policies created in your
+        /// Amazon Web Services account.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyType>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
+        /// <p>Use this field when paginating results to indicate where to begin in your list of response
+        /// headers policies. The response includes response headers policies in the list that occur
+        /// after the marker. To get the next page of the list, set this field’s value to the value
+        /// of <code>NextMarker</code> from the current page’s response. </p>
+        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(inp);
+            self
+        }
+        /// <p>Use this field when paginating results to indicate where to begin in your list of response
+        /// headers policies. The response includes response headers policies in the list that occur
+        /// after the marker. To get the next page of the list, set this field’s value to the value
+        /// of <code>NextMarker</code> from the current page’s response. </p>
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
+            self
+        }
+        /// <p>The maximum number of response headers policies that you want to get in the response.</p>
+        pub fn max_items(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_items(inp);
+            self
+        }
+        /// <p>The maximum number of response headers policies that you want to get in the response.</p>
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
             self
         }
     }
@@ -6601,9 +7461,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
@@ -6678,9 +7541,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p> An ARN of a CloudFront resource.</p>
@@ -6753,9 +7619,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the function that you are publishing.</p>
@@ -6832,9 +7701,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p> An ARN of a CloudFront resource.</p>
@@ -6918,9 +7790,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the function that you are testing.</p>
@@ -7027,9 +7902,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p> An ARN of a CloudFront resource.</p>
@@ -7121,10 +7999,26 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
+        }
+        /// <p>A cache policy configuration.</p>
+        pub fn cache_policy_config(mut self, inp: crate::model::CachePolicyConfig) -> Self {
+            self.inner = self.inner.cache_policy_config(inp);
+            self
+        }
+        /// <p>A cache policy configuration.</p>
+        pub fn set_cache_policy_config(
+            mut self,
+            input: std::option::Option<crate::model::CachePolicyConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_cache_policy_config(input);
+            self
         }
         /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned
         /// in a cache behavior’s <code>CachePolicyId</code> field in the response to
@@ -7152,19 +8046,6 @@ pub mod fluent_builders {
         /// <code>GetCachePolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
-            self
-        }
-        /// <p>A cache policy configuration.</p>
-        pub fn cache_policy_config(mut self, inp: crate::model::CachePolicyConfig) -> Self {
-            self.inner = self.inner.cache_policy_config(inp);
-            self
-        }
-        /// <p>A cache policy configuration.</p>
-        pub fn set_cache_policy_config(
-            mut self,
-            input: std::option::Option<crate::model::CachePolicyConfig>,
-        ) -> Self {
-            self.inner = self.inner.set_cache_policy_config(input);
             self
         }
     }
@@ -7221,10 +8102,31 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
+        }
+        /// <p>The identity's configuration information.</p>
+        pub fn cloud_front_origin_access_identity_config(
+            mut self,
+            inp: crate::model::CloudFrontOriginAccessIdentityConfig,
+        ) -> Self {
+            self.inner = self.inner.cloud_front_origin_access_identity_config(inp);
+            self
+        }
+        /// <p>The identity's configuration information.</p>
+        pub fn set_cloud_front_origin_access_identity_config(
+            mut self,
+            input: std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>,
+        ) -> Self {
+            self.inner = self
+                .inner
+                .set_cloud_front_origin_access_identity_config(input);
+            self
         }
         /// <p>The identity's id.</p>
         pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -7246,24 +8148,6 @@ pub mod fluent_builders {
         /// identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
-            self
-        }
-        /// <p>The identity's configuration information.</p>
-        pub fn cloud_front_origin_access_identity_config(
-            mut self,
-            inp: crate::model::CloudFrontOriginAccessIdentityConfig,
-        ) -> Self {
-            self.inner = self.inner.cloud_front_origin_access_identity_config(inp);
-            self
-        }
-        /// <p>The identity's configuration information.</p>
-        pub fn set_cloud_front_origin_access_identity_config(
-            mut self,
-            input: std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>,
-        ) -> Self {
-            self.inner = self
-                .inner
-                .set_cloud_front_origin_access_identity_config(input);
             self
         }
     }
@@ -7396,10 +8280,26 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
+        }
+        /// <p>The distribution's configuration information.</p>
+        pub fn distribution_config(mut self, inp: crate::model::DistributionConfig) -> Self {
+            self.inner = self.inner.distribution_config(inp);
+            self
+        }
+        /// <p>The distribution's configuration information.</p>
+        pub fn set_distribution_config(
+            mut self,
+            input: std::option::Option<crate::model::DistributionConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_distribution_config(input);
+            self
         }
         /// <p>The distribution's id.</p>
         pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -7421,19 +8321,6 @@ pub mod fluent_builders {
         /// distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
-            self
-        }
-        /// <p>The distribution's configuration information.</p>
-        pub fn distribution_config(mut self, inp: crate::model::DistributionConfig) -> Self {
-            self.inner = self.inner.distribution_config(inp);
-            self
-        }
-        /// <p>The distribution's configuration information.</p>
-        pub fn set_distribution_config(
-            mut self,
-            input: std::option::Option<crate::model::DistributionConfig>,
-        ) -> Self {
-            self.inner = self.inner.set_distribution_config(input);
             self
         }
     }
@@ -7488,10 +8375,29 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
+        }
+        /// <p>Request to update a field-level encryption configuration. </p>
+        pub fn field_level_encryption_config(
+            mut self,
+            inp: crate::model::FieldLevelEncryptionConfig,
+        ) -> Self {
+            self.inner = self.inner.field_level_encryption_config(inp);
+            self
+        }
+        /// <p>Request to update a field-level encryption configuration. </p>
+        pub fn set_field_level_encryption_config(
+            mut self,
+            input: std::option::Option<crate::model::FieldLevelEncryptionConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_field_level_encryption_config(input);
+            self
         }
         /// <p>The ID of the configuration you want to update.</p>
         pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -7513,22 +8419,6 @@ pub mod fluent_builders {
         /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
-            self
-        }
-        /// <p>Request to update a field-level encryption configuration. </p>
-        pub fn field_level_encryption_config(
-            mut self,
-            inp: crate::model::FieldLevelEncryptionConfig,
-        ) -> Self {
-            self.inner = self.inner.field_level_encryption_config(inp);
-            self
-        }
-        /// <p>Request to update a field-level encryption configuration. </p>
-        pub fn set_field_level_encryption_config(
-            mut self,
-            input: std::option::Option<crate::model::FieldLevelEncryptionConfig>,
-        ) -> Self {
-            self.inner = self.inner.set_field_level_encryption_config(input);
             self
         }
     }
@@ -7583,10 +8473,29 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
+        }
+        /// <p>Request to update a field-level encryption profile. </p>
+        pub fn field_level_encryption_profile_config(
+            mut self,
+            inp: crate::model::FieldLevelEncryptionProfileConfig,
+        ) -> Self {
+            self.inner = self.inner.field_level_encryption_profile_config(inp);
+            self
+        }
+        /// <p>Request to update a field-level encryption profile. </p>
+        pub fn set_field_level_encryption_profile_config(
+            mut self,
+            input: std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_field_level_encryption_profile_config(input);
+            self
         }
         /// <p>The ID of the field-level encryption profile request. </p>
         pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -7608,22 +8517,6 @@ pub mod fluent_builders {
         /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
-            self
-        }
-        /// <p>Request to update a field-level encryption profile. </p>
-        pub fn field_level_encryption_profile_config(
-            mut self,
-            inp: crate::model::FieldLevelEncryptionProfileConfig,
-        ) -> Self {
-            self.inner = self.inner.field_level_encryption_profile_config(inp);
-            self
-        }
-        /// <p>Request to update a field-level encryption profile. </p>
-        pub fn set_field_level_encryption_profile_config(
-            mut self,
-            input: std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
-        ) -> Self {
-            self.inner = self.inner.set_field_level_encryption_profile_config(input);
             self
         }
     }
@@ -7683,9 +8576,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the function that you are updating.</p>
@@ -7807,10 +8703,26 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
+        }
+        /// <p>The key group configuration.</p>
+        pub fn key_group_config(mut self, inp: crate::model::KeyGroupConfig) -> Self {
+            self.inner = self.inner.key_group_config(inp);
+            self
+        }
+        /// <p>The key group configuration.</p>
+        pub fn set_key_group_config(
+            mut self,
+            input: std::option::Option<crate::model::KeyGroupConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_key_group_config(input);
+            self
         }
         /// <p>The identifier of the key group that you are updating.</p>
         pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -7832,19 +8744,6 @@ pub mod fluent_builders {
         /// <code>ETag</code> value.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
-            self
-        }
-        /// <p>The key group configuration.</p>
-        pub fn key_group_config(mut self, inp: crate::model::KeyGroupConfig) -> Self {
-            self.inner = self.inner.key_group_config(inp);
-            self
-        }
-        /// <p>The key group configuration.</p>
-        pub fn set_key_group_config(
-            mut self,
-            input: std::option::Option<crate::model::KeyGroupConfig>,
-        ) -> Self {
-            self.inner = self.inner.set_key_group_config(input);
             self
         }
     }
@@ -7916,10 +8815,29 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
+        }
+        /// <p>An origin request policy configuration.</p>
+        pub fn origin_request_policy_config(
+            mut self,
+            inp: crate::model::OriginRequestPolicyConfig,
+        ) -> Self {
+            self.inner = self.inner.origin_request_policy_config(inp);
+            self
+        }
+        /// <p>An origin request policy configuration.</p>
+        pub fn set_origin_request_policy_config(
+            mut self,
+            input: std::option::Option<crate::model::OriginRequestPolicyConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_origin_request_policy_config(input);
+            self
         }
         /// <p>The unique identifier for the origin request policy that you are updating. The identifier is
         /// returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response
@@ -7947,22 +8865,6 @@ pub mod fluent_builders {
         /// <code>GetOriginRequestPolicyConfig</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
-            self
-        }
-        /// <p>An origin request policy configuration.</p>
-        pub fn origin_request_policy_config(
-            mut self,
-            inp: crate::model::OriginRequestPolicyConfig,
-        ) -> Self {
-            self.inner = self.inner.origin_request_policy_config(inp);
-            self
-        }
-        /// <p>An origin request policy configuration.</p>
-        pub fn set_origin_request_policy_config(
-            mut self,
-            input: std::option::Option<crate::model::OriginRequestPolicyConfig>,
-        ) -> Self {
-            self.inner = self.inner.set_origin_request_policy_config(input);
             self
         }
     }
@@ -8017,10 +8919,26 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
+        }
+        /// <p>A public key configuration.</p>
+        pub fn public_key_config(mut self, inp: crate::model::PublicKeyConfig) -> Self {
+            self.inner = self.inner.public_key_config(inp);
+            self
+        }
+        /// <p>A public key configuration.</p>
+        pub fn set_public_key_config(
+            mut self,
+            input: std::option::Option<crate::model::PublicKeyConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_public_key_config(input);
+            self
         }
         /// <p>The identifier of the public key that you are updating.</p>
         pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -8042,19 +8960,6 @@ pub mod fluent_builders {
         /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
-            self
-        }
-        /// <p>A public key configuration.</p>
-        pub fn public_key_config(mut self, inp: crate::model::PublicKeyConfig) -> Self {
-            self.inner = self.inner.public_key_config(inp);
-            self
-        }
-        /// <p>A public key configuration.</p>
-        pub fn set_public_key_config(
-            mut self,
-            input: std::option::Option<crate::model::PublicKeyConfig>,
-        ) -> Self {
-            self.inner = self.inner.set_public_key_config(input);
             self
         }
     }
@@ -8129,9 +9034,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `EndPoints`.
@@ -8209,6 +9117,124 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateResponseHeadersPolicy`.
+    ///
+    /// <p>Updates a response headers policy.</p>
+    /// <p>When you update a response headers policy, the entire policy is replaced. You cannot
+    /// update some policy fields independent of others. To update a response headers policy
+    /// configuration:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy’s
+    /// configuration.</p>
+    /// </li>
+    /// <li>
+    /// <p>Modify the fields in the response headers policy configuration that you want
+    /// to update.</p>
+    /// </li>
+    /// <li>
+    /// <p>Call <code>UpdateResponseHeadersPolicy</code>, providing the entire response
+    /// headers policy configuration, including the fields that you modified and those
+    /// that you didn’t.</p>
+    /// </li>
+    /// </ol>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateResponseHeadersPolicy<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_response_headers_policy_input::Builder,
+    }
+    impl<C, M, R> UpdateResponseHeadersPolicy<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateResponseHeadersPolicy`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateResponseHeadersPolicyOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateResponseHeadersPolicyError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateResponseHeadersPolicyInputOperationOutputAlias,
+                crate::output::UpdateResponseHeadersPolicyOutput,
+                crate::error::UpdateResponseHeadersPolicyError,
+                crate::input::UpdateResponseHeadersPolicyInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A response headers policy configuration.</p>
+        pub fn response_headers_policy_config(
+            mut self,
+            inp: crate::model::ResponseHeadersPolicyConfig,
+        ) -> Self {
+            self.inner = self.inner.response_headers_policy_config(inp);
+            self
+        }
+        /// <p>A response headers policy configuration.</p>
+        pub fn set_response_headers_policy_config(
+            mut self,
+            input: std::option::Option<crate::model::ResponseHeadersPolicyConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_response_headers_policy_config(input);
+            self
+        }
+        /// <p>The identifier for the response headers policy that you are updating.</p>
+        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(inp);
+            self
+        }
+        /// <p>The identifier for the response headers policy that you are updating.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>The version of the response headers policy that you are updating.</p>
+        /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response
+        /// to <code>GetResponseHeadersPolicyConfig</code>.</p>
+        pub fn if_match(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(inp);
+            self
+        }
+        /// <p>The version of the response headers policy that you are updating.</p>
+        /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response
+        /// to <code>GetResponseHeadersPolicyConfig</code>.</p>
+        pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_if_match(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateStreamingDistribution`.
     ///
     /// <p>Update a streaming distribution. </p>
@@ -8260,10 +9286,29 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
+        }
+        /// <p>The streaming distribution's configuration information.</p>
+        pub fn streaming_distribution_config(
+            mut self,
+            inp: crate::model::StreamingDistributionConfig,
+        ) -> Self {
+            self.inner = self.inner.streaming_distribution_config(inp);
+            self
+        }
+        /// <p>The streaming distribution's configuration information.</p>
+        pub fn set_streaming_distribution_config(
+            mut self,
+            input: std::option::Option<crate::model::StreamingDistributionConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_streaming_distribution_config(input);
+            self
         }
         /// <p>The streaming distribution's id.</p>
         pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -8285,22 +9330,6 @@ pub mod fluent_builders {
         /// streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_if_match(input);
-            self
-        }
-        /// <p>The streaming distribution's configuration information.</p>
-        pub fn streaming_distribution_config(
-            mut self,
-            inp: crate::model::StreamingDistributionConfig,
-        ) -> Self {
-            self.inner = self.inner.streaming_distribution_config(inp);
-            self
-        }
-        /// <p>The streaming distribution's configuration information.</p>
-        pub fn set_streaming_distribution_config(
-            mut self,
-            input: std::option::Option<crate::model::StreamingDistributionConfig>,
-        ) -> Self {
-            self.inner = self.inner.set_streaming_distribution_config(input);
             self
         }
     }

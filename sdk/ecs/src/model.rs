@@ -74,6 +74,9 @@ pub struct TaskSet {
     /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
     /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub platform_version: std::option::Option<std::string::String>,
+    /// <p>The operating system  that your tasks in the set are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+    /// <p> All tasks in the set must have the same value.</p>
+    pub platform_family: std::option::Option<std::string::String>,
     /// <p>The network configuration for the task set.</p>
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
     /// <p>Details on a load balancer that is used with a task set.</p>
@@ -167,6 +170,7 @@ impl std::fmt::Debug for TaskSet {
             &self.capacity_provider_strategy,
         );
         formatter.field("platform_version", &self.platform_version);
+        formatter.field("platform_family", &self.platform_family);
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("load_balancers", &self.load_balancers);
         formatter.field("service_registries", &self.service_registries);
@@ -200,6 +204,7 @@ pub mod task_set {
         pub(crate) capacity_provider_strategy:
             std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
         pub(crate) platform_version: std::option::Option<std::string::String>,
+        pub(crate) platform_family: std::option::Option<std::string::String>,
         pub(crate) network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
         pub(crate) load_balancers: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
         pub(crate) service_registries:
@@ -469,6 +474,21 @@ pub mod task_set {
             self.platform_version = input;
             self
         }
+        /// <p>The operating system  that your tasks in the set are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+        /// <p> All tasks in the set must have the same value.</p>
+        pub fn platform_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_family = Some(input.into());
+            self
+        }
+        /// <p>The operating system  that your tasks in the set are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+        /// <p> All tasks in the set must have the same value.</p>
+        pub fn set_platform_family(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.platform_family = input;
+            self
+        }
         /// <p>The network configuration for the task set.</p>
         pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
             self.network_configuration = Some(input);
@@ -709,6 +729,7 @@ pub mod task_set {
                 launch_type: self.launch_type,
                 capacity_provider_strategy: self.capacity_provider_strategy,
                 platform_version: self.platform_version,
+                platform_family: self.platform_family,
                 network_configuration: self.network_configuration,
                 load_balancers: self.load_balancers,
                 service_registries: self.service_registries,
@@ -1837,6 +1858,9 @@ pub struct Service {
     /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
     /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub platform_version: std::option::Option<std::string::String>,
+    /// <p>The operating system  that your tasks in the service are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code>LINUX</code>.</p>
+    pub platform_family: std::option::Option<std::string::String>,
     /// <p>The task definition to use for tasks in the service. This value is specified when the
     /// service is created with <a>CreateService</a>, and it can be modified with
     /// <a>UpdateService</a>.</p>
@@ -1964,6 +1988,7 @@ impl std::fmt::Debug for Service {
             &self.capacity_provider_strategy,
         );
         formatter.field("platform_version", &self.platform_version);
+        formatter.field("platform_family", &self.platform_family);
         formatter.field("task_definition", &self.task_definition);
         formatter.field("deployment_configuration", &self.deployment_configuration);
         formatter.field("task_sets", &self.task_sets);
@@ -2008,6 +2033,7 @@ pub mod service {
         pub(crate) capacity_provider_strategy:
             std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
         pub(crate) platform_version: std::option::Option<std::string::String>,
+        pub(crate) platform_family: std::option::Option<std::string::String>,
         pub(crate) task_definition: std::option::Option<std::string::String>,
         pub(crate) deployment_configuration:
             std::option::Option<crate::model::DeploymentConfiguration>,
@@ -2216,6 +2242,21 @@ pub mod service {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.platform_version = input;
+            self
+        }
+        /// <p>The operating system  that your tasks in the service are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+        /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code>LINUX</code>.</p>
+        pub fn platform_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_family = Some(input.into());
+            self
+        }
+        /// <p>The operating system  that your tasks in the service are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+        /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code>LINUX</code>.</p>
+        pub fn set_platform_family(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.platform_family = input;
             self
         }
         /// <p>The task definition to use for tasks in the service. This value is specified when the
@@ -2642,6 +2683,7 @@ pub mod service {
                 launch_type: self.launch_type,
                 capacity_provider_strategy: self.capacity_provider_strategy,
                 platform_version: self.platform_version,
+                platform_family: self.platform_family,
                 task_definition: self.task_definition,
                 deployment_configuration: self.deployment_configuration,
                 task_sets: self.task_sets,
@@ -3409,6 +3451,9 @@ pub struct Deployment {
     /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
     /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub platform_version: std::option::Option<std::string::String>,
+    /// <p>The operating system  that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
+    pub platform_family: std::option::Option<std::string::String>,
     /// <p>The VPC subnet and security group configuration for tasks that receive their own
     /// elastic network interface by using the <code>awsvpc</code> networking mode.</p>
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
@@ -3445,6 +3490,7 @@ impl std::fmt::Debug for Deployment {
         );
         formatter.field("launch_type", &self.launch_type);
         formatter.field("platform_version", &self.platform_version);
+        formatter.field("platform_family", &self.platform_family);
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("rollout_state", &self.rollout_state);
         formatter.field("rollout_state_reason", &self.rollout_state_reason);
@@ -3470,6 +3516,7 @@ pub mod deployment {
             std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
         pub(crate) launch_type: std::option::Option<crate::model::LaunchType>,
         pub(crate) platform_version: std::option::Option<std::string::String>,
+        pub(crate) platform_family: std::option::Option<std::string::String>,
         pub(crate) network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
         pub(crate) rollout_state: std::option::Option<crate::model::DeploymentRolloutState>,
         pub(crate) rollout_state_reason: std::option::Option<std::string::String>,
@@ -3684,6 +3731,21 @@ pub mod deployment {
             self.platform_version = input;
             self
         }
+        /// <p>The operating system  that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+        /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
+        pub fn platform_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_family = Some(input.into());
+            self
+        }
+        /// <p>The operating system  that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+        /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
+        pub fn set_platform_family(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.platform_family = input;
+            self
+        }
         /// <p>The VPC subnet and security group configuration for tasks that receive their own
         /// elastic network interface by using the <code>awsvpc</code> networking mode.</p>
         pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
@@ -3760,6 +3822,7 @@ pub mod deployment {
                 capacity_provider_strategy: self.capacity_provider_strategy,
                 launch_type: self.launch_type,
                 platform_version: self.platform_version,
+                platform_family: self.platform_family,
                 network_configuration: self.network_configuration,
                 rollout_state: self.rollout_state,
                 rollout_state_reason: self.rollout_state_reason,
@@ -6580,8 +6643,8 @@ pub struct ExecuteCommandLogConfiguration {
     /// <p>The S3 bucket must already be created.</p>
     /// </note>
     pub s3_bucket_name: std::option::Option<std::string::String>,
-    /// <p>Whether or not to enable encryption on the CloudWatch logs. If not specified,
-    /// encryption will be disabled.</p>
+    /// <p>Whether or not to use encryption on the S3 logs. If not specified,
+    /// encryption is not used.</p>
     pub s3_encryption_enabled: bool,
     /// <p>An optional folder in the S3 bucket to place logs in.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
@@ -6669,14 +6732,14 @@ pub mod execute_command_log_configuration {
             self.s3_bucket_name = input;
             self
         }
-        /// <p>Whether or not to enable encryption on the CloudWatch logs. If not specified,
-        /// encryption will be disabled.</p>
+        /// <p>Whether or not to use encryption on the S3 logs. If not specified,
+        /// encryption is not used.</p>
         pub fn s3_encryption_enabled(mut self, input: bool) -> Self {
             self.s3_encryption_enabled = Some(input);
             self
         }
-        /// <p>Whether or not to enable encryption on the CloudWatch logs. If not specified,
-        /// encryption will be disabled.</p>
+        /// <p>Whether or not to use encryption on the S3 logs. If not specified,
+        /// encryption is not used.</p>
         pub fn set_s3_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.s3_encryption_enabled = input;
             self
@@ -8379,6 +8442,9 @@ pub struct Task {
     /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
     /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub platform_version: std::option::Option<std::string::String>,
+    /// <p>The operating system  that your tasks are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code>LINUX.</code>.</p>
+    pub platform_family: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for when the container image pull began.</p>
     pub pull_started_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix timestamp for when the container image pull completed.</p>
@@ -8474,6 +8540,7 @@ impl std::fmt::Debug for Task {
         formatter.field("memory", &self.memory);
         formatter.field("overrides", &self.overrides);
         formatter.field("platform_version", &self.platform_version);
+        formatter.field("platform_family", &self.platform_family);
         formatter.field("pull_started_at", &self.pull_started_at);
         formatter.field("pull_stopped_at", &self.pull_stopped_at);
         formatter.field("started_at", &self.started_at);
@@ -8519,6 +8586,7 @@ pub mod task {
         pub(crate) memory: std::option::Option<std::string::String>,
         pub(crate) overrides: std::option::Option<crate::model::TaskOverride>,
         pub(crate) platform_version: std::option::Option<std::string::String>,
+        pub(crate) platform_family: std::option::Option<std::string::String>,
         pub(crate) pull_started_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) pull_stopped_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
@@ -8981,6 +9049,21 @@ pub mod task {
             self.platform_version = input;
             self
         }
+        /// <p>The operating system  that your tasks are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+        /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code>LINUX.</code>.</p>
+        pub fn platform_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_family = Some(input.into());
+            self
+        }
+        /// <p>The operating system  that your tasks are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+        /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code>LINUX.</code>.</p>
+        pub fn set_platform_family(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.platform_family = input;
+            self
+        }
         /// <p>The Unix timestamp for when the container image pull began.</p>
         pub fn pull_started_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.pull_started_at = Some(input);
@@ -9258,6 +9341,7 @@ pub mod task {
                 memory: self.memory,
                 overrides: self.overrides,
                 platform_version: self.platform_version,
+                platform_family: self.platform_family,
                 pull_started_at: self.pull_started_at,
                 pull_stopped_at: self.pull_stopped_at,
                 started_at: self.started_at,
@@ -9287,8 +9371,17 @@ impl Task {
 /// tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
 /// storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
 /// <note>
-/// <p>This parameter is only supported for tasks hosted on Fargate using platform
+/// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
+/// <ul>
+/// <li>
+/// <p>Linux platform
 /// version <code>1.4.0</code> or later.</p>
+/// </li>
+/// <li>
+/// <p>Windows platform
+/// version <code>1.0.0</code> or later.</p>
+/// </li>
+/// </ul>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -9430,8 +9523,17 @@ pub struct TaskOverride {
     pub task_role_arn: std::option::Option<std::string::String>,
     /// <p>The ephemeral storage setting override for the task.</p>
     /// <note>
-    /// <p>This parameter is only supported for tasks hosted on Fargate using platform
+    /// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux platform
     /// version <code>1.4.0</code> or later.</p>
+    /// </li>
+    /// <li>
+    /// <p>Windows platform
+    /// version <code>1.0.0</code> or later.</p>
+    /// </li>
+    /// </ul>
     /// </note>
     pub ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
 }
@@ -9570,8 +9672,17 @@ pub mod task_override {
         }
         /// <p>The ephemeral storage setting override for the task.</p>
         /// <note>
-        /// <p>This parameter is only supported for tasks hosted on Fargate using platform
+        /// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Linux platform
         /// version <code>1.4.0</code> or later.</p>
+        /// </li>
+        /// <li>
+        /// <p>Windows platform
+        /// version <code>1.0.0</code> or later.</p>
+        /// </li>
+        /// </ul>
         /// </note>
         pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
             self.ephemeral_storage = Some(input);
@@ -9579,8 +9690,17 @@ pub mod task_override {
         }
         /// <p>The ephemeral storage setting override for the task.</p>
         /// <note>
-        /// <p>This parameter is only supported for tasks hosted on Fargate using platform
+        /// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Linux platform
         /// version <code>1.4.0</code> or later.</p>
+        /// </li>
+        /// <li>
+        /// <p>Windows platform
+        /// version <code>1.0.0</code> or later.</p>
+        /// </li>
+        /// </ul>
         /// </note>
         pub fn set_ephemeral_storage(
             mut self,
@@ -10072,8 +10192,17 @@ impl AsRef<str> for ResourceType {
 /// same variable, they are processed from the top down. It is recommended to use unique
 /// variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying environment
 /// variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-/// <p>This field is only valid for containers in Fargate tasks that use
-/// platform version <code>1.4.0</code> or later.</p>
+/// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
+/// <ul>
+/// <li>
+/// <p>Linux platform
+/// version <code>1.4.0</code> or later.</p>
+/// </li>
+/// <li>
+/// <p>Windows platform
+/// version <code>1.0.0</code> or later.</p>
+/// </li>
+/// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentFile {
@@ -11026,6 +11155,9 @@ pub struct TaskDefinition {
     /// registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
     /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub compatibilities: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
+    /// <p>The operating system  that your task definitions are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+    /// <p>When you specify a task in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
+    pub runtime_platform: std::option::Option<crate::model::RuntimePlatform>,
     /// <p>The task launch types the task definition was validated against. To determine which
     /// task launch types the task definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.</p>
     pub requires_compatibilities: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
@@ -11162,6 +11294,7 @@ impl std::fmt::Debug for TaskDefinition {
         formatter.field("requires_attributes", &self.requires_attributes);
         formatter.field("placement_constraints", &self.placement_constraints);
         formatter.field("compatibilities", &self.compatibilities);
+        formatter.field("runtime_platform", &self.runtime_platform);
         formatter.field("requires_compatibilities", &self.requires_compatibilities);
         formatter.field("cpu", &self.cpu);
         formatter.field("memory", &self.memory);
@@ -11196,6 +11329,7 @@ pub mod task_definition {
         pub(crate) placement_constraints:
             std::option::Option<std::vec::Vec<crate::model::TaskDefinitionPlacementConstraint>>,
         pub(crate) compatibilities: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
+        pub(crate) runtime_platform: std::option::Option<crate::model::RuntimePlatform>,
         pub(crate) requires_compatibilities:
             std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
         pub(crate) cpu: std::option::Option<std::string::String>,
@@ -11529,6 +11663,21 @@ pub mod task_definition {
             input: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
         ) -> Self {
             self.compatibilities = input;
+            self
+        }
+        /// <p>The operating system  that your task definitions are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+        /// <p>When you specify a task in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
+        pub fn runtime_platform(mut self, input: crate::model::RuntimePlatform) -> Self {
+            self.runtime_platform = Some(input);
+            self
+        }
+        /// <p>The operating system  that your task definitions are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+        /// <p>When you specify a task in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
+        pub fn set_runtime_platform(
+            mut self,
+            input: std::option::Option<crate::model::RuntimePlatform>,
+        ) -> Self {
+            self.runtime_platform = input;
             self
         }
         /// Appends an item to `requires_compatibilities`.
@@ -11889,6 +12038,7 @@ pub mod task_definition {
                 requires_attributes: self.requires_attributes,
                 placement_constraints: self.placement_constraints,
                 compatibilities: self.compatibilities,
+                runtime_platform: self.runtime_platform,
                 requires_compatibilities: self.requires_compatibilities,
                 cpu: self.cpu,
                 memory: self.memory,
@@ -12365,6 +12515,218 @@ impl Compatibility {
     }
 }
 impl AsRef<str> for Compatibility {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Information about the platform for the Amazon ECS service or task.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RuntimePlatform {
+    /// <p>The CPU architecture.</p>
+    pub cpu_architecture: std::option::Option<crate::model::CpuArchitecture>,
+    /// <p>The operating system.</p>
+    pub operating_system_family: std::option::Option<crate::model::OsFamily>,
+}
+impl std::fmt::Debug for RuntimePlatform {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RuntimePlatform");
+        formatter.field("cpu_architecture", &self.cpu_architecture);
+        formatter.field("operating_system_family", &self.operating_system_family);
+        formatter.finish()
+    }
+}
+/// See [`RuntimePlatform`](crate::model::RuntimePlatform)
+pub mod runtime_platform {
+    /// A builder for [`RuntimePlatform`](crate::model::RuntimePlatform)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cpu_architecture: std::option::Option<crate::model::CpuArchitecture>,
+        pub(crate) operating_system_family: std::option::Option<crate::model::OsFamily>,
+    }
+    impl Builder {
+        /// <p>The CPU architecture.</p>
+        pub fn cpu_architecture(mut self, input: crate::model::CpuArchitecture) -> Self {
+            self.cpu_architecture = Some(input);
+            self
+        }
+        /// <p>The CPU architecture.</p>
+        pub fn set_cpu_architecture(
+            mut self,
+            input: std::option::Option<crate::model::CpuArchitecture>,
+        ) -> Self {
+            self.cpu_architecture = input;
+            self
+        }
+        /// <p>The operating system.</p>
+        pub fn operating_system_family(mut self, input: crate::model::OsFamily) -> Self {
+            self.operating_system_family = Some(input);
+            self
+        }
+        /// <p>The operating system.</p>
+        pub fn set_operating_system_family(
+            mut self,
+            input: std::option::Option<crate::model::OsFamily>,
+        ) -> Self {
+            self.operating_system_family = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RuntimePlatform`](crate::model::RuntimePlatform)
+        pub fn build(self) -> crate::model::RuntimePlatform {
+            crate::model::RuntimePlatform {
+                cpu_architecture: self.cpu_architecture,
+                operating_system_family: self.operating_system_family,
+            }
+        }
+    }
+}
+impl RuntimePlatform {
+    /// Creates a new builder-style object to manufacture [`RuntimePlatform`](crate::model::RuntimePlatform)
+    pub fn builder() -> crate::model::runtime_platform::Builder {
+        crate::model::runtime_platform::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum OsFamily {
+    #[allow(missing_docs)] // documentation missing in model
+    Linux,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsServer2004Core,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsServer2016Full,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsServer2019Core,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsServer2019Full,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsServer2022Core,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsServer2022Full,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsServer20H2Core,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for OsFamily {
+    fn from(s: &str) -> Self {
+        match s {
+            "LINUX" => OsFamily::Linux,
+            "WINDOWS_SERVER_2004_CORE" => OsFamily::WindowsServer2004Core,
+            "WINDOWS_SERVER_2016_FULL" => OsFamily::WindowsServer2016Full,
+            "WINDOWS_SERVER_2019_CORE" => OsFamily::WindowsServer2019Core,
+            "WINDOWS_SERVER_2019_FULL" => OsFamily::WindowsServer2019Full,
+            "WINDOWS_SERVER_2022_CORE" => OsFamily::WindowsServer2022Core,
+            "WINDOWS_SERVER_2022_FULL" => OsFamily::WindowsServer2022Full,
+            "WINDOWS_SERVER_20H2_CORE" => OsFamily::WindowsServer20H2Core,
+            other => OsFamily::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for OsFamily {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OsFamily::from(s))
+    }
+}
+impl OsFamily {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            OsFamily::Linux => "LINUX",
+            OsFamily::WindowsServer2004Core => "WINDOWS_SERVER_2004_CORE",
+            OsFamily::WindowsServer2016Full => "WINDOWS_SERVER_2016_FULL",
+            OsFamily::WindowsServer2019Core => "WINDOWS_SERVER_2019_CORE",
+            OsFamily::WindowsServer2019Full => "WINDOWS_SERVER_2019_FULL",
+            OsFamily::WindowsServer2022Core => "WINDOWS_SERVER_2022_CORE",
+            OsFamily::WindowsServer2022Full => "WINDOWS_SERVER_2022_FULL",
+            OsFamily::WindowsServer20H2Core => "WINDOWS_SERVER_20H2_CORE",
+            OsFamily::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "LINUX",
+            "WINDOWS_SERVER_2004_CORE",
+            "WINDOWS_SERVER_2016_FULL",
+            "WINDOWS_SERVER_2019_CORE",
+            "WINDOWS_SERVER_2019_FULL",
+            "WINDOWS_SERVER_2022_CORE",
+            "WINDOWS_SERVER_2022_FULL",
+            "WINDOWS_SERVER_20H2_CORE",
+        ]
+    }
+}
+impl AsRef<str> for OsFamily {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CpuArchitecture {
+    #[allow(missing_docs)] // documentation missing in model
+    Arm64,
+    #[allow(missing_docs)] // documentation missing in model
+    X8664,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CpuArchitecture {
+    fn from(s: &str) -> Self {
+        match s {
+            "ARM64" => CpuArchitecture::Arm64,
+            "X86_64" => CpuArchitecture::X8664,
+            other => CpuArchitecture::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CpuArchitecture {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CpuArchitecture::from(s))
+    }
+}
+impl CpuArchitecture {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CpuArchitecture::Arm64 => "ARM64",
+            CpuArchitecture::X8664 => "X86_64",
+            CpuArchitecture::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ARM64", "X86_64"]
+    }
+}
+impl AsRef<str> for CpuArchitecture {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -13980,8 +14342,17 @@ pub struct ContainerDefinition {
     /// <code>ecs-init</code> package. If your container instances are launched from version
     /// <code>20190301</code> or later, then they contain the required versions of the
     /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    /// <p>For tasks using the Fargate launch type, the task or service requires
-    /// platform version <code>1.3.0</code> or later.</p>
+    /// <p>For tasks using the Fargate launch type, the task or service requires the followiwng platforms:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux platform
+    /// version <code>1.3.0</code> or later.</p>
+    /// </li>
+    /// <li>
+    /// <p>Windows platform
+    /// version <code>1.0.0</code> or later.</p>
+    /// </li>
+    /// </ul>
     pub depends_on: std::option::Option<std::vec::Vec<crate::model::ContainerDependency>>,
     /// <p>Time duration (in seconds) to wait before giving up on resolving dependencies for a
     /// container. For example, you specify two containers in a task definition with containerA
@@ -13994,8 +14365,17 @@ pub struct ContainerDefinition {
     /// <p>When the <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration
     /// variable is used, it is enforced indendently from this start timeout value.</p>
     /// </note>
-    /// <p>For tasks using the Fargate launch type, this parameter requires that
-    /// the task or service uses platform version 1.3.0 or later.</p>
+    /// <p>For tasks using the Fargate launch type, the task or service requires the followiwng platforms:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux platform
+    /// version <code>1.3.0</code> or later.</p>
+    /// </li>
+    /// <li>
+    /// <p>Windows platform
+    /// version <code>1.0.0</code> or later.</p>
+    /// </li>
+    /// </ul>
     /// <p>For tasks using the EC2 launch type, your container instances require at
     /// least version <code>1.26.0</code> of the container agent to enable a container start
     /// timeout value. However, we recommend using the latest container agent version. For
@@ -14009,8 +14389,18 @@ pub struct ContainerDefinition {
     pub start_timeout: std::option::Option<i32>,
     /// <p>Time duration (in seconds) to wait before the container is forcefully killed if it
     /// doesn't exit normally on its own.</p>
-    /// <p>For tasks using the Fargate launch type, the task or service requires
-    /// platform version 1.3.0 or later. The max stop timeout value is 120 seconds and if the
+    /// <p>For tasks using the Fargate launch type, the task or service requires the followiwng platforms:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Linux platform
+    /// version <code>1.3.0</code> or later.</p>
+    /// </li>
+    /// <li>
+    /// <p>Windows platform
+    /// version <code>1.0.0</code> or later.</p>
+    /// </li>
+    /// </ul>
+    /// <p>The max stop timeout value is 120 seconds and if the
     /// parameter is not specified, the default value of 30 seconds is used.</p>
     /// <p>For tasks using the EC2 launch type, if the <code>stopTimeout</code>
     /// parameter is not specified, the value set for the Amazon ECS container agent configuration
@@ -15058,8 +15448,17 @@ pub mod container_definition {
         /// <code>ecs-init</code> package. If your container instances are launched from version
         /// <code>20190301</code> or later, then they contain the required versions of the
         /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>For tasks using the Fargate launch type, the task or service requires
-        /// platform version <code>1.3.0</code> or later.</p>
+        /// <p>For tasks using the Fargate launch type, the task or service requires the followiwng platforms:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Linux platform
+        /// version <code>1.3.0</code> or later.</p>
+        /// </li>
+        /// <li>
+        /// <p>Windows platform
+        /// version <code>1.0.0</code> or later.</p>
+        /// </li>
+        /// </ul>
         pub fn depends_on(mut self, input: impl Into<crate::model::ContainerDependency>) -> Self {
             let mut v = self.depends_on.unwrap_or_default();
             v.push(input.into());
@@ -15078,8 +15477,17 @@ pub mod container_definition {
         /// <code>ecs-init</code> package. If your container instances are launched from version
         /// <code>20190301</code> or later, then they contain the required versions of the
         /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        /// <p>For tasks using the Fargate launch type, the task or service requires
-        /// platform version <code>1.3.0</code> or later.</p>
+        /// <p>For tasks using the Fargate launch type, the task or service requires the followiwng platforms:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Linux platform
+        /// version <code>1.3.0</code> or later.</p>
+        /// </li>
+        /// <li>
+        /// <p>Windows platform
+        /// version <code>1.0.0</code> or later.</p>
+        /// </li>
+        /// </ul>
         pub fn set_depends_on(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContainerDependency>>,
@@ -15098,8 +15506,17 @@ pub mod container_definition {
         /// <p>When the <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration
         /// variable is used, it is enforced indendently from this start timeout value.</p>
         /// </note>
-        /// <p>For tasks using the Fargate launch type, this parameter requires that
-        /// the task or service uses platform version 1.3.0 or later.</p>
+        /// <p>For tasks using the Fargate launch type, the task or service requires the followiwng platforms:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Linux platform
+        /// version <code>1.3.0</code> or later.</p>
+        /// </li>
+        /// <li>
+        /// <p>Windows platform
+        /// version <code>1.0.0</code> or later.</p>
+        /// </li>
+        /// </ul>
         /// <p>For tasks using the EC2 launch type, your container instances require at
         /// least version <code>1.26.0</code> of the container agent to enable a container start
         /// timeout value. However, we recommend using the latest container agent version. For
@@ -15125,8 +15542,17 @@ pub mod container_definition {
         /// <p>When the <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration
         /// variable is used, it is enforced indendently from this start timeout value.</p>
         /// </note>
-        /// <p>For tasks using the Fargate launch type, this parameter requires that
-        /// the task or service uses platform version 1.3.0 or later.</p>
+        /// <p>For tasks using the Fargate launch type, the task or service requires the followiwng platforms:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Linux platform
+        /// version <code>1.3.0</code> or later.</p>
+        /// </li>
+        /// <li>
+        /// <p>Windows platform
+        /// version <code>1.0.0</code> or later.</p>
+        /// </li>
+        /// </ul>
         /// <p>For tasks using the EC2 launch type, your container instances require at
         /// least version <code>1.26.0</code> of the container agent to enable a container start
         /// timeout value. However, we recommend using the latest container agent version. For
@@ -15143,8 +15569,18 @@ pub mod container_definition {
         }
         /// <p>Time duration (in seconds) to wait before the container is forcefully killed if it
         /// doesn't exit normally on its own.</p>
-        /// <p>For tasks using the Fargate launch type, the task or service requires
-        /// platform version 1.3.0 or later. The max stop timeout value is 120 seconds and if the
+        /// <p>For tasks using the Fargate launch type, the task or service requires the followiwng platforms:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Linux platform
+        /// version <code>1.3.0</code> or later.</p>
+        /// </li>
+        /// <li>
+        /// <p>Windows platform
+        /// version <code>1.0.0</code> or later.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The max stop timeout value is 120 seconds and if the
         /// parameter is not specified, the default value of 30 seconds is used.</p>
         /// <p>For tasks using the EC2 launch type, if the <code>stopTimeout</code>
         /// parameter is not specified, the value set for the Amazon ECS container agent configuration
@@ -15167,8 +15603,18 @@ pub mod container_definition {
         }
         /// <p>Time duration (in seconds) to wait before the container is forcefully killed if it
         /// doesn't exit normally on its own.</p>
-        /// <p>For tasks using the Fargate launch type, the task or service requires
-        /// platform version 1.3.0 or later. The max stop timeout value is 120 seconds and if the
+        /// <p>For tasks using the Fargate launch type, the task or service requires the followiwng platforms:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Linux platform
+        /// version <code>1.3.0</code> or later.</p>
+        /// </li>
+        /// <li>
+        /// <p>Windows platform
+        /// version <code>1.0.0</code> or later.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The max stop timeout value is 120 seconds and if the
         /// parameter is not specified, the default value of 30 seconds is used.</p>
         /// <p>For tasks using the EC2 launch type, if the <code>stopTimeout</code>
         /// parameter is not specified, the value set for the Amazon ECS container agent configuration
@@ -17079,8 +17525,17 @@ impl HostEntry {
 /// <code>20190301</code> or later, then they contain the required versions of the
 /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 /// <note>
-/// <p>For tasks using the Fargate launch type, this parameter requires
-/// that the task or service uses platform version 1.3.0 or later.</p>
+/// <p>For tasks using the Fargate launch type, the task or service requires the followiwng platforms:</p>
+/// <ul>
+/// <li>
+/// <p>Linux platform
+/// version <code>1.3.0</code> or later.</p>
+/// </li>
+/// <li>
+/// <p>Windows platform
+/// version <code>1.0.0</code> or later.</p>
+/// </li>
+/// </ul>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

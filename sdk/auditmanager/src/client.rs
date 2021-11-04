@@ -171,6 +171,15 @@ where
     ) -> fluent_builders::DeleteAssessmentFramework<C, M, R> {
         fluent_builders::DeleteAssessmentFramework::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DeleteAssessmentFrameworkShare` operation.
+    ///
+    /// See [`DeleteAssessmentFrameworkShare`](crate::client::fluent_builders::DeleteAssessmentFrameworkShare) for more information about the
+    /// operation and its arguments.
+    pub fn delete_assessment_framework_share(
+        &self,
+    ) -> fluent_builders::DeleteAssessmentFrameworkShare<C, M, R> {
+        fluent_builders::DeleteAssessmentFrameworkShare::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DeleteAssessmentReport` operation.
     ///
     /// See [`DeleteAssessmentReport`](crate::client::fluent_builders::DeleteAssessmentReport) for more information about the
@@ -330,6 +339,15 @@ where
     pub fn list_assessment_frameworks(&self) -> fluent_builders::ListAssessmentFrameworks<C, M, R> {
         fluent_builders::ListAssessmentFrameworks::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ListAssessmentFrameworkShareRequests` operation.
+    ///
+    /// See [`ListAssessmentFrameworkShareRequests`](crate::client::fluent_builders::ListAssessmentFrameworkShareRequests) for more information about the
+    /// operation and its arguments.
+    pub fn list_assessment_framework_share_requests(
+        &self,
+    ) -> fluent_builders::ListAssessmentFrameworkShareRequests<C, M, R> {
+        fluent_builders::ListAssessmentFrameworkShareRequests::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ListAssessmentReports` operation.
     ///
     /// See [`ListAssessmentReports`](crate::client::fluent_builders::ListAssessmentReports) for more information about the
@@ -390,6 +408,15 @@ where
     ) -> fluent_builders::RegisterOrganizationAdminAccount<C, M, R> {
         fluent_builders::RegisterOrganizationAdminAccount::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `StartAssessmentFrameworkShare` operation.
+    ///
+    /// See [`StartAssessmentFrameworkShare`](crate::client::fluent_builders::StartAssessmentFrameworkShare) for more information about the
+    /// operation and its arguments.
+    pub fn start_assessment_framework_share(
+        &self,
+    ) -> fluent_builders::StartAssessmentFrameworkShare<C, M, R> {
+        fluent_builders::StartAssessmentFrameworkShare::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `TagResource` operation.
     ///
     /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
@@ -436,6 +463,15 @@ where
     ) -> fluent_builders::UpdateAssessmentFramework<C, M, R> {
         fluent_builders::UpdateAssessmentFramework::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `UpdateAssessmentFrameworkShare` operation.
+    ///
+    /// See [`UpdateAssessmentFrameworkShare`](crate::client::fluent_builders::UpdateAssessmentFrameworkShare) for more information about the
+    /// operation and its arguments.
+    pub fn update_assessment_framework_share(
+        &self,
+    ) -> fluent_builders::UpdateAssessmentFrameworkShare<C, M, R> {
+        fluent_builders::UpdateAssessmentFrameworkShare::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `UpdateAssessmentStatus` operation.
     ///
     /// See [`UpdateAssessmentStatus`](crate::client::fluent_builders::UpdateAssessmentStatus) for more information about the
@@ -477,9 +513,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateAssessmentReportEvidenceFolder`.
     ///
-    /// <p>
-    /// Associates an evidence folder to the specified assessment report in Audit Manager.
-    /// </p>
+    /// <p> Associates an evidence folder to an assessment report in a Audit Manager
+    /// assessment. </p>
     #[derive(std::fmt::Debug)]
     pub struct AssociateAssessmentReportEvidenceFolder<
         C = aws_smithy_client::erase::DynConnector,
@@ -530,21 +565,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -552,16 +586,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p>
-        /// The identifier for the folder in which evidence is stored.
-        /// </p>
+        /// <p> The identifier for the folder that the evidence is stored in. </p>
         pub fn evidence_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.evidence_folder_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the folder in which evidence is stored.
-        /// </p>
+        /// <p> The identifier for the folder that the evidence is stored in. </p>
         pub fn set_evidence_folder_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -572,9 +602,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchAssociateAssessmentReportEvidence`.
     ///
-    /// <p>
-    /// Associates a list of evidence to an assessment report in an Audit Manager assessment.
-    /// </p>
+    /// <p> Associates a list of evidence to an assessment report in an Audit Manager
+    /// assessment. </p>
     #[derive(std::fmt::Debug)]
     pub struct BatchAssociateAssessmentReportEvidence<
         C = aws_smithy_client::erase::DynConnector,
@@ -625,21 +654,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The unique identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The unique identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -647,16 +675,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p>
-        /// The identifier for the folder in which the evidence is stored.
-        /// </p>
+        /// <p> The identifier for the folder that the evidence is stored in. </p>
         pub fn evidence_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.evidence_folder_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the folder in which the evidence is stored.
-        /// </p>
+        /// <p> The identifier for the folder that the evidence is stored in. </p>
         pub fn set_evidence_folder_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -668,16 +692,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_evidence_ids`](Self::set_evidence_ids).
         ///
-        /// <p>
-        /// The list of evidence identifiers.
-        /// </p>
+        /// <p> The list of evidence identifiers. </p>
         pub fn evidence_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.evidence_ids(inp);
             self
         }
-        /// <p>
-        /// The list of evidence identifiers.
-        /// </p>
+        /// <p> The list of evidence identifiers. </p>
         pub fn set_evidence_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -688,9 +708,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchCreateDelegationByAssessment`.
     ///
-    /// <p>
-    /// Create a batch of delegations for a specified assessment in Audit Manager.
-    /// </p>
+    /// <p> Creates a batch of delegations for an assessment in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct BatchCreateDelegationByAssessment<
         C = aws_smithy_client::erase::DynConnector,
@@ -739,18 +757,19 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `createDelegationRequests`.
         ///
         /// To override the contents of this collection use [`set_create_delegation_requests`](Self::set_create_delegation_requests).
         ///
-        /// <p>
-        /// The API request to batch create delegations in Audit Manager.
-        /// </p>
+        /// <p> The API request to batch create delegations in Audit Manager. </p>
         pub fn create_delegation_requests(
             mut self,
             inp: impl Into<crate::model::CreateDelegationRequest>,
@@ -758,9 +777,7 @@ pub mod fluent_builders {
             self.inner = self.inner.create_delegation_requests(inp);
             self
         }
-        /// <p>
-        /// The API request to batch create delegations in Audit Manager.
-        /// </p>
+        /// <p> The API request to batch create delegations in Audit Manager. </p>
         pub fn set_create_delegation_requests(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CreateDelegationRequest>>,
@@ -768,16 +785,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_create_delegation_requests(input);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -788,9 +801,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDeleteDelegationByAssessment`.
     ///
-    /// <p>
-    /// Deletes the delegations in the specified Audit Manager assessment.
-    /// </p>
+    /// <p> Deletes a batch of delegations for an assessment in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct BatchDeleteDelegationByAssessment<
         C = aws_smithy_client::erase::DynConnector,
@@ -839,25 +850,24 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `delegationIds`.
         ///
         /// To override the contents of this collection use [`set_delegation_ids`](Self::set_delegation_ids).
         ///
-        /// <p>
-        /// The identifiers for the specified delegations.
-        /// </p>
+        /// <p> The identifiers for the delegations. </p>
         pub fn delegation_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.delegation_ids(inp);
             self
         }
-        /// <p>
-        /// The identifiers for the specified delegations.
-        /// </p>
+        /// <p> The identifiers for the delegations. </p>
         pub fn set_delegation_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -865,16 +875,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_delegation_ids(input);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -885,8 +891,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDisassociateAssessmentReportEvidence`.
     ///
-    /// <p>
-    /// Disassociates a list of evidence from the specified assessment report in Audit Manager.
+    /// <p> Disassociates a list of evidence from an assessment report in Audit Manager.
     /// </p>
     #[derive(std::fmt::Debug)]
     pub struct BatchDisassociateAssessmentReportEvidence<
@@ -938,21 +943,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -960,16 +964,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p>
-        /// The identifier for the folder in which evidence is stored.
-        /// </p>
+        /// <p> The identifier for the folder that the evidence is stored in. </p>
         pub fn evidence_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.evidence_folder_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the folder in which evidence is stored.
-        /// </p>
+        /// <p> The identifier for the folder that the evidence is stored in. </p>
         pub fn set_evidence_folder_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -981,16 +981,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_evidence_ids`](Self::set_evidence_ids).
         ///
-        /// <p>
-        /// The list of evidence identifiers.
-        /// </p>
+        /// <p> The list of evidence identifiers. </p>
         pub fn evidence_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.evidence_ids(inp);
             self
         }
-        /// <p>
-        /// The list of evidence identifiers.
-        /// </p>
+        /// <p> The list of evidence identifiers. </p>
         pub fn set_evidence_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1001,9 +997,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchImportEvidenceToAssessmentControl`.
     ///
-    /// <p>
-    /// Uploads one or more pieces of evidence to the specified control in the assessment in Audit Manager.
-    /// </p>
+    /// <p> Uploads one or more pieces of evidence to a control in an Audit Manager
+    /// assessment. </p>
     #[derive(std::fmt::Debug)]
     pub struct BatchImportEvidenceToAssessmentControl<
         C = aws_smithy_client::erase::DynConnector,
@@ -1054,21 +1049,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1076,16 +1070,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p>
-        /// The identifier for the specified control set.
-        /// </p>
+        /// <p> The identifier for the control set. </p>
         pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_set_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified control set.
-        /// </p>
+        /// <p> The identifier for the control set. </p>
         pub fn set_control_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1093,18 +1083,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_control_set_id(input);
             self
         }
-        /// <p>
-        ///
-        /// The identifier for the specified control.
-        /// </p>
+        /// <p> The identifier for the control. </p>
         pub fn control_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_id(inp);
             self
         }
-        /// <p>
-        ///
-        /// The identifier for the specified control.
-        /// </p>
+        /// <p> The identifier for the control. </p>
         pub fn set_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_control_id(input);
             self
@@ -1113,16 +1097,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_manual_evidence`](Self::set_manual_evidence).
         ///
-        /// <p>
-        /// The list of manual evidence objects.
-        /// </p>
+        /// <p> The list of manual evidence objects. </p>
         pub fn manual_evidence(mut self, inp: impl Into<crate::model::ManualEvidence>) -> Self {
             self.inner = self.inner.manual_evidence(inp);
             self
         }
-        /// <p>
-        /// The list of manual evidence objects.
-        /// </p>
+        /// <p> The list of manual evidence objects. </p>
         pub fn set_manual_evidence(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ManualEvidence>>,
@@ -1133,9 +1113,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAssessment`.
     ///
-    /// <p>
-    /// Creates an assessment in Audit Manager.
-    /// </p>
+    /// <p> Creates an assessment in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct CreateAssessment<
         C = aws_smithy_client::erase::DynConnector,
@@ -1184,42 +1162,35 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the assessment to be created.
-        /// </p>
+        /// <p> The name of the assessment to be created. </p>
         pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(inp);
             self
         }
-        /// <p>
-        /// The name of the assessment to be created.
-        /// </p>
+        /// <p> The name of the assessment to be created. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>
-        /// The optional description of the assessment to be created.
-        /// </p>
+        /// <p> The optional description of the assessment to be created. </p>
         pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(inp);
             self
         }
-        /// <p>
-        /// The optional description of the assessment to be created.
-        /// </p>
+        /// <p> The optional description of the assessment to be created. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>
-        /// The assessment report storage destination for the specified assessment that is being created.
-        /// </p>
+        /// <p> The assessment report storage destination for the assessment that's being created. </p>
         pub fn assessment_reports_destination(
             mut self,
             inp: crate::model::AssessmentReportsDestination,
@@ -1227,9 +1198,7 @@ pub mod fluent_builders {
             self.inner = self.inner.assessment_reports_destination(inp);
             self
         }
-        /// <p>
-        /// The assessment report storage destination for the specified assessment that is being created.
-        /// </p>
+        /// <p> The assessment report storage destination for the assessment that's being created. </p>
         pub fn set_assessment_reports_destination(
             mut self,
             input: std::option::Option<crate::model::AssessmentReportsDestination>,
@@ -1237,16 +1206,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_reports_destination(input);
             self
         }
-        /// <p>
-        /// The wrapper that contains the accounts and services in scope for the assessment.
-        /// </p>
+        /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in
+        /// scope for the assessment. </p>
         pub fn scope(mut self, inp: crate::model::Scope) -> Self {
             self.inner = self.inner.scope(inp);
             self
         }
-        /// <p>
-        /// The wrapper that contains the accounts and services in scope for the assessment.
-        /// </p>
+        /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in
+        /// scope for the assessment. </p>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
@@ -1255,16 +1222,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
-        /// <p>
-        /// The list of roles for the specified assessment.
-        /// </p>
+        /// <p> The list of roles for the assessment. </p>
         pub fn roles(mut self, inp: impl Into<crate::model::Role>) -> Self {
             self.inner = self.inner.roles(inp);
             self
         }
-        /// <p>
-        /// The list of roles for the specified assessment.
-        /// </p>
+        /// <p> The list of roles for the assessment. </p>
         pub fn set_roles(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Role>>,
@@ -1272,16 +1235,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_roles(input);
             self
         }
-        /// <p>
-        /// The identifier for the specified framework.
-        /// </p>
+        /// <p> The identifier for the framework that the assessment will be created from. </p>
         pub fn framework_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.framework_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified framework.
-        /// </p>
+        /// <p> The identifier for the framework that the assessment will be created from. </p>
         pub fn set_framework_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_framework_id(input);
             self
@@ -1290,9 +1249,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// The tags associated with the assessment.
-        /// </p>
+        /// <p> The tags that are associated with the assessment. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1301,9 +1258,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>
-        /// The tags associated with the assessment.
-        /// </p>
+        /// <p> The tags that are associated with the assessment. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1316,9 +1271,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAssessmentFramework`.
     ///
-    /// <p>
-    /// Creates a custom framework in Audit Manager.
-    /// </p>
+    /// <p> Creates a custom framework in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct CreateAssessmentFramework<
         C = aws_smithy_client::erase::DynConnector,
@@ -1367,48 +1320,41 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the new custom framework.
-        /// </p>
+        /// <p> The name of the new custom framework. </p>
         pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(inp);
             self
         }
-        /// <p>
-        /// The name of the new custom framework.
-        /// </p>
+        /// <p> The name of the new custom framework. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>
-        /// An optional description for the new custom framework.
-        /// </p>
+        /// <p> An optional description for the new custom framework. </p>
         pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(inp);
             self
         }
-        /// <p>
-        /// An optional description for the new custom framework.
-        /// </p>
+        /// <p> An optional description for the new custom framework. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>
-        /// The compliance type that the new custom framework supports, such as CIS or HIPAA.
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
         /// </p>
         pub fn compliance_type(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.compliance_type(inp);
             self
         }
-        /// <p>
-        /// The compliance type that the new custom framework supports, such as CIS or HIPAA.
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
         /// </p>
         pub fn set_compliance_type(
             mut self,
@@ -1421,9 +1367,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_control_sets`](Self::set_control_sets).
         ///
-        /// <p>
-        /// The control sets to be associated with the framework.
-        /// </p>
+        /// <p> The control sets that are associated with the framework. </p>
         pub fn control_sets(
             mut self,
             inp: impl Into<crate::model::CreateAssessmentFrameworkControlSet>,
@@ -1431,9 +1375,7 @@ pub mod fluent_builders {
             self.inner = self.inner.control_sets(inp);
             self
         }
-        /// <p>
-        /// The control sets to be associated with the framework.
-        /// </p>
+        /// <p> The control sets that are associated with the framework. </p>
         pub fn set_control_sets(
             mut self,
             input: std::option::Option<
@@ -1447,9 +1389,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// The tags associated with the framework.
-        /// </p>
+        /// <p> The tags that are associated with the framework. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1458,9 +1398,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>
-        /// The tags associated with the framework.
-        /// </p>
+        /// <p> The tags that are associated with the framework. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1473,9 +1411,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAssessmentReport`.
     ///
-    /// <p>
-    /// Creates an assessment report for the specified assessment.
-    /// </p>
+    /// <p> Creates an assessment report for the specified assessment. </p>
     #[derive(std::fmt::Debug)]
     pub struct CreateAssessmentReport<
         C = aws_smithy_client::erase::DynConnector,
@@ -1524,49 +1460,40 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the new assessment report.
-        /// </p>
+        /// <p> The name of the new assessment report. </p>
         pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(inp);
             self
         }
-        /// <p>
-        /// The name of the new assessment report.
-        /// </p>
+        /// <p> The name of the new assessment report. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>
-        /// The description of the assessment report.
-        /// </p>
+        /// <p> The description of the assessment report. </p>
         pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(inp);
             self
         }
-        /// <p>
-        /// The description of the assessment report.
-        /// </p>
+        /// <p> The description of the assessment report. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1577,9 +1504,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateControl`.
     ///
-    /// <p>
-    /// Creates a new custom control in Audit Manager.
-    /// </p>
+    /// <p> Creates a new custom control in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct CreateControl<
         C = aws_smithy_client::erase::DynConnector,
@@ -1628,49 +1553,40 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the control.
-        /// </p>
+        /// <p> The name of the control. </p>
         pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(inp);
             self
         }
-        /// <p>
-        /// The name of the control.
-        /// </p>
+        /// <p> The name of the control. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>
-        /// The description of the control.
-        /// </p>
+        /// <p> The description of the control. </p>
         pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(inp);
             self
         }
-        /// <p>
-        /// The description of the control.
-        /// </p>
+        /// <p> The description of the control. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>
-        /// The steps to follow to determine if the control has been satisfied.
-        /// </p>
+        /// <p> The steps to follow to determine if the control is satisfied. </p>
         pub fn testing_information(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.testing_information(inp);
             self
         }
-        /// <p>
-        /// The steps to follow to determine if the control has been satisfied.
-        /// </p>
+        /// <p> The steps to follow to determine if the control is satisfied. </p>
         pub fn set_testing_information(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1678,16 +1594,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_testing_information(input);
             self
         }
-        /// <p>
-        /// The title of the action plan for remediating the control.
-        /// </p>
+        /// <p> The title of the action plan for remediating the control. </p>
         pub fn action_plan_title(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.action_plan_title(inp);
             self
         }
-        /// <p>
-        /// The title of the action plan for remediating the control.
-        /// </p>
+        /// <p> The title of the action plan for remediating the control. </p>
         pub fn set_action_plan_title(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1695,16 +1607,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action_plan_title(input);
             self
         }
-        /// <p>
-        /// The recommended actions to carry out if the control is not fulfilled.
-        /// </p>
+        /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
         pub fn action_plan_instructions(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.action_plan_instructions(inp);
             self
         }
-        /// <p>
-        /// The recommended actions to carry out if the control is not fulfilled.
-        /// </p>
+        /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
         pub fn set_action_plan_instructions(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1716,9 +1624,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_control_mapping_sources`](Self::set_control_mapping_sources).
         ///
-        /// <p>
-        /// The data mapping sources for the specified control.
-        /// </p>
+        /// <p> The data mapping sources for the control. </p>
         pub fn control_mapping_sources(
             mut self,
             inp: impl Into<crate::model::CreateControlMappingSource>,
@@ -1726,9 +1632,7 @@ pub mod fluent_builders {
             self.inner = self.inner.control_mapping_sources(inp);
             self
         }
-        /// <p>
-        /// The data mapping sources for the specified control.
-        /// </p>
+        /// <p> The data mapping sources for the control. </p>
         pub fn set_control_mapping_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CreateControlMappingSource>>,
@@ -1740,9 +1644,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// The tags associated with the control.
-        /// </p>
+        /// <p> The tags that are associated with the control. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1751,9 +1653,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>
-        /// The tags associated with the control.
-        /// </p>
+        /// <p> The tags that are associated with the control. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1766,9 +1666,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAssessment`.
     ///
-    /// <p>
-    /// Deletes an assessment in Audit Manager.
-    /// </p>
+    /// <p> Deletes an assessment in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteAssessment<
         C = aws_smithy_client::erase::DynConnector,
@@ -1817,21 +1715,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1842,9 +1739,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAssessmentFramework`.
     ///
-    /// <p>
-    /// Deletes a custom framework in Audit Manager.
-    /// </p>
+    /// <p> Deletes a custom framework in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteAssessmentFramework<
         C = aws_smithy_client::erase::DynConnector,
@@ -1893,31 +1788,113 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified framework.
-        /// </p>
+        /// <p> The identifier for the framework. </p>
         pub fn framework_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.framework_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified framework.
-        /// </p>
+        /// <p> The identifier for the framework. </p>
         pub fn set_framework_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_framework_id(input);
             self
         }
     }
-    /// Fluent builder constructing a request to `DeleteAssessmentReport`.
+    /// Fluent builder constructing a request to `DeleteAssessmentFrameworkShare`.
     ///
     /// <p>
-    /// Deletes an assessment report from an assessment in Audit Manager.
+    /// Deletes a share request for a custom framework in Audit Manager.
     /// </p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteAssessmentFrameworkShare<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_assessment_framework_share_input::Builder,
+    }
+    impl<C, M, R> DeleteAssessmentFrameworkShare<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteAssessmentFrameworkShare`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteAssessmentFrameworkShareOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteAssessmentFrameworkShareError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteAssessmentFrameworkShareInputOperationOutputAlias,
+                crate::output::DeleteAssessmentFrameworkShareOutput,
+                crate::error::DeleteAssessmentFrameworkShareError,
+                crate::input::DeleteAssessmentFrameworkShareInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the share request to be deleted.</p>
+        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(inp);
+            self
+        }
+        /// <p>The unique identifier for the share request to be deleted.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_request_id(input);
+            self
+        }
+        /// <p>Specifies whether the share request is a sent request or a received request.</p>
+        pub fn request_type(mut self, inp: crate::model::ShareRequestType) -> Self {
+            self.inner = self.inner.request_type(inp);
+            self
+        }
+        /// <p>Specifies whether the share request is a sent request or a received request.</p>
+        pub fn set_request_type(
+            mut self,
+            input: std::option::Option<crate::model::ShareRequestType>,
+        ) -> Self {
+            self.inner = self.inner.set_request_type(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteAssessmentReport`.
+    ///
+    /// <p> Deletes an assessment report from an assessment in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteAssessmentReport<
         C = aws_smithy_client::erase::DynConnector,
@@ -1966,21 +1943,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1988,16 +1964,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p>
-        /// The unique identifier for the assessment report.
-        /// </p>
+        /// <p> The unique identifier for the assessment report. </p>
         pub fn assessment_report_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_report_id(inp);
             self
         }
-        /// <p>
-        /// The unique identifier for the assessment report.
-        /// </p>
+        /// <p> The unique identifier for the assessment report. </p>
         pub fn set_assessment_report_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2008,9 +1980,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteControl`.
     ///
-    /// <p>
-    /// Deletes a custom control in Audit Manager.
-    /// </p>
+    /// <p> Deletes a custom control in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteControl<
         C = aws_smithy_client::erase::DynConnector,
@@ -2059,21 +2029,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified control.
-        /// </p>
+        /// <p> The identifier for the control. </p>
         pub fn control_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified control.
-        /// </p>
+        /// <p> The identifier for the control. </p>
         pub fn set_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_control_id(input);
             self
@@ -2081,9 +2050,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterAccount`.
     ///
-    /// <p>
-    /// Deregisters an account in Audit Manager.
-    /// </p>
+    /// <p> Deregisters an account in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct DeregisterAccount<
         C = aws_smithy_client::erase::DynConnector,
@@ -2132,21 +2099,25 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
     }
     /// Fluent builder constructing a request to `DeregisterOrganizationAdminAccount`.
     ///
-    /// <p>Removes the specified member account as a delegated administrator for Audit Manager. </p>
+    /// <p>Removes the specified member Amazon Web Services account as a delegated administrator for
+    /// Audit Manager. </p>
     /// <important>
-    /// <p>When you remove a delegated administrator from your Audit Manager settings, or when you
-    /// deregister a delegated administrator from Organizations, you continue to have access
-    /// to the evidence that you previously collected under that account. However, Audit Manager
-    /// will stop collecting and attaching evidence to that delegated administrator account
-    /// moving forward.</p>
+    /// <p>When you remove a delegated administrator from your Audit Manager settings, you
+    /// continue to have access to the evidence that you previously collected under that
+    /// account. This is also the case when you deregister a delegated administrator from
+    /// Audit Manager. However, Audit Manager will stop collecting and attaching
+    /// evidence to that delegated administrator account moving forward.</p>
     /// </important>
     #[derive(std::fmt::Debug)]
     pub struct DeregisterOrganizationAdminAccount<
@@ -2198,21 +2169,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified administrator account.
-        /// </p>
+        /// <p> The identifier for the administrator account. </p>
         pub fn admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.admin_account_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified administrator account.
-        /// </p>
+        /// <p> The identifier for the administrator account. </p>
         pub fn set_admin_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2223,9 +2193,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateAssessmentReportEvidenceFolder`.
     ///
-    /// <p>
-    /// Disassociates an evidence folder from the specified assessment report in Audit Manager.
-    /// </p>
+    /// <p> Disassociates an evidence folder from the specified assessment report in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct DisassociateAssessmentReportEvidenceFolder<
         C = aws_smithy_client::erase::DynConnector,
@@ -2276,21 +2244,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2298,16 +2265,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p>
-        /// The identifier for the folder in which evidence is stored.
-        /// </p>
+        /// <p> The identifier for the folder in which evidence is stored. </p>
         pub fn evidence_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.evidence_folder_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the folder in which evidence is stored.
-        /// </p>
+        /// <p> The identifier for the folder in which evidence is stored. </p>
         pub fn set_evidence_folder_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2318,9 +2281,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAccountStatus`.
     ///
-    /// <p>
-    /// Returns the registration status of an account in Audit Manager.
-    /// </p>
+    /// <p> Returns the registration status of an account in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct GetAccountStatus<
         C = aws_smithy_client::erase::DynConnector,
@@ -2369,17 +2330,18 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
     }
     /// Fluent builder constructing a request to `GetAssessment`.
     ///
-    /// <p>
-    /// Returns an assessment from Audit Manager.
-    /// </p>
+    /// <p> Returns an assessment from Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct GetAssessment<
         C = aws_smithy_client::erase::DynConnector,
@@ -2428,21 +2390,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2453,9 +2414,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAssessmentFramework`.
     ///
-    /// <p>
-    /// Returns a framework from Audit Manager.
-    /// </p>
+    /// <p> Returns a framework from Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct GetAssessmentFramework<
         C = aws_smithy_client::erase::DynConnector,
@@ -2504,21 +2463,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified framework.
-        /// </p>
+        /// <p> The identifier for the framework. </p>
         pub fn framework_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.framework_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified framework.
-        /// </p>
+        /// <p> The identifier for the framework. </p>
         pub fn set_framework_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_framework_id(input);
             self
@@ -2526,9 +2484,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAssessmentReportUrl`.
     ///
-    /// <p>
-    /// Returns the URL of a specified assessment report in Audit Manager.
-    /// </p>
+    /// <p> Returns the URL of an assessment report in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct GetAssessmentReportUrl<
         C = aws_smithy_client::erase::DynConnector,
@@ -2577,21 +2533,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the assessment report.
-        /// </p>
+        /// <p> The identifier for the assessment report. </p>
         pub fn assessment_report_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_report_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the assessment report.
-        /// </p>
+        /// <p> The identifier for the assessment report. </p>
         pub fn set_assessment_report_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2599,16 +2554,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_report_id(input);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2619,9 +2570,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetChangeLogs`.
     ///
-    /// <p>
-    /// Returns a list of changelogs from Audit Manager.
-    /// </p>
+    /// <p> Returns a list of changelogs from Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct GetChangeLogs<
         C = aws_smithy_client::erase::DynConnector,
@@ -2670,21 +2619,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2692,16 +2640,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p>
-        /// The identifier for the specified control set.
-        /// </p>
+        /// <p> The identifier for the control set. </p>
         pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_set_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified control set.
-        /// </p>
+        /// <p> The identifier for the control set. </p>
         pub fn set_control_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2709,46 +2653,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_control_set_id(input);
             self
         }
-        /// <p>
-        ///
-        /// The identifier for the specified control.
-        /// </p>
+        /// <p> The identifier for the control. </p>
         pub fn control_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_id(inp);
             self
         }
-        /// <p>
-        ///
-        /// The identifier for the specified control.
-        /// </p>
+        /// <p> The identifier for the control. </p>
         pub fn set_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_control_id(input);
             self
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2756,9 +2686,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetControl`.
     ///
-    /// <p>
-    /// Returns a control from Audit Manager.
-    /// </p>
+    /// <p> Returns a control from Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct GetControl<
         C = aws_smithy_client::erase::DynConnector,
@@ -2807,23 +2735,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        ///
-        /// The identifier for the specified control.
-        /// </p>
+        /// <p> The identifier for the control. </p>
         pub fn control_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_id(inp);
             self
         }
-        /// <p>
-        ///
-        /// The identifier for the specified control.
-        /// </p>
+        /// <p> The identifier for the control. </p>
         pub fn set_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_control_id(input);
             self
@@ -2831,9 +2756,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDelegations`.
     ///
-    /// <p>
-    /// Returns a list of delegations from an audit owner to a delegate.
-    /// </p>
+    /// <p> Returns a list of delegations from an audit owner to a delegate. </p>
     #[derive(std::fmt::Debug)]
     pub struct GetDelegations<
         C = aws_smithy_client::erase::DynConnector,
@@ -2882,35 +2805,30 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2918,9 +2836,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEvidence`.
     ///
-    /// <p>
-    /// Returns evidence from Audit Manager.
-    /// </p>
+    /// <p> Returns evidence from Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct GetEvidence<
         C = aws_smithy_client::erase::DynConnector,
@@ -2969,21 +2885,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2991,16 +2906,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p>
-        /// The identifier for the specified control set.
-        /// </p>
+        /// <p> The identifier for the control set. </p>
         pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_set_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified control set.
-        /// </p>
+        /// <p> The identifier for the control set. </p>
         pub fn set_control_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3008,16 +2919,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_control_set_id(input);
             self
         }
-        /// <p>
-        /// The identifier for the folder in which the evidence is stored.
-        /// </p>
+        /// <p> The identifier for the folder that the evidence is stored in. </p>
         pub fn evidence_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.evidence_folder_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the folder in which the evidence is stored.
-        /// </p>
+        /// <p> The identifier for the folder that the evidence is stored in. </p>
         pub fn set_evidence_folder_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3025,16 +2932,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_evidence_folder_id(input);
             self
         }
-        /// <p>
-        /// The identifier for the evidence.
-        /// </p>
+        /// <p> The identifier for the evidence. </p>
         pub fn evidence_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.evidence_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the evidence.
-        /// </p>
+        /// <p> The identifier for the evidence. </p>
         pub fn set_evidence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_evidence_id(input);
             self
@@ -3042,9 +2945,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEvidenceByEvidenceFolder`.
     ///
-    /// <p>
-    /// Returns all evidence from a specified evidence folder in Audit Manager.
-    /// </p>
+    /// <p> Returns all evidence from a specified evidence folder in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct GetEvidenceByEvidenceFolder<
         C = aws_smithy_client::erase::DynConnector,
@@ -3093,21 +2994,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3115,16 +3015,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p>
-        /// The identifier for the control set.
-        /// </p>
+        /// <p> The identifier for the control set. </p>
         pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_set_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the control set.
-        /// </p>
+        /// <p> The identifier for the control set. </p>
         pub fn set_control_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3132,16 +3028,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_control_set_id(input);
             self
         }
-        /// <p>
-        /// The unique identifier for the folder in which the evidence is stored.
-        /// </p>
+        /// <p> The unique identifier for the folder that the evidence is stored in. </p>
         pub fn evidence_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.evidence_folder_id(inp);
             self
         }
-        /// <p>
-        /// The unique identifier for the folder in which the evidence is stored.
-        /// </p>
+        /// <p> The unique identifier for the folder that the evidence is stored in. </p>
         pub fn set_evidence_folder_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3149,30 +3041,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_evidence_folder_id(input);
             self
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3180,8 +3064,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEvidenceFolder`.
     ///
-    /// <p>
-    /// Returns an evidence folder from the specified assessment in Audit Manager.
+    /// <p> Returns an evidence folder from the specified assessment in Audit Manager.
     /// </p>
     #[derive(std::fmt::Debug)]
     pub struct GetEvidenceFolder<
@@ -3231,21 +3114,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3253,16 +3135,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p>
-        /// The identifier for the specified control set.
-        /// </p>
+        /// <p> The identifier for the control set. </p>
         pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_set_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified control set.
-        /// </p>
+        /// <p> The identifier for the control set. </p>
         pub fn set_control_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3270,16 +3148,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_control_set_id(input);
             self
         }
-        /// <p>
-        /// The identifier for the folder in which the evidence is stored.
-        /// </p>
+        /// <p> The identifier for the folder that the evidence is stored in. </p>
         pub fn evidence_folder_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.evidence_folder_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the folder in which the evidence is stored.
-        /// </p>
+        /// <p> The identifier for the folder that the evidence is stored in. </p>
         pub fn set_evidence_folder_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3290,8 +3164,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEvidenceFoldersByAssessment`.
     ///
-    /// <p>
-    /// Returns the evidence folders from a specified assessment in Audit Manager.
+    /// <p> Returns the evidence folders from a specified assessment in Audit Manager.
     /// </p>
     #[derive(std::fmt::Debug)]
     pub struct GetEvidenceFoldersByAssessment<
@@ -3341,21 +3214,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3363,30 +3235,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3394,9 +3258,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEvidenceFoldersByAssessmentControl`.
     ///
-    /// <p>
-    /// Returns a list of evidence folders associated with a specified control of an assessment in Audit Manager.
-    /// </p>
+    /// <p> Returns a list of evidence folders that are associated with a specified control of an
+    /// assessment in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct GetEvidenceFoldersByAssessmentControl<
         C = aws_smithy_client::erase::DynConnector,
@@ -3447,21 +3310,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3469,16 +3331,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p>
-        /// The identifier for the specified control set.
-        /// </p>
+        /// <p> The identifier for the control set. </p>
         pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_set_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified control set.
-        /// </p>
+        /// <p> The identifier for the control set. </p>
         pub fn set_control_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3486,44 +3344,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_control_set_id(input);
             self
         }
-        /// <p>
-        /// The identifier for the specified control.
-        /// </p>
+        /// <p> The identifier for the control. </p>
         pub fn control_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified control.
-        /// </p>
+        /// <p> The identifier for the control. </p>
         pub fn set_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_control_id(input);
             self
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3531,9 +3377,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetOrganizationAdminAccount`.
     ///
-    /// <p>
-    /// Returns the name of the delegated Amazon Web Services administrator account for the organization.
-    /// </p>
+    /// <p> Returns the name of the delegated Amazon Web Services administrator account for the
+    /// organization. </p>
     #[derive(std::fmt::Debug)]
     pub struct GetOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
@@ -3582,17 +3427,19 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
     }
     /// Fluent builder constructing a request to `GetServicesInScope`.
     ///
-    /// <p>
-    /// Returns a list of the in-scope Amazon Web Services services for the specified assessment.
-    /// </p>
+    /// <p> Returns a list of the in-scope Amazon Web Services services for the specified
+    /// assessment. </p>
     #[derive(std::fmt::Debug)]
     pub struct GetServicesInScope<
         C = aws_smithy_client::erase::DynConnector,
@@ -3641,17 +3488,18 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
     }
     /// Fluent builder constructing a request to `GetSettings`.
     ///
-    /// <p>
-    /// Returns the settings for the specified account.
-    /// </p>
+    /// <p> Returns the settings for the specified Amazon Web Services account. </p>
     #[derive(std::fmt::Debug)]
     pub struct GetSettings<
         C = aws_smithy_client::erase::DynConnector,
@@ -3700,21 +3548,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The list of <code>SettingAttribute</code> enum values.
-        /// </p>
+        /// <p> The list of <code>SettingAttribute</code> enum values. </p>
         pub fn attribute(mut self, inp: crate::model::SettingAttribute) -> Self {
             self.inner = self.inner.attribute(inp);
             self
         }
-        /// <p>
-        /// The list of <code>SettingAttribute</code> enum values.
-        /// </p>
+        /// <p> The list of <code>SettingAttribute</code> enum values. </p>
         pub fn set_attribute(
             mut self,
             input: std::option::Option<crate::model::SettingAttribute>,
@@ -3725,9 +3572,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAssessmentFrameworks`.
     ///
-    /// <p>
-    /// Returns a list of the frameworks available in the Audit Manager framework library.
-    /// </p>
+    /// <p> Returns a list of the frameworks that are available in the Audit Manager
+    /// framework library. </p>
     #[derive(std::fmt::Debug)]
     pub struct ListAssessmentFrameworks<
         C = aws_smithy_client::erase::DynConnector,
@@ -3776,21 +3622,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The type of framework, such as standard or custom.
-        /// </p>
+        /// <p> The type of framework, such as a standard framework or a custom framework. </p>
         pub fn framework_type(mut self, inp: crate::model::FrameworkType) -> Self {
             self.inner = self.inner.framework_type(inp);
             self
         }
-        /// <p>
-        /// The type of framework, such as standard or custom.
-        /// </p>
+        /// <p> The type of framework, such as a standard framework or a custom framework. </p>
         pub fn set_framework_type(
             mut self,
             input: std::option::Option<crate::model::FrameworkType>,
@@ -3798,30 +3643,117 @@ pub mod fluent_builders {
             self.inner = self.inner.set_framework_type(input);
             self
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListAssessmentFrameworkShareRequests`.
+    ///
+    /// <p> Returns a list of sent or received share requests for custom frameworks in Audit Manager. </p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListAssessmentFrameworkShareRequests<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_assessment_framework_share_requests_input::Builder,
+    }
+    impl<C, M, R> ListAssessmentFrameworkShareRequests<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListAssessmentFrameworkShareRequests`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAssessmentFrameworkShareRequestsOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::ListAssessmentFrameworkShareRequestsError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListAssessmentFrameworkShareRequestsInputOperationOutputAlias,
+                crate::output::ListAssessmentFrameworkShareRequestsOutput,
+                crate::error::ListAssessmentFrameworkShareRequestsError,
+                crate::input::ListAssessmentFrameworkShareRequestsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> Specifies whether the share request is a sent request or a received request.</p>
+        pub fn request_type(mut self, inp: crate::model::ShareRequestType) -> Self {
+            self.inner = self.inner.request_type(inp);
+            self
+        }
+        /// <p> Specifies whether the share request is a sent request or a received request.</p>
+        pub fn set_request_type(
+            mut self,
+            input: std::option::Option<crate::model::ShareRequestType>,
+        ) -> Self {
+            self.inner = self.inner.set_request_type(input);
+            self
+        }
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3829,9 +3761,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAssessmentReports`.
     ///
-    /// <p>
-    /// Returns a list of assessment reports created in Audit Manager.
-    /// </p>
+    /// <p> Returns a list of assessment reports created in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct ListAssessmentReports<
         C = aws_smithy_client::erase::DynConnector,
@@ -3880,35 +3810,30 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3916,9 +3841,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAssessments`.
     ///
-    /// <p>
-    /// Returns a list of current and past assessments from Audit Manager.
-    /// </p>
+    /// <p> Returns a list of current and past assessments from Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct ListAssessments<
         C = aws_smithy_client::erase::DynConnector,
@@ -3967,35 +3890,30 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4003,9 +3921,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListControls`.
     ///
-    /// <p>
-    /// Returns a list of controls from Audit Manager.
-    /// </p>
+    /// <p> Returns a list of controls from Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct ListControls<
         C = aws_smithy_client::erase::DynConnector,
@@ -4054,21 +3970,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The type of control, such as standard or custom.
-        /// </p>
+        /// <p> The type of control, such as a standard control or a custom control. </p>
         pub fn control_type(mut self, inp: crate::model::ControlType) -> Self {
             self.inner = self.inner.control_type(inp);
             self
         }
-        /// <p>
-        /// The type of control, such as standard or custom.
-        /// </p>
+        /// <p> The type of control, such as a standard control or a custom control. </p>
         pub fn set_control_type(
             mut self,
             input: std::option::Option<crate::model::ControlType>,
@@ -4076,30 +3991,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_control_type(input);
             self
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4107,9 +4014,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListKeywordsForDataSource`.
     ///
-    /// <p>
-    /// Returns a list of keywords that pre-mapped to the specified control data source.
-    /// </p>
+    /// <p> Returns a list of keywords that are pre-mapped to the specified control data source. </p>
     #[derive(std::fmt::Debug)]
     pub struct ListKeywordsForDataSource<
         C = aws_smithy_client::erase::DynConnector,
@@ -4158,49 +4063,40 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The control mapping data source to which the keywords apply.
-        /// </p>
+        /// <p> The control mapping data source that the keywords apply to. </p>
         pub fn source(mut self, inp: crate::model::SourceType) -> Self {
             self.inner = self.inner.source(inp);
             self
         }
-        /// <p>
-        /// The control mapping data source to which the keywords apply.
-        /// </p>
+        /// <p> The control mapping data source that the keywords apply to. </p>
         pub fn set_source(mut self, input: std::option::Option<crate::model::SourceType>) -> Self {
             self.inner = self.inner.set_source(input);
             self
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4208,9 +4104,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListNotifications`.
     ///
-    /// <p>
-    /// Returns a list of all Audit Manager notifications.
-    /// </p>
+    /// <p> Returns a list of all Audit Manager notifications. </p>
     #[derive(std::fmt::Debug)]
     pub struct ListNotifications<
         C = aws_smithy_client::erase::DynConnector,
@@ -4259,35 +4153,30 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>
-        /// The pagination token used to fetch the next set of results.
-        /// </p>
+        /// <p> The pagination token that's used to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>
-        /// Represents the maximum number of results per page, or per API request call.
-        /// </p>
+        /// <p> Represents the maximum number of results on a page or for an API request call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4295,9 +4184,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>
-    /// Returns a list of tags for the specified resource in Audit Manager.
-    /// </p>
+    /// <p> Returns a list of tags for the specified resource in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -4346,21 +4233,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the specified resource.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the resource. </p>
         pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(inp);
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the specified resource.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the resource. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4368,9 +4254,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterAccount`.
     ///
-    /// <p>
-    /// Enables Audit Manager for the specified account.
-    /// </p>
+    /// <p> Enables Audit Manager for the specified Amazon Web Services account. </p>
     #[derive(std::fmt::Debug)]
     pub struct RegisterAccount<
         C = aws_smithy_client::erase::DynConnector,
@@ -4419,35 +4303,30 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The KMS key details.
-        /// </p>
+        /// <p> The KMS key details. </p>
         pub fn kms_key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key(inp);
             self
         }
-        /// <p>
-        /// The KMS key details.
-        /// </p>
+        /// <p> The KMS key details. </p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key(input);
             self
         }
-        /// <p>
-        /// The delegated administrator account for Audit Manager.
-        /// </p>
+        /// <p> The delegated administrator account for Audit Manager. </p>
         pub fn delegated_admin_account(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.delegated_admin_account(inp);
             self
         }
-        /// <p>
-        /// The delegated administrator account for Audit Manager.
-        /// </p>
+        /// <p> The delegated administrator account for Audit Manager. </p>
         pub fn set_delegated_admin_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4458,9 +4337,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterOrganizationAdminAccount`.
     ///
-    /// <p>
-    /// Enables an account within the organization as the delegated administrator for Audit Manager.
-    /// </p>
+    /// <p> Enables an Amazon Web Services account within the organization as the delegated
+    /// administrator for Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct RegisterOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
@@ -4509,21 +4387,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified delegated administrator account.
-        /// </p>
+        /// <p> The identifier for the delegated administrator account. </p>
         pub fn admin_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.admin_account_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified delegated administrator account.
-        /// </p>
+        /// <p> The identifier for the delegated administrator account. </p>
         pub fn set_admin_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4532,11 +4409,125 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `StartAssessmentFrameworkShare`.
+    ///
+    /// <p> Creates a share request for a custom framework in Audit Manager. </p>
+    /// <p>The share request specifies a recipient and notifies them that a custom framework is available. Recipients have 120 days to accept or decline the request. If no action is taken, the share request expires.</p>
+    /// <important>
+    /// <p>When you invoke the <code>StartAssessmentFrameworkShare</code> API, you are about to
+    /// share a custom framework with another Amazon Web Services account. You may not share a
+    /// custom framework that is derived from a standard framework if the standard framework is
+    /// designated as not eligible for sharing by Amazon Web Services, unless you have obtained
+    /// permission to do so from the owner of the standard framework. To learn more about which
+    /// standard frameworks are eligible for sharing, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/share-custom-framework-concepts-and-terminology.html#eligibility">Framework sharing eligibility</a> in the <i>Audit Manager User
+    /// Guide</i>.</p>
+    /// </important>
+    #[derive(std::fmt::Debug)]
+    pub struct StartAssessmentFrameworkShare<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::start_assessment_framework_share_input::Builder,
+    }
+    impl<C, M, R> StartAssessmentFrameworkShare<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `StartAssessmentFrameworkShare`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartAssessmentFrameworkShareOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartAssessmentFrameworkShareError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::StartAssessmentFrameworkShareInputOperationOutputAlias,
+                crate::output::StartAssessmentFrameworkShareOutput,
+                crate::error::StartAssessmentFrameworkShareError,
+                crate::input::StartAssessmentFrameworkShareInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> The unique identifier for the custom framework to be shared. </p>
+        pub fn framework_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_id(inp);
+            self
+        }
+        /// <p> The unique identifier for the custom framework to be shared. </p>
+        pub fn set_framework_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_framework_id(input);
+            self
+        }
+        /// <p> The Amazon Web Services account of the recipient. </p>
+        pub fn destination_account(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_account(inp);
+            self
+        }
+        /// <p> The Amazon Web Services account of the recipient. </p>
+        pub fn set_destination_account(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_destination_account(input);
+            self
+        }
+        /// <p> The Amazon Web Services Region of the recipient. </p>
+        pub fn destination_region(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_region(inp);
+            self
+        }
+        /// <p> The Amazon Web Services Region of the recipient. </p>
+        pub fn set_destination_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_destination_region(input);
+            self
+        }
+        /// <p> An optional comment from the sender about the share request. </p>
+        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(inp);
+            self
+        }
+        /// <p> An optional comment from the sender about the share request. </p>
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_comment(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>
-    /// Tags the specified resource in Audit Manager.
-    /// </p>
+    /// <p> Tags the specified resource in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -4585,21 +4576,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the specified resource.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the resource. </p>
         pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(inp);
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the specified resource.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the resource. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4608,9 +4598,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// The tags to be associated with the resource.
-        /// </p>
+        /// <p> The tags that are associated with the resource. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4619,9 +4607,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>
-        /// The tags to be associated with the resource.
-        /// </p>
+        /// <p> The tags that are associated with the resource. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4634,9 +4620,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>
-    /// Removes a tag from a resource in Audit Manager.
-    /// </p>
+    /// <p> Removes a tag from a resource in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -4685,21 +4669,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the specified resource.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the specified resource. </p>
         pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(inp);
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the specified resource.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the specified resource. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4708,16 +4691,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>
-        /// The name or key of the tag.
-        /// </p>
+        /// <p> The name or key of the tag. </p>
         pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(inp);
             self
         }
-        /// <p>
-        /// The name or key of the tag.
-        /// </p>
+        /// <p> The name or key of the tag. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4728,9 +4707,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAssessment`.
     ///
-    /// <p>
-    /// Edits an Audit Manager assessment.
-    /// </p>
+    /// <p> Edits an Audit Manager assessment. </p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateAssessment<
         C = aws_smithy_client::erase::DynConnector,
@@ -4779,21 +4756,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4801,16 +4777,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p>
-        /// The name of the specified assessment to be updated.
-        /// </p>
+        /// <p> The name of the assessment to be updated. </p>
         pub fn assessment_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_name(inp);
             self
         }
-        /// <p>
-        /// The name of the specified assessment to be updated.
-        /// </p>
+        /// <p> The name of the assessment to be updated. </p>
         pub fn set_assessment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4818,16 +4790,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_name(input);
             self
         }
-        /// <p>
-        /// The description of the specified assessment.
-        /// </p>
+        /// <p> The description of the assessment. </p>
         pub fn assessment_description(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_description(inp);
             self
         }
-        /// <p>
-        /// The description of the specified assessment.
-        /// </p>
+        /// <p> The description of the assessment. </p>
         pub fn set_assessment_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4835,22 +4803,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_description(input);
             self
         }
-        /// <p>
-        /// The scope of the specified assessment.
-        /// </p>
+        /// <p> The scope of the assessment. </p>
         pub fn scope(mut self, inp: crate::model::Scope) -> Self {
             self.inner = self.inner.scope(inp);
             self
         }
-        /// <p>
-        /// The scope of the specified assessment.
-        /// </p>
+        /// <p> The scope of the assessment. </p>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
-        /// <p>
-        /// The assessment report storage destination for the specified assessment that is being updated.
+        /// <p> The assessment report storage destination for the assessment that's being updated.
         /// </p>
         pub fn assessment_reports_destination(
             mut self,
@@ -4859,8 +4822,7 @@ pub mod fluent_builders {
             self.inner = self.inner.assessment_reports_destination(inp);
             self
         }
-        /// <p>
-        /// The assessment report storage destination for the specified assessment that is being updated.
+        /// <p> The assessment report storage destination for the assessment that's being updated.
         /// </p>
         pub fn set_assessment_reports_destination(
             mut self,
@@ -4873,16 +4835,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
-        /// <p>
-        /// The list of roles for the specified assessment.
-        /// </p>
+        /// <p> The list of roles for the assessment. </p>
         pub fn roles(mut self, inp: impl Into<crate::model::Role>) -> Self {
             self.inner = self.inner.roles(inp);
             self
         }
-        /// <p>
-        /// The list of roles for the specified assessment.
-        /// </p>
+        /// <p> The list of roles for the assessment. </p>
         pub fn set_roles(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Role>>,
@@ -4893,9 +4851,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAssessmentControl`.
     ///
-    /// <p>
-    /// Updates a control within an assessment in Audit Manager.
-    /// </p>
+    /// <p> Updates a control within an assessment in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateAssessmentControl<
         C = aws_smithy_client::erase::DynConnector,
@@ -4944,21 +4900,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4966,16 +4921,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p>
-        /// The identifier for the specified control set.
-        /// </p>
+        /// <p> The identifier for the control set. </p>
         pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_set_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified control set.
-        /// </p>
+        /// <p> The identifier for the control set. </p>
         pub fn set_control_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4983,32 +4934,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_control_set_id(input);
             self
         }
-        /// <p>
-        ///
-        /// The identifier for the specified control.
-        /// </p>
+        /// <p> The identifier for the control. </p>
         pub fn control_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_id(inp);
             self
         }
-        /// <p>
-        ///
-        /// The identifier for the specified control.
-        /// </p>
+        /// <p> The identifier for the control. </p>
         pub fn set_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_control_id(input);
             self
         }
-        /// <p>
-        /// The status of the specified control.
-        /// </p>
+        /// <p> The status of the control. </p>
         pub fn control_status(mut self, inp: crate::model::ControlStatus) -> Self {
             self.inner = self.inner.control_status(inp);
             self
         }
-        /// <p>
-        /// The status of the specified control.
-        /// </p>
+        /// <p> The status of the control. </p>
         pub fn set_control_status(
             mut self,
             input: std::option::Option<crate::model::ControlStatus>,
@@ -5016,16 +4957,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_control_status(input);
             self
         }
-        /// <p>
-        /// The comment body text for the specified control.
-        /// </p>
+        /// <p> The comment body text for the control. </p>
         pub fn comment_body(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.comment_body(inp);
             self
         }
-        /// <p>
-        /// The comment body text for the specified control.
-        /// </p>
+        /// <p> The comment body text for the control. </p>
         pub fn set_comment_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_comment_body(input);
             self
@@ -5033,9 +4970,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAssessmentControlSetStatus`.
     ///
-    /// <p>
-    /// Updates the status of a control set in an Audit Manager assessment.
-    /// </p>
+    /// <p> Updates the status of a control set in an Audit Manager assessment. </p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateAssessmentControlSetStatus<
         C = aws_smithy_client::erase::DynConnector,
@@ -5084,21 +5019,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5106,16 +5040,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p>
-        /// The identifier for the specified control set.
-        /// </p>
+        /// <p> The identifier for the control set. </p>
         pub fn control_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_set_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified control set.
-        /// </p>
+        /// <p> The identifier for the control set. </p>
         pub fn set_control_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5123,16 +5053,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_control_set_id(input);
             self
         }
-        /// <p>
-        /// The status of the control set that is being updated.
-        /// </p>
+        /// <p> The status of the control set that's being updated. </p>
         pub fn status(mut self, inp: crate::model::ControlSetStatus) -> Self {
             self.inner = self.inner.status(inp);
             self
         }
-        /// <p>
-        /// The status of the control set that is being updated.
-        /// </p>
+        /// <p> The status of the control set that's being updated. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ControlSetStatus>,
@@ -5140,16 +5066,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status(input);
             self
         }
-        /// <p>
-        /// The comment related to the status update.
-        /// </p>
+        /// <p> The comment that's related to the status update. </p>
         pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.comment(inp);
             self
         }
-        /// <p>
-        /// The comment related to the status update.
-        /// </p>
+        /// <p> The comment that's related to the status update. </p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_comment(input);
             self
@@ -5157,9 +5079,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAssessmentFramework`.
     ///
-    /// <p>
-    /// Updates a custom framework in Audit Manager.
-    /// </p>
+    /// <p> Updates a custom framework in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateAssessmentFramework<
         C = aws_smithy_client::erase::DynConnector,
@@ -5208,62 +5128,51 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified framework.
-        /// </p>
+        /// <p> The identifier for the framework. </p>
         pub fn framework_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.framework_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified framework.
-        /// </p>
+        /// <p> The identifier for the framework. </p>
         pub fn set_framework_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_framework_id(input);
             self
         }
-        /// <p>
-        /// The name of the framework to be updated.
-        /// </p>
+        /// <p> The name of the framework to be updated. </p>
         pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(inp);
             self
         }
-        /// <p>
-        /// The name of the framework to be updated.
-        /// </p>
+        /// <p> The name of the framework to be updated. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>
-        /// The description of the framework that is to be updated.
-        /// </p>
+        /// <p> The description of the updated framework. </p>
         pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(inp);
             self
         }
-        /// <p>
-        /// The description of the framework that is to be updated.
-        /// </p>
+        /// <p> The description of the updated framework. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>
-        /// The compliance type that the new custom framework supports, such as CIS or HIPAA.
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
         /// </p>
         pub fn compliance_type(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.compliance_type(inp);
             self
         }
-        /// <p>
-        /// The compliance type that the new custom framework supports, such as CIS or HIPAA.
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
         /// </p>
         pub fn set_compliance_type(
             mut self,
@@ -5276,9 +5185,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_control_sets`](Self::set_control_sets).
         ///
-        /// <p>
-        /// The control sets associated with the framework.
-        /// </p>
+        /// <p> The control sets that are associated with the framework. </p>
         pub fn control_sets(
             mut self,
             inp: impl Into<crate::model::UpdateAssessmentFrameworkControlSet>,
@@ -5286,9 +5193,7 @@ pub mod fluent_builders {
             self.inner = self.inner.control_sets(inp);
             self
         }
-        /// <p>
-        /// The control sets associated with the framework.
-        /// </p>
+        /// <p> The control sets that are associated with the framework. </p>
         pub fn set_control_sets(
             mut self,
             input: std::option::Option<
@@ -5299,11 +5204,105 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateAssessmentFrameworkShare`.
+    ///
+    /// <p> Updates a share request for a custom framework in Audit Manager. </p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateAssessmentFrameworkShare<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_assessment_framework_share_input::Builder,
+    }
+    impl<C, M, R> UpdateAssessmentFrameworkShare<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateAssessmentFrameworkShare`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateAssessmentFrameworkShareOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateAssessmentFrameworkShareError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateAssessmentFrameworkShareInputOperationOutputAlias,
+                crate::output::UpdateAssessmentFrameworkShareOutput,
+                crate::error::UpdateAssessmentFrameworkShareError,
+                crate::input::UpdateAssessmentFrameworkShareInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p> The unique identifier for the share request. </p>
+        pub fn request_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(inp);
+            self
+        }
+        /// <p> The unique identifier for the share request. </p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_request_id(input);
+            self
+        }
+        /// <p>Specifies whether the share request is a sent request or a received request.</p>
+        pub fn request_type(mut self, inp: crate::model::ShareRequestType) -> Self {
+            self.inner = self.inner.request_type(inp);
+            self
+        }
+        /// <p>Specifies whether the share request is a sent request or a received request.</p>
+        pub fn set_request_type(
+            mut self,
+            input: std::option::Option<crate::model::ShareRequestType>,
+        ) -> Self {
+            self.inner = self.inner.set_request_type(input);
+            self
+        }
+        /// <p>Specifies the update action for the share request.</p>
+        pub fn action(mut self, inp: crate::model::ShareRequestAction) -> Self {
+            self.inner = self.inner.action(inp);
+            self
+        }
+        /// <p>Specifies the update action for the share request.</p>
+        pub fn set_action(
+            mut self,
+            input: std::option::Option<crate::model::ShareRequestAction>,
+        ) -> Self {
+            self.inner = self.inner.set_action(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateAssessmentStatus`.
     ///
-    /// <p>
-    /// Updates the status of an assessment in Audit Manager.
-    /// </p>
+    /// <p> Updates the status of an assessment in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateAssessmentStatus<
         C = aws_smithy_client::erase::DynConnector,
@@ -5352,21 +5351,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn assessment_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified assessment.
-        /// </p>
+        /// <p> The identifier for the assessment. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5374,16 +5372,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_id(input);
             self
         }
-        /// <p>
-        /// The current status of the specified assessment.
-        /// </p>
+        /// <p> The current status of the assessment. </p>
         pub fn status(mut self, inp: crate::model::AssessmentStatus) -> Self {
             self.inner = self.inner.status(inp);
             self
         }
-        /// <p>
-        /// The current status of the specified assessment.
-        /// </p>
+        /// <p> The current status of the assessment. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AssessmentStatus>,
@@ -5394,9 +5388,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateControl`.
     ///
-    /// <p>
-    /// Updates a custom control in Audit Manager.
-    /// </p>
+    /// <p> Updates a custom control in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateControl<
         C = aws_smithy_client::erase::DynConnector,
@@ -5445,63 +5437,50 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The identifier for the specified control.
-        /// </p>
+        /// <p> The identifier for the control. </p>
         pub fn control_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.control_id(inp);
             self
         }
-        /// <p>
-        /// The identifier for the specified control.
-        /// </p>
+        /// <p> The identifier for the control. </p>
         pub fn set_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_control_id(input);
             self
         }
-        /// <p>
-        /// The name of the control to be updated.
-        /// </p>
+        /// <p> The name of the updated control. </p>
         pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(inp);
             self
         }
-        /// <p>
-        /// The name of the control to be updated.
-        /// </p>
+        /// <p> The name of the updated control. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>
-        /// The optional description of the control.
-        /// </p>
+        /// <p> The optional description of the control. </p>
         pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(inp);
             self
         }
-        /// <p>
-        /// The optional description of the control.
-        /// </p>
+        /// <p> The optional description of the control. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>
-        /// The steps that to follow to determine if the control has been satisfied.
-        /// </p>
+        /// <p> The steps that you should follow to determine if the control is met. </p>
         pub fn testing_information(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.testing_information(inp);
             self
         }
-        /// <p>
-        /// The steps that to follow to determine if the control has been satisfied.
-        /// </p>
+        /// <p> The steps that you should follow to determine if the control is met. </p>
         pub fn set_testing_information(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5509,16 +5488,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_testing_information(input);
             self
         }
-        /// <p>
-        /// The title of the action plan for remediating the control.
-        /// </p>
+        /// <p> The title of the action plan for remediating the control. </p>
         pub fn action_plan_title(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.action_plan_title(inp);
             self
         }
-        /// <p>
-        /// The title of the action plan for remediating the control.
-        /// </p>
+        /// <p> The title of the action plan for remediating the control. </p>
         pub fn set_action_plan_title(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5526,18 +5501,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action_plan_title(input);
             self
         }
-        /// <p>
-        ///
-        /// The recommended actions to carry out if the control is not fulfilled.
-        /// </p>
+        /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
         pub fn action_plan_instructions(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.action_plan_instructions(inp);
             self
         }
-        /// <p>
-        ///
-        /// The recommended actions to carry out if the control is not fulfilled.
-        /// </p>
+        /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
         pub fn set_action_plan_instructions(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5549,9 +5518,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_control_mapping_sources`](Self::set_control_mapping_sources).
         ///
-        /// <p>
-        /// The data mapping sources for the specified control.
-        /// </p>
+        /// <p> The data mapping sources for the control. </p>
         pub fn control_mapping_sources(
             mut self,
             inp: impl Into<crate::model::ControlMappingSource>,
@@ -5559,9 +5526,7 @@ pub mod fluent_builders {
             self.inner = self.inner.control_mapping_sources(inp);
             self
         }
-        /// <p>
-        /// The data mapping sources for the specified control.
-        /// </p>
+        /// <p> The data mapping sources for the control. </p>
         pub fn set_control_mapping_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ControlMappingSource>>,
@@ -5572,9 +5537,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSettings`.
     ///
-    /// <p>
-    /// Updates Audit Manager settings for the current user account.
-    /// </p>
+    /// <p> Updates Audit Manager settings for the current user account. </p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateSettings<
         C = aws_smithy_client::erase::DynConnector,
@@ -5623,28 +5586,27 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The Amazon Simple Notification Service (Amazon SNS) topic to which Audit Manager sends notifications.
-        /// </p>
+        /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends
+        /// notifications to. </p>
         pub fn sns_topic(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sns_topic(inp);
             self
         }
-        /// <p>
-        /// The Amazon Simple Notification Service (Amazon SNS) topic to which Audit Manager sends notifications.
-        /// </p>
+        /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends
+        /// notifications to. </p>
         pub fn set_sns_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_sns_topic(input);
             self
         }
-        /// <p>
-        /// The default storage destination for assessment reports.
-        /// </p>
+        /// <p> The default storage destination for assessment reports. </p>
         pub fn default_assessment_reports_destination(
             mut self,
             inp: crate::model::AssessmentReportsDestination,
@@ -5652,9 +5614,7 @@ pub mod fluent_builders {
             self.inner = self.inner.default_assessment_reports_destination(inp);
             self
         }
-        /// <p>
-        /// The default storage destination for assessment reports.
-        /// </p>
+        /// <p> The default storage destination for assessment reports. </p>
         pub fn set_default_assessment_reports_destination(
             mut self,
             input: std::option::Option<crate::model::AssessmentReportsDestination>,
@@ -5666,16 +5626,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_default_process_owners`](Self::set_default_process_owners).
         ///
-        /// <p>
-        /// A list of the default audit owners.
-        /// </p>
+        /// <p> A list of the default audit owners. </p>
         pub fn default_process_owners(mut self, inp: impl Into<crate::model::Role>) -> Self {
             self.inner = self.inner.default_process_owners(inp);
             self
         }
-        /// <p>
-        /// A list of the default audit owners.
-        /// </p>
+        /// <p> A list of the default audit owners. </p>
         pub fn set_default_process_owners(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Role>>,
@@ -5683,16 +5639,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_process_owners(input);
             self
         }
-        /// <p>
-        /// The KMS key details.
-        /// </p>
+        /// <p> The KMS key details. </p>
         pub fn kms_key(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key(inp);
             self
         }
-        /// <p>
-        /// The KMS key details.
-        /// </p>
+        /// <p> The KMS key details. </p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key(input);
             self
@@ -5700,9 +5652,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ValidateAssessmentReportIntegrity`.
     ///
-    /// <p>
-    /// Validates the integrity of an assessment report in Audit Manager.
-    /// </p>
+    /// <p> Validates the integrity of an assessment report in Audit Manager. </p>
     #[derive(std::fmt::Debug)]
     pub struct ValidateAssessmentReportIntegrity<
         C = aws_smithy_client::erase::DynConnector,
@@ -5751,21 +5701,22 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The relative path of the specified Amazon S3 bucket in which the assessment report is stored.
-        /// </p>
+        /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored
+        /// in. </p>
         pub fn s3_relative_path(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.s3_relative_path(inp);
             self
         }
-        /// <p>
-        /// The relative path of the specified Amazon S3 bucket in which the assessment report is stored.
-        /// </p>
+        /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored
+        /// in. </p>
         pub fn set_s3_relative_path(
             mut self,
             input: std::option::Option<std::string::String>,

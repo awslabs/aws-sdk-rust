@@ -28,7 +28,7 @@ pub enum CreateHomeRegionControlErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateHomeRegionControlError {
@@ -96,42 +96,42 @@ impl CreateHomeRegionControlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateHomeRegionControlErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateHomeRegionControlErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateHomeRegionControlErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateHomeRegionControlErrorKind::DryRunOperation`.
+    /// Returns `true` if the error kind is `CreateHomeRegionControlErrorKind::DryRunOperation`.
     pub fn is_dry_run_operation(&self) -> bool {
         matches!(
             &self.kind,
             CreateHomeRegionControlErrorKind::DryRunOperation(_)
         )
     }
-    /// Returns true if the error kind is `CreateHomeRegionControlErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateHomeRegionControlErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateHomeRegionControlErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateHomeRegionControlErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateHomeRegionControlErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateHomeRegionControlErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateHomeRegionControlErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateHomeRegionControlErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateHomeRegionControlErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateHomeRegionControlErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateHomeRegionControlErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -179,7 +179,7 @@ pub enum DescribeHomeRegionControlsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeHomeRegionControlsError {
@@ -248,35 +248,35 @@ impl DescribeHomeRegionControlsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeHomeRegionControlsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeHomeRegionControlsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHomeRegionControlsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHomeRegionControlsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeHomeRegionControlsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHomeRegionControlsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHomeRegionControlsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeHomeRegionControlsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHomeRegionControlsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHomeRegionControlsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeHomeRegionControlsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHomeRegionControlsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHomeRegionControlsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeHomeRegionControlsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -325,7 +325,7 @@ pub enum GetHomeRegionErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetHomeRegionError {
@@ -392,26 +392,26 @@ impl GetHomeRegionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetHomeRegionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetHomeRegionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetHomeRegionErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetHomeRegionErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `GetHomeRegionErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, GetHomeRegionErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `GetHomeRegionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetHomeRegionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetHomeRegionErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetHomeRegionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetHomeRegionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetHomeRegionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetHomeRegionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetHomeRegionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetHomeRegionErrorKind::ThrottlingException(_))
     }

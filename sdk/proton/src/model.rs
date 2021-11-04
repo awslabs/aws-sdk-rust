@@ -738,8 +738,8 @@ pub enum TemplateVersionSourceInput {
 }
 impl TemplateVersionSourceInput {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into its [`TemplateVersionSourceInput`](crate::model::TemplateVersionSourceInput) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`S3`](crate::model::TemplateVersionSourceInput::S3), extracting the inner [`S3ObjectSource`](crate::model::S3ObjectSource).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3(&self) -> std::result::Result<&crate::model::S3ObjectSource, &Self> {
         if let TemplateVersionSourceInput::S3(val) = &self {
             Ok(&val)
@@ -747,7 +747,7 @@ impl TemplateVersionSourceInput {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `TemplateVersionSourceInput` variant.
+    /// Returns true if this is a [`S3`](crate::model::TemplateVersionSourceInput::S3).
     pub fn is_s3(&self) -> bool {
         self.as_s3().is_ok()
     }

@@ -25,7 +25,7 @@ pub enum AddAttachmentsToSetErrorKind {
     AttachmentSetSizeLimitExceeded(crate::error::AttachmentSetSizeLimitExceeded),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddAttachmentsToSetError {
@@ -92,35 +92,35 @@ impl AddAttachmentsToSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddAttachmentsToSetErrorKind::AttachmentLimitExceeded`.
+    /// Returns `true` if the error kind is `AddAttachmentsToSetErrorKind::AttachmentLimitExceeded`.
     pub fn is_attachment_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             AddAttachmentsToSetErrorKind::AttachmentLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `AddAttachmentsToSetErrorKind::AttachmentSetExpired`.
+    /// Returns `true` if the error kind is `AddAttachmentsToSetErrorKind::AttachmentSetExpired`.
     pub fn is_attachment_set_expired(&self) -> bool {
         matches!(
             &self.kind,
             AddAttachmentsToSetErrorKind::AttachmentSetExpired(_)
         )
     }
-    /// Returns true if the error kind is `AddAttachmentsToSetErrorKind::AttachmentSetIdNotFound`.
+    /// Returns `true` if the error kind is `AddAttachmentsToSetErrorKind::AttachmentSetIdNotFound`.
     pub fn is_attachment_set_id_not_found(&self) -> bool {
         matches!(
             &self.kind,
             AddAttachmentsToSetErrorKind::AttachmentSetIdNotFound(_)
         )
     }
-    /// Returns true if the error kind is `AddAttachmentsToSetErrorKind::AttachmentSetSizeLimitExceeded`.
+    /// Returns `true` if the error kind is `AddAttachmentsToSetErrorKind::AttachmentSetSizeLimitExceeded`.
     pub fn is_attachment_set_size_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             AddAttachmentsToSetErrorKind::AttachmentSetSizeLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `AddAttachmentsToSetErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `AddAttachmentsToSetErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -163,7 +163,7 @@ pub enum AddCommunicationToCaseErrorKind {
     CaseIdNotFound(crate::error::CaseIdNotFound),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddCommunicationToCaseError {
@@ -229,28 +229,28 @@ impl AddCommunicationToCaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddCommunicationToCaseErrorKind::AttachmentSetExpired`.
+    /// Returns `true` if the error kind is `AddCommunicationToCaseErrorKind::AttachmentSetExpired`.
     pub fn is_attachment_set_expired(&self) -> bool {
         matches!(
             &self.kind,
             AddCommunicationToCaseErrorKind::AttachmentSetExpired(_)
         )
     }
-    /// Returns true if the error kind is `AddCommunicationToCaseErrorKind::AttachmentSetIdNotFound`.
+    /// Returns `true` if the error kind is `AddCommunicationToCaseErrorKind::AttachmentSetIdNotFound`.
     pub fn is_attachment_set_id_not_found(&self) -> bool {
         matches!(
             &self.kind,
             AddCommunicationToCaseErrorKind::AttachmentSetIdNotFound(_)
         )
     }
-    /// Returns true if the error kind is `AddCommunicationToCaseErrorKind::CaseIdNotFound`.
+    /// Returns `true` if the error kind is `AddCommunicationToCaseErrorKind::CaseIdNotFound`.
     pub fn is_case_id_not_found(&self) -> bool {
         matches!(
             &self.kind,
             AddCommunicationToCaseErrorKind::CaseIdNotFound(_)
         )
     }
-    /// Returns true if the error kind is `AddCommunicationToCaseErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `AddCommunicationToCaseErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -292,7 +292,7 @@ pub enum CreateCaseErrorKind {
     CaseCreationLimitExceeded(crate::error::CaseCreationLimitExceeded),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCaseError {
@@ -358,22 +358,22 @@ impl CreateCaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCaseErrorKind::AttachmentSetExpired`.
+    /// Returns `true` if the error kind is `CreateCaseErrorKind::AttachmentSetExpired`.
     pub fn is_attachment_set_expired(&self) -> bool {
         matches!(&self.kind, CreateCaseErrorKind::AttachmentSetExpired(_))
     }
-    /// Returns true if the error kind is `CreateCaseErrorKind::AttachmentSetIdNotFound`.
+    /// Returns `true` if the error kind is `CreateCaseErrorKind::AttachmentSetIdNotFound`.
     pub fn is_attachment_set_id_not_found(&self) -> bool {
         matches!(&self.kind, CreateCaseErrorKind::AttachmentSetIdNotFound(_))
     }
-    /// Returns true if the error kind is `CreateCaseErrorKind::CaseCreationLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateCaseErrorKind::CaseCreationLimitExceeded`.
     pub fn is_case_creation_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateCaseErrorKind::CaseCreationLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateCaseErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateCaseErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CreateCaseErrorKind::InternalServerError(_))
     }
@@ -410,7 +410,7 @@ pub enum DescribeAttachmentErrorKind {
     DescribeAttachmentLimitExceeded(crate::error::DescribeAttachmentLimitExceeded),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAttachmentError {
@@ -475,21 +475,21 @@ impl DescribeAttachmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAttachmentErrorKind::AttachmentIdNotFound`.
+    /// Returns `true` if the error kind is `DescribeAttachmentErrorKind::AttachmentIdNotFound`.
     pub fn is_attachment_id_not_found(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAttachmentErrorKind::AttachmentIdNotFound(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAttachmentErrorKind::DescribeAttachmentLimitExceeded`.
+    /// Returns `true` if the error kind is `DescribeAttachmentErrorKind::DescribeAttachmentLimitExceeded`.
     pub fn is_describe_attachment_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAttachmentErrorKind::DescribeAttachmentLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAttachmentErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeAttachmentErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -525,7 +525,7 @@ pub enum DescribeCasesErrorKind {
     CaseIdNotFound(crate::error::CaseIdNotFound),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCasesError {
@@ -589,11 +589,11 @@ impl DescribeCasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCasesErrorKind::CaseIdNotFound`.
+    /// Returns `true` if the error kind is `DescribeCasesErrorKind::CaseIdNotFound`.
     pub fn is_case_id_not_found(&self) -> bool {
         matches!(&self.kind, DescribeCasesErrorKind::CaseIdNotFound(_))
     }
-    /// Returns true if the error kind is `DescribeCasesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeCasesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeCasesErrorKind::InternalServerError(_))
     }
@@ -625,7 +625,7 @@ pub enum DescribeCommunicationsErrorKind {
     CaseIdNotFound(crate::error::CaseIdNotFound),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCommunicationsError {
@@ -689,14 +689,14 @@ impl DescribeCommunicationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCommunicationsErrorKind::CaseIdNotFound`.
+    /// Returns `true` if the error kind is `DescribeCommunicationsErrorKind::CaseIdNotFound`.
     pub fn is_case_id_not_found(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCommunicationsErrorKind::CaseIdNotFound(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCommunicationsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeCommunicationsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -729,7 +729,7 @@ pub struct DescribeServicesError {
 pub enum DescribeServicesErrorKind {
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeServicesError {
@@ -792,7 +792,7 @@ impl DescribeServicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeServicesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeServicesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -824,7 +824,7 @@ pub struct DescribeSeverityLevelsError {
 pub enum DescribeSeverityLevelsErrorKind {
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSeverityLevelsError {
@@ -887,7 +887,7 @@ impl DescribeSeverityLevelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSeverityLevelsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeSeverityLevelsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -919,7 +919,7 @@ pub struct DescribeTrustedAdvisorCheckRefreshStatusesError {
 pub enum DescribeTrustedAdvisorCheckRefreshStatusesErrorKind {
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTrustedAdvisorCheckRefreshStatusesError {
@@ -987,7 +987,7 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTrustedAdvisorCheckRefreshStatusesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeTrustedAdvisorCheckRefreshStatusesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -1023,7 +1023,7 @@ pub struct DescribeTrustedAdvisorCheckResultError {
 pub enum DescribeTrustedAdvisorCheckResultErrorKind {
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTrustedAdvisorCheckResultError {
@@ -1091,7 +1091,7 @@ impl DescribeTrustedAdvisorCheckResultError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTrustedAdvisorCheckResultErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeTrustedAdvisorCheckResultErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -1123,7 +1123,7 @@ pub struct DescribeTrustedAdvisorChecksError {
 pub enum DescribeTrustedAdvisorChecksErrorKind {
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTrustedAdvisorChecksError {
@@ -1186,7 +1186,7 @@ impl DescribeTrustedAdvisorChecksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTrustedAdvisorChecksErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeTrustedAdvisorChecksErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -1218,7 +1218,7 @@ pub struct DescribeTrustedAdvisorCheckSummariesError {
 pub enum DescribeTrustedAdvisorCheckSummariesErrorKind {
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTrustedAdvisorCheckSummariesError {
@@ -1286,7 +1286,7 @@ impl DescribeTrustedAdvisorCheckSummariesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTrustedAdvisorCheckSummariesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeTrustedAdvisorCheckSummariesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -1322,7 +1322,7 @@ pub struct RefreshTrustedAdvisorCheckError {
 pub enum RefreshTrustedAdvisorCheckErrorKind {
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RefreshTrustedAdvisorCheckError {
@@ -1385,7 +1385,7 @@ impl RefreshTrustedAdvisorCheckError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RefreshTrustedAdvisorCheckErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `RefreshTrustedAdvisorCheckErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -1419,7 +1419,7 @@ pub enum ResolveCaseErrorKind {
     CaseIdNotFound(crate::error::CaseIdNotFound),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResolveCaseError {
@@ -1483,11 +1483,11 @@ impl ResolveCaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResolveCaseErrorKind::CaseIdNotFound`.
+    /// Returns `true` if the error kind is `ResolveCaseErrorKind::CaseIdNotFound`.
     pub fn is_case_id_not_found(&self) -> bool {
         matches!(&self.kind, ResolveCaseErrorKind::CaseIdNotFound(_))
     }
-    /// Returns true if the error kind is `ResolveCaseErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ResolveCaseErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ResolveCaseErrorKind::InternalServerError(_))
     }

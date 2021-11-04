@@ -113,6 +113,15 @@ where
     pub fn delete_app_instance_user(&self) -> fluent_builders::DeleteAppInstanceUser<C, M, R> {
         fluent_builders::DeleteAppInstanceUser::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DeregisterAppInstanceUserEndpoint` operation.
+    ///
+    /// See [`DeregisterAppInstanceUserEndpoint`](crate::client::fluent_builders::DeregisterAppInstanceUserEndpoint) for more information about the
+    /// operation and its arguments.
+    pub fn deregister_app_instance_user_endpoint(
+        &self,
+    ) -> fluent_builders::DeregisterAppInstanceUserEndpoint<C, M, R> {
+        fluent_builders::DeregisterAppInstanceUserEndpoint::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DescribeAppInstance` operation.
     ///
     /// See [`DescribeAppInstance`](crate::client::fluent_builders::DescribeAppInstance) for more information about the
@@ -135,6 +144,15 @@ where
     /// operation and its arguments.
     pub fn describe_app_instance_user(&self) -> fluent_builders::DescribeAppInstanceUser<C, M, R> {
         fluent_builders::DescribeAppInstanceUser::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `DescribeAppInstanceUserEndpoint` operation.
+    ///
+    /// See [`DescribeAppInstanceUserEndpoint`](crate::client::fluent_builders::DescribeAppInstanceUserEndpoint) for more information about the
+    /// operation and its arguments.
+    pub fn describe_app_instance_user_endpoint(
+        &self,
+    ) -> fluent_builders::DescribeAppInstanceUserEndpoint<C, M, R> {
+        fluent_builders::DescribeAppInstanceUserEndpoint::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `GetAppInstanceRetentionSettings` operation.
     ///
@@ -159,12 +177,28 @@ where
     pub fn list_app_instances(&self) -> fluent_builders::ListAppInstances<C, M, R> {
         fluent_builders::ListAppInstances::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `ListAppInstanceUserEndpoints` operation.
+    ///
+    /// See [`ListAppInstanceUserEndpoints`](crate::client::fluent_builders::ListAppInstanceUserEndpoints) for more information about the
+    /// operation and its arguments.
+    pub fn list_app_instance_user_endpoints(
+        &self,
+    ) -> fluent_builders::ListAppInstanceUserEndpoints<C, M, R> {
+        fluent_builders::ListAppInstanceUserEndpoints::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `ListAppInstanceUsers` operation.
     ///
     /// See [`ListAppInstanceUsers`](crate::client::fluent_builders::ListAppInstanceUsers) for more information about the
     /// operation and its arguments.
     pub fn list_app_instance_users(&self) -> fluent_builders::ListAppInstanceUsers<C, M, R> {
         fluent_builders::ListAppInstanceUsers::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    ///
+    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
+    /// operation and its arguments.
+    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
+        fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `PutAppInstanceRetentionSettings` operation.
     ///
@@ -174,6 +208,29 @@ where
         &self,
     ) -> fluent_builders::PutAppInstanceRetentionSettings<C, M, R> {
         fluent_builders::PutAppInstanceRetentionSettings::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `RegisterAppInstanceUserEndpoint` operation.
+    ///
+    /// See [`RegisterAppInstanceUserEndpoint`](crate::client::fluent_builders::RegisterAppInstanceUserEndpoint) for more information about the
+    /// operation and its arguments.
+    pub fn register_app_instance_user_endpoint(
+        &self,
+    ) -> fluent_builders::RegisterAppInstanceUserEndpoint<C, M, R> {
+        fluent_builders::RegisterAppInstanceUserEndpoint::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `TagResource` operation.
+    ///
+    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
+    /// operation and its arguments.
+    pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
+        fluent_builders::TagResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UntagResource` operation.
+    ///
+    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
+    /// operation and its arguments.
+    pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
+        fluent_builders::UntagResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `UpdateAppInstance` operation.
     ///
@@ -188,6 +245,15 @@ where
     /// operation and its arguments.
     pub fn update_app_instance_user(&self) -> fluent_builders::UpdateAppInstanceUser<C, M, R> {
         fluent_builders::UpdateAppInstanceUser::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `UpdateAppInstanceUserEndpoint` operation.
+    ///
+    /// See [`UpdateAppInstanceUserEndpoint`](crate::client::fluent_builders::UpdateAppInstanceUserEndpoint) for more information about the
+    /// operation and its arguments.
+    pub fn update_app_instance_user_endpoint(
+        &self,
+    ) -> fluent_builders::UpdateAppInstanceUserEndpoint<C, M, R> {
+        fluent_builders::UpdateAppInstanceUserEndpoint::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -252,9 +318,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The name of the <code>AppInstance</code>.</p>
@@ -375,9 +444,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
@@ -459,9 +531,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code> request.</p>
@@ -592,9 +667,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -663,9 +741,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
@@ -746,9 +827,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the user request being deleted.</p>
@@ -762,6 +846,89 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_app_instance_user_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeregisterAppInstanceUserEndpoint`.
+    ///
+    /// <p>Deregisters an <code>AppInstanceUserEndpoint</code>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DeregisterAppInstanceUserEndpoint<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::deregister_app_instance_user_endpoint_input::Builder,
+    }
+    impl<C, M, R> DeregisterAppInstanceUserEndpoint<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeregisterAppInstanceUserEndpoint`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeregisterAppInstanceUserEndpointOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeregisterAppInstanceUserEndpointError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeregisterAppInstanceUserEndpointInputOperationOutputAlias,
+                crate::output::DeregisterAppInstanceUserEndpointOutput,
+                crate::error::DeregisterAppInstanceUserEndpointError,
+                crate::input::DeregisterAppInstanceUserEndpointInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(inp);
+            self
+        }
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn set_app_instance_user_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_app_instance_user_arn(input);
+            self
+        }
+        /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(inp);
+            self
+        }
+        /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_endpoint_id(input);
             self
         }
     }
@@ -816,9 +983,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -886,9 +1056,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceAdmin</code>.</p>
@@ -969,9 +1142,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -985,6 +1161,89 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_app_instance_user_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeAppInstanceUserEndpoint`.
+    ///
+    /// <p>Returns the full details of an <code>AppInstanceUserEndpoint</code>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeAppInstanceUserEndpoint<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_app_instance_user_endpoint_input::Builder,
+    }
+    impl<C, M, R> DescribeAppInstanceUserEndpoint<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeAppInstanceUserEndpoint`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeAppInstanceUserEndpointOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeAppInstanceUserEndpointError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeAppInstanceUserEndpointInputOperationOutputAlias,
+                crate::output::DescribeAppInstanceUserEndpointOutput,
+                crate::error::DescribeAppInstanceUserEndpointError,
+                crate::input::DescribeAppInstanceUserEndpointInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(inp);
+            self
+        }
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn set_app_instance_user_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_app_instance_user_arn(input);
+            self
+        }
+        /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(inp);
+            self
+        }
+        /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_endpoint_id(input);
             self
         }
     }
@@ -1039,9 +1298,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -1109,9 +1371,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -1202,9 +1467,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
@@ -1225,6 +1493,99 @@ pub mod fluent_builders {
         }
         /// <p>The token passed by previous API requests until you reach the maximum number of
         /// <code>AppInstances</code>.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListAppInstanceUserEndpoints`.
+    ///
+    /// <p>Lists all the <code>AppInstanceUserEndpoints</code> created under a single <code>AppInstanceUser</code>.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListAppInstanceUserEndpoints<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_app_instance_user_endpoints_input::Builder,
+    }
+    impl<C, M, R> ListAppInstanceUserEndpoints<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListAppInstanceUserEndpoints`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAppInstanceUserEndpointsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListAppInstanceUserEndpointsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListAppInstanceUserEndpointsInputOperationOutputAlias,
+                crate::output::ListAppInstanceUserEndpointsOutput,
+                crate::error::ListAppInstanceUserEndpointsError,
+                crate::input::ListAppInstanceUserEndpointsInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(inp);
+            self
+        }
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn set_app_instance_user_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_app_instance_user_arn(input);
+            self
+        }
+        /// <p>The maximum number of endpoints that you want to return.</p>
+        pub fn max_results(mut self, inp: i32) -> Self {
+            self.inner = self.inner.max_results(inp);
+            self
+        }
+        /// <p>The maximum number of endpoints that you want to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
+        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(inp);
+            self
+        }
+        /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1282,9 +1643,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -1318,6 +1682,76 @@ pub mod fluent_builders {
         /// <p>The token passed by previous API calls until all requested users are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListTagsForResource`.
+    ///
+    /// <p>Lists the tags applied to an Amazon Chime SDK identity resource.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct ListTagsForResource<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_tags_for_resource_input::Builder,
+    }
+    impl<C, M, R> ListTagsForResource<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListTagsForResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListTagsForResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListTagsForResourceInputOperationOutputAlias,
+                crate::output::ListTagsForResourceOutput,
+                crate::error::ListTagsForResourceError,
+                crate::input::ListTagsForResourceInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(inp);
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
     }
@@ -1373,9 +1807,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -1405,6 +1842,357 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::AppInstanceRetentionSettings>,
         ) -> Self {
             self.inner = self.inner.set_app_instance_retention_settings(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `RegisterAppInstanceUserEndpoint`.
+    ///
+    /// <p>Registers an endpoint under an Amazon Chime <code>AppInstanceUser</code>. The endpoint receives messages for a user. For push notifications, the endpoint is a mobile device used to receive mobile push notifications for a user.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct RegisterAppInstanceUserEndpoint<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::register_app_instance_user_endpoint_input::Builder,
+    }
+    impl<C, M, R> RegisterAppInstanceUserEndpoint<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `RegisterAppInstanceUserEndpoint`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RegisterAppInstanceUserEndpointOutput,
+            aws_smithy_http::result::SdkError<crate::error::RegisterAppInstanceUserEndpointError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::RegisterAppInstanceUserEndpointInputOperationOutputAlias,
+                crate::output::RegisterAppInstanceUserEndpointOutput,
+                crate::error::RegisterAppInstanceUserEndpointError,
+                crate::input::RegisterAppInstanceUserEndpointInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(inp);
+            self
+        }
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn set_app_instance_user_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_app_instance_user_arn(input);
+            self
+        }
+        /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>APNS</code>: The mobile notification service for an Apple device.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GCM</code>: The mobile notification service for an Android device.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
+        pub fn r#type(mut self, inp: crate::model::AppInstanceUserEndpointType) -> Self {
+            self.inner = self.inner.r#type(inp);
+            self
+        }
+        /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>APNS</code>: The mobile notification service for an Apple device.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GCM</code>: The mobile notification service for an Android device.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::AppInstanceUserEndpointType>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
+        /// <p>The ARN of the resource to which the endpoint belongs.</p>
+        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(inp);
+            self
+        }
+        /// <p>The ARN of the resource to which the endpoint belongs.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// <p>The attributes of an <code>Endpoint</code>.</p>
+        pub fn endpoint_attributes(mut self, inp: crate::model::EndpointAttributes) -> Self {
+            self.inner = self.inner.endpoint_attributes(inp);
+            self
+        }
+        /// <p>The attributes of an <code>Endpoint</code>.</p>
+        pub fn set_endpoint_attributes(
+            mut self,
+            input: std::option::Option<crate::model::EndpointAttributes>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_attributes(input);
+            self
+        }
+        /// <p>The idempotency token for each client request. </p>
+        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(inp);
+            self
+        }
+        /// <p>The idempotency token for each client request. </p>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
+            self
+        }
+        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
+        /// <code>NONE</code> indicates the endpoint receives no messages.</p>
+        pub fn allow_messages(mut self, inp: crate::model::AllowMessages) -> Self {
+            self.inner = self.inner.allow_messages(inp);
+            self
+        }
+        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
+        /// <code>NONE</code> indicates the endpoint receives no messages.</p>
+        pub fn set_allow_messages(
+            mut self,
+            input: std::option::Option<crate::model::AllowMessages>,
+        ) -> Self {
+            self.inner = self.inner.set_allow_messages(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `TagResource`.
+    ///
+    /// <p>Applies the specified tags to the specified Amazon Chime SDK identity resource.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct TagResource<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::tag_resource_input::Builder,
+    }
+    impl<C, M, R> TagResource<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `TagResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::TagResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::TagResourceInputOperationOutputAlias,
+                crate::output::TagResourceOutput,
+                crate::error::TagResourceError,
+                crate::input::TagResourceInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The resource ARN.</p>
+        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(inp);
+            self
+        }
+        /// <p>The resource ARN.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag key-value pairs.</p>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        /// <p>The tag key-value pairs.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UntagResource`.
+    ///
+    /// <p>Removes the specified tags from the specified Amazon Chime SDK identity resource.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UntagResource<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::untag_resource_input::Builder,
+    }
+    impl<C, M, R> UntagResource<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UntagResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UntagResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UntagResourceInputOperationOutputAlias,
+                crate::output::UntagResourceOutput,
+                crate::error::UntagResourceError,
+                crate::input::UntagResourceInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The resource ARN.</p>
+        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(inp);
+            self
+        }
+        /// <p>The resource ARN.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Appends an item to `TagKeys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The tag keys.</p>
+        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(inp);
+            self
+        }
+        /// <p>The tag keys.</p>
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -1459,9 +2247,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -1550,9 +2341,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -1586,6 +2380,114 @@ pub mod fluent_builders {
         /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
         pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_metadata(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateAppInstanceUserEndpoint`.
+    ///
+    /// <p>Updates the details of an <code>AppInstanceUserEndpoint</code>. You can update the name and <code>AllowMessage</code> values.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateAppInstanceUserEndpoint<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_app_instance_user_endpoint_input::Builder,
+    }
+    impl<C, M, R> UpdateAppInstanceUserEndpoint<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateAppInstanceUserEndpoint`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateAppInstanceUserEndpointOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateAppInstanceUserEndpointError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateAppInstanceUserEndpointInputOperationOutputAlias,
+                crate::output::UpdateAppInstanceUserEndpointOutput,
+                crate::error::UpdateAppInstanceUserEndpointError,
+                crate::input::UpdateAppInstanceUserEndpointInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn app_instance_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(inp);
+            self
+        }
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn set_app_instance_user_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_app_instance_user_arn(input);
+            self
+        }
+        /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(inp);
+            self
+        }
+        /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_endpoint_id(input);
+            self
+        }
+        /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(inp);
+            self
+        }
+        /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
+        /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+        pub fn allow_messages(mut self, inp: crate::model::AllowMessages) -> Self {
+            self.inner = self.inner.allow_messages(inp);
+            self
+        }
+        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
+        /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+        pub fn set_allow_messages(
+            mut self,
+            input: std::option::Option<crate::model::AllowMessages>,
+        ) -> Self {
+            self.inner = self.inner.set_allow_messages(input);
             self
         }
     }

@@ -28,7 +28,7 @@ pub enum CreateParallelDataErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and
     /// then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateParallelDataError {
@@ -96,42 +96,42 @@ impl CreateParallelDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateParallelDataErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateParallelDataErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateParallelDataErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateParallelDataErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateParallelDataErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateParallelDataErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateParallelDataErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `CreateParallelDataErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateParallelDataErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `CreateParallelDataErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateParallelDataErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateParallelDataErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateParallelDataErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateParallelDataErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateParallelDataErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateParallelDataErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateParallelDataErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -178,7 +178,7 @@ pub enum DeleteParallelDataErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and
     /// then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteParallelDataError {
@@ -244,28 +244,28 @@ impl DeleteParallelDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteParallelDataErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteParallelDataErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteParallelDataErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteParallelDataErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteParallelDataErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteParallelDataErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteParallelDataErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteParallelDataErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteParallelDataErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteParallelDataErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteParallelDataErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -310,7 +310,7 @@ pub enum DeleteTerminologyErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and
     /// then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTerminologyError {
@@ -376,28 +376,28 @@ impl DeleteTerminologyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTerminologyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteTerminologyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTerminologyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTerminologyErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `DeleteTerminologyErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTerminologyErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTerminologyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTerminologyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTerminologyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTerminologyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteTerminologyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -439,7 +439,7 @@ pub enum DescribeTextTranslationJobErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and
     /// then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTextTranslationJobError {
@@ -504,21 +504,21 @@ impl DescribeTextTranslationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTextTranslationJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeTextTranslationJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTextTranslationJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTextTranslationJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTextTranslationJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTextTranslationJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTextTranslationJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeTextTranslationJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -562,7 +562,7 @@ pub enum GetParallelDataErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and
     /// then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetParallelDataError {
@@ -628,28 +628,28 @@ impl GetParallelDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetParallelDataErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetParallelDataErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetParallelDataErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetParallelDataErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetParallelDataErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetParallelDataErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetParallelDataErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetParallelDataErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetParallelDataErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetParallelDataErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetParallelDataErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -694,7 +694,7 @@ pub enum GetTerminologyErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and
     /// then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTerminologyError {
@@ -760,28 +760,28 @@ impl GetTerminologyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTerminologyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetTerminologyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTerminologyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetTerminologyErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `GetTerminologyErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTerminologyErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `GetTerminologyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetTerminologyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTerminologyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetTerminologyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetTerminologyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -825,7 +825,7 @@ pub enum ImportTerminologyErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and
     /// then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportTerminologyError {
@@ -891,28 +891,28 @@ impl ImportTerminologyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportTerminologyErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ImportTerminologyErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportTerminologyErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ImportTerminologyErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ImportTerminologyErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportTerminologyErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ImportTerminologyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ImportTerminologyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportTerminologyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ImportTerminologyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ImportTerminologyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -953,7 +953,7 @@ pub enum ListParallelDataErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and
     /// then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListParallelDataError {
@@ -1018,21 +1018,21 @@ impl ListParallelDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListParallelDataErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListParallelDataErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListParallelDataErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListParallelDataErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListParallelDataErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListParallelDataErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListParallelDataErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListParallelDataErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1072,7 +1072,7 @@ pub enum ListTerminologiesErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and
     /// then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTerminologiesError {
@@ -1137,21 +1137,21 @@ impl ListTerminologiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTerminologiesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTerminologiesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTerminologiesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTerminologiesErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `ListTerminologiesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTerminologiesErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `ListTerminologiesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListTerminologiesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1193,7 +1193,7 @@ pub enum ListTextTranslationJobsErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and
     /// then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTextTranslationJobsError {
@@ -1259,28 +1259,28 @@ impl ListTextTranslationJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTextTranslationJobsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTextTranslationJobsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTextTranslationJobsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTextTranslationJobsErrorKind::InvalidFilterException`.
+    /// Returns `true` if the error kind is `ListTextTranslationJobsErrorKind::InvalidFilterException`.
     pub fn is_invalid_filter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTextTranslationJobsErrorKind::InvalidFilterException(_)
         )
     }
-    /// Returns true if the error kind is `ListTextTranslationJobsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTextTranslationJobsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTextTranslationJobsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTextTranslationJobsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListTextTranslationJobsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1328,7 +1328,7 @@ pub enum StartTextTranslationJobErrorKind {
     /// <p>Amazon Translate does not support translation from the language of the source text into the requested
     /// target language. For more information, see <a>how-to-error-msg</a>. </p>
     UnsupportedLanguagePairException(crate::error::UnsupportedLanguagePairException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartTextTranslationJobError {
@@ -1397,35 +1397,35 @@ impl StartTextTranslationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartTextTranslationJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartTextTranslationJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTextTranslationJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartTextTranslationJobErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartTextTranslationJobErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTextTranslationJobErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartTextTranslationJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartTextTranslationJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTextTranslationJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartTextTranslationJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `StartTextTranslationJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTextTranslationJobErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `StartTextTranslationJobErrorKind::UnsupportedLanguagePairException`.
+    /// Returns `true` if the error kind is `StartTextTranslationJobErrorKind::UnsupportedLanguagePairException`.
     pub fn is_unsupported_language_pair_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1470,7 +1470,7 @@ pub enum StopTextTranslationJobErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and
     /// then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopTextTranslationJobError {
@@ -1535,21 +1535,21 @@ impl StopTextTranslationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopTextTranslationJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StopTextTranslationJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopTextTranslationJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StopTextTranslationJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopTextTranslationJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopTextTranslationJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopTextTranslationJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `StopTextTranslationJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1607,7 +1607,7 @@ pub enum TranslateTextErrorKind {
     /// <p>Amazon Translate does not support translation from the language of the source text into the requested
     /// target language. For more information, see <a>how-to-error-msg</a>. </p>
     UnsupportedLanguagePairException(crate::error::UnsupportedLanguagePairException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TranslateTextError {
@@ -1677,56 +1677,56 @@ impl TranslateTextError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TranslateTextErrorKind::DetectedLanguageLowConfidenceException`.
+    /// Returns `true` if the error kind is `TranslateTextErrorKind::DetectedLanguageLowConfidenceException`.
     pub fn is_detected_language_low_confidence_exception(&self) -> bool {
         matches!(
             &self.kind,
             TranslateTextErrorKind::DetectedLanguageLowConfidenceException(_)
         )
     }
-    /// Returns true if the error kind is `TranslateTextErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TranslateTextErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             TranslateTextErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `TranslateTextErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `TranslateTextErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             TranslateTextErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `TranslateTextErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TranslateTextErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TranslateTextErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TranslateTextErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `TranslateTextErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             TranslateTextErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `TranslateTextErrorKind::TextSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `TranslateTextErrorKind::TextSizeLimitExceededException`.
     pub fn is_text_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TranslateTextErrorKind::TextSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TranslateTextErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `TranslateTextErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             TranslateTextErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `TranslateTextErrorKind::UnsupportedLanguagePairException`.
+    /// Returns `true` if the error kind is `TranslateTextErrorKind::UnsupportedLanguagePairException`.
     pub fn is_unsupported_language_pair_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1786,7 +1786,7 @@ pub enum UpdateParallelDataErrorKind {
     /// <p> You have made too many requests within a short period of time. Wait for a short time and
     /// then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateParallelDataError {
@@ -1856,56 +1856,56 @@ impl UpdateParallelDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateParallelDataErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateParallelDataErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateParallelDataErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateParallelDataErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateParallelDataErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateParallelDataErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateParallelDataErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateParallelDataErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateParallelDataErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateParallelDataErrorKind::InvalidParameterValueException`.
+    /// Returns `true` if the error kind is `UpdateParallelDataErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateParallelDataErrorKind::InvalidParameterValueException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateParallelDataErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateParallelDataErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateParallelDataErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateParallelDataErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateParallelDataErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateParallelDataErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateParallelDataErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateParallelDataErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateParallelDataErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateParallelDataErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateParallelDataErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

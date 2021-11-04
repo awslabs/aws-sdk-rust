@@ -24,7 +24,7 @@ use tracing::Instrument;
 /// the desired role.
 ///
 /// # Examples
-/// ```rust
+/// ```no_run
 /// use aws_config::sts::{AssumeRoleProvider};
 /// use aws_types::{Credentials, region::Region};
 /// use aws_config::environment;
@@ -172,6 +172,7 @@ impl AssumeRoleProvider {
             .op
             .clone()
             .make_operation(&self.conf)
+            .await
             .expect("valid operation");
 
         let assumed = self.sts.call(op).in_current_span().await;

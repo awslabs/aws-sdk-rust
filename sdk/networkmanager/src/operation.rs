@@ -762,6 +762,210 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLinks {
     }
 }
 
+/// Operation shape for `GetNetworkResourceCounts`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_network_resource_counts`](crate::client::Client::get_network_resource_counts).
+///
+/// See [`crate::client::fluent_builders::GetNetworkResourceCounts`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetNetworkResourceCounts {
+    _private: (),
+}
+impl GetNetworkResourceCounts {
+    /// Creates a new builder-style object to manufacture [`GetNetworkResourceCountsInput`](crate::input::GetNetworkResourceCountsInput)
+    pub fn builder() -> crate::input::get_network_resource_counts_input::Builder {
+        crate::input::get_network_resource_counts_input::Builder::default()
+    }
+    /// Creates a new `GetNetworkResourceCounts` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetNetworkResourceCounts {
+    type Output = std::result::Result<
+        crate::output::GetNetworkResourceCountsOutput,
+        crate::error::GetNetworkResourceCountsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_network_resource_counts_error(response)
+        } else {
+            crate::operation_deser::parse_get_network_resource_counts_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetNetworkResourceRelationships`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_network_resource_relationships`](crate::client::Client::get_network_resource_relationships).
+///
+/// See [`crate::client::fluent_builders::GetNetworkResourceRelationships`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetNetworkResourceRelationships {
+    _private: (),
+}
+impl GetNetworkResourceRelationships {
+    /// Creates a new builder-style object to manufacture [`GetNetworkResourceRelationshipsInput`](crate::input::GetNetworkResourceRelationshipsInput)
+    pub fn builder() -> crate::input::get_network_resource_relationships_input::Builder {
+        crate::input::get_network_resource_relationships_input::Builder::default()
+    }
+    /// Creates a new `GetNetworkResourceRelationships` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetNetworkResourceRelationships {
+    type Output = std::result::Result<
+        crate::output::GetNetworkResourceRelationshipsOutput,
+        crate::error::GetNetworkResourceRelationshipsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_network_resource_relationships_error(response)
+        } else {
+            crate::operation_deser::parse_get_network_resource_relationships_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetNetworkResources`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_network_resources`](crate::client::Client::get_network_resources).
+///
+/// See [`crate::client::fluent_builders::GetNetworkResources`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetNetworkResources {
+    _private: (),
+}
+impl GetNetworkResources {
+    /// Creates a new builder-style object to manufacture [`GetNetworkResourcesInput`](crate::input::GetNetworkResourcesInput)
+    pub fn builder() -> crate::input::get_network_resources_input::Builder {
+        crate::input::get_network_resources_input::Builder::default()
+    }
+    /// Creates a new `GetNetworkResources` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetNetworkResources {
+    type Output = std::result::Result<
+        crate::output::GetNetworkResourcesOutput,
+        crate::error::GetNetworkResourcesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_network_resources_error(response)
+        } else {
+            crate::operation_deser::parse_get_network_resources_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetNetworkRoutes`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_network_routes`](crate::client::Client::get_network_routes).
+///
+/// See [`crate::client::fluent_builders::GetNetworkRoutes`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetNetworkRoutes {
+    _private: (),
+}
+impl GetNetworkRoutes {
+    /// Creates a new builder-style object to manufacture [`GetNetworkRoutesInput`](crate::input::GetNetworkRoutesInput)
+    pub fn builder() -> crate::input::get_network_routes_input::Builder {
+        crate::input::get_network_routes_input::Builder::default()
+    }
+    /// Creates a new `GetNetworkRoutes` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetNetworkRoutes {
+    type Output = std::result::Result<
+        crate::output::GetNetworkRoutesOutput,
+        crate::error::GetNetworkRoutesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_network_routes_error(response)
+        } else {
+            crate::operation_deser::parse_get_network_routes_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetNetworkTelemetry`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_network_telemetry`](crate::client::Client::get_network_telemetry).
+///
+/// See [`crate::client::fluent_builders::GetNetworkTelemetry`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetNetworkTelemetry {
+    _private: (),
+}
+impl GetNetworkTelemetry {
+    /// Creates a new builder-style object to manufacture [`GetNetworkTelemetryInput`](crate::input::GetNetworkTelemetryInput)
+    pub fn builder() -> crate::input::get_network_telemetry_input::Builder {
+        crate::input::get_network_telemetry_input::Builder::default()
+    }
+    /// Creates a new `GetNetworkTelemetry` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetNetworkTelemetry {
+    type Output = std::result::Result<
+        crate::output::GetNetworkTelemetryOutput,
+        crate::error::GetNetworkTelemetryError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_network_telemetry_error(response)
+        } else {
+            crate::operation_deser::parse_get_network_telemetry_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetRouteAnalysis`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_route_analysis`](crate::client::Client::get_route_analysis).
+///
+/// See [`crate::client::fluent_builders::GetRouteAnalysis`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetRouteAnalysis {
+    _private: (),
+}
+impl GetRouteAnalysis {
+    /// Creates a new builder-style object to manufacture [`GetRouteAnalysisInput`](crate::input::GetRouteAnalysisInput)
+    pub fn builder() -> crate::input::get_route_analysis_input::Builder {
+        crate::input::get_route_analysis_input::Builder::default()
+    }
+    /// Creates a new `GetRouteAnalysis` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetRouteAnalysis {
+    type Output = std::result::Result<
+        crate::output::GetRouteAnalysisOutput,
+        crate::error::GetRouteAnalysisError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_route_analysis_error(response)
+        } else {
+            crate::operation_deser::parse_get_route_analysis_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetSites`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -929,6 +1133,40 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterTransitGateway {
             crate::operation_deser::parse_register_transit_gateway_error(response)
         } else {
             crate::operation_deser::parse_register_transit_gateway_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StartRouteAnalysis`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_route_analysis`](crate::client::Client::start_route_analysis).
+///
+/// See [`crate::client::fluent_builders::StartRouteAnalysis`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartRouteAnalysis {
+    _private: (),
+}
+impl StartRouteAnalysis {
+    /// Creates a new builder-style object to manufacture [`StartRouteAnalysisInput`](crate::input::StartRouteAnalysisInput)
+    pub fn builder() -> crate::input::start_route_analysis_input::Builder {
+        crate::input::start_route_analysis_input::Builder::default()
+    }
+    /// Creates a new `StartRouteAnalysis` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartRouteAnalysis {
+    type Output = std::result::Result<
+        crate::output::StartRouteAnalysisOutput,
+        crate::error::StartRouteAnalysisError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_route_analysis_error(response)
+        } else {
+            crate::operation_deser::parse_start_route_analysis_response(response)
         }
     }
 }
@@ -1125,6 +1363,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLink {
             crate::operation_deser::parse_update_link_error(response)
         } else {
             crate::operation_deser::parse_update_link_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateNetworkResourceMetadata`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_network_resource_metadata`](crate::client::Client::update_network_resource_metadata).
+///
+/// See [`crate::client::fluent_builders::UpdateNetworkResourceMetadata`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateNetworkResourceMetadata {
+    _private: (),
+}
+impl UpdateNetworkResourceMetadata {
+    /// Creates a new builder-style object to manufacture [`UpdateNetworkResourceMetadataInput`](crate::input::UpdateNetworkResourceMetadataInput)
+    pub fn builder() -> crate::input::update_network_resource_metadata_input::Builder {
+        crate::input::update_network_resource_metadata_input::Builder::default()
+    }
+    /// Creates a new `UpdateNetworkResourceMetadata` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateNetworkResourceMetadata {
+    type Output = std::result::Result<
+        crate::output::UpdateNetworkResourceMetadataOutput,
+        crate::error::UpdateNetworkResourceMetadataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_network_resource_metadata_error(response)
+        } else {
+            crate::operation_deser::parse_update_network_resource_metadata_response(response)
         }
     }
 }

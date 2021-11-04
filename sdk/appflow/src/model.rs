@@ -5715,12 +5715,15 @@ pub struct S3SourceProperties {
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p> The object key for the Amazon S3 bucket in which the source files are stored. </p>
     pub bucket_prefix: std::option::Option<std::string::String>,
+    /// <p> When you use Amazon S3 as the source, the configuration format that you provide the flow input data. </p>
+    pub s3_input_format_config: std::option::Option<crate::model::S3InputFormatConfig>,
 }
 impl std::fmt::Debug for S3SourceProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3SourceProperties");
         formatter.field("bucket_name", &self.bucket_name);
         formatter.field("bucket_prefix", &self.bucket_prefix);
+        formatter.field("s3_input_format_config", &self.s3_input_format_config);
         formatter.finish()
     }
 }
@@ -5732,6 +5735,7 @@ pub mod s3_source_properties {
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) bucket_prefix: std::option::Option<std::string::String>,
+        pub(crate) s3_input_format_config: std::option::Option<crate::model::S3InputFormatConfig>,
     }
     impl Builder {
         /// <p> The Amazon S3 bucket name where the source files are stored. </p>
@@ -5757,11 +5761,25 @@ pub mod s3_source_properties {
             self.bucket_prefix = input;
             self
         }
+        /// <p> When you use Amazon S3 as the source, the configuration format that you provide the flow input data. </p>
+        pub fn s3_input_format_config(mut self, input: crate::model::S3InputFormatConfig) -> Self {
+            self.s3_input_format_config = Some(input);
+            self
+        }
+        /// <p> When you use Amazon S3 as the source, the configuration format that you provide the flow input data. </p>
+        pub fn set_s3_input_format_config(
+            mut self,
+            input: std::option::Option<crate::model::S3InputFormatConfig>,
+        ) -> Self {
+            self.s3_input_format_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`S3SourceProperties`](crate::model::S3SourceProperties)
         pub fn build(self) -> crate::model::S3SourceProperties {
             crate::model::S3SourceProperties {
                 bucket_name: self.bucket_name,
                 bucket_prefix: self.bucket_prefix,
+                s3_input_format_config: self.s3_input_format_config,
             }
         }
     }
@@ -5770,6 +5788,112 @@ impl S3SourceProperties {
     /// Creates a new builder-style object to manufacture [`S3SourceProperties`](crate::model::S3SourceProperties)
     pub fn builder() -> crate::model::s3_source_properties::Builder {
         crate::model::s3_source_properties::Builder::default()
+    }
+}
+
+/// <p> When you use Amazon S3 as the source, the configuration format that you provide the flow input data. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3InputFormatConfig {
+    /// <p> The file type that Amazon AppFlow gets from your Amazon S3 bucket. </p>
+    pub s3_input_file_type: std::option::Option<crate::model::S3InputFileType>,
+}
+impl std::fmt::Debug for S3InputFormatConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3InputFormatConfig");
+        formatter.field("s3_input_file_type", &self.s3_input_file_type);
+        formatter.finish()
+    }
+}
+/// See [`S3InputFormatConfig`](crate::model::S3InputFormatConfig)
+pub mod s3_input_format_config {
+    /// A builder for [`S3InputFormatConfig`](crate::model::S3InputFormatConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) s3_input_file_type: std::option::Option<crate::model::S3InputFileType>,
+    }
+    impl Builder {
+        /// <p> The file type that Amazon AppFlow gets from your Amazon S3 bucket. </p>
+        pub fn s3_input_file_type(mut self, input: crate::model::S3InputFileType) -> Self {
+            self.s3_input_file_type = Some(input);
+            self
+        }
+        /// <p> The file type that Amazon AppFlow gets from your Amazon S3 bucket. </p>
+        pub fn set_s3_input_file_type(
+            mut self,
+            input: std::option::Option<crate::model::S3InputFileType>,
+        ) -> Self {
+            self.s3_input_file_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3InputFormatConfig`](crate::model::S3InputFormatConfig)
+        pub fn build(self) -> crate::model::S3InputFormatConfig {
+            crate::model::S3InputFormatConfig {
+                s3_input_file_type: self.s3_input_file_type,
+            }
+        }
+    }
+}
+impl S3InputFormatConfig {
+    /// Creates a new builder-style object to manufacture [`S3InputFormatConfig`](crate::model::S3InputFormatConfig)
+    pub fn builder() -> crate::model::s3_input_format_config::Builder {
+        crate::model::s3_input_format_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum S3InputFileType {
+    #[allow(missing_docs)] // documentation missing in model
+    Csv,
+    #[allow(missing_docs)] // documentation missing in model
+    Json,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for S3InputFileType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CSV" => S3InputFileType::Csv,
+            "JSON" => S3InputFileType::Json,
+            other => S3InputFileType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for S3InputFileType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(S3InputFileType::from(s))
+    }
+}
+impl S3InputFileType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            S3InputFileType::Csv => "CSV",
+            S3InputFileType::Json => "JSON",
+            S3InputFileType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CSV", "JSON"]
+    }
+}
+impl AsRef<str> for S3InputFileType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

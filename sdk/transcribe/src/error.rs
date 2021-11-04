@@ -23,7 +23,7 @@ pub enum CreateCallAnalyticsCategoryErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCallAnalyticsCategoryError {
@@ -89,28 +89,28 @@ impl CreateCallAnalyticsCategoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCallAnalyticsCategoryErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateCallAnalyticsCategoryErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCallAnalyticsCategoryErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCallAnalyticsCategoryErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateCallAnalyticsCategoryErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCallAnalyticsCategoryErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCallAnalyticsCategoryErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateCallAnalyticsCategoryErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCallAnalyticsCategoryErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCallAnalyticsCategoryErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateCallAnalyticsCategoryErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -154,7 +154,7 @@ pub enum CreateLanguageModelErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLanguageModelError {
@@ -220,28 +220,28 @@ impl CreateLanguageModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLanguageModelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateLanguageModelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLanguageModelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLanguageModelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateLanguageModelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLanguageModelErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLanguageModelErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateLanguageModelErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLanguageModelErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLanguageModelErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateLanguageModelErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -285,7 +285,7 @@ pub enum CreateMedicalVocabularyErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMedicalVocabularyError {
@@ -351,28 +351,28 @@ impl CreateMedicalVocabularyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMedicalVocabularyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateMedicalVocabularyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMedicalVocabularyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMedicalVocabularyErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateMedicalVocabularyErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMedicalVocabularyErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMedicalVocabularyErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateMedicalVocabularyErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMedicalVocabularyErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMedicalVocabularyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateMedicalVocabularyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -416,7 +416,7 @@ pub enum CreateVocabularyErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVocabularyError {
@@ -482,25 +482,25 @@ impl CreateVocabularyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateVocabularyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateVocabularyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVocabularyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVocabularyErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateVocabularyErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateVocabularyErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateVocabularyErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateVocabularyErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVocabularyErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVocabularyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateVocabularyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -544,7 +544,7 @@ pub enum CreateVocabularyFilterErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVocabularyFilterError {
@@ -610,28 +610,28 @@ impl CreateVocabularyFilterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateVocabularyFilterErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateVocabularyFilterErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVocabularyFilterErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVocabularyFilterErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateVocabularyFilterErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVocabularyFilterErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVocabularyFilterErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateVocabularyFilterErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVocabularyFilterErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVocabularyFilterErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateVocabularyFilterErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -675,7 +675,7 @@ pub enum DeleteCallAnalyticsCategoryErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCallAnalyticsCategoryError {
@@ -741,28 +741,28 @@ impl DeleteCallAnalyticsCategoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCallAnalyticsCategoryErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteCallAnalyticsCategoryErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCallAnalyticsCategoryErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCallAnalyticsCategoryErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteCallAnalyticsCategoryErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCallAnalyticsCategoryErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCallAnalyticsCategoryErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteCallAnalyticsCategoryErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCallAnalyticsCategoryErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCallAnalyticsCategoryErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteCallAnalyticsCategoryErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -804,7 +804,7 @@ pub enum DeleteCallAnalyticsJobErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCallAnalyticsJobError {
@@ -869,21 +869,21 @@ impl DeleteCallAnalyticsJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCallAnalyticsJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteCallAnalyticsJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCallAnalyticsJobErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCallAnalyticsJobErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteCallAnalyticsJobErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCallAnalyticsJobErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCallAnalyticsJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteCallAnalyticsJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -924,7 +924,7 @@ pub enum DeleteLanguageModelErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLanguageModelError {
@@ -989,21 +989,21 @@ impl DeleteLanguageModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLanguageModelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteLanguageModelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLanguageModelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLanguageModelErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteLanguageModelErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLanguageModelErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLanguageModelErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteLanguageModelErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1044,7 +1044,7 @@ pub enum DeleteMedicalTranscriptionJobErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMedicalTranscriptionJobError {
@@ -1114,21 +1114,21 @@ impl DeleteMedicalTranscriptionJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMedicalTranscriptionJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteMedicalTranscriptionJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMedicalTranscriptionJobErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMedicalTranscriptionJobErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteMedicalTranscriptionJobErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMedicalTranscriptionJobErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMedicalTranscriptionJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteMedicalTranscriptionJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1173,7 +1173,7 @@ pub enum DeleteMedicalVocabularyErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMedicalVocabularyError {
@@ -1239,28 +1239,28 @@ impl DeleteMedicalVocabularyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMedicalVocabularyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteMedicalVocabularyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMedicalVocabularyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMedicalVocabularyErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteMedicalVocabularyErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMedicalVocabularyErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMedicalVocabularyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteMedicalVocabularyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMedicalVocabularyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMedicalVocabularyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMedicalVocabularyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1302,7 +1302,7 @@ pub enum DeleteTranscriptionJobErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTranscriptionJobError {
@@ -1367,21 +1367,21 @@ impl DeleteTranscriptionJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTranscriptionJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteTranscriptionJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTranscriptionJobErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTranscriptionJobErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteTranscriptionJobErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTranscriptionJobErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTranscriptionJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteTranscriptionJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1424,7 +1424,7 @@ pub enum DeleteVocabularyErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVocabularyError {
@@ -1490,28 +1490,28 @@ impl DeleteVocabularyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVocabularyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteVocabularyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVocabularyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVocabularyErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteVocabularyErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVocabularyErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVocabularyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteVocabularyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVocabularyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVocabularyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVocabularyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteVocabularyErrorKind::NotFoundException(_))
     }
@@ -1552,7 +1552,7 @@ pub enum DeleteVocabularyFilterErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVocabularyFilterError {
@@ -1618,28 +1618,28 @@ impl DeleteVocabularyFilterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVocabularyFilterErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteVocabularyFilterErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVocabularyFilterErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVocabularyFilterErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteVocabularyFilterErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVocabularyFilterErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVocabularyFilterErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteVocabularyFilterErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVocabularyFilterErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVocabularyFilterErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVocabularyFilterErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1683,7 +1683,7 @@ pub enum DescribeLanguageModelErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLanguageModelError {
@@ -1749,28 +1749,28 @@ impl DescribeLanguageModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLanguageModelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeLanguageModelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLanguageModelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLanguageModelErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeLanguageModelErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLanguageModelErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLanguageModelErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DescribeLanguageModelErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLanguageModelErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLanguageModelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeLanguageModelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1814,7 +1814,7 @@ pub enum GetCallAnalyticsCategoryErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCallAnalyticsCategoryError {
@@ -1880,28 +1880,28 @@ impl GetCallAnalyticsCategoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCallAnalyticsCategoryErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetCallAnalyticsCategoryErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCallAnalyticsCategoryErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetCallAnalyticsCategoryErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetCallAnalyticsCategoryErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCallAnalyticsCategoryErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetCallAnalyticsCategoryErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetCallAnalyticsCategoryErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCallAnalyticsCategoryErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetCallAnalyticsCategoryErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetCallAnalyticsCategoryErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1945,7 +1945,7 @@ pub enum GetCallAnalyticsJobErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCallAnalyticsJobError {
@@ -2011,28 +2011,28 @@ impl GetCallAnalyticsJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCallAnalyticsJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetCallAnalyticsJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCallAnalyticsJobErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetCallAnalyticsJobErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetCallAnalyticsJobErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCallAnalyticsJobErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetCallAnalyticsJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetCallAnalyticsJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCallAnalyticsJobErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetCallAnalyticsJobErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetCallAnalyticsJobErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2076,7 +2076,7 @@ pub enum GetMedicalTranscriptionJobErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMedicalTranscriptionJobError {
@@ -2142,28 +2142,28 @@ impl GetMedicalTranscriptionJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMedicalTranscriptionJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetMedicalTranscriptionJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMedicalTranscriptionJobErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetMedicalTranscriptionJobErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetMedicalTranscriptionJobErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMedicalTranscriptionJobErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetMedicalTranscriptionJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetMedicalTranscriptionJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMedicalTranscriptionJobErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetMedicalTranscriptionJobErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetMedicalTranscriptionJobErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2207,7 +2207,7 @@ pub enum GetMedicalVocabularyErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMedicalVocabularyError {
@@ -2273,28 +2273,28 @@ impl GetMedicalVocabularyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMedicalVocabularyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetMedicalVocabularyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMedicalVocabularyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetMedicalVocabularyErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetMedicalVocabularyErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMedicalVocabularyErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetMedicalVocabularyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetMedicalVocabularyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMedicalVocabularyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetMedicalVocabularyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetMedicalVocabularyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2338,7 +2338,7 @@ pub enum GetTranscriptionJobErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTranscriptionJobError {
@@ -2404,28 +2404,28 @@ impl GetTranscriptionJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTranscriptionJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetTranscriptionJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTranscriptionJobErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetTranscriptionJobErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetTranscriptionJobErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTranscriptionJobErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetTranscriptionJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetTranscriptionJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTranscriptionJobErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetTranscriptionJobErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetTranscriptionJobErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2469,7 +2469,7 @@ pub enum GetVocabularyErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVocabularyError {
@@ -2535,25 +2535,25 @@ impl GetVocabularyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetVocabularyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetVocabularyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetVocabularyErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetVocabularyErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetVocabularyErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVocabularyErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetVocabularyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetVocabularyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVocabularyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetVocabularyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetVocabularyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetVocabularyErrorKind::NotFoundException(_))
     }
@@ -2594,7 +2594,7 @@ pub enum GetVocabularyFilterErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVocabularyFilterError {
@@ -2660,28 +2660,28 @@ impl GetVocabularyFilterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetVocabularyFilterErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetVocabularyFilterErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVocabularyFilterErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetVocabularyFilterErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetVocabularyFilterErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVocabularyFilterErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetVocabularyFilterErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetVocabularyFilterErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVocabularyFilterErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetVocabularyFilterErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetVocabularyFilterErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2723,7 +2723,7 @@ pub enum ListCallAnalyticsCategoriesErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCallAnalyticsCategoriesError {
@@ -2788,21 +2788,21 @@ impl ListCallAnalyticsCategoriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCallAnalyticsCategoriesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListCallAnalyticsCategoriesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCallAnalyticsCategoriesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListCallAnalyticsCategoriesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListCallAnalyticsCategoriesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCallAnalyticsCategoriesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListCallAnalyticsCategoriesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListCallAnalyticsCategoriesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2843,7 +2843,7 @@ pub enum ListCallAnalyticsJobsErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCallAnalyticsJobsError {
@@ -2908,21 +2908,21 @@ impl ListCallAnalyticsJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCallAnalyticsJobsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListCallAnalyticsJobsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCallAnalyticsJobsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListCallAnalyticsJobsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListCallAnalyticsJobsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCallAnalyticsJobsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListCallAnalyticsJobsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListCallAnalyticsJobsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2963,7 +2963,7 @@ pub enum ListLanguageModelsErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLanguageModelsError {
@@ -3028,21 +3028,21 @@ impl ListLanguageModelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListLanguageModelsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListLanguageModelsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLanguageModelsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListLanguageModelsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListLanguageModelsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListLanguageModelsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListLanguageModelsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListLanguageModelsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3083,7 +3083,7 @@ pub enum ListMedicalTranscriptionJobsErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMedicalTranscriptionJobsError {
@@ -3150,21 +3150,21 @@ impl ListMedicalTranscriptionJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMedicalTranscriptionJobsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListMedicalTranscriptionJobsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMedicalTranscriptionJobsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListMedicalTranscriptionJobsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListMedicalTranscriptionJobsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMedicalTranscriptionJobsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListMedicalTranscriptionJobsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListMedicalTranscriptionJobsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3205,7 +3205,7 @@ pub enum ListMedicalVocabulariesErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMedicalVocabulariesError {
@@ -3270,21 +3270,21 @@ impl ListMedicalVocabulariesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMedicalVocabulariesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListMedicalVocabulariesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMedicalVocabulariesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListMedicalVocabulariesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListMedicalVocabulariesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMedicalVocabulariesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListMedicalVocabulariesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListMedicalVocabulariesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3327,7 +3327,7 @@ pub enum ListTagsForResourceErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -3393,28 +3393,28 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3456,7 +3456,7 @@ pub enum ListTranscriptionJobsErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTranscriptionJobsError {
@@ -3521,21 +3521,21 @@ impl ListTranscriptionJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTranscriptionJobsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTranscriptionJobsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTranscriptionJobsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTranscriptionJobsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListTranscriptionJobsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTranscriptionJobsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListTranscriptionJobsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListTranscriptionJobsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3576,7 +3576,7 @@ pub enum ListVocabulariesErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVocabulariesError {
@@ -3641,21 +3641,21 @@ impl ListVocabulariesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListVocabulariesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListVocabulariesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVocabulariesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListVocabulariesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListVocabulariesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVocabulariesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListVocabulariesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListVocabulariesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3696,7 +3696,7 @@ pub enum ListVocabularyFiltersErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVocabularyFiltersError {
@@ -3761,21 +3761,21 @@ impl ListVocabularyFiltersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListVocabularyFiltersErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListVocabularyFiltersErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVocabularyFiltersErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListVocabularyFiltersErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListVocabularyFiltersErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListVocabularyFiltersErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListVocabularyFiltersErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListVocabularyFiltersErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3818,7 +3818,7 @@ pub enum StartCallAnalyticsJobErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartCallAnalyticsJobError {
@@ -3884,28 +3884,28 @@ impl StartCallAnalyticsJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartCallAnalyticsJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StartCallAnalyticsJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCallAnalyticsJobErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartCallAnalyticsJobErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartCallAnalyticsJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCallAnalyticsJobErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `StartCallAnalyticsJobErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `StartCallAnalyticsJobErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartCallAnalyticsJobErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `StartCallAnalyticsJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartCallAnalyticsJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3949,7 +3949,7 @@ pub enum StartMedicalTranscriptionJobErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartMedicalTranscriptionJobError {
@@ -4017,28 +4017,28 @@ impl StartMedicalTranscriptionJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartMedicalTranscriptionJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StartMedicalTranscriptionJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMedicalTranscriptionJobErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartMedicalTranscriptionJobErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartMedicalTranscriptionJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMedicalTranscriptionJobErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `StartMedicalTranscriptionJobErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `StartMedicalTranscriptionJobErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMedicalTranscriptionJobErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `StartMedicalTranscriptionJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartMedicalTranscriptionJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4082,7 +4082,7 @@ pub enum StartTranscriptionJobErrorKind {
     /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
     /// use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartTranscriptionJobError {
@@ -4148,28 +4148,28 @@ impl StartTranscriptionJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartTranscriptionJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `StartTranscriptionJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTranscriptionJobErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartTranscriptionJobErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartTranscriptionJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTranscriptionJobErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `StartTranscriptionJobErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `StartTranscriptionJobErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartTranscriptionJobErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `StartTranscriptionJobErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartTranscriptionJobErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4215,7 +4215,7 @@ pub enum TagResourceErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -4282,26 +4282,26 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
@@ -4345,7 +4345,7 @@ pub enum UntagResourceErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -4412,29 +4412,29 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
@@ -4478,7 +4478,7 @@ pub enum UpdateCallAnalyticsCategoryErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCallAnalyticsCategoryError {
@@ -4545,35 +4545,35 @@ impl UpdateCallAnalyticsCategoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCallAnalyticsCategoryErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateCallAnalyticsCategoryErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCallAnalyticsCategoryErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCallAnalyticsCategoryErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateCallAnalyticsCategoryErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCallAnalyticsCategoryErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCallAnalyticsCategoryErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateCallAnalyticsCategoryErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCallAnalyticsCategoryErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCallAnalyticsCategoryErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateCallAnalyticsCategoryErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCallAnalyticsCategoryErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCallAnalyticsCategoryErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateCallAnalyticsCategoryErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4620,7 +4620,7 @@ pub enum UpdateMedicalVocabularyErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMedicalVocabularyError {
@@ -4687,35 +4687,35 @@ impl UpdateMedicalVocabularyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateMedicalVocabularyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateMedicalVocabularyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMedicalVocabularyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMedicalVocabularyErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateMedicalVocabularyErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMedicalVocabularyErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMedicalVocabularyErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateMedicalVocabularyErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMedicalVocabularyErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMedicalVocabularyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateMedicalVocabularyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMedicalVocabularyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMedicalVocabularyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateMedicalVocabularyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4762,7 +4762,7 @@ pub enum UpdateVocabularyErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateVocabularyError {
@@ -4829,32 +4829,32 @@ impl UpdateVocabularyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateVocabularyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateVocabularyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVocabularyErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVocabularyErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateVocabularyErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateVocabularyErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateVocabularyErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateVocabularyErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVocabularyErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVocabularyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateVocabularyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVocabularyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVocabularyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateVocabularyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateVocabularyErrorKind::NotFoundException(_))
     }
@@ -4896,7 +4896,7 @@ pub enum UpdateVocabularyFilterErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateVocabularyFilterError {
@@ -4962,28 +4962,28 @@ impl UpdateVocabularyFilterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateVocabularyFilterErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateVocabularyFilterErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVocabularyFilterErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVocabularyFilterErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateVocabularyFilterErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVocabularyFilterErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVocabularyFilterErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateVocabularyFilterErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVocabularyFilterErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVocabularyFilterErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateVocabularyFilterErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

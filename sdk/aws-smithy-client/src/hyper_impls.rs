@@ -20,6 +20,7 @@ use std::error::Error;
 use crate::hyper_impls::timeout_middleware::{ConnectTimeout, HttpReadTimeout, TimeoutError};
 use crate::{timeout, Builder as ClientBuilder};
 use aws_smithy_async::future::timeout::TimedOutError;
+use aws_smithy_types::retry::ErrorKind;
 
 /// Adapter from a [`hyper::Client`] to a connector usable by a [`Client`](crate::Client).
 ///
@@ -98,7 +99,12 @@ fn to_connector_error(err: hyper::Error) -> ConnectorError {
     } else if err.is_closed() || err.is_canceled() || find_source::<std::io::Error>(&err).is_some()
     {
         ConnectorError::io(err.into())
+    }
+    // We sometimes receive this from S3: hyper::Error(IncompleteMessage)
+    else if err.is_incomplete_message() {
+        ConnectorError::other(err.into(), Some(ErrorKind::TransientError))
     } else {
+        tracing::warn!(err = ?err, "unrecognized error from Hyper. If this error should be retried, please file an issue.");
         ConnectorError::other(err.into(), None)
     }
 }

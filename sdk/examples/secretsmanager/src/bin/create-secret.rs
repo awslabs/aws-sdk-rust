@@ -26,7 +26,7 @@ struct Opt {
     #[structopt(short, long)]
     secret_value: String,
 
-    /// Whether to display additonal runtime information
+    /// Whether to display additional runtime information
     #[structopt(short, long)]
     verbose: bool,
 }

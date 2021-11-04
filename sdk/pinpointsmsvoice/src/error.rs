@@ -22,7 +22,7 @@ pub enum CreateConfigurationSetErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConfigurationSetError {
@@ -89,35 +89,35 @@ impl CreateConfigurationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConfigurationSetErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -163,7 +163,7 @@ pub enum CreateConfigurationSetEventDestinationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConfigurationSetEventDestinationError {
@@ -246,42 +246,42 @@ impl CreateConfigurationSetEventDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetEventDestinationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetEventDestinationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetEventDestinationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetEventDestinationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetEventDestinationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetEventDestinationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -338,7 +338,7 @@ pub enum DeleteConfigurationSetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConfigurationSetError {
@@ -404,28 +404,28 @@ impl DeleteConfigurationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConfigurationSetErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConfigurationSetErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConfigurationSetErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -466,7 +466,7 @@ pub enum DeleteConfigurationSetEventDestinationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConfigurationSetEventDestinationError {
@@ -543,28 +543,28 @@ impl DeleteConfigurationSetEventDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConfigurationSetEventDestinationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteConfigurationSetEventDestinationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -615,7 +615,7 @@ pub enum GetConfigurationSetEventDestinationsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConfigurationSetEventDestinationsError {
@@ -692,28 +692,28 @@ impl GetConfigurationSetEventDestinationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConfigurationSetEventDestinationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetConfigurationSetEventDestinationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConfigurationSetEventDestinationsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetConfigurationSetEventDestinationsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `GetConfigurationSetEventDestinationsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConfigurationSetEventDestinationsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetConfigurationSetEventDestinationsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetConfigurationSetEventDestinationsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetConfigurationSetEventDestinationsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -762,7 +762,7 @@ pub enum ListConfigurationSetsErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConfigurationSetsError {
@@ -827,21 +827,21 @@ impl ListConfigurationSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListConfigurationSetsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListConfigurationSetsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConfigurationSetsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListConfigurationSetsErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `ListConfigurationSetsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListConfigurationSetsErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListConfigurationSetsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListConfigurationSetsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -879,7 +879,7 @@ pub enum SendVoiceMessageErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendVoiceMessageError {
@@ -944,21 +944,21 @@ impl SendVoiceMessageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendVoiceMessageErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `SendVoiceMessageErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendVoiceMessageErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `SendVoiceMessageErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `SendVoiceMessageErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendVoiceMessageErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SendVoiceMessageErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `SendVoiceMessageErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -998,7 +998,7 @@ pub enum UpdateConfigurationSetEventDestinationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConfigurationSetEventDestinationError {
@@ -1075,28 +1075,28 @@ impl UpdateConfigurationSetEventDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConfigurationSetEventDestinationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConfigurationSetEventDestinationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

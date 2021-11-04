@@ -2,6 +2,57 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartExpenseAnalysisOutput {
+    /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from
+    /// <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    pub job_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for StartExpenseAnalysisOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartExpenseAnalysisOutput");
+        formatter.field("job_id", &self.job_id);
+        formatter.finish()
+    }
+}
+/// See [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput)
+pub mod start_expense_analysis_output {
+    /// A builder for [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from
+        /// <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from
+        /// <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput)
+        pub fn build(self) -> crate::output::StartExpenseAnalysisOutput {
+            crate::output::StartExpenseAnalysisOutput {
+                job_id: self.job_id,
+            }
+        }
+    }
+}
+impl StartExpenseAnalysisOutput {
+    /// Creates a new builder-style object to manufacture [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput)
+    pub fn builder() -> crate::output::start_expense_analysis_output::Builder {
+        crate::output::start_expense_analysis_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDocumentTextDetectionOutput {
     /// <p>The identifier of the text detection job for the document. Use <code>JobId</code> to
     /// identify the job in a subsequent call to <code>GetDocumentTextDetection</code>.
@@ -104,6 +155,193 @@ impl StartDocumentAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput)
     pub fn builder() -> crate::output::start_document_analysis_output::Builder {
         crate::output::start_document_analysis_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetExpenseAnalysisOutput {
+    /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is
+    /// returned in every page of paginated responses from an Amazon Textract operation.</p>
+    pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
+    /// <p>The current status of the text detection job.</p>
+    pub job_status: std::option::Option<crate::model::JobStatus>,
+    /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in
+    /// the subsequent request to retrieve the next set of text-detection results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The expenses detected by Amazon Textract.</p>
+    pub expense_documents: std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>,
+    /// <p>A list of warnings that occurred during the text-detection operation for the
+    /// document.</p>
+    pub warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
+    /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
+    pub status_message: std::option::Option<std::string::String>,
+    /// <p>The current model version of AnalyzeExpense.</p>
+    pub analyze_expense_model_version: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetExpenseAnalysisOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetExpenseAnalysisOutput");
+        formatter.field("document_metadata", &self.document_metadata);
+        formatter.field("job_status", &self.job_status);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("expense_documents", &self.expense_documents);
+        formatter.field("warnings", &self.warnings);
+        formatter.field("status_message", &self.status_message);
+        formatter.field(
+            "analyze_expense_model_version",
+            &self.analyze_expense_model_version,
+        );
+        formatter.finish()
+    }
+}
+/// See [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput)
+pub mod get_expense_analysis_output {
+    /// A builder for [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
+        pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) expense_documents:
+            std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>,
+        pub(crate) warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
+        pub(crate) status_message: std::option::Option<std::string::String>,
+        pub(crate) analyze_expense_model_version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is
+        /// returned in every page of paginated responses from an Amazon Textract operation.</p>
+        pub fn document_metadata(mut self, input: crate::model::DocumentMetadata) -> Self {
+            self.document_metadata = Some(input);
+            self
+        }
+        /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is
+        /// returned in every page of paginated responses from an Amazon Textract operation.</p>
+        pub fn set_document_metadata(
+            mut self,
+            input: std::option::Option<crate::model::DocumentMetadata>,
+        ) -> Self {
+            self.document_metadata = input;
+            self
+        }
+        /// <p>The current status of the text detection job.</p>
+        pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
+            self.job_status = Some(input);
+            self
+        }
+        /// <p>The current status of the text detection job.</p>
+        pub fn set_job_status(
+            mut self,
+            input: std::option::Option<crate::model::JobStatus>,
+        ) -> Self {
+            self.job_status = input;
+            self
+        }
+        /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in
+        /// the subsequent request to retrieve the next set of text-detection results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in
+        /// the subsequent request to retrieve the next set of text-detection results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `expense_documents`.
+        ///
+        /// To override the contents of this collection use [`set_expense_documents`](Self::set_expense_documents).
+        ///
+        /// <p>The expenses detected by Amazon Textract.</p>
+        pub fn expense_documents(
+            mut self,
+            input: impl Into<crate::model::ExpenseDocument>,
+        ) -> Self {
+            let mut v = self.expense_documents.unwrap_or_default();
+            v.push(input.into());
+            self.expense_documents = Some(v);
+            self
+        }
+        /// <p>The expenses detected by Amazon Textract.</p>
+        pub fn set_expense_documents(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>,
+        ) -> Self {
+            self.expense_documents = input;
+            self
+        }
+        /// Appends an item to `warnings`.
+        ///
+        /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
+        ///
+        /// <p>A list of warnings that occurred during the text-detection operation for the
+        /// document.</p>
+        pub fn warnings(mut self, input: impl Into<crate::model::Warning>) -> Self {
+            let mut v = self.warnings.unwrap_or_default();
+            v.push(input.into());
+            self.warnings = Some(v);
+            self
+        }
+        /// <p>A list of warnings that occurred during the text-detection operation for the
+        /// document.</p>
+        pub fn set_warnings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Warning>>,
+        ) -> Self {
+            self.warnings = input;
+            self
+        }
+        /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
+            self
+        }
+        /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
+            self
+        }
+        /// <p>The current model version of AnalyzeExpense.</p>
+        pub fn analyze_expense_model_version(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.analyze_expense_model_version = Some(input.into());
+            self
+        }
+        /// <p>The current model version of AnalyzeExpense.</p>
+        pub fn set_analyze_expense_model_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.analyze_expense_model_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput)
+        pub fn build(self) -> crate::output::GetExpenseAnalysisOutput {
+            crate::output::GetExpenseAnalysisOutput {
+                document_metadata: self.document_metadata,
+                job_status: self.job_status,
+                next_token: self.next_token,
+                expense_documents: self.expense_documents,
+                warnings: self.warnings,
+                status_message: self.status_message,
+                analyze_expense_model_version: self.analyze_expense_model_version,
+            }
+        }
+    }
+}
+impl GetExpenseAnalysisOutput {
+    /// Creates a new builder-style object to manufacture [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput)
+    pub fn builder() -> crate::output::get_expense_analysis_output::Builder {
+        crate::output::get_expense_analysis_output::Builder::default()
     }
 }
 

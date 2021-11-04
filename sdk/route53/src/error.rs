@@ -25,7 +25,7 @@ pub enum ActivateKeySigningKeyErrorKind {
     InvalidSigningStatus(crate::error::InvalidSigningStatus),
     /// <p>The specified key-signing key (KSK) doesn't exist.</p>
     NoSuchKeySigningKey(crate::error::NoSuchKeySigningKey),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ActivateKeySigningKeyError {
@@ -93,36 +93,36 @@ impl ActivateKeySigningKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ActivateKeySigningKeyErrorKind::ConcurrentModification`.
+    /// Returns `true` if the error kind is `ActivateKeySigningKeyErrorKind::ConcurrentModification`.
     pub fn is_concurrent_modification(&self) -> bool {
         matches!(
             &self.kind,
             ActivateKeySigningKeyErrorKind::ConcurrentModification(_)
         )
     }
-    /// Returns true if the error kind is `ActivateKeySigningKeyErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ActivateKeySigningKeyErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ActivateKeySigningKeyErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `ActivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus`.
+    /// Returns `true` if the error kind is `ActivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus`.
     pub fn is_invalid_key_signing_key_status(&self) -> bool {
         matches!(
             &self.kind,
             ActivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_)
         )
     }
-    /// Returns true if the error kind is `ActivateKeySigningKeyErrorKind::InvalidKmsArn`.
+    /// Returns `true` if the error kind is `ActivateKeySigningKeyErrorKind::InvalidKmsArn`.
     pub fn is_invalid_kms_arn(&self) -> bool {
         matches!(&self.kind, ActivateKeySigningKeyErrorKind::InvalidKmsArn(_))
     }
-    /// Returns true if the error kind is `ActivateKeySigningKeyErrorKind::InvalidSigningStatus`.
+    /// Returns `true` if the error kind is `ActivateKeySigningKeyErrorKind::InvalidSigningStatus`.
     pub fn is_invalid_signing_status(&self) -> bool {
         matches!(
             &self.kind,
             ActivateKeySigningKeyErrorKind::InvalidSigningStatus(_)
         )
     }
-    /// Returns true if the error kind is `ActivateKeySigningKeyErrorKind::NoSuchKeySigningKey`.
+    /// Returns `true` if the error kind is `ActivateKeySigningKeyErrorKind::NoSuchKeySigningKey`.
     pub fn is_no_such_key_signing_key(&self) -> bool {
         matches!(
             &self.kind,
@@ -204,7 +204,7 @@ pub enum AssociateVPCWithHostedZoneErrorKind {
     /// <p>You're trying to associate a VPC with a public hosted zone. Amazon Route 53 doesn't support associating a
     /// VPC with a public hosted zone.</p>
     PublicZoneVpcAssociation(crate::error::PublicZoneVpcAssociation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateVPCWithHostedZoneError {
@@ -274,56 +274,56 @@ impl AssociateVPCWithHostedZoneError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateVPCWithHostedZoneErrorKind::ConflictingDomainExists`.
+    /// Returns `true` if the error kind is `AssociateVPCWithHostedZoneErrorKind::ConflictingDomainExists`.
     pub fn is_conflicting_domain_exists(&self) -> bool {
         matches!(
             &self.kind,
             AssociateVPCWithHostedZoneErrorKind::ConflictingDomainExists(_)
         )
     }
-    /// Returns true if the error kind is `AssociateVPCWithHostedZoneErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `AssociateVPCWithHostedZoneErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             AssociateVPCWithHostedZoneErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `AssociateVPCWithHostedZoneErrorKind::InvalidVpcId`.
+    /// Returns `true` if the error kind is `AssociateVPCWithHostedZoneErrorKind::InvalidVpcId`.
     pub fn is_invalid_vpc_id(&self) -> bool {
         matches!(
             &self.kind,
             AssociateVPCWithHostedZoneErrorKind::InvalidVpcId(_)
         )
     }
-    /// Returns true if the error kind is `AssociateVPCWithHostedZoneErrorKind::LimitsExceeded`.
+    /// Returns `true` if the error kind is `AssociateVPCWithHostedZoneErrorKind::LimitsExceeded`.
     pub fn is_limits_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             AssociateVPCWithHostedZoneErrorKind::LimitsExceeded(_)
         )
     }
-    /// Returns true if the error kind is `AssociateVPCWithHostedZoneErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `AssociateVPCWithHostedZoneErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(
             &self.kind,
             AssociateVPCWithHostedZoneErrorKind::NoSuchHostedZone(_)
         )
     }
-    /// Returns true if the error kind is `AssociateVPCWithHostedZoneErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `AssociateVPCWithHostedZoneErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateVPCWithHostedZoneErrorKind::NotAuthorizedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateVPCWithHostedZoneErrorKind::PriorRequestNotComplete`.
+    /// Returns `true` if the error kind is `AssociateVPCWithHostedZoneErrorKind::PriorRequestNotComplete`.
     pub fn is_prior_request_not_complete(&self) -> bool {
         matches!(
             &self.kind,
             AssociateVPCWithHostedZoneErrorKind::PriorRequestNotComplete(_)
         )
     }
-    /// Returns true if the error kind is `AssociateVPCWithHostedZoneErrorKind::PublicZoneVpcAssociation`.
+    /// Returns `true` if the error kind is `AssociateVPCWithHostedZoneErrorKind::PublicZoneVpcAssociation`.
     pub fn is_public_zone_vpc_association(&self) -> bool {
         matches!(
             &self.kind,
@@ -375,7 +375,7 @@ pub enum ChangeResourceRecordSetsErrorKind {
     /// recommend that you wait, in intervals of increasing duration, before you try the request
     /// again.</p>
     PriorRequestNotComplete(crate::error::PriorRequestNotComplete),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ChangeResourceRecordSetsError {
@@ -442,35 +442,35 @@ impl ChangeResourceRecordSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ChangeResourceRecordSetsErrorKind::InvalidChangeBatch`.
+    /// Returns `true` if the error kind is `ChangeResourceRecordSetsErrorKind::InvalidChangeBatch`.
     pub fn is_invalid_change_batch(&self) -> bool {
         matches!(
             &self.kind,
             ChangeResourceRecordSetsErrorKind::InvalidChangeBatch(_)
         )
     }
-    /// Returns true if the error kind is `ChangeResourceRecordSetsErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ChangeResourceRecordSetsErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             ChangeResourceRecordSetsErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `ChangeResourceRecordSetsErrorKind::NoSuchHealthCheck`.
+    /// Returns `true` if the error kind is `ChangeResourceRecordSetsErrorKind::NoSuchHealthCheck`.
     pub fn is_no_such_health_check(&self) -> bool {
         matches!(
             &self.kind,
             ChangeResourceRecordSetsErrorKind::NoSuchHealthCheck(_)
         )
     }
-    /// Returns true if the error kind is `ChangeResourceRecordSetsErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `ChangeResourceRecordSetsErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(
             &self.kind,
             ChangeResourceRecordSetsErrorKind::NoSuchHostedZone(_)
         )
     }
-    /// Returns true if the error kind is `ChangeResourceRecordSetsErrorKind::PriorRequestNotComplete`.
+    /// Returns `true` if the error kind is `ChangeResourceRecordSetsErrorKind::PriorRequestNotComplete`.
     pub fn is_prior_request_not_complete(&self) -> bool {
         matches!(
             &self.kind,
@@ -518,7 +518,7 @@ pub enum ChangeTagsForResourceErrorKind {
     PriorRequestNotComplete(crate::error::PriorRequestNotComplete),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ChangeTagsForResourceError {
@@ -585,32 +585,32 @@ impl ChangeTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ChangeTagsForResourceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ChangeTagsForResourceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ChangeTagsForResourceErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `ChangeTagsForResourceErrorKind::NoSuchHealthCheck`.
+    /// Returns `true` if the error kind is `ChangeTagsForResourceErrorKind::NoSuchHealthCheck`.
     pub fn is_no_such_health_check(&self) -> bool {
         matches!(
             &self.kind,
             ChangeTagsForResourceErrorKind::NoSuchHealthCheck(_)
         )
     }
-    /// Returns true if the error kind is `ChangeTagsForResourceErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `ChangeTagsForResourceErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(
             &self.kind,
             ChangeTagsForResourceErrorKind::NoSuchHostedZone(_)
         )
     }
-    /// Returns true if the error kind is `ChangeTagsForResourceErrorKind::PriorRequestNotComplete`.
+    /// Returns `true` if the error kind is `ChangeTagsForResourceErrorKind::PriorRequestNotComplete`.
     pub fn is_prior_request_not_complete(&self) -> bool {
         matches!(
             &self.kind,
             ChangeTagsForResourceErrorKind::PriorRequestNotComplete(_)
         )
     }
-    /// Returns true if the error kind is `ChangeTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ChangeTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -669,7 +669,7 @@ pub enum CreateHealthCheckErrorKind {
     /// <p>You have reached the maximum number of active health checks for an Amazon Web Services account. To request a higher limit,
     /// <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
     TooManyHealthChecks(crate::error::TooManyHealthChecks),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateHealthCheckError {
@@ -734,18 +734,18 @@ impl CreateHealthCheckError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateHealthCheckErrorKind::HealthCheckAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateHealthCheckErrorKind::HealthCheckAlreadyExists`.
     pub fn is_health_check_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateHealthCheckErrorKind::HealthCheckAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateHealthCheckErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `CreateHealthCheckErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, CreateHealthCheckErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `CreateHealthCheckErrorKind::TooManyHealthChecks`.
+    /// Returns `true` if the error kind is `CreateHealthCheckErrorKind::TooManyHealthChecks`.
     pub fn is_too_many_health_checks(&self) -> bool {
         matches!(
             &self.kind,
@@ -826,7 +826,7 @@ pub enum CreateHostedZoneErrorKind {
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSetLimit.html">GetReusableDelegationSetLimit</a>.</p>
     /// <p>To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
     TooManyHostedZones(crate::error::TooManyHostedZones),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateHostedZoneError {
@@ -897,54 +897,54 @@ impl CreateHostedZoneError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateHostedZoneErrorKind::ConflictingDomainExists`.
+    /// Returns `true` if the error kind is `CreateHostedZoneErrorKind::ConflictingDomainExists`.
     pub fn is_conflicting_domain_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateHostedZoneErrorKind::ConflictingDomainExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateHostedZoneErrorKind::DelegationSetNotAvailable`.
+    /// Returns `true` if the error kind is `CreateHostedZoneErrorKind::DelegationSetNotAvailable`.
     pub fn is_delegation_set_not_available(&self) -> bool {
         matches!(
             &self.kind,
             CreateHostedZoneErrorKind::DelegationSetNotAvailable(_)
         )
     }
-    /// Returns true if the error kind is `CreateHostedZoneErrorKind::DelegationSetNotReusable`.
+    /// Returns `true` if the error kind is `CreateHostedZoneErrorKind::DelegationSetNotReusable`.
     pub fn is_delegation_set_not_reusable(&self) -> bool {
         matches!(
             &self.kind,
             CreateHostedZoneErrorKind::DelegationSetNotReusable(_)
         )
     }
-    /// Returns true if the error kind is `CreateHostedZoneErrorKind::HostedZoneAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateHostedZoneErrorKind::HostedZoneAlreadyExists`.
     pub fn is_hosted_zone_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateHostedZoneErrorKind::HostedZoneAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateHostedZoneErrorKind::InvalidDomainName`.
+    /// Returns `true` if the error kind is `CreateHostedZoneErrorKind::InvalidDomainName`.
     pub fn is_invalid_domain_name(&self) -> bool {
         matches!(&self.kind, CreateHostedZoneErrorKind::InvalidDomainName(_))
     }
-    /// Returns true if the error kind is `CreateHostedZoneErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `CreateHostedZoneErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, CreateHostedZoneErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `CreateHostedZoneErrorKind::InvalidVpcId`.
+    /// Returns `true` if the error kind is `CreateHostedZoneErrorKind::InvalidVpcId`.
     pub fn is_invalid_vpc_id(&self) -> bool {
         matches!(&self.kind, CreateHostedZoneErrorKind::InvalidVpcId(_))
     }
-    /// Returns true if the error kind is `CreateHostedZoneErrorKind::NoSuchDelegationSet`.
+    /// Returns `true` if the error kind is `CreateHostedZoneErrorKind::NoSuchDelegationSet`.
     pub fn is_no_such_delegation_set(&self) -> bool {
         matches!(
             &self.kind,
             CreateHostedZoneErrorKind::NoSuchDelegationSet(_)
         )
     }
-    /// Returns true if the error kind is `CreateHostedZoneErrorKind::TooManyHostedZones`.
+    /// Returns `true` if the error kind is `CreateHostedZoneErrorKind::TooManyHostedZones`.
     pub fn is_too_many_hosted_zones(&self) -> bool {
         matches!(&self.kind, CreateHostedZoneErrorKind::TooManyHostedZones(_))
     }
@@ -1000,7 +1000,7 @@ pub enum CreateKeySigningKeyErrorKind {
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
     /// <p>You've reached the limit for the number of key-signing keys (KSKs). Remove at least one KSK, and then try again.</p>
     TooManyKeySigningKeys(crate::error::TooManyKeySigningKeys),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateKeySigningKeyError {
@@ -1072,61 +1072,61 @@ impl CreateKeySigningKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateKeySigningKeyErrorKind::ConcurrentModification`.
+    /// Returns `true` if the error kind is `CreateKeySigningKeyErrorKind::ConcurrentModification`.
     pub fn is_concurrent_modification(&self) -> bool {
         matches!(
             &self.kind,
             CreateKeySigningKeyErrorKind::ConcurrentModification(_)
         )
     }
-    /// Returns true if the error kind is `CreateKeySigningKeyErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `CreateKeySigningKeyErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, CreateKeySigningKeyErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `CreateKeySigningKeyErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `CreateKeySigningKeyErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, CreateKeySigningKeyErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `CreateKeySigningKeyErrorKind::InvalidKeySigningKeyName`.
+    /// Returns `true` if the error kind is `CreateKeySigningKeyErrorKind::InvalidKeySigningKeyName`.
     pub fn is_invalid_key_signing_key_name(&self) -> bool {
         matches!(
             &self.kind,
             CreateKeySigningKeyErrorKind::InvalidKeySigningKeyName(_)
         )
     }
-    /// Returns true if the error kind is `CreateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus`.
+    /// Returns `true` if the error kind is `CreateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus`.
     pub fn is_invalid_key_signing_key_status(&self) -> bool {
         matches!(
             &self.kind,
             CreateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_)
         )
     }
-    /// Returns true if the error kind is `CreateKeySigningKeyErrorKind::InvalidKmsArn`.
+    /// Returns `true` if the error kind is `CreateKeySigningKeyErrorKind::InvalidKmsArn`.
     pub fn is_invalid_kms_arn(&self) -> bool {
         matches!(&self.kind, CreateKeySigningKeyErrorKind::InvalidKmsArn(_))
     }
-    /// Returns true if the error kind is `CreateKeySigningKeyErrorKind::InvalidSigningStatus`.
+    /// Returns `true` if the error kind is `CreateKeySigningKeyErrorKind::InvalidSigningStatus`.
     pub fn is_invalid_signing_status(&self) -> bool {
         matches!(
             &self.kind,
             CreateKeySigningKeyErrorKind::InvalidSigningStatus(_)
         )
     }
-    /// Returns true if the error kind is `CreateKeySigningKeyErrorKind::KeySigningKeyAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateKeySigningKeyErrorKind::KeySigningKeyAlreadyExists`.
     pub fn is_key_signing_key_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateKeySigningKeyErrorKind::KeySigningKeyAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateKeySigningKeyErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `CreateKeySigningKeyErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(
             &self.kind,
             CreateKeySigningKeyErrorKind::NoSuchHostedZone(_)
         )
     }
-    /// Returns true if the error kind is `CreateKeySigningKeyErrorKind::TooManyKeySigningKeys`.
+    /// Returns `true` if the error kind is `CreateKeySigningKeyErrorKind::TooManyKeySigningKeys`.
     pub fn is_too_many_key_signing_keys(&self) -> bool {
         matches!(
             &self.kind,
@@ -1197,7 +1197,7 @@ pub enum CreateQueryLoggingConfigErrorKind {
     /// <p>You can create only one query logging configuration for a hosted zone, and a query logging configuration already exists
     /// for this hosted zone.</p>
     QueryLoggingConfigAlreadyExists(crate::error::QueryLoggingConfigAlreadyExists),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateQueryLoggingConfigError {
@@ -1271,42 +1271,42 @@ impl CreateQueryLoggingConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateQueryLoggingConfigErrorKind::ConcurrentModification`.
+    /// Returns `true` if the error kind is `CreateQueryLoggingConfigErrorKind::ConcurrentModification`.
     pub fn is_concurrent_modification(&self) -> bool {
         matches!(
             &self.kind,
             CreateQueryLoggingConfigErrorKind::ConcurrentModification(_)
         )
     }
-    /// Returns true if the error kind is `CreateQueryLoggingConfigErrorKind::InsufficientCloudWatchLogsResourcePolicy`.
+    /// Returns `true` if the error kind is `CreateQueryLoggingConfigErrorKind::InsufficientCloudWatchLogsResourcePolicy`.
     pub fn is_insufficient_cloud_watch_logs_resource_policy(&self) -> bool {
         matches!(
             &self.kind,
             CreateQueryLoggingConfigErrorKind::InsufficientCloudWatchLogsResourcePolicy(_)
         )
     }
-    /// Returns true if the error kind is `CreateQueryLoggingConfigErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `CreateQueryLoggingConfigErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             CreateQueryLoggingConfigErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `CreateQueryLoggingConfigErrorKind::NoSuchCloudWatchLogsLogGroup`.
+    /// Returns `true` if the error kind is `CreateQueryLoggingConfigErrorKind::NoSuchCloudWatchLogsLogGroup`.
     pub fn is_no_such_cloud_watch_logs_log_group(&self) -> bool {
         matches!(
             &self.kind,
             CreateQueryLoggingConfigErrorKind::NoSuchCloudWatchLogsLogGroup(_)
         )
     }
-    /// Returns true if the error kind is `CreateQueryLoggingConfigErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `CreateQueryLoggingConfigErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(
             &self.kind,
             CreateQueryLoggingConfigErrorKind::NoSuchHostedZone(_)
         )
     }
-    /// Returns true if the error kind is `CreateQueryLoggingConfigErrorKind::QueryLoggingConfigAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateQueryLoggingConfigErrorKind::QueryLoggingConfigAlreadyExists`.
     pub fn is_query_logging_config_already_exists(&self) -> bool {
         matches!(
             &self.kind,
@@ -1367,7 +1367,7 @@ pub enum CreateReusableDelegationSetErrorKind {
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>.
     /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
     LimitsExceeded(crate::error::LimitsExceeded),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateReusableDelegationSetError {
@@ -1442,49 +1442,49 @@ impl CreateReusableDelegationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateReusableDelegationSetErrorKind::DelegationSetAlreadyCreated`.
+    /// Returns `true` if the error kind is `CreateReusableDelegationSetErrorKind::DelegationSetAlreadyCreated`.
     pub fn is_delegation_set_already_created(&self) -> bool {
         matches!(
             &self.kind,
             CreateReusableDelegationSetErrorKind::DelegationSetAlreadyCreated(_)
         )
     }
-    /// Returns true if the error kind is `CreateReusableDelegationSetErrorKind::DelegationSetAlreadyReusable`.
+    /// Returns `true` if the error kind is `CreateReusableDelegationSetErrorKind::DelegationSetAlreadyReusable`.
     pub fn is_delegation_set_already_reusable(&self) -> bool {
         matches!(
             &self.kind,
             CreateReusableDelegationSetErrorKind::DelegationSetAlreadyReusable(_)
         )
     }
-    /// Returns true if the error kind is `CreateReusableDelegationSetErrorKind::DelegationSetNotAvailable`.
+    /// Returns `true` if the error kind is `CreateReusableDelegationSetErrorKind::DelegationSetNotAvailable`.
     pub fn is_delegation_set_not_available(&self) -> bool {
         matches!(
             &self.kind,
             CreateReusableDelegationSetErrorKind::DelegationSetNotAvailable(_)
         )
     }
-    /// Returns true if the error kind is `CreateReusableDelegationSetErrorKind::HostedZoneNotFound`.
+    /// Returns `true` if the error kind is `CreateReusableDelegationSetErrorKind::HostedZoneNotFound`.
     pub fn is_hosted_zone_not_found(&self) -> bool {
         matches!(
             &self.kind,
             CreateReusableDelegationSetErrorKind::HostedZoneNotFound(_)
         )
     }
-    /// Returns true if the error kind is `CreateReusableDelegationSetErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `CreateReusableDelegationSetErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             CreateReusableDelegationSetErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `CreateReusableDelegationSetErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `CreateReusableDelegationSetErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             CreateReusableDelegationSetErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `CreateReusableDelegationSetErrorKind::LimitsExceeded`.
+    /// Returns `true` if the error kind is `CreateReusableDelegationSetErrorKind::LimitsExceeded`.
     pub fn is_limits_exceeded(&self) -> bool {
         matches!(
             &self.kind,
@@ -1538,7 +1538,7 @@ pub enum CreateTrafficPolicyErrorKind {
     TooManyTrafficPolicies(crate::error::TooManyTrafficPolicies),
     /// <p>A traffic policy that has the same value for <code>Name</code> already exists.</p>
     TrafficPolicyAlreadyExists(crate::error::TrafficPolicyAlreadyExists),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTrafficPolicyError {
@@ -1604,25 +1604,25 @@ impl CreateTrafficPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTrafficPolicyErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `CreateTrafficPolicyErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, CreateTrafficPolicyErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `CreateTrafficPolicyErrorKind::InvalidTrafficPolicyDocument`.
+    /// Returns `true` if the error kind is `CreateTrafficPolicyErrorKind::InvalidTrafficPolicyDocument`.
     pub fn is_invalid_traffic_policy_document(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrafficPolicyErrorKind::InvalidTrafficPolicyDocument(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrafficPolicyErrorKind::TooManyTrafficPolicies`.
+    /// Returns `true` if the error kind is `CreateTrafficPolicyErrorKind::TooManyTrafficPolicies`.
     pub fn is_too_many_traffic_policies(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrafficPolicyErrorKind::TooManyTrafficPolicies(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrafficPolicyErrorKind::TrafficPolicyAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateTrafficPolicyErrorKind::TrafficPolicyAlreadyExists`.
     pub fn is_traffic_policy_already_exists(&self) -> bool {
         matches!(
             &self.kind,
@@ -1672,7 +1672,7 @@ pub enum CreateTrafficPolicyInstanceErrorKind {
     TooManyTrafficPolicyInstances(crate::error::TooManyTrafficPolicyInstances),
     /// <p>There is already a traffic policy instance with the specified ID.</p>
     TrafficPolicyInstanceAlreadyExists(crate::error::TrafficPolicyInstanceAlreadyExists),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTrafficPolicyInstanceError {
@@ -1743,35 +1743,35 @@ impl CreateTrafficPolicyInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTrafficPolicyInstanceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `CreateTrafficPolicyInstanceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrafficPolicyInstanceErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrafficPolicyInstanceErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `CreateTrafficPolicyInstanceErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrafficPolicyInstanceErrorKind::NoSuchHostedZone(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicy`.
+    /// Returns `true` if the error kind is `CreateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicy`.
     pub fn is_no_such_traffic_policy(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicy(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrafficPolicyInstanceErrorKind::TooManyTrafficPolicyInstances`.
+    /// Returns `true` if the error kind is `CreateTrafficPolicyInstanceErrorKind::TooManyTrafficPolicyInstances`.
     pub fn is_too_many_traffic_policy_instances(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrafficPolicyInstanceErrorKind::TooManyTrafficPolicyInstances(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrafficPolicyInstanceErrorKind::TrafficPolicyInstanceAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateTrafficPolicyInstanceErrorKind::TrafficPolicyInstanceAlreadyExists`.
     pub fn is_traffic_policy_instance_already_exists(&self) -> bool {
         matches!(
             &self.kind,
@@ -1827,7 +1827,7 @@ pub enum CreateTrafficPolicyVersionErrorKind {
     TooManyTrafficPolicyVersionsForCurrentPolicy(
         crate::error::TooManyTrafficPolicyVersionsForCurrentPolicy,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTrafficPolicyVersionError {
@@ -1898,35 +1898,35 @@ impl CreateTrafficPolicyVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTrafficPolicyVersionErrorKind::ConcurrentModification`.
+    /// Returns `true` if the error kind is `CreateTrafficPolicyVersionErrorKind::ConcurrentModification`.
     pub fn is_concurrent_modification(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrafficPolicyVersionErrorKind::ConcurrentModification(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrafficPolicyVersionErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `CreateTrafficPolicyVersionErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrafficPolicyVersionErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrafficPolicyVersionErrorKind::InvalidTrafficPolicyDocument`.
+    /// Returns `true` if the error kind is `CreateTrafficPolicyVersionErrorKind::InvalidTrafficPolicyDocument`.
     pub fn is_invalid_traffic_policy_document(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrafficPolicyVersionErrorKind::InvalidTrafficPolicyDocument(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrafficPolicyVersionErrorKind::NoSuchTrafficPolicy`.
+    /// Returns `true` if the error kind is `CreateTrafficPolicyVersionErrorKind::NoSuchTrafficPolicy`.
     pub fn is_no_such_traffic_policy(&self) -> bool {
         matches!(
             &self.kind,
             CreateTrafficPolicyVersionErrorKind::NoSuchTrafficPolicy(_)
         )
     }
-    /// Returns true if the error kind is `CreateTrafficPolicyVersionErrorKind::TooManyTrafficPolicyVersionsForCurrentPolicy`.
+    /// Returns `true` if the error kind is `CreateTrafficPolicyVersionErrorKind::TooManyTrafficPolicyVersionsForCurrentPolicy`.
     pub fn is_too_many_traffic_policy_versions_for_current_policy(&self) -> bool {
         matches!(
             &self.kind,
@@ -1977,7 +1977,7 @@ pub enum CreateVPCAssociationAuthorizationErrorKind {
     /// to remove an existing authorization. To get a list of existing authorizations, submit a
     /// <code>ListVPCAssociationAuthorizations</code> request.</p>
     TooManyVpcAssociationAuthorizations(crate::error::TooManyVpcAssociationAuthorizations),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVPCAssociationAuthorizationError {
@@ -2051,35 +2051,35 @@ impl CreateVPCAssociationAuthorizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateVPCAssociationAuthorizationErrorKind::ConcurrentModification`.
+    /// Returns `true` if the error kind is `CreateVPCAssociationAuthorizationErrorKind::ConcurrentModification`.
     pub fn is_concurrent_modification(&self) -> bool {
         matches!(
             &self.kind,
             CreateVPCAssociationAuthorizationErrorKind::ConcurrentModification(_)
         )
     }
-    /// Returns true if the error kind is `CreateVPCAssociationAuthorizationErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `CreateVPCAssociationAuthorizationErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             CreateVPCAssociationAuthorizationErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `CreateVPCAssociationAuthorizationErrorKind::InvalidVpcId`.
+    /// Returns `true` if the error kind is `CreateVPCAssociationAuthorizationErrorKind::InvalidVpcId`.
     pub fn is_invalid_vpc_id(&self) -> bool {
         matches!(
             &self.kind,
             CreateVPCAssociationAuthorizationErrorKind::InvalidVpcId(_)
         )
     }
-    /// Returns true if the error kind is `CreateVPCAssociationAuthorizationErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `CreateVPCAssociationAuthorizationErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(
             &self.kind,
             CreateVPCAssociationAuthorizationErrorKind::NoSuchHostedZone(_)
         )
     }
-    /// Returns true if the error kind is `CreateVPCAssociationAuthorizationErrorKind::TooManyVpcAssociationAuthorizations`.
+    /// Returns `true` if the error kind is `CreateVPCAssociationAuthorizationErrorKind::TooManyVpcAssociationAuthorizations`.
     pub fn is_too_many_vpc_association_authorizations(&self) -> bool {
         matches!(
             &self.kind,
@@ -2133,7 +2133,7 @@ pub enum DeactivateKeySigningKeyErrorKind {
     KeySigningKeyInUse(crate::error::KeySigningKeyInUse),
     /// <p>The specified key-signing key (KSK) doesn't exist.</p>
     NoSuchKeySigningKey(crate::error::NoSuchKeySigningKey),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeactivateKeySigningKeyError {
@@ -2204,49 +2204,49 @@ impl DeactivateKeySigningKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeactivateKeySigningKeyErrorKind::ConcurrentModification`.
+    /// Returns `true` if the error kind is `DeactivateKeySigningKeyErrorKind::ConcurrentModification`.
     pub fn is_concurrent_modification(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateKeySigningKeyErrorKind::ConcurrentModification(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateKeySigningKeyErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `DeactivateKeySigningKeyErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateKeySigningKeyErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus`.
+    /// Returns `true` if the error kind is `DeactivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus`.
     pub fn is_invalid_key_signing_key_status(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateKeySigningKeyErrorKind::InvalidSigningStatus`.
+    /// Returns `true` if the error kind is `DeactivateKeySigningKeyErrorKind::InvalidSigningStatus`.
     pub fn is_invalid_signing_status(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateKeySigningKeyErrorKind::InvalidSigningStatus(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDsRecord`.
+    /// Returns `true` if the error kind is `DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDsRecord`.
     pub fn is_key_signing_key_in_parent_ds_record(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDsRecord(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateKeySigningKeyErrorKind::KeySigningKeyInUse`.
+    /// Returns `true` if the error kind is `DeactivateKeySigningKeyErrorKind::KeySigningKeyInUse`.
     pub fn is_key_signing_key_in_use(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateKeySigningKeyErrorKind::KeySigningKeyInUse(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateKeySigningKeyErrorKind::NoSuchKeySigningKey`.
+    /// Returns `true` if the error kind is `DeactivateKeySigningKeyErrorKind::NoSuchKeySigningKey`.
     pub fn is_no_such_key_signing_key(&self) -> bool {
         matches!(
             &self.kind,
@@ -2288,7 +2288,7 @@ pub enum DeleteHealthCheckErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No health check exists with the specified ID.</p>
     NoSuchHealthCheck(crate::error::NoSuchHealthCheck),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteHealthCheckError {
@@ -2353,15 +2353,15 @@ impl DeleteHealthCheckError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteHealthCheckErrorKind::HealthCheckInUse`.
+    /// Returns `true` if the error kind is `DeleteHealthCheckErrorKind::HealthCheckInUse`.
     pub fn is_health_check_in_use(&self) -> bool {
         matches!(&self.kind, DeleteHealthCheckErrorKind::HealthCheckInUse(_))
     }
-    /// Returns true if the error kind is `DeleteHealthCheckErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `DeleteHealthCheckErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, DeleteHealthCheckErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `DeleteHealthCheckErrorKind::NoSuchHealthCheck`.
+    /// Returns `true` if the error kind is `DeleteHealthCheckErrorKind::NoSuchHealthCheck`.
     pub fn is_no_such_health_check(&self) -> bool {
         matches!(&self.kind, DeleteHealthCheckErrorKind::NoSuchHealthCheck(_))
     }
@@ -2404,7 +2404,7 @@ pub enum DeleteHostedZoneErrorKind {
     /// recommend that you wait, in intervals of increasing duration, before you try the request
     /// again.</p>
     PriorRequestNotComplete(crate::error::PriorRequestNotComplete),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteHostedZoneError {
@@ -2471,23 +2471,23 @@ impl DeleteHostedZoneError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteHostedZoneErrorKind::HostedZoneNotEmpty`.
+    /// Returns `true` if the error kind is `DeleteHostedZoneErrorKind::HostedZoneNotEmpty`.
     pub fn is_hosted_zone_not_empty(&self) -> bool {
         matches!(&self.kind, DeleteHostedZoneErrorKind::HostedZoneNotEmpty(_))
     }
-    /// Returns true if the error kind is `DeleteHostedZoneErrorKind::InvalidDomainName`.
+    /// Returns `true` if the error kind is `DeleteHostedZoneErrorKind::InvalidDomainName`.
     pub fn is_invalid_domain_name(&self) -> bool {
         matches!(&self.kind, DeleteHostedZoneErrorKind::InvalidDomainName(_))
     }
-    /// Returns true if the error kind is `DeleteHostedZoneErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `DeleteHostedZoneErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, DeleteHostedZoneErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `DeleteHostedZoneErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `DeleteHostedZoneErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(&self.kind, DeleteHostedZoneErrorKind::NoSuchHostedZone(_))
     }
-    /// Returns true if the error kind is `DeleteHostedZoneErrorKind::PriorRequestNotComplete`.
+    /// Returns `true` if the error kind is `DeleteHostedZoneErrorKind::PriorRequestNotComplete`.
     pub fn is_prior_request_not_complete(&self) -> bool {
         matches!(
             &self.kind,
@@ -2534,7 +2534,7 @@ pub enum DeleteKeySigningKeyErrorKind {
     InvalidSigningStatus(crate::error::InvalidSigningStatus),
     /// <p>The specified key-signing key (KSK) doesn't exist.</p>
     NoSuchKeySigningKey(crate::error::NoSuchKeySigningKey),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteKeySigningKeyError {
@@ -2602,36 +2602,36 @@ impl DeleteKeySigningKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteKeySigningKeyErrorKind::ConcurrentModification`.
+    /// Returns `true` if the error kind is `DeleteKeySigningKeyErrorKind::ConcurrentModification`.
     pub fn is_concurrent_modification(&self) -> bool {
         matches!(
             &self.kind,
             DeleteKeySigningKeyErrorKind::ConcurrentModification(_)
         )
     }
-    /// Returns true if the error kind is `DeleteKeySigningKeyErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `DeleteKeySigningKeyErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, DeleteKeySigningKeyErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `DeleteKeySigningKeyErrorKind::InvalidKeySigningKeyStatus`.
+    /// Returns `true` if the error kind is `DeleteKeySigningKeyErrorKind::InvalidKeySigningKeyStatus`.
     pub fn is_invalid_key_signing_key_status(&self) -> bool {
         matches!(
             &self.kind,
             DeleteKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(_)
         )
     }
-    /// Returns true if the error kind is `DeleteKeySigningKeyErrorKind::InvalidKmsArn`.
+    /// Returns `true` if the error kind is `DeleteKeySigningKeyErrorKind::InvalidKmsArn`.
     pub fn is_invalid_kms_arn(&self) -> bool {
         matches!(&self.kind, DeleteKeySigningKeyErrorKind::InvalidKmsArn(_))
     }
-    /// Returns true if the error kind is `DeleteKeySigningKeyErrorKind::InvalidSigningStatus`.
+    /// Returns `true` if the error kind is `DeleteKeySigningKeyErrorKind::InvalidSigningStatus`.
     pub fn is_invalid_signing_status(&self) -> bool {
         matches!(
             &self.kind,
             DeleteKeySigningKeyErrorKind::InvalidSigningStatus(_)
         )
     }
-    /// Returns true if the error kind is `DeleteKeySigningKeyErrorKind::NoSuchKeySigningKey`.
+    /// Returns `true` if the error kind is `DeleteKeySigningKeyErrorKind::NoSuchKeySigningKey`.
     pub fn is_no_such_key_signing_key(&self) -> bool {
         matches!(
             &self.kind,
@@ -2672,7 +2672,7 @@ pub enum DeleteQueryLoggingConfigErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>There is no DNS query logging configuration with the specified ID.</p>
     NoSuchQueryLoggingConfig(crate::error::NoSuchQueryLoggingConfig),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteQueryLoggingConfigError {
@@ -2737,21 +2737,21 @@ impl DeleteQueryLoggingConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteQueryLoggingConfigErrorKind::ConcurrentModification`.
+    /// Returns `true` if the error kind is `DeleteQueryLoggingConfigErrorKind::ConcurrentModification`.
     pub fn is_concurrent_modification(&self) -> bool {
         matches!(
             &self.kind,
             DeleteQueryLoggingConfigErrorKind::ConcurrentModification(_)
         )
     }
-    /// Returns true if the error kind is `DeleteQueryLoggingConfigErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `DeleteQueryLoggingConfigErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             DeleteQueryLoggingConfigErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `DeleteQueryLoggingConfigErrorKind::NoSuchQueryLoggingConfig`.
+    /// Returns `true` if the error kind is `DeleteQueryLoggingConfigErrorKind::NoSuchQueryLoggingConfig`.
     pub fn is_no_such_query_logging_config(&self) -> bool {
         matches!(
             &self.kind,
@@ -2792,7 +2792,7 @@ pub enum DeleteReusableDelegationSetErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>A reusable delegation set with the specified ID does not exist.</p>
     NoSuchDelegationSet(crate::error::NoSuchDelegationSet),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteReusableDelegationSetError {
@@ -2858,28 +2858,28 @@ impl DeleteReusableDelegationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteReusableDelegationSetErrorKind::DelegationSetInUse`.
+    /// Returns `true` if the error kind is `DeleteReusableDelegationSetErrorKind::DelegationSetInUse`.
     pub fn is_delegation_set_in_use(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReusableDelegationSetErrorKind::DelegationSetInUse(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReusableDelegationSetErrorKind::DelegationSetNotReusable`.
+    /// Returns `true` if the error kind is `DeleteReusableDelegationSetErrorKind::DelegationSetNotReusable`.
     pub fn is_delegation_set_not_reusable(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReusableDelegationSetErrorKind::DelegationSetNotReusable(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReusableDelegationSetErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `DeleteReusableDelegationSetErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReusableDelegationSetErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReusableDelegationSetErrorKind::NoSuchDelegationSet`.
+    /// Returns `true` if the error kind is `DeleteReusableDelegationSetErrorKind::NoSuchDelegationSet`.
     pub fn is_no_such_delegation_set(&self) -> bool {
         matches!(
             &self.kind,
@@ -2920,7 +2920,7 @@ pub enum DeleteTrafficPolicyErrorKind {
     NoSuchTrafficPolicy(crate::error::NoSuchTrafficPolicy),
     /// <p>One or more traffic policy instances were created by using the specified traffic policy.</p>
     TrafficPolicyInUse(crate::error::TrafficPolicyInUse),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTrafficPolicyError {
@@ -2986,25 +2986,25 @@ impl DeleteTrafficPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTrafficPolicyErrorKind::ConcurrentModification`.
+    /// Returns `true` if the error kind is `DeleteTrafficPolicyErrorKind::ConcurrentModification`.
     pub fn is_concurrent_modification(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTrafficPolicyErrorKind::ConcurrentModification(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTrafficPolicyErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `DeleteTrafficPolicyErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, DeleteTrafficPolicyErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `DeleteTrafficPolicyErrorKind::NoSuchTrafficPolicy`.
+    /// Returns `true` if the error kind is `DeleteTrafficPolicyErrorKind::NoSuchTrafficPolicy`.
     pub fn is_no_such_traffic_policy(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTrafficPolicyErrorKind::NoSuchTrafficPolicy(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTrafficPolicyErrorKind::TrafficPolicyInUse`.
+    /// Returns `true` if the error kind is `DeleteTrafficPolicyErrorKind::TrafficPolicyInUse`.
     pub fn is_traffic_policy_in_use(&self) -> bool {
         matches!(
             &self.kind,
@@ -3047,7 +3047,7 @@ pub enum DeleteTrafficPolicyInstanceErrorKind {
     /// recommend that you wait, in intervals of increasing duration, before you try the request
     /// again.</p>
     PriorRequestNotComplete(crate::error::PriorRequestNotComplete),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTrafficPolicyInstanceError {
@@ -3114,21 +3114,21 @@ impl DeleteTrafficPolicyInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTrafficPolicyInstanceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `DeleteTrafficPolicyInstanceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTrafficPolicyInstanceErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicyInstance`.
+    /// Returns `true` if the error kind is `DeleteTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicyInstance`.
     pub fn is_no_such_traffic_policy_instance(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicyInstance(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTrafficPolicyInstanceErrorKind::PriorRequestNotComplete`.
+    /// Returns `true` if the error kind is `DeleteTrafficPolicyInstanceErrorKind::PriorRequestNotComplete`.
     pub fn is_prior_request_not_complete(&self) -> bool {
         matches!(
             &self.kind,
@@ -3172,7 +3172,7 @@ pub enum DeleteVPCAssociationAuthorizationErrorKind {
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
     /// <p>The VPC that you specified is not authorized to be associated with the hosted zone.</p>
     VpcAssociationAuthorizationNotFound(crate::error::VpcAssociationAuthorizationNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVPCAssociationAuthorizationError {
@@ -3246,35 +3246,35 @@ impl DeleteVPCAssociationAuthorizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVPCAssociationAuthorizationErrorKind::ConcurrentModification`.
+    /// Returns `true` if the error kind is `DeleteVPCAssociationAuthorizationErrorKind::ConcurrentModification`.
     pub fn is_concurrent_modification(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVPCAssociationAuthorizationErrorKind::ConcurrentModification(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVPCAssociationAuthorizationErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `DeleteVPCAssociationAuthorizationErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVPCAssociationAuthorizationErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVPCAssociationAuthorizationErrorKind::InvalidVpcId`.
+    /// Returns `true` if the error kind is `DeleteVPCAssociationAuthorizationErrorKind::InvalidVpcId`.
     pub fn is_invalid_vpc_id(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVPCAssociationAuthorizationErrorKind::InvalidVpcId(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVPCAssociationAuthorizationErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `DeleteVPCAssociationAuthorizationErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVPCAssociationAuthorizationErrorKind::NoSuchHostedZone(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVPCAssociationAuthorizationErrorKind::VpcAssociationAuthorizationNotFound`.
+    /// Returns `true` if the error kind is `DeleteVPCAssociationAuthorizationErrorKind::VpcAssociationAuthorizationNotFound`.
     pub fn is_vpc_association_authorization_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -3328,7 +3328,7 @@ pub enum DisableHostedZoneDNSSECErrorKind {
     KeySigningKeyInParentDsRecord(crate::error::KeySigningKeyInParentDsRecord),
     /// <p>No hosted zone exists with the ID that you specified.</p>
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableHostedZoneDNSSECError {
@@ -3400,56 +3400,56 @@ impl DisableHostedZoneDNSSECError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableHostedZoneDNSSECErrorKind::ConcurrentModification`.
+    /// Returns `true` if the error kind is `DisableHostedZoneDNSSECErrorKind::ConcurrentModification`.
     pub fn is_concurrent_modification(&self) -> bool {
         matches!(
             &self.kind,
             DisableHostedZoneDNSSECErrorKind::ConcurrentModification(_)
         )
     }
-    /// Returns true if the error kind is `DisableHostedZoneDNSSECErrorKind::DnssecNotFound`.
+    /// Returns `true` if the error kind is `DisableHostedZoneDNSSECErrorKind::DnssecNotFound`.
     pub fn is_dnssec_not_found(&self) -> bool {
         matches!(
             &self.kind,
             DisableHostedZoneDNSSECErrorKind::DnssecNotFound(_)
         )
     }
-    /// Returns true if the error kind is `DisableHostedZoneDNSSECErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `DisableHostedZoneDNSSECErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             DisableHostedZoneDNSSECErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `DisableHostedZoneDNSSECErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `DisableHostedZoneDNSSECErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             DisableHostedZoneDNSSECErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `DisableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus`.
+    /// Returns `true` if the error kind is `DisableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus`.
     pub fn is_invalid_key_signing_key_status(&self) -> bool {
         matches!(
             &self.kind,
             DisableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus(_)
         )
     }
-    /// Returns true if the error kind is `DisableHostedZoneDNSSECErrorKind::InvalidKmsArn`.
+    /// Returns `true` if the error kind is `DisableHostedZoneDNSSECErrorKind::InvalidKmsArn`.
     pub fn is_invalid_kms_arn(&self) -> bool {
         matches!(
             &self.kind,
             DisableHostedZoneDNSSECErrorKind::InvalidKmsArn(_)
         )
     }
-    /// Returns true if the error kind is `DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDsRecord`.
+    /// Returns `true` if the error kind is `DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDsRecord`.
     pub fn is_key_signing_key_in_parent_ds_record(&self) -> bool {
         matches!(
             &self.kind,
             DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDsRecord(_)
         )
     }
-    /// Returns true if the error kind is `DisableHostedZoneDNSSECErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `DisableHostedZoneDNSSECErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(
             &self.kind,
@@ -3497,7 +3497,7 @@ pub enum DisassociateVPCFromHostedZoneErrorKind {
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
     /// <p>The specified VPC and hosted zone are not currently associated.</p>
     VpcAssociationNotFound(crate::error::VpcAssociationNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateVPCFromHostedZoneError {
@@ -3567,35 +3567,35 @@ impl DisassociateVPCFromHostedZoneError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateVPCFromHostedZoneErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `DisassociateVPCFromHostedZoneErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateVPCFromHostedZoneErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateVPCFromHostedZoneErrorKind::InvalidVpcId`.
+    /// Returns `true` if the error kind is `DisassociateVPCFromHostedZoneErrorKind::InvalidVpcId`.
     pub fn is_invalid_vpc_id(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateVPCFromHostedZoneErrorKind::InvalidVpcId(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateVPCFromHostedZoneErrorKind::LastVpcAssociation`.
+    /// Returns `true` if the error kind is `DisassociateVPCFromHostedZoneErrorKind::LastVpcAssociation`.
     pub fn is_last_vpc_association(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateVPCFromHostedZoneErrorKind::LastVpcAssociation(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateVPCFromHostedZoneErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `DisassociateVPCFromHostedZoneErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateVPCFromHostedZoneErrorKind::NoSuchHostedZone(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateVPCFromHostedZoneErrorKind::VpcAssociationNotFound`.
+    /// Returns `true` if the error kind is `DisassociateVPCFromHostedZoneErrorKind::VpcAssociationNotFound`.
     pub fn is_vpc_association_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -3647,7 +3647,7 @@ pub enum EnableHostedZoneDNSSECErrorKind {
     KeySigningKeyWithActiveStatusNotFound(crate::error::KeySigningKeyWithActiveStatusNotFound),
     /// <p>No hosted zone exists with the ID that you specified.</p>
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableHostedZoneDNSSECError {
@@ -3720,60 +3720,60 @@ impl EnableHostedZoneDNSSECError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableHostedZoneDNSSECErrorKind::ConcurrentModification`.
+    /// Returns `true` if the error kind is `EnableHostedZoneDNSSECErrorKind::ConcurrentModification`.
     pub fn is_concurrent_modification(&self) -> bool {
         matches!(
             &self.kind,
             EnableHostedZoneDNSSECErrorKind::ConcurrentModification(_)
         )
     }
-    /// Returns true if the error kind is `EnableHostedZoneDNSSECErrorKind::DnssecNotFound`.
+    /// Returns `true` if the error kind is `EnableHostedZoneDNSSECErrorKind::DnssecNotFound`.
     pub fn is_dnssec_not_found(&self) -> bool {
         matches!(
             &self.kind,
             EnableHostedZoneDNSSECErrorKind::DnssecNotFound(_)
         )
     }
-    /// Returns true if the error kind is `EnableHostedZoneDNSSECErrorKind::HostedZonePartiallyDelegated`.
+    /// Returns `true` if the error kind is `EnableHostedZoneDNSSECErrorKind::HostedZonePartiallyDelegated`.
     pub fn is_hosted_zone_partially_delegated(&self) -> bool {
         matches!(
             &self.kind,
             EnableHostedZoneDNSSECErrorKind::HostedZonePartiallyDelegated(_)
         )
     }
-    /// Returns true if the error kind is `EnableHostedZoneDNSSECErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `EnableHostedZoneDNSSECErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(
             &self.kind,
             EnableHostedZoneDNSSECErrorKind::InvalidArgument(_)
         )
     }
-    /// Returns true if the error kind is `EnableHostedZoneDNSSECErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `EnableHostedZoneDNSSECErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, EnableHostedZoneDNSSECErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `EnableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus`.
+    /// Returns `true` if the error kind is `EnableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus`.
     pub fn is_invalid_key_signing_key_status(&self) -> bool {
         matches!(
             &self.kind,
             EnableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus(_)
         )
     }
-    /// Returns true if the error kind is `EnableHostedZoneDNSSECErrorKind::InvalidKmsArn`.
+    /// Returns `true` if the error kind is `EnableHostedZoneDNSSECErrorKind::InvalidKmsArn`.
     pub fn is_invalid_kms_arn(&self) -> bool {
         matches!(
             &self.kind,
             EnableHostedZoneDNSSECErrorKind::InvalidKmsArn(_)
         )
     }
-    /// Returns true if the error kind is `EnableHostedZoneDNSSECErrorKind::KeySigningKeyWithActiveStatusNotFound`.
+    /// Returns `true` if the error kind is `EnableHostedZoneDNSSECErrorKind::KeySigningKeyWithActiveStatusNotFound`.
     pub fn is_key_signing_key_with_active_status_not_found(&self) -> bool {
         matches!(
             &self.kind,
             EnableHostedZoneDNSSECErrorKind::KeySigningKeyWithActiveStatusNotFound(_)
         )
     }
-    /// Returns true if the error kind is `EnableHostedZoneDNSSECErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `EnableHostedZoneDNSSECErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(
             &self.kind,
@@ -3815,7 +3815,7 @@ pub struct GetAccountLimitError {
 pub enum GetAccountLimitErrorKind {
     /// <p>The input is not valid.</p>
     InvalidInput(crate::error::InvalidInput),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccountLimitError {
@@ -3878,7 +3878,7 @@ impl GetAccountLimitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAccountLimitErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetAccountLimitErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetAccountLimitErrorKind::InvalidInput(_))
     }
@@ -3909,7 +3909,7 @@ pub enum GetChangeErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>A change with the specified change ID does not exist.</p>
     NoSuchChange(crate::error::NoSuchChange),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetChangeError {
@@ -3973,11 +3973,11 @@ impl GetChangeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetChangeErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetChangeErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetChangeErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `GetChangeErrorKind::NoSuchChange`.
+    /// Returns `true` if the error kind is `GetChangeErrorKind::NoSuchChange`.
     pub fn is_no_such_change(&self) -> bool {
         matches!(&self.kind, GetChangeErrorKind::NoSuchChange(_))
     }
@@ -4005,7 +4005,7 @@ pub struct GetCheckerIpRangesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCheckerIpRangesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCheckerIpRangesError {
@@ -4095,7 +4095,7 @@ pub enum GetDNSSECErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No hosted zone exists with the ID that you specified.</p>
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDNSSECError {
@@ -4160,15 +4160,15 @@ impl GetDNSSECError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDNSSECErrorKind::InvalidArgument`.
+    /// Returns `true` if the error kind is `GetDNSSECErrorKind::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(&self.kind, GetDNSSECErrorKind::InvalidArgument(_))
     }
-    /// Returns true if the error kind is `GetDNSSECErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetDNSSECErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetDNSSECErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `GetDNSSECErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `GetDNSSECErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(&self.kind, GetDNSSECErrorKind::NoSuchHostedZone(_))
     }
@@ -4202,7 +4202,7 @@ pub enum GetGeoLocationErrorKind {
     /// <p>Amazon Route 53 doesn't support the specified geographic location. For a list of supported geolocation codes, see the
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a> data type.</p>
     NoSuchGeoLocation(crate::error::NoSuchGeoLocation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGeoLocationError {
@@ -4266,11 +4266,11 @@ impl GetGeoLocationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGeoLocationErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetGeoLocationErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetGeoLocationErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `GetGeoLocationErrorKind::NoSuchGeoLocation`.
+    /// Returns `true` if the error kind is `GetGeoLocationErrorKind::NoSuchGeoLocation`.
     pub fn is_no_such_geo_location(&self) -> bool {
         matches!(&self.kind, GetGeoLocationErrorKind::NoSuchGeoLocation(_))
     }
@@ -4304,7 +4304,7 @@ pub enum GetHealthCheckErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No health check exists with the specified ID.</p>
     NoSuchHealthCheck(crate::error::NoSuchHealthCheck),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetHealthCheckError {
@@ -4369,15 +4369,15 @@ impl GetHealthCheckError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetHealthCheckErrorKind::IncompatibleVersion`.
+    /// Returns `true` if the error kind is `GetHealthCheckErrorKind::IncompatibleVersion`.
     pub fn is_incompatible_version(&self) -> bool {
         matches!(&self.kind, GetHealthCheckErrorKind::IncompatibleVersion(_))
     }
-    /// Returns true if the error kind is `GetHealthCheckErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetHealthCheckErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetHealthCheckErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `GetHealthCheckErrorKind::NoSuchHealthCheck`.
+    /// Returns `true` if the error kind is `GetHealthCheckErrorKind::NoSuchHealthCheck`.
     pub fn is_no_such_health_check(&self) -> bool {
         matches!(&self.kind, GetHealthCheckErrorKind::NoSuchHealthCheck(_))
     }
@@ -4406,7 +4406,7 @@ pub struct GetHealthCheckCountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetHealthCheckCountErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetHealthCheckCountError {
@@ -4494,7 +4494,7 @@ pub enum GetHealthCheckLastFailureReasonErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No health check exists with the specified ID.</p>
     NoSuchHealthCheck(crate::error::NoSuchHealthCheck),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetHealthCheckLastFailureReasonError {
@@ -4561,14 +4561,14 @@ impl GetHealthCheckLastFailureReasonError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetHealthCheckLastFailureReasonErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetHealthCheckLastFailureReasonErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             GetHealthCheckLastFailureReasonErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `GetHealthCheckLastFailureReasonErrorKind::NoSuchHealthCheck`.
+    /// Returns `true` if the error kind is `GetHealthCheckLastFailureReasonErrorKind::NoSuchHealthCheck`.
     pub fn is_no_such_health_check(&self) -> bool {
         matches!(
             &self.kind,
@@ -4603,7 +4603,7 @@ pub enum GetHealthCheckStatusErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No health check exists with the specified ID.</p>
     NoSuchHealthCheck(crate::error::NoSuchHealthCheck),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetHealthCheckStatusError {
@@ -4667,11 +4667,11 @@ impl GetHealthCheckStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetHealthCheckStatusErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetHealthCheckStatusErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetHealthCheckStatusErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `GetHealthCheckStatusErrorKind::NoSuchHealthCheck`.
+    /// Returns `true` if the error kind is `GetHealthCheckStatusErrorKind::NoSuchHealthCheck`.
     pub fn is_no_such_health_check(&self) -> bool {
         matches!(
             &self.kind,
@@ -4706,7 +4706,7 @@ pub enum GetHostedZoneErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No hosted zone exists with the ID that you specified.</p>
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetHostedZoneError {
@@ -4770,11 +4770,11 @@ impl GetHostedZoneError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetHostedZoneErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetHostedZoneErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetHostedZoneErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `GetHostedZoneErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `GetHostedZoneErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(&self.kind, GetHostedZoneErrorKind::NoSuchHostedZone(_))
     }
@@ -4804,7 +4804,7 @@ pub struct GetHostedZoneCountError {
 pub enum GetHostedZoneCountErrorKind {
     /// <p>The input is not valid.</p>
     InvalidInput(crate::error::InvalidInput),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetHostedZoneCountError {
@@ -4867,7 +4867,7 @@ impl GetHostedZoneCountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetHostedZoneCountErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetHostedZoneCountErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetHostedZoneCountErrorKind::InvalidInput(_))
     }
@@ -4900,7 +4900,7 @@ pub enum GetHostedZoneLimitErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No hosted zone exists with the ID that you specified.</p>
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetHostedZoneLimitError {
@@ -4965,18 +4965,18 @@ impl GetHostedZoneLimitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetHostedZoneLimitErrorKind::HostedZoneNotPrivate`.
+    /// Returns `true` if the error kind is `GetHostedZoneLimitErrorKind::HostedZoneNotPrivate`.
     pub fn is_hosted_zone_not_private(&self) -> bool {
         matches!(
             &self.kind,
             GetHostedZoneLimitErrorKind::HostedZoneNotPrivate(_)
         )
     }
-    /// Returns true if the error kind is `GetHostedZoneLimitErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetHostedZoneLimitErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetHostedZoneLimitErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `GetHostedZoneLimitErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `GetHostedZoneLimitErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(&self.kind, GetHostedZoneLimitErrorKind::NoSuchHostedZone(_))
     }
@@ -5009,7 +5009,7 @@ pub enum GetQueryLoggingConfigErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>There is no DNS query logging configuration with the specified ID.</p>
     NoSuchQueryLoggingConfig(crate::error::NoSuchQueryLoggingConfig),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetQueryLoggingConfigError {
@@ -5073,11 +5073,11 @@ impl GetQueryLoggingConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetQueryLoggingConfigErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetQueryLoggingConfigErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetQueryLoggingConfigErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `GetQueryLoggingConfigErrorKind::NoSuchQueryLoggingConfig`.
+    /// Returns `true` if the error kind is `GetQueryLoggingConfigErrorKind::NoSuchQueryLoggingConfig`.
     pub fn is_no_such_query_logging_config(&self) -> bool {
         matches!(
             &self.kind,
@@ -5114,7 +5114,7 @@ pub enum GetReusableDelegationSetErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>A reusable delegation set with the specified ID does not exist.</p>
     NoSuchDelegationSet(crate::error::NoSuchDelegationSet),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetReusableDelegationSetError {
@@ -5179,21 +5179,21 @@ impl GetReusableDelegationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetReusableDelegationSetErrorKind::DelegationSetNotReusable`.
+    /// Returns `true` if the error kind is `GetReusableDelegationSetErrorKind::DelegationSetNotReusable`.
     pub fn is_delegation_set_not_reusable(&self) -> bool {
         matches!(
             &self.kind,
             GetReusableDelegationSetErrorKind::DelegationSetNotReusable(_)
         )
     }
-    /// Returns true if the error kind is `GetReusableDelegationSetErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetReusableDelegationSetErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             GetReusableDelegationSetErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `GetReusableDelegationSetErrorKind::NoSuchDelegationSet`.
+    /// Returns `true` if the error kind is `GetReusableDelegationSetErrorKind::NoSuchDelegationSet`.
     pub fn is_no_such_delegation_set(&self) -> bool {
         matches!(
             &self.kind,
@@ -5229,7 +5229,7 @@ pub enum GetReusableDelegationSetLimitErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>A reusable delegation set with the specified ID does not exist.</p>
     NoSuchDelegationSet(crate::error::NoSuchDelegationSet),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetReusableDelegationSetLimitError {
@@ -5296,14 +5296,14 @@ impl GetReusableDelegationSetLimitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetReusableDelegationSetLimitErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetReusableDelegationSetLimitErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             GetReusableDelegationSetLimitErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `GetReusableDelegationSetLimitErrorKind::NoSuchDelegationSet`.
+    /// Returns `true` if the error kind is `GetReusableDelegationSetLimitErrorKind::NoSuchDelegationSet`.
     pub fn is_no_such_delegation_set(&self) -> bool {
         matches!(
             &self.kind,
@@ -5338,7 +5338,7 @@ pub enum GetTrafficPolicyErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No traffic policy exists with the specified ID.</p>
     NoSuchTrafficPolicy(crate::error::NoSuchTrafficPolicy),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTrafficPolicyError {
@@ -5402,11 +5402,11 @@ impl GetTrafficPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTrafficPolicyErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetTrafficPolicyErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, GetTrafficPolicyErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `GetTrafficPolicyErrorKind::NoSuchTrafficPolicy`.
+    /// Returns `true` if the error kind is `GetTrafficPolicyErrorKind::NoSuchTrafficPolicy`.
     pub fn is_no_such_traffic_policy(&self) -> bool {
         matches!(
             &self.kind,
@@ -5441,7 +5441,7 @@ pub enum GetTrafficPolicyInstanceErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No traffic policy instance exists with the specified ID.</p>
     NoSuchTrafficPolicyInstance(crate::error::NoSuchTrafficPolicyInstance),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTrafficPolicyInstanceError {
@@ -5505,14 +5505,14 @@ impl GetTrafficPolicyInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTrafficPolicyInstanceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `GetTrafficPolicyInstanceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             GetTrafficPolicyInstanceErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `GetTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicyInstance`.
+    /// Returns `true` if the error kind is `GetTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicyInstance`.
     pub fn is_no_such_traffic_policy_instance(&self) -> bool {
         matches!(
             &self.kind,
@@ -5543,7 +5543,7 @@ pub struct GetTrafficPolicyInstanceCountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTrafficPolicyInstanceCountErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTrafficPolicyInstanceCountError {
@@ -5632,7 +5632,7 @@ pub struct ListGeoLocationsError {
 pub enum ListGeoLocationsErrorKind {
     /// <p>The input is not valid.</p>
     InvalidInput(crate::error::InvalidInput),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGeoLocationsError {
@@ -5695,7 +5695,7 @@ impl ListGeoLocationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGeoLocationsErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListGeoLocationsErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListGeoLocationsErrorKind::InvalidInput(_))
     }
@@ -5726,7 +5726,7 @@ pub enum ListHealthChecksErrorKind {
     IncompatibleVersion(crate::error::IncompatibleVersion),
     /// <p>The input is not valid.</p>
     InvalidInput(crate::error::InvalidInput),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListHealthChecksError {
@@ -5790,14 +5790,14 @@ impl ListHealthChecksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListHealthChecksErrorKind::IncompatibleVersion`.
+    /// Returns `true` if the error kind is `ListHealthChecksErrorKind::IncompatibleVersion`.
     pub fn is_incompatible_version(&self) -> bool {
         matches!(
             &self.kind,
             ListHealthChecksErrorKind::IncompatibleVersion(_)
         )
     }
-    /// Returns true if the error kind is `ListHealthChecksErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListHealthChecksErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListHealthChecksErrorKind::InvalidInput(_))
     }
@@ -5831,7 +5831,7 @@ pub enum ListHostedZonesErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>A reusable delegation set with the specified ID does not exist.</p>
     NoSuchDelegationSet(crate::error::NoSuchDelegationSet),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListHostedZonesError {
@@ -5896,18 +5896,18 @@ impl ListHostedZonesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListHostedZonesErrorKind::DelegationSetNotReusable`.
+    /// Returns `true` if the error kind is `ListHostedZonesErrorKind::DelegationSetNotReusable`.
     pub fn is_delegation_set_not_reusable(&self) -> bool {
         matches!(
             &self.kind,
             ListHostedZonesErrorKind::DelegationSetNotReusable(_)
         )
     }
-    /// Returns true if the error kind is `ListHostedZonesErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListHostedZonesErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListHostedZonesErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `ListHostedZonesErrorKind::NoSuchDelegationSet`.
+    /// Returns `true` if the error kind is `ListHostedZonesErrorKind::NoSuchDelegationSet`.
     pub fn is_no_such_delegation_set(&self) -> bool {
         matches!(&self.kind, ListHostedZonesErrorKind::NoSuchDelegationSet(_))
     }
@@ -5940,7 +5940,7 @@ pub enum ListHostedZonesByNameErrorKind {
     InvalidDomainName(crate::error::InvalidDomainName),
     /// <p>The input is not valid.</p>
     InvalidInput(crate::error::InvalidInput),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListHostedZonesByNameError {
@@ -6004,14 +6004,14 @@ impl ListHostedZonesByNameError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListHostedZonesByNameErrorKind::InvalidDomainName`.
+    /// Returns `true` if the error kind is `ListHostedZonesByNameErrorKind::InvalidDomainName`.
     pub fn is_invalid_domain_name(&self) -> bool {
         matches!(
             &self.kind,
             ListHostedZonesByNameErrorKind::InvalidDomainName(_)
         )
     }
-    /// Returns true if the error kind is `ListHostedZonesByNameErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListHostedZonesByNameErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListHostedZonesByNameErrorKind::InvalidInput(_))
     }
@@ -6043,7 +6043,7 @@ pub enum ListHostedZonesByVPCErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>The value that you specified to get the second or subsequent page of results is invalid.</p>
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListHostedZonesByVPCError {
@@ -6107,11 +6107,11 @@ impl ListHostedZonesByVPCError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListHostedZonesByVPCErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListHostedZonesByVPCErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListHostedZonesByVPCErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `ListHostedZonesByVPCErrorKind::InvalidPaginationToken`.
+    /// Returns `true` if the error kind is `ListHostedZonesByVPCErrorKind::InvalidPaginationToken`.
     pub fn is_invalid_pagination_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -6148,7 +6148,7 @@ pub enum ListQueryLoggingConfigsErrorKind {
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
     /// <p>No hosted zone exists with the ID that you specified.</p>
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListQueryLoggingConfigsError {
@@ -6213,21 +6213,21 @@ impl ListQueryLoggingConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListQueryLoggingConfigsErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListQueryLoggingConfigsErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             ListQueryLoggingConfigsErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `ListQueryLoggingConfigsErrorKind::InvalidPaginationToken`.
+    /// Returns `true` if the error kind is `ListQueryLoggingConfigsErrorKind::InvalidPaginationToken`.
     pub fn is_invalid_pagination_token(&self) -> bool {
         matches!(
             &self.kind,
             ListQueryLoggingConfigsErrorKind::InvalidPaginationToken(_)
         )
     }
-    /// Returns true if the error kind is `ListQueryLoggingConfigsErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `ListQueryLoggingConfigsErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(
             &self.kind,
@@ -6263,7 +6263,7 @@ pub enum ListResourceRecordSetsErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No hosted zone exists with the ID that you specified.</p>
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourceRecordSetsError {
@@ -6327,11 +6327,11 @@ impl ListResourceRecordSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResourceRecordSetsErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListResourceRecordSetsErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListResourceRecordSetsErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `ListResourceRecordSetsErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `ListResourceRecordSetsErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(
             &self.kind,
@@ -6364,7 +6364,7 @@ pub struct ListReusableDelegationSetsError {
 pub enum ListReusableDelegationSetsErrorKind {
     /// <p>The input is not valid.</p>
     InvalidInput(crate::error::InvalidInput),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReusableDelegationSetsError {
@@ -6427,7 +6427,7 @@ impl ListReusableDelegationSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListReusableDelegationSetsErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListReusableDelegationSetsErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
@@ -6471,7 +6471,7 @@ pub enum ListTagsForResourceErrorKind {
     PriorRequestNotComplete(crate::error::PriorRequestNotComplete),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -6538,32 +6538,32 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListTagsForResourceErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NoSuchHealthCheck`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NoSuchHealthCheck`.
     pub fn is_no_such_health_check(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::NoSuchHealthCheck(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::NoSuchHostedZone(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::PriorRequestNotComplete`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::PriorRequestNotComplete`.
     pub fn is_prior_request_not_complete(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::PriorRequestNotComplete(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6611,7 +6611,7 @@ pub enum ListTagsForResourcesErrorKind {
     PriorRequestNotComplete(crate::error::PriorRequestNotComplete),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourcesError {
@@ -6678,32 +6678,32 @@ impl ListTagsForResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourcesErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListTagsForResourcesErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListTagsForResourcesErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `ListTagsForResourcesErrorKind::NoSuchHealthCheck`.
+    /// Returns `true` if the error kind is `ListTagsForResourcesErrorKind::NoSuchHealthCheck`.
     pub fn is_no_such_health_check(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourcesErrorKind::NoSuchHealthCheck(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourcesErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `ListTagsForResourcesErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourcesErrorKind::NoSuchHostedZone(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourcesErrorKind::PriorRequestNotComplete`.
+    /// Returns `true` if the error kind is `ListTagsForResourcesErrorKind::PriorRequestNotComplete`.
     pub fn is_prior_request_not_complete(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourcesErrorKind::PriorRequestNotComplete(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourcesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourcesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6739,7 +6739,7 @@ pub struct ListTrafficPoliciesError {
 pub enum ListTrafficPoliciesErrorKind {
     /// <p>The input is not valid.</p>
     InvalidInput(crate::error::InvalidInput),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTrafficPoliciesError {
@@ -6802,7 +6802,7 @@ impl ListTrafficPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTrafficPoliciesErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListTrafficPoliciesErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, ListTrafficPoliciesErrorKind::InvalidInput(_))
     }
@@ -6833,7 +6833,7 @@ pub enum ListTrafficPolicyInstancesErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No traffic policy instance exists with the specified ID.</p>
     NoSuchTrafficPolicyInstance(crate::error::NoSuchTrafficPolicyInstance),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTrafficPolicyInstancesError {
@@ -6899,14 +6899,14 @@ impl ListTrafficPolicyInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTrafficPolicyInstancesErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListTrafficPolicyInstancesErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             ListTrafficPolicyInstancesErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `ListTrafficPolicyInstancesErrorKind::NoSuchTrafficPolicyInstance`.
+    /// Returns `true` if the error kind is `ListTrafficPolicyInstancesErrorKind::NoSuchTrafficPolicyInstance`.
     pub fn is_no_such_traffic_policy_instance(&self) -> bool {
         matches!(
             &self.kind,
@@ -6945,7 +6945,7 @@ pub enum ListTrafficPolicyInstancesByHostedZoneErrorKind {
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
     /// <p>No traffic policy instance exists with the specified ID.</p>
     NoSuchTrafficPolicyInstance(crate::error::NoSuchTrafficPolicyInstance),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTrafficPolicyInstancesByHostedZoneError {
@@ -7017,21 +7017,21 @@ impl ListTrafficPolicyInstancesByHostedZoneError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTrafficPolicyInstancesByHostedZoneErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListTrafficPolicyInstancesByHostedZoneErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             ListTrafficPolicyInstancesByHostedZoneErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `ListTrafficPolicyInstancesByHostedZoneErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `ListTrafficPolicyInstancesByHostedZoneErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(
             &self.kind,
             ListTrafficPolicyInstancesByHostedZoneErrorKind::NoSuchHostedZone(_)
         )
     }
-    /// Returns true if the error kind is `ListTrafficPolicyInstancesByHostedZoneErrorKind::NoSuchTrafficPolicyInstance`.
+    /// Returns `true` if the error kind is `ListTrafficPolicyInstancesByHostedZoneErrorKind::NoSuchTrafficPolicyInstance`.
     pub fn is_no_such_traffic_policy_instance(&self) -> bool {
         matches!(
             &self.kind,
@@ -7075,7 +7075,7 @@ pub enum ListTrafficPolicyInstancesByPolicyErrorKind {
     NoSuchTrafficPolicy(crate::error::NoSuchTrafficPolicy),
     /// <p>No traffic policy instance exists with the specified ID.</p>
     NoSuchTrafficPolicyInstance(crate::error::NoSuchTrafficPolicyInstance),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTrafficPolicyInstancesByPolicyError {
@@ -7147,21 +7147,21 @@ impl ListTrafficPolicyInstancesByPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTrafficPolicyInstancesByPolicyErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListTrafficPolicyInstancesByPolicyErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             ListTrafficPolicyInstancesByPolicyErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `ListTrafficPolicyInstancesByPolicyErrorKind::NoSuchTrafficPolicy`.
+    /// Returns `true` if the error kind is `ListTrafficPolicyInstancesByPolicyErrorKind::NoSuchTrafficPolicy`.
     pub fn is_no_such_traffic_policy(&self) -> bool {
         matches!(
             &self.kind,
             ListTrafficPolicyInstancesByPolicyErrorKind::NoSuchTrafficPolicy(_)
         )
     }
-    /// Returns true if the error kind is `ListTrafficPolicyInstancesByPolicyErrorKind::NoSuchTrafficPolicyInstance`.
+    /// Returns `true` if the error kind is `ListTrafficPolicyInstancesByPolicyErrorKind::NoSuchTrafficPolicyInstance`.
     pub fn is_no_such_traffic_policy_instance(&self) -> bool {
         matches!(
             &self.kind,
@@ -7201,7 +7201,7 @@ pub enum ListTrafficPolicyVersionsErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No traffic policy exists with the specified ID.</p>
     NoSuchTrafficPolicy(crate::error::NoSuchTrafficPolicy),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTrafficPolicyVersionsError {
@@ -7265,14 +7265,14 @@ impl ListTrafficPolicyVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTrafficPolicyVersionsErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListTrafficPolicyVersionsErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             ListTrafficPolicyVersionsErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `ListTrafficPolicyVersionsErrorKind::NoSuchTrafficPolicy`.
+    /// Returns `true` if the error kind is `ListTrafficPolicyVersionsErrorKind::NoSuchTrafficPolicy`.
     pub fn is_no_such_traffic_policy(&self) -> bool {
         matches!(
             &self.kind,
@@ -7309,7 +7309,7 @@ pub enum ListVPCAssociationAuthorizationsErrorKind {
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
     /// <p>No hosted zone exists with the ID that you specified.</p>
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVPCAssociationAuthorizationsError {
@@ -7379,21 +7379,21 @@ impl ListVPCAssociationAuthorizationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListVPCAssociationAuthorizationsErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `ListVPCAssociationAuthorizationsErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             ListVPCAssociationAuthorizationsErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `ListVPCAssociationAuthorizationsErrorKind::InvalidPaginationToken`.
+    /// Returns `true` if the error kind is `ListVPCAssociationAuthorizationsErrorKind::InvalidPaginationToken`.
     pub fn is_invalid_pagination_token(&self) -> bool {
         matches!(
             &self.kind,
             ListVPCAssociationAuthorizationsErrorKind::InvalidPaginationToken(_)
         )
     }
-    /// Returns true if the error kind is `ListVPCAssociationAuthorizationsErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `ListVPCAssociationAuthorizationsErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(
             &self.kind,
@@ -7431,7 +7431,7 @@ pub enum TestDNSAnswerErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No hosted zone exists with the ID that you specified.</p>
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TestDNSAnswerError {
@@ -7495,11 +7495,11 @@ impl TestDNSAnswerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TestDNSAnswerErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `TestDNSAnswerErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, TestDNSAnswerErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `TestDNSAnswerErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `TestDNSAnswerErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(&self.kind, TestDNSAnswerErrorKind::NoSuchHostedZone(_))
     }
@@ -7534,7 +7534,7 @@ pub enum UpdateHealthCheckErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No health check exists with the specified ID.</p>
     NoSuchHealthCheck(crate::error::NoSuchHealthCheck),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateHealthCheckError {
@@ -7599,18 +7599,18 @@ impl UpdateHealthCheckError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateHealthCheckErrorKind::HealthCheckVersionMismatch`.
+    /// Returns `true` if the error kind is `UpdateHealthCheckErrorKind::HealthCheckVersionMismatch`.
     pub fn is_health_check_version_mismatch(&self) -> bool {
         matches!(
             &self.kind,
             UpdateHealthCheckErrorKind::HealthCheckVersionMismatch(_)
         )
     }
-    /// Returns true if the error kind is `UpdateHealthCheckErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `UpdateHealthCheckErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(&self.kind, UpdateHealthCheckErrorKind::InvalidInput(_))
     }
-    /// Returns true if the error kind is `UpdateHealthCheckErrorKind::NoSuchHealthCheck`.
+    /// Returns `true` if the error kind is `UpdateHealthCheckErrorKind::NoSuchHealthCheck`.
     pub fn is_no_such_health_check(&self) -> bool {
         matches!(&self.kind, UpdateHealthCheckErrorKind::NoSuchHealthCheck(_))
     }
@@ -7643,7 +7643,7 @@ pub enum UpdateHostedZoneCommentErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No hosted zone exists with the ID that you specified.</p>
     NoSuchHostedZone(crate::error::NoSuchHostedZone),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateHostedZoneCommentError {
@@ -7707,14 +7707,14 @@ impl UpdateHostedZoneCommentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateHostedZoneCommentErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `UpdateHostedZoneCommentErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             UpdateHostedZoneCommentErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `UpdateHostedZoneCommentErrorKind::NoSuchHostedZone`.
+    /// Returns `true` if the error kind is `UpdateHostedZoneCommentErrorKind::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
         matches!(
             &self.kind,
@@ -7751,7 +7751,7 @@ pub enum UpdateTrafficPolicyCommentErrorKind {
     InvalidInput(crate::error::InvalidInput),
     /// <p>No traffic policy exists with the specified ID.</p>
     NoSuchTrafficPolicy(crate::error::NoSuchTrafficPolicy),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTrafficPolicyCommentError {
@@ -7816,21 +7816,21 @@ impl UpdateTrafficPolicyCommentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTrafficPolicyCommentErrorKind::ConcurrentModification`.
+    /// Returns `true` if the error kind is `UpdateTrafficPolicyCommentErrorKind::ConcurrentModification`.
     pub fn is_concurrent_modification(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrafficPolicyCommentErrorKind::ConcurrentModification(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrafficPolicyCommentErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `UpdateTrafficPolicyCommentErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrafficPolicyCommentErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrafficPolicyCommentErrorKind::NoSuchTrafficPolicy`.
+    /// Returns `true` if the error kind is `UpdateTrafficPolicyCommentErrorKind::NoSuchTrafficPolicy`.
     pub fn is_no_such_traffic_policy(&self) -> bool {
         matches!(
             &self.kind,
@@ -7878,7 +7878,7 @@ pub enum UpdateTrafficPolicyInstanceErrorKind {
     /// recommend that you wait, in intervals of increasing duration, before you try the request
     /// again.</p>
     PriorRequestNotComplete(crate::error::PriorRequestNotComplete),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTrafficPolicyInstanceError {
@@ -7947,35 +7947,35 @@ impl UpdateTrafficPolicyInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTrafficPolicyInstanceErrorKind::ConflictingTypes`.
+    /// Returns `true` if the error kind is `UpdateTrafficPolicyInstanceErrorKind::ConflictingTypes`.
     pub fn is_conflicting_types(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrafficPolicyInstanceErrorKind::ConflictingTypes(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrafficPolicyInstanceErrorKind::InvalidInput`.
+    /// Returns `true` if the error kind is `UpdateTrafficPolicyInstanceErrorKind::InvalidInput`.
     pub fn is_invalid_input(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrafficPolicyInstanceErrorKind::InvalidInput(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicy`.
+    /// Returns `true` if the error kind is `UpdateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicy`.
     pub fn is_no_such_traffic_policy(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicy(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicyInstance`.
+    /// Returns `true` if the error kind is `UpdateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicyInstance`.
     pub fn is_no_such_traffic_policy_instance(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicyInstance(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTrafficPolicyInstanceErrorKind::PriorRequestNotComplete`.
+    /// Returns `true` if the error kind is `UpdateTrafficPolicyInstanceErrorKind::PriorRequestNotComplete`.
     pub fn is_prior_request_not_complete(&self) -> bool {
         matches!(
             &self.kind,

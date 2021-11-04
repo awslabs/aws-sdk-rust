@@ -17,7 +17,7 @@ pub enum CancelJobErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelJobError {
@@ -81,11 +81,11 @@ impl CancelJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelJobErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CancelJobErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CancelJobErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CancelJobErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `CancelJobErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, CancelJobErrorKind::ServerException(_))
     }
@@ -118,7 +118,7 @@ pub enum CreateComputeEnvironmentErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateComputeEnvironmentError {
@@ -182,14 +182,14 @@ impl CreateComputeEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateComputeEnvironmentErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateComputeEnvironmentErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateComputeEnvironmentErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `CreateComputeEnvironmentErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `CreateComputeEnvironmentErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -225,7 +225,7 @@ pub enum CreateJobQueueErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateJobQueueError {
@@ -289,11 +289,11 @@ impl CreateJobQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateJobQueueErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `CreateJobQueueErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, CreateJobQueueErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `CreateJobQueueErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `CreateJobQueueErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, CreateJobQueueErrorKind::ServerException(_))
     }
@@ -326,7 +326,7 @@ pub enum DeleteComputeEnvironmentErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteComputeEnvironmentError {
@@ -390,14 +390,14 @@ impl DeleteComputeEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteComputeEnvironmentErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteComputeEnvironmentErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteComputeEnvironmentErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteComputeEnvironmentErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeleteComputeEnvironmentErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -433,7 +433,7 @@ pub enum DeleteJobQueueErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteJobQueueError {
@@ -497,11 +497,11 @@ impl DeleteJobQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteJobQueueErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeleteJobQueueErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DeleteJobQueueErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DeleteJobQueueErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeleteJobQueueErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteJobQueueErrorKind::ServerException(_))
     }
@@ -534,7 +534,7 @@ pub enum DeregisterJobDefinitionErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterJobDefinitionError {
@@ -598,14 +598,14 @@ impl DeregisterJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterJobDefinitionErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DeregisterJobDefinitionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterJobDefinitionErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterJobDefinitionErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DeregisterJobDefinitionErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -641,7 +641,7 @@ pub enum DescribeComputeEnvironmentsErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeComputeEnvironmentsError {
@@ -705,14 +705,14 @@ impl DescribeComputeEnvironmentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeComputeEnvironmentsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeComputeEnvironmentsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeComputeEnvironmentsErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeComputeEnvironmentsErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeComputeEnvironmentsErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -748,7 +748,7 @@ pub enum DescribeJobDefinitionsErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJobDefinitionsError {
@@ -812,14 +812,14 @@ impl DescribeJobDefinitionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeJobDefinitionsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeJobDefinitionsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeJobDefinitionsErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeJobDefinitionsErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeJobDefinitionsErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -855,7 +855,7 @@ pub enum DescribeJobQueuesErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJobQueuesError {
@@ -919,11 +919,11 @@ impl DescribeJobQueuesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeJobQueuesErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeJobQueuesErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeJobQueuesErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DescribeJobQueuesErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeJobQueuesErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DescribeJobQueuesErrorKind::ServerException(_))
     }
@@ -956,7 +956,7 @@ pub enum DescribeJobsErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJobsError {
@@ -1020,11 +1020,11 @@ impl DescribeJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeJobsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `DescribeJobsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, DescribeJobsErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `DescribeJobsErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `DescribeJobsErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, DescribeJobsErrorKind::ServerException(_))
     }
@@ -1057,7 +1057,7 @@ pub enum ListJobsErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListJobsError {
@@ -1121,11 +1121,11 @@ impl ListJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::ServerException(_))
     }
@@ -1158,7 +1158,7 @@ pub enum ListTagsForResourceErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1222,11 +1222,11 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, ListTagsForResourceErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, ListTagsForResourceErrorKind::ServerException(_))
     }
@@ -1259,7 +1259,7 @@ pub enum RegisterJobDefinitionErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterJobDefinitionError {
@@ -1323,14 +1323,14 @@ impl RegisterJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterJobDefinitionErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `RegisterJobDefinitionErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterJobDefinitionErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterJobDefinitionErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `RegisterJobDefinitionErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1366,7 +1366,7 @@ pub enum SubmitJobErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SubmitJobError {
@@ -1430,11 +1430,11 @@ impl SubmitJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SubmitJobErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `SubmitJobErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, SubmitJobErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `SubmitJobErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `SubmitJobErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, SubmitJobErrorKind::ServerException(_))
     }
@@ -1467,7 +1467,7 @@ pub enum TagResourceErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -1531,11 +1531,11 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ServerException(_))
     }
@@ -1568,7 +1568,7 @@ pub enum TerminateJobErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TerminateJobError {
@@ -1632,11 +1632,11 @@ impl TerminateJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TerminateJobErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `TerminateJobErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, TerminateJobErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `TerminateJobErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `TerminateJobErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, TerminateJobErrorKind::ServerException(_))
     }
@@ -1669,7 +1669,7 @@ pub enum UntagResourceErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -1733,11 +1733,11 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ServerException(_))
     }
@@ -1770,7 +1770,7 @@ pub enum UpdateComputeEnvironmentErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateComputeEnvironmentError {
@@ -1834,14 +1834,14 @@ impl UpdateComputeEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateComputeEnvironmentErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateComputeEnvironmentErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateComputeEnvironmentErrorKind::ClientException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateComputeEnvironmentErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UpdateComputeEnvironmentErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1877,7 +1877,7 @@ pub enum UpdateJobQueueErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::error::ServerException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateJobQueueError {
@@ -1941,11 +1941,11 @@ impl UpdateJobQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateJobQueueErrorKind::ClientException`.
+    /// Returns `true` if the error kind is `UpdateJobQueueErrorKind::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(&self.kind, UpdateJobQueueErrorKind::ClientException(_))
     }
-    /// Returns true if the error kind is `UpdateJobQueueErrorKind::ServerException`.
+    /// Returns `true` if the error kind is `UpdateJobQueueErrorKind::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(&self.kind, UpdateJobQueueErrorKind::ServerException(_))
     }

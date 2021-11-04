@@ -20,7 +20,7 @@ pub enum CloneBackendErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CloneBackendError {
@@ -86,22 +86,22 @@ impl CloneBackendError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CloneBackendErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CloneBackendErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CloneBackendErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CloneBackendErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `CloneBackendErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CloneBackendErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CloneBackendErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CloneBackendErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CloneBackendErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CloneBackendErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CloneBackendErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -142,7 +142,7 @@ pub enum CreateBackendErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBackendError {
@@ -208,22 +208,22 @@ impl CreateBackendError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBackendErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateBackendErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateBackendErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateBackendErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `CreateBackendErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackendErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackendErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateBackendErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateBackendErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateBackendErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateBackendErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -264,7 +264,7 @@ pub enum CreateBackendAPIErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBackendAPIError {
@@ -330,25 +330,25 @@ impl CreateBackendAPIError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBackendAPIErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateBackendAPIErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackendAPIErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackendAPIErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `CreateBackendAPIErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackendAPIErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackendAPIErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateBackendAPIErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateBackendAPIErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateBackendAPIErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateBackendAPIErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -389,7 +389,7 @@ pub enum CreateBackendAuthErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBackendAuthError {
@@ -455,25 +455,25 @@ impl CreateBackendAuthError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBackendAuthErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateBackendAuthErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackendAuthErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackendAuthErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `CreateBackendAuthErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackendAuthErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackendAuthErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateBackendAuthErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateBackendAuthErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateBackendAuthErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateBackendAuthErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -514,7 +514,7 @@ pub enum CreateBackendConfigErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBackendConfigError {
@@ -580,28 +580,28 @@ impl CreateBackendConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBackendConfigErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateBackendConfigErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackendConfigErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackendConfigErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `CreateBackendConfigErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackendConfigErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackendConfigErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateBackendConfigErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBackendConfigErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBackendConfigErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateBackendConfigErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -642,7 +642,7 @@ pub enum CreateTokenErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTokenError {
@@ -708,19 +708,19 @@ impl CreateTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateTokenErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(&self.kind, CreateTokenErrorKind::GatewayTimeoutException(_))
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateTokenErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateTokenErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateTokenErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -761,7 +761,7 @@ pub enum DeleteBackendErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBackendError {
@@ -827,22 +827,22 @@ impl DeleteBackendError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBackendErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteBackendErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteBackendErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteBackendErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteBackendErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackendErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackendErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBackendErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteBackendErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteBackendErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteBackendErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -883,7 +883,7 @@ pub enum DeleteBackendAPIErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBackendAPIError {
@@ -949,25 +949,25 @@ impl DeleteBackendAPIError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBackendAPIErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteBackendAPIErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackendAPIErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackendAPIErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteBackendAPIErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackendAPIErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackendAPIErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBackendAPIErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteBackendAPIErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteBackendAPIErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteBackendAPIErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1008,7 +1008,7 @@ pub enum DeleteBackendAuthErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBackendAuthError {
@@ -1074,25 +1074,25 @@ impl DeleteBackendAuthError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBackendAuthErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteBackendAuthErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackendAuthErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackendAuthErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteBackendAuthErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBackendAuthErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBackendAuthErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBackendAuthErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteBackendAuthErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteBackendAuthErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteBackendAuthErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1133,7 +1133,7 @@ pub enum DeleteTokenErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTokenError {
@@ -1199,19 +1199,19 @@ impl DeleteTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTokenErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteTokenErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteTokenErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteTokenErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `DeleteTokenErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(&self.kind, DeleteTokenErrorKind::GatewayTimeoutException(_))
     }
-    /// Returns true if the error kind is `DeleteTokenErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTokenErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteTokenErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteTokenErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteTokenErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1252,7 +1252,7 @@ pub enum GenerateBackendAPIModelsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateBackendAPIModelsError {
@@ -1318,28 +1318,28 @@ impl GenerateBackendAPIModelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GenerateBackendAPIModelsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GenerateBackendAPIModelsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateBackendAPIModelsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateBackendAPIModelsErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `GenerateBackendAPIModelsErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateBackendAPIModelsErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateBackendAPIModelsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GenerateBackendAPIModelsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateBackendAPIModelsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateBackendAPIModelsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GenerateBackendAPIModelsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1380,7 +1380,7 @@ pub enum GetBackendErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBackendError {
@@ -1446,19 +1446,19 @@ impl GetBackendError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBackendErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBackendErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetBackendErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetBackendErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `GetBackendErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(&self.kind, GetBackendErrorKind::GatewayTimeoutException(_))
     }
-    /// Returns true if the error kind is `GetBackendErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBackendErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetBackendErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetBackendErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetBackendErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetBackendErrorKind::TooManyRequestsException(_))
     }
@@ -1496,7 +1496,7 @@ pub enum GetBackendAPIErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBackendAPIError {
@@ -1562,22 +1562,22 @@ impl GetBackendAPIError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBackendAPIErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBackendAPIErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetBackendAPIErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetBackendAPIErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `GetBackendAPIErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackendAPIErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackendAPIErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBackendAPIErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetBackendAPIErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetBackendAPIErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetBackendAPIErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1618,7 +1618,7 @@ pub enum GetBackendAPIModelsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBackendAPIModelsError {
@@ -1684,28 +1684,28 @@ impl GetBackendAPIModelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBackendAPIModelsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBackendAPIModelsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackendAPIModelsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackendAPIModelsErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `GetBackendAPIModelsErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackendAPIModelsErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackendAPIModelsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBackendAPIModelsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackendAPIModelsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackendAPIModelsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetBackendAPIModelsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1746,7 +1746,7 @@ pub enum GetBackendAuthErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBackendAuthError {
@@ -1812,22 +1812,22 @@ impl GetBackendAuthError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBackendAuthErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBackendAuthErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetBackendAuthErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetBackendAuthErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `GetBackendAuthErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackendAuthErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackendAuthErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBackendAuthErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetBackendAuthErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetBackendAuthErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetBackendAuthErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1868,7 +1868,7 @@ pub enum GetBackendJobErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBackendJobError {
@@ -1934,22 +1934,22 @@ impl GetBackendJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBackendJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBackendJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetBackendJobErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetBackendJobErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `GetBackendJobErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBackendJobErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `GetBackendJobErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBackendJobErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetBackendJobErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetBackendJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetBackendJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1990,7 +1990,7 @@ pub enum GetTokenErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTokenError {
@@ -2056,19 +2056,19 @@ impl GetTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTokenErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetTokenErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetTokenErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetTokenErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `GetTokenErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(&self.kind, GetTokenErrorKind::GatewayTimeoutException(_))
     }
-    /// Returns true if the error kind is `GetTokenErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetTokenErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetTokenErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetTokenErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetTokenErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetTokenErrorKind::TooManyRequestsException(_))
     }
@@ -2106,7 +2106,7 @@ pub enum ImportBackendAuthErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportBackendAuthError {
@@ -2172,25 +2172,25 @@ impl ImportBackendAuthError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportBackendAuthErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ImportBackendAuthErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportBackendAuthErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ImportBackendAuthErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `ImportBackendAuthErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportBackendAuthErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ImportBackendAuthErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ImportBackendAuthErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ImportBackendAuthErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ImportBackendAuthErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ImportBackendAuthErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2231,7 +2231,7 @@ pub enum ListBackendJobsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBackendJobsError {
@@ -2297,22 +2297,22 @@ impl ListBackendJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBackendJobsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListBackendJobsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListBackendJobsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListBackendJobsErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `ListBackendJobsErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBackendJobsErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `ListBackendJobsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListBackendJobsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListBackendJobsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListBackendJobsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListBackendJobsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2353,7 +2353,7 @@ pub enum RemoveAllBackendsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveAllBackendsError {
@@ -2419,25 +2419,25 @@ impl RemoveAllBackendsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveAllBackendsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `RemoveAllBackendsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAllBackendsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAllBackendsErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `RemoveAllBackendsErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAllBackendsErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAllBackendsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RemoveAllBackendsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, RemoveAllBackendsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `RemoveAllBackendsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RemoveAllBackendsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2478,7 +2478,7 @@ pub enum RemoveBackendConfigErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveBackendConfigError {
@@ -2544,28 +2544,28 @@ impl RemoveBackendConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveBackendConfigErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `RemoveBackendConfigErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveBackendConfigErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveBackendConfigErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `RemoveBackendConfigErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveBackendConfigErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveBackendConfigErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RemoveBackendConfigErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveBackendConfigErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveBackendConfigErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RemoveBackendConfigErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2606,7 +2606,7 @@ pub enum UpdateBackendAPIErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBackendAPIError {
@@ -2672,25 +2672,25 @@ impl UpdateBackendAPIError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBackendAPIErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateBackendAPIErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBackendAPIErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBackendAPIErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateBackendAPIErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBackendAPIErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBackendAPIErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateBackendAPIErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateBackendAPIErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateBackendAPIErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateBackendAPIErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2731,7 +2731,7 @@ pub enum UpdateBackendAuthErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBackendAuthError {
@@ -2797,25 +2797,25 @@ impl UpdateBackendAuthError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBackendAuthErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateBackendAuthErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBackendAuthErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBackendAuthErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateBackendAuthErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBackendAuthErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBackendAuthErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateBackendAuthErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateBackendAuthErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateBackendAuthErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateBackendAuthErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2856,7 +2856,7 @@ pub enum UpdateBackendConfigErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBackendConfigError {
@@ -2922,28 +2922,28 @@ impl UpdateBackendConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBackendConfigErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateBackendConfigErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBackendConfigErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBackendConfigErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateBackendConfigErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBackendConfigErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBackendConfigErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateBackendConfigErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBackendConfigErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBackendConfigErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateBackendConfigErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2984,7 +2984,7 @@ pub enum UpdateBackendJobErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBackendJobError {
@@ -3050,25 +3050,25 @@ impl UpdateBackendJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBackendJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateBackendJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBackendJobErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBackendJobErrorKind::GatewayTimeoutException`.
+    /// Returns `true` if the error kind is `UpdateBackendJobErrorKind::GatewayTimeoutException`.
     pub fn is_gateway_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBackendJobErrorKind::GatewayTimeoutException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBackendJobErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateBackendJobErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateBackendJobErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateBackendJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateBackendJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

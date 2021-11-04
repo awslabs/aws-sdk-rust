@@ -27,7 +27,7 @@ pub enum AcceptReservedNodeExchangeErrorKind {
     ReservedNodeOfferingNotFoundFault(crate::error::ReservedNodeOfferingNotFoundFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptReservedNodeExchangeError {
@@ -106,49 +106,49 @@ impl AcceptReservedNodeExchangeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AcceptReservedNodeExchangeErrorKind::DependentServiceUnavailableFault`.
+    /// Returns `true` if the error kind is `AcceptReservedNodeExchangeErrorKind::DependentServiceUnavailableFault`.
     pub fn is_dependent_service_unavailable_fault(&self) -> bool {
         matches!(
             &self.kind,
             AcceptReservedNodeExchangeErrorKind::DependentServiceUnavailableFault(_)
         )
     }
-    /// Returns true if the error kind is `AcceptReservedNodeExchangeErrorKind::InvalidReservedNodeStateFault`.
+    /// Returns `true` if the error kind is `AcceptReservedNodeExchangeErrorKind::InvalidReservedNodeStateFault`.
     pub fn is_invalid_reserved_node_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             AcceptReservedNodeExchangeErrorKind::InvalidReservedNodeStateFault(_)
         )
     }
-    /// Returns true if the error kind is `AcceptReservedNodeExchangeErrorKind::ReservedNodeAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `AcceptReservedNodeExchangeErrorKind::ReservedNodeAlreadyExistsFault`.
     pub fn is_reserved_node_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             AcceptReservedNodeExchangeErrorKind::ReservedNodeAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `AcceptReservedNodeExchangeErrorKind::ReservedNodeAlreadyMigratedFault`.
+    /// Returns `true` if the error kind is `AcceptReservedNodeExchangeErrorKind::ReservedNodeAlreadyMigratedFault`.
     pub fn is_reserved_node_already_migrated_fault(&self) -> bool {
         matches!(
             &self.kind,
             AcceptReservedNodeExchangeErrorKind::ReservedNodeAlreadyMigratedFault(_)
         )
     }
-    /// Returns true if the error kind is `AcceptReservedNodeExchangeErrorKind::ReservedNodeNotFoundFault`.
+    /// Returns `true` if the error kind is `AcceptReservedNodeExchangeErrorKind::ReservedNodeNotFoundFault`.
     pub fn is_reserved_node_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             AcceptReservedNodeExchangeErrorKind::ReservedNodeNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `AcceptReservedNodeExchangeErrorKind::ReservedNodeOfferingNotFoundFault`.
+    /// Returns `true` if the error kind is `AcceptReservedNodeExchangeErrorKind::ReservedNodeOfferingNotFoundFault`.
     pub fn is_reserved_node_offering_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             AcceptReservedNodeExchangeErrorKind::ReservedNodeOfferingNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `AcceptReservedNodeExchangeErrorKind::UnsupportedOperationFault`.
+    /// Returns `true` if the error kind is `AcceptReservedNodeExchangeErrorKind::UnsupportedOperationFault`.
     pub fn is_unsupported_operation_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -201,7 +201,7 @@ pub enum AddPartnerErrorKind {
     PartnerNotFoundFault(crate::error::PartnerNotFoundFault),
     /// <p>The partner integration is not authorized.</p>
     UnauthorizedPartnerIntegrationFault(crate::error::UnauthorizedPartnerIntegrationFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddPartnerError {
@@ -266,15 +266,15 @@ impl AddPartnerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddPartnerErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `AddPartnerErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, AddPartnerErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `AddPartnerErrorKind::PartnerNotFoundFault`.
+    /// Returns `true` if the error kind is `AddPartnerErrorKind::PartnerNotFoundFault`.
     pub fn is_partner_not_found_fault(&self) -> bool {
         matches!(&self.kind, AddPartnerErrorKind::PartnerNotFoundFault(_))
     }
-    /// Returns true if the error kind is `AddPartnerErrorKind::UnauthorizedPartnerIntegrationFault`.
+    /// Returns `true` if the error kind is `AddPartnerErrorKind::UnauthorizedPartnerIntegrationFault`.
     pub fn is_unauthorized_partner_integration_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -310,7 +310,7 @@ pub enum AssociateDataShareConsumerErrorKind {
     InvalidDataShareFault(crate::error::InvalidDataShareFault),
     /// <p>The namespace isn't valid because the namespace doesn't exist. Provide a valid namespace.</p>
     InvalidNamespaceFault(crate::error::InvalidNamespaceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateDataShareConsumerError {
@@ -374,14 +374,14 @@ impl AssociateDataShareConsumerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateDataShareConsumerErrorKind::InvalidDataShareFault`.
+    /// Returns `true` if the error kind is `AssociateDataShareConsumerErrorKind::InvalidDataShareFault`.
     pub fn is_invalid_data_share_fault(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDataShareConsumerErrorKind::InvalidDataShareFault(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDataShareConsumerErrorKind::InvalidNamespaceFault`.
+    /// Returns `true` if the error kind is `AssociateDataShareConsumerErrorKind::InvalidNamespaceFault`.
     pub fn is_invalid_namespace_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -422,7 +422,7 @@ pub enum AuthorizeClusterSecurityGroupIngressErrorKind {
     ClusterSecurityGroupNotFoundFault(crate::error::ClusterSecurityGroupNotFoundFault),
     /// <p>The state of the cluster security group is not <code>available</code>. </p>
     InvalidClusterSecurityGroupStateFault(crate::error::InvalidClusterSecurityGroupStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AuthorizeClusterSecurityGroupIngressError {
@@ -501,28 +501,28 @@ impl AuthorizeClusterSecurityGroupIngressError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AuthorizeClusterSecurityGroupIngressErrorKind::AuthorizationAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `AuthorizeClusterSecurityGroupIngressErrorKind::AuthorizationAlreadyExistsFault`.
     pub fn is_authorization_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeClusterSecurityGroupIngressErrorKind::AuthorizationAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeClusterSecurityGroupIngressErrorKind::AuthorizationQuotaExceededFault`.
+    /// Returns `true` if the error kind is `AuthorizeClusterSecurityGroupIngressErrorKind::AuthorizationQuotaExceededFault`.
     pub fn is_authorization_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeClusterSecurityGroupIngressErrorKind::AuthorizationQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeClusterSecurityGroupIngressErrorKind::ClusterSecurityGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `AuthorizeClusterSecurityGroupIngressErrorKind::ClusterSecurityGroupNotFoundFault`.
     pub fn is_cluster_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeClusterSecurityGroupIngressErrorKind::ClusterSecurityGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeClusterSecurityGroupIngressErrorKind::InvalidClusterSecurityGroupStateFault`.
+    /// Returns `true` if the error kind is `AuthorizeClusterSecurityGroupIngressErrorKind::InvalidClusterSecurityGroupStateFault`.
     pub fn is_invalid_cluster_security_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -567,7 +567,7 @@ pub struct AuthorizeDataShareError {
 pub enum AuthorizeDataShareErrorKind {
     /// <p>There is an error with the datashare.</p>
     InvalidDataShareFault(crate::error::InvalidDataShareFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AuthorizeDataShareError {
@@ -630,7 +630,7 @@ impl AuthorizeDataShareError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AuthorizeDataShareErrorKind::InvalidDataShareFault`.
+    /// Returns `true` if the error kind is `AuthorizeDataShareErrorKind::InvalidDataShareFault`.
     pub fn is_invalid_data_share_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -675,7 +675,7 @@ pub enum AuthorizeEndpointAccessErrorKind {
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AuthorizeEndpointAccessError {
@@ -757,42 +757,42 @@ impl AuthorizeEndpointAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AuthorizeEndpointAccessErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `AuthorizeEndpointAccessErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeEndpointAccessErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeEndpointAccessErrorKind::EndpointAuthorizationAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `AuthorizeEndpointAccessErrorKind::EndpointAuthorizationAlreadyExistsFault`.
     pub fn is_endpoint_authorization_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeEndpointAccessErrorKind::EndpointAuthorizationAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeEndpointAccessErrorKind::EndpointAuthorizationsPerClusterLimitExceededFault`.
+    /// Returns `true` if the error kind is `AuthorizeEndpointAccessErrorKind::EndpointAuthorizationsPerClusterLimitExceededFault`.
     pub fn is_endpoint_authorizations_per_cluster_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeEndpointAccessErrorKind::EndpointAuthorizationsPerClusterLimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeEndpointAccessErrorKind::InvalidAuthorizationStateFault`.
+    /// Returns `true` if the error kind is `AuthorizeEndpointAccessErrorKind::InvalidAuthorizationStateFault`.
     pub fn is_invalid_authorization_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeEndpointAccessErrorKind::InvalidAuthorizationStateFault(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeEndpointAccessErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `AuthorizeEndpointAccessErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeEndpointAccessErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeEndpointAccessErrorKind::UnsupportedOperationFault`.
+    /// Returns `true` if the error kind is `AuthorizeEndpointAccessErrorKind::UnsupportedOperationFault`.
     pub fn is_unsupported_operation_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -856,7 +856,7 @@ pub enum AuthorizeSnapshotAccessErrorKind {
     InvalidClusterSnapshotStateFault(crate::error::InvalidClusterSnapshotStateFault),
     /// <p>The encryption key has exceeded its grant limit in Amazon Web Services KMS.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AuthorizeSnapshotAccessError {
@@ -932,42 +932,42 @@ impl AuthorizeSnapshotAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AuthorizeSnapshotAccessErrorKind::AuthorizationAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `AuthorizeSnapshotAccessErrorKind::AuthorizationAlreadyExistsFault`.
     pub fn is_authorization_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeSnapshotAccessErrorKind::AuthorizationAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeSnapshotAccessErrorKind::AuthorizationQuotaExceededFault`.
+    /// Returns `true` if the error kind is `AuthorizeSnapshotAccessErrorKind::AuthorizationQuotaExceededFault`.
     pub fn is_authorization_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeSnapshotAccessErrorKind::AuthorizationQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeSnapshotAccessErrorKind::ClusterSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `AuthorizeSnapshotAccessErrorKind::ClusterSnapshotNotFoundFault`.
     pub fn is_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeSnapshotAccessErrorKind::ClusterSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeSnapshotAccessErrorKind::DependentServiceRequestThrottlingFault`.
+    /// Returns `true` if the error kind is `AuthorizeSnapshotAccessErrorKind::DependentServiceRequestThrottlingFault`.
     pub fn is_dependent_service_request_throttling_fault(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeSnapshotAccessErrorKind::DependentServiceRequestThrottlingFault(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeSnapshotAccessErrorKind::InvalidClusterSnapshotStateFault`.
+    /// Returns `true` if the error kind is `AuthorizeSnapshotAccessErrorKind::InvalidClusterSnapshotStateFault`.
     pub fn is_invalid_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             AuthorizeSnapshotAccessErrorKind::InvalidClusterSnapshotStateFault(_)
         )
     }
-    /// Returns true if the error kind is `AuthorizeSnapshotAccessErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `AuthorizeSnapshotAccessErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1013,7 +1013,7 @@ pub enum BatchDeleteClusterSnapshotsErrorKind {
     /// <p>The maximum number for a batch delete of snapshots has been reached. The limit is
     /// 100. </p>
     BatchDeleteRequestSizeExceededFault(crate::error::BatchDeleteRequestSizeExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDeleteClusterSnapshotsError {
@@ -1078,7 +1078,7 @@ impl BatchDeleteClusterSnapshotsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDeleteClusterSnapshotsErrorKind::BatchDeleteRequestSizeExceededFault`.
+    /// Returns `true` if the error kind is `BatchDeleteClusterSnapshotsErrorKind::BatchDeleteRequestSizeExceededFault`.
     pub fn is_batch_delete_request_size_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1118,7 +1118,7 @@ pub enum BatchModifyClusterSnapshotsErrorKind {
     /// <p>The retention period specified is either in the past or is not a valid value.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     InvalidRetentionPeriodFault(crate::error::InvalidRetentionPeriodFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchModifyClusterSnapshotsError {
@@ -1186,14 +1186,14 @@ impl BatchModifyClusterSnapshotsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchModifyClusterSnapshotsErrorKind::BatchModifyClusterSnapshotsLimitExceededFault`.
+    /// Returns `true` if the error kind is `BatchModifyClusterSnapshotsErrorKind::BatchModifyClusterSnapshotsLimitExceededFault`.
     pub fn is_batch_modify_cluster_snapshots_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             BatchModifyClusterSnapshotsErrorKind::BatchModifyClusterSnapshotsLimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `BatchModifyClusterSnapshotsErrorKind::InvalidRetentionPeriodFault`.
+    /// Returns `true` if the error kind is `BatchModifyClusterSnapshotsErrorKind::InvalidRetentionPeriodFault`.
     pub fn is_invalid_retention_period_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1237,7 +1237,7 @@ pub enum CancelResizeErrorKind {
     ResizeNotFoundFault(crate::error::ResizeNotFoundFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelResizeError {
@@ -1303,22 +1303,22 @@ impl CancelResizeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelResizeErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `CancelResizeErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, CancelResizeErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `CancelResizeErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `CancelResizeErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CancelResizeErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CancelResizeErrorKind::ResizeNotFoundFault`.
+    /// Returns `true` if the error kind is `CancelResizeErrorKind::ResizeNotFoundFault`.
     pub fn is_resize_not_found_fault(&self) -> bool {
         matches!(&self.kind, CancelResizeErrorKind::ResizeNotFoundFault(_))
     }
-    /// Returns true if the error kind is `CancelResizeErrorKind::UnsupportedOperationFault`.
+    /// Returns `true` if the error kind is `CancelResizeErrorKind::UnsupportedOperationFault`.
     pub fn is_unsupported_operation_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1365,7 +1365,7 @@ pub enum CopyClusterSnapshotErrorKind {
     /// <p>The retention period specified is either in the past or is not a valid value.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     InvalidRetentionPeriodFault(crate::error::InvalidRetentionPeriodFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopyClusterSnapshotError {
@@ -1436,35 +1436,35 @@ impl CopyClusterSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CopyClusterSnapshotErrorKind::ClusterSnapshotAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CopyClusterSnapshotErrorKind::ClusterSnapshotAlreadyExistsFault`.
     pub fn is_cluster_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyClusterSnapshotErrorKind::ClusterSnapshotAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `CopyClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault`.
     pub fn is_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyClusterSnapshotErrorKind::ClusterSnapshotQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CopyClusterSnapshotErrorKind::ClusterSnapshotQuotaExceededFault`.
     pub fn is_cluster_snapshot_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyClusterSnapshotErrorKind::ClusterSnapshotQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault`.
+    /// Returns `true` if the error kind is `CopyClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault`.
     pub fn is_invalid_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CopyClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CopyClusterSnapshotErrorKind::InvalidRetentionPeriodFault`.
+    /// Returns `true` if the error kind is `CopyClusterSnapshotErrorKind::InvalidRetentionPeriodFault`.
     pub fn is_invalid_retention_period_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1508,7 +1508,7 @@ pub enum CreateAuthenticationProfileErrorKind {
     InvalidAuthenticationProfileRequestFault(
         crate::error::InvalidAuthenticationProfileRequestFault,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAuthenticationProfileError {
@@ -1579,21 +1579,21 @@ impl CreateAuthenticationProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAuthenticationProfileErrorKind::AuthenticationProfileAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateAuthenticationProfileErrorKind::AuthenticationProfileAlreadyExistsFault`.
     pub fn is_authentication_profile_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateAuthenticationProfileErrorKind::AuthenticationProfileAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateAuthenticationProfileErrorKind::AuthenticationProfileQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateAuthenticationProfileErrorKind::AuthenticationProfileQuotaExceededFault`.
     pub fn is_authentication_profile_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateAuthenticationProfileErrorKind::AuthenticationProfileQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault`.
+    /// Returns `true` if the error kind is `CreateAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault`.
     pub fn is_invalid_authentication_profile_request_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1692,7 +1692,7 @@ pub enum CreateClusterErrorKind {
     TagLimitExceededFault(crate::error::TagLimitExceededFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateClusterError {
@@ -1778,139 +1778,139 @@ impl CreateClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ClusterAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ClusterAlreadyExistsFault`.
     pub fn is_cluster_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::ClusterAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ClusterParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ClusterParameterGroupNotFoundFault`.
     pub fn is_cluster_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::ClusterParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ClusterQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ClusterQuotaExceededFault`.
     pub fn is_cluster_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::ClusterQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ClusterSecurityGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ClusterSecurityGroupNotFoundFault`.
     pub fn is_cluster_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::ClusterSecurityGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::ClusterSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::ClusterSubnetGroupNotFoundFault`.
     pub fn is_cluster_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::ClusterSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::DependentServiceRequestThrottlingFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::DependentServiceRequestThrottlingFault`.
     pub fn is_dependent_service_request_throttling_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::DependentServiceRequestThrottlingFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::HsmClientCertificateNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::HsmClientCertificateNotFoundFault`.
     pub fn is_hsm_client_certificate_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::HsmClientCertificateNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::HsmConfigurationNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::HsmConfigurationNotFoundFault`.
     pub fn is_hsm_configuration_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::HsmConfigurationNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InsufficientClusterCapacityFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InsufficientClusterCapacityFault`.
     pub fn is_insufficient_cluster_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::InsufficientClusterCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InvalidClusterSubnetGroupStateFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InvalidClusterSubnetGroupStateFault`.
     pub fn is_invalid_cluster_subnet_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::InvalidClusterSubnetGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InvalidClusterTrackFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InvalidClusterTrackFault`.
     pub fn is_invalid_cluster_track_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::InvalidClusterTrackFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InvalidElasticIpFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InvalidElasticIpFault`.
     pub fn is_invalid_elastic_ip_fault(&self) -> bool {
         matches!(&self.kind, CreateClusterErrorKind::InvalidElasticIpFault(_))
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InvalidRetentionPeriodFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InvalidRetentionPeriodFault`.
     pub fn is_invalid_retention_period_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::InvalidRetentionPeriodFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(&self.kind, CreateClusterErrorKind::InvalidSubnet(_))
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(&self.kind, CreateClusterErrorKind::InvalidTagFault(_))
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::InvalidVpcNetworkStateFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(&self.kind, CreateClusterErrorKind::LimitExceededFault(_))
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::NumberOfNodesPerClusterLimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::NumberOfNodesPerClusterLimitExceededFault`.
     pub fn is_number_of_nodes_per_cluster_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::NumberOfNodesPerClusterLimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::NumberOfNodesQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::NumberOfNodesQuotaExceededFault`.
     pub fn is_number_of_nodes_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::NumberOfNodesQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::SnapshotScheduleNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::SnapshotScheduleNotFoundFault`.
     pub fn is_snapshot_schedule_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterErrorKind::SnapshotScheduleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::TagLimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::TagLimitExceededFault`.
     pub fn is_tag_limit_exceeded_fault(&self) -> bool {
         matches!(&self.kind, CreateClusterErrorKind::TagLimitExceededFault(_))
     }
-    /// Returns true if the error kind is `CreateClusterErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `CreateClusterErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(&self.kind, CreateClusterErrorKind::UnauthorizedOperation(_))
     }
@@ -1972,7 +1972,7 @@ pub enum CreateClusterParameterGroupErrorKind {
     InvalidTagFault(crate::error::InvalidTagFault),
     /// <p>You have exceeded the number of tags allowed.</p>
     TagLimitExceededFault(crate::error::TagLimitExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateClusterParameterGroupError {
@@ -2042,28 +2042,28 @@ impl CreateClusterParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateClusterParameterGroupErrorKind::ClusterParameterGroupAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateClusterParameterGroupErrorKind::ClusterParameterGroupAlreadyExistsFault`.
     pub fn is_cluster_parameter_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterParameterGroupErrorKind::ClusterParameterGroupAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterParameterGroupErrorKind::ClusterParameterGroupQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateClusterParameterGroupErrorKind::ClusterParameterGroupQuotaExceededFault`.
     pub fn is_cluster_parameter_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterParameterGroupErrorKind::ClusterParameterGroupQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterParameterGroupErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `CreateClusterParameterGroupErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterParameterGroupErrorKind::InvalidTagFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterParameterGroupErrorKind::TagLimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateClusterParameterGroupErrorKind::TagLimitExceededFault`.
     pub fn is_tag_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2112,7 +2112,7 @@ pub enum CreateClusterSecurityGroupErrorKind {
     InvalidTagFault(crate::error::InvalidTagFault),
     /// <p>You have exceeded the number of tags allowed.</p>
     TagLimitExceededFault(crate::error::TagLimitExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateClusterSecurityGroupError {
@@ -2182,28 +2182,28 @@ impl CreateClusterSecurityGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateClusterSecurityGroupErrorKind::ClusterSecurityGroupAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateClusterSecurityGroupErrorKind::ClusterSecurityGroupAlreadyExistsFault`.
     pub fn is_cluster_security_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterSecurityGroupErrorKind::ClusterSecurityGroupAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterSecurityGroupErrorKind::ClusterSecurityGroupQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateClusterSecurityGroupErrorKind::ClusterSecurityGroupQuotaExceededFault`.
     pub fn is_cluster_security_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterSecurityGroupErrorKind::ClusterSecurityGroupQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterSecurityGroupErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `CreateClusterSecurityGroupErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterSecurityGroupErrorKind::InvalidTagFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterSecurityGroupErrorKind::TagLimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateClusterSecurityGroupErrorKind::TagLimitExceededFault`.
     pub fn is_tag_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2258,7 +2258,7 @@ pub enum CreateClusterSnapshotErrorKind {
     InvalidTagFault(crate::error::InvalidTagFault),
     /// <p>You have exceeded the number of tags allowed.</p>
     TagLimitExceededFault(crate::error::TagLimitExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateClusterSnapshotError {
@@ -2331,49 +2331,49 @@ impl CreateClusterSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateClusterSnapshotErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateClusterSnapshotErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterSnapshotErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterSnapshotErrorKind::ClusterSnapshotAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateClusterSnapshotErrorKind::ClusterSnapshotAlreadyExistsFault`.
     pub fn is_cluster_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterSnapshotErrorKind::ClusterSnapshotAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterSnapshotErrorKind::ClusterSnapshotQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateClusterSnapshotErrorKind::ClusterSnapshotQuotaExceededFault`.
     pub fn is_cluster_snapshot_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterSnapshotErrorKind::ClusterSnapshotQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterSnapshotErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `CreateClusterSnapshotErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterSnapshotErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterSnapshotErrorKind::InvalidRetentionPeriodFault`.
+    /// Returns `true` if the error kind is `CreateClusterSnapshotErrorKind::InvalidRetentionPeriodFault`.
     pub fn is_invalid_retention_period_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterSnapshotErrorKind::InvalidRetentionPeriodFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterSnapshotErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `CreateClusterSnapshotErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterSnapshotErrorKind::InvalidTagFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterSnapshotErrorKind::TagLimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateClusterSnapshotErrorKind::TagLimitExceededFault`.
     pub fn is_tag_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2440,7 +2440,7 @@ pub enum CreateClusterSubnetGroupErrorKind {
     TagLimitExceededFault(crate::error::TagLimitExceededFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateClusterSubnetGroupError {
@@ -2518,56 +2518,56 @@ impl CreateClusterSubnetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateClusterSubnetGroupErrorKind::ClusterSubnetGroupAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateClusterSubnetGroupErrorKind::ClusterSubnetGroupAlreadyExistsFault`.
     pub fn is_cluster_subnet_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterSubnetGroupErrorKind::ClusterSubnetGroupAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterSubnetGroupErrorKind::ClusterSubnetGroupQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateClusterSubnetGroupErrorKind::ClusterSubnetGroupQuotaExceededFault`.
     pub fn is_cluster_subnet_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterSubnetGroupErrorKind::ClusterSubnetGroupQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterSubnetGroupErrorKind::ClusterSubnetQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateClusterSubnetGroupErrorKind::ClusterSubnetQuotaExceededFault`.
     pub fn is_cluster_subnet_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterSubnetGroupErrorKind::ClusterSubnetQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterSubnetGroupErrorKind::DependentServiceRequestThrottlingFault`.
+    /// Returns `true` if the error kind is `CreateClusterSubnetGroupErrorKind::DependentServiceRequestThrottlingFault`.
     pub fn is_dependent_service_request_throttling_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterSubnetGroupErrorKind::DependentServiceRequestThrottlingFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterSubnetGroupErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `CreateClusterSubnetGroupErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterSubnetGroupErrorKind::InvalidSubnet(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterSubnetGroupErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `CreateClusterSubnetGroupErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterSubnetGroupErrorKind::InvalidTagFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterSubnetGroupErrorKind::TagLimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateClusterSubnetGroupErrorKind::TagLimitExceededFault`.
     pub fn is_tag_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateClusterSubnetGroupErrorKind::TagLimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateClusterSubnetGroupErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `CreateClusterSubnetGroupErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -2636,7 +2636,7 @@ pub enum CreateEndpointAccessErrorKind {
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEndpointAccessError {
@@ -2714,70 +2714,70 @@ impl CreateEndpointAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEndpointAccessErrorKind::AccessToClusterDeniedFault`.
+    /// Returns `true` if the error kind is `CreateEndpointAccessErrorKind::AccessToClusterDeniedFault`.
     pub fn is_access_to_cluster_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointAccessErrorKind::AccessToClusterDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointAccessErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateEndpointAccessErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointAccessErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointAccessErrorKind::ClusterSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateEndpointAccessErrorKind::ClusterSubnetGroupNotFoundFault`.
     pub fn is_cluster_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointAccessErrorKind::ClusterSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointAccessErrorKind::EndpointAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateEndpointAccessErrorKind::EndpointAlreadyExistsFault`.
     pub fn is_endpoint_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointAccessErrorKind::EndpointAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointAccessErrorKind::EndpointsPerAuthorizationLimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateEndpointAccessErrorKind::EndpointsPerAuthorizationLimitExceededFault`.
     pub fn is_endpoints_per_authorization_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointAccessErrorKind::EndpointsPerAuthorizationLimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointAccessErrorKind::EndpointsPerClusterLimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateEndpointAccessErrorKind::EndpointsPerClusterLimitExceededFault`.
     pub fn is_endpoints_per_cluster_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointAccessErrorKind::EndpointsPerClusterLimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointAccessErrorKind::InvalidClusterSecurityGroupStateFault`.
+    /// Returns `true` if the error kind is `CreateEndpointAccessErrorKind::InvalidClusterSecurityGroupStateFault`.
     pub fn is_invalid_cluster_security_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointAccessErrorKind::InvalidClusterSecurityGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointAccessErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `CreateEndpointAccessErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointAccessErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointAccessErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `CreateEndpointAccessErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
             CreateEndpointAccessErrorKind::UnauthorizedOperation(_)
         )
     }
-    /// Returns true if the error kind is `CreateEndpointAccessErrorKind::UnsupportedOperationFault`.
+    /// Returns `true` if the error kind is `CreateEndpointAccessErrorKind::UnsupportedOperationFault`.
     pub fn is_unsupported_operation_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2855,7 +2855,7 @@ pub enum CreateEventSubscriptionErrorKind {
     SubscriptionSeverityNotFoundFault(crate::error::SubscriptionSeverityNotFoundFault),
     /// <p>You have exceeded the number of tags allowed.</p>
     TagLimitExceededFault(crate::error::TagLimitExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEventSubscriptionError {
@@ -2938,77 +2938,77 @@ impl CreateEventSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::EventSubscriptionQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::EventSubscriptionQuotaExceededFault`.
     pub fn is_event_subscription_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::EventSubscriptionQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::InvalidTagFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::SnsInvalidTopicFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::SnsInvalidTopicFault`.
     pub fn is_sns_invalid_topic_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::SnsInvalidTopicFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::SnsNoAuthorizationFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::SnsNoAuthorizationFault`.
     pub fn is_sns_no_authorization_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::SnsNoAuthorizationFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::SnsTopicArnNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::SnsTopicArnNotFoundFault`.
     pub fn is_sns_topic_arn_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::SnsTopicArnNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::SourceNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::SourceNotFoundFault`.
     pub fn is_source_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::SourceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::SubscriptionAlreadyExistFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::SubscriptionAlreadyExistFault`.
     pub fn is_subscription_already_exist_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::SubscriptionAlreadyExistFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault`.
     pub fn is_subscription_category_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::SubscriptionEventIdNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::SubscriptionEventIdNotFoundFault`.
     pub fn is_subscription_event_id_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::SubscriptionEventIdNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::SubscriptionSeverityNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::SubscriptionSeverityNotFoundFault`.
     pub fn is_subscription_severity_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateEventSubscriptionErrorKind::SubscriptionSeverityNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateEventSubscriptionErrorKind::TagLimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateEventSubscriptionErrorKind::TagLimitExceededFault`.
     pub fn is_tag_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3068,7 +3068,7 @@ pub enum CreateHsmClientCertificateErrorKind {
     InvalidTagFault(crate::error::InvalidTagFault),
     /// <p>You have exceeded the number of tags allowed.</p>
     TagLimitExceededFault(crate::error::TagLimitExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateHsmClientCertificateError {
@@ -3138,28 +3138,28 @@ impl CreateHsmClientCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateHsmClientCertificateErrorKind::HsmClientCertificateAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateHsmClientCertificateErrorKind::HsmClientCertificateAlreadyExistsFault`.
     pub fn is_hsm_client_certificate_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateHsmClientCertificateErrorKind::HsmClientCertificateAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateHsmClientCertificateErrorKind::HsmClientCertificateQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateHsmClientCertificateErrorKind::HsmClientCertificateQuotaExceededFault`.
     pub fn is_hsm_client_certificate_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateHsmClientCertificateErrorKind::HsmClientCertificateQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateHsmClientCertificateErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `CreateHsmClientCertificateErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateHsmClientCertificateErrorKind::InvalidTagFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateHsmClientCertificateErrorKind::TagLimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateHsmClientCertificateErrorKind::TagLimitExceededFault`.
     pub fn is_tag_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3208,7 +3208,7 @@ pub enum CreateHsmConfigurationErrorKind {
     InvalidTagFault(crate::error::InvalidTagFault),
     /// <p>You have exceeded the number of tags allowed.</p>
     TagLimitExceededFault(crate::error::TagLimitExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateHsmConfigurationError {
@@ -3278,28 +3278,28 @@ impl CreateHsmConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateHsmConfigurationErrorKind::HsmConfigurationAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateHsmConfigurationErrorKind::HsmConfigurationAlreadyExistsFault`.
     pub fn is_hsm_configuration_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateHsmConfigurationErrorKind::HsmConfigurationAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateHsmConfigurationErrorKind::HsmConfigurationQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateHsmConfigurationErrorKind::HsmConfigurationQuotaExceededFault`.
     pub fn is_hsm_configuration_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateHsmConfigurationErrorKind::HsmConfigurationQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateHsmConfigurationErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `CreateHsmConfigurationErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateHsmConfigurationErrorKind::InvalidTagFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateHsmConfigurationErrorKind::TagLimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateHsmConfigurationErrorKind::TagLimitExceededFault`.
     pub fn is_tag_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3348,7 +3348,7 @@ pub enum CreateScheduledActionErrorKind {
     ScheduledActionTypeUnsupportedFault(crate::error::ScheduledActionTypeUnsupportedFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateScheduledActionError {
@@ -3422,42 +3422,42 @@ impl CreateScheduledActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateScheduledActionErrorKind::InvalidScheduledActionFault`.
+    /// Returns `true` if the error kind is `CreateScheduledActionErrorKind::InvalidScheduledActionFault`.
     pub fn is_invalid_scheduled_action_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateScheduledActionErrorKind::InvalidScheduledActionFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateScheduledActionErrorKind::InvalidScheduleFault`.
+    /// Returns `true` if the error kind is `CreateScheduledActionErrorKind::InvalidScheduleFault`.
     pub fn is_invalid_schedule_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateScheduledActionErrorKind::InvalidScheduleFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateScheduledActionErrorKind::ScheduledActionAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateScheduledActionErrorKind::ScheduledActionAlreadyExistsFault`.
     pub fn is_scheduled_action_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateScheduledActionErrorKind::ScheduledActionAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateScheduledActionErrorKind::ScheduledActionQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateScheduledActionErrorKind::ScheduledActionQuotaExceededFault`.
     pub fn is_scheduled_action_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateScheduledActionErrorKind::ScheduledActionQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateScheduledActionErrorKind::ScheduledActionTypeUnsupportedFault`.
+    /// Returns `true` if the error kind is `CreateScheduledActionErrorKind::ScheduledActionTypeUnsupportedFault`.
     pub fn is_scheduled_action_type_unsupported_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateScheduledActionErrorKind::ScheduledActionTypeUnsupportedFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateScheduledActionErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `CreateScheduledActionErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -3513,7 +3513,7 @@ pub enum CreateSnapshotCopyGrantErrorKind {
     SnapshotCopyGrantQuotaExceededFault(crate::error::SnapshotCopyGrantQuotaExceededFault),
     /// <p>You have exceeded the number of tags allowed.</p>
     TagLimitExceededFault(crate::error::TagLimitExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSnapshotCopyGrantError {
@@ -3587,42 +3587,42 @@ impl CreateSnapshotCopyGrantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSnapshotCopyGrantErrorKind::DependentServiceRequestThrottlingFault`.
+    /// Returns `true` if the error kind is `CreateSnapshotCopyGrantErrorKind::DependentServiceRequestThrottlingFault`.
     pub fn is_dependent_service_request_throttling_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotCopyGrantErrorKind::DependentServiceRequestThrottlingFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotCopyGrantErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `CreateSnapshotCopyGrantErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotCopyGrantErrorKind::InvalidTagFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotCopyGrantErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateSnapshotCopyGrantErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotCopyGrantErrorKind::LimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotCopyGrantErrorKind::SnapshotCopyGrantAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateSnapshotCopyGrantErrorKind::SnapshotCopyGrantAlreadyExistsFault`.
     pub fn is_snapshot_copy_grant_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotCopyGrantErrorKind::SnapshotCopyGrantAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotCopyGrantErrorKind::SnapshotCopyGrantQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateSnapshotCopyGrantErrorKind::SnapshotCopyGrantQuotaExceededFault`.
     pub fn is_snapshot_copy_grant_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotCopyGrantErrorKind::SnapshotCopyGrantQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotCopyGrantErrorKind::TagLimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateSnapshotCopyGrantErrorKind::TagLimitExceededFault`.
     pub fn is_tag_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3675,7 +3675,7 @@ pub enum CreateSnapshotScheduleErrorKind {
     SnapshotScheduleQuotaExceededFault(crate::error::SnapshotScheduleQuotaExceededFault),
     /// <p>You have exceeded the number of tags allowed.</p>
     TagLimitExceededFault(crate::error::TagLimitExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSnapshotScheduleError {
@@ -3749,42 +3749,42 @@ impl CreateSnapshotScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSnapshotScheduleErrorKind::InvalidScheduleFault`.
+    /// Returns `true` if the error kind is `CreateSnapshotScheduleErrorKind::InvalidScheduleFault`.
     pub fn is_invalid_schedule_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotScheduleErrorKind::InvalidScheduleFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotScheduleErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `CreateSnapshotScheduleErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotScheduleErrorKind::InvalidTagFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotScheduleErrorKind::ScheduleDefinitionTypeUnsupportedFault`.
+    /// Returns `true` if the error kind is `CreateSnapshotScheduleErrorKind::ScheduleDefinitionTypeUnsupportedFault`.
     pub fn is_schedule_definition_type_unsupported_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotScheduleErrorKind::ScheduleDefinitionTypeUnsupportedFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotScheduleErrorKind::SnapshotScheduleAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateSnapshotScheduleErrorKind::SnapshotScheduleAlreadyExistsFault`.
     pub fn is_snapshot_schedule_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotScheduleErrorKind::SnapshotScheduleAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotScheduleErrorKind::SnapshotScheduleQuotaExceededFault`.
+    /// Returns `true` if the error kind is `CreateSnapshotScheduleErrorKind::SnapshotScheduleQuotaExceededFault`.
     pub fn is_snapshot_schedule_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateSnapshotScheduleErrorKind::SnapshotScheduleQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateSnapshotScheduleErrorKind::TagLimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateSnapshotScheduleErrorKind::TagLimitExceededFault`.
     pub fn is_tag_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3833,7 +3833,7 @@ pub enum CreateTagsErrorKind {
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
     /// <p>You have exceeded the number of tags allowed.</p>
     TagLimitExceededFault(crate::error::TagLimitExceededFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTagsError {
@@ -3899,19 +3899,19 @@ impl CreateTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(&self.kind, CreateTagsErrorKind::InvalidClusterStateFault(_))
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(&self.kind, CreateTagsErrorKind::InvalidTagFault(_))
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(&self.kind, CreateTagsErrorKind::ResourceNotFoundFault(_))
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::TagLimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::TagLimitExceededFault`.
     pub fn is_tag_limit_exceeded_fault(&self) -> bool {
         matches!(&self.kind, CreateTagsErrorKind::TagLimitExceededFault(_))
     }
@@ -3956,7 +3956,7 @@ pub enum CreateUsageLimitErrorKind {
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
     /// <p>The usage limit already exists. </p>
     UsageLimitAlreadyExistsFault(crate::error::UsageLimitAlreadyExistsFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUsageLimitError {
@@ -4025,46 +4025,46 @@ impl CreateUsageLimitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUsageLimitErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `CreateUsageLimitErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateUsageLimitErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateUsageLimitErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `CreateUsageLimitErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateUsageLimitErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateUsageLimitErrorKind::InvalidUsageLimitFault`.
+    /// Returns `true` if the error kind is `CreateUsageLimitErrorKind::InvalidUsageLimitFault`.
     pub fn is_invalid_usage_limit_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateUsageLimitErrorKind::InvalidUsageLimitFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateUsageLimitErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateUsageLimitErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(&self.kind, CreateUsageLimitErrorKind::LimitExceededFault(_))
     }
-    /// Returns true if the error kind is `CreateUsageLimitErrorKind::TagLimitExceededFault`.
+    /// Returns `true` if the error kind is `CreateUsageLimitErrorKind::TagLimitExceededFault`.
     pub fn is_tag_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateUsageLimitErrorKind::TagLimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateUsageLimitErrorKind::UnsupportedOperationFault`.
+    /// Returns `true` if the error kind is `CreateUsageLimitErrorKind::UnsupportedOperationFault`.
     pub fn is_unsupported_operation_fault(&self) -> bool {
         matches!(
             &self.kind,
             CreateUsageLimitErrorKind::UnsupportedOperationFault(_)
         )
     }
-    /// Returns true if the error kind is `CreateUsageLimitErrorKind::UsageLimitAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `CreateUsageLimitErrorKind::UsageLimitAlreadyExistsFault`.
     pub fn is_usage_limit_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4102,7 +4102,7 @@ pub struct DeauthorizeDataShareError {
 pub enum DeauthorizeDataShareErrorKind {
     /// <p>There is an error with the datashare.</p>
     InvalidDataShareFault(crate::error::InvalidDataShareFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeauthorizeDataShareError {
@@ -4165,7 +4165,7 @@ impl DeauthorizeDataShareError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeauthorizeDataShareErrorKind::InvalidDataShareFault`.
+    /// Returns `true` if the error kind is `DeauthorizeDataShareErrorKind::InvalidDataShareFault`.
     pub fn is_invalid_data_share_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4202,7 +4202,7 @@ pub enum DeleteAuthenticationProfileErrorKind {
     InvalidAuthenticationProfileRequestFault(
         crate::error::InvalidAuthenticationProfileRequestFault,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAuthenticationProfileError {
@@ -4270,14 +4270,14 @@ impl DeleteAuthenticationProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAuthenticationProfileErrorKind::AuthenticationProfileNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteAuthenticationProfileErrorKind::AuthenticationProfileNotFoundFault`.
     pub fn is_authentication_profile_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAuthenticationProfileErrorKind::AuthenticationProfileNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault`.
+    /// Returns `true` if the error kind is `DeleteAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault`.
     pub fn is_invalid_authentication_profile_request_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4326,7 +4326,7 @@ pub enum DeleteClusterErrorKind {
     /// <p>The retention period specified is either in the past or is not a valid value.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     InvalidRetentionPeriodFault(crate::error::InvalidRetentionPeriodFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteClusterError {
@@ -4393,32 +4393,32 @@ impl DeleteClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, DeleteClusterErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ClusterSnapshotAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ClusterSnapshotAlreadyExistsFault`.
     pub fn is_cluster_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::ClusterSnapshotAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::ClusterSnapshotQuotaExceededFault`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::ClusterSnapshotQuotaExceededFault`.
     pub fn is_cluster_snapshot_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::ClusterSnapshotQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterErrorKind::InvalidRetentionPeriodFault`.
+    /// Returns `true` if the error kind is `DeleteClusterErrorKind::InvalidRetentionPeriodFault`.
     pub fn is_invalid_retention_period_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4458,7 +4458,7 @@ pub enum DeleteClusterParameterGroupErrorKind {
     /// progress that involves the parameter group. Wait a few moments and try the operation
     /// again.</p>
     InvalidClusterParameterGroupStateFault(crate::error::InvalidClusterParameterGroupStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteClusterParameterGroupError {
@@ -4526,14 +4526,14 @@ impl DeleteClusterParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteClusterParameterGroupErrorKind::ClusterParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteClusterParameterGroupErrorKind::ClusterParameterGroupNotFoundFault`.
     pub fn is_cluster_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterParameterGroupErrorKind::ClusterParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterParameterGroupErrorKind::InvalidClusterParameterGroupStateFault`.
+    /// Returns `true` if the error kind is `DeleteClusterParameterGroupErrorKind::InvalidClusterParameterGroupStateFault`.
     pub fn is_invalid_cluster_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4573,7 +4573,7 @@ pub enum DeleteClusterSecurityGroupErrorKind {
     ClusterSecurityGroupNotFoundFault(crate::error::ClusterSecurityGroupNotFoundFault),
     /// <p>The state of the cluster security group is not <code>available</code>. </p>
     InvalidClusterSecurityGroupStateFault(crate::error::InvalidClusterSecurityGroupStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteClusterSecurityGroupError {
@@ -4641,14 +4641,14 @@ impl DeleteClusterSecurityGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteClusterSecurityGroupErrorKind::ClusterSecurityGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteClusterSecurityGroupErrorKind::ClusterSecurityGroupNotFoundFault`.
     pub fn is_cluster_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterSecurityGroupErrorKind::ClusterSecurityGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterSecurityGroupErrorKind::InvalidClusterSecurityGroupStateFault`.
+    /// Returns `true` if the error kind is `DeleteClusterSecurityGroupErrorKind::InvalidClusterSecurityGroupStateFault`.
     pub fn is_invalid_cluster_security_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4688,7 +4688,7 @@ pub enum DeleteClusterSnapshotErrorKind {
     /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other
     /// accounts are authorized to access the snapshot. </p>
     InvalidClusterSnapshotStateFault(crate::error::InvalidClusterSnapshotStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteClusterSnapshotError {
@@ -4754,14 +4754,14 @@ impl DeleteClusterSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault`.
     pub fn is_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault`.
+    /// Returns `true` if the error kind is `DeleteClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault`.
     pub fn is_invalid_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4801,7 +4801,7 @@ pub enum DeleteClusterSubnetGroupErrorKind {
     InvalidClusterSubnetGroupStateFault(crate::error::InvalidClusterSubnetGroupStateFault),
     /// <p>The state of the subnet is invalid.</p>
     InvalidClusterSubnetStateFault(crate::error::InvalidClusterSubnetStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteClusterSubnetGroupError {
@@ -4872,21 +4872,21 @@ impl DeleteClusterSubnetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteClusterSubnetGroupErrorKind::ClusterSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteClusterSubnetGroupErrorKind::ClusterSubnetGroupNotFoundFault`.
     pub fn is_cluster_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterSubnetGroupErrorKind::ClusterSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterSubnetGroupErrorKind::InvalidClusterSubnetGroupStateFault`.
+    /// Returns `true` if the error kind is `DeleteClusterSubnetGroupErrorKind::InvalidClusterSubnetGroupStateFault`.
     pub fn is_invalid_cluster_subnet_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteClusterSubnetGroupErrorKind::InvalidClusterSubnetGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteClusterSubnetGroupErrorKind::InvalidClusterSubnetStateFault`.
+    /// Returns `true` if the error kind is `DeleteClusterSubnetGroupErrorKind::InvalidClusterSubnetStateFault`.
     pub fn is_invalid_cluster_subnet_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4935,7 +4935,7 @@ pub enum DeleteEndpointAccessErrorKind {
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
     /// <p>The status of the endpoint is not valid.</p>
     InvalidEndpointStateFault(crate::error::InvalidEndpointStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEndpointAccessError {
@@ -5004,35 +5004,35 @@ impl DeleteEndpointAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEndpointAccessErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteEndpointAccessErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEndpointAccessErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEndpointAccessErrorKind::EndpointNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteEndpointAccessErrorKind::EndpointNotFoundFault`.
     pub fn is_endpoint_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEndpointAccessErrorKind::EndpointNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEndpointAccessErrorKind::InvalidClusterSecurityGroupStateFault`.
+    /// Returns `true` if the error kind is `DeleteEndpointAccessErrorKind::InvalidClusterSecurityGroupStateFault`.
     pub fn is_invalid_cluster_security_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEndpointAccessErrorKind::InvalidClusterSecurityGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEndpointAccessErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `DeleteEndpointAccessErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEndpointAccessErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEndpointAccessErrorKind::InvalidEndpointStateFault`.
+    /// Returns `true` if the error kind is `DeleteEndpointAccessErrorKind::InvalidEndpointStateFault`.
     pub fn is_invalid_endpoint_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5074,7 +5074,7 @@ pub enum DeleteEventSubscriptionErrorKind {
     /// <p>An Amazon Redshift event notification subscription with the specified name does not
     /// exist.</p>
     SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEventSubscriptionError {
@@ -5140,14 +5140,14 @@ impl DeleteEventSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEventSubscriptionErrorKind::InvalidSubscriptionStateFault`.
+    /// Returns `true` if the error kind is `DeleteEventSubscriptionErrorKind::InvalidSubscriptionStateFault`.
     pub fn is_invalid_subscription_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventSubscriptionErrorKind::InvalidSubscriptionStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventSubscriptionErrorKind::SubscriptionNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteEventSubscriptionErrorKind::SubscriptionNotFoundFault`.
     pub fn is_subscription_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5184,7 +5184,7 @@ pub enum DeleteHsmClientCertificateErrorKind {
     /// <p>The specified HSM client certificate is not in the <code>available</code> state, or
     /// it is still in use by one or more Amazon Redshift clusters.</p>
     InvalidHsmClientCertificateStateFault(crate::error::InvalidHsmClientCertificateStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteHsmClientCertificateError {
@@ -5252,14 +5252,14 @@ impl DeleteHsmClientCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteHsmClientCertificateErrorKind::HsmClientCertificateNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteHsmClientCertificateErrorKind::HsmClientCertificateNotFoundFault`.
     pub fn is_hsm_client_certificate_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteHsmClientCertificateErrorKind::HsmClientCertificateNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteHsmClientCertificateErrorKind::InvalidHsmClientCertificateStateFault`.
+    /// Returns `true` if the error kind is `DeleteHsmClientCertificateErrorKind::InvalidHsmClientCertificateStateFault`.
     pub fn is_invalid_hsm_client_certificate_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5299,7 +5299,7 @@ pub enum DeleteHsmConfigurationErrorKind {
     /// <p>The specified HSM configuration is not in the <code>available</code> state, or it
     /// is still in use by one or more Amazon Redshift clusters.</p>
     InvalidHsmConfigurationStateFault(crate::error::InvalidHsmConfigurationStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteHsmConfigurationError {
@@ -5365,14 +5365,14 @@ impl DeleteHsmConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteHsmConfigurationErrorKind::HsmConfigurationNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteHsmConfigurationErrorKind::HsmConfigurationNotFoundFault`.
     pub fn is_hsm_configuration_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteHsmConfigurationErrorKind::HsmConfigurationNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteHsmConfigurationErrorKind::InvalidHsmConfigurationStateFault`.
+    /// Returns `true` if the error kind is `DeleteHsmConfigurationErrorKind::InvalidHsmConfigurationStateFault`.
     pub fn is_invalid_hsm_configuration_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5412,7 +5412,7 @@ pub enum DeletePartnerErrorKind {
     PartnerNotFoundFault(crate::error::PartnerNotFoundFault),
     /// <p>The partner integration is not authorized.</p>
     UnauthorizedPartnerIntegrationFault(crate::error::UnauthorizedPartnerIntegrationFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePartnerError {
@@ -5477,15 +5477,15 @@ impl DeletePartnerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePartnerErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DeletePartnerErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, DeletePartnerErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `DeletePartnerErrorKind::PartnerNotFoundFault`.
+    /// Returns `true` if the error kind is `DeletePartnerErrorKind::PartnerNotFoundFault`.
     pub fn is_partner_not_found_fault(&self) -> bool {
         matches!(&self.kind, DeletePartnerErrorKind::PartnerNotFoundFault(_))
     }
-    /// Returns true if the error kind is `DeletePartnerErrorKind::UnauthorizedPartnerIntegrationFault`.
+    /// Returns `true` if the error kind is `DeletePartnerErrorKind::UnauthorizedPartnerIntegrationFault`.
     pub fn is_unauthorized_partner_integration_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5521,7 +5521,7 @@ pub enum DeleteScheduledActionErrorKind {
     ScheduledActionNotFoundFault(crate::error::ScheduledActionNotFoundFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteScheduledActionError {
@@ -5585,14 +5585,14 @@ impl DeleteScheduledActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteScheduledActionErrorKind::ScheduledActionNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteScheduledActionErrorKind::ScheduledActionNotFoundFault`.
     pub fn is_scheduled_action_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteScheduledActionErrorKind::ScheduledActionNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteScheduledActionErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `DeleteScheduledActionErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -5629,7 +5629,7 @@ pub enum DeleteSnapshotCopyGrantErrorKind {
     /// <p>The specified snapshot copy grant can't be found. Make sure that the name is typed
     /// correctly and that the grant exists in the destination region.</p>
     SnapshotCopyGrantNotFoundFault(crate::error::SnapshotCopyGrantNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSnapshotCopyGrantError {
@@ -5697,14 +5697,14 @@ impl DeleteSnapshotCopyGrantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSnapshotCopyGrantErrorKind::InvalidSnapshotCopyGrantStateFault`.
+    /// Returns `true` if the error kind is `DeleteSnapshotCopyGrantErrorKind::InvalidSnapshotCopyGrantStateFault`.
     pub fn is_invalid_snapshot_copy_grant_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSnapshotCopyGrantErrorKind::InvalidSnapshotCopyGrantStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSnapshotCopyGrantErrorKind::SnapshotCopyGrantNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteSnapshotCopyGrantErrorKind::SnapshotCopyGrantNotFoundFault`.
     pub fn is_snapshot_copy_grant_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5745,7 +5745,7 @@ pub enum DeleteSnapshotScheduleErrorKind {
     ),
     /// <p>We could not find the specified snapshot schedule. </p>
     SnapshotScheduleNotFoundFault(crate::error::SnapshotScheduleNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSnapshotScheduleError {
@@ -5811,14 +5811,14 @@ impl DeleteSnapshotScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSnapshotScheduleErrorKind::InvalidClusterSnapshotScheduleStateFault`.
+    /// Returns `true` if the error kind is `DeleteSnapshotScheduleErrorKind::InvalidClusterSnapshotScheduleStateFault`.
     pub fn is_invalid_cluster_snapshot_schedule_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSnapshotScheduleErrorKind::InvalidClusterSnapshotScheduleStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSnapshotScheduleErrorKind::SnapshotScheduleNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteSnapshotScheduleErrorKind::SnapshotScheduleNotFoundFault`.
     pub fn is_snapshot_schedule_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -5855,7 +5855,7 @@ pub enum DeleteTagsErrorKind {
     InvalidTagFault(crate::error::InvalidTagFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTagsError {
@@ -5919,11 +5919,11 @@ impl DeleteTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(&self.kind, DeleteTagsErrorKind::InvalidTagFault(_))
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(&self.kind, DeleteTagsErrorKind::ResourceNotFoundFault(_))
     }
@@ -5955,7 +5955,7 @@ pub enum DeleteUsageLimitErrorKind {
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
     /// <p>The usage limit identifier can't be found.</p>
     UsageLimitNotFoundFault(crate::error::UsageLimitNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUsageLimitError {
@@ -6019,14 +6019,14 @@ impl DeleteUsageLimitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUsageLimitErrorKind::UnsupportedOperationFault`.
+    /// Returns `true` if the error kind is `DeleteUsageLimitErrorKind::UnsupportedOperationFault`.
     pub fn is_unsupported_operation_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUsageLimitErrorKind::UnsupportedOperationFault(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUsageLimitErrorKind::UsageLimitNotFoundFault`.
+    /// Returns `true` if the error kind is `DeleteUsageLimitErrorKind::UsageLimitNotFoundFault`.
     pub fn is_usage_limit_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6057,7 +6057,7 @@ pub struct DescribeAccountAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountAttributesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccountAttributesError {
@@ -6148,7 +6148,7 @@ pub enum DescribeAuthenticationProfilesErrorKind {
     InvalidAuthenticationProfileRequestFault(
         crate::error::InvalidAuthenticationProfileRequestFault,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAuthenticationProfilesError {
@@ -6219,14 +6219,14 @@ impl DescribeAuthenticationProfilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAuthenticationProfilesErrorKind::AuthenticationProfileNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeAuthenticationProfilesErrorKind::AuthenticationProfileNotFoundFault`.
     pub fn is_authentication_profile_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAuthenticationProfilesErrorKind::AuthenticationProfileNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAuthenticationProfilesErrorKind::InvalidAuthenticationProfileRequestFault`.
+    /// Returns `true` if the error kind is `DescribeAuthenticationProfilesErrorKind::InvalidAuthenticationProfileRequestFault`.
     pub fn is_invalid_authentication_profile_request_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6266,7 +6266,7 @@ pub enum DescribeClusterDbRevisionsErrorKind {
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClusterDbRevisionsError {
@@ -6330,14 +6330,14 @@ impl DescribeClusterDbRevisionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeClusterDbRevisionsErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeClusterDbRevisionsErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClusterDbRevisionsErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClusterDbRevisionsErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `DescribeClusterDbRevisionsErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6372,7 +6372,7 @@ pub enum DescribeClusterParameterGroupsErrorKind {
     ClusterParameterGroupNotFoundFault(crate::error::ClusterParameterGroupNotFoundFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClusterParameterGroupsError {
@@ -6441,14 +6441,14 @@ impl DescribeClusterParameterGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeClusterParameterGroupsErrorKind::ClusterParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeClusterParameterGroupsErrorKind::ClusterParameterGroupNotFoundFault`.
     pub fn is_cluster_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClusterParameterGroupsErrorKind::ClusterParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClusterParameterGroupsErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `DescribeClusterParameterGroupsErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6483,7 +6483,7 @@ pub struct DescribeClusterParametersError {
 pub enum DescribeClusterParametersErrorKind {
     /// <p>The parameter group name does not refer to an existing parameter group.</p>
     ClusterParameterGroupNotFoundFault(crate::error::ClusterParameterGroupNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClusterParametersError {
@@ -6548,7 +6548,7 @@ impl DescribeClusterParametersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeClusterParametersErrorKind::ClusterParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeClusterParametersErrorKind::ClusterParameterGroupNotFoundFault`.
     pub fn is_cluster_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6585,7 +6585,7 @@ pub enum DescribeClustersErrorKind {
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClustersError {
@@ -6649,14 +6649,14 @@ impl DescribeClustersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeClustersErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeClustersErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClustersErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClustersErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `DescribeClustersErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(&self.kind, DescribeClustersErrorKind::InvalidTagFault(_))
     }
@@ -6689,7 +6689,7 @@ pub enum DescribeClusterSecurityGroupsErrorKind {
     ClusterSecurityGroupNotFoundFault(crate::error::ClusterSecurityGroupNotFoundFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClusterSecurityGroupsError {
@@ -6758,14 +6758,14 @@ impl DescribeClusterSecurityGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeClusterSecurityGroupsErrorKind::ClusterSecurityGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeClusterSecurityGroupsErrorKind::ClusterSecurityGroupNotFoundFault`.
     pub fn is_cluster_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClusterSecurityGroupsErrorKind::ClusterSecurityGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClusterSecurityGroupsErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `DescribeClusterSecurityGroupsErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6805,7 +6805,7 @@ pub enum DescribeClusterSnapshotsErrorKind {
     ClusterSnapshotNotFoundFault(crate::error::ClusterSnapshotNotFoundFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClusterSnapshotsError {
@@ -6872,21 +6872,21 @@ impl DescribeClusterSnapshotsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeClusterSnapshotsErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeClusterSnapshotsErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClusterSnapshotsErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClusterSnapshotsErrorKind::ClusterSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeClusterSnapshotsErrorKind::ClusterSnapshotNotFoundFault`.
     pub fn is_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClusterSnapshotsErrorKind::ClusterSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClusterSnapshotsErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `DescribeClusterSnapshotsErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -6923,7 +6923,7 @@ pub enum DescribeClusterSubnetGroupsErrorKind {
     ClusterSubnetGroupNotFoundFault(crate::error::ClusterSubnetGroupNotFoundFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClusterSubnetGroupsError {
@@ -6989,14 +6989,14 @@ impl DescribeClusterSubnetGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeClusterSubnetGroupsErrorKind::ClusterSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeClusterSubnetGroupsErrorKind::ClusterSubnetGroupNotFoundFault`.
     pub fn is_cluster_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClusterSubnetGroupsErrorKind::ClusterSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClusterSubnetGroupsErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `DescribeClusterSubnetGroupsErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -7033,7 +7033,7 @@ pub enum DescribeClusterTracksErrorKind {
     InvalidClusterTrackFault(crate::error::InvalidClusterTrackFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClusterTracksError {
@@ -7097,14 +7097,14 @@ impl DescribeClusterTracksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeClusterTracksErrorKind::InvalidClusterTrackFault`.
+    /// Returns `true` if the error kind is `DescribeClusterTracksErrorKind::InvalidClusterTrackFault`.
     pub fn is_invalid_cluster_track_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeClusterTracksErrorKind::InvalidClusterTrackFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeClusterTracksErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `DescribeClusterTracksErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -7135,7 +7135,7 @@ pub struct DescribeClusterVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClusterVersionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeClusterVersionsError {
@@ -7221,7 +7221,7 @@ pub struct DescribeDataSharesError {
 pub enum DescribeDataSharesErrorKind {
     /// <p>There is an error with the datashare.</p>
     InvalidDataShareFault(crate::error::InvalidDataShareFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDataSharesError {
@@ -7284,7 +7284,7 @@ impl DescribeDataSharesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDataSharesErrorKind::InvalidDataShareFault`.
+    /// Returns `true` if the error kind is `DescribeDataSharesErrorKind::InvalidDataShareFault`.
     pub fn is_invalid_data_share_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -7316,7 +7316,7 @@ pub struct DescribeDataSharesForConsumerError {
 pub enum DescribeDataSharesForConsumerErrorKind {
     /// <p>The namespace isn't valid because the namespace doesn't exist. Provide a valid namespace.</p>
     InvalidNamespaceFault(crate::error::InvalidNamespaceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDataSharesForConsumerError {
@@ -7382,7 +7382,7 @@ impl DescribeDataSharesForConsumerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDataSharesForConsumerErrorKind::InvalidNamespaceFault`.
+    /// Returns `true` if the error kind is `DescribeDataSharesForConsumerErrorKind::InvalidNamespaceFault`.
     pub fn is_invalid_namespace_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -7414,7 +7414,7 @@ pub struct DescribeDataSharesForProducerError {
 pub enum DescribeDataSharesForProducerErrorKind {
     /// <p>The namespace isn't valid because the namespace doesn't exist. Provide a valid namespace.</p>
     InvalidNamespaceFault(crate::error::InvalidNamespaceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDataSharesForProducerError {
@@ -7480,7 +7480,7 @@ impl DescribeDataSharesForProducerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDataSharesForProducerErrorKind::InvalidNamespaceFault`.
+    /// Returns `true` if the error kind is `DescribeDataSharesForProducerErrorKind::InvalidNamespaceFault`.
     pub fn is_invalid_namespace_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -7510,7 +7510,7 @@ pub struct DescribeDefaultClusterParametersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDefaultClusterParametersErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDefaultClusterParametersError {
@@ -7604,7 +7604,7 @@ pub enum DescribeEndpointAccessErrorKind {
     EndpointNotFoundFault(crate::error::EndpointNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEndpointAccessError {
@@ -7669,21 +7669,21 @@ impl DescribeEndpointAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEndpointAccessErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeEndpointAccessErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEndpointAccessErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEndpointAccessErrorKind::EndpointNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeEndpointAccessErrorKind::EndpointNotFoundFault`.
     pub fn is_endpoint_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEndpointAccessErrorKind::EndpointNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEndpointAccessErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `DescribeEndpointAccessErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -7720,7 +7720,7 @@ pub enum DescribeEndpointAuthorizationErrorKind {
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEndpointAuthorizationError {
@@ -7789,14 +7789,14 @@ impl DescribeEndpointAuthorizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEndpointAuthorizationErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeEndpointAuthorizationErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEndpointAuthorizationErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEndpointAuthorizationErrorKind::UnsupportedOperationFault`.
+    /// Returns `true` if the error kind is `DescribeEndpointAuthorizationErrorKind::UnsupportedOperationFault`.
     pub fn is_unsupported_operation_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -7829,7 +7829,7 @@ pub struct DescribeEventCategoriesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEventCategoriesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventCategoriesError {
@@ -7913,7 +7913,7 @@ pub struct DescribeEventsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEventsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventsError {
@@ -8002,7 +8002,7 @@ pub enum DescribeEventSubscriptionsErrorKind {
     /// <p>An Amazon Redshift event notification subscription with the specified name does not
     /// exist.</p>
     SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventSubscriptionsError {
@@ -8066,14 +8066,14 @@ impl DescribeEventSubscriptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEventSubscriptionsErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `DescribeEventSubscriptionsErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEventSubscriptionsErrorKind::InvalidTagFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEventSubscriptionsErrorKind::SubscriptionNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeEventSubscriptionsErrorKind::SubscriptionNotFoundFault`.
     pub fn is_subscription_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -8109,7 +8109,7 @@ pub enum DescribeHsmClientCertificatesErrorKind {
     HsmClientCertificateNotFoundFault(crate::error::HsmClientCertificateNotFoundFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeHsmClientCertificatesError {
@@ -8178,14 +8178,14 @@ impl DescribeHsmClientCertificatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeHsmClientCertificatesErrorKind::HsmClientCertificateNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeHsmClientCertificatesErrorKind::HsmClientCertificateNotFoundFault`.
     pub fn is_hsm_client_certificate_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHsmClientCertificatesErrorKind::HsmClientCertificateNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHsmClientCertificatesErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `DescribeHsmClientCertificatesErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -8222,7 +8222,7 @@ pub enum DescribeHsmConfigurationsErrorKind {
     HsmConfigurationNotFoundFault(crate::error::HsmConfigurationNotFoundFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeHsmConfigurationsError {
@@ -8288,14 +8288,14 @@ impl DescribeHsmConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeHsmConfigurationsErrorKind::HsmConfigurationNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeHsmConfigurationsErrorKind::HsmConfigurationNotFoundFault`.
     pub fn is_hsm_configuration_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHsmConfigurationsErrorKind::HsmConfigurationNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHsmConfigurationsErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `DescribeHsmConfigurationsErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -8331,7 +8331,7 @@ pub enum DescribeLoggingStatusErrorKind {
     /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
     /// </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLoggingStatusError {
@@ -8394,7 +8394,7 @@ impl DescribeLoggingStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLoggingStatusErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeLoggingStatusErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -8435,7 +8435,7 @@ pub enum DescribeNodeConfigurationOptionsErrorKind {
     /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other
     /// accounts are authorized to access the snapshot. </p>
     InvalidClusterSnapshotStateFault(crate::error::InvalidClusterSnapshotStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNodeConfigurationOptionsError {
@@ -8512,28 +8512,28 @@ impl DescribeNodeConfigurationOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeNodeConfigurationOptionsErrorKind::AccessToSnapshotDeniedFault`.
+    /// Returns `true` if the error kind is `DescribeNodeConfigurationOptionsErrorKind::AccessToSnapshotDeniedFault`.
     pub fn is_access_to_snapshot_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNodeConfigurationOptionsErrorKind::AccessToSnapshotDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNodeConfigurationOptionsErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeNodeConfigurationOptionsErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNodeConfigurationOptionsErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNodeConfigurationOptionsErrorKind::ClusterSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeNodeConfigurationOptionsErrorKind::ClusterSnapshotNotFoundFault`.
     pub fn is_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNodeConfigurationOptionsErrorKind::ClusterSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNodeConfigurationOptionsErrorKind::InvalidClusterSnapshotStateFault`.
+    /// Returns `true` if the error kind is `DescribeNodeConfigurationOptionsErrorKind::InvalidClusterSnapshotStateFault`.
     pub fn is_invalid_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -8572,7 +8572,7 @@ pub struct DescribeOrderableClusterOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeOrderableClusterOptionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOrderableClusterOptionsError {
@@ -8664,7 +8664,7 @@ pub enum DescribePartnersErrorKind {
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The partner integration is not authorized.</p>
     UnauthorizedPartnerIntegrationFault(crate::error::UnauthorizedPartnerIntegrationFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePartnersError {
@@ -8728,14 +8728,14 @@ impl DescribePartnersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePartnersErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribePartnersErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribePartnersErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribePartnersErrorKind::UnauthorizedPartnerIntegrationFault`.
+    /// Returns `true` if the error kind is `DescribePartnersErrorKind::UnauthorizedPartnerIntegrationFault`.
     pub fn is_unauthorized_partner_integration_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -8773,7 +8773,7 @@ pub enum DescribeReservedNodeOfferingsErrorKind {
     ReservedNodeOfferingNotFoundFault(crate::error::ReservedNodeOfferingNotFoundFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReservedNodeOfferingsError {
@@ -8847,21 +8847,21 @@ impl DescribeReservedNodeOfferingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReservedNodeOfferingsErrorKind::DependentServiceUnavailableFault`.
+    /// Returns `true` if the error kind is `DescribeReservedNodeOfferingsErrorKind::DependentServiceUnavailableFault`.
     pub fn is_dependent_service_unavailable_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReservedNodeOfferingsErrorKind::DependentServiceUnavailableFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReservedNodeOfferingsErrorKind::ReservedNodeOfferingNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeReservedNodeOfferingsErrorKind::ReservedNodeOfferingNotFoundFault`.
     pub fn is_reserved_node_offering_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReservedNodeOfferingsErrorKind::ReservedNodeOfferingNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReservedNodeOfferingsErrorKind::UnsupportedOperationFault`.
+    /// Returns `true` if the error kind is `DescribeReservedNodeOfferingsErrorKind::UnsupportedOperationFault`.
     pub fn is_unsupported_operation_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -8904,7 +8904,7 @@ pub enum DescribeReservedNodesErrorKind {
     DependentServiceUnavailableFault(crate::error::DependentServiceUnavailableFault),
     /// <p>The specified reserved compute node not found.</p>
     ReservedNodeNotFoundFault(crate::error::ReservedNodeNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReservedNodesError {
@@ -8970,14 +8970,14 @@ impl DescribeReservedNodesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReservedNodesErrorKind::DependentServiceUnavailableFault`.
+    /// Returns `true` if the error kind is `DescribeReservedNodesErrorKind::DependentServiceUnavailableFault`.
     pub fn is_dependent_service_unavailable_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReservedNodesErrorKind::DependentServiceUnavailableFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReservedNodesErrorKind::ReservedNodeNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeReservedNodesErrorKind::ReservedNodeNotFoundFault`.
     pub fn is_reserved_node_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -9015,7 +9015,7 @@ pub enum DescribeResizeErrorKind {
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>A resize operation for the specified cluster is not found.</p>
     ResizeNotFoundFault(crate::error::ResizeNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeResizeError {
@@ -9079,11 +9079,11 @@ impl DescribeResizeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeResizeErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeResizeErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, DescribeResizeErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `DescribeResizeErrorKind::ResizeNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeResizeErrorKind::ResizeNotFoundFault`.
     pub fn is_resize_not_found_fault(&self) -> bool {
         matches!(&self.kind, DescribeResizeErrorKind::ResizeNotFoundFault(_))
     }
@@ -9115,7 +9115,7 @@ pub enum DescribeScheduledActionsErrorKind {
     ScheduledActionNotFoundFault(crate::error::ScheduledActionNotFoundFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeScheduledActionsError {
@@ -9181,14 +9181,14 @@ impl DescribeScheduledActionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeScheduledActionsErrorKind::ScheduledActionNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeScheduledActionsErrorKind::ScheduledActionNotFoundFault`.
     pub fn is_scheduled_action_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScheduledActionsErrorKind::ScheduledActionNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScheduledActionsErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `DescribeScheduledActionsErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -9224,7 +9224,7 @@ pub enum DescribeSnapshotCopyGrantsErrorKind {
     /// <p>The specified snapshot copy grant can't be found. Make sure that the name is typed
     /// correctly and that the grant exists in the destination region.</p>
     SnapshotCopyGrantNotFoundFault(crate::error::SnapshotCopyGrantNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSnapshotCopyGrantsError {
@@ -9290,14 +9290,14 @@ impl DescribeSnapshotCopyGrantsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSnapshotCopyGrantsErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `DescribeSnapshotCopyGrantsErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSnapshotCopyGrantsErrorKind::InvalidTagFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSnapshotCopyGrantsErrorKind::SnapshotCopyGrantNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeSnapshotCopyGrantsErrorKind::SnapshotCopyGrantNotFoundFault`.
     pub fn is_snapshot_copy_grant_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -9330,7 +9330,7 @@ pub struct DescribeSnapshotSchedulesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSnapshotSchedulesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSnapshotSchedulesError {
@@ -9414,7 +9414,7 @@ pub struct DescribeStorageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStorageErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStorageError {
@@ -9503,7 +9503,7 @@ pub enum DescribeTableRestoreStatusErrorKind {
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified <code>TableRestoreRequestId</code> value was not found.</p>
     TableRestoreNotFoundFault(crate::error::TableRestoreNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTableRestoreStatusError {
@@ -9567,14 +9567,14 @@ impl DescribeTableRestoreStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTableRestoreStatusErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeTableRestoreStatusErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTableRestoreStatusErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTableRestoreStatusErrorKind::TableRestoreNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeTableRestoreStatusErrorKind::TableRestoreNotFoundFault`.
     pub fn is_table_restore_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -9609,7 +9609,7 @@ pub enum DescribeTagsErrorKind {
     InvalidTagFault(crate::error::InvalidTagFault),
     /// <p>The resource could not be found.</p>
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTagsError {
@@ -9673,11 +9673,11 @@ impl DescribeTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(&self.kind, DescribeTagsErrorKind::InvalidTagFault(_))
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::ResourceNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::ResourceNotFoundFault`.
     pub fn is_resource_not_found_fault(&self) -> bool {
         matches!(&self.kind, DescribeTagsErrorKind::ResourceNotFoundFault(_))
     }
@@ -9710,7 +9710,7 @@ pub enum DescribeUsageLimitsErrorKind {
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUsageLimitsError {
@@ -9774,14 +9774,14 @@ impl DescribeUsageLimitsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUsageLimitsErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DescribeUsageLimitsErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUsageLimitsErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUsageLimitsErrorKind::UnsupportedOperationFault`.
+    /// Returns `true` if the error kind is `DescribeUsageLimitsErrorKind::UnsupportedOperationFault`.
     pub fn is_unsupported_operation_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -9817,7 +9817,7 @@ pub enum DisableLoggingErrorKind {
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableLoggingError {
@@ -9881,11 +9881,11 @@ impl DisableLoggingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableLoggingErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DisableLoggingErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, DisableLoggingErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `DisableLoggingErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `DisableLoggingErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -9925,7 +9925,7 @@ pub enum DisableSnapshotCopyErrorKind {
     SnapshotCopyAlreadyDisabledFault(crate::error::SnapshotCopyAlreadyDisabledFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableSnapshotCopyError {
@@ -9991,28 +9991,28 @@ impl DisableSnapshotCopyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableSnapshotCopyErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `DisableSnapshotCopyErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             DisableSnapshotCopyErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `DisableSnapshotCopyErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `DisableSnapshotCopyErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             DisableSnapshotCopyErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `DisableSnapshotCopyErrorKind::SnapshotCopyAlreadyDisabledFault`.
+    /// Returns `true` if the error kind is `DisableSnapshotCopyErrorKind::SnapshotCopyAlreadyDisabledFault`.
     pub fn is_snapshot_copy_already_disabled_fault(&self) -> bool {
         matches!(
             &self.kind,
             DisableSnapshotCopyErrorKind::SnapshotCopyAlreadyDisabledFault(_)
         )
     }
-    /// Returns true if the error kind is `DisableSnapshotCopyErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `DisableSnapshotCopyErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -10049,7 +10049,7 @@ pub enum DisassociateDataShareConsumerErrorKind {
     InvalidDataShareFault(crate::error::InvalidDataShareFault),
     /// <p>The namespace isn't valid because the namespace doesn't exist. Provide a valid namespace.</p>
     InvalidNamespaceFault(crate::error::InvalidNamespaceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateDataShareConsumerError {
@@ -10116,14 +10116,14 @@ impl DisassociateDataShareConsumerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateDataShareConsumerErrorKind::InvalidDataShareFault`.
+    /// Returns `true` if the error kind is `DisassociateDataShareConsumerErrorKind::InvalidDataShareFault`.
     pub fn is_invalid_data_share_fault(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDataShareConsumerErrorKind::InvalidDataShareFault(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDataShareConsumerErrorKind::InvalidNamespaceFault`.
+    /// Returns `true` if the error kind is `DisassociateDataShareConsumerErrorKind::InvalidNamespaceFault`.
     pub fn is_invalid_namespace_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -10172,7 +10172,7 @@ pub enum EnableLoggingErrorKind {
     /// <p>The string specified for the logging S3 key prefix does not comply with the
     /// documented constraints.</p>
     InvalidS3KeyPrefixFault(crate::error::InvalidS3KeyPrefixFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableLoggingError {
@@ -10240,36 +10240,36 @@ impl EnableLoggingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableLoggingErrorKind::BucketNotFoundFault`.
+    /// Returns `true` if the error kind is `EnableLoggingErrorKind::BucketNotFoundFault`.
     pub fn is_bucket_not_found_fault(&self) -> bool {
         matches!(&self.kind, EnableLoggingErrorKind::BucketNotFoundFault(_))
     }
-    /// Returns true if the error kind is `EnableLoggingErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `EnableLoggingErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, EnableLoggingErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `EnableLoggingErrorKind::InsufficientS3BucketPolicyFault`.
+    /// Returns `true` if the error kind is `EnableLoggingErrorKind::InsufficientS3BucketPolicyFault`.
     pub fn is_insufficient_s3_bucket_policy_fault(&self) -> bool {
         matches!(
             &self.kind,
             EnableLoggingErrorKind::InsufficientS3BucketPolicyFault(_)
         )
     }
-    /// Returns true if the error kind is `EnableLoggingErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `EnableLoggingErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             EnableLoggingErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `EnableLoggingErrorKind::InvalidS3BucketNameFault`.
+    /// Returns `true` if the error kind is `EnableLoggingErrorKind::InvalidS3BucketNameFault`.
     pub fn is_invalid_s3_bucket_name_fault(&self) -> bool {
         matches!(
             &self.kind,
             EnableLoggingErrorKind::InvalidS3BucketNameFault(_)
         )
     }
-    /// Returns true if the error kind is `EnableLoggingErrorKind::InvalidS3KeyPrefixFault`.
+    /// Returns `true` if the error kind is `EnableLoggingErrorKind::InvalidS3KeyPrefixFault`.
     pub fn is_invalid_s3_key_prefix_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -10331,7 +10331,7 @@ pub enum EnableSnapshotCopyErrorKind {
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
     /// <p>The specified region is incorrect or does not exist.</p>
     UnknownSnapshotCopyRegionFault(crate::error::UnknownSnapshotCopyRegionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableSnapshotCopyError {
@@ -10406,77 +10406,77 @@ impl EnableSnapshotCopyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableSnapshotCopyErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `EnableSnapshotCopyErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             EnableSnapshotCopyErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `EnableSnapshotCopyErrorKind::CopyToRegionDisabledFault`.
+    /// Returns `true` if the error kind is `EnableSnapshotCopyErrorKind::CopyToRegionDisabledFault`.
     pub fn is_copy_to_region_disabled_fault(&self) -> bool {
         matches!(
             &self.kind,
             EnableSnapshotCopyErrorKind::CopyToRegionDisabledFault(_)
         )
     }
-    /// Returns true if the error kind is `EnableSnapshotCopyErrorKind::DependentServiceRequestThrottlingFault`.
+    /// Returns `true` if the error kind is `EnableSnapshotCopyErrorKind::DependentServiceRequestThrottlingFault`.
     pub fn is_dependent_service_request_throttling_fault(&self) -> bool {
         matches!(
             &self.kind,
             EnableSnapshotCopyErrorKind::DependentServiceRequestThrottlingFault(_)
         )
     }
-    /// Returns true if the error kind is `EnableSnapshotCopyErrorKind::IncompatibleOrderableOptions`.
+    /// Returns `true` if the error kind is `EnableSnapshotCopyErrorKind::IncompatibleOrderableOptions`.
     pub fn is_incompatible_orderable_options(&self) -> bool {
         matches!(
             &self.kind,
             EnableSnapshotCopyErrorKind::IncompatibleOrderableOptions(_)
         )
     }
-    /// Returns true if the error kind is `EnableSnapshotCopyErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `EnableSnapshotCopyErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             EnableSnapshotCopyErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `EnableSnapshotCopyErrorKind::InvalidRetentionPeriodFault`.
+    /// Returns `true` if the error kind is `EnableSnapshotCopyErrorKind::InvalidRetentionPeriodFault`.
     pub fn is_invalid_retention_period_fault(&self) -> bool {
         matches!(
             &self.kind,
             EnableSnapshotCopyErrorKind::InvalidRetentionPeriodFault(_)
         )
     }
-    /// Returns true if the error kind is `EnableSnapshotCopyErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `EnableSnapshotCopyErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             EnableSnapshotCopyErrorKind::LimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `EnableSnapshotCopyErrorKind::SnapshotCopyAlreadyEnabledFault`.
+    /// Returns `true` if the error kind is `EnableSnapshotCopyErrorKind::SnapshotCopyAlreadyEnabledFault`.
     pub fn is_snapshot_copy_already_enabled_fault(&self) -> bool {
         matches!(
             &self.kind,
             EnableSnapshotCopyErrorKind::SnapshotCopyAlreadyEnabledFault(_)
         )
     }
-    /// Returns true if the error kind is `EnableSnapshotCopyErrorKind::SnapshotCopyGrantNotFoundFault`.
+    /// Returns `true` if the error kind is `EnableSnapshotCopyErrorKind::SnapshotCopyGrantNotFoundFault`.
     pub fn is_snapshot_copy_grant_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             EnableSnapshotCopyErrorKind::SnapshotCopyGrantNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `EnableSnapshotCopyErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `EnableSnapshotCopyErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
             EnableSnapshotCopyErrorKind::UnauthorizedOperation(_)
         )
     }
-    /// Returns true if the error kind is `EnableSnapshotCopyErrorKind::UnknownSnapshotCopyRegionFault`.
+    /// Returns `true` if the error kind is `EnableSnapshotCopyErrorKind::UnknownSnapshotCopyRegionFault`.
     pub fn is_unknown_snapshot_copy_region_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -10523,7 +10523,7 @@ pub enum GetClusterCredentialsErrorKind {
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetClusterCredentialsError {
@@ -10587,14 +10587,14 @@ impl GetClusterCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetClusterCredentialsErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `GetClusterCredentialsErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             GetClusterCredentialsErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `GetClusterCredentialsErrorKind::UnsupportedOperationFault`.
+    /// Returns `true` if the error kind is `GetClusterCredentialsErrorKind::UnsupportedOperationFault`.
     pub fn is_unsupported_operation_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -10638,7 +10638,7 @@ pub enum GetReservedNodeExchangeOfferingsErrorKind {
     ReservedNodeOfferingNotFoundFault(crate::error::ReservedNodeOfferingNotFoundFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetReservedNodeExchangeOfferingsError {
@@ -10721,42 +10721,42 @@ impl GetReservedNodeExchangeOfferingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetReservedNodeExchangeOfferingsErrorKind::DependentServiceUnavailableFault`.
+    /// Returns `true` if the error kind is `GetReservedNodeExchangeOfferingsErrorKind::DependentServiceUnavailableFault`.
     pub fn is_dependent_service_unavailable_fault(&self) -> bool {
         matches!(
             &self.kind,
             GetReservedNodeExchangeOfferingsErrorKind::DependentServiceUnavailableFault(_)
         )
     }
-    /// Returns true if the error kind is `GetReservedNodeExchangeOfferingsErrorKind::InvalidReservedNodeStateFault`.
+    /// Returns `true` if the error kind is `GetReservedNodeExchangeOfferingsErrorKind::InvalidReservedNodeStateFault`.
     pub fn is_invalid_reserved_node_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             GetReservedNodeExchangeOfferingsErrorKind::InvalidReservedNodeStateFault(_)
         )
     }
-    /// Returns true if the error kind is `GetReservedNodeExchangeOfferingsErrorKind::ReservedNodeAlreadyMigratedFault`.
+    /// Returns `true` if the error kind is `GetReservedNodeExchangeOfferingsErrorKind::ReservedNodeAlreadyMigratedFault`.
     pub fn is_reserved_node_already_migrated_fault(&self) -> bool {
         matches!(
             &self.kind,
             GetReservedNodeExchangeOfferingsErrorKind::ReservedNodeAlreadyMigratedFault(_)
         )
     }
-    /// Returns true if the error kind is `GetReservedNodeExchangeOfferingsErrorKind::ReservedNodeNotFoundFault`.
+    /// Returns `true` if the error kind is `GetReservedNodeExchangeOfferingsErrorKind::ReservedNodeNotFoundFault`.
     pub fn is_reserved_node_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             GetReservedNodeExchangeOfferingsErrorKind::ReservedNodeNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `GetReservedNodeExchangeOfferingsErrorKind::ReservedNodeOfferingNotFoundFault`.
+    /// Returns `true` if the error kind is `GetReservedNodeExchangeOfferingsErrorKind::ReservedNodeOfferingNotFoundFault`.
     pub fn is_reserved_node_offering_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             GetReservedNodeExchangeOfferingsErrorKind::ReservedNodeOfferingNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `GetReservedNodeExchangeOfferingsErrorKind::UnsupportedOperationFault`.
+    /// Returns `true` if the error kind is `GetReservedNodeExchangeOfferingsErrorKind::UnsupportedOperationFault`.
     pub fn is_unsupported_operation_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -10810,7 +10810,7 @@ pub enum ModifyAquaConfigurationErrorKind {
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyAquaConfigurationError {
@@ -10875,21 +10875,21 @@ impl ModifyAquaConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyAquaConfigurationErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyAquaConfigurationErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyAquaConfigurationErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyAquaConfigurationErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `ModifyAquaConfigurationErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyAquaConfigurationErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyAquaConfigurationErrorKind::UnsupportedOperationFault`.
+    /// Returns `true` if the error kind is `ModifyAquaConfigurationErrorKind::UnsupportedOperationFault`.
     pub fn is_unsupported_operation_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -10931,7 +10931,7 @@ pub enum ModifyAuthenticationProfileErrorKind {
     InvalidAuthenticationProfileRequestFault(
         crate::error::InvalidAuthenticationProfileRequestFault,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyAuthenticationProfileError {
@@ -11002,21 +11002,21 @@ impl ModifyAuthenticationProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyAuthenticationProfileErrorKind::AuthenticationProfileNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyAuthenticationProfileErrorKind::AuthenticationProfileNotFoundFault`.
     pub fn is_authentication_profile_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyAuthenticationProfileErrorKind::AuthenticationProfileNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyAuthenticationProfileErrorKind::AuthenticationProfileQuotaExceededFault`.
+    /// Returns `true` if the error kind is `ModifyAuthenticationProfileErrorKind::AuthenticationProfileQuotaExceededFault`.
     pub fn is_authentication_profile_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyAuthenticationProfileErrorKind::AuthenticationProfileQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault`.
+    /// Returns `true` if the error kind is `ModifyAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault`.
     pub fn is_invalid_authentication_profile_request_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -11105,7 +11105,7 @@ pub enum ModifyClusterErrorKind {
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
     /// <p>A request option was specified that is not supported.</p>
     UnsupportedOptionFault(crate::error::UnsupportedOptionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyClusterError {
@@ -11188,121 +11188,121 @@ impl ModifyClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::ClusterAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::ClusterAlreadyExistsFault`.
     pub fn is_cluster_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterErrorKind::ClusterAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, ModifyClusterErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::ClusterParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::ClusterParameterGroupNotFoundFault`.
     pub fn is_cluster_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterErrorKind::ClusterParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::ClusterSecurityGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::ClusterSecurityGroupNotFoundFault`.
     pub fn is_cluster_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterErrorKind::ClusterSecurityGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::DependentServiceRequestThrottlingFault`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::DependentServiceRequestThrottlingFault`.
     pub fn is_dependent_service_request_throttling_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterErrorKind::DependentServiceRequestThrottlingFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::HsmClientCertificateNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::HsmClientCertificateNotFoundFault`.
     pub fn is_hsm_client_certificate_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterErrorKind::HsmClientCertificateNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::HsmConfigurationNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::HsmConfigurationNotFoundFault`.
     pub fn is_hsm_configuration_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterErrorKind::HsmConfigurationNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::InsufficientClusterCapacityFault`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::InsufficientClusterCapacityFault`.
     pub fn is_insufficient_cluster_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterErrorKind::InsufficientClusterCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::InvalidClusterSecurityGroupStateFault`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::InvalidClusterSecurityGroupStateFault`.
     pub fn is_invalid_cluster_security_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterErrorKind::InvalidClusterSecurityGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::InvalidClusterTrackFault`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::InvalidClusterTrackFault`.
     pub fn is_invalid_cluster_track_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterErrorKind::InvalidClusterTrackFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::InvalidElasticIpFault`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::InvalidElasticIpFault`.
     pub fn is_invalid_elastic_ip_fault(&self) -> bool {
         matches!(&self.kind, ModifyClusterErrorKind::InvalidElasticIpFault(_))
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::InvalidRetentionPeriodFault`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::InvalidRetentionPeriodFault`.
     pub fn is_invalid_retention_period_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterErrorKind::InvalidRetentionPeriodFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(&self.kind, ModifyClusterErrorKind::LimitExceededFault(_))
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::NumberOfNodesPerClusterLimitExceededFault`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::NumberOfNodesPerClusterLimitExceededFault`.
     pub fn is_number_of_nodes_per_cluster_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterErrorKind::NumberOfNodesPerClusterLimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::NumberOfNodesQuotaExceededFault`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::NumberOfNodesQuotaExceededFault`.
     pub fn is_number_of_nodes_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterErrorKind::NumberOfNodesQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::TableLimitExceededFault`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::TableLimitExceededFault`.
     pub fn is_table_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterErrorKind::TableLimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(&self.kind, ModifyClusterErrorKind::UnauthorizedOperation(_))
     }
-    /// Returns true if the error kind is `ModifyClusterErrorKind::UnsupportedOptionFault`.
+    /// Returns `true` if the error kind is `ModifyClusterErrorKind::UnsupportedOptionFault`.
     pub fn is_unsupported_option_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -11359,7 +11359,7 @@ pub enum ModifyClusterDbRevisionErrorKind {
     ClusterOnLatestRevisionFault(crate::error::ClusterOnLatestRevisionFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyClusterDbRevisionError {
@@ -11424,21 +11424,21 @@ impl ModifyClusterDbRevisionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyClusterDbRevisionErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyClusterDbRevisionErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterDbRevisionErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterDbRevisionErrorKind::ClusterOnLatestRevisionFault`.
+    /// Returns `true` if the error kind is `ModifyClusterDbRevisionErrorKind::ClusterOnLatestRevisionFault`.
     pub fn is_cluster_on_latest_revision_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterDbRevisionErrorKind::ClusterOnLatestRevisionFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterDbRevisionErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `ModifyClusterDbRevisionErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -11475,7 +11475,7 @@ pub enum ModifyClusterIamRolesErrorKind {
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyClusterIamRolesError {
@@ -11539,14 +11539,14 @@ impl ModifyClusterIamRolesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyClusterIamRolesErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyClusterIamRolesErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterIamRolesErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterIamRolesErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `ModifyClusterIamRolesErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -11582,7 +11582,7 @@ pub enum ModifyClusterMaintenanceErrorKind {
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyClusterMaintenanceError {
@@ -11646,14 +11646,14 @@ impl ModifyClusterMaintenanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyClusterMaintenanceErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyClusterMaintenanceErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterMaintenanceErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterMaintenanceErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `ModifyClusterMaintenanceErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -11690,7 +11690,7 @@ pub enum ModifyClusterParameterGroupErrorKind {
     /// progress that involves the parameter group. Wait a few moments and try the operation
     /// again.</p>
     InvalidClusterParameterGroupStateFault(crate::error::InvalidClusterParameterGroupStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyClusterParameterGroupError {
@@ -11758,14 +11758,14 @@ impl ModifyClusterParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyClusterParameterGroupErrorKind::ClusterParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyClusterParameterGroupErrorKind::ClusterParameterGroupNotFoundFault`.
     pub fn is_cluster_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterParameterGroupErrorKind::ClusterParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterParameterGroupErrorKind::InvalidClusterParameterGroupStateFault`.
+    /// Returns `true` if the error kind is `ModifyClusterParameterGroupErrorKind::InvalidClusterParameterGroupStateFault`.
     pub fn is_invalid_cluster_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -11808,7 +11808,7 @@ pub enum ModifyClusterSnapshotErrorKind {
     /// <p>The retention period specified is either in the past or is not a valid value.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     InvalidRetentionPeriodFault(crate::error::InvalidRetentionPeriodFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyClusterSnapshotError {
@@ -11875,21 +11875,21 @@ impl ModifyClusterSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault`.
     pub fn is_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault`.
+    /// Returns `true` if the error kind is `ModifyClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault`.
     pub fn is_invalid_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterSnapshotErrorKind::InvalidRetentionPeriodFault`.
+    /// Returns `true` if the error kind is `ModifyClusterSnapshotErrorKind::InvalidRetentionPeriodFault`.
     pub fn is_invalid_retention_period_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -11932,7 +11932,7 @@ pub enum ModifyClusterSnapshotScheduleErrorKind {
     ),
     /// <p>We could not find the specified snapshot schedule. </p>
     SnapshotScheduleNotFoundFault(crate::error::SnapshotScheduleNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyClusterSnapshotScheduleError {
@@ -12004,21 +12004,21 @@ impl ModifyClusterSnapshotScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyClusterSnapshotScheduleErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyClusterSnapshotScheduleErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterSnapshotScheduleErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterSnapshotScheduleErrorKind::InvalidClusterSnapshotScheduleStateFault`.
+    /// Returns `true` if the error kind is `ModifyClusterSnapshotScheduleErrorKind::InvalidClusterSnapshotScheduleStateFault`.
     pub fn is_invalid_cluster_snapshot_schedule_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterSnapshotScheduleErrorKind::InvalidClusterSnapshotScheduleStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterSnapshotScheduleErrorKind::SnapshotScheduleNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyClusterSnapshotScheduleErrorKind::SnapshotScheduleNotFoundFault`.
     pub fn is_snapshot_schedule_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -12073,7 +12073,7 @@ pub enum ModifyClusterSubnetGroupErrorKind {
     SubnetAlreadyInUse(crate::error::SubnetAlreadyInUse),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyClusterSubnetGroupError {
@@ -12147,42 +12147,42 @@ impl ModifyClusterSubnetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyClusterSubnetGroupErrorKind::ClusterSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyClusterSubnetGroupErrorKind::ClusterSubnetGroupNotFoundFault`.
     pub fn is_cluster_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterSubnetGroupErrorKind::ClusterSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterSubnetGroupErrorKind::ClusterSubnetQuotaExceededFault`.
+    /// Returns `true` if the error kind is `ModifyClusterSubnetGroupErrorKind::ClusterSubnetQuotaExceededFault`.
     pub fn is_cluster_subnet_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterSubnetGroupErrorKind::ClusterSubnetQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterSubnetGroupErrorKind::DependentServiceRequestThrottlingFault`.
+    /// Returns `true` if the error kind is `ModifyClusterSubnetGroupErrorKind::DependentServiceRequestThrottlingFault`.
     pub fn is_dependent_service_request_throttling_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterSubnetGroupErrorKind::DependentServiceRequestThrottlingFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterSubnetGroupErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `ModifyClusterSubnetGroupErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterSubnetGroupErrorKind::InvalidSubnet(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterSubnetGroupErrorKind::SubnetAlreadyInUse`.
+    /// Returns `true` if the error kind is `ModifyClusterSubnetGroupErrorKind::SubnetAlreadyInUse`.
     pub fn is_subnet_already_in_use(&self) -> bool {
         matches!(
             &self.kind,
             ModifyClusterSubnetGroupErrorKind::SubnetAlreadyInUse(_)
         )
     }
-    /// Returns true if the error kind is `ModifyClusterSubnetGroupErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `ModifyClusterSubnetGroupErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -12236,7 +12236,7 @@ pub enum ModifyEndpointAccessErrorKind {
     InvalidEndpointStateFault(crate::error::InvalidEndpointStateFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyEndpointAccessError {
@@ -12306,42 +12306,42 @@ impl ModifyEndpointAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyEndpointAccessErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyEndpointAccessErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEndpointAccessErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEndpointAccessErrorKind::EndpointNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyEndpointAccessErrorKind::EndpointNotFoundFault`.
     pub fn is_endpoint_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEndpointAccessErrorKind::EndpointNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEndpointAccessErrorKind::InvalidClusterSecurityGroupStateFault`.
+    /// Returns `true` if the error kind is `ModifyEndpointAccessErrorKind::InvalidClusterSecurityGroupStateFault`.
     pub fn is_invalid_cluster_security_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEndpointAccessErrorKind::InvalidClusterSecurityGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEndpointAccessErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `ModifyEndpointAccessErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEndpointAccessErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEndpointAccessErrorKind::InvalidEndpointStateFault`.
+    /// Returns `true` if the error kind is `ModifyEndpointAccessErrorKind::InvalidEndpointStateFault`.
     pub fn is_invalid_endpoint_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEndpointAccessErrorKind::InvalidEndpointStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEndpointAccessErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `ModifyEndpointAccessErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -12404,7 +12404,7 @@ pub enum ModifyEventSubscriptionErrorKind {
     /// specified a severity that does not apply to the specified source type. The allowed
     /// values are ERROR and INFO.</p>
     SubscriptionSeverityNotFoundFault(crate::error::SubscriptionSeverityNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyEventSubscriptionError {
@@ -12483,63 +12483,63 @@ impl ModifyEventSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::InvalidSubscriptionStateFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::InvalidSubscriptionStateFault`.
     pub fn is_invalid_subscription_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::InvalidSubscriptionStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::SnsInvalidTopicFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::SnsInvalidTopicFault`.
     pub fn is_sns_invalid_topic_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::SnsInvalidTopicFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::SnsNoAuthorizationFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::SnsNoAuthorizationFault`.
     pub fn is_sns_no_authorization_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::SnsNoAuthorizationFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::SnsTopicArnNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::SnsTopicArnNotFoundFault`.
     pub fn is_sns_topic_arn_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::SnsTopicArnNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::SourceNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::SourceNotFoundFault`.
     pub fn is_source_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::SourceNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault`.
     pub fn is_subscription_category_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::SubscriptionEventIdNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::SubscriptionEventIdNotFoundFault`.
     pub fn is_subscription_event_id_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::SubscriptionEventIdNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::SubscriptionNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::SubscriptionNotFoundFault`.
     pub fn is_subscription_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyEventSubscriptionErrorKind::SubscriptionNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyEventSubscriptionErrorKind::SubscriptionSeverityNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyEventSubscriptionErrorKind::SubscriptionSeverityNotFoundFault`.
     pub fn is_subscription_severity_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -12593,7 +12593,7 @@ pub enum ModifyScheduledActionErrorKind {
     ScheduledActionTypeUnsupportedFault(crate::error::ScheduledActionTypeUnsupportedFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyScheduledActionError {
@@ -12662,35 +12662,35 @@ impl ModifyScheduledActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyScheduledActionErrorKind::InvalidScheduledActionFault`.
+    /// Returns `true` if the error kind is `ModifyScheduledActionErrorKind::InvalidScheduledActionFault`.
     pub fn is_invalid_scheduled_action_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyScheduledActionErrorKind::InvalidScheduledActionFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyScheduledActionErrorKind::InvalidScheduleFault`.
+    /// Returns `true` if the error kind is `ModifyScheduledActionErrorKind::InvalidScheduleFault`.
     pub fn is_invalid_schedule_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyScheduledActionErrorKind::InvalidScheduleFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyScheduledActionErrorKind::ScheduledActionNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyScheduledActionErrorKind::ScheduledActionNotFoundFault`.
     pub fn is_scheduled_action_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyScheduledActionErrorKind::ScheduledActionNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyScheduledActionErrorKind::ScheduledActionTypeUnsupportedFault`.
+    /// Returns `true` if the error kind is `ModifyScheduledActionErrorKind::ScheduledActionTypeUnsupportedFault`.
     pub fn is_scheduled_action_type_unsupported_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyScheduledActionErrorKind::ScheduledActionTypeUnsupportedFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyScheduledActionErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `ModifyScheduledActionErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -12739,7 +12739,7 @@ pub enum ModifySnapshotCopyRetentionPeriodErrorKind {
     SnapshotCopyDisabledFault(crate::error::SnapshotCopyDisabledFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifySnapshotCopyRetentionPeriodError {
@@ -12819,35 +12819,35 @@ impl ModifySnapshotCopyRetentionPeriodError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifySnapshotCopyRetentionPeriodErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifySnapshotCopyRetentionPeriodErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifySnapshotCopyRetentionPeriodErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifySnapshotCopyRetentionPeriodErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `ModifySnapshotCopyRetentionPeriodErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifySnapshotCopyRetentionPeriodErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifySnapshotCopyRetentionPeriodErrorKind::InvalidRetentionPeriodFault`.
+    /// Returns `true` if the error kind is `ModifySnapshotCopyRetentionPeriodErrorKind::InvalidRetentionPeriodFault`.
     pub fn is_invalid_retention_period_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifySnapshotCopyRetentionPeriodErrorKind::InvalidRetentionPeriodFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifySnapshotCopyRetentionPeriodErrorKind::SnapshotCopyDisabledFault`.
+    /// Returns `true` if the error kind is `ModifySnapshotCopyRetentionPeriodErrorKind::SnapshotCopyDisabledFault`.
     pub fn is_snapshot_copy_disabled_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifySnapshotCopyRetentionPeriodErrorKind::SnapshotCopyDisabledFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifySnapshotCopyRetentionPeriodErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `ModifySnapshotCopyRetentionPeriodErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -12897,7 +12897,7 @@ pub enum ModifySnapshotScheduleErrorKind {
     SnapshotScheduleNotFoundFault(crate::error::SnapshotScheduleNotFoundFault),
     /// <p>The specified snapshot schedule is already being updated.</p>
     SnapshotScheduleUpdateInProgressFault(crate::error::SnapshotScheduleUpdateInProgressFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifySnapshotScheduleError {
@@ -12964,21 +12964,21 @@ impl ModifySnapshotScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifySnapshotScheduleErrorKind::InvalidScheduleFault`.
+    /// Returns `true` if the error kind is `ModifySnapshotScheduleErrorKind::InvalidScheduleFault`.
     pub fn is_invalid_schedule_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifySnapshotScheduleErrorKind::InvalidScheduleFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifySnapshotScheduleErrorKind::SnapshotScheduleNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifySnapshotScheduleErrorKind::SnapshotScheduleNotFoundFault`.
     pub fn is_snapshot_schedule_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifySnapshotScheduleErrorKind::SnapshotScheduleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifySnapshotScheduleErrorKind::SnapshotScheduleUpdateInProgressFault`.
+    /// Returns `true` if the error kind is `ModifySnapshotScheduleErrorKind::SnapshotScheduleUpdateInProgressFault`.
     pub fn is_snapshot_schedule_update_in_progress_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -13018,7 +13018,7 @@ pub enum ModifyUsageLimitErrorKind {
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
     /// <p>The usage limit identifier can't be found.</p>
     UsageLimitNotFoundFault(crate::error::UsageLimitNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyUsageLimitError {
@@ -13083,21 +13083,21 @@ impl ModifyUsageLimitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyUsageLimitErrorKind::InvalidUsageLimitFault`.
+    /// Returns `true` if the error kind is `ModifyUsageLimitErrorKind::InvalidUsageLimitFault`.
     pub fn is_invalid_usage_limit_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyUsageLimitErrorKind::InvalidUsageLimitFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyUsageLimitErrorKind::UnsupportedOperationFault`.
+    /// Returns `true` if the error kind is `ModifyUsageLimitErrorKind::UnsupportedOperationFault`.
     pub fn is_unsupported_operation_fault(&self) -> bool {
         matches!(
             &self.kind,
             ModifyUsageLimitErrorKind::UnsupportedOperationFault(_)
         )
     }
-    /// Returns true if the error kind is `ModifyUsageLimitErrorKind::UsageLimitNotFoundFault`.
+    /// Returns `true` if the error kind is `ModifyUsageLimitErrorKind::UsageLimitNotFoundFault`.
     pub fn is_usage_limit_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -13134,7 +13134,7 @@ pub enum PauseClusterErrorKind {
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PauseClusterError {
@@ -13198,11 +13198,11 @@ impl PauseClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PauseClusterErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `PauseClusterErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, PauseClusterErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `PauseClusterErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `PauseClusterErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -13244,7 +13244,7 @@ pub enum PurchaseReservedNodeOfferingErrorKind {
     ReservedNodeQuotaExceededFault(crate::error::ReservedNodeQuotaExceededFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PurchaseReservedNodeOfferingError {
@@ -13318,28 +13318,28 @@ impl PurchaseReservedNodeOfferingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PurchaseReservedNodeOfferingErrorKind::ReservedNodeAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `PurchaseReservedNodeOfferingErrorKind::ReservedNodeAlreadyExistsFault`.
     pub fn is_reserved_node_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             PurchaseReservedNodeOfferingErrorKind::ReservedNodeAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `PurchaseReservedNodeOfferingErrorKind::ReservedNodeOfferingNotFoundFault`.
+    /// Returns `true` if the error kind is `PurchaseReservedNodeOfferingErrorKind::ReservedNodeOfferingNotFoundFault`.
     pub fn is_reserved_node_offering_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             PurchaseReservedNodeOfferingErrorKind::ReservedNodeOfferingNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `PurchaseReservedNodeOfferingErrorKind::ReservedNodeQuotaExceededFault`.
+    /// Returns `true` if the error kind is `PurchaseReservedNodeOfferingErrorKind::ReservedNodeQuotaExceededFault`.
     pub fn is_reserved_node_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             PurchaseReservedNodeOfferingErrorKind::ReservedNodeQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `PurchaseReservedNodeOfferingErrorKind::UnsupportedOperationFault`.
+    /// Returns `true` if the error kind is `PurchaseReservedNodeOfferingErrorKind::UnsupportedOperationFault`.
     pub fn is_unsupported_operation_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -13385,7 +13385,7 @@ pub enum RebootClusterErrorKind {
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RebootClusterError {
@@ -13449,11 +13449,11 @@ impl RebootClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RebootClusterErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `RebootClusterErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, RebootClusterErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `RebootClusterErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `RebootClusterErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -13486,7 +13486,7 @@ pub struct RejectDataShareError {
 pub enum RejectDataShareErrorKind {
     /// <p>There is an error with the datashare.</p>
     InvalidDataShareFault(crate::error::InvalidDataShareFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RejectDataShareError {
@@ -13549,7 +13549,7 @@ impl RejectDataShareError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RejectDataShareErrorKind::InvalidDataShareFault`.
+    /// Returns `true` if the error kind is `RejectDataShareErrorKind::InvalidDataShareFault`.
     pub fn is_invalid_data_share_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -13585,7 +13585,7 @@ pub enum ResetClusterParameterGroupErrorKind {
     /// progress that involves the parameter group. Wait a few moments and try the operation
     /// again.</p>
     InvalidClusterParameterGroupStateFault(crate::error::InvalidClusterParameterGroupStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetClusterParameterGroupError {
@@ -13653,14 +13653,14 @@ impl ResetClusterParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResetClusterParameterGroupErrorKind::ClusterParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `ResetClusterParameterGroupErrorKind::ClusterParameterGroupNotFoundFault`.
     pub fn is_cluster_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             ResetClusterParameterGroupErrorKind::ClusterParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `ResetClusterParameterGroupErrorKind::InvalidClusterParameterGroupStateFault`.
+    /// Returns `true` if the error kind is `ResetClusterParameterGroupErrorKind::InvalidClusterParameterGroupStateFault`.
     pub fn is_invalid_cluster_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -13721,7 +13721,7 @@ pub enum ResizeClusterErrorKind {
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
     /// <p>A request option was specified that is not supported.</p>
     UnsupportedOptionFault(crate::error::UnsupportedOptionFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResizeClusterError {
@@ -13794,54 +13794,54 @@ impl ResizeClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResizeClusterErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `ResizeClusterErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, ResizeClusterErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `ResizeClusterErrorKind::InsufficientClusterCapacityFault`.
+    /// Returns `true` if the error kind is `ResizeClusterErrorKind::InsufficientClusterCapacityFault`.
     pub fn is_insufficient_cluster_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             ResizeClusterErrorKind::InsufficientClusterCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `ResizeClusterErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `ResizeClusterErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             ResizeClusterErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `ResizeClusterErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `ResizeClusterErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(&self.kind, ResizeClusterErrorKind::LimitExceededFault(_))
     }
-    /// Returns true if the error kind is `ResizeClusterErrorKind::NumberOfNodesPerClusterLimitExceededFault`.
+    /// Returns `true` if the error kind is `ResizeClusterErrorKind::NumberOfNodesPerClusterLimitExceededFault`.
     pub fn is_number_of_nodes_per_cluster_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             ResizeClusterErrorKind::NumberOfNodesPerClusterLimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `ResizeClusterErrorKind::NumberOfNodesQuotaExceededFault`.
+    /// Returns `true` if the error kind is `ResizeClusterErrorKind::NumberOfNodesQuotaExceededFault`.
     pub fn is_number_of_nodes_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             ResizeClusterErrorKind::NumberOfNodesQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `ResizeClusterErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `ResizeClusterErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(&self.kind, ResizeClusterErrorKind::UnauthorizedOperation(_))
     }
-    /// Returns true if the error kind is `ResizeClusterErrorKind::UnsupportedOperationFault`.
+    /// Returns `true` if the error kind is `ResizeClusterErrorKind::UnsupportedOperationFault`.
     pub fn is_unsupported_operation_fault(&self) -> bool {
         matches!(
             &self.kind,
             ResizeClusterErrorKind::UnsupportedOperationFault(_)
         )
     }
-    /// Returns true if the error kind is `ResizeClusterErrorKind::UnsupportedOptionFault`.
+    /// Returns `true` if the error kind is `ResizeClusterErrorKind::UnsupportedOptionFault`.
     pub fn is_unsupported_option_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -13949,7 +13949,7 @@ pub enum RestoreFromClusterSnapshotErrorKind {
     TagLimitExceededFault(crate::error::TagLimitExceededFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreFromClusterSnapshotError {
@@ -14066,175 +14066,175 @@ impl RestoreFromClusterSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::AccessToSnapshotDeniedFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::AccessToSnapshotDeniedFault`.
     pub fn is_access_to_snapshot_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::AccessToSnapshotDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::ClusterAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::ClusterAlreadyExistsFault`.
     pub fn is_cluster_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::ClusterAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::ClusterParameterGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::ClusterParameterGroupNotFoundFault`.
     pub fn is_cluster_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::ClusterParameterGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::ClusterQuotaExceededFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::ClusterQuotaExceededFault`.
     pub fn is_cluster_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::ClusterQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::ClusterSecurityGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::ClusterSecurityGroupNotFoundFault`.
     pub fn is_cluster_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::ClusterSecurityGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault`.
     pub fn is_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::ClusterSubnetGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::ClusterSubnetGroupNotFoundFault`.
     pub fn is_cluster_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::ClusterSubnetGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::DependentServiceRequestThrottlingFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::DependentServiceRequestThrottlingFault`.
     pub fn is_dependent_service_request_throttling_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::DependentServiceRequestThrottlingFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::HsmClientCertificateNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::HsmClientCertificateNotFoundFault`.
     pub fn is_hsm_client_certificate_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::HsmClientCertificateNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::HsmConfigurationNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::HsmConfigurationNotFoundFault`.
     pub fn is_hsm_configuration_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::HsmConfigurationNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::InsufficientClusterCapacityFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::InsufficientClusterCapacityFault`.
     pub fn is_insufficient_cluster_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::InsufficientClusterCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault`.
     pub fn is_invalid_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::InvalidClusterSubnetGroupStateFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::InvalidClusterSubnetGroupStateFault`.
     pub fn is_invalid_cluster_subnet_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::InvalidClusterSubnetGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::InvalidClusterTrackFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::InvalidClusterTrackFault`.
     pub fn is_invalid_cluster_track_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::InvalidClusterTrackFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::InvalidElasticIpFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::InvalidElasticIpFault`.
     pub fn is_invalid_elastic_ip_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::InvalidElasticIpFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::InvalidRestoreFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::InvalidRestoreFault`.
     pub fn is_invalid_restore_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::InvalidRestoreFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::InvalidSubnet`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::InvalidSubnet`.
     pub fn is_invalid_subnet(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::InvalidSubnet(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::InvalidTagFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::InvalidTagFault`.
     pub fn is_invalid_tag_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::InvalidTagFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::InvalidVpcNetworkStateFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::InvalidVpcNetworkStateFault`.
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::LimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::NumberOfNodesPerClusterLimitExceededFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::NumberOfNodesPerClusterLimitExceededFault`.
     pub fn is_number_of_nodes_per_cluster_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::NumberOfNodesPerClusterLimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::NumberOfNodesQuotaExceededFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::NumberOfNodesQuotaExceededFault`.
     pub fn is_number_of_nodes_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::NumberOfNodesQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::SnapshotScheduleNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::SnapshotScheduleNotFoundFault`.
     pub fn is_snapshot_schedule_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::SnapshotScheduleNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::TagLimitExceededFault`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::TagLimitExceededFault`.
     pub fn is_tag_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreFromClusterSnapshotErrorKind::TagLimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreFromClusterSnapshotErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -14339,7 +14339,7 @@ pub enum RestoreTableFromClusterSnapshotErrorKind {
     InvalidTableRestoreArgumentFault(crate::error::InvalidTableRestoreArgumentFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreTableFromClusterSnapshotError {
@@ -14423,49 +14423,49 @@ impl RestoreTableFromClusterSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreTableFromClusterSnapshotErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreTableFromClusterSnapshotErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableFromClusterSnapshotErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableFromClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `RestoreTableFromClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault`.
     pub fn is_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableFromClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableFromClusterSnapshotErrorKind::InProgressTableRestoreQuotaExceededFault`.
+    /// Returns `true` if the error kind is `RestoreTableFromClusterSnapshotErrorKind::InProgressTableRestoreQuotaExceededFault`.
     pub fn is_in_progress_table_restore_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableFromClusterSnapshotErrorKind::InProgressTableRestoreQuotaExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableFromClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault`.
+    /// Returns `true` if the error kind is `RestoreTableFromClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault`.
     pub fn is_invalid_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableFromClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableFromClusterSnapshotErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `RestoreTableFromClusterSnapshotErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableFromClusterSnapshotErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableFromClusterSnapshotErrorKind::InvalidTableRestoreArgumentFault`.
+    /// Returns `true` if the error kind is `RestoreTableFromClusterSnapshotErrorKind::InvalidTableRestoreArgumentFault`.
     pub fn is_invalid_table_restore_argument_fault(&self) -> bool {
         matches!(
             &self.kind,
             RestoreTableFromClusterSnapshotErrorKind::InvalidTableRestoreArgumentFault(_)
         )
     }
-    /// Returns true if the error kind is `RestoreTableFromClusterSnapshotErrorKind::UnsupportedOperationFault`.
+    /// Returns `true` if the error kind is `RestoreTableFromClusterSnapshotErrorKind::UnsupportedOperationFault`.
     pub fn is_unsupported_operation_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -14521,7 +14521,7 @@ pub enum ResumeClusterErrorKind {
     InsufficientClusterCapacityFault(crate::error::InsufficientClusterCapacityFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResumeClusterError {
@@ -14586,18 +14586,18 @@ impl ResumeClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResumeClusterErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `ResumeClusterErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(&self.kind, ResumeClusterErrorKind::ClusterNotFoundFault(_))
     }
-    /// Returns true if the error kind is `ResumeClusterErrorKind::InsufficientClusterCapacityFault`.
+    /// Returns `true` if the error kind is `ResumeClusterErrorKind::InsufficientClusterCapacityFault`.
     pub fn is_insufficient_cluster_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
             ResumeClusterErrorKind::InsufficientClusterCapacityFault(_)
         )
     }
-    /// Returns true if the error kind is `ResumeClusterErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `ResumeClusterErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -14637,7 +14637,7 @@ pub enum RevokeClusterSecurityGroupIngressErrorKind {
     ClusterSecurityGroupNotFoundFault(crate::error::ClusterSecurityGroupNotFoundFault),
     /// <p>The state of the cluster security group is not <code>available</code>. </p>
     InvalidClusterSecurityGroupStateFault(crate::error::InvalidClusterSecurityGroupStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RevokeClusterSecurityGroupIngressError {
@@ -14711,21 +14711,21 @@ impl RevokeClusterSecurityGroupIngressError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RevokeClusterSecurityGroupIngressErrorKind::AuthorizationNotFoundFault`.
+    /// Returns `true` if the error kind is `RevokeClusterSecurityGroupIngressErrorKind::AuthorizationNotFoundFault`.
     pub fn is_authorization_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RevokeClusterSecurityGroupIngressErrorKind::AuthorizationNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RevokeClusterSecurityGroupIngressErrorKind::ClusterSecurityGroupNotFoundFault`.
+    /// Returns `true` if the error kind is `RevokeClusterSecurityGroupIngressErrorKind::ClusterSecurityGroupNotFoundFault`.
     pub fn is_cluster_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RevokeClusterSecurityGroupIngressErrorKind::ClusterSecurityGroupNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RevokeClusterSecurityGroupIngressErrorKind::InvalidClusterSecurityGroupStateFault`.
+    /// Returns `true` if the error kind is `RevokeClusterSecurityGroupIngressErrorKind::InvalidClusterSecurityGroupStateFault`.
     pub fn is_invalid_cluster_security_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -14778,7 +14778,7 @@ pub enum RevokeEndpointAccessErrorKind {
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
     /// <p>The status of the endpoint is not valid.</p>
     InvalidEndpointStateFault(crate::error::InvalidEndpointStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RevokeEndpointAccessError {
@@ -14851,49 +14851,49 @@ impl RevokeEndpointAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RevokeEndpointAccessErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `RevokeEndpointAccessErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RevokeEndpointAccessErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RevokeEndpointAccessErrorKind::EndpointAuthorizationNotFoundFault`.
+    /// Returns `true` if the error kind is `RevokeEndpointAccessErrorKind::EndpointAuthorizationNotFoundFault`.
     pub fn is_endpoint_authorization_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RevokeEndpointAccessErrorKind::EndpointAuthorizationNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RevokeEndpointAccessErrorKind::EndpointNotFoundFault`.
+    /// Returns `true` if the error kind is `RevokeEndpointAccessErrorKind::EndpointNotFoundFault`.
     pub fn is_endpoint_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RevokeEndpointAccessErrorKind::EndpointNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RevokeEndpointAccessErrorKind::InvalidAuthorizationStateFault`.
+    /// Returns `true` if the error kind is `RevokeEndpointAccessErrorKind::InvalidAuthorizationStateFault`.
     pub fn is_invalid_authorization_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RevokeEndpointAccessErrorKind::InvalidAuthorizationStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RevokeEndpointAccessErrorKind::InvalidClusterSecurityGroupStateFault`.
+    /// Returns `true` if the error kind is `RevokeEndpointAccessErrorKind::InvalidClusterSecurityGroupStateFault`.
     pub fn is_invalid_cluster_security_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RevokeEndpointAccessErrorKind::InvalidClusterSecurityGroupStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RevokeEndpointAccessErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `RevokeEndpointAccessErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
             RevokeEndpointAccessErrorKind::InvalidClusterStateFault(_)
         )
     }
-    /// Returns true if the error kind is `RevokeEndpointAccessErrorKind::InvalidEndpointStateFault`.
+    /// Returns `true` if the error kind is `RevokeEndpointAccessErrorKind::InvalidEndpointStateFault`.
     pub fn is_invalid_endpoint_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -14941,7 +14941,7 @@ pub enum RevokeSnapshotAccessErrorKind {
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
     /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
     ClusterSnapshotNotFoundFault(crate::error::ClusterSnapshotNotFoundFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RevokeSnapshotAccessError {
@@ -15006,21 +15006,21 @@ impl RevokeSnapshotAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RevokeSnapshotAccessErrorKind::AccessToSnapshotDeniedFault`.
+    /// Returns `true` if the error kind is `RevokeSnapshotAccessErrorKind::AccessToSnapshotDeniedFault`.
     pub fn is_access_to_snapshot_denied_fault(&self) -> bool {
         matches!(
             &self.kind,
             RevokeSnapshotAccessErrorKind::AccessToSnapshotDeniedFault(_)
         )
     }
-    /// Returns true if the error kind is `RevokeSnapshotAccessErrorKind::AuthorizationNotFoundFault`.
+    /// Returns `true` if the error kind is `RevokeSnapshotAccessErrorKind::AuthorizationNotFoundFault`.
     pub fn is_authorization_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RevokeSnapshotAccessErrorKind::AuthorizationNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RevokeSnapshotAccessErrorKind::ClusterSnapshotNotFoundFault`.
+    /// Returns `true` if the error kind is `RevokeSnapshotAccessErrorKind::ClusterSnapshotNotFoundFault`.
     pub fn is_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -15060,7 +15060,7 @@ pub enum RotateEncryptionKeyErrorKind {
     DependentServiceRequestThrottlingFault(crate::error::DependentServiceRequestThrottlingFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RotateEncryptionKeyError {
@@ -15127,21 +15127,21 @@ impl RotateEncryptionKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RotateEncryptionKeyErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `RotateEncryptionKeyErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             RotateEncryptionKeyErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `RotateEncryptionKeyErrorKind::DependentServiceRequestThrottlingFault`.
+    /// Returns `true` if the error kind is `RotateEncryptionKeyErrorKind::DependentServiceRequestThrottlingFault`.
     pub fn is_dependent_service_request_throttling_fault(&self) -> bool {
         matches!(
             &self.kind,
             RotateEncryptionKeyErrorKind::DependentServiceRequestThrottlingFault(_)
         )
     }
-    /// Returns true if the error kind is `RotateEncryptionKeyErrorKind::InvalidClusterStateFault`.
+    /// Returns `true` if the error kind is `RotateEncryptionKeyErrorKind::InvalidClusterStateFault`.
     pub fn is_invalid_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -15182,7 +15182,7 @@ pub enum UpdatePartnerStatusErrorKind {
     PartnerNotFoundFault(crate::error::PartnerNotFoundFault),
     /// <p>The partner integration is not authorized.</p>
     UnauthorizedPartnerIntegrationFault(crate::error::UnauthorizedPartnerIntegrationFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePartnerStatusError {
@@ -15249,21 +15249,21 @@ impl UpdatePartnerStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePartnerStatusErrorKind::ClusterNotFoundFault`.
+    /// Returns `true` if the error kind is `UpdatePartnerStatusErrorKind::ClusterNotFoundFault`.
     pub fn is_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePartnerStatusErrorKind::ClusterNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePartnerStatusErrorKind::PartnerNotFoundFault`.
+    /// Returns `true` if the error kind is `UpdatePartnerStatusErrorKind::PartnerNotFoundFault`.
     pub fn is_partner_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePartnerStatusErrorKind::PartnerNotFoundFault(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePartnerStatusErrorKind::UnauthorizedPartnerIntegrationFault`.
+    /// Returns `true` if the error kind is `UpdatePartnerStatusErrorKind::UnauthorizedPartnerIntegrationFault`.
     pub fn is_unauthorized_partner_integration_fault(&self) -> bool {
         matches!(
             &self.kind,

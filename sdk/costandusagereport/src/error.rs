@@ -16,7 +16,7 @@ pub enum DeleteReportDefinitionErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteReportDefinitionError {
@@ -80,14 +80,14 @@ impl DeleteReportDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteReportDefinitionErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteReportDefinitionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReportDefinitionErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReportDefinitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteReportDefinitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -120,7 +120,7 @@ pub struct DescribeReportDefinitionsError {
 pub enum DescribeReportDefinitionsErrorKind {
     /// <p>An error on the server occurred during the processing of your request. Try again later.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReportDefinitionsError {
@@ -183,7 +183,7 @@ impl DescribeReportDefinitionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReportDefinitionsErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `DescribeReportDefinitionsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -217,7 +217,7 @@ pub enum ModifyReportDefinitionErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyReportDefinitionError {
@@ -281,14 +281,14 @@ impl ModifyReportDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyReportDefinitionErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `ModifyReportDefinitionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyReportDefinitionErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyReportDefinitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ModifyReportDefinitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -327,7 +327,7 @@ pub enum PutReportDefinitionErrorKind {
     ReportLimitReachedException(crate::error::ReportLimitReachedException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutReportDefinitionError {
@@ -393,28 +393,28 @@ impl PutReportDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutReportDefinitionErrorKind::DuplicateReportNameException`.
+    /// Returns `true` if the error kind is `PutReportDefinitionErrorKind::DuplicateReportNameException`.
     pub fn is_duplicate_report_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutReportDefinitionErrorKind::DuplicateReportNameException(_)
         )
     }
-    /// Returns true if the error kind is `PutReportDefinitionErrorKind::InternalErrorException`.
+    /// Returns `true` if the error kind is `PutReportDefinitionErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutReportDefinitionErrorKind::InternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PutReportDefinitionErrorKind::ReportLimitReachedException`.
+    /// Returns `true` if the error kind is `PutReportDefinitionErrorKind::ReportLimitReachedException`.
     pub fn is_report_limit_reached_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutReportDefinitionErrorKind::ReportLimitReachedException(_)
         )
     }
-    /// Returns true if the error kind is `PutReportDefinitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutReportDefinitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

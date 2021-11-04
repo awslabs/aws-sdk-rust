@@ -213,7 +213,7 @@ pub struct S3Object {
     /// name.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The file name of the input document. Synchronous operations can use image files that are
-    /// in JPEG or PNG format. Asynchronous operations also support PDF format files.</p>
+    /// in JPEG or PNG format. Asynchronous operations also support PDF and TIFF format files.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>If the bucket has versioning enabled, you can specify the object version. </p>
     pub version: std::option::Option<std::string::String>,
@@ -251,13 +251,13 @@ pub mod s3_object {
             self
         }
         /// <p>The file name of the input document. Synchronous operations can use image files that are
-        /// in JPEG or PNG format. Asynchronous operations also support PDF format files.</p>
+        /// in JPEG or PNG format. Asynchronous operations also support PDF and TIFF format files.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The file name of the input document. Synchronous operations can use image files that are
-        /// in JPEG or PNG format. Asynchronous operations also support PDF format files.</p>
+        /// in JPEG or PNG format. Asynchronous operations also support PDF and TIFF format files.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -410,1469 +410,6 @@ impl Warning {
     /// Creates a new builder-style object to manufacture [`Warning`](crate::model::Warning)
     pub fn builder() -> crate::model::warning::Builder {
         crate::model::warning::Builder::default()
-    }
-}
-
-/// <p>A <code>Block</code> represents items that are recognized in a document within a group
-/// of pixels close to each other. The information returned in a <code>Block</code> object
-/// depends on the type of operation. In text detection for documents (for example <a>DetectDocumentText</a>), you get information about the detected words and lines
-/// of text. In text analysis (for example <a>AnalyzeDocument</a>), you can also get
-/// information about the fields, tables, and selection elements that are detected in the
-/// document.</p>
-/// <p>An array of <code>Block</code> objects is returned by both synchronous and asynchronous
-/// operations. In synchronous operations, such as <a>DetectDocumentText</a>, the
-/// array of <code>Block</code> objects is the entire set of results. In asynchronous
-/// operations, such as <a>GetDocumentAnalysis</a>, the array is returned over one
-/// or more responses.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works.html">How Amazon Textract Works</a>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Block {
-    /// <p>The type of text item that's recognized. In operations for text detection, the following
-    /// types are returned:</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects
-    /// that are detected on a document page.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>WORD</i> - A word detected on a document page. A word is one or
-    /// more ISO basic Latin script characters that aren't separated by spaces.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>LINE</i> - A string of tab-delimited, contiguous words that are
-    /// detected on a document page.</p>
-    /// </li>
-    /// </ul>
-    /// <p>In text analysis operations, the following types are returned:</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>PAGE</i> - Contains a list of child <code>Block</code> objects
-    /// that are detected on a document page.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code>
-    /// objects for linked text that's detected on a document page. Use the
-    /// <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY
-    /// <code>Block</code> object or a VALUE <code>Block</code> object. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>WORD</i> - A word that's detected on a document page. A word is
-    /// one or more ISO basic Latin script characters that aren't separated by spaces.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>LINE</i> - A string of tab-delimited, contiguous words that are
-    /// detected on a document page.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>TABLE</i> - A table that's detected on a document page. A table
-    /// is grid-based information with two or more rows or columns, with a cell span of one
-    /// row and one column each. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>CELL</i> - A cell within a detected table. The cell is the parent
-    /// of the block that contains the text in the cell.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SELECTION_ELEMENT</i> - A selection element such as an option
-    /// button (radio button) or a check box that's detected on a document page. Use the
-    /// value of <code>SelectionStatus</code> to determine the status of the selection
-    /// element.</p>
-    /// </li>
-    /// </ul>
-    pub block_type: std::option::Option<crate::model::BlockType>,
-    /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and
-    /// the accuracy of the geometry points around the recognized text.</p>
-    pub confidence: std::option::Option<f32>,
-    /// <p>The word or line of text that's recognized by Amazon Textract. </p>
-    pub text: std::option::Option<std::string::String>,
-    /// <p>The kind of text that Amazon Textract has detected. Can check for handwritten text and
-    /// printed text.</p>
-    pub text_type: std::option::Option<crate::model::TextType>,
-    /// <p>The row in which a table cell is located. The first row position is 1.
-    /// <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and
-    /// <code>GetDocumentTextDetection</code>.</p>
-    pub row_index: std::option::Option<i32>,
-    /// <p>The column in which a table cell appears. The first column position is 1.
-    /// <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and
-    /// <code>GetDocumentTextDetection</code>.</p>
-    pub column_index: std::option::Option<i32>,
-    /// <p>The number of rows that a table cell spans. Currently this value is always 1, even if
-    /// the number of rows spanned is greater than 1. <code>RowSpan</code> isn't returned by
-    /// <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    pub row_span: std::option::Option<i32>,
-    /// <p>The number of columns that a table cell spans. Currently this value is always 1, even if
-    /// the number of columns spanned is greater than 1. <code>ColumnSpan</code> isn't returned by
-    /// <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
-    pub column_span: std::option::Option<i32>,
-    /// <p>The location of the recognized text on the image. It includes an axis-aligned, coarse
-    /// bounding box that surrounds the text, and a finer-grain polygon for more accurate spatial
-    /// information. </p>
-    pub geometry: std::option::Option<crate::model::Geometry>,
-    /// <p>The identifier for the recognized text. The identifier is only unique for a single
-    /// operation. </p>
-    pub id: std::option::Option<std::string::String>,
-    /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks
-    /// for each WORD block that's part of the line of text. There aren't Relationship objects in
-    /// the list for relationships that don't exist, such as when the current block has no child
-    /// blocks. The list size can be the following:</p>
-    /// <ul>
-    /// <li>
-    /// <p>0 - The block has no child blocks.</p>
-    /// </li>
-    /// <li>
-    /// <p>1 - The block has child blocks.</p>
-    /// </li>
-    /// </ul>
-    pub relationships: std::option::Option<std::vec::Vec<crate::model::Relationship>>,
-    /// <p>The type of entity. The following can be returned:</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>KEY</i> - An identifier for a field on the document.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>VALUE</i> - The field text.</p>
-    /// </li>
-    /// </ul>
-    /// <p>
-    /// <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and
-    /// <code>GetDocumentTextDetection</code>.</p>
-    pub entity_types: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
-    /// <p>The selection status of a selection element, such as an option button or check box.
-    /// </p>
-    pub selection_status: std::option::Option<crate::model::SelectionStatus>,
-    /// <p>The page on which a block was detected. <code>Page</code> is returned by asynchronous
-    /// operations. Page values greater than 1 are only returned for multipage documents that are
-    /// in PDF format. A scanned image (JPEG/PNG), even if it contains multiple document pages, is
-    /// considered to be a single-page document. The value of <code>Page</code> is always 1.
-    /// Synchronous operations don't return <code>Page</code> because every input document is
-    /// considered to be a single-page document.</p>
-    pub page: std::option::Option<i32>,
-}
-impl std::fmt::Debug for Block {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Block");
-        formatter.field("block_type", &self.block_type);
-        formatter.field("confidence", &self.confidence);
-        formatter.field("text", &self.text);
-        formatter.field("text_type", &self.text_type);
-        formatter.field("row_index", &self.row_index);
-        formatter.field("column_index", &self.column_index);
-        formatter.field("row_span", &self.row_span);
-        formatter.field("column_span", &self.column_span);
-        formatter.field("geometry", &self.geometry);
-        formatter.field("id", &self.id);
-        formatter.field("relationships", &self.relationships);
-        formatter.field("entity_types", &self.entity_types);
-        formatter.field("selection_status", &self.selection_status);
-        formatter.field("page", &self.page);
-        formatter.finish()
-    }
-}
-/// See [`Block`](crate::model::Block)
-pub mod block {
-    /// A builder for [`Block`](crate::model::Block)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) block_type: std::option::Option<crate::model::BlockType>,
-        pub(crate) confidence: std::option::Option<f32>,
-        pub(crate) text: std::option::Option<std::string::String>,
-        pub(crate) text_type: std::option::Option<crate::model::TextType>,
-        pub(crate) row_index: std::option::Option<i32>,
-        pub(crate) column_index: std::option::Option<i32>,
-        pub(crate) row_span: std::option::Option<i32>,
-        pub(crate) column_span: std::option::Option<i32>,
-        pub(crate) geometry: std::option::Option<crate::model::Geometry>,
-        pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) relationships: std::option::Option<std::vec::Vec<crate::model::Relationship>>,
-        pub(crate) entity_types: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
-        pub(crate) selection_status: std::option::Option<crate::model::SelectionStatus>,
-        pub(crate) page: std::option::Option<i32>,
-    }
-    impl Builder {
-        /// <p>The type of text item that's recognized. In operations for text detection, the following
-        /// types are returned:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects
-        /// that are detected on a document page.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>WORD</i> - A word detected on a document page. A word is one or
-        /// more ISO basic Latin script characters that aren't separated by spaces.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>LINE</i> - A string of tab-delimited, contiguous words that are
-        /// detected on a document page.</p>
-        /// </li>
-        /// </ul>
-        /// <p>In text analysis operations, the following types are returned:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>PAGE</i> - Contains a list of child <code>Block</code> objects
-        /// that are detected on a document page.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code>
-        /// objects for linked text that's detected on a document page. Use the
-        /// <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY
-        /// <code>Block</code> object or a VALUE <code>Block</code> object. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>WORD</i> - A word that's detected on a document page. A word is
-        /// one or more ISO basic Latin script characters that aren't separated by spaces.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>LINE</i> - A string of tab-delimited, contiguous words that are
-        /// detected on a document page.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>TABLE</i> - A table that's detected on a document page. A table
-        /// is grid-based information with two or more rows or columns, with a cell span of one
-        /// row and one column each. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>CELL</i> - A cell within a detected table. The cell is the parent
-        /// of the block that contains the text in the cell.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SELECTION_ELEMENT</i> - A selection element such as an option
-        /// button (radio button) or a check box that's detected on a document page. Use the
-        /// value of <code>SelectionStatus</code> to determine the status of the selection
-        /// element.</p>
-        /// </li>
-        /// </ul>
-        pub fn block_type(mut self, input: crate::model::BlockType) -> Self {
-            self.block_type = Some(input);
-            self
-        }
-        /// <p>The type of text item that's recognized. In operations for text detection, the following
-        /// types are returned:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects
-        /// that are detected on a document page.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>WORD</i> - A word detected on a document page. A word is one or
-        /// more ISO basic Latin script characters that aren't separated by spaces.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>LINE</i> - A string of tab-delimited, contiguous words that are
-        /// detected on a document page.</p>
-        /// </li>
-        /// </ul>
-        /// <p>In text analysis operations, the following types are returned:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>PAGE</i> - Contains a list of child <code>Block</code> objects
-        /// that are detected on a document page.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code>
-        /// objects for linked text that's detected on a document page. Use the
-        /// <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY
-        /// <code>Block</code> object or a VALUE <code>Block</code> object. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>WORD</i> - A word that's detected on a document page. A word is
-        /// one or more ISO basic Latin script characters that aren't separated by spaces.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>LINE</i> - A string of tab-delimited, contiguous words that are
-        /// detected on a document page.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>TABLE</i> - A table that's detected on a document page. A table
-        /// is grid-based information with two or more rows or columns, with a cell span of one
-        /// row and one column each. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>CELL</i> - A cell within a detected table. The cell is the parent
-        /// of the block that contains the text in the cell.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SELECTION_ELEMENT</i> - A selection element such as an option
-        /// button (radio button) or a check box that's detected on a document page. Use the
-        /// value of <code>SelectionStatus</code> to determine the status of the selection
-        /// element.</p>
-        /// </li>
-        /// </ul>
-        pub fn set_block_type(
-            mut self,
-            input: std::option::Option<crate::model::BlockType>,
-        ) -> Self {
-            self.block_type = input;
-            self
-        }
-        /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and
-        /// the accuracy of the geometry points around the recognized text.</p>
-        pub fn confidence(mut self, input: f32) -> Self {
-            self.confidence = Some(input);
-            self
-        }
-        /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and
-        /// the accuracy of the geometry points around the recognized text.</p>
-        pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-            self.confidence = input;
-            self
-        }
-        /// <p>The word or line of text that's recognized by Amazon Textract. </p>
-        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-            self.text = Some(input.into());
-            self
-        }
-        /// <p>The word or line of text that's recognized by Amazon Textract. </p>
-        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.text = input;
-            self
-        }
-        /// <p>The kind of text that Amazon Textract has detected. Can check for handwritten text and
-        /// printed text.</p>
-        pub fn text_type(mut self, input: crate::model::TextType) -> Self {
-            self.text_type = Some(input);
-            self
-        }
-        /// <p>The kind of text that Amazon Textract has detected. Can check for handwritten text and
-        /// printed text.</p>
-        pub fn set_text_type(mut self, input: std::option::Option<crate::model::TextType>) -> Self {
-            self.text_type = input;
-            self
-        }
-        /// <p>The row in which a table cell is located. The first row position is 1.
-        /// <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and
-        /// <code>GetDocumentTextDetection</code>.</p>
-        pub fn row_index(mut self, input: i32) -> Self {
-            self.row_index = Some(input);
-            self
-        }
-        /// <p>The row in which a table cell is located. The first row position is 1.
-        /// <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and
-        /// <code>GetDocumentTextDetection</code>.</p>
-        pub fn set_row_index(mut self, input: std::option::Option<i32>) -> Self {
-            self.row_index = input;
-            self
-        }
-        /// <p>The column in which a table cell appears. The first column position is 1.
-        /// <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and
-        /// <code>GetDocumentTextDetection</code>.</p>
-        pub fn column_index(mut self, input: i32) -> Self {
-            self.column_index = Some(input);
-            self
-        }
-        /// <p>The column in which a table cell appears. The first column position is 1.
-        /// <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and
-        /// <code>GetDocumentTextDetection</code>.</p>
-        pub fn set_column_index(mut self, input: std::option::Option<i32>) -> Self {
-            self.column_index = input;
-            self
-        }
-        /// <p>The number of rows that a table cell spans. Currently this value is always 1, even if
-        /// the number of rows spanned is greater than 1. <code>RowSpan</code> isn't returned by
-        /// <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-        pub fn row_span(mut self, input: i32) -> Self {
-            self.row_span = Some(input);
-            self
-        }
-        /// <p>The number of rows that a table cell spans. Currently this value is always 1, even if
-        /// the number of rows spanned is greater than 1. <code>RowSpan</code> isn't returned by
-        /// <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-        pub fn set_row_span(mut self, input: std::option::Option<i32>) -> Self {
-            self.row_span = input;
-            self
-        }
-        /// <p>The number of columns that a table cell spans. Currently this value is always 1, even if
-        /// the number of columns spanned is greater than 1. <code>ColumnSpan</code> isn't returned by
-        /// <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
-        pub fn column_span(mut self, input: i32) -> Self {
-            self.column_span = Some(input);
-            self
-        }
-        /// <p>The number of columns that a table cell spans. Currently this value is always 1, even if
-        /// the number of columns spanned is greater than 1. <code>ColumnSpan</code> isn't returned by
-        /// <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
-        pub fn set_column_span(mut self, input: std::option::Option<i32>) -> Self {
-            self.column_span = input;
-            self
-        }
-        /// <p>The location of the recognized text on the image. It includes an axis-aligned, coarse
-        /// bounding box that surrounds the text, and a finer-grain polygon for more accurate spatial
-        /// information. </p>
-        pub fn geometry(mut self, input: crate::model::Geometry) -> Self {
-            self.geometry = Some(input);
-            self
-        }
-        /// <p>The location of the recognized text on the image. It includes an axis-aligned, coarse
-        /// bounding box that surrounds the text, and a finer-grain polygon for more accurate spatial
-        /// information. </p>
-        pub fn set_geometry(mut self, input: std::option::Option<crate::model::Geometry>) -> Self {
-            self.geometry = input;
-            self
-        }
-        /// <p>The identifier for the recognized text. The identifier is only unique for a single
-        /// operation. </p>
-        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.id = Some(input.into());
-            self
-        }
-        /// <p>The identifier for the recognized text. The identifier is only unique for a single
-        /// operation. </p>
-        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
-        }
-        /// Appends an item to `relationships`.
-        ///
-        /// To override the contents of this collection use [`set_relationships`](Self::set_relationships).
-        ///
-        /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks
-        /// for each WORD block that's part of the line of text. There aren't Relationship objects in
-        /// the list for relationships that don't exist, such as when the current block has no child
-        /// blocks. The list size can be the following:</p>
-        /// <ul>
-        /// <li>
-        /// <p>0 - The block has no child blocks.</p>
-        /// </li>
-        /// <li>
-        /// <p>1 - The block has child blocks.</p>
-        /// </li>
-        /// </ul>
-        pub fn relationships(mut self, input: impl Into<crate::model::Relationship>) -> Self {
-            let mut v = self.relationships.unwrap_or_default();
-            v.push(input.into());
-            self.relationships = Some(v);
-            self
-        }
-        /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks
-        /// for each WORD block that's part of the line of text. There aren't Relationship objects in
-        /// the list for relationships that don't exist, such as when the current block has no child
-        /// blocks. The list size can be the following:</p>
-        /// <ul>
-        /// <li>
-        /// <p>0 - The block has no child blocks.</p>
-        /// </li>
-        /// <li>
-        /// <p>1 - The block has child blocks.</p>
-        /// </li>
-        /// </ul>
-        pub fn set_relationships(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Relationship>>,
-        ) -> Self {
-            self.relationships = input;
-            self
-        }
-        /// Appends an item to `entity_types`.
-        ///
-        /// To override the contents of this collection use [`set_entity_types`](Self::set_entity_types).
-        ///
-        /// <p>The type of entity. The following can be returned:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>KEY</i> - An identifier for a field on the document.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>VALUE</i> - The field text.</p>
-        /// </li>
-        /// </ul>
-        /// <p>
-        /// <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and
-        /// <code>GetDocumentTextDetection</code>.</p>
-        pub fn entity_types(mut self, input: impl Into<crate::model::EntityType>) -> Self {
-            let mut v = self.entity_types.unwrap_or_default();
-            v.push(input.into());
-            self.entity_types = Some(v);
-            self
-        }
-        /// <p>The type of entity. The following can be returned:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>KEY</i> - An identifier for a field on the document.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>VALUE</i> - The field text.</p>
-        /// </li>
-        /// </ul>
-        /// <p>
-        /// <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and
-        /// <code>GetDocumentTextDetection</code>.</p>
-        pub fn set_entity_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
-        ) -> Self {
-            self.entity_types = input;
-            self
-        }
-        /// <p>The selection status of a selection element, such as an option button or check box.
-        /// </p>
-        pub fn selection_status(mut self, input: crate::model::SelectionStatus) -> Self {
-            self.selection_status = Some(input);
-            self
-        }
-        /// <p>The selection status of a selection element, such as an option button or check box.
-        /// </p>
-        pub fn set_selection_status(
-            mut self,
-            input: std::option::Option<crate::model::SelectionStatus>,
-        ) -> Self {
-            self.selection_status = input;
-            self
-        }
-        /// <p>The page on which a block was detected. <code>Page</code> is returned by asynchronous
-        /// operations. Page values greater than 1 are only returned for multipage documents that are
-        /// in PDF format. A scanned image (JPEG/PNG), even if it contains multiple document pages, is
-        /// considered to be a single-page document. The value of <code>Page</code> is always 1.
-        /// Synchronous operations don't return <code>Page</code> because every input document is
-        /// considered to be a single-page document.</p>
-        pub fn page(mut self, input: i32) -> Self {
-            self.page = Some(input);
-            self
-        }
-        /// <p>The page on which a block was detected. <code>Page</code> is returned by asynchronous
-        /// operations. Page values greater than 1 are only returned for multipage documents that are
-        /// in PDF format. A scanned image (JPEG/PNG), even if it contains multiple document pages, is
-        /// considered to be a single-page document. The value of <code>Page</code> is always 1.
-        /// Synchronous operations don't return <code>Page</code> because every input document is
-        /// considered to be a single-page document.</p>
-        pub fn set_page(mut self, input: std::option::Option<i32>) -> Self {
-            self.page = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Block`](crate::model::Block)
-        pub fn build(self) -> crate::model::Block {
-            crate::model::Block {
-                block_type: self.block_type,
-                confidence: self.confidence,
-                text: self.text,
-                text_type: self.text_type,
-                row_index: self.row_index,
-                column_index: self.column_index,
-                row_span: self.row_span,
-                column_span: self.column_span,
-                geometry: self.geometry,
-                id: self.id,
-                relationships: self.relationships,
-                entity_types: self.entity_types,
-                selection_status: self.selection_status,
-                page: self.page,
-            }
-        }
-    }
-}
-impl Block {
-    /// Creates a new builder-style object to manufacture [`Block`](crate::model::Block)
-    pub fn builder() -> crate::model::block::Builder {
-        crate::model::block::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum SelectionStatus {
-    #[allow(missing_docs)] // documentation missing in model
-    NotSelected,
-    #[allow(missing_docs)] // documentation missing in model
-    Selected,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for SelectionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "NOT_SELECTED" => SelectionStatus::NotSelected,
-            "SELECTED" => SelectionStatus::Selected,
-            other => SelectionStatus::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for SelectionStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SelectionStatus::from(s))
-    }
-}
-impl SelectionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SelectionStatus::NotSelected => "NOT_SELECTED",
-            SelectionStatus::Selected => "SELECTED",
-            SelectionStatus::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["NOT_SELECTED", "SELECTED"]
-    }
-}
-impl AsRef<str> for SelectionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum EntityType {
-    #[allow(missing_docs)] // documentation missing in model
-    Key,
-    #[allow(missing_docs)] // documentation missing in model
-    Value,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for EntityType {
-    fn from(s: &str) -> Self {
-        match s {
-            "KEY" => EntityType::Key,
-            "VALUE" => EntityType::Value,
-            other => EntityType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for EntityType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EntityType::from(s))
-    }
-}
-impl EntityType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EntityType::Key => "KEY",
-            EntityType::Value => "VALUE",
-            EntityType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["KEY", "VALUE"]
-    }
-}
-impl AsRef<str> for EntityType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Information about how blocks are related to each other. A <code>Block</code> object
-/// contains 0 or more <code>Relation</code> objects in a list, <code>Relationships</code>. For
-/// more information, see <a>Block</a>.</p>
-/// <p>The <code>Type</code> element provides the type of the relationship for all blocks in
-/// the <code>IDs</code> array. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Relationship {
-    /// <p>The type of relationship that the blocks in the IDs array have with the current block.
-    /// The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type
-    /// VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a
-    /// key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in
-    /// the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of
-    /// Selection Elements.</p>
-    pub r#type: std::option::Option<crate::model::RelationshipType>,
-    /// <p>An
-    /// array of IDs for related blocks. You can get the type of the relationship from the
-    /// <code>Type</code> element.</p>
-    pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
-}
-impl std::fmt::Debug for Relationship {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Relationship");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("ids", &self.ids);
-        formatter.finish()
-    }
-}
-/// See [`Relationship`](crate::model::Relationship)
-pub mod relationship {
-    /// A builder for [`Relationship`](crate::model::Relationship)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) r#type: std::option::Option<crate::model::RelationshipType>,
-        pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    }
-    impl Builder {
-        /// <p>The type of relationship that the blocks in the IDs array have with the current block.
-        /// The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type
-        /// VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a
-        /// key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in
-        /// the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of
-        /// Selection Elements.</p>
-        pub fn r#type(mut self, input: crate::model::RelationshipType) -> Self {
-            self.r#type = Some(input);
-            self
-        }
-        /// <p>The type of relationship that the blocks in the IDs array have with the current block.
-        /// The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type
-        /// VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a
-        /// key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in
-        /// the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of
-        /// Selection Elements.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::RelationshipType>,
-        ) -> Self {
-            self.r#type = input;
-            self
-        }
-        /// Appends an item to `ids`.
-        ///
-        /// To override the contents of this collection use [`set_ids`](Self::set_ids).
-        ///
-        /// <p>An
-        /// array of IDs for related blocks. You can get the type of the relationship from the
-        /// <code>Type</code> element.</p>
-        pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
-            let mut v = self.ids.unwrap_or_default();
-            v.push(input.into());
-            self.ids = Some(v);
-            self
-        }
-        /// <p>An
-        /// array of IDs for related blocks. You can get the type of the relationship from the
-        /// <code>Type</code> element.</p>
-        pub fn set_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ids = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Relationship`](crate::model::Relationship)
-        pub fn build(self) -> crate::model::Relationship {
-            crate::model::Relationship {
-                r#type: self.r#type,
-                ids: self.ids,
-            }
-        }
-    }
-}
-impl Relationship {
-    /// Creates a new builder-style object to manufacture [`Relationship`](crate::model::Relationship)
-    pub fn builder() -> crate::model::relationship::Builder {
-        crate::model::relationship::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum RelationshipType {
-    #[allow(missing_docs)] // documentation missing in model
-    Child,
-    #[allow(missing_docs)] // documentation missing in model
-    ComplexFeatures,
-    #[allow(missing_docs)] // documentation missing in model
-    Value,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for RelationshipType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CHILD" => RelationshipType::Child,
-            "COMPLEX_FEATURES" => RelationshipType::ComplexFeatures,
-            "VALUE" => RelationshipType::Value,
-            other => RelationshipType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for RelationshipType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RelationshipType::from(s))
-    }
-}
-impl RelationshipType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RelationshipType::Child => "CHILD",
-            RelationshipType::ComplexFeatures => "COMPLEX_FEATURES",
-            RelationshipType::Value => "VALUE",
-            RelationshipType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["CHILD", "COMPLEX_FEATURES", "VALUE"]
-    }
-}
-impl AsRef<str> for RelationshipType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Information about where the following items are located on a document page: detected
-/// page, text, key-value pairs, tables, table cells, and selection elements.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Geometry {
-    /// <p>An axis-aligned coarse representation of the location of the recognized item on the
-    /// document page.</p>
-    pub bounding_box: std::option::Option<crate::model::BoundingBox>,
-    /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
-    pub polygon: std::option::Option<std::vec::Vec<crate::model::Point>>,
-}
-impl std::fmt::Debug for Geometry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Geometry");
-        formatter.field("bounding_box", &self.bounding_box);
-        formatter.field("polygon", &self.polygon);
-        formatter.finish()
-    }
-}
-/// See [`Geometry`](crate::model::Geometry)
-pub mod geometry {
-    /// A builder for [`Geometry`](crate::model::Geometry)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) bounding_box: std::option::Option<crate::model::BoundingBox>,
-        pub(crate) polygon: std::option::Option<std::vec::Vec<crate::model::Point>>,
-    }
-    impl Builder {
-        /// <p>An axis-aligned coarse representation of the location of the recognized item on the
-        /// document page.</p>
-        pub fn bounding_box(mut self, input: crate::model::BoundingBox) -> Self {
-            self.bounding_box = Some(input);
-            self
-        }
-        /// <p>An axis-aligned coarse representation of the location of the recognized item on the
-        /// document page.</p>
-        pub fn set_bounding_box(
-            mut self,
-            input: std::option::Option<crate::model::BoundingBox>,
-        ) -> Self {
-            self.bounding_box = input;
-            self
-        }
-        /// Appends an item to `polygon`.
-        ///
-        /// To override the contents of this collection use [`set_polygon`](Self::set_polygon).
-        ///
-        /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
-        pub fn polygon(mut self, input: impl Into<crate::model::Point>) -> Self {
-            let mut v = self.polygon.unwrap_or_default();
-            v.push(input.into());
-            self.polygon = Some(v);
-            self
-        }
-        /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
-        pub fn set_polygon(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Point>>,
-        ) -> Self {
-            self.polygon = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Geometry`](crate::model::Geometry)
-        pub fn build(self) -> crate::model::Geometry {
-            crate::model::Geometry {
-                bounding_box: self.bounding_box,
-                polygon: self.polygon,
-            }
-        }
-    }
-}
-impl Geometry {
-    /// Creates a new builder-style object to manufacture [`Geometry`](crate::model::Geometry)
-    pub fn builder() -> crate::model::geometry::Builder {
-        crate::model::geometry::Builder::default()
-    }
-}
-
-/// <p>The X and Y coordinates of a point on a document page. The X and Y
-/// values that are returned are ratios of the overall document page size. For example, if the
-/// input document is 700 x 200 and the operation returns X=0.5 and Y=0.25, then the point is
-/// at the (350,50) pixel coordinate on the document page.</p>
-///
-/// <p>An array of <code>Point</code> objects, <code>Polygon</code>, is returned
-/// by <a>DetectDocumentText</a>. <code>Polygon</code> represents a fine-grained
-/// polygon around detected text. For more information, see Geometry in the Amazon Textract
-/// Developer Guide. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Point {
-    /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
-    pub x: f32,
-    /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
-    pub y: f32,
-}
-impl std::fmt::Debug for Point {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Point");
-        formatter.field("x", &self.x);
-        formatter.field("y", &self.y);
-        formatter.finish()
-    }
-}
-/// See [`Point`](crate::model::Point)
-pub mod point {
-    /// A builder for [`Point`](crate::model::Point)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) x: std::option::Option<f32>,
-        pub(crate) y: std::option::Option<f32>,
-    }
-    impl Builder {
-        /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
-        pub fn x(mut self, input: f32) -> Self {
-            self.x = Some(input);
-            self
-        }
-        /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
-        pub fn set_x(mut self, input: std::option::Option<f32>) -> Self {
-            self.x = input;
-            self
-        }
-        /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
-        pub fn y(mut self, input: f32) -> Self {
-            self.y = Some(input);
-            self
-        }
-        /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
-        pub fn set_y(mut self, input: std::option::Option<f32>) -> Self {
-            self.y = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Point`](crate::model::Point)
-        pub fn build(self) -> crate::model::Point {
-            crate::model::Point {
-                x: self.x.unwrap_or_default(),
-                y: self.y.unwrap_or_default(),
-            }
-        }
-    }
-}
-impl Point {
-    /// Creates a new builder-style object to manufacture [`Point`](crate::model::Point)
-    pub fn builder() -> crate::model::point::Builder {
-        crate::model::point::Builder::default()
-    }
-}
-
-/// <p>The bounding box around the detected page, text, key-value pair, table, table cell, or
-/// selection element on a document page. The <code>left</code> (x-coordinate) and
-/// <code>top</code> (y-coordinate) are coordinates that represent the top and left sides of
-/// the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p>
-/// <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall
-/// document page size. For example, if the input image is 700 x 200 pixels, and the top-left
-/// coordinate of the bounding box is 350 x 50 pixels, the API returns a <code>left</code>
-/// value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p>
-/// <p>The <code>width</code> and <code>height</code> values represent the dimensions of the
-/// bounding box as a ratio of the overall document page dimension. For example, if the
-/// document page size is 700 x 200 pixels, and the bounding box width is 70 pixels, the width
-/// returned is 0.1. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BoundingBox {
-    /// <p>The width of the bounding box as a ratio of the overall document page
-    /// width.</p>
-    pub width: f32,
-    /// <p>The height of the bounding box as a ratio of the overall document page
-    /// height.</p>
-    pub height: f32,
-    /// <p>The left coordinate of the bounding box as a ratio of overall document page
-    /// width.</p>
-    pub left: f32,
-    /// <p>The top coordinate of the bounding box as a ratio of overall document page
-    /// height.</p>
-    pub top: f32,
-}
-impl std::fmt::Debug for BoundingBox {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BoundingBox");
-        formatter.field("width", &self.width);
-        formatter.field("height", &self.height);
-        formatter.field("left", &self.left);
-        formatter.field("top", &self.top);
-        formatter.finish()
-    }
-}
-/// See [`BoundingBox`](crate::model::BoundingBox)
-pub mod bounding_box {
-    /// A builder for [`BoundingBox`](crate::model::BoundingBox)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) width: std::option::Option<f32>,
-        pub(crate) height: std::option::Option<f32>,
-        pub(crate) left: std::option::Option<f32>,
-        pub(crate) top: std::option::Option<f32>,
-    }
-    impl Builder {
-        /// <p>The width of the bounding box as a ratio of the overall document page
-        /// width.</p>
-        pub fn width(mut self, input: f32) -> Self {
-            self.width = Some(input);
-            self
-        }
-        /// <p>The width of the bounding box as a ratio of the overall document page
-        /// width.</p>
-        pub fn set_width(mut self, input: std::option::Option<f32>) -> Self {
-            self.width = input;
-            self
-        }
-        /// <p>The height of the bounding box as a ratio of the overall document page
-        /// height.</p>
-        pub fn height(mut self, input: f32) -> Self {
-            self.height = Some(input);
-            self
-        }
-        /// <p>The height of the bounding box as a ratio of the overall document page
-        /// height.</p>
-        pub fn set_height(mut self, input: std::option::Option<f32>) -> Self {
-            self.height = input;
-            self
-        }
-        /// <p>The left coordinate of the bounding box as a ratio of overall document page
-        /// width.</p>
-        pub fn left(mut self, input: f32) -> Self {
-            self.left = Some(input);
-            self
-        }
-        /// <p>The left coordinate of the bounding box as a ratio of overall document page
-        /// width.</p>
-        pub fn set_left(mut self, input: std::option::Option<f32>) -> Self {
-            self.left = input;
-            self
-        }
-        /// <p>The top coordinate of the bounding box as a ratio of overall document page
-        /// height.</p>
-        pub fn top(mut self, input: f32) -> Self {
-            self.top = Some(input);
-            self
-        }
-        /// <p>The top coordinate of the bounding box as a ratio of overall document page
-        /// height.</p>
-        pub fn set_top(mut self, input: std::option::Option<f32>) -> Self {
-            self.top = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`BoundingBox`](crate::model::BoundingBox)
-        pub fn build(self) -> crate::model::BoundingBox {
-            crate::model::BoundingBox {
-                width: self.width.unwrap_or_default(),
-                height: self.height.unwrap_or_default(),
-                left: self.left.unwrap_or_default(),
-                top: self.top.unwrap_or_default(),
-            }
-        }
-    }
-}
-impl BoundingBox {
-    /// Creates a new builder-style object to manufacture [`BoundingBox`](crate::model::BoundingBox)
-    pub fn builder() -> crate::model::bounding_box::Builder {
-        crate::model::bounding_box::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum TextType {
-    #[allow(missing_docs)] // documentation missing in model
-    Handwriting,
-    #[allow(missing_docs)] // documentation missing in model
-    Printed,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for TextType {
-    fn from(s: &str) -> Self {
-        match s {
-            "HANDWRITING" => TextType::Handwriting,
-            "PRINTED" => TextType::Printed,
-            other => TextType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for TextType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TextType::from(s))
-    }
-}
-impl TextType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TextType::Handwriting => "HANDWRITING",
-            TextType::Printed => "PRINTED",
-            TextType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["HANDWRITING", "PRINTED"]
-    }
-}
-impl AsRef<str> for TextType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum BlockType {
-    #[allow(missing_docs)] // documentation missing in model
-    Cell,
-    #[allow(missing_docs)] // documentation missing in model
-    KeyValueSet,
-    #[allow(missing_docs)] // documentation missing in model
-    Line,
-    #[allow(missing_docs)] // documentation missing in model
-    Page,
-    #[allow(missing_docs)] // documentation missing in model
-    SelectionElement,
-    #[allow(missing_docs)] // documentation missing in model
-    Table,
-    #[allow(missing_docs)] // documentation missing in model
-    Word,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for BlockType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CELL" => BlockType::Cell,
-            "KEY_VALUE_SET" => BlockType::KeyValueSet,
-            "LINE" => BlockType::Line,
-            "PAGE" => BlockType::Page,
-            "SELECTION_ELEMENT" => BlockType::SelectionElement,
-            "TABLE" => BlockType::Table,
-            "WORD" => BlockType::Word,
-            other => BlockType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for BlockType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BlockType::from(s))
-    }
-}
-impl BlockType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BlockType::Cell => "CELL",
-            BlockType::KeyValueSet => "KEY_VALUE_SET",
-            BlockType::Line => "LINE",
-            BlockType::Page => "PAGE",
-            BlockType::SelectionElement => "SELECTION_ELEMENT",
-            BlockType::Table => "TABLE",
-            BlockType::Word => "WORD",
-            BlockType::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "CELL",
-            "KEY_VALUE_SET",
-            "LINE",
-            "PAGE",
-            "SELECTION_ELEMENT",
-            "TABLE",
-            "WORD",
-        ]
-    }
-}
-impl AsRef<str> for BlockType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum JobStatus {
-    #[allow(missing_docs)] // documentation missing in model
-    Failed,
-    #[allow(missing_docs)] // documentation missing in model
-    InProgress,
-    #[allow(missing_docs)] // documentation missing in model
-    PartialSuccess,
-    #[allow(missing_docs)] // documentation missing in model
-    Succeeded,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for JobStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => JobStatus::Failed,
-            "IN_PROGRESS" => JobStatus::InProgress,
-            "PARTIAL_SUCCESS" => JobStatus::PartialSuccess,
-            "SUCCEEDED" => JobStatus::Succeeded,
-            other => JobStatus::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for JobStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobStatus::from(s))
-    }
-}
-impl JobStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            JobStatus::Failed => "FAILED",
-            JobStatus::InProgress => "IN_PROGRESS",
-            JobStatus::PartialSuccess => "PARTIAL_SUCCESS",
-            JobStatus::Succeeded => "SUCCEEDED",
-            JobStatus::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["FAILED", "IN_PROGRESS", "PARTIAL_SUCCESS", "SUCCEEDED"]
-    }
-}
-impl AsRef<str> for JobStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Information about the input document.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DocumentMetadata {
-    /// <p>The number of pages that are detected in the document.</p>
-    pub pages: std::option::Option<i32>,
-}
-impl std::fmt::Debug for DocumentMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentMetadata");
-        formatter.field("pages", &self.pages);
-        formatter.finish()
-    }
-}
-/// See [`DocumentMetadata`](crate::model::DocumentMetadata)
-pub mod document_metadata {
-    /// A builder for [`DocumentMetadata`](crate::model::DocumentMetadata)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) pages: std::option::Option<i32>,
-    }
-    impl Builder {
-        /// <p>The number of pages that are detected in the document.</p>
-        pub fn pages(mut self, input: i32) -> Self {
-            self.pages = Some(input);
-            self
-        }
-        /// <p>The number of pages that are detected in the document.</p>
-        pub fn set_pages(mut self, input: std::option::Option<i32>) -> Self {
-            self.pages = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DocumentMetadata`](crate::model::DocumentMetadata)
-        pub fn build(self) -> crate::model::DocumentMetadata {
-            crate::model::DocumentMetadata { pages: self.pages }
-        }
-    }
-}
-impl DocumentMetadata {
-    /// Creates a new builder-style object to manufacture [`DocumentMetadata`](crate::model::DocumentMetadata)
-    pub fn builder() -> crate::model::document_metadata::Builder {
-        crate::model::document_metadata::Builder::default()
-    }
-}
-
-/// <p>The input document, either as bytes or as an S3 object.</p>
-/// <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code>
-/// property. For example, you would use the <code>Bytes</code> property to pass a document
-/// loaded from a local file system. Image bytes passed by using the <code>Bytes</code>
-/// property must be base64 encoded. Your code might not need to encode document file bytes if
-/// you're using an AWS SDK to call Amazon Textract API operations. </p>
-/// <p>You pass images stored in an S3 bucket to an Amazon Textract API operation by using the
-/// <code>S3Object</code> property. Documents stored in an S3 bucket don't need to be base64
-/// encoded.</p>
-/// <p>The AWS Region for the S3 bucket that contains the S3 object must match the AWS
-/// Region that you use for Amazon Textract operations.</p>
-/// <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using
-/// the Bytes property isn't supported. You must first upload the document to an Amazon S3
-/// bucket, and then call the operation using the S3Object property.</p>
-///
-/// <p>For Amazon Textract to process an S3 object, the user must have permission
-/// to access the S3 object. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Document {
-    /// <p>A blob of base64-encoded document bytes. The maximum size of a document that's provided
-    /// in a blob of bytes is 5 MB. The document bytes must be in PNG or JPEG format.</p>
-    /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode
-    /// image bytes passed using the <code>Bytes</code> field. </p>
-    pub bytes: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>Identifies an S3 object as the document source. The maximum size of a document that's
-    /// stored in an S3 bucket is 5 MB.</p>
-    pub s3_object: std::option::Option<crate::model::S3Object>,
-}
-impl std::fmt::Debug for Document {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Document");
-        formatter.field("bytes", &self.bytes);
-        formatter.field("s3_object", &self.s3_object);
-        formatter.finish()
-    }
-}
-/// See [`Document`](crate::model::Document)
-pub mod document {
-    /// A builder for [`Document`](crate::model::Document)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) bytes: std::option::Option<aws_smithy_types::Blob>,
-        pub(crate) s3_object: std::option::Option<crate::model::S3Object>,
-    }
-    impl Builder {
-        /// <p>A blob of base64-encoded document bytes. The maximum size of a document that's provided
-        /// in a blob of bytes is 5 MB. The document bytes must be in PNG or JPEG format.</p>
-        /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode
-        /// image bytes passed using the <code>Bytes</code> field. </p>
-        pub fn bytes(mut self, input: aws_smithy_types::Blob) -> Self {
-            self.bytes = Some(input);
-            self
-        }
-        /// <p>A blob of base64-encoded document bytes. The maximum size of a document that's provided
-        /// in a blob of bytes is 5 MB. The document bytes must be in PNG or JPEG format.</p>
-        /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode
-        /// image bytes passed using the <code>Bytes</code> field. </p>
-        pub fn set_bytes(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.bytes = input;
-            self
-        }
-        /// <p>Identifies an S3 object as the document source. The maximum size of a document that's
-        /// stored in an S3 bucket is 5 MB.</p>
-        pub fn s3_object(mut self, input: crate::model::S3Object) -> Self {
-            self.s3_object = Some(input);
-            self
-        }
-        /// <p>Identifies an S3 object as the document source. The maximum size of a document that's
-        /// stored in an S3 bucket is 5 MB.</p>
-        pub fn set_s3_object(mut self, input: std::option::Option<crate::model::S3Object>) -> Self {
-            self.s3_object = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Document`](crate::model::Document)
-        pub fn build(self) -> crate::model::Document {
-            crate::model::Document {
-                bytes: self.bytes,
-                s3_object: self.s3_object,
-            }
-        }
-    }
-}
-impl Document {
-    /// Creates a new builder-style object to manufacture [`Document`](crate::model::Document)
-    pub fn builder() -> crate::model::document::Builder {
-        crate::model::document::Builder::default()
     }
 }
 
@@ -2290,6 +827,272 @@ impl ExpenseDetection {
     }
 }
 
+/// <p>Information about where the following items are located on a document page: detected
+/// page, text, key-value pairs, tables, table cells, and selection elements.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Geometry {
+    /// <p>An axis-aligned coarse representation of the location of the recognized item on the
+    /// document page.</p>
+    pub bounding_box: std::option::Option<crate::model::BoundingBox>,
+    /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
+    pub polygon: std::option::Option<std::vec::Vec<crate::model::Point>>,
+}
+impl std::fmt::Debug for Geometry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Geometry");
+        formatter.field("bounding_box", &self.bounding_box);
+        formatter.field("polygon", &self.polygon);
+        formatter.finish()
+    }
+}
+/// See [`Geometry`](crate::model::Geometry)
+pub mod geometry {
+    /// A builder for [`Geometry`](crate::model::Geometry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bounding_box: std::option::Option<crate::model::BoundingBox>,
+        pub(crate) polygon: std::option::Option<std::vec::Vec<crate::model::Point>>,
+    }
+    impl Builder {
+        /// <p>An axis-aligned coarse representation of the location of the recognized item on the
+        /// document page.</p>
+        pub fn bounding_box(mut self, input: crate::model::BoundingBox) -> Self {
+            self.bounding_box = Some(input);
+            self
+        }
+        /// <p>An axis-aligned coarse representation of the location of the recognized item on the
+        /// document page.</p>
+        pub fn set_bounding_box(
+            mut self,
+            input: std::option::Option<crate::model::BoundingBox>,
+        ) -> Self {
+            self.bounding_box = input;
+            self
+        }
+        /// Appends an item to `polygon`.
+        ///
+        /// To override the contents of this collection use [`set_polygon`](Self::set_polygon).
+        ///
+        /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
+        pub fn polygon(mut self, input: impl Into<crate::model::Point>) -> Self {
+            let mut v = self.polygon.unwrap_or_default();
+            v.push(input.into());
+            self.polygon = Some(v);
+            self
+        }
+        /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
+        pub fn set_polygon(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Point>>,
+        ) -> Self {
+            self.polygon = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Geometry`](crate::model::Geometry)
+        pub fn build(self) -> crate::model::Geometry {
+            crate::model::Geometry {
+                bounding_box: self.bounding_box,
+                polygon: self.polygon,
+            }
+        }
+    }
+}
+impl Geometry {
+    /// Creates a new builder-style object to manufacture [`Geometry`](crate::model::Geometry)
+    pub fn builder() -> crate::model::geometry::Builder {
+        crate::model::geometry::Builder::default()
+    }
+}
+
+/// <p>The X and Y coordinates of a point on a document page. The X and Y
+/// values that are returned are ratios of the overall document page size. For example, if the
+/// input document is 700 x 200 and the operation returns X=0.5 and Y=0.25, then the point is
+/// at the (350,50) pixel coordinate on the document page.</p>
+///
+/// <p>An array of <code>Point</code> objects, <code>Polygon</code>, is returned
+/// by <a>DetectDocumentText</a>. <code>Polygon</code> represents a fine-grained
+/// polygon around detected text. For more information, see Geometry in the Amazon Textract
+/// Developer Guide. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Point {
+    /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
+    pub x: f32,
+    /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
+    pub y: f32,
+}
+impl std::fmt::Debug for Point {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Point");
+        formatter.field("x", &self.x);
+        formatter.field("y", &self.y);
+        formatter.finish()
+    }
+}
+/// See [`Point`](crate::model::Point)
+pub mod point {
+    /// A builder for [`Point`](crate::model::Point)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) x: std::option::Option<f32>,
+        pub(crate) y: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
+        pub fn x(mut self, input: f32) -> Self {
+            self.x = Some(input);
+            self
+        }
+        /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
+        pub fn set_x(mut self, input: std::option::Option<f32>) -> Self {
+            self.x = input;
+            self
+        }
+        /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
+        pub fn y(mut self, input: f32) -> Self {
+            self.y = Some(input);
+            self
+        }
+        /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
+        pub fn set_y(mut self, input: std::option::Option<f32>) -> Self {
+            self.y = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Point`](crate::model::Point)
+        pub fn build(self) -> crate::model::Point {
+            crate::model::Point {
+                x: self.x.unwrap_or_default(),
+                y: self.y.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl Point {
+    /// Creates a new builder-style object to manufacture [`Point`](crate::model::Point)
+    pub fn builder() -> crate::model::point::Builder {
+        crate::model::point::Builder::default()
+    }
+}
+
+/// <p>The bounding box around the detected page, text, key-value pair, table, table cell, or
+/// selection element on a document page. The <code>left</code> (x-coordinate) and
+/// <code>top</code> (y-coordinate) are coordinates that represent the top and left sides of
+/// the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p>
+/// <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall
+/// document page size. For example, if the input image is 700 x 200 pixels, and the top-left
+/// coordinate of the bounding box is 350 x 50 pixels, the API returns a <code>left</code>
+/// value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p>
+/// <p>The <code>width</code> and <code>height</code> values represent the dimensions of the
+/// bounding box as a ratio of the overall document page dimension. For example, if the
+/// document page size is 700 x 200 pixels, and the bounding box width is 70 pixels, the width
+/// returned is 0.1. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BoundingBox {
+    /// <p>The width of the bounding box as a ratio of the overall document page
+    /// width.</p>
+    pub width: f32,
+    /// <p>The height of the bounding box as a ratio of the overall document page
+    /// height.</p>
+    pub height: f32,
+    /// <p>The left coordinate of the bounding box as a ratio of overall document page
+    /// width.</p>
+    pub left: f32,
+    /// <p>The top coordinate of the bounding box as a ratio of overall document page
+    /// height.</p>
+    pub top: f32,
+}
+impl std::fmt::Debug for BoundingBox {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BoundingBox");
+        formatter.field("width", &self.width);
+        formatter.field("height", &self.height);
+        formatter.field("left", &self.left);
+        formatter.field("top", &self.top);
+        formatter.finish()
+    }
+}
+/// See [`BoundingBox`](crate::model::BoundingBox)
+pub mod bounding_box {
+    /// A builder for [`BoundingBox`](crate::model::BoundingBox)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) width: std::option::Option<f32>,
+        pub(crate) height: std::option::Option<f32>,
+        pub(crate) left: std::option::Option<f32>,
+        pub(crate) top: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p>The width of the bounding box as a ratio of the overall document page
+        /// width.</p>
+        pub fn width(mut self, input: f32) -> Self {
+            self.width = Some(input);
+            self
+        }
+        /// <p>The width of the bounding box as a ratio of the overall document page
+        /// width.</p>
+        pub fn set_width(mut self, input: std::option::Option<f32>) -> Self {
+            self.width = input;
+            self
+        }
+        /// <p>The height of the bounding box as a ratio of the overall document page
+        /// height.</p>
+        pub fn height(mut self, input: f32) -> Self {
+            self.height = Some(input);
+            self
+        }
+        /// <p>The height of the bounding box as a ratio of the overall document page
+        /// height.</p>
+        pub fn set_height(mut self, input: std::option::Option<f32>) -> Self {
+            self.height = input;
+            self
+        }
+        /// <p>The left coordinate of the bounding box as a ratio of overall document page
+        /// width.</p>
+        pub fn left(mut self, input: f32) -> Self {
+            self.left = Some(input);
+            self
+        }
+        /// <p>The left coordinate of the bounding box as a ratio of overall document page
+        /// width.</p>
+        pub fn set_left(mut self, input: std::option::Option<f32>) -> Self {
+            self.left = input;
+            self
+        }
+        /// <p>The top coordinate of the bounding box as a ratio of overall document page
+        /// height.</p>
+        pub fn top(mut self, input: f32) -> Self {
+            self.top = Some(input);
+            self
+        }
+        /// <p>The top coordinate of the bounding box as a ratio of overall document page
+        /// height.</p>
+        pub fn set_top(mut self, input: std::option::Option<f32>) -> Self {
+            self.top = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BoundingBox`](crate::model::BoundingBox)
+        pub fn build(self) -> crate::model::BoundingBox {
+            crate::model::BoundingBox {
+                width: self.width.unwrap_or_default(),
+                height: self.height.unwrap_or_default(),
+                left: self.left.unwrap_or_default(),
+                top: self.top.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl BoundingBox {
+    /// Creates a new builder-style object to manufacture [`BoundingBox`](crate::model::BoundingBox)
+    pub fn builder() -> crate::model::bounding_box::Builder {
+        crate::model::bounding_box::Builder::default()
+    }
+}
+
 /// <p>An object used to store information about the Type detected by Amazon Textract.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2350,6 +1153,1203 @@ impl ExpenseType {
     /// Creates a new builder-style object to manufacture [`ExpenseType`](crate::model::ExpenseType)
     pub fn builder() -> crate::model::expense_type::Builder {
         crate::model::expense_type::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum JobStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    PartialSuccess,
+    #[allow(missing_docs)] // documentation missing in model
+    Succeeded,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for JobStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => JobStatus::Failed,
+            "IN_PROGRESS" => JobStatus::InProgress,
+            "PARTIAL_SUCCESS" => JobStatus::PartialSuccess,
+            "SUCCEEDED" => JobStatus::Succeeded,
+            other => JobStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for JobStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(JobStatus::from(s))
+    }
+}
+impl JobStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            JobStatus::Failed => "FAILED",
+            JobStatus::InProgress => "IN_PROGRESS",
+            JobStatus::PartialSuccess => "PARTIAL_SUCCESS",
+            JobStatus::Succeeded => "SUCCEEDED",
+            JobStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["FAILED", "IN_PROGRESS", "PARTIAL_SUCCESS", "SUCCEEDED"]
+    }
+}
+impl AsRef<str> for JobStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Information about the input document.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DocumentMetadata {
+    /// <p>The number of pages that are detected in the document.</p>
+    pub pages: std::option::Option<i32>,
+}
+impl std::fmt::Debug for DocumentMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DocumentMetadata");
+        formatter.field("pages", &self.pages);
+        formatter.finish()
+    }
+}
+/// See [`DocumentMetadata`](crate::model::DocumentMetadata)
+pub mod document_metadata {
+    /// A builder for [`DocumentMetadata`](crate::model::DocumentMetadata)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) pages: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The number of pages that are detected in the document.</p>
+        pub fn pages(mut self, input: i32) -> Self {
+            self.pages = Some(input);
+            self
+        }
+        /// <p>The number of pages that are detected in the document.</p>
+        pub fn set_pages(mut self, input: std::option::Option<i32>) -> Self {
+            self.pages = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DocumentMetadata`](crate::model::DocumentMetadata)
+        pub fn build(self) -> crate::model::DocumentMetadata {
+            crate::model::DocumentMetadata { pages: self.pages }
+        }
+    }
+}
+impl DocumentMetadata {
+    /// Creates a new builder-style object to manufacture [`DocumentMetadata`](crate::model::DocumentMetadata)
+    pub fn builder() -> crate::model::document_metadata::Builder {
+        crate::model::document_metadata::Builder::default()
+    }
+}
+
+/// <p>A <code>Block</code> represents items that are recognized in a document within a group
+/// of pixels close to each other. The information returned in a <code>Block</code> object
+/// depends on the type of operation. In text detection for documents (for example <a>DetectDocumentText</a>), you get information about the detected words and lines
+/// of text. In text analysis (for example <a>AnalyzeDocument</a>), you can also get
+/// information about the fields, tables, and selection elements that are detected in the
+/// document.</p>
+/// <p>An array of <code>Block</code> objects is returned by both synchronous and asynchronous
+/// operations. In synchronous operations, such as <a>DetectDocumentText</a>, the
+/// array of <code>Block</code> objects is the entire set of results. In asynchronous
+/// operations, such as <a>GetDocumentAnalysis</a>, the array is returned over one
+/// or more responses.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works.html">How Amazon Textract Works</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Block {
+    /// <p>The type of text item that's recognized. In operations for text detection, the following
+    /// types are returned:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects
+    /// that are detected on a document page.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>WORD</i> - A word detected on a document page. A word is one or
+    /// more ISO basic Latin script characters that aren't separated by spaces.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>LINE</i> - A string of tab-delimited, contiguous words that are
+    /// detected on a document page.</p>
+    /// </li>
+    /// </ul>
+    /// <p>In text analysis operations, the following types are returned:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>PAGE</i> - Contains a list of child <code>Block</code> objects
+    /// that are detected on a document page.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code>
+    /// objects for linked text that's detected on a document page. Use the
+    /// <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY
+    /// <code>Block</code> object or a VALUE <code>Block</code> object. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>WORD</i> - A word that's detected on a document page. A word is
+    /// one or more ISO basic Latin script characters that aren't separated by spaces.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>LINE</i> - A string of tab-delimited, contiguous words that are
+    /// detected on a document page.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>TABLE</i> - A table that's detected on a document page. A table
+    /// is grid-based information with two or more rows or columns, with a cell span of one
+    /// row and one column each. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>CELL</i> - A cell within a detected table. The cell is the parent
+    /// of the block that contains the text in the cell.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>SELECTION_ELEMENT</i> - A selection element such as an option
+    /// button (radio button) or a check box that's detected on a document page. Use the
+    /// value of <code>SelectionStatus</code> to determine the status of the selection
+    /// element.</p>
+    /// </li>
+    /// </ul>
+    pub block_type: std::option::Option<crate::model::BlockType>,
+    /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and
+    /// the accuracy of the geometry points around the recognized text.</p>
+    pub confidence: std::option::Option<f32>,
+    /// <p>The word or line of text that's recognized by Amazon Textract. </p>
+    pub text: std::option::Option<std::string::String>,
+    /// <p>The kind of text that Amazon Textract has detected. Can check for handwritten text and
+    /// printed text.</p>
+    pub text_type: std::option::Option<crate::model::TextType>,
+    /// <p>The row in which a table cell is located. The first row position is 1.
+    /// <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and
+    /// <code>GetDocumentTextDetection</code>.</p>
+    pub row_index: std::option::Option<i32>,
+    /// <p>The column in which a table cell appears. The first column position is 1.
+    /// <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and
+    /// <code>GetDocumentTextDetection</code>.</p>
+    pub column_index: std::option::Option<i32>,
+    /// <p>The number of rows that a table cell spans. Currently this value is always 1, even if
+    /// the number of rows spanned is greater than 1. <code>RowSpan</code> isn't returned by
+    /// <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
+    pub row_span: std::option::Option<i32>,
+    /// <p>The number of columns that a table cell spans. Currently this value is always 1, even if
+    /// the number of columns spanned is greater than 1. <code>ColumnSpan</code> isn't returned by
+    /// <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
+    pub column_span: std::option::Option<i32>,
+    /// <p>The location of the recognized text on the image. It includes an axis-aligned, coarse
+    /// bounding box that surrounds the text, and a finer-grain polygon for more accurate spatial
+    /// information. </p>
+    pub geometry: std::option::Option<crate::model::Geometry>,
+    /// <p>The identifier for the recognized text. The identifier is only unique for a single
+    /// operation. </p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks
+    /// for each WORD block that's part of the line of text. There aren't Relationship objects in
+    /// the list for relationships that don't exist, such as when the current block has no child
+    /// blocks. The list size can be the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>0 - The block has no child blocks.</p>
+    /// </li>
+    /// <li>
+    /// <p>1 - The block has child blocks.</p>
+    /// </li>
+    /// </ul>
+    pub relationships: std::option::Option<std::vec::Vec<crate::model::Relationship>>,
+    /// <p>The type of entity. The following can be returned:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <i>KEY</i> - An identifier for a field on the document.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <i>VALUE</i> - The field text.</p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and
+    /// <code>GetDocumentTextDetection</code>.</p>
+    pub entity_types: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
+    /// <p>The selection status of a selection element, such as an option button or check box.
+    /// </p>
+    pub selection_status: std::option::Option<crate::model::SelectionStatus>,
+    /// <p>The page on which a block was detected. <code>Page</code> is returned by asynchronous
+    /// operations. Page values greater than 1 are only returned for multipage documents that are
+    /// in PDF or TIFF format. A scanned image (JPEG/PNG), even if it contains multiple document pages, is
+    /// considered to be a single-page document. The value of <code>Page</code> is always 1.
+    /// Synchronous operations don't return <code>Page</code> because every input document is
+    /// considered to be a single-page document.</p>
+    pub page: std::option::Option<i32>,
+}
+impl std::fmt::Debug for Block {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Block");
+        formatter.field("block_type", &self.block_type);
+        formatter.field("confidence", &self.confidence);
+        formatter.field("text", &self.text);
+        formatter.field("text_type", &self.text_type);
+        formatter.field("row_index", &self.row_index);
+        formatter.field("column_index", &self.column_index);
+        formatter.field("row_span", &self.row_span);
+        formatter.field("column_span", &self.column_span);
+        formatter.field("geometry", &self.geometry);
+        formatter.field("id", &self.id);
+        formatter.field("relationships", &self.relationships);
+        formatter.field("entity_types", &self.entity_types);
+        formatter.field("selection_status", &self.selection_status);
+        formatter.field("page", &self.page);
+        formatter.finish()
+    }
+}
+/// See [`Block`](crate::model::Block)
+pub mod block {
+    /// A builder for [`Block`](crate::model::Block)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) block_type: std::option::Option<crate::model::BlockType>,
+        pub(crate) confidence: std::option::Option<f32>,
+        pub(crate) text: std::option::Option<std::string::String>,
+        pub(crate) text_type: std::option::Option<crate::model::TextType>,
+        pub(crate) row_index: std::option::Option<i32>,
+        pub(crate) column_index: std::option::Option<i32>,
+        pub(crate) row_span: std::option::Option<i32>,
+        pub(crate) column_span: std::option::Option<i32>,
+        pub(crate) geometry: std::option::Option<crate::model::Geometry>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) relationships: std::option::Option<std::vec::Vec<crate::model::Relationship>>,
+        pub(crate) entity_types: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
+        pub(crate) selection_status: std::option::Option<crate::model::SelectionStatus>,
+        pub(crate) page: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The type of text item that's recognized. In operations for text detection, the following
+        /// types are returned:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects
+        /// that are detected on a document page.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>WORD</i> - A word detected on a document page. A word is one or
+        /// more ISO basic Latin script characters that aren't separated by spaces.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>LINE</i> - A string of tab-delimited, contiguous words that are
+        /// detected on a document page.</p>
+        /// </li>
+        /// </ul>
+        /// <p>In text analysis operations, the following types are returned:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>PAGE</i> - Contains a list of child <code>Block</code> objects
+        /// that are detected on a document page.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code>
+        /// objects for linked text that's detected on a document page. Use the
+        /// <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY
+        /// <code>Block</code> object or a VALUE <code>Block</code> object. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>WORD</i> - A word that's detected on a document page. A word is
+        /// one or more ISO basic Latin script characters that aren't separated by spaces.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>LINE</i> - A string of tab-delimited, contiguous words that are
+        /// detected on a document page.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>TABLE</i> - A table that's detected on a document page. A table
+        /// is grid-based information with two or more rows or columns, with a cell span of one
+        /// row and one column each. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>CELL</i> - A cell within a detected table. The cell is the parent
+        /// of the block that contains the text in the cell.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>SELECTION_ELEMENT</i> - A selection element such as an option
+        /// button (radio button) or a check box that's detected on a document page. Use the
+        /// value of <code>SelectionStatus</code> to determine the status of the selection
+        /// element.</p>
+        /// </li>
+        /// </ul>
+        pub fn block_type(mut self, input: crate::model::BlockType) -> Self {
+            self.block_type = Some(input);
+            self
+        }
+        /// <p>The type of text item that's recognized. In operations for text detection, the following
+        /// types are returned:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects
+        /// that are detected on a document page.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>WORD</i> - A word detected on a document page. A word is one or
+        /// more ISO basic Latin script characters that aren't separated by spaces.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>LINE</i> - A string of tab-delimited, contiguous words that are
+        /// detected on a document page.</p>
+        /// </li>
+        /// </ul>
+        /// <p>In text analysis operations, the following types are returned:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>PAGE</i> - Contains a list of child <code>Block</code> objects
+        /// that are detected on a document page.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code>
+        /// objects for linked text that's detected on a document page. Use the
+        /// <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY
+        /// <code>Block</code> object or a VALUE <code>Block</code> object. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>WORD</i> - A word that's detected on a document page. A word is
+        /// one or more ISO basic Latin script characters that aren't separated by spaces.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>LINE</i> - A string of tab-delimited, contiguous words that are
+        /// detected on a document page.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>TABLE</i> - A table that's detected on a document page. A table
+        /// is grid-based information with two or more rows or columns, with a cell span of one
+        /// row and one column each. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>CELL</i> - A cell within a detected table. The cell is the parent
+        /// of the block that contains the text in the cell.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>SELECTION_ELEMENT</i> - A selection element such as an option
+        /// button (radio button) or a check box that's detected on a document page. Use the
+        /// value of <code>SelectionStatus</code> to determine the status of the selection
+        /// element.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_block_type(
+            mut self,
+            input: std::option::Option<crate::model::BlockType>,
+        ) -> Self {
+            self.block_type = input;
+            self
+        }
+        /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and
+        /// the accuracy of the geometry points around the recognized text.</p>
+        pub fn confidence(mut self, input: f32) -> Self {
+            self.confidence = Some(input);
+            self
+        }
+        /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and
+        /// the accuracy of the geometry points around the recognized text.</p>
+        pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+            self.confidence = input;
+            self
+        }
+        /// <p>The word or line of text that's recognized by Amazon Textract. </p>
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text = Some(input.into());
+            self
+        }
+        /// <p>The word or line of text that's recognized by Amazon Textract. </p>
+        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text = input;
+            self
+        }
+        /// <p>The kind of text that Amazon Textract has detected. Can check for handwritten text and
+        /// printed text.</p>
+        pub fn text_type(mut self, input: crate::model::TextType) -> Self {
+            self.text_type = Some(input);
+            self
+        }
+        /// <p>The kind of text that Amazon Textract has detected. Can check for handwritten text and
+        /// printed text.</p>
+        pub fn set_text_type(mut self, input: std::option::Option<crate::model::TextType>) -> Self {
+            self.text_type = input;
+            self
+        }
+        /// <p>The row in which a table cell is located. The first row position is 1.
+        /// <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and
+        /// <code>GetDocumentTextDetection</code>.</p>
+        pub fn row_index(mut self, input: i32) -> Self {
+            self.row_index = Some(input);
+            self
+        }
+        /// <p>The row in which a table cell is located. The first row position is 1.
+        /// <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and
+        /// <code>GetDocumentTextDetection</code>.</p>
+        pub fn set_row_index(mut self, input: std::option::Option<i32>) -> Self {
+            self.row_index = input;
+            self
+        }
+        /// <p>The column in which a table cell appears. The first column position is 1.
+        /// <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and
+        /// <code>GetDocumentTextDetection</code>.</p>
+        pub fn column_index(mut self, input: i32) -> Self {
+            self.column_index = Some(input);
+            self
+        }
+        /// <p>The column in which a table cell appears. The first column position is 1.
+        /// <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and
+        /// <code>GetDocumentTextDetection</code>.</p>
+        pub fn set_column_index(mut self, input: std::option::Option<i32>) -> Self {
+            self.column_index = input;
+            self
+        }
+        /// <p>The number of rows that a table cell spans. Currently this value is always 1, even if
+        /// the number of rows spanned is greater than 1. <code>RowSpan</code> isn't returned by
+        /// <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
+        pub fn row_span(mut self, input: i32) -> Self {
+            self.row_span = Some(input);
+            self
+        }
+        /// <p>The number of rows that a table cell spans. Currently this value is always 1, even if
+        /// the number of rows spanned is greater than 1. <code>RowSpan</code> isn't returned by
+        /// <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
+        pub fn set_row_span(mut self, input: std::option::Option<i32>) -> Self {
+            self.row_span = input;
+            self
+        }
+        /// <p>The number of columns that a table cell spans. Currently this value is always 1, even if
+        /// the number of columns spanned is greater than 1. <code>ColumnSpan</code> isn't returned by
+        /// <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
+        pub fn column_span(mut self, input: i32) -> Self {
+            self.column_span = Some(input);
+            self
+        }
+        /// <p>The number of columns that a table cell spans. Currently this value is always 1, even if
+        /// the number of columns spanned is greater than 1. <code>ColumnSpan</code> isn't returned by
+        /// <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
+        pub fn set_column_span(mut self, input: std::option::Option<i32>) -> Self {
+            self.column_span = input;
+            self
+        }
+        /// <p>The location of the recognized text on the image. It includes an axis-aligned, coarse
+        /// bounding box that surrounds the text, and a finer-grain polygon for more accurate spatial
+        /// information. </p>
+        pub fn geometry(mut self, input: crate::model::Geometry) -> Self {
+            self.geometry = Some(input);
+            self
+        }
+        /// <p>The location of the recognized text on the image. It includes an axis-aligned, coarse
+        /// bounding box that surrounds the text, and a finer-grain polygon for more accurate spatial
+        /// information. </p>
+        pub fn set_geometry(mut self, input: std::option::Option<crate::model::Geometry>) -> Self {
+            self.geometry = input;
+            self
+        }
+        /// <p>The identifier for the recognized text. The identifier is only unique for a single
+        /// operation. </p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier for the recognized text. The identifier is only unique for a single
+        /// operation. </p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Appends an item to `relationships`.
+        ///
+        /// To override the contents of this collection use [`set_relationships`](Self::set_relationships).
+        ///
+        /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks
+        /// for each WORD block that's part of the line of text. There aren't Relationship objects in
+        /// the list for relationships that don't exist, such as when the current block has no child
+        /// blocks. The list size can be the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>0 - The block has no child blocks.</p>
+        /// </li>
+        /// <li>
+        /// <p>1 - The block has child blocks.</p>
+        /// </li>
+        /// </ul>
+        pub fn relationships(mut self, input: impl Into<crate::model::Relationship>) -> Self {
+            let mut v = self.relationships.unwrap_or_default();
+            v.push(input.into());
+            self.relationships = Some(v);
+            self
+        }
+        /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks
+        /// for each WORD block that's part of the line of text. There aren't Relationship objects in
+        /// the list for relationships that don't exist, such as when the current block has no child
+        /// blocks. The list size can be the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>0 - The block has no child blocks.</p>
+        /// </li>
+        /// <li>
+        /// <p>1 - The block has child blocks.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_relationships(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Relationship>>,
+        ) -> Self {
+            self.relationships = input;
+            self
+        }
+        /// Appends an item to `entity_types`.
+        ///
+        /// To override the contents of this collection use [`set_entity_types`](Self::set_entity_types).
+        ///
+        /// <p>The type of entity. The following can be returned:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>KEY</i> - An identifier for a field on the document.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>VALUE</i> - The field text.</p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and
+        /// <code>GetDocumentTextDetection</code>.</p>
+        pub fn entity_types(mut self, input: impl Into<crate::model::EntityType>) -> Self {
+            let mut v = self.entity_types.unwrap_or_default();
+            v.push(input.into());
+            self.entity_types = Some(v);
+            self
+        }
+        /// <p>The type of entity. The following can be returned:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>KEY</i> - An identifier for a field on the document.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>VALUE</i> - The field text.</p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and
+        /// <code>GetDocumentTextDetection</code>.</p>
+        pub fn set_entity_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
+        ) -> Self {
+            self.entity_types = input;
+            self
+        }
+        /// <p>The selection status of a selection element, such as an option button or check box.
+        /// </p>
+        pub fn selection_status(mut self, input: crate::model::SelectionStatus) -> Self {
+            self.selection_status = Some(input);
+            self
+        }
+        /// <p>The selection status of a selection element, such as an option button or check box.
+        /// </p>
+        pub fn set_selection_status(
+            mut self,
+            input: std::option::Option<crate::model::SelectionStatus>,
+        ) -> Self {
+            self.selection_status = input;
+            self
+        }
+        /// <p>The page on which a block was detected. <code>Page</code> is returned by asynchronous
+        /// operations. Page values greater than 1 are only returned for multipage documents that are
+        /// in PDF or TIFF format. A scanned image (JPEG/PNG), even if it contains multiple document pages, is
+        /// considered to be a single-page document. The value of <code>Page</code> is always 1.
+        /// Synchronous operations don't return <code>Page</code> because every input document is
+        /// considered to be a single-page document.</p>
+        pub fn page(mut self, input: i32) -> Self {
+            self.page = Some(input);
+            self
+        }
+        /// <p>The page on which a block was detected. <code>Page</code> is returned by asynchronous
+        /// operations. Page values greater than 1 are only returned for multipage documents that are
+        /// in PDF or TIFF format. A scanned image (JPEG/PNG), even if it contains multiple document pages, is
+        /// considered to be a single-page document. The value of <code>Page</code> is always 1.
+        /// Synchronous operations don't return <code>Page</code> because every input document is
+        /// considered to be a single-page document.</p>
+        pub fn set_page(mut self, input: std::option::Option<i32>) -> Self {
+            self.page = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Block`](crate::model::Block)
+        pub fn build(self) -> crate::model::Block {
+            crate::model::Block {
+                block_type: self.block_type,
+                confidence: self.confidence,
+                text: self.text,
+                text_type: self.text_type,
+                row_index: self.row_index,
+                column_index: self.column_index,
+                row_span: self.row_span,
+                column_span: self.column_span,
+                geometry: self.geometry,
+                id: self.id,
+                relationships: self.relationships,
+                entity_types: self.entity_types,
+                selection_status: self.selection_status,
+                page: self.page,
+            }
+        }
+    }
+}
+impl Block {
+    /// Creates a new builder-style object to manufacture [`Block`](crate::model::Block)
+    pub fn builder() -> crate::model::block::Builder {
+        crate::model::block::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SelectionStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    NotSelected,
+    #[allow(missing_docs)] // documentation missing in model
+    Selected,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SelectionStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "NOT_SELECTED" => SelectionStatus::NotSelected,
+            "SELECTED" => SelectionStatus::Selected,
+            other => SelectionStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SelectionStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SelectionStatus::from(s))
+    }
+}
+impl SelectionStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SelectionStatus::NotSelected => "NOT_SELECTED",
+            SelectionStatus::Selected => "SELECTED",
+            SelectionStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NOT_SELECTED", "SELECTED"]
+    }
+}
+impl AsRef<str> for SelectionStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EntityType {
+    #[allow(missing_docs)] // documentation missing in model
+    Key,
+    #[allow(missing_docs)] // documentation missing in model
+    Value,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EntityType {
+    fn from(s: &str) -> Self {
+        match s {
+            "KEY" => EntityType::Key,
+            "VALUE" => EntityType::Value,
+            other => EntityType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EntityType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EntityType::from(s))
+    }
+}
+impl EntityType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EntityType::Key => "KEY",
+            EntityType::Value => "VALUE",
+            EntityType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["KEY", "VALUE"]
+    }
+}
+impl AsRef<str> for EntityType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Information about how blocks are related to each other. A <code>Block</code> object
+/// contains 0 or more <code>Relation</code> objects in a list, <code>Relationships</code>. For
+/// more information, see <a>Block</a>.</p>
+/// <p>The <code>Type</code> element provides the type of the relationship for all blocks in
+/// the <code>IDs</code> array. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Relationship {
+    /// <p>The type of relationship that the blocks in the IDs array have with the current block.
+    /// The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type
+    /// VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a
+    /// key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in
+    /// the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of
+    /// Selection Elements.</p>
+    pub r#type: std::option::Option<crate::model::RelationshipType>,
+    /// <p>An
+    /// array of IDs for related blocks. You can get the type of the relationship from the
+    /// <code>Type</code> element.</p>
+    pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for Relationship {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Relationship");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("ids", &self.ids);
+        formatter.finish()
+    }
+}
+/// See [`Relationship`](crate::model::Relationship)
+pub mod relationship {
+    /// A builder for [`Relationship`](crate::model::Relationship)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::RelationshipType>,
+        pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The type of relationship that the blocks in the IDs array have with the current block.
+        /// The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type
+        /// VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a
+        /// key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in
+        /// the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of
+        /// Selection Elements.</p>
+        pub fn r#type(mut self, input: crate::model::RelationshipType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type of relationship that the blocks in the IDs array have with the current block.
+        /// The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type
+        /// VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a
+        /// key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in
+        /// the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of
+        /// Selection Elements.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::RelationshipType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Appends an item to `ids`.
+        ///
+        /// To override the contents of this collection use [`set_ids`](Self::set_ids).
+        ///
+        /// <p>An
+        /// array of IDs for related blocks. You can get the type of the relationship from the
+        /// <code>Type</code> element.</p>
+        pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.ids.unwrap_or_default();
+            v.push(input.into());
+            self.ids = Some(v);
+            self
+        }
+        /// <p>An
+        /// array of IDs for related blocks. You can get the type of the relationship from the
+        /// <code>Type</code> element.</p>
+        pub fn set_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Relationship`](crate::model::Relationship)
+        pub fn build(self) -> crate::model::Relationship {
+            crate::model::Relationship {
+                r#type: self.r#type,
+                ids: self.ids,
+            }
+        }
+    }
+}
+impl Relationship {
+    /// Creates a new builder-style object to manufacture [`Relationship`](crate::model::Relationship)
+    pub fn builder() -> crate::model::relationship::Builder {
+        crate::model::relationship::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RelationshipType {
+    #[allow(missing_docs)] // documentation missing in model
+    Child,
+    #[allow(missing_docs)] // documentation missing in model
+    ComplexFeatures,
+    #[allow(missing_docs)] // documentation missing in model
+    Value,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RelationshipType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CHILD" => RelationshipType::Child,
+            "COMPLEX_FEATURES" => RelationshipType::ComplexFeatures,
+            "VALUE" => RelationshipType::Value,
+            other => RelationshipType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RelationshipType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RelationshipType::from(s))
+    }
+}
+impl RelationshipType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RelationshipType::Child => "CHILD",
+            RelationshipType::ComplexFeatures => "COMPLEX_FEATURES",
+            RelationshipType::Value => "VALUE",
+            RelationshipType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CHILD", "COMPLEX_FEATURES", "VALUE"]
+    }
+}
+impl AsRef<str> for RelationshipType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TextType {
+    #[allow(missing_docs)] // documentation missing in model
+    Handwriting,
+    #[allow(missing_docs)] // documentation missing in model
+    Printed,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TextType {
+    fn from(s: &str) -> Self {
+        match s {
+            "HANDWRITING" => TextType::Handwriting,
+            "PRINTED" => TextType::Printed,
+            other => TextType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TextType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TextType::from(s))
+    }
+}
+impl TextType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TextType::Handwriting => "HANDWRITING",
+            TextType::Printed => "PRINTED",
+            TextType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["HANDWRITING", "PRINTED"]
+    }
+}
+impl AsRef<str> for TextType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum BlockType {
+    #[allow(missing_docs)] // documentation missing in model
+    Cell,
+    #[allow(missing_docs)] // documentation missing in model
+    KeyValueSet,
+    #[allow(missing_docs)] // documentation missing in model
+    Line,
+    #[allow(missing_docs)] // documentation missing in model
+    Page,
+    #[allow(missing_docs)] // documentation missing in model
+    SelectionElement,
+    #[allow(missing_docs)] // documentation missing in model
+    Table,
+    #[allow(missing_docs)] // documentation missing in model
+    Word,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for BlockType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CELL" => BlockType::Cell,
+            "KEY_VALUE_SET" => BlockType::KeyValueSet,
+            "LINE" => BlockType::Line,
+            "PAGE" => BlockType::Page,
+            "SELECTION_ELEMENT" => BlockType::SelectionElement,
+            "TABLE" => BlockType::Table,
+            "WORD" => BlockType::Word,
+            other => BlockType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for BlockType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BlockType::from(s))
+    }
+}
+impl BlockType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            BlockType::Cell => "CELL",
+            BlockType::KeyValueSet => "KEY_VALUE_SET",
+            BlockType::Line => "LINE",
+            BlockType::Page => "PAGE",
+            BlockType::SelectionElement => "SELECTION_ELEMENT",
+            BlockType::Table => "TABLE",
+            BlockType::Word => "WORD",
+            BlockType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CELL",
+            "KEY_VALUE_SET",
+            "LINE",
+            "PAGE",
+            "SELECTION_ELEMENT",
+            "TABLE",
+            "WORD",
+        ]
+    }
+}
+impl AsRef<str> for BlockType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The input document, either as bytes or as an S3 object.</p>
+/// <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code>
+/// property. For example, you would use the <code>Bytes</code> property to pass a document
+/// loaded from a local file system. Image bytes passed by using the <code>Bytes</code>
+/// property must be base64 encoded. Your code might not need to encode document file bytes if
+/// you're using an AWS SDK to call Amazon Textract API operations. </p>
+/// <p>You pass images stored in an S3 bucket to an Amazon Textract API operation by using the
+/// <code>S3Object</code> property. Documents stored in an S3 bucket don't need to be base64
+/// encoded.</p>
+/// <p>The AWS Region for the S3 bucket that contains the S3 object must match the AWS
+/// Region that you use for Amazon Textract operations.</p>
+/// <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using
+/// the Bytes property isn't supported. You must first upload the document to an Amazon S3
+/// bucket, and then call the operation using the S3Object property.</p>
+///
+/// <p>For Amazon Textract to process an S3 object, the user must have permission
+/// to access the S3 object. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Document {
+    /// <p>A blob of base64-encoded document bytes. The maximum size of a document that's provided
+    /// in a blob of bytes is 5 MB. The document bytes must be in PNG or JPEG format.</p>
+    /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode
+    /// image bytes passed using the <code>Bytes</code> field. </p>
+    pub bytes: std::option::Option<aws_smithy_types::Blob>,
+    /// <p>Identifies an S3 object as the document source. The maximum size of a document that's
+    /// stored in an S3 bucket is 5 MB.</p>
+    pub s3_object: std::option::Option<crate::model::S3Object>,
+}
+impl std::fmt::Debug for Document {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Document");
+        formatter.field("bytes", &self.bytes);
+        formatter.field("s3_object", &self.s3_object);
+        formatter.finish()
+    }
+}
+/// See [`Document`](crate::model::Document)
+pub mod document {
+    /// A builder for [`Document`](crate::model::Document)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bytes: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) s3_object: std::option::Option<crate::model::S3Object>,
+    }
+    impl Builder {
+        /// <p>A blob of base64-encoded document bytes. The maximum size of a document that's provided
+        /// in a blob of bytes is 5 MB. The document bytes must be in PNG or JPEG format.</p>
+        /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode
+        /// image bytes passed using the <code>Bytes</code> field. </p>
+        pub fn bytes(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.bytes = Some(input);
+            self
+        }
+        /// <p>A blob of base64-encoded document bytes. The maximum size of a document that's provided
+        /// in a blob of bytes is 5 MB. The document bytes must be in PNG or JPEG format.</p>
+        /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode
+        /// image bytes passed using the <code>Bytes</code> field. </p>
+        pub fn set_bytes(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.bytes = input;
+            self
+        }
+        /// <p>Identifies an S3 object as the document source. The maximum size of a document that's
+        /// stored in an S3 bucket is 5 MB.</p>
+        pub fn s3_object(mut self, input: crate::model::S3Object) -> Self {
+            self.s3_object = Some(input);
+            self
+        }
+        /// <p>Identifies an S3 object as the document source. The maximum size of a document that's
+        /// stored in an S3 bucket is 5 MB.</p>
+        pub fn set_s3_object(mut self, input: std::option::Option<crate::model::S3Object>) -> Self {
+            self.s3_object = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Document`](crate::model::Document)
+        pub fn build(self) -> crate::model::Document {
+            crate::model::Document {
+                bytes: self.bytes,
+                s3_object: self.s3_object,
+            }
+        }
+    }
+}
+impl Document {
+    /// Creates a new builder-style object to manufacture [`Document`](crate::model::Document)
+    pub fn builder() -> crate::model::document::Builder {
+        crate::model::document::Builder::default()
     }
 }
 

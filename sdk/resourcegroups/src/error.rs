@@ -23,7 +23,7 @@ pub enum CreateGroupErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of
     /// time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGroupError {
@@ -90,29 +90,29 @@ impl CreateGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateGroupErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateGroupErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGroupErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -159,7 +159,7 @@ pub enum DeleteGroupErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of
     /// time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGroupError {
@@ -227,33 +227,33 @@ impl DeleteGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteGroupErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteGroupErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGroupErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteGroupErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -301,7 +301,7 @@ pub enum GetGroupErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of
     /// time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGroupError {
@@ -369,30 +369,30 @@ impl GetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetGroupErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetGroupErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetGroupErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetGroupErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetGroupErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGroupErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetGroupErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetGroupErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(&self.kind, GetGroupErrorKind::MethodNotAllowedException(_))
     }
-    /// Returns true if the error kind is `GetGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetGroupErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetGroupErrorKind::TooManyRequestsException(_))
     }
@@ -437,7 +437,7 @@ pub enum GetGroupConfigurationErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of
     /// time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGroupConfigurationError {
@@ -505,42 +505,42 @@ impl GetGroupConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGroupConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetGroupConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGroupConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetGroupConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetGroupConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGroupConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetGroupConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetGroupConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGroupConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetGroupConfigurationErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetGroupConfigurationErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGroupConfigurationErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetGroupConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetGroupConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGroupConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetGroupConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetGroupConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -588,7 +588,7 @@ pub enum GetGroupQueryErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of
     /// time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGroupQueryError {
@@ -656,33 +656,33 @@ impl GetGroupQueryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGroupQueryErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetGroupQueryErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetGroupQueryErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetGroupQueryErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetGroupQueryErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetGroupQueryErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetGroupQueryErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetGroupQueryErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGroupQueryErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetGroupQueryErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetGroupQueryErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGroupQueryErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetGroupQueryErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetGroupQueryErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetGroupQueryErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetGroupQueryErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetGroupQueryErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -730,7 +730,7 @@ pub enum GetTagsErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of
     /// time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTagsError {
@@ -798,30 +798,30 @@ impl GetTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTagsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::MethodNotAllowedException(_))
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetTagsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetTagsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::TooManyRequestsException(_))
     }
@@ -866,7 +866,7 @@ pub enum GroupResourcesErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of
     /// time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GroupResourcesError {
@@ -934,33 +934,33 @@ impl GroupResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GroupResourcesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GroupResourcesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GroupResourcesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GroupResourcesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GroupResourcesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GroupResourcesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GroupResourcesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GroupResourcesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GroupResourcesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GroupResourcesErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GroupResourcesErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GroupResourcesErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GroupResourcesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GroupResourcesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GroupResourcesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GroupResourcesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GroupResourcesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1011,7 +1011,7 @@ pub enum ListGroupResourcesErrorKind {
     /// <p>The request was rejected because it doesn't have valid credentials for the target
     /// resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGroupResourcesError {
@@ -1080,49 +1080,49 @@ impl ListGroupResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGroupResourcesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListGroupResourcesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupResourcesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupResourcesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListGroupResourcesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupResourcesErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupResourcesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListGroupResourcesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupResourcesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupResourcesErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `ListGroupResourcesErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupResourcesErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupResourcesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListGroupResourcesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupResourcesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupResourcesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListGroupResourcesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupResourcesErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupResourcesErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListGroupResourcesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1169,7 +1169,7 @@ pub enum ListGroupsErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of
     /// time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGroupsError {
@@ -1236,29 +1236,29 @@ impl ListGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListGroupsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListGroupsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGroupsErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `ListGroupsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListGroupsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, ListGroupsErrorKind::TooManyRequestsException(_))
     }
@@ -1302,7 +1302,7 @@ pub enum PutGroupConfigurationErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of
     /// time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutGroupConfigurationError {
@@ -1370,42 +1370,42 @@ impl PutGroupConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutGroupConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutGroupConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutGroupConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutGroupConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutGroupConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutGroupConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PutGroupConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `PutGroupConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutGroupConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PutGroupConfigurationErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `PutGroupConfigurationErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutGroupConfigurationErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `PutGroupConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutGroupConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutGroupConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutGroupConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutGroupConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1454,7 +1454,7 @@ pub enum SearchResourcesErrorKind {
     /// <p>The request was rejected because it doesn't have valid credentials for the target
     /// resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchResourcesError {
@@ -1522,36 +1522,36 @@ impl SearchResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchResourcesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `SearchResourcesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, SearchResourcesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `SearchResourcesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `SearchResourcesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, SearchResourcesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `SearchResourcesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `SearchResourcesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchResourcesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SearchResourcesErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `SearchResourcesErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchResourcesErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `SearchResourcesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `SearchResourcesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchResourcesErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `SearchResourcesErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `SearchResourcesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1599,7 +1599,7 @@ pub enum TagErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of
     /// time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagError {
@@ -1667,27 +1667,27 @@ impl TagError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `TagErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `TagErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `TagErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, TagErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `TagErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `TagErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(&self.kind, TagErrorKind::InternalServerErrorException(_))
     }
-    /// Returns true if the error kind is `TagErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `TagErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(&self.kind, TagErrorKind::MethodNotAllowedException(_))
     }
-    /// Returns true if the error kind is `TagErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `TagErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `TagErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, TagErrorKind::TooManyRequestsException(_))
     }
@@ -1732,7 +1732,7 @@ pub enum UngroupResourcesErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of
     /// time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UngroupResourcesError {
@@ -1800,36 +1800,36 @@ impl UngroupResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UngroupResourcesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UngroupResourcesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UngroupResourcesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UngroupResourcesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UngroupResourcesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UngroupResourcesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UngroupResourcesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UngroupResourcesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UngroupResourcesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UngroupResourcesErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UngroupResourcesErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UngroupResourcesErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UngroupResourcesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UngroupResourcesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UngroupResourcesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UngroupResourcesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UngroupResourcesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1877,7 +1877,7 @@ pub enum UntagErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of
     /// time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagError {
@@ -1945,27 +1945,27 @@ impl UntagError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UntagErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UntagErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UntagErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UntagErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UntagErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UntagErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(&self.kind, UntagErrorKind::InternalServerErrorException(_))
     }
-    /// Returns true if the error kind is `UntagErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UntagErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(&self.kind, UntagErrorKind::MethodNotAllowedException(_))
     }
-    /// Returns true if the error kind is `UntagErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UntagErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UntagErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, UntagErrorKind::TooManyRequestsException(_))
     }
@@ -2010,7 +2010,7 @@ pub enum UpdateGroupErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of
     /// time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGroupError {
@@ -2078,33 +2078,33 @@ impl UpdateGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateGroupErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateGroupErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGroupErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGroupErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateGroupErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateGroupErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2152,7 +2152,7 @@ pub enum UpdateGroupQueryErrorKind {
     /// <p>You've exceeded throttling limits by making too many requests in a period of
     /// time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGroupQueryError {
@@ -2220,36 +2220,36 @@ impl UpdateGroupQueryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGroupQueryErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateGroupQueryErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGroupQueryErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGroupQueryErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateGroupQueryErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateGroupQueryErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateGroupQueryErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateGroupQueryErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGroupQueryErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGroupQueryErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateGroupQueryErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGroupQueryErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGroupQueryErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGroupQueryErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateGroupQueryErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateGroupQueryErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateGroupQueryErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

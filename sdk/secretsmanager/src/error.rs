@@ -31,7 +31,7 @@ pub enum CancelRotateSecretErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelRotateSecretError {
@@ -97,28 +97,28 @@ impl CancelRotateSecretError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelRotateSecretErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `CancelRotateSecretErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             CancelRotateSecretErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `CancelRotateSecretErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CancelRotateSecretErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelRotateSecretErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CancelRotateSecretErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CancelRotateSecretErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelRotateSecretErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CancelRotateSecretErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CancelRotateSecretErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -183,7 +183,7 @@ pub enum CreateSecretErrorKind {
     ResourceExistsException(crate::error::ResourceExistsException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSecretError {
@@ -254,54 +254,54 @@ impl CreateSecretError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSecretErrorKind::EncryptionFailure`.
+    /// Returns `true` if the error kind is `CreateSecretErrorKind::EncryptionFailure`.
     pub fn is_encryption_failure(&self) -> bool {
         matches!(&self.kind, CreateSecretErrorKind::EncryptionFailure(_))
     }
-    /// Returns true if the error kind is `CreateSecretErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `CreateSecretErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, CreateSecretErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `CreateSecretErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateSecretErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSecretErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSecretErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateSecretErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSecretErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSecretErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateSecretErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateSecretErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateSecretErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `CreateSecretErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSecretErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSecretErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `CreateSecretErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSecretErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSecretErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `CreateSecretErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSecretErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSecretErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateSecretErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -358,7 +358,7 @@ pub enum DeleteResourcePolicyErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResourcePolicyError {
@@ -424,28 +424,28 @@ impl DeleteResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -497,7 +497,7 @@ pub enum DeleteSecretErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSecretError {
@@ -563,25 +563,25 @@ impl DeleteSecretError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSecretErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DeleteSecretErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, DeleteSecretErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `DeleteSecretErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteSecretErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSecretErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSecretErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteSecretErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSecretErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSecretErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSecretErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -620,7 +620,7 @@ pub enum DescribeSecretErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSecretError {
@@ -685,18 +685,18 @@ impl DescribeSecretError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSecretErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DescribeSecretErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, DescribeSecretErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `DescribeSecretErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeSecretErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSecretErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSecretErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeSecretErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -745,7 +745,7 @@ pub enum GetRandomPasswordErrorKind {
     /// </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRandomPasswordError {
@@ -810,21 +810,21 @@ impl GetRandomPasswordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRandomPasswordErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `GetRandomPasswordErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             GetRandomPasswordErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `GetRandomPasswordErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetRandomPasswordErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRandomPasswordErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetRandomPasswordErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetRandomPasswordErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -875,7 +875,7 @@ pub enum GetResourcePolicyErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourcePolicyError {
@@ -941,28 +941,28 @@ impl GetResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourcePolicyErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `GetResourcePolicyErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePolicyErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetResourcePolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetResourcePolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetResourcePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1016,7 +1016,7 @@ pub enum GetSecretValueErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSecretValueError {
@@ -1083,29 +1083,29 @@ impl GetSecretValueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSecretValueErrorKind::DecryptionFailure`.
+    /// Returns `true` if the error kind is `GetSecretValueErrorKind::DecryptionFailure`.
     pub fn is_decryption_failure(&self) -> bool {
         matches!(&self.kind, GetSecretValueErrorKind::DecryptionFailure(_))
     }
-    /// Returns true if the error kind is `GetSecretValueErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `GetSecretValueErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, GetSecretValueErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `GetSecretValueErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetSecretValueErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSecretValueErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetSecretValueErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetSecretValueErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSecretValueErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetSecretValueErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetSecretValueErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1145,7 +1145,7 @@ pub enum ListSecretsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSecretsError {
@@ -1210,18 +1210,18 @@ impl ListSecretsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSecretsErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ListSecretsErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, ListSecretsErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `ListSecretsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListSecretsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSecretsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListSecretsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListSecretsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1261,7 +1261,7 @@ pub enum ListSecretVersionIdsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSecretVersionIdsError {
@@ -1327,28 +1327,28 @@ impl ListSecretVersionIdsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSecretVersionIdsErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ListSecretVersionIdsErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             ListSecretVersionIdsErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `ListSecretVersionIdsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListSecretVersionIdsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSecretVersionIdsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListSecretVersionIdsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListSecretVersionIdsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSecretVersionIdsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListSecretVersionIdsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListSecretVersionIdsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1404,7 +1404,7 @@ pub enum PutResourcePolicyErrorKind {
     PublicPolicyException(crate::error::PublicPolicyException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutResourcePolicyError {
@@ -1472,42 +1472,42 @@ impl PutResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::PublicPolicyException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::PublicPolicyException`.
     pub fn is_public_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::PublicPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1570,7 +1570,7 @@ pub enum PutSecretValueErrorKind {
     ResourceExistsException(crate::error::ResourceExistsException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutSecretValueError {
@@ -1639,43 +1639,43 @@ impl PutSecretValueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutSecretValueErrorKind::EncryptionFailure`.
+    /// Returns `true` if the error kind is `PutSecretValueErrorKind::EncryptionFailure`.
     pub fn is_encryption_failure(&self) -> bool {
         matches!(&self.kind, PutSecretValueErrorKind::EncryptionFailure(_))
     }
-    /// Returns true if the error kind is `PutSecretValueErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `PutSecretValueErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, PutSecretValueErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `PutSecretValueErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutSecretValueErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSecretValueErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutSecretValueErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PutSecretValueErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSecretValueErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutSecretValueErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutSecretValueErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSecretValueErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutSecretValueErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `PutSecretValueErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSecretValueErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `PutSecretValueErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutSecretValueErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1730,7 +1730,7 @@ pub enum RemoveRegionsFromReplicationErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveRegionsFromReplicationError {
@@ -1800,28 +1800,28 @@ impl RemoveRegionsFromReplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveRegionsFromReplicationErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `RemoveRegionsFromReplicationErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             RemoveRegionsFromReplicationErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `RemoveRegionsFromReplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RemoveRegionsFromReplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveRegionsFromReplicationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveRegionsFromReplicationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `RemoveRegionsFromReplicationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveRegionsFromReplicationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveRegionsFromReplicationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveRegionsFromReplicationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1877,7 +1877,7 @@ pub enum ReplicateSecretToRegionsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReplicateSecretToRegionsError {
@@ -1943,28 +1943,28 @@ impl ReplicateSecretToRegionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ReplicateSecretToRegionsErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ReplicateSecretToRegionsErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             ReplicateSecretToRegionsErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `ReplicateSecretToRegionsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ReplicateSecretToRegionsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReplicateSecretToRegionsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ReplicateSecretToRegionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ReplicateSecretToRegionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReplicateSecretToRegionsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ReplicateSecretToRegionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ReplicateSecretToRegionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2016,7 +2016,7 @@ pub enum RestoreSecretErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreSecretError {
@@ -2082,25 +2082,25 @@ impl RestoreSecretError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreSecretErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `RestoreSecretErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, RestoreSecretErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `RestoreSecretErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RestoreSecretErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreSecretErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreSecretErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `RestoreSecretErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RestoreSecretErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RestoreSecretErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RestoreSecretErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2152,7 +2152,7 @@ pub enum RotateSecretErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RotateSecretError {
@@ -2218,25 +2218,25 @@ impl RotateSecretError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RotateSecretErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `RotateSecretErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, RotateSecretErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `RotateSecretErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `RotateSecretErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             RotateSecretErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `RotateSecretErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `RotateSecretErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RotateSecretErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RotateSecretErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RotateSecretErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2288,7 +2288,7 @@ pub enum StopReplicationToReplicaErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopReplicationToReplicaError {
@@ -2354,28 +2354,28 @@ impl StopReplicationToReplicaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopReplicationToReplicaErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `StopReplicationToReplicaErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             StopReplicationToReplicaErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `StopReplicationToReplicaErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StopReplicationToReplicaErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopReplicationToReplicaErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StopReplicationToReplicaErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StopReplicationToReplicaErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopReplicationToReplicaErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StopReplicationToReplicaErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopReplicationToReplicaErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2427,7 +2427,7 @@ pub enum TagResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2493,22 +2493,22 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2560,7 +2560,7 @@ pub enum UntagResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2626,25 +2626,25 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2709,7 +2709,7 @@ pub enum UpdateSecretErrorKind {
     ResourceExistsException(crate::error::ResourceExistsException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSecretError {
@@ -2780,54 +2780,54 @@ impl UpdateSecretError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSecretErrorKind::EncryptionFailure`.
+    /// Returns `true` if the error kind is `UpdateSecretErrorKind::EncryptionFailure`.
     pub fn is_encryption_failure(&self) -> bool {
         matches!(&self.kind, UpdateSecretErrorKind::EncryptionFailure(_))
     }
-    /// Returns true if the error kind is `UpdateSecretErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `UpdateSecretErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(&self.kind, UpdateSecretErrorKind::InternalServiceError(_))
     }
-    /// Returns true if the error kind is `UpdateSecretErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateSecretErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSecretErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSecretErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateSecretErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSecretErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSecretErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateSecretErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, UpdateSecretErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `UpdateSecretErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `UpdateSecretErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSecretErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSecretErrorKind::PreconditionNotMetException`.
+    /// Returns `true` if the error kind is `UpdateSecretErrorKind::PreconditionNotMetException`.
     pub fn is_precondition_not_met_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSecretErrorKind::PreconditionNotMetException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSecretErrorKind::ResourceExistsException`.
+    /// Returns `true` if the error kind is `UpdateSecretErrorKind::ResourceExistsException`.
     pub fn is_resource_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSecretErrorKind::ResourceExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSecretErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSecretErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2886,7 +2886,7 @@ pub enum UpdateSecretVersionStageErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSecretVersionStageError {
@@ -2953,35 +2953,35 @@ impl UpdateSecretVersionStageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSecretVersionStageErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `UpdateSecretVersionStageErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSecretVersionStageErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSecretVersionStageErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateSecretVersionStageErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSecretVersionStageErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSecretVersionStageErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateSecretVersionStageErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSecretVersionStageErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSecretVersionStageErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateSecretVersionStageErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSecretVersionStageErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSecretVersionStageErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSecretVersionStageErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3036,7 +3036,7 @@ pub enum ValidateResourcePolicyErrorKind {
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
     /// <p>We can't find the resource that you asked for.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ValidateResourcePolicyError {
@@ -3105,35 +3105,35 @@ impl ValidateResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ValidateResourcePolicyErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `ValidateResourcePolicyErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             ValidateResourcePolicyErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `ValidateResourcePolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ValidateResourcePolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ValidateResourcePolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ValidateResourcePolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ValidateResourcePolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ValidateResourcePolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ValidateResourcePolicyErrorKind::MalformedPolicyDocumentException`.
+    /// Returns `true` if the error kind is `ValidateResourcePolicyErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
         matches!(
             &self.kind,
             ValidateResourcePolicyErrorKind::MalformedPolicyDocumentException(_)
         )
     }
-    /// Returns true if the error kind is `ValidateResourcePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ValidateResourcePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

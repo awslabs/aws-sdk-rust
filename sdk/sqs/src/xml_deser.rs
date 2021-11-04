@@ -601,8 +601,8 @@ pub fn deser_operation_crate_operation_get_queue_attributes(
                     Some(
                         Result::<std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>, aws_smithy_xml::decode::XmlError>::Ok({
                             let mut map_22 = builder.attributes.take().unwrap_or_default();
-                                        crate::xml_deser::deser_map_com_amazonaws_sqs_queue_attribute_map_entry(&mut tag, &mut map_22)?;
-                                        map_22
+                                            crate::xml_deser::deser_map_com_amazonaws_sqs_queue_attribute_map_entry(&mut tag, &mut map_22)?;
+                                            map_22
                         })
                         ?
                     )
@@ -882,8 +882,8 @@ pub fn deser_operation_crate_operation_list_queue_tags(
                     Some(
                         Result::<std::collections::HashMap<std::string::String, std::string::String>, aws_smithy_xml::decode::XmlError>::Ok({
                             let mut map_32 = builder.tags.take().unwrap_or_default();
-                                        crate::xml_deser::deser_map_com_amazonaws_sqs_tag_map_entry(&mut tag, &mut map_32)?;
-                                        map_32
+                                            crate::xml_deser::deser_map_com_amazonaws_sqs_tag_map_entry(&mut tag, &mut map_32)?;
+                                            map_32
                         })
                         ?
                     )
@@ -1523,8 +1523,8 @@ pub fn deser_structure_crate_model_message(
                     Some(
                         Result::<std::collections::HashMap<crate::model::MessageSystemAttributeName, std::string::String>, aws_smithy_xml::decode::XmlError>::Ok({
                             let mut map_59 = builder.attributes.take().unwrap_or_default();
-                                        crate::xml_deser::deser_map_com_amazonaws_sqs_message_system_attribute_map_entry(&mut tag, &mut map_59)?;
-                                        map_59
+                                            crate::xml_deser::deser_map_com_amazonaws_sqs_message_system_attribute_map_entry(&mut tag, &mut map_59)?;
+                                            map_59
                         })
                         ?
                     )
@@ -1550,8 +1550,8 @@ pub fn deser_structure_crate_model_message(
                     Some(
                         Result::<std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>, aws_smithy_xml::decode::XmlError>::Ok({
                             let mut map_62 = builder.message_attributes.take().unwrap_or_default();
-                                        crate::xml_deser::deser_map_com_amazonaws_sqs_message_body_attribute_map_entry(&mut tag, &mut map_62)?;
-                                        map_62
+                                            crate::xml_deser::deser_map_com_amazonaws_sqs_message_body_attribute_map_entry(&mut tag, &mut map_62)?;
+                                            map_62
                         })
                         ?
                     )

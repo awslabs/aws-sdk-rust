@@ -230,6 +230,29 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetExpenseAnalysisError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetExpenseAnalysisError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetExpenseAnalysisErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::GetExpenseAnalysisErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::GetExpenseAnalysisErrorKind::InvalidJobIdException(inner) => Error::InvalidJobIdException(inner),
+                crate::error::GetExpenseAnalysisErrorKind::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
+                crate::error::GetExpenseAnalysisErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::GetExpenseAnalysisErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+                crate::error::GetExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+                crate::error::GetExpenseAnalysisErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::GetExpenseAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartDocumentAnalysisError, R>>
     for Error
 where
@@ -281,6 +304,34 @@ where
                 crate::error::StartDocumentTextDetectionErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::StartDocumentTextDetectionErrorKind::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
                 crate::error::StartDocumentTextDetectionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartExpenseAnalysisError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::StartExpenseAnalysisError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::StartExpenseAnalysisErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::StartExpenseAnalysisErrorKind::BadDocumentException(inner) => Error::BadDocumentException(inner),
+                crate::error::StartExpenseAnalysisErrorKind::DocumentTooLargeException(inner) => Error::DocumentTooLargeException(inner),
+                crate::error::StartExpenseAnalysisErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+                crate::error::StartExpenseAnalysisErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::StartExpenseAnalysisErrorKind::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
+                crate::error::StartExpenseAnalysisErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::StartExpenseAnalysisErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
+                crate::error::StartExpenseAnalysisErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::StartExpenseAnalysisErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
+                crate::error::StartExpenseAnalysisErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::StartExpenseAnalysisErrorKind::UnsupportedDocumentException(inner) => Error::UnsupportedDocumentException(inner),
+                crate::error::StartExpenseAnalysisErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }

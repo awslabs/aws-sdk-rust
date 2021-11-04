@@ -34,6 +34,12 @@ pub enum Error {
     CustomAvailabilityZoneQuotaExceededFault(
         crate::error::CustomAvailabilityZoneQuotaExceededFault,
     ),
+    /// <p>A CEV with the specified name already exists.</p>
+    CustomDbEngineVersionAlreadyExistsFault(crate::error::CustomDbEngineVersionAlreadyExistsFault),
+    /// <p>The specified CEV was not found.</p>
+    CustomDbEngineVersionNotFoundFault(crate::error::CustomDbEngineVersionNotFoundFault),
+    /// <p>You have exceeded your CEV quota.</p>
+    CustomDbEngineVersionQuotaExceededFault(crate::error::CustomDbEngineVersionQuotaExceededFault),
     /// <p>The user already has a DB cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::error::DbClusterAlreadyExistsFault),
     /// <p>
@@ -205,6 +211,8 @@ pub enum Error {
     /// resolve this error by updating your subnet group to use different Availability Zones
     /// that have more storage available.</p>
     InsufficientStorageClusterCapacityFault(crate::error::InsufficientStorageClusterCapacityFault),
+    /// <p>You can't delete the CEV.</p>
+    InvalidCustomDbEngineVersionStateFault(crate::error::InvalidCustomDbEngineVersionStateFault),
     /// <p>
     /// <code>Capacity</code> isn't a valid Aurora Serverless DB cluster
     /// capacity. Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
@@ -337,6 +345,9 @@ impl std::fmt::Display for Error {
             Error::CustomAvailabilityZoneAlreadyExistsFault(inner) => inner.fmt(f),
             Error::CustomAvailabilityZoneNotFoundFault(inner) => inner.fmt(f),
             Error::CustomAvailabilityZoneQuotaExceededFault(inner) => inner.fmt(f),
+            Error::CustomDbEngineVersionAlreadyExistsFault(inner) => inner.fmt(f),
+            Error::CustomDbEngineVersionNotFoundFault(inner) => inner.fmt(f),
+            Error::CustomDbEngineVersionQuotaExceededFault(inner) => inner.fmt(f),
             Error::DbClusterAlreadyExistsFault(inner) => inner.fmt(f),
             Error::DbClusterBacktrackNotFoundFault(inner) => inner.fmt(f),
             Error::DbClusterEndpointAlreadyExistsFault(inner) => inner.fmt(f),
@@ -399,6 +410,7 @@ impl std::fmt::Display for Error {
             Error::InsufficientDbClusterCapacityFault(inner) => inner.fmt(f),
             Error::InsufficientDbInstanceCapacityFault(inner) => inner.fmt(f),
             Error::InsufficientStorageClusterCapacityFault(inner) => inner.fmt(f),
+            Error::InvalidCustomDbEngineVersionStateFault(inner) => inner.fmt(f),
             Error::InvalidDbClusterCapacityFault(inner) => inner.fmt(f),
             Error::InvalidDbClusterEndpointStateFault(inner) => inner.fmt(f),
             Error::InvalidDbClusterSnapshotStateFault(inner) => inner.fmt(f),
@@ -786,6 +798,25 @@ where
                 crate::error::CreateCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneQuotaExceededFault(inner) => Error::CustomAvailabilityZoneQuotaExceededFault(inner),
                 crate::error::CreateCustomAvailabilityZoneErrorKind::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
                 crate::error::CreateCustomAvailabilityZoneErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCustomDBEngineVersionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateCustomDBEngineVersionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateCustomDBEngineVersionErrorKind::CustomDbEngineVersionAlreadyExistsFault(inner) => Error::CustomDbEngineVersionAlreadyExistsFault(inner),
+                crate::error::CreateCustomDBEngineVersionErrorKind::CustomDbEngineVersionQuotaExceededFault(inner) => Error::CustomDbEngineVersionQuotaExceededFault(inner),
+                crate::error::CreateCustomDBEngineVersionErrorKind::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
+                crate::error::CreateCustomDBEngineVersionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }
@@ -1277,6 +1308,24 @@ where
                 crate::error::DeleteCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneNotFoundFault(inner) => Error::CustomAvailabilityZoneNotFoundFault(inner),
                 crate::error::DeleteCustomAvailabilityZoneErrorKind::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
                 crate::error::DeleteCustomAvailabilityZoneErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCustomDBEngineVersionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteCustomDBEngineVersionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeleteCustomDBEngineVersionErrorKind::CustomDbEngineVersionNotFoundFault(inner) => Error::CustomDbEngineVersionNotFoundFault(inner),
+                crate::error::DeleteCustomDBEngineVersionErrorKind::InvalidCustomDbEngineVersionStateFault(inner) => Error::InvalidCustomDbEngineVersionStateFault(inner),
+                crate::error::DeleteCustomDBEngineVersionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }
@@ -2643,6 +2692,24 @@ where
                 crate::error::ModifyCurrentDBClusterCapacityErrorKind::InvalidDbClusterCapacityFault(inner) => Error::InvalidDbClusterCapacityFault(inner),
                 crate::error::ModifyCurrentDBClusterCapacityErrorKind::InvalidDbClusterStateFault(inner) => Error::InvalidDbClusterStateFault(inner),
                 crate::error::ModifyCurrentDBClusterCapacityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyCustomDBEngineVersionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ModifyCustomDBEngineVersionError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ModifyCustomDBEngineVersionErrorKind::CustomDbEngineVersionNotFoundFault(inner) => Error::CustomDbEngineVersionNotFoundFault(inner),
+                crate::error::ModifyCustomDBEngineVersionErrorKind::InvalidCustomDbEngineVersionStateFault(inner) => Error::InvalidCustomDbEngineVersionStateFault(inner),
+                crate::error::ModifyCustomDBEngineVersionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }

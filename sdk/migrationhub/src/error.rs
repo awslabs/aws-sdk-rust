@@ -37,7 +37,7 @@ pub enum AssociateCreatedArtifactErrorKind {
     /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
     /// flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateCreatedArtifactError {
@@ -108,63 +108,63 @@ impl AssociateCreatedArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateCreatedArtifactErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateCreatedArtifactErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCreatedArtifactErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCreatedArtifactErrorKind::DryRunOperation`.
+    /// Returns `true` if the error kind is `AssociateCreatedArtifactErrorKind::DryRunOperation`.
     pub fn is_dry_run_operation(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCreatedArtifactErrorKind::DryRunOperation(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCreatedArtifactErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `AssociateCreatedArtifactErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCreatedArtifactErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCreatedArtifactErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `AssociateCreatedArtifactErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCreatedArtifactErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCreatedArtifactErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AssociateCreatedArtifactErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCreatedArtifactErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCreatedArtifactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateCreatedArtifactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCreatedArtifactErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCreatedArtifactErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `AssociateCreatedArtifactErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCreatedArtifactErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCreatedArtifactErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AssociateCreatedArtifactErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateCreatedArtifactErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateCreatedArtifactErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `AssociateCreatedArtifactErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -231,7 +231,7 @@ pub enum AssociateDiscoveredResourceErrorKind {
     /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
     /// flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateDiscoveredResourceError {
@@ -309,70 +309,70 @@ impl AssociateDiscoveredResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateDiscoveredResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateDiscoveredResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDiscoveredResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDiscoveredResourceErrorKind::DryRunOperation`.
+    /// Returns `true` if the error kind is `AssociateDiscoveredResourceErrorKind::DryRunOperation`.
     pub fn is_dry_run_operation(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDiscoveredResourceErrorKind::DryRunOperation(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDiscoveredResourceErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `AssociateDiscoveredResourceErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDiscoveredResourceErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDiscoveredResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `AssociateDiscoveredResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDiscoveredResourceErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDiscoveredResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AssociateDiscoveredResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDiscoveredResourceErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDiscoveredResourceErrorKind::PolicyErrorException`.
+    /// Returns `true` if the error kind is `AssociateDiscoveredResourceErrorKind::PolicyErrorException`.
     pub fn is_policy_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDiscoveredResourceErrorKind::PolicyErrorException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDiscoveredResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateDiscoveredResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDiscoveredResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDiscoveredResourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `AssociateDiscoveredResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDiscoveredResourceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDiscoveredResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AssociateDiscoveredResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateDiscoveredResourceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateDiscoveredResourceErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `AssociateDiscoveredResourceErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -434,7 +434,7 @@ pub enum CreateProgressUpdateStreamErrorKind {
     /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
     /// flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProgressUpdateStreamError {
@@ -506,56 +506,56 @@ impl CreateProgressUpdateStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProgressUpdateStreamErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateProgressUpdateStreamErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProgressUpdateStreamErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProgressUpdateStreamErrorKind::DryRunOperation`.
+    /// Returns `true` if the error kind is `CreateProgressUpdateStreamErrorKind::DryRunOperation`.
     pub fn is_dry_run_operation(&self) -> bool {
         matches!(
             &self.kind,
             CreateProgressUpdateStreamErrorKind::DryRunOperation(_)
         )
     }
-    /// Returns true if the error kind is `CreateProgressUpdateStreamErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `CreateProgressUpdateStreamErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProgressUpdateStreamErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProgressUpdateStreamErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateProgressUpdateStreamErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateProgressUpdateStreamErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateProgressUpdateStreamErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateProgressUpdateStreamErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProgressUpdateStreamErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProgressUpdateStreamErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateProgressUpdateStreamErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProgressUpdateStreamErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProgressUpdateStreamErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateProgressUpdateStreamErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProgressUpdateStreamErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProgressUpdateStreamErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `CreateProgressUpdateStreamErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -619,7 +619,7 @@ pub enum DeleteProgressUpdateStreamErrorKind {
     /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
     /// flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProgressUpdateStreamError {
@@ -692,63 +692,63 @@ impl DeleteProgressUpdateStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProgressUpdateStreamErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteProgressUpdateStreamErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProgressUpdateStreamErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProgressUpdateStreamErrorKind::DryRunOperation`.
+    /// Returns `true` if the error kind is `DeleteProgressUpdateStreamErrorKind::DryRunOperation`.
     pub fn is_dry_run_operation(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProgressUpdateStreamErrorKind::DryRunOperation(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProgressUpdateStreamErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `DeleteProgressUpdateStreamErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProgressUpdateStreamErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProgressUpdateStreamErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteProgressUpdateStreamErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProgressUpdateStreamErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProgressUpdateStreamErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteProgressUpdateStreamErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProgressUpdateStreamErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProgressUpdateStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProgressUpdateStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProgressUpdateStreamErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProgressUpdateStreamErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteProgressUpdateStreamErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProgressUpdateStreamErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProgressUpdateStreamErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteProgressUpdateStreamErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProgressUpdateStreamErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProgressUpdateStreamErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `DeleteProgressUpdateStreamErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -811,7 +811,7 @@ pub enum DescribeApplicationStateErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeApplicationStateError {
@@ -881,56 +881,56 @@ impl DescribeApplicationStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeApplicationStateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeApplicationStateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeApplicationStateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeApplicationStateErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `DescribeApplicationStateErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeApplicationStateErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeApplicationStateErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeApplicationStateErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeApplicationStateErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeApplicationStateErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeApplicationStateErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeApplicationStateErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeApplicationStateErrorKind::PolicyErrorException`.
+    /// Returns `true` if the error kind is `DescribeApplicationStateErrorKind::PolicyErrorException`.
     pub fn is_policy_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeApplicationStateErrorKind::PolicyErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeApplicationStateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeApplicationStateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeApplicationStateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeApplicationStateErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeApplicationStateErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeApplicationStateErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeApplicationStateErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeApplicationStateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -986,7 +986,7 @@ pub enum DescribeMigrationTaskErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMigrationTaskError {
@@ -1055,49 +1055,49 @@ impl DescribeMigrationTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMigrationTaskErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeMigrationTaskErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMigrationTaskErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMigrationTaskErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `DescribeMigrationTaskErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMigrationTaskErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMigrationTaskErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeMigrationTaskErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMigrationTaskErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMigrationTaskErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeMigrationTaskErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMigrationTaskErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMigrationTaskErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeMigrationTaskErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMigrationTaskErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMigrationTaskErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeMigrationTaskErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMigrationTaskErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMigrationTaskErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeMigrationTaskErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1158,7 +1158,7 @@ pub enum DisassociateCreatedArtifactErrorKind {
     /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
     /// flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateCreatedArtifactError {
@@ -1235,63 +1235,63 @@ impl DisassociateCreatedArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateCreatedArtifactErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisassociateCreatedArtifactErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCreatedArtifactErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCreatedArtifactErrorKind::DryRunOperation`.
+    /// Returns `true` if the error kind is `DisassociateCreatedArtifactErrorKind::DryRunOperation`.
     pub fn is_dry_run_operation(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCreatedArtifactErrorKind::DryRunOperation(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCreatedArtifactErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `DisassociateCreatedArtifactErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCreatedArtifactErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCreatedArtifactErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DisassociateCreatedArtifactErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCreatedArtifactErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCreatedArtifactErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DisassociateCreatedArtifactErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCreatedArtifactErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCreatedArtifactErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateCreatedArtifactErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCreatedArtifactErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCreatedArtifactErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DisassociateCreatedArtifactErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCreatedArtifactErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCreatedArtifactErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DisassociateCreatedArtifactErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateCreatedArtifactErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateCreatedArtifactErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `DisassociateCreatedArtifactErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -1356,7 +1356,7 @@ pub enum DisassociateDiscoveredResourceErrorKind {
     /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
     /// flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateDiscoveredResourceError {
@@ -1436,63 +1436,63 @@ impl DisassociateDiscoveredResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateDiscoveredResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisassociateDiscoveredResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDiscoveredResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDiscoveredResourceErrorKind::DryRunOperation`.
+    /// Returns `true` if the error kind is `DisassociateDiscoveredResourceErrorKind::DryRunOperation`.
     pub fn is_dry_run_operation(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDiscoveredResourceErrorKind::DryRunOperation(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDiscoveredResourceErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `DisassociateDiscoveredResourceErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDiscoveredResourceErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDiscoveredResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DisassociateDiscoveredResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDiscoveredResourceErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDiscoveredResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DisassociateDiscoveredResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDiscoveredResourceErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDiscoveredResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateDiscoveredResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDiscoveredResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDiscoveredResourceErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DisassociateDiscoveredResourceErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDiscoveredResourceErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDiscoveredResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DisassociateDiscoveredResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateDiscoveredResourceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateDiscoveredResourceErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `DisassociateDiscoveredResourceErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -1561,7 +1561,7 @@ pub enum ImportMigrationTaskErrorKind {
     /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
     /// flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportMigrationTaskError {
@@ -1632,60 +1632,60 @@ impl ImportMigrationTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportMigrationTaskErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ImportMigrationTaskErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportMigrationTaskErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ImportMigrationTaskErrorKind::DryRunOperation`.
+    /// Returns `true` if the error kind is `ImportMigrationTaskErrorKind::DryRunOperation`.
     pub fn is_dry_run_operation(&self) -> bool {
         matches!(&self.kind, ImportMigrationTaskErrorKind::DryRunOperation(_))
     }
-    /// Returns true if the error kind is `ImportMigrationTaskErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `ImportMigrationTaskErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportMigrationTaskErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `ImportMigrationTaskErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ImportMigrationTaskErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ImportMigrationTaskErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ImportMigrationTaskErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ImportMigrationTaskErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportMigrationTaskErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ImportMigrationTaskErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ImportMigrationTaskErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportMigrationTaskErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ImportMigrationTaskErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ImportMigrationTaskErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportMigrationTaskErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ImportMigrationTaskErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ImportMigrationTaskErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportMigrationTaskErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ImportMigrationTaskErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `ImportMigrationTaskErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -1738,7 +1738,7 @@ pub enum ListApplicationStatesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListApplicationStatesError {
@@ -1806,42 +1806,42 @@ impl ListApplicationStatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListApplicationStatesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListApplicationStatesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationStatesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationStatesErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `ListApplicationStatesErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationStatesErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationStatesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListApplicationStatesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationStatesErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationStatesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListApplicationStatesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationStatesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationStatesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListApplicationStatesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApplicationStatesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListApplicationStatesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListApplicationStatesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1895,7 +1895,7 @@ pub enum ListCreatedArtifactsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCreatedArtifactsError {
@@ -1964,49 +1964,49 @@ impl ListCreatedArtifactsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListCreatedArtifactsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListCreatedArtifactsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCreatedArtifactsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListCreatedArtifactsErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `ListCreatedArtifactsErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCreatedArtifactsErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `ListCreatedArtifactsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListCreatedArtifactsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListCreatedArtifactsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListCreatedArtifactsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListCreatedArtifactsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCreatedArtifactsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListCreatedArtifactsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListCreatedArtifactsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCreatedArtifactsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListCreatedArtifactsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListCreatedArtifactsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListCreatedArtifactsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListCreatedArtifactsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListCreatedArtifactsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2061,7 +2061,7 @@ pub enum ListDiscoveredResourcesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDiscoveredResourcesError {
@@ -2130,49 +2130,49 @@ impl ListDiscoveredResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDiscoveredResourcesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListDiscoveredResourcesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDiscoveredResourcesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListDiscoveredResourcesErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `ListDiscoveredResourcesErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDiscoveredResourcesErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `ListDiscoveredResourcesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListDiscoveredResourcesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListDiscoveredResourcesErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListDiscoveredResourcesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListDiscoveredResourcesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDiscoveredResourcesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListDiscoveredResourcesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListDiscoveredResourcesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDiscoveredResourcesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListDiscoveredResourcesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListDiscoveredResourcesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDiscoveredResourcesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListDiscoveredResourcesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDiscoveredResourcesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2231,7 +2231,7 @@ pub enum ListMigrationTasksErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMigrationTasksError {
@@ -2301,56 +2301,56 @@ impl ListMigrationTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListMigrationTasksErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListMigrationTasksErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMigrationTasksErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListMigrationTasksErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `ListMigrationTasksErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMigrationTasksErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `ListMigrationTasksErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListMigrationTasksErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListMigrationTasksErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListMigrationTasksErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListMigrationTasksErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMigrationTasksErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListMigrationTasksErrorKind::PolicyErrorException`.
+    /// Returns `true` if the error kind is `ListMigrationTasksErrorKind::PolicyErrorException`.
     pub fn is_policy_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMigrationTasksErrorKind::PolicyErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListMigrationTasksErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListMigrationTasksErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMigrationTasksErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListMigrationTasksErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListMigrationTasksErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListMigrationTasksErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListMigrationTasksErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListMigrationTasksErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2402,7 +2402,7 @@ pub enum ListProgressUpdateStreamsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProgressUpdateStreamsError {
@@ -2472,42 +2472,42 @@ impl ListProgressUpdateStreamsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProgressUpdateStreamsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListProgressUpdateStreamsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProgressUpdateStreamsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListProgressUpdateStreamsErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `ListProgressUpdateStreamsErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProgressUpdateStreamsErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `ListProgressUpdateStreamsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListProgressUpdateStreamsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ListProgressUpdateStreamsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ListProgressUpdateStreamsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListProgressUpdateStreamsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProgressUpdateStreamsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListProgressUpdateStreamsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListProgressUpdateStreamsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProgressUpdateStreamsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListProgressUpdateStreamsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListProgressUpdateStreamsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2571,7 +2571,7 @@ pub enum NotifyApplicationStateErrorKind {
     /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
     /// flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for NotifyApplicationStateError {
@@ -2643,70 +2643,70 @@ impl NotifyApplicationStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `NotifyApplicationStateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `NotifyApplicationStateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             NotifyApplicationStateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `NotifyApplicationStateErrorKind::DryRunOperation`.
+    /// Returns `true` if the error kind is `NotifyApplicationStateErrorKind::DryRunOperation`.
     pub fn is_dry_run_operation(&self) -> bool {
         matches!(
             &self.kind,
             NotifyApplicationStateErrorKind::DryRunOperation(_)
         )
     }
-    /// Returns true if the error kind is `NotifyApplicationStateErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `NotifyApplicationStateErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             NotifyApplicationStateErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `NotifyApplicationStateErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `NotifyApplicationStateErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             NotifyApplicationStateErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `NotifyApplicationStateErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `NotifyApplicationStateErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             NotifyApplicationStateErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `NotifyApplicationStateErrorKind::PolicyErrorException`.
+    /// Returns `true` if the error kind is `NotifyApplicationStateErrorKind::PolicyErrorException`.
     pub fn is_policy_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             NotifyApplicationStateErrorKind::PolicyErrorException(_)
         )
     }
-    /// Returns true if the error kind is `NotifyApplicationStateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `NotifyApplicationStateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             NotifyApplicationStateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `NotifyApplicationStateErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `NotifyApplicationStateErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             NotifyApplicationStateErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `NotifyApplicationStateErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `NotifyApplicationStateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             NotifyApplicationStateErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `NotifyApplicationStateErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `NotifyApplicationStateErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -2770,7 +2770,7 @@ pub enum NotifyMigrationTaskStateErrorKind {
     /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
     /// flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for NotifyMigrationTaskStateError {
@@ -2841,63 +2841,63 @@ impl NotifyMigrationTaskStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `NotifyMigrationTaskStateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `NotifyMigrationTaskStateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             NotifyMigrationTaskStateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `NotifyMigrationTaskStateErrorKind::DryRunOperation`.
+    /// Returns `true` if the error kind is `NotifyMigrationTaskStateErrorKind::DryRunOperation`.
     pub fn is_dry_run_operation(&self) -> bool {
         matches!(
             &self.kind,
             NotifyMigrationTaskStateErrorKind::DryRunOperation(_)
         )
     }
-    /// Returns true if the error kind is `NotifyMigrationTaskStateErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `NotifyMigrationTaskStateErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             NotifyMigrationTaskStateErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `NotifyMigrationTaskStateErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `NotifyMigrationTaskStateErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             NotifyMigrationTaskStateErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `NotifyMigrationTaskStateErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `NotifyMigrationTaskStateErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             NotifyMigrationTaskStateErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `NotifyMigrationTaskStateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `NotifyMigrationTaskStateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             NotifyMigrationTaskStateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `NotifyMigrationTaskStateErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `NotifyMigrationTaskStateErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             NotifyMigrationTaskStateErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `NotifyMigrationTaskStateErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `NotifyMigrationTaskStateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             NotifyMigrationTaskStateErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `NotifyMigrationTaskStateErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `NotifyMigrationTaskStateErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,
@@ -2960,7 +2960,7 @@ pub enum PutResourceAttributesErrorKind {
     /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
     /// flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutResourceAttributesError {
@@ -3031,63 +3031,63 @@ impl PutResourceAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutResourceAttributesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutResourceAttributesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourceAttributesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourceAttributesErrorKind::DryRunOperation`.
+    /// Returns `true` if the error kind is `PutResourceAttributesErrorKind::DryRunOperation`.
     pub fn is_dry_run_operation(&self) -> bool {
         matches!(
             &self.kind,
             PutResourceAttributesErrorKind::DryRunOperation(_)
         )
     }
-    /// Returns true if the error kind is `PutResourceAttributesErrorKind::HomeRegionNotSetException`.
+    /// Returns `true` if the error kind is `PutResourceAttributesErrorKind::HomeRegionNotSetException`.
     pub fn is_home_region_not_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourceAttributesErrorKind::HomeRegionNotSetException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourceAttributesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `PutResourceAttributesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             PutResourceAttributesErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `PutResourceAttributesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `PutResourceAttributesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourceAttributesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourceAttributesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutResourceAttributesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourceAttributesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourceAttributesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutResourceAttributesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourceAttributesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourceAttributesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutResourceAttributesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourceAttributesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourceAttributesErrorKind::UnauthorizedOperation`.
+    /// Returns `true` if the error kind is `PutResourceAttributesErrorKind::UnauthorizedOperation`.
     pub fn is_unauthorized_operation(&self) -> bool {
         matches!(
             &self.kind,

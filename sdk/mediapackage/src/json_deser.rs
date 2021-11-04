@@ -2223,6 +2223,13 @@ where
                                     )?,
                                 );
                             }
+                            "includeDvbSubtitles" => {
+                                builder = builder.set_include_dvb_subtitles(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             "includeIframeOnlyStream" => {
                                 builder = builder.set_include_iframe_only_stream(
                                     aws_smithy_json::deserialize::token::expect_bool_or_null(

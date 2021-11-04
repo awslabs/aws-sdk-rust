@@ -14,7 +14,7 @@ pub struct DescribeAffectedAccountsForOrganizationError {
 pub enum DescribeAffectedAccountsForOrganizationErrorKind {
     /// <p>The specified pagination token (<code>nextToken</code>) is not valid.</p>
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAffectedAccountsForOrganizationError {
@@ -82,7 +82,7 @@ impl DescribeAffectedAccountsForOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAffectedAccountsForOrganizationErrorKind::InvalidPaginationToken`.
+    /// Returns `true` if the error kind is `DescribeAffectedAccountsForOrganizationErrorKind::InvalidPaginationToken`.
     pub fn is_invalid_pagination_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -120,7 +120,7 @@ pub enum DescribeAffectedEntitiesErrorKind {
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAffectedEntitiesError {
@@ -184,14 +184,14 @@ impl DescribeAffectedEntitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAffectedEntitiesErrorKind::InvalidPaginationToken`.
+    /// Returns `true` if the error kind is `DescribeAffectedEntitiesErrorKind::InvalidPaginationToken`.
     pub fn is_invalid_pagination_token(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAffectedEntitiesErrorKind::InvalidPaginationToken(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAffectedEntitiesErrorKind::UnsupportedLocale`.
+    /// Returns `true` if the error kind is `DescribeAffectedEntitiesErrorKind::UnsupportedLocale`.
     pub fn is_unsupported_locale(&self) -> bool {
         matches!(
             &self.kind,
@@ -226,7 +226,7 @@ pub enum DescribeAffectedEntitiesForOrganizationErrorKind {
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAffectedEntitiesForOrganizationError {
@@ -297,14 +297,14 @@ impl DescribeAffectedEntitiesForOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAffectedEntitiesForOrganizationErrorKind::InvalidPaginationToken`.
+    /// Returns `true` if the error kind is `DescribeAffectedEntitiesForOrganizationErrorKind::InvalidPaginationToken`.
     pub fn is_invalid_pagination_token(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAffectedEntitiesForOrganizationErrorKind::InvalidPaginationToken(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAffectedEntitiesForOrganizationErrorKind::UnsupportedLocale`.
+    /// Returns `true` if the error kind is `DescribeAffectedEntitiesForOrganizationErrorKind::UnsupportedLocale`.
     pub fn is_unsupported_locale(&self) -> bool {
         matches!(
             &self.kind,
@@ -341,7 +341,7 @@ pub struct DescribeEntityAggregatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEntityAggregatesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEntityAggregatesError {
@@ -427,7 +427,7 @@ pub struct DescribeEventAggregatesError {
 pub enum DescribeEventAggregatesErrorKind {
     /// <p>The specified pagination token (<code>nextToken</code>) is not valid.</p>
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventAggregatesError {
@@ -490,7 +490,7 @@ impl DescribeEventAggregatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEventAggregatesErrorKind::InvalidPaginationToken`.
+    /// Returns `true` if the error kind is `DescribeEventAggregatesErrorKind::InvalidPaginationToken`.
     pub fn is_invalid_pagination_token(&self) -> bool {
         matches!(
             &self.kind,
@@ -522,7 +522,7 @@ pub struct DescribeEventDetailsError {
 pub enum DescribeEventDetailsErrorKind {
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventDetailsError {
@@ -585,7 +585,7 @@ impl DescribeEventDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEventDetailsErrorKind::UnsupportedLocale`.
+    /// Returns `true` if the error kind is `DescribeEventDetailsErrorKind::UnsupportedLocale`.
     pub fn is_unsupported_locale(&self) -> bool {
         matches!(
             &self.kind,
@@ -617,7 +617,7 @@ pub struct DescribeEventDetailsForOrganizationError {
 pub enum DescribeEventDetailsForOrganizationErrorKind {
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventDetailsForOrganizationError {
@@ -685,7 +685,7 @@ impl DescribeEventDetailsForOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEventDetailsForOrganizationErrorKind::UnsupportedLocale`.
+    /// Returns `true` if the error kind is `DescribeEventDetailsForOrganizationErrorKind::UnsupportedLocale`.
     pub fn is_unsupported_locale(&self) -> bool {
         matches!(
             &self.kind,
@@ -721,7 +721,7 @@ pub enum DescribeEventsErrorKind {
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventsError {
@@ -785,14 +785,14 @@ impl DescribeEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEventsErrorKind::InvalidPaginationToken`.
+    /// Returns `true` if the error kind is `DescribeEventsErrorKind::InvalidPaginationToken`.
     pub fn is_invalid_pagination_token(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEventsErrorKind::InvalidPaginationToken(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEventsErrorKind::UnsupportedLocale`.
+    /// Returns `true` if the error kind is `DescribeEventsErrorKind::UnsupportedLocale`.
     pub fn is_unsupported_locale(&self) -> bool {
         matches!(&self.kind, DescribeEventsErrorKind::UnsupportedLocale(_))
     }
@@ -824,7 +824,7 @@ pub enum DescribeEventsForOrganizationErrorKind {
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventsForOrganizationError {
@@ -891,14 +891,14 @@ impl DescribeEventsForOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEventsForOrganizationErrorKind::InvalidPaginationToken`.
+    /// Returns `true` if the error kind is `DescribeEventsForOrganizationErrorKind::InvalidPaginationToken`.
     pub fn is_invalid_pagination_token(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEventsForOrganizationErrorKind::InvalidPaginationToken(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEventsForOrganizationErrorKind::UnsupportedLocale`.
+    /// Returns `true` if the error kind is `DescribeEventsForOrganizationErrorKind::UnsupportedLocale`.
     pub fn is_unsupported_locale(&self) -> bool {
         matches!(
             &self.kind,
@@ -933,7 +933,7 @@ pub enum DescribeEventTypesErrorKind {
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventTypesError {
@@ -997,14 +997,14 @@ impl DescribeEventTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEventTypesErrorKind::InvalidPaginationToken`.
+    /// Returns `true` if the error kind is `DescribeEventTypesErrorKind::InvalidPaginationToken`.
     pub fn is_invalid_pagination_token(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEventTypesErrorKind::InvalidPaginationToken(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEventTypesErrorKind::UnsupportedLocale`.
+    /// Returns `true` if the error kind is `DescribeEventTypesErrorKind::UnsupportedLocale`.
     pub fn is_unsupported_locale(&self) -> bool {
         matches!(
             &self.kind,
@@ -1035,7 +1035,7 @@ pub struct DescribeHealthServiceStatusForOrganizationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeHealthServiceStatusForOrganizationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeHealthServiceStatusForOrganizationError {
@@ -1128,7 +1128,7 @@ pub enum DisableHealthServiceAccessForOrganizationErrorKind {
     /// <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> is already in progress. Wait for the
     /// action to complete before trying again. To get the current status, use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeHealthServiceStatusForOrganization.html">DescribeHealthServiceStatusForOrganization</a> operation.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableHealthServiceAccessForOrganizationError {
@@ -1196,7 +1196,7 @@ impl DisableHealthServiceAccessForOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DisableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1234,7 +1234,7 @@ pub enum EnableHealthServiceAccessForOrganizationErrorKind {
     /// <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> is already in progress. Wait for the
     /// action to complete before trying again. To get the current status, use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeHealthServiceStatusForOrganization.html">DescribeHealthServiceStatusForOrganization</a> operation.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableHealthServiceAccessForOrganizationError {
@@ -1302,7 +1302,7 @@ impl EnableHealthServiceAccessForOrganizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `EnableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,

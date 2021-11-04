@@ -39,7 +39,7 @@ pub type DeleteLexiconInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteLexiconInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLexicon`](crate::operation::DeleteLexicon)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -86,12 +86,8 @@ impl DeleteLexiconInput {
             input: &crate::input::DeleteLexiconInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -139,16 +135,9 @@ impl DeleteLexiconInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteLexiconInput`](crate::input::DeleteLexiconInput)
@@ -262,7 +251,7 @@ pub type DescribeVoicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeVoicesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVoices`](crate::operation::DescribeVoices)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -319,12 +308,8 @@ impl DescribeVoicesInput {
             input: &crate::input::DescribeVoicesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -372,16 +357,9 @@ impl DescribeVoicesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeVoicesInput`](crate::input::DescribeVoicesInput)
@@ -427,7 +405,7 @@ pub type GetLexiconInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetLexiconInput {
     /// Consumes the builder and constructs an Operation<[`GetLexicon`](crate::operation::GetLexicon)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -474,12 +452,8 @@ impl GetLexiconInput {
             input: &crate::input::GetLexiconInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -527,16 +501,9 @@ impl GetLexiconInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetLexiconInput`](crate::input::GetLexiconInput)
@@ -584,7 +551,7 @@ pub type GetSpeechSynthesisTaskInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl GetSpeechSynthesisTaskInput {
     /// Consumes the builder and constructs an Operation<[`GetSpeechSynthesisTask`](crate::operation::GetSpeechSynthesisTask)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -632,12 +599,8 @@ impl GetSpeechSynthesisTaskInput {
             input: &crate::input::GetSpeechSynthesisTaskInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -685,16 +648,9 @@ impl GetSpeechSynthesisTaskInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetSpeechSynthesisTaskInput`](crate::input::GetSpeechSynthesisTaskInput)
@@ -746,7 +702,7 @@ pub type ListLexiconsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListLexiconsInput {
     /// Consumes the builder and constructs an Operation<[`ListLexicons`](crate::operation::ListLexicons)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -785,12 +741,8 @@ impl ListLexiconsInput {
             input: &crate::input::ListLexiconsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -838,16 +790,9 @@ impl ListLexiconsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListLexiconsInput`](crate::input::ListLexiconsInput)
@@ -926,7 +871,7 @@ pub type ListSpeechSynthesisTasksInputOperationRetryAlias = aws_http::AwsErrorRe
 impl ListSpeechSynthesisTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListSpeechSynthesisTasks`](crate::operation::ListSpeechSynthesisTasks)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -977,12 +922,8 @@ impl ListSpeechSynthesisTasksInput {
             input: &crate::input::ListSpeechSynthesisTasksInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1030,16 +971,9 @@ impl ListSpeechSynthesisTasksInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListSpeechSynthesisTasksInput`](crate::input::ListSpeechSynthesisTasksInput)
@@ -1103,7 +1037,7 @@ pub type PutLexiconInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl PutLexiconInput {
     /// Consumes the builder and constructs an Operation<[`PutLexicon`](crate::operation::PutLexicon)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1150,6 +1084,7 @@ impl PutLexiconInput {
             input: &crate::input::PutLexiconInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1206,9 +1141,10 @@ impl PutLexiconInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1474,7 +1410,7 @@ pub type StartSpeechSynthesisTaskInputOperationRetryAlias = aws_http::AwsErrorRe
 impl StartSpeechSynthesisTaskInput {
     /// Consumes the builder and constructs an Operation<[`StartSpeechSynthesisTask`](crate::operation::StartSpeechSynthesisTask)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1506,6 +1442,7 @@ impl StartSpeechSynthesisTaskInput {
             input: &crate::input::StartSpeechSynthesisTaskInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1565,9 +1502,10 @@ impl StartSpeechSynthesisTaskInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1835,7 +1773,7 @@ pub type SynthesizeSpeechInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl SynthesizeSpeechInput {
     /// Consumes the builder and constructs an Operation<[`SynthesizeSpeech`](crate::operation::SynthesizeSpeech)>
     #[allow(clippy::let_and_return)]
-    fn _make_presigned_operation(
+    async fn _make_presigned_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1914,12 +1852,8 @@ impl SynthesizeSpeechInput {
             input: &crate::input::SynthesizeSpeechInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1987,6 +1921,7 @@ impl SynthesizeSpeechInput {
     > {
         let (mut request, _) = self
             ._make_presigned_operation(config)
+            .await
             .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
             .into_request_response();
         {
@@ -2010,7 +1945,7 @@ impl SynthesizeSpeechInput {
     }
     /// Consumes the builder and constructs an Operation<[`SynthesizeSpeech`](crate::operation::SynthesizeSpeech)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2042,6 +1977,7 @@ impl SynthesizeSpeechInput {
             input: &crate::input::SynthesizeSpeechInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2099,9 +2035,10 @@ impl SynthesizeSpeechInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,

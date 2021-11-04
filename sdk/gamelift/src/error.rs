@@ -24,7 +24,7 @@ pub enum AcceptMatchErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcceptMatchError {
@@ -90,22 +90,22 @@ impl AcceptMatchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AcceptMatchErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `AcceptMatchErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcceptMatchErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `AcceptMatchErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `AcceptMatchErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, AcceptMatchErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `AcceptMatchErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AcceptMatchErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, AcceptMatchErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `AcceptMatchErrorKind::UnsupportedRegionException`.
+    /// Returns `true` if the error kind is `AcceptMatchErrorKind::UnsupportedRegionException`.
     pub fn is_unsupported_region_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -160,7 +160,7 @@ pub enum ClaimGameServerErrorKind {
     OutOfCapacityException(crate::error::OutOfCapacityException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ClaimGameServerError {
@@ -228,36 +228,36 @@ impl ClaimGameServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ClaimGameServerErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ClaimGameServerErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, ClaimGameServerErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `ClaimGameServerErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ClaimGameServerErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ClaimGameServerErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ClaimGameServerErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ClaimGameServerErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ClaimGameServerErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ClaimGameServerErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ClaimGameServerErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ClaimGameServerErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ClaimGameServerErrorKind::OutOfCapacityException`.
+    /// Returns `true` if the error kind is `ClaimGameServerErrorKind::OutOfCapacityException`.
     pub fn is_out_of_capacity_exception(&self) -> bool {
         matches!(
             &self.kind,
             ClaimGameServerErrorKind::OutOfCapacityException(_)
         )
     }
-    /// Returns true if the error kind is `ClaimGameServerErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ClaimGameServerErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -313,7 +313,7 @@ pub enum CreateAliasErrorKind {
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAliasError {
@@ -381,30 +381,30 @@ impl CreateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateAliasErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAliasErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, CreateAliasErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateAliasErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::TaggingFailedException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::TaggingFailedException`.
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(&self.kind, CreateAliasErrorKind::TaggingFailedException(_))
     }
-    /// Returns true if the error kind is `CreateAliasErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateAliasErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, CreateAliasErrorKind::UnauthorizedException(_))
     }
@@ -454,7 +454,7 @@ pub enum CreateBuildErrorKind {
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBuildError {
@@ -521,26 +521,26 @@ impl CreateBuildError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBuildErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateBuildErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateBuildErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateBuildErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateBuildErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBuildErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBuildErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateBuildErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, CreateBuildErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `CreateBuildErrorKind::TaggingFailedException`.
+    /// Returns `true` if the error kind is `CreateBuildErrorKind::TaggingFailedException`.
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(&self.kind, CreateBuildErrorKind::TaggingFailedException(_))
     }
-    /// Returns true if the error kind is `CreateBuildErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateBuildErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, CreateBuildErrorKind::UnauthorizedException(_))
     }
@@ -595,7 +595,9 @@ pub enum CreateFleetErrorKind {
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::error::UnsupportedRegionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFleetError {
@@ -608,6 +610,7 @@ impl std::fmt::Display for CreateFleetError {
             CreateFleetErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             CreateFleetErrorKind::TaggingFailedException(_inner) => _inner.fmt(f),
             CreateFleetErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            CreateFleetErrorKind::UnsupportedRegionException(_inner) => _inner.fmt(f),
             CreateFleetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -664,36 +667,43 @@ impl CreateFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateFleetErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, CreateFleetErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateFleetErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateFleetErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::TaggingFailedException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::TaggingFailedException`.
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(&self.kind, CreateFleetErrorKind::TaggingFailedException(_))
     }
-    /// Returns true if the error kind is `CreateFleetErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, CreateFleetErrorKind::UnauthorizedException(_))
+    }
+    /// Returns `true` if the error kind is `CreateFleetErrorKind::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFleetErrorKind::UnsupportedRegionException(_)
+        )
     }
 }
 impl std::error::Error for CreateFleetError {
@@ -706,6 +716,7 @@ impl std::error::Error for CreateFleetError {
             CreateFleetErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateFleetErrorKind::TaggingFailedException(_inner) => Some(_inner),
             CreateFleetErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            CreateFleetErrorKind::UnsupportedRegionException(_inner) => Some(_inner),
             CreateFleetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -740,7 +751,9 @@ pub enum CreateFleetLocationsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::error::UnsupportedRegionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFleetLocationsError {
@@ -751,6 +764,7 @@ impl std::fmt::Display for CreateFleetLocationsError {
             CreateFleetLocationsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             CreateFleetLocationsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             CreateFleetLocationsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            CreateFleetLocationsErrorKind::UnsupportedRegionException(_inner) => _inner.fmt(f),
             CreateFleetLocationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -807,39 +821,46 @@ impl CreateFleetLocationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFleetLocationsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateFleetLocationsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetLocationsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFleetLocationsErrorKind::InvalidFleetStatusException`.
+    /// Returns `true` if the error kind is `CreateFleetLocationsErrorKind::InvalidFleetStatusException`.
     pub fn is_invalid_fleet_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetLocationsErrorKind::InvalidFleetStatusException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFleetLocationsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateFleetLocationsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetLocationsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFleetLocationsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateFleetLocationsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetLocationsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFleetLocationsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateFleetLocationsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFleetLocationsErrorKind::UnauthorizedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateFleetLocationsErrorKind::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFleetLocationsErrorKind::UnsupportedRegionException(_)
         )
     }
 }
@@ -851,6 +872,7 @@ impl std::error::Error for CreateFleetLocationsError {
             CreateFleetLocationsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             CreateFleetLocationsErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateFleetLocationsErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            CreateFleetLocationsErrorKind::UnsupportedRegionException(_inner) => Some(_inner),
             CreateFleetLocationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -885,7 +907,7 @@ pub enum CreateGameServerGroupErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGameServerGroupError {
@@ -952,35 +974,35 @@ impl CreateGameServerGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGameServerGroupErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateGameServerGroupErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGameServerGroupErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGameServerGroupErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateGameServerGroupErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGameServerGroupErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGameServerGroupErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateGameServerGroupErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGameServerGroupErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGameServerGroupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateGameServerGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGameServerGroupErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGameServerGroupErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateGameServerGroupErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1050,7 +1072,9 @@ pub enum CreateGameSessionErrorKind {
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::error::UnsupportedRegionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGameSessionError {
@@ -1068,6 +1092,7 @@ impl std::fmt::Display for CreateGameSessionError {
             CreateGameSessionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             CreateGameSessionErrorKind::TerminalRoutingStrategyException(_inner) => _inner.fmt(f),
             CreateGameSessionErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            CreateGameSessionErrorKind::UnsupportedRegionException(_inner) => _inner.fmt(f),
             CreateGameSessionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1124,68 +1149,75 @@ impl CreateGameSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGameSessionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateGameSessionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateGameSessionErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateGameSessionErrorKind::FleetCapacityExceededException`.
+    /// Returns `true` if the error kind is `CreateGameSessionErrorKind::FleetCapacityExceededException`.
     pub fn is_fleet_capacity_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGameSessionErrorKind::FleetCapacityExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGameSessionErrorKind::IdempotentParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreateGameSessionErrorKind::IdempotentParameterMismatchException`.
     pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGameSessionErrorKind::IdempotentParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGameSessionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateGameSessionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGameSessionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGameSessionErrorKind::InvalidFleetStatusException`.
+    /// Returns `true` if the error kind is `CreateGameSessionErrorKind::InvalidFleetStatusException`.
     pub fn is_invalid_fleet_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGameSessionErrorKind::InvalidFleetStatusException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGameSessionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateGameSessionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGameSessionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGameSessionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateGameSessionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGameSessionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGameSessionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateGameSessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateGameSessionErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateGameSessionErrorKind::TerminalRoutingStrategyException`.
+    /// Returns `true` if the error kind is `CreateGameSessionErrorKind::TerminalRoutingStrategyException`.
     pub fn is_terminal_routing_strategy_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGameSessionErrorKind::TerminalRoutingStrategyException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGameSessionErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateGameSessionErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGameSessionErrorKind::UnauthorizedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateGameSessionErrorKind::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGameSessionErrorKind::UnsupportedRegionException(_)
         )
     }
 }
@@ -1204,6 +1236,7 @@ impl std::error::Error for CreateGameSessionError {
             CreateGameSessionErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateGameSessionErrorKind::TerminalRoutingStrategyException(_inner) => Some(_inner),
             CreateGameSessionErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            CreateGameSessionErrorKind::UnsupportedRegionException(_inner) => Some(_inner),
             CreateGameSessionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1242,7 +1275,7 @@ pub enum CreateGameSessionQueueErrorKind {
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGameSessionQueueError {
@@ -1310,42 +1343,42 @@ impl CreateGameSessionQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGameSessionQueueErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateGameSessionQueueErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGameSessionQueueErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGameSessionQueueErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateGameSessionQueueErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGameSessionQueueErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGameSessionQueueErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateGameSessionQueueErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGameSessionQueueErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGameSessionQueueErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateGameSessionQueueErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGameSessionQueueErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGameSessionQueueErrorKind::TaggingFailedException`.
+    /// Returns `true` if the error kind is `CreateGameSessionQueueErrorKind::TaggingFailedException`.
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGameSessionQueueErrorKind::TaggingFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGameSessionQueueErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateGameSessionQueueErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1400,7 +1433,7 @@ pub enum CreateMatchmakingConfigurationErrorKind {
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMatchmakingConfigurationError {
@@ -1481,42 +1514,42 @@ impl CreateMatchmakingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMatchmakingConfigurationErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateMatchmakingConfigurationErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMatchmakingConfigurationErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMatchmakingConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateMatchmakingConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMatchmakingConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMatchmakingConfigurationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateMatchmakingConfigurationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMatchmakingConfigurationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMatchmakingConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateMatchmakingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMatchmakingConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMatchmakingConfigurationErrorKind::TaggingFailedException`.
+    /// Returns `true` if the error kind is `CreateMatchmakingConfigurationErrorKind::TaggingFailedException`.
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMatchmakingConfigurationErrorKind::TaggingFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMatchmakingConfigurationErrorKind::UnsupportedRegionException`.
+    /// Returns `true` if the error kind is `CreateMatchmakingConfigurationErrorKind::UnsupportedRegionException`.
     pub fn is_unsupported_region_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1571,7 +1604,7 @@ pub enum CreateMatchmakingRuleSetErrorKind {
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMatchmakingRuleSetError {
@@ -1637,28 +1670,28 @@ impl CreateMatchmakingRuleSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMatchmakingRuleSetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateMatchmakingRuleSetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMatchmakingRuleSetErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMatchmakingRuleSetErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateMatchmakingRuleSetErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMatchmakingRuleSetErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMatchmakingRuleSetErrorKind::TaggingFailedException`.
+    /// Returns `true` if the error kind is `CreateMatchmakingRuleSetErrorKind::TaggingFailedException`.
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateMatchmakingRuleSetErrorKind::TaggingFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateMatchmakingRuleSetErrorKind::UnsupportedRegionException`.
+    /// Returns `true` if the error kind is `CreateMatchmakingRuleSetErrorKind::UnsupportedRegionException`.
     pub fn is_unsupported_region_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1716,7 +1749,7 @@ pub enum CreatePlayerSessionErrorKind {
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePlayerSessionError {
@@ -1787,49 +1820,49 @@ impl CreatePlayerSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePlayerSessionErrorKind::GameSessionFullException`.
+    /// Returns `true` if the error kind is `CreatePlayerSessionErrorKind::GameSessionFullException`.
     pub fn is_game_session_full_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlayerSessionErrorKind::GameSessionFullException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlayerSessionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreatePlayerSessionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlayerSessionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlayerSessionErrorKind::InvalidGameSessionStatusException`.
+    /// Returns `true` if the error kind is `CreatePlayerSessionErrorKind::InvalidGameSessionStatusException`.
     pub fn is_invalid_game_session_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlayerSessionErrorKind::InvalidGameSessionStatusException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlayerSessionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreatePlayerSessionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlayerSessionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlayerSessionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreatePlayerSessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlayerSessionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlayerSessionErrorKind::TerminalRoutingStrategyException`.
+    /// Returns `true` if the error kind is `CreatePlayerSessionErrorKind::TerminalRoutingStrategyException`.
     pub fn is_terminal_routing_strategy_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlayerSessionErrorKind::TerminalRoutingStrategyException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlayerSessionErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreatePlayerSessionErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1890,7 +1923,7 @@ pub enum CreatePlayerSessionsErrorKind {
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePlayerSessionsError {
@@ -1963,49 +1996,49 @@ impl CreatePlayerSessionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePlayerSessionsErrorKind::GameSessionFullException`.
+    /// Returns `true` if the error kind is `CreatePlayerSessionsErrorKind::GameSessionFullException`.
     pub fn is_game_session_full_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlayerSessionsErrorKind::GameSessionFullException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlayerSessionsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreatePlayerSessionsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlayerSessionsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlayerSessionsErrorKind::InvalidGameSessionStatusException`.
+    /// Returns `true` if the error kind is `CreatePlayerSessionsErrorKind::InvalidGameSessionStatusException`.
     pub fn is_invalid_game_session_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlayerSessionsErrorKind::InvalidGameSessionStatusException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlayerSessionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreatePlayerSessionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlayerSessionsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlayerSessionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreatePlayerSessionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlayerSessionsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlayerSessionsErrorKind::TerminalRoutingStrategyException`.
+    /// Returns `true` if the error kind is `CreatePlayerSessionsErrorKind::TerminalRoutingStrategyException`.
     pub fn is_terminal_routing_strategy_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlayerSessionsErrorKind::TerminalRoutingStrategyException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlayerSessionsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreatePlayerSessionsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2061,7 +2094,7 @@ pub enum CreateScriptErrorKind {
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateScriptError {
@@ -2128,29 +2161,29 @@ impl CreateScriptError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateScriptErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateScriptErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateScriptErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateScriptErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateScriptErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateScriptErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateScriptErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateScriptErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateScriptErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateScriptErrorKind::TaggingFailedException`.
+    /// Returns `true` if the error kind is `CreateScriptErrorKind::TaggingFailedException`.
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(&self.kind, CreateScriptErrorKind::TaggingFailedException(_))
     }
-    /// Returns true if the error kind is `CreateScriptErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateScriptErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, CreateScriptErrorKind::UnauthorizedException(_))
     }
@@ -2193,7 +2226,7 @@ pub enum CreateVpcPeeringAuthorizationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVpcPeeringAuthorizationError {
@@ -2266,28 +2299,28 @@ impl CreateVpcPeeringAuthorizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateVpcPeeringAuthorizationErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateVpcPeeringAuthorizationErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVpcPeeringAuthorizationErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVpcPeeringAuthorizationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateVpcPeeringAuthorizationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVpcPeeringAuthorizationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVpcPeeringAuthorizationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateVpcPeeringAuthorizationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVpcPeeringAuthorizationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVpcPeeringAuthorizationErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateVpcPeeringAuthorizationErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2334,7 +2367,7 @@ pub enum CreateVpcPeeringConnectionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVpcPeeringConnectionError {
@@ -2400,28 +2433,28 @@ impl CreateVpcPeeringConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateVpcPeeringConnectionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateVpcPeeringConnectionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVpcPeeringConnectionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVpcPeeringConnectionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateVpcPeeringConnectionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVpcPeeringConnectionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVpcPeeringConnectionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateVpcPeeringConnectionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVpcPeeringConnectionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVpcPeeringConnectionErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `CreateVpcPeeringConnectionErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2471,7 +2504,7 @@ pub enum DeleteAliasErrorKind {
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAliasError {
@@ -2538,26 +2571,26 @@ impl DeleteAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAliasErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteAliasErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAliasErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAliasErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteAliasErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteAliasErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteAliasErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAliasErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteAliasErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteAliasErrorKind::TaggingFailedException`.
+    /// Returns `true` if the error kind is `DeleteAliasErrorKind::TaggingFailedException`.
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(&self.kind, DeleteAliasErrorKind::TaggingFailedException(_))
     }
-    /// Returns true if the error kind is `DeleteAliasErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteAliasErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, DeleteAliasErrorKind::UnauthorizedException(_))
     }
@@ -2605,7 +2638,7 @@ pub enum DeleteBuildErrorKind {
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBuildError {
@@ -2672,26 +2705,26 @@ impl DeleteBuildError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBuildErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteBuildErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBuildErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBuildErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteBuildErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteBuildErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteBuildErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBuildErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteBuildErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteBuildErrorKind::TaggingFailedException`.
+    /// Returns `true` if the error kind is `DeleteBuildErrorKind::TaggingFailedException`.
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(&self.kind, DeleteBuildErrorKind::TaggingFailedException(_))
     }
-    /// Returns true if the error kind is `DeleteBuildErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteBuildErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, DeleteBuildErrorKind::UnauthorizedException(_))
     }
@@ -2743,7 +2776,7 @@ pub enum DeleteFleetErrorKind {
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFleetError {
@@ -2811,33 +2844,33 @@ impl DeleteFleetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFleetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteFleetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFleetErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFleetErrorKind::InvalidFleetStatusException`.
+    /// Returns `true` if the error kind is `DeleteFleetErrorKind::InvalidFleetStatusException`.
     pub fn is_invalid_fleet_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFleetErrorKind::InvalidFleetStatusException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFleetErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteFleetErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteFleetErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteFleetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFleetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteFleetErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteFleetErrorKind::TaggingFailedException`.
+    /// Returns `true` if the error kind is `DeleteFleetErrorKind::TaggingFailedException`.
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(&self.kind, DeleteFleetErrorKind::TaggingFailedException(_))
     }
-    /// Returns true if the error kind is `DeleteFleetErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteFleetErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, DeleteFleetErrorKind::UnauthorizedException(_))
     }
@@ -2881,7 +2914,9 @@ pub enum DeleteFleetLocationsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::error::UnsupportedRegionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFleetLocationsError {
@@ -2891,6 +2926,7 @@ impl std::fmt::Display for DeleteFleetLocationsError {
             DeleteFleetLocationsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             DeleteFleetLocationsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DeleteFleetLocationsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            DeleteFleetLocationsErrorKind::UnsupportedRegionException(_inner) => _inner.fmt(f),
             DeleteFleetLocationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2947,32 +2983,39 @@ impl DeleteFleetLocationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFleetLocationsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteFleetLocationsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFleetLocationsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFleetLocationsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteFleetLocationsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFleetLocationsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFleetLocationsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFleetLocationsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFleetLocationsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFleetLocationsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteFleetLocationsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFleetLocationsErrorKind::UnauthorizedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteFleetLocationsErrorKind::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFleetLocationsErrorKind::UnsupportedRegionException(_)
         )
     }
 }
@@ -2983,6 +3026,7 @@ impl std::error::Error for DeleteFleetLocationsError {
             DeleteFleetLocationsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DeleteFleetLocationsErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteFleetLocationsErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            DeleteFleetLocationsErrorKind::UnsupportedRegionException(_inner) => Some(_inner),
             DeleteFleetLocationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3013,7 +3057,7 @@ pub enum DeleteGameServerGroupErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGameServerGroupError {
@@ -3079,28 +3123,28 @@ impl DeleteGameServerGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGameServerGroupErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteGameServerGroupErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGameServerGroupErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGameServerGroupErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteGameServerGroupErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGameServerGroupErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGameServerGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteGameServerGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGameServerGroupErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGameServerGroupErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteGameServerGroupErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3150,7 +3194,7 @@ pub enum DeleteGameSessionQueueErrorKind {
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGameSessionQueueError {
@@ -3217,35 +3261,35 @@ impl DeleteGameSessionQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGameSessionQueueErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteGameSessionQueueErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGameSessionQueueErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGameSessionQueueErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteGameSessionQueueErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGameSessionQueueErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGameSessionQueueErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteGameSessionQueueErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGameSessionQueueErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGameSessionQueueErrorKind::TaggingFailedException`.
+    /// Returns `true` if the error kind is `DeleteGameSessionQueueErrorKind::TaggingFailedException`.
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGameSessionQueueErrorKind::TaggingFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGameSessionQueueErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteGameSessionQueueErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3296,7 +3340,7 @@ pub enum DeleteMatchmakingConfigurationErrorKind {
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMatchmakingConfigurationError {
@@ -3374,35 +3418,35 @@ impl DeleteMatchmakingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMatchmakingConfigurationErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteMatchmakingConfigurationErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMatchmakingConfigurationErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMatchmakingConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteMatchmakingConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMatchmakingConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMatchmakingConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMatchmakingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMatchmakingConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMatchmakingConfigurationErrorKind::TaggingFailedException`.
+    /// Returns `true` if the error kind is `DeleteMatchmakingConfigurationErrorKind::TaggingFailedException`.
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMatchmakingConfigurationErrorKind::TaggingFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMatchmakingConfigurationErrorKind::UnsupportedRegionException`.
+    /// Returns `true` if the error kind is `DeleteMatchmakingConfigurationErrorKind::UnsupportedRegionException`.
     pub fn is_unsupported_region_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3459,7 +3503,7 @@ pub enum DeleteMatchmakingRuleSetErrorKind {
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMatchmakingRuleSetError {
@@ -3526,35 +3570,35 @@ impl DeleteMatchmakingRuleSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMatchmakingRuleSetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteMatchmakingRuleSetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMatchmakingRuleSetErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMatchmakingRuleSetErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteMatchmakingRuleSetErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMatchmakingRuleSetErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMatchmakingRuleSetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMatchmakingRuleSetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMatchmakingRuleSetErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMatchmakingRuleSetErrorKind::TaggingFailedException`.
+    /// Returns `true` if the error kind is `DeleteMatchmakingRuleSetErrorKind::TaggingFailedException`.
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMatchmakingRuleSetErrorKind::TaggingFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMatchmakingRuleSetErrorKind::UnsupportedRegionException`.
+    /// Returns `true` if the error kind is `DeleteMatchmakingRuleSetErrorKind::UnsupportedRegionException`.
     pub fn is_unsupported_region_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3600,7 +3644,7 @@ pub enum DeleteScalingPolicyErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteScalingPolicyError {
@@ -3666,28 +3710,28 @@ impl DeleteScalingPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteScalingPolicyErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteScalingPolicyErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteScalingPolicyErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteScalingPolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteScalingPolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteScalingPolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteScalingPolicyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteScalingPolicyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteScalingPolicyErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteScalingPolicyErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteScalingPolicyErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3737,7 +3781,7 @@ pub enum DeleteScriptErrorKind {
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteScriptError {
@@ -3804,29 +3848,29 @@ impl DeleteScriptError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteScriptErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteScriptErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteScriptErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteScriptErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteScriptErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteScriptErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteScriptErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteScriptErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteScriptErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteScriptErrorKind::TaggingFailedException`.
+    /// Returns `true` if the error kind is `DeleteScriptErrorKind::TaggingFailedException`.
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(&self.kind, DeleteScriptErrorKind::TaggingFailedException(_))
     }
-    /// Returns true if the error kind is `DeleteScriptErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteScriptErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, DeleteScriptErrorKind::UnauthorizedException(_))
     }
@@ -3869,7 +3913,7 @@ pub enum DeleteVpcPeeringAuthorizationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVpcPeeringAuthorizationError {
@@ -3942,28 +3986,28 @@ impl DeleteVpcPeeringAuthorizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVpcPeeringAuthorizationErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteVpcPeeringAuthorizationErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVpcPeeringAuthorizationErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVpcPeeringAuthorizationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteVpcPeeringAuthorizationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVpcPeeringAuthorizationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVpcPeeringAuthorizationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVpcPeeringAuthorizationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVpcPeeringAuthorizationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVpcPeeringAuthorizationErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteVpcPeeringAuthorizationErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4010,7 +4054,7 @@ pub enum DeleteVpcPeeringConnectionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVpcPeeringConnectionError {
@@ -4076,28 +4120,28 @@ impl DeleteVpcPeeringConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVpcPeeringConnectionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteVpcPeeringConnectionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVpcPeeringConnectionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVpcPeeringConnectionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteVpcPeeringConnectionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVpcPeeringConnectionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVpcPeeringConnectionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVpcPeeringConnectionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVpcPeeringConnectionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVpcPeeringConnectionErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeleteVpcPeeringConnectionErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4142,7 +4186,7 @@ pub enum DeregisterGameServerErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterGameServerError {
@@ -4208,28 +4252,28 @@ impl DeregisterGameServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterGameServerErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeregisterGameServerErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterGameServerErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterGameServerErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeregisterGameServerErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterGameServerErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterGameServerErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterGameServerErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterGameServerErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterGameServerErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DeregisterGameServerErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4274,7 +4318,7 @@ pub enum DescribeAliasErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAliasError {
@@ -4340,25 +4384,25 @@ impl DescribeAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAliasErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeAliasErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAliasErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAliasErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeAliasErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAliasErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAliasErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAliasErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeAliasErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeAliasErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeAliasErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, DescribeAliasErrorKind::UnauthorizedException(_))
     }
@@ -4400,7 +4444,7 @@ pub enum DescribeBuildErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBuildError {
@@ -4466,25 +4510,25 @@ impl DescribeBuildError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBuildErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeBuildErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBuildErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBuildErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeBuildErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBuildErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBuildErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeBuildErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeBuildErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeBuildErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeBuildErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, DescribeBuildErrorKind::UnauthorizedException(_))
     }
@@ -4523,7 +4567,9 @@ pub enum DescribeEC2InstanceLimitsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::error::UnsupportedRegionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEC2InstanceLimitsError {
@@ -4532,6 +4578,7 @@ impl std::fmt::Display for DescribeEC2InstanceLimitsError {
             DescribeEC2InstanceLimitsErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             DescribeEC2InstanceLimitsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             DescribeEC2InstanceLimitsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            DescribeEC2InstanceLimitsErrorKind::UnsupportedRegionException(_inner) => _inner.fmt(f),
             DescribeEC2InstanceLimitsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4588,25 +4635,32 @@ impl DescribeEC2InstanceLimitsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEC2InstanceLimitsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeEC2InstanceLimitsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEC2InstanceLimitsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEC2InstanceLimitsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeEC2InstanceLimitsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEC2InstanceLimitsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEC2InstanceLimitsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeEC2InstanceLimitsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEC2InstanceLimitsErrorKind::UnauthorizedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeEC2InstanceLimitsErrorKind::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEC2InstanceLimitsErrorKind::UnsupportedRegionException(_)
         )
     }
 }
@@ -4616,6 +4670,7 @@ impl std::error::Error for DescribeEC2InstanceLimitsError {
             DescribeEC2InstanceLimitsErrorKind::InternalServiceException(_inner) => Some(_inner),
             DescribeEC2InstanceLimitsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeEC2InstanceLimitsErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            DescribeEC2InstanceLimitsErrorKind::UnsupportedRegionException(_inner) => Some(_inner),
             DescribeEC2InstanceLimitsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4646,7 +4701,7 @@ pub enum DescribeFleetAttributesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFleetAttributesError {
@@ -4712,28 +4767,28 @@ impl DescribeFleetAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFleetAttributesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeFleetAttributesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetAttributesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetAttributesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeFleetAttributesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetAttributesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetAttributesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFleetAttributesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetAttributesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetAttributesErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeFleetAttributesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4778,7 +4833,7 @@ pub enum DescribeFleetCapacityErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFleetCapacityError {
@@ -4844,28 +4899,28 @@ impl DescribeFleetCapacityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFleetCapacityErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeFleetCapacityErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetCapacityErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetCapacityErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeFleetCapacityErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetCapacityErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetCapacityErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFleetCapacityErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetCapacityErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetCapacityErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeFleetCapacityErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4910,7 +4965,7 @@ pub enum DescribeFleetEventsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFleetEventsError {
@@ -4976,28 +5031,28 @@ impl DescribeFleetEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFleetEventsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeFleetEventsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetEventsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetEventsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeFleetEventsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetEventsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetEventsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFleetEventsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetEventsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetEventsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeFleetEventsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5042,7 +5097,9 @@ pub enum DescribeFleetLocationAttributesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::error::UnsupportedRegionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFleetLocationAttributesError {
@@ -5056,6 +5113,9 @@ impl std::fmt::Display for DescribeFleetLocationAttributesError {
             }
             DescribeFleetLocationAttributesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DescribeFleetLocationAttributesErrorKind::UnauthorizedException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeFleetLocationAttributesErrorKind::UnsupportedRegionException(_inner) => {
                 _inner.fmt(f)
             }
             DescribeFleetLocationAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -5117,32 +5177,39 @@ impl DescribeFleetLocationAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFleetLocationAttributesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeFleetLocationAttributesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetLocationAttributesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetLocationAttributesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeFleetLocationAttributesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetLocationAttributesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetLocationAttributesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFleetLocationAttributesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetLocationAttributesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetLocationAttributesErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeFleetLocationAttributesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetLocationAttributesErrorKind::UnauthorizedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeFleetLocationAttributesErrorKind::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFleetLocationAttributesErrorKind::UnsupportedRegionException(_)
         )
     }
 }
@@ -5157,6 +5224,9 @@ impl std::error::Error for DescribeFleetLocationAttributesError {
             }
             DescribeFleetLocationAttributesErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeFleetLocationAttributesErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            DescribeFleetLocationAttributesErrorKind::UnsupportedRegionException(_inner) => {
+                Some(_inner)
+            }
             DescribeFleetLocationAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5187,7 +5257,9 @@ pub enum DescribeFleetLocationCapacityErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::error::UnsupportedRegionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFleetLocationCapacityError {
@@ -5201,6 +5273,9 @@ impl std::fmt::Display for DescribeFleetLocationCapacityError {
             }
             DescribeFleetLocationCapacityErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DescribeFleetLocationCapacityErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            DescribeFleetLocationCapacityErrorKind::UnsupportedRegionException(_inner) => {
+                _inner.fmt(f)
+            }
             DescribeFleetLocationCapacityErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5260,32 +5335,39 @@ impl DescribeFleetLocationCapacityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFleetLocationCapacityErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeFleetLocationCapacityErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetLocationCapacityErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetLocationCapacityErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeFleetLocationCapacityErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetLocationCapacityErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetLocationCapacityErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFleetLocationCapacityErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetLocationCapacityErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetLocationCapacityErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeFleetLocationCapacityErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetLocationCapacityErrorKind::UnauthorizedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeFleetLocationCapacityErrorKind::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFleetLocationCapacityErrorKind::UnsupportedRegionException(_)
         )
     }
 }
@@ -5298,6 +5380,9 @@ impl std::error::Error for DescribeFleetLocationCapacityError {
             DescribeFleetLocationCapacityErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeFleetLocationCapacityErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeFleetLocationCapacityErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            DescribeFleetLocationCapacityErrorKind::UnsupportedRegionException(_inner) => {
+                Some(_inner)
+            }
             DescribeFleetLocationCapacityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5328,7 +5413,9 @@ pub enum DescribeFleetLocationUtilizationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::error::UnsupportedRegionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFleetLocationUtilizationError {
@@ -5342,6 +5429,9 @@ impl std::fmt::Display for DescribeFleetLocationUtilizationError {
             }
             DescribeFleetLocationUtilizationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DescribeFleetLocationUtilizationErrorKind::UnauthorizedException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeFleetLocationUtilizationErrorKind::UnsupportedRegionException(_inner) => {
                 _inner.fmt(f)
             }
             DescribeFleetLocationUtilizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -5403,32 +5493,39 @@ impl DescribeFleetLocationUtilizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFleetLocationUtilizationErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeFleetLocationUtilizationErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetLocationUtilizationErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetLocationUtilizationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeFleetLocationUtilizationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetLocationUtilizationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetLocationUtilizationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFleetLocationUtilizationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetLocationUtilizationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetLocationUtilizationErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeFleetLocationUtilizationErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetLocationUtilizationErrorKind::UnauthorizedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeFleetLocationUtilizationErrorKind::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeFleetLocationUtilizationErrorKind::UnsupportedRegionException(_)
         )
     }
 }
@@ -5443,6 +5540,9 @@ impl std::error::Error for DescribeFleetLocationUtilizationError {
             }
             DescribeFleetLocationUtilizationErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeFleetLocationUtilizationErrorKind::UnauthorizedException(_inner) => {
+                Some(_inner)
+            }
+            DescribeFleetLocationUtilizationErrorKind::UnsupportedRegionException(_inner) => {
                 Some(_inner)
             }
             DescribeFleetLocationUtilizationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -5475,7 +5575,7 @@ pub enum DescribeFleetPortSettingsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFleetPortSettingsError {
@@ -5541,28 +5641,28 @@ impl DescribeFleetPortSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFleetPortSettingsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeFleetPortSettingsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetPortSettingsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetPortSettingsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeFleetPortSettingsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetPortSettingsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetPortSettingsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFleetPortSettingsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetPortSettingsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetPortSettingsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeFleetPortSettingsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5607,7 +5707,7 @@ pub enum DescribeFleetUtilizationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFleetUtilizationError {
@@ -5673,28 +5773,28 @@ impl DescribeFleetUtilizationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFleetUtilizationErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeFleetUtilizationErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetUtilizationErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetUtilizationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeFleetUtilizationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetUtilizationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetUtilizationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeFleetUtilizationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFleetUtilizationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFleetUtilizationErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeFleetUtilizationErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5739,7 +5839,7 @@ pub enum DescribeGameServerErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGameServerError {
@@ -5805,28 +5905,28 @@ impl DescribeGameServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGameServerErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeGameServerErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameServerErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameServerErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeGameServerErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameServerErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameServerErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeGameServerErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameServerErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameServerErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeGameServerErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5871,7 +5971,7 @@ pub enum DescribeGameServerGroupErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGameServerGroupError {
@@ -5937,28 +6037,28 @@ impl DescribeGameServerGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGameServerGroupErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeGameServerGroupErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameServerGroupErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameServerGroupErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeGameServerGroupErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameServerGroupErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameServerGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeGameServerGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameServerGroupErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameServerGroupErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeGameServerGroupErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6003,7 +6103,7 @@ pub enum DescribeGameServerInstancesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGameServerInstancesError {
@@ -6069,28 +6169,28 @@ impl DescribeGameServerInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGameServerInstancesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeGameServerInstancesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameServerInstancesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameServerInstancesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeGameServerInstancesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameServerInstancesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameServerInstancesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeGameServerInstancesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameServerInstancesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameServerInstancesErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeGameServerInstancesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6141,7 +6241,9 @@ pub enum DescribeGameSessionDetailsErrorKind {
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::error::UnsupportedRegionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGameSessionDetailsError {
@@ -6154,6 +6256,9 @@ impl std::fmt::Display for DescribeGameSessionDetailsError {
                 _inner.fmt(f)
             }
             DescribeGameSessionDetailsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            DescribeGameSessionDetailsErrorKind::UnsupportedRegionException(_inner) => {
+                _inner.fmt(f)
+            }
             DescribeGameSessionDetailsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6210,39 +6315,46 @@ impl DescribeGameSessionDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGameSessionDetailsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeGameSessionDetailsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameSessionDetailsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameSessionDetailsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeGameSessionDetailsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameSessionDetailsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameSessionDetailsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeGameSessionDetailsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameSessionDetailsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameSessionDetailsErrorKind::TerminalRoutingStrategyException`.
+    /// Returns `true` if the error kind is `DescribeGameSessionDetailsErrorKind::TerminalRoutingStrategyException`.
     pub fn is_terminal_routing_strategy_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameSessionDetailsErrorKind::TerminalRoutingStrategyException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameSessionDetailsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeGameSessionDetailsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameSessionDetailsErrorKind::UnauthorizedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeGameSessionDetailsErrorKind::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeGameSessionDetailsErrorKind::UnsupportedRegionException(_)
         )
     }
 }
@@ -6256,6 +6368,7 @@ impl std::error::Error for DescribeGameSessionDetailsError {
                 Some(_inner)
             }
             DescribeGameSessionDetailsErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            DescribeGameSessionDetailsErrorKind::UnsupportedRegionException(_inner) => Some(_inner),
             DescribeGameSessionDetailsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6286,7 +6399,7 @@ pub enum DescribeGameSessionPlacementErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGameSessionPlacementError {
@@ -6354,28 +6467,28 @@ impl DescribeGameSessionPlacementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGameSessionPlacementErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeGameSessionPlacementErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameSessionPlacementErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameSessionPlacementErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeGameSessionPlacementErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameSessionPlacementErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameSessionPlacementErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeGameSessionPlacementErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameSessionPlacementErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameSessionPlacementErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeGameSessionPlacementErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6420,7 +6533,7 @@ pub enum DescribeGameSessionQueuesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGameSessionQueuesError {
@@ -6486,28 +6599,28 @@ impl DescribeGameSessionQueuesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGameSessionQueuesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeGameSessionQueuesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameSessionQueuesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameSessionQueuesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeGameSessionQueuesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameSessionQueuesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameSessionQueuesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeGameSessionQueuesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameSessionQueuesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameSessionQueuesErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeGameSessionQueuesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6558,7 +6671,9 @@ pub enum DescribeGameSessionsErrorKind {
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::error::UnsupportedRegionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGameSessionsError {
@@ -6571,6 +6686,7 @@ impl std::fmt::Display for DescribeGameSessionsError {
                 _inner.fmt(f)
             }
             DescribeGameSessionsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            DescribeGameSessionsErrorKind::UnsupportedRegionException(_inner) => _inner.fmt(f),
             DescribeGameSessionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6627,39 +6743,46 @@ impl DescribeGameSessionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGameSessionsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeGameSessionsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameSessionsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameSessionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeGameSessionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameSessionsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameSessionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeGameSessionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameSessionsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameSessionsErrorKind::TerminalRoutingStrategyException`.
+    /// Returns `true` if the error kind is `DescribeGameSessionsErrorKind::TerminalRoutingStrategyException`.
     pub fn is_terminal_routing_strategy_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameSessionsErrorKind::TerminalRoutingStrategyException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGameSessionsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeGameSessionsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGameSessionsErrorKind::UnauthorizedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeGameSessionsErrorKind::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeGameSessionsErrorKind::UnsupportedRegionException(_)
         )
     }
 }
@@ -6671,6 +6794,7 @@ impl std::error::Error for DescribeGameSessionsError {
             DescribeGameSessionsErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeGameSessionsErrorKind::TerminalRoutingStrategyException(_inner) => Some(_inner),
             DescribeGameSessionsErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            DescribeGameSessionsErrorKind::UnsupportedRegionException(_inner) => Some(_inner),
             DescribeGameSessionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6701,7 +6825,9 @@ pub enum DescribeInstancesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::error::UnsupportedRegionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstancesError {
@@ -6711,6 +6837,7 @@ impl std::fmt::Display for DescribeInstancesError {
             DescribeInstancesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             DescribeInstancesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DescribeInstancesErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            DescribeInstancesErrorKind::UnsupportedRegionException(_inner) => _inner.fmt(f),
             DescribeInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6767,29 +6894,36 @@ impl DescribeInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInstancesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeInstancesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstancesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInstancesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeInstancesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstancesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInstancesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeInstancesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeInstancesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeInstancesErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeInstancesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstancesErrorKind::UnauthorizedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeInstancesErrorKind::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstancesErrorKind::UnsupportedRegionException(_)
         )
     }
 }
@@ -6800,6 +6934,7 @@ impl std::error::Error for DescribeInstancesError {
             DescribeInstancesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeInstancesErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeInstancesErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            DescribeInstancesErrorKind::UnsupportedRegionException(_inner) => Some(_inner),
             DescribeInstancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6827,7 +6962,7 @@ pub enum DescribeMatchmakingErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMatchmakingError {
@@ -6892,21 +7027,21 @@ impl DescribeMatchmakingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMatchmakingErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeMatchmakingErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMatchmakingErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMatchmakingErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeMatchmakingErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMatchmakingErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMatchmakingErrorKind::UnsupportedRegionException`.
+    /// Returns `true` if the error kind is `DescribeMatchmakingErrorKind::UnsupportedRegionException`.
     pub fn is_unsupported_region_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6947,7 +7082,7 @@ pub enum DescribeMatchmakingConfigurationsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMatchmakingConfigurationsError {
@@ -7021,21 +7156,21 @@ impl DescribeMatchmakingConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMatchmakingConfigurationsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeMatchmakingConfigurationsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMatchmakingConfigurationsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMatchmakingConfigurationsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeMatchmakingConfigurationsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMatchmakingConfigurationsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMatchmakingConfigurationsErrorKind::UnsupportedRegionException`.
+    /// Returns `true` if the error kind is `DescribeMatchmakingConfigurationsErrorKind::UnsupportedRegionException`.
     pub fn is_unsupported_region_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7085,7 +7220,7 @@ pub enum DescribeMatchmakingRuleSetsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMatchmakingRuleSetsError {
@@ -7153,28 +7288,28 @@ impl DescribeMatchmakingRuleSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMatchmakingRuleSetsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeMatchmakingRuleSetsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMatchmakingRuleSetsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMatchmakingRuleSetsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeMatchmakingRuleSetsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMatchmakingRuleSetsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMatchmakingRuleSetsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeMatchmakingRuleSetsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMatchmakingRuleSetsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMatchmakingRuleSetsErrorKind::UnsupportedRegionException`.
+    /// Returns `true` if the error kind is `DescribeMatchmakingRuleSetsErrorKind::UnsupportedRegionException`.
     pub fn is_unsupported_region_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7221,7 +7356,7 @@ pub enum DescribePlayerSessionsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePlayerSessionsError {
@@ -7287,28 +7422,28 @@ impl DescribePlayerSessionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePlayerSessionsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribePlayerSessionsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePlayerSessionsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePlayerSessionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribePlayerSessionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePlayerSessionsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePlayerSessionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribePlayerSessionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePlayerSessionsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePlayerSessionsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribePlayerSessionsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7353,7 +7488,7 @@ pub enum DescribeRuntimeConfigurationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRuntimeConfigurationError {
@@ -7421,28 +7556,28 @@ impl DescribeRuntimeConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRuntimeConfigurationErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeRuntimeConfigurationErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRuntimeConfigurationErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRuntimeConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeRuntimeConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRuntimeConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRuntimeConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeRuntimeConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRuntimeConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRuntimeConfigurationErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeRuntimeConfigurationErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7487,7 +7622,9 @@ pub enum DescribeScalingPoliciesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::error::UnsupportedRegionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeScalingPoliciesError {
@@ -7497,6 +7634,7 @@ impl std::fmt::Display for DescribeScalingPoliciesError {
             DescribeScalingPoliciesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             DescribeScalingPoliciesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DescribeScalingPoliciesErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            DescribeScalingPoliciesErrorKind::UnsupportedRegionException(_inner) => _inner.fmt(f),
             DescribeScalingPoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7553,32 +7691,39 @@ impl DescribeScalingPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeScalingPoliciesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeScalingPoliciesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingPoliciesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingPoliciesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeScalingPoliciesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingPoliciesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingPoliciesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeScalingPoliciesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingPoliciesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingPoliciesErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeScalingPoliciesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingPoliciesErrorKind::UnauthorizedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeScalingPoliciesErrorKind::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeScalingPoliciesErrorKind::UnsupportedRegionException(_)
         )
     }
 }
@@ -7589,6 +7734,7 @@ impl std::error::Error for DescribeScalingPoliciesError {
             DescribeScalingPoliciesErrorKind::InvalidRequestException(_inner) => Some(_inner),
             DescribeScalingPoliciesErrorKind::NotFoundException(_inner) => Some(_inner),
             DescribeScalingPoliciesErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            DescribeScalingPoliciesErrorKind::UnsupportedRegionException(_inner) => Some(_inner),
             DescribeScalingPoliciesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7619,7 +7765,7 @@ pub enum DescribeScriptErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeScriptError {
@@ -7685,25 +7831,25 @@ impl DescribeScriptError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeScriptErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeScriptErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScriptErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScriptErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeScriptErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScriptErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScriptErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeScriptErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeScriptErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeScriptErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeScriptErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7745,7 +7891,7 @@ pub enum DescribeVpcPeeringAuthorizationsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVpcPeeringAuthorizationsError {
@@ -7819,21 +7965,21 @@ impl DescribeVpcPeeringAuthorizationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeVpcPeeringAuthorizationsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeVpcPeeringAuthorizationsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVpcPeeringAuthorizationsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVpcPeeringAuthorizationsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeVpcPeeringAuthorizationsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVpcPeeringAuthorizationsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVpcPeeringAuthorizationsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeVpcPeeringAuthorizationsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7883,7 +8029,7 @@ pub enum DescribeVpcPeeringConnectionsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeVpcPeeringConnectionsError {
@@ -7956,28 +8102,28 @@ impl DescribeVpcPeeringConnectionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeVpcPeeringConnectionsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeVpcPeeringConnectionsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVpcPeeringConnectionsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVpcPeeringConnectionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeVpcPeeringConnectionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVpcPeeringConnectionsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVpcPeeringConnectionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeVpcPeeringConnectionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeVpcPeeringConnectionsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeVpcPeeringConnectionsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `DescribeVpcPeeringConnectionsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8024,7 +8170,7 @@ pub enum GetGameSessionLogUrlErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGameSessionLogUrlError {
@@ -8090,28 +8236,28 @@ impl GetGameSessionLogUrlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGameSessionLogUrlErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetGameSessionLogUrlErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGameSessionLogUrlErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetGameSessionLogUrlErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetGameSessionLogUrlErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGameSessionLogUrlErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetGameSessionLogUrlErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetGameSessionLogUrlErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGameSessionLogUrlErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetGameSessionLogUrlErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `GetGameSessionLogUrlErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8156,7 +8302,7 @@ pub enum GetInstanceAccessErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInstanceAccessError {
@@ -8222,25 +8368,25 @@ impl GetInstanceAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInstanceAccessErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetInstanceAccessErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceAccessErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceAccessErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetInstanceAccessErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceAccessErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceAccessErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetInstanceAccessErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetInstanceAccessErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetInstanceAccessErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `GetInstanceAccessErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8282,7 +8428,7 @@ pub enum ListAliasesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAliasesError {
@@ -8347,18 +8493,18 @@ impl ListAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAliasesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListAliasesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAliasesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListAliasesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListAliasesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListAliasesErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `ListAliasesErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListAliasesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ListAliasesErrorKind::UnauthorizedException(_))
     }
@@ -8396,7 +8542,7 @@ pub enum ListBuildsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBuildsError {
@@ -8461,15 +8607,15 @@ impl ListBuildsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBuildsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListBuildsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, ListBuildsErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `ListBuildsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListBuildsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListBuildsErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `ListBuildsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListBuildsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ListBuildsErrorKind::UnauthorizedException(_))
     }
@@ -8510,7 +8656,7 @@ pub enum ListFleetsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFleetsError {
@@ -8576,19 +8722,19 @@ impl ListFleetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFleetsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListFleetsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, ListFleetsErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `ListFleetsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListFleetsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListFleetsErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `ListFleetsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListFleetsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListFleetsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListFleetsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListFleetsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ListFleetsErrorKind::UnauthorizedException(_))
     }
@@ -8627,7 +8773,7 @@ pub enum ListGameServerGroupsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGameServerGroupsError {
@@ -8692,21 +8838,21 @@ impl ListGameServerGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGameServerGroupsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListGameServerGroupsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGameServerGroupsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListGameServerGroupsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListGameServerGroupsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGameServerGroupsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListGameServerGroupsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListGameServerGroupsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8747,7 +8893,7 @@ pub enum ListGameServersErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGameServersError {
@@ -8812,21 +8958,21 @@ impl ListGameServersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGameServersErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListGameServersErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGameServersErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListGameServersErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListGameServersErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGameServersErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListGameServersErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListGameServersErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8867,7 +9013,7 @@ pub enum ListScriptsErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListScriptsError {
@@ -8932,18 +9078,18 @@ impl ListScriptsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListScriptsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListScriptsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListScriptsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListScriptsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListScriptsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListScriptsErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `ListScriptsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListScriptsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ListScriptsErrorKind::UnauthorizedException(_))
     }
@@ -8987,7 +9133,7 @@ pub enum ListTagsForResourceErrorKind {
     /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
     /// </p>
     TaggingFailedException(crate::error::TaggingFailedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -9053,28 +9199,28 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::TaggingFailedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::TaggingFailedException`.
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9119,7 +9265,7 @@ pub enum PutScalingPolicyErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutScalingPolicyError {
@@ -9185,25 +9331,25 @@ impl PutScalingPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutScalingPolicyErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `PutScalingPolicyErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutScalingPolicyErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `PutScalingPolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PutScalingPolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutScalingPolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutScalingPolicyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutScalingPolicyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutScalingPolicyErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `PutScalingPolicyErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `PutScalingPolicyErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9252,7 +9398,7 @@ pub enum RegisterGameServerErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterGameServerError {
@@ -9319,35 +9465,35 @@ impl RegisterGameServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterGameServerErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `RegisterGameServerErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterGameServerErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterGameServerErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `RegisterGameServerErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterGameServerErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterGameServerErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `RegisterGameServerErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterGameServerErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterGameServerErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `RegisterGameServerErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterGameServerErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterGameServerErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `RegisterGameServerErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9393,7 +9539,7 @@ pub enum RequestUploadCredentialsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RequestUploadCredentialsError {
@@ -9459,28 +9605,28 @@ impl RequestUploadCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RequestUploadCredentialsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `RequestUploadCredentialsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             RequestUploadCredentialsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `RequestUploadCredentialsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `RequestUploadCredentialsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RequestUploadCredentialsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RequestUploadCredentialsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RequestUploadCredentialsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RequestUploadCredentialsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RequestUploadCredentialsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `RequestUploadCredentialsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9531,7 +9677,7 @@ pub enum ResolveAliasErrorKind {
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResolveAliasError {
@@ -9598,32 +9744,32 @@ impl ResolveAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResolveAliasErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ResolveAliasErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResolveAliasErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ResolveAliasErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ResolveAliasErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResolveAliasErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ResolveAliasErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ResolveAliasErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ResolveAliasErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ResolveAliasErrorKind::TerminalRoutingStrategyException`.
+    /// Returns `true` if the error kind is `ResolveAliasErrorKind::TerminalRoutingStrategyException`.
     pub fn is_terminal_routing_strategy_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResolveAliasErrorKind::TerminalRoutingStrategyException(_)
         )
     }
-    /// Returns true if the error kind is `ResolveAliasErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ResolveAliasErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, ResolveAliasErrorKind::UnauthorizedException(_))
     }
@@ -9666,7 +9812,7 @@ pub enum ResumeGameServerGroupErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResumeGameServerGroupError {
@@ -9732,28 +9878,28 @@ impl ResumeGameServerGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResumeGameServerGroupErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ResumeGameServerGroupErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResumeGameServerGroupErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ResumeGameServerGroupErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ResumeGameServerGroupErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResumeGameServerGroupErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ResumeGameServerGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ResumeGameServerGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResumeGameServerGroupErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ResumeGameServerGroupErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ResumeGameServerGroupErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9804,7 +9950,9 @@ pub enum SearchGameSessionsErrorKind {
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::error::UnsupportedRegionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchGameSessionsError {
@@ -9815,6 +9963,7 @@ impl std::fmt::Display for SearchGameSessionsError {
             SearchGameSessionsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             SearchGameSessionsErrorKind::TerminalRoutingStrategyException(_inner) => _inner.fmt(f),
             SearchGameSessionsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            SearchGameSessionsErrorKind::UnsupportedRegionException(_inner) => _inner.fmt(f),
             SearchGameSessionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9871,39 +10020,46 @@ impl SearchGameSessionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchGameSessionsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `SearchGameSessionsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchGameSessionsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `SearchGameSessionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `SearchGameSessionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchGameSessionsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `SearchGameSessionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `SearchGameSessionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchGameSessionsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SearchGameSessionsErrorKind::TerminalRoutingStrategyException`.
+    /// Returns `true` if the error kind is `SearchGameSessionsErrorKind::TerminalRoutingStrategyException`.
     pub fn is_terminal_routing_strategy_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchGameSessionsErrorKind::TerminalRoutingStrategyException(_)
         )
     }
-    /// Returns true if the error kind is `SearchGameSessionsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `SearchGameSessionsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             SearchGameSessionsErrorKind::UnauthorizedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchGameSessionsErrorKind::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchGameSessionsErrorKind::UnsupportedRegionException(_)
         )
     }
 }
@@ -9915,6 +10071,7 @@ impl std::error::Error for SearchGameSessionsError {
             SearchGameSessionsErrorKind::NotFoundException(_inner) => Some(_inner),
             SearchGameSessionsErrorKind::TerminalRoutingStrategyException(_inner) => Some(_inner),
             SearchGameSessionsErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            SearchGameSessionsErrorKind::UnsupportedRegionException(_inner) => Some(_inner),
             SearchGameSessionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9945,7 +10102,9 @@ pub enum StartFleetActionsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::error::UnsupportedRegionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartFleetActionsError {
@@ -9955,6 +10114,7 @@ impl std::fmt::Display for StartFleetActionsError {
             StartFleetActionsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             StartFleetActionsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             StartFleetActionsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            StartFleetActionsErrorKind::UnsupportedRegionException(_inner) => _inner.fmt(f),
             StartFleetActionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10011,29 +10171,36 @@ impl StartFleetActionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartFleetActionsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StartFleetActionsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFleetActionsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StartFleetActionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartFleetActionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFleetActionsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartFleetActionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StartFleetActionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, StartFleetActionsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `StartFleetActionsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `StartFleetActionsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartFleetActionsErrorKind::UnauthorizedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartFleetActionsErrorKind::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartFleetActionsErrorKind::UnsupportedRegionException(_)
         )
     }
 }
@@ -10044,6 +10211,7 @@ impl std::error::Error for StartFleetActionsError {
             StartFleetActionsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             StartFleetActionsErrorKind::NotFoundException(_inner) => Some(_inner),
             StartFleetActionsErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            StartFleetActionsErrorKind::UnsupportedRegionException(_inner) => Some(_inner),
             StartFleetActionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10074,7 +10242,7 @@ pub enum StartGameSessionPlacementErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartGameSessionPlacementError {
@@ -10140,28 +10308,28 @@ impl StartGameSessionPlacementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartGameSessionPlacementErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StartGameSessionPlacementErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartGameSessionPlacementErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StartGameSessionPlacementErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartGameSessionPlacementErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartGameSessionPlacementErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartGameSessionPlacementErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StartGameSessionPlacementErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartGameSessionPlacementErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartGameSessionPlacementErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `StartGameSessionPlacementErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10206,7 +10374,7 @@ pub enum StartMatchBackfillErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartMatchBackfillError {
@@ -10272,28 +10440,28 @@ impl StartMatchBackfillError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartMatchBackfillErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StartMatchBackfillErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMatchBackfillErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StartMatchBackfillErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartMatchBackfillErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMatchBackfillErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartMatchBackfillErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StartMatchBackfillErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMatchBackfillErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartMatchBackfillErrorKind::UnsupportedRegionException`.
+    /// Returns `true` if the error kind is `StartMatchBackfillErrorKind::UnsupportedRegionException`.
     pub fn is_unsupported_region_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10338,7 +10506,7 @@ pub enum StartMatchmakingErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartMatchmakingError {
@@ -10404,25 +10572,25 @@ impl StartMatchmakingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartMatchmakingErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StartMatchmakingErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMatchmakingErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StartMatchmakingErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartMatchmakingErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartMatchmakingErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartMatchmakingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StartMatchmakingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, StartMatchmakingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `StartMatchmakingErrorKind::UnsupportedRegionException`.
+    /// Returns `true` if the error kind is `StartMatchmakingErrorKind::UnsupportedRegionException`.
     pub fn is_unsupported_region_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10467,7 +10635,9 @@ pub enum StopFleetActionsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::error::UnsupportedRegionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopFleetActionsError {
@@ -10477,6 +10647,7 @@ impl std::fmt::Display for StopFleetActionsError {
             StopFleetActionsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             StopFleetActionsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             StopFleetActionsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            StopFleetActionsErrorKind::UnsupportedRegionException(_inner) => _inner.fmt(f),
             StopFleetActionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10533,29 +10704,36 @@ impl StopFleetActionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopFleetActionsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StopFleetActionsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopFleetActionsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StopFleetActionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StopFleetActionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopFleetActionsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StopFleetActionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StopFleetActionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopFleetActionsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `StopFleetActionsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `StopFleetActionsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopFleetActionsErrorKind::UnauthorizedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopFleetActionsErrorKind::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopFleetActionsErrorKind::UnsupportedRegionException(_)
         )
     }
 }
@@ -10566,6 +10744,7 @@ impl std::error::Error for StopFleetActionsError {
             StopFleetActionsErrorKind::InvalidRequestException(_inner) => Some(_inner),
             StopFleetActionsErrorKind::NotFoundException(_inner) => Some(_inner),
             StopFleetActionsErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            StopFleetActionsErrorKind::UnsupportedRegionException(_inner) => Some(_inner),
             StopFleetActionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10596,7 +10775,7 @@ pub enum StopGameSessionPlacementErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopGameSessionPlacementError {
@@ -10662,28 +10841,28 @@ impl StopGameSessionPlacementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopGameSessionPlacementErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StopGameSessionPlacementErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopGameSessionPlacementErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StopGameSessionPlacementErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StopGameSessionPlacementErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopGameSessionPlacementErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StopGameSessionPlacementErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StopGameSessionPlacementErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopGameSessionPlacementErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopGameSessionPlacementErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `StopGameSessionPlacementErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10728,7 +10907,7 @@ pub enum StopMatchmakingErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopMatchmakingError {
@@ -10794,25 +10973,25 @@ impl StopMatchmakingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopMatchmakingErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StopMatchmakingErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopMatchmakingErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StopMatchmakingErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StopMatchmakingErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopMatchmakingErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StopMatchmakingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StopMatchmakingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopMatchmakingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `StopMatchmakingErrorKind::UnsupportedRegionException`.
+    /// Returns `true` if the error kind is `StopMatchmakingErrorKind::UnsupportedRegionException`.
     pub fn is_unsupported_region_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10857,7 +11036,7 @@ pub enum SuspendGameServerGroupErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SuspendGameServerGroupError {
@@ -10923,28 +11102,28 @@ impl SuspendGameServerGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SuspendGameServerGroupErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `SuspendGameServerGroupErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             SuspendGameServerGroupErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `SuspendGameServerGroupErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `SuspendGameServerGroupErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             SuspendGameServerGroupErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `SuspendGameServerGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `SuspendGameServerGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SuspendGameServerGroupErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SuspendGameServerGroupErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `SuspendGameServerGroupErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10992,7 +11171,7 @@ pub enum TagResourceErrorKind {
     /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
     /// </p>
     TaggingFailedException(crate::error::TaggingFailedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -11058,22 +11237,22 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TaggingFailedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TaggingFailedException`.
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TaggingFailedException(_))
     }
@@ -11118,7 +11297,7 @@ pub enum UntagResourceErrorKind {
     /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
     /// </p>
     TaggingFailedException(crate::error::TaggingFailedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -11184,25 +11363,25 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TaggingFailedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TaggingFailedException`.
     pub fn is_tagging_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11247,7 +11426,7 @@ pub enum UpdateAliasErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAliasError {
@@ -11313,22 +11492,22 @@ impl UpdateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAliasErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateAliasErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAliasErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAliasErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateAliasErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateAliasErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateAliasErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAliasErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateAliasErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateAliasErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateAliasErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, UpdateAliasErrorKind::UnauthorizedException(_))
     }
@@ -11370,7 +11549,7 @@ pub enum UpdateBuildErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBuildError {
@@ -11436,22 +11615,22 @@ impl UpdateBuildError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBuildErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateBuildErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBuildErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBuildErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateBuildErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateBuildErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateBuildErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateBuildErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateBuildErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateBuildErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateBuildErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, UpdateBuildErrorKind::UnauthorizedException(_))
     }
@@ -11504,7 +11683,7 @@ pub enum UpdateFleetAttributesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFleetAttributesError {
@@ -11573,49 +11752,49 @@ impl UpdateFleetAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFleetAttributesErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateFleetAttributesErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetAttributesErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetAttributesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateFleetAttributesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetAttributesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetAttributesErrorKind::InvalidFleetStatusException`.
+    /// Returns `true` if the error kind is `UpdateFleetAttributesErrorKind::InvalidFleetStatusException`.
     pub fn is_invalid_fleet_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetAttributesErrorKind::InvalidFleetStatusException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetAttributesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateFleetAttributesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetAttributesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetAttributesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateFleetAttributesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetAttributesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetAttributesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFleetAttributesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetAttributesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetAttributesErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateFleetAttributesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11674,7 +11853,9 @@ pub enum UpdateFleetCapacityErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// <p>The requested operation is not supported in the Region specified.</p>
+    UnsupportedRegionException(crate::error::UnsupportedRegionException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFleetCapacityError {
@@ -11687,6 +11868,7 @@ impl std::fmt::Display for UpdateFleetCapacityError {
             UpdateFleetCapacityErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateFleetCapacityErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateFleetCapacityErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
+            UpdateFleetCapacityErrorKind::UnsupportedRegionException(_inner) => _inner.fmt(f),
             UpdateFleetCapacityErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11743,53 +11925,60 @@ impl UpdateFleetCapacityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFleetCapacityErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateFleetCapacityErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetCapacityErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetCapacityErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateFleetCapacityErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetCapacityErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetCapacityErrorKind::InvalidFleetStatusException`.
+    /// Returns `true` if the error kind is `UpdateFleetCapacityErrorKind::InvalidFleetStatusException`.
     pub fn is_invalid_fleet_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetCapacityErrorKind::InvalidFleetStatusException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetCapacityErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateFleetCapacityErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetCapacityErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetCapacityErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateFleetCapacityErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetCapacityErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetCapacityErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFleetCapacityErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetCapacityErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetCapacityErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateFleetCapacityErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetCapacityErrorKind::UnauthorizedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateFleetCapacityErrorKind::UnsupportedRegionException`.
+    pub fn is_unsupported_region_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFleetCapacityErrorKind::UnsupportedRegionException(_)
         )
     }
 }
@@ -11803,6 +11992,7 @@ impl std::error::Error for UpdateFleetCapacityError {
             UpdateFleetCapacityErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateFleetCapacityErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateFleetCapacityErrorKind::UnauthorizedException(_inner) => Some(_inner),
+            UpdateFleetCapacityErrorKind::UnsupportedRegionException(_inner) => Some(_inner),
             UpdateFleetCapacityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11844,7 +12034,7 @@ pub enum UpdateFleetPortSettingsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFleetPortSettingsError {
@@ -11913,49 +12103,49 @@ impl UpdateFleetPortSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFleetPortSettingsErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateFleetPortSettingsErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetPortSettingsErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetPortSettingsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateFleetPortSettingsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetPortSettingsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetPortSettingsErrorKind::InvalidFleetStatusException`.
+    /// Returns `true` if the error kind is `UpdateFleetPortSettingsErrorKind::InvalidFleetStatusException`.
     pub fn is_invalid_fleet_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetPortSettingsErrorKind::InvalidFleetStatusException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetPortSettingsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateFleetPortSettingsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetPortSettingsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetPortSettingsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateFleetPortSettingsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetPortSettingsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetPortSettingsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFleetPortSettingsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFleetPortSettingsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFleetPortSettingsErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateFleetPortSettingsErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12003,7 +12193,7 @@ pub enum UpdateGameServerErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGameServerError {
@@ -12069,25 +12259,25 @@ impl UpdateGameServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGameServerErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateGameServerErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGameServerErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGameServerErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateGameServerErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGameServerErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGameServerErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGameServerErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateGameServerErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateGameServerErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateGameServerErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12132,7 +12322,7 @@ pub enum UpdateGameServerGroupErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGameServerGroupError {
@@ -12198,28 +12388,28 @@ impl UpdateGameServerGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGameServerGroupErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateGameServerGroupErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGameServerGroupErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGameServerGroupErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateGameServerGroupErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGameServerGroupErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGameServerGroupErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGameServerGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGameServerGroupErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGameServerGroupErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateGameServerGroupErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12272,7 +12462,7 @@ pub enum UpdateGameSessionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGameSessionError {
@@ -12340,36 +12530,36 @@ impl UpdateGameSessionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGameSessionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateGameSessionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateGameSessionErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateGameSessionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateGameSessionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGameSessionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGameSessionErrorKind::InvalidGameSessionStatusException`.
+    /// Returns `true` if the error kind is `UpdateGameSessionErrorKind::InvalidGameSessionStatusException`.
     pub fn is_invalid_game_session_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGameSessionErrorKind::InvalidGameSessionStatusException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGameSessionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateGameSessionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGameSessionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGameSessionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGameSessionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateGameSessionErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateGameSessionErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateGameSessionErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12416,7 +12606,7 @@ pub enum UpdateGameSessionQueueErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGameSessionQueueError {
@@ -12482,28 +12672,28 @@ impl UpdateGameSessionQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGameSessionQueueErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateGameSessionQueueErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGameSessionQueueErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGameSessionQueueErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateGameSessionQueueErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGameSessionQueueErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGameSessionQueueErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGameSessionQueueErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGameSessionQueueErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGameSessionQueueErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateGameSessionQueueErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12548,7 +12738,7 @@ pub enum UpdateMatchmakingConfigurationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMatchmakingConfigurationError {
@@ -12623,28 +12813,28 @@ impl UpdateMatchmakingConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateMatchmakingConfigurationErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateMatchmakingConfigurationErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMatchmakingConfigurationErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMatchmakingConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateMatchmakingConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMatchmakingConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMatchmakingConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateMatchmakingConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateMatchmakingConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateMatchmakingConfigurationErrorKind::UnsupportedRegionException`.
+    /// Returns `true` if the error kind is `UpdateMatchmakingConfigurationErrorKind::UnsupportedRegionException`.
     pub fn is_unsupported_region_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12699,7 +12889,7 @@ pub enum UpdateRuntimeConfigurationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRuntimeConfigurationError {
@@ -12768,35 +12958,35 @@ impl UpdateRuntimeConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRuntimeConfigurationErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateRuntimeConfigurationErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRuntimeConfigurationErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRuntimeConfigurationErrorKind::InvalidFleetStatusException`.
+    /// Returns `true` if the error kind is `UpdateRuntimeConfigurationErrorKind::InvalidFleetStatusException`.
     pub fn is_invalid_fleet_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRuntimeConfigurationErrorKind::InvalidFleetStatusException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRuntimeConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateRuntimeConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRuntimeConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRuntimeConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRuntimeConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRuntimeConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRuntimeConfigurationErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateRuntimeConfigurationErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12844,7 +13034,7 @@ pub enum UpdateScriptErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateScriptError {
@@ -12910,25 +13100,25 @@ impl UpdateScriptError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateScriptErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateScriptErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateScriptErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateScriptErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateScriptErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateScriptErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateScriptErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateScriptErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateScriptErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateScriptErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UpdateScriptErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, UpdateScriptErrorKind::UnauthorizedException(_))
     }
@@ -12967,7 +13157,7 @@ pub enum ValidateMatchmakingRuleSetErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ValidateMatchmakingRuleSetError {
@@ -13034,21 +13224,21 @@ impl ValidateMatchmakingRuleSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ValidateMatchmakingRuleSetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ValidateMatchmakingRuleSetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ValidateMatchmakingRuleSetErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ValidateMatchmakingRuleSetErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ValidateMatchmakingRuleSetErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ValidateMatchmakingRuleSetErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ValidateMatchmakingRuleSetErrorKind::UnsupportedRegionException`.
+    /// Returns `true` if the error kind is `ValidateMatchmakingRuleSetErrorKind::UnsupportedRegionException`.
     pub fn is_unsupported_region_exception(&self) -> bool {
         matches!(
             &self.kind,

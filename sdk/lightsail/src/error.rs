@@ -34,7 +34,7 @@ pub enum AllocateStaticIpErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AllocateStaticIpError {
@@ -103,43 +103,43 @@ impl AllocateStaticIpError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AllocateStaticIpErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AllocateStaticIpErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AllocateStaticIpErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AllocateStaticIpErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `AllocateStaticIpErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             AllocateStaticIpErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `AllocateStaticIpErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AllocateStaticIpErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             AllocateStaticIpErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `AllocateStaticIpErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AllocateStaticIpErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, AllocateStaticIpErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `AllocateStaticIpErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `AllocateStaticIpErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             AllocateStaticIpErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `AllocateStaticIpErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `AllocateStaticIpErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, AllocateStaticIpErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `AllocateStaticIpErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `AllocateStaticIpErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -194,7 +194,7 @@ pub enum AttachCertificateToDistributionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachCertificateToDistributionError {
@@ -273,42 +273,42 @@ impl AttachCertificateToDistributionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachCertificateToDistributionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AttachCertificateToDistributionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachCertificateToDistributionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AttachCertificateToDistributionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AttachCertificateToDistributionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachCertificateToDistributionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `AttachCertificateToDistributionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AttachCertificateToDistributionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachCertificateToDistributionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AttachCertificateToDistributionErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `AttachCertificateToDistributionErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachCertificateToDistributionErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `AttachCertificateToDistributionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `AttachCertificateToDistributionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachCertificateToDistributionErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `AttachCertificateToDistributionErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `AttachCertificateToDistributionErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -369,7 +369,7 @@ pub enum AttachDiskErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachDiskError {
@@ -438,37 +438,37 @@ impl AttachDiskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachDiskErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AttachDiskErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, AttachDiskErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `AttachDiskErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `AttachDiskErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachDiskErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `AttachDiskErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AttachDiskErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, AttachDiskErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `AttachDiskErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AttachDiskErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, AttachDiskErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `AttachDiskErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `AttachDiskErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachDiskErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `AttachDiskErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `AttachDiskErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, AttachDiskErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `AttachDiskErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `AttachDiskErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(&self.kind, AttachDiskErrorKind::UnauthenticatedException(_))
     }
@@ -523,7 +523,7 @@ pub enum AttachInstancesToLoadBalancerErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachInstancesToLoadBalancerError {
@@ -601,49 +601,49 @@ impl AttachInstancesToLoadBalancerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachInstancesToLoadBalancerErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AttachInstancesToLoadBalancerErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachInstancesToLoadBalancerErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AttachInstancesToLoadBalancerErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `AttachInstancesToLoadBalancerErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachInstancesToLoadBalancerErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `AttachInstancesToLoadBalancerErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AttachInstancesToLoadBalancerErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachInstancesToLoadBalancerErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `AttachInstancesToLoadBalancerErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AttachInstancesToLoadBalancerErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachInstancesToLoadBalancerErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AttachInstancesToLoadBalancerErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `AttachInstancesToLoadBalancerErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachInstancesToLoadBalancerErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `AttachInstancesToLoadBalancerErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `AttachInstancesToLoadBalancerErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachInstancesToLoadBalancerErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `AttachInstancesToLoadBalancerErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `AttachInstancesToLoadBalancerErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -707,7 +707,7 @@ pub enum AttachLoadBalancerTlsCertificateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachLoadBalancerTlsCertificateError {
@@ -789,49 +789,49 @@ impl AttachLoadBalancerTlsCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachLoadBalancerTlsCertificateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AttachLoadBalancerTlsCertificateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachLoadBalancerTlsCertificateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AttachLoadBalancerTlsCertificateErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `AttachLoadBalancerTlsCertificateErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachLoadBalancerTlsCertificateErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `AttachLoadBalancerTlsCertificateErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AttachLoadBalancerTlsCertificateErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachLoadBalancerTlsCertificateErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `AttachLoadBalancerTlsCertificateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AttachLoadBalancerTlsCertificateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachLoadBalancerTlsCertificateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AttachLoadBalancerTlsCertificateErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `AttachLoadBalancerTlsCertificateErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachLoadBalancerTlsCertificateErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `AttachLoadBalancerTlsCertificateErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `AttachLoadBalancerTlsCertificateErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachLoadBalancerTlsCertificateErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `AttachLoadBalancerTlsCertificateErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `AttachLoadBalancerTlsCertificateErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -899,7 +899,7 @@ pub enum AttachStaticIpErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachStaticIpError {
@@ -968,43 +968,43 @@ impl AttachStaticIpError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachStaticIpErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AttachStaticIpErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachStaticIpErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AttachStaticIpErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `AttachStaticIpErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachStaticIpErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `AttachStaticIpErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AttachStaticIpErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachStaticIpErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `AttachStaticIpErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `AttachStaticIpErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, AttachStaticIpErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `AttachStaticIpErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `AttachStaticIpErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachStaticIpErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `AttachStaticIpErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `AttachStaticIpErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, AttachStaticIpErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `AttachStaticIpErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `AttachStaticIpErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1062,7 +1062,7 @@ pub enum CloseInstancePublicPortsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CloseInstancePublicPortsError {
@@ -1133,49 +1133,49 @@ impl CloseInstancePublicPortsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CloseInstancePublicPortsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CloseInstancePublicPortsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CloseInstancePublicPortsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CloseInstancePublicPortsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `CloseInstancePublicPortsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CloseInstancePublicPortsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CloseInstancePublicPortsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CloseInstancePublicPortsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CloseInstancePublicPortsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CloseInstancePublicPortsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CloseInstancePublicPortsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CloseInstancePublicPortsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CloseInstancePublicPortsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CloseInstancePublicPortsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CloseInstancePublicPortsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CloseInstancePublicPortsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CloseInstancePublicPortsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CloseInstancePublicPortsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CloseInstancePublicPortsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CloseInstancePublicPortsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1235,7 +1235,7 @@ pub enum CopySnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopySnapshotError {
@@ -1304,37 +1304,37 @@ impl CopySnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CopySnapshotErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CopySnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CopySnapshotErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CopySnapshotErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `CopySnapshotErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopySnapshotErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CopySnapshotErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CopySnapshotErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CopySnapshotErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CopySnapshotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CopySnapshotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CopySnapshotErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CopySnapshotErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CopySnapshotErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CopySnapshotErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CopySnapshotErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CopySnapshotErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CopySnapshotErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CopySnapshotErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CopySnapshotErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1385,7 +1385,7 @@ pub enum CreateBucketErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBucketError {
@@ -1451,19 +1451,19 @@ impl CreateBucketError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBucketErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateBucketErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateBucketErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateBucketErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateBucketErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateBucketErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreateBucketErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateBucketErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateBucketErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateBucketErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateBucketErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1513,7 +1513,7 @@ pub enum CreateBucketAccessKeyErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBucketAccessKeyError {
@@ -1580,35 +1580,35 @@ impl CreateBucketAccessKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBucketAccessKeyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateBucketAccessKeyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBucketAccessKeyErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBucketAccessKeyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateBucketAccessKeyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBucketAccessKeyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBucketAccessKeyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateBucketAccessKeyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBucketAccessKeyErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBucketAccessKeyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateBucketAccessKeyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBucketAccessKeyErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBucketAccessKeyErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateBucketAccessKeyErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1659,7 +1659,7 @@ pub enum CreateCertificateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCertificateError {
@@ -1726,29 +1726,29 @@ impl CreateCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCertificateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateCertificateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCertificateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCertificateErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateCertificateErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCertificateErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCertificateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateCertificateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateCertificateErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateCertificateErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateCertificateErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateCertificateErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateCertificateErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateCertificateErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1804,7 +1804,7 @@ pub enum CreateCloudFormationStackErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCloudFormationStackError {
@@ -1875,49 +1875,49 @@ impl CreateCloudFormationStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCloudFormationStackErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateCloudFormationStackErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCloudFormationStackErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCloudFormationStackErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `CreateCloudFormationStackErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCloudFormationStackErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCloudFormationStackErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateCloudFormationStackErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCloudFormationStackErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCloudFormationStackErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateCloudFormationStackErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCloudFormationStackErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCloudFormationStackErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CreateCloudFormationStackErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCloudFormationStackErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCloudFormationStackErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateCloudFormationStackErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCloudFormationStackErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCloudFormationStackErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateCloudFormationStackErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1974,7 +1974,7 @@ pub enum CreateContactMethodErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateContactMethodError {
@@ -2042,42 +2042,42 @@ impl CreateContactMethodError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateContactMethodErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateContactMethodErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContactMethodErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContactMethodErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateContactMethodErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContactMethodErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContactMethodErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateContactMethodErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContactMethodErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContactMethodErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CreateContactMethodErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContactMethodErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContactMethodErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateContactMethodErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContactMethodErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContactMethodErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateContactMethodErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2129,7 +2129,7 @@ pub enum CreateContainerServiceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateContainerServiceError {
@@ -2196,35 +2196,35 @@ impl CreateContainerServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateContainerServiceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateContainerServiceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerServiceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerServiceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateContainerServiceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerServiceErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerServiceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateContainerServiceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerServiceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerServiceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateContainerServiceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerServiceErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerServiceErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateContainerServiceErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2275,7 +2275,7 @@ pub enum CreateContainerServiceDeploymentErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateContainerServiceDeploymentError {
@@ -2351,35 +2351,35 @@ impl CreateContainerServiceDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateContainerServiceDeploymentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateContainerServiceDeploymentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerServiceDeploymentErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerServiceDeploymentErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateContainerServiceDeploymentErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerServiceDeploymentErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerServiceDeploymentErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateContainerServiceDeploymentErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerServiceDeploymentErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerServiceDeploymentErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateContainerServiceDeploymentErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerServiceDeploymentErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerServiceDeploymentErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateContainerServiceDeploymentErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2436,7 +2436,7 @@ pub enum CreateContainerServiceRegistryLoginErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateContainerServiceRegistryLoginError {
@@ -2514,35 +2514,35 @@ impl CreateContainerServiceRegistryLoginError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateContainerServiceRegistryLoginErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateContainerServiceRegistryLoginErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerServiceRegistryLoginErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerServiceRegistryLoginErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateContainerServiceRegistryLoginErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerServiceRegistryLoginErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerServiceRegistryLoginErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateContainerServiceRegistryLoginErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerServiceRegistryLoginErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerServiceRegistryLoginErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateContainerServiceRegistryLoginErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateContainerServiceRegistryLoginErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateContainerServiceRegistryLoginErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateContainerServiceRegistryLoginErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2606,7 +2606,7 @@ pub enum CreateDiskErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDiskError {
@@ -2675,37 +2675,37 @@ impl CreateDiskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDiskErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDiskErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateDiskErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateDiskErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `CreateDiskErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDiskErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDiskErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateDiskErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateDiskErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreateDiskErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateDiskErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateDiskErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateDiskErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CreateDiskErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDiskErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDiskErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateDiskErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateDiskErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateDiskErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateDiskErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(&self.kind, CreateDiskErrorKind::UnauthenticatedException(_))
     }
@@ -2760,7 +2760,7 @@ pub enum CreateDiskFromSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDiskFromSnapshotError {
@@ -2831,49 +2831,49 @@ impl CreateDiskFromSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDiskFromSnapshotErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDiskFromSnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDiskFromSnapshotErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDiskFromSnapshotErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `CreateDiskFromSnapshotErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDiskFromSnapshotErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDiskFromSnapshotErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateDiskFromSnapshotErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDiskFromSnapshotErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDiskFromSnapshotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateDiskFromSnapshotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDiskFromSnapshotErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDiskFromSnapshotErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CreateDiskFromSnapshotErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDiskFromSnapshotErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDiskFromSnapshotErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateDiskFromSnapshotErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDiskFromSnapshotErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDiskFromSnapshotErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateDiskFromSnapshotErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2933,7 +2933,7 @@ pub enum CreateDiskSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDiskSnapshotError {
@@ -3002,46 +3002,46 @@ impl CreateDiskSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDiskSnapshotErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDiskSnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDiskSnapshotErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDiskSnapshotErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `CreateDiskSnapshotErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDiskSnapshotErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDiskSnapshotErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateDiskSnapshotErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDiskSnapshotErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDiskSnapshotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateDiskSnapshotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDiskSnapshotErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDiskSnapshotErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CreateDiskSnapshotErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDiskSnapshotErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDiskSnapshotErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateDiskSnapshotErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateDiskSnapshotErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateDiskSnapshotErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateDiskSnapshotErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3096,7 +3096,7 @@ pub enum CreateDistributionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDistributionError {
@@ -3164,39 +3164,39 @@ impl CreateDistributionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDistributionErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateDistributionErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateDistributionErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateDistributionErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3253,7 +3253,7 @@ pub enum CreateDomainErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDomainError {
@@ -3322,37 +3322,37 @@ impl CreateDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateDomainErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDomainErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateDomainErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateDomainErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDomainErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateDomainErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3410,7 +3410,7 @@ pub enum CreateDomainEntryErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDomainEntryError {
@@ -3479,43 +3479,43 @@ impl CreateDomainEntryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDomainEntryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDomainEntryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDomainEntryErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDomainEntryErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `CreateDomainEntryErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDomainEntryErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDomainEntryErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateDomainEntryErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDomainEntryErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDomainEntryErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateDomainEntryErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateDomainEntryErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateDomainEntryErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CreateDomainEntryErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDomainEntryErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDomainEntryErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateDomainEntryErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateDomainEntryErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateDomainEntryErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateDomainEntryErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3573,7 +3573,7 @@ pub enum CreateInstancesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInstancesError {
@@ -3642,43 +3642,43 @@ impl CreateInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateInstancesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateInstancesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstancesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstancesErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `CreateInstancesErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstancesErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstancesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateInstancesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstancesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstancesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateInstancesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateInstancesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateInstancesErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CreateInstancesErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstancesErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstancesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateInstancesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateInstancesErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateInstancesErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateInstancesErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3736,7 +3736,7 @@ pub enum CreateInstancesFromSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInstancesFromSnapshotError {
@@ -3809,49 +3809,49 @@ impl CreateInstancesFromSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateInstancesFromSnapshotErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateInstancesFromSnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstancesFromSnapshotErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstancesFromSnapshotErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `CreateInstancesFromSnapshotErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstancesFromSnapshotErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstancesFromSnapshotErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateInstancesFromSnapshotErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstancesFromSnapshotErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstancesFromSnapshotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateInstancesFromSnapshotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstancesFromSnapshotErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstancesFromSnapshotErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CreateInstancesFromSnapshotErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstancesFromSnapshotErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstancesFromSnapshotErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateInstancesFromSnapshotErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstancesFromSnapshotErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstancesFromSnapshotErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateInstancesFromSnapshotErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3911,7 +3911,7 @@ pub enum CreateInstanceSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInstanceSnapshotError {
@@ -3982,49 +3982,49 @@ impl CreateInstanceSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateInstanceSnapshotErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateInstanceSnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstanceSnapshotErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstanceSnapshotErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `CreateInstanceSnapshotErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstanceSnapshotErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstanceSnapshotErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateInstanceSnapshotErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstanceSnapshotErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstanceSnapshotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateInstanceSnapshotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstanceSnapshotErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstanceSnapshotErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CreateInstanceSnapshotErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstanceSnapshotErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstanceSnapshotErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateInstanceSnapshotErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInstanceSnapshotErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInstanceSnapshotErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateInstanceSnapshotErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4084,7 +4084,7 @@ pub enum CreateKeyPairErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateKeyPairError {
@@ -4153,37 +4153,37 @@ impl CreateKeyPairError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateKeyPairErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateKeyPairErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateKeyPairErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateKeyPairErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `CreateKeyPairErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateKeyPairErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateKeyPairErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateKeyPairErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateKeyPairErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreateKeyPairErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateKeyPairErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateKeyPairErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateKeyPairErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CreateKeyPairErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateKeyPairErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateKeyPairErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateKeyPairErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateKeyPairErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateKeyPairErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateKeyPairErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4241,7 +4241,7 @@ pub enum CreateLoadBalancerErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLoadBalancerError {
@@ -4310,46 +4310,46 @@ impl CreateLoadBalancerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, CreateLoadBalancerErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4407,7 +4407,7 @@ pub enum CreateLoadBalancerTlsCertificateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLoadBalancerTlsCertificateError {
@@ -4489,49 +4489,49 @@ impl CreateLoadBalancerTlsCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLoadBalancerTlsCertificateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerTlsCertificateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerTlsCertificateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerTlsCertificateErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerTlsCertificateErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerTlsCertificateErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerTlsCertificateErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerTlsCertificateErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerTlsCertificateErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerTlsCertificateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerTlsCertificateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerTlsCertificateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerTlsCertificateErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerTlsCertificateErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerTlsCertificateErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerTlsCertificateErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerTlsCertificateErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerTlsCertificateErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerTlsCertificateErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerTlsCertificateErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4599,7 +4599,7 @@ pub enum CreateRelationalDatabaseErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRelationalDatabaseError {
@@ -4670,49 +4670,49 @@ impl CreateRelationalDatabaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRelationalDatabaseErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRelationalDatabaseErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRelationalDatabaseErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRelationalDatabaseErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRelationalDatabaseErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRelationalDatabaseErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4772,7 +4772,7 @@ pub enum CreateRelationalDatabaseFromSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRelationalDatabaseFromSnapshotError {
@@ -4858,49 +4858,49 @@ impl CreateRelationalDatabaseFromSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseFromSnapshotErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseFromSnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRelationalDatabaseFromSnapshotErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseFromSnapshotErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseFromSnapshotErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRelationalDatabaseFromSnapshotErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseFromSnapshotErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseFromSnapshotErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRelationalDatabaseFromSnapshotErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseFromSnapshotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseFromSnapshotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRelationalDatabaseFromSnapshotErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseFromSnapshotErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseFromSnapshotErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRelationalDatabaseFromSnapshotErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseFromSnapshotErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseFromSnapshotErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRelationalDatabaseFromSnapshotErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseFromSnapshotErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseFromSnapshotErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4972,7 +4972,7 @@ pub enum CreateRelationalDatabaseSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRelationalDatabaseSnapshotError {
@@ -5054,49 +5054,49 @@ impl CreateRelationalDatabaseSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseSnapshotErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseSnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRelationalDatabaseSnapshotErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseSnapshotErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseSnapshotErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRelationalDatabaseSnapshotErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseSnapshotErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseSnapshotErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRelationalDatabaseSnapshotErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseSnapshotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseSnapshotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRelationalDatabaseSnapshotErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseSnapshotErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseSnapshotErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRelationalDatabaseSnapshotErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseSnapshotErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseSnapshotErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRelationalDatabaseSnapshotErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRelationalDatabaseSnapshotErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `CreateRelationalDatabaseSnapshotErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5161,7 +5161,7 @@ pub enum DeleteAlarmErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAlarmError {
@@ -5229,30 +5229,30 @@ impl DeleteAlarmError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAlarmErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteAlarmErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteAlarmErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteAlarmErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteAlarmErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeleteAlarmErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DeleteAlarmErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAlarmErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteAlarmErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteAlarmErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DeleteAlarmErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAlarmErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAlarmErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteAlarmErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteAlarmErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteAlarmErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteAlarmErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5306,7 +5306,7 @@ pub enum DeleteAutoSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAutoSnapshotError {
@@ -5374,39 +5374,39 @@ impl DeleteAutoSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAutoSnapshotErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteAutoSnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAutoSnapshotErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAutoSnapshotErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteAutoSnapshotErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAutoSnapshotErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAutoSnapshotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAutoSnapshotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAutoSnapshotErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAutoSnapshotErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DeleteAutoSnapshotErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAutoSnapshotErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAutoSnapshotErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteAutoSnapshotErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteAutoSnapshotErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteAutoSnapshotErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteAutoSnapshotErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5458,7 +5458,7 @@ pub enum DeleteBucketErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketError {
@@ -5525,23 +5525,23 @@ impl DeleteBucketError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBucketErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteBucketErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteBucketErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteBucketErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteBucketErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeleteBucketErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DeleteBucketErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBucketErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteBucketErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteBucketErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteBucketErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteBucketErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteBucketErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteBucketErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5592,7 +5592,7 @@ pub enum DeleteBucketAccessKeyErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketAccessKeyError {
@@ -5659,35 +5659,35 @@ impl DeleteBucketAccessKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBucketAccessKeyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteBucketAccessKeyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBucketAccessKeyErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBucketAccessKeyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteBucketAccessKeyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBucketAccessKeyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBucketAccessKeyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBucketAccessKeyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBucketAccessKeyErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBucketAccessKeyErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteBucketAccessKeyErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBucketAccessKeyErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBucketAccessKeyErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteBucketAccessKeyErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5738,7 +5738,7 @@ pub enum DeleteCertificateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCertificateError {
@@ -5805,29 +5805,29 @@ impl DeleteCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCertificateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteCertificateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCertificateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCertificateErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteCertificateErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCertificateErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCertificateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteCertificateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteCertificateErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteCertificateErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteCertificateErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteCertificateErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteCertificateErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteCertificateErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5880,7 +5880,7 @@ pub enum DeleteContactMethodErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteContactMethodError {
@@ -5948,42 +5948,42 @@ impl DeleteContactMethodError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteContactMethodErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteContactMethodErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContactMethodErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContactMethodErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteContactMethodErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContactMethodErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContactMethodErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteContactMethodErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContactMethodErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContactMethodErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DeleteContactMethodErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContactMethodErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContactMethodErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteContactMethodErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContactMethodErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContactMethodErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteContactMethodErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6035,7 +6035,7 @@ pub enum DeleteContainerImageErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteContainerImageError {
@@ -6102,35 +6102,35 @@ impl DeleteContainerImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteContainerImageErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteContainerImageErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerImageErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerImageErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteContainerImageErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerImageErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerImageErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteContainerImageErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerImageErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerImageErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteContainerImageErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerImageErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerImageErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteContainerImageErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6181,7 +6181,7 @@ pub enum DeleteContainerServiceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteContainerServiceError {
@@ -6248,35 +6248,35 @@ impl DeleteContainerServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteContainerServiceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteContainerServiceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerServiceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerServiceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteContainerServiceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerServiceErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerServiceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteContainerServiceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerServiceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerServiceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteContainerServiceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteContainerServiceErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteContainerServiceErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteContainerServiceErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6332,7 +6332,7 @@ pub enum DeleteDiskErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDiskError {
@@ -6401,37 +6401,37 @@ impl DeleteDiskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDiskErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteDiskErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteDiskErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteDiskErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `DeleteDiskErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDiskErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDiskErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteDiskErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeleteDiskErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DeleteDiskErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDiskErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteDiskErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteDiskErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DeleteDiskErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDiskErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDiskErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteDiskErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteDiskErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteDiskErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteDiskErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(&self.kind, DeleteDiskErrorKind::UnauthenticatedException(_))
     }
@@ -6486,7 +6486,7 @@ pub enum DeleteDiskSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDiskSnapshotError {
@@ -6555,46 +6555,46 @@ impl DeleteDiskSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDiskSnapshotErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteDiskSnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDiskSnapshotErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDiskSnapshotErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `DeleteDiskSnapshotErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDiskSnapshotErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDiskSnapshotErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteDiskSnapshotErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDiskSnapshotErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDiskSnapshotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDiskSnapshotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDiskSnapshotErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDiskSnapshotErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DeleteDiskSnapshotErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDiskSnapshotErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDiskSnapshotErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteDiskSnapshotErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteDiskSnapshotErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteDiskSnapshotErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteDiskSnapshotErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6649,7 +6649,7 @@ pub enum DeleteDistributionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDistributionError {
@@ -6717,39 +6717,39 @@ impl DeleteDistributionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDistributionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteDistributionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDistributionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDistributionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteDistributionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDistributionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDistributionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDistributionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDistributionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDistributionErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DeleteDistributionErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDistributionErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDistributionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteDistributionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteDistributionErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteDistributionErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteDistributionErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6806,7 +6806,7 @@ pub enum DeleteDomainErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDomainError {
@@ -6875,37 +6875,37 @@ impl DeleteDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDomainErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteDomainErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteDomainErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDomainErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDomainErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeleteDomainErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DeleteDomainErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteDomainErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteDomainErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDomainErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDomainErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteDomainErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteDomainErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6963,7 +6963,7 @@ pub enum DeleteDomainEntryErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDomainEntryError {
@@ -7032,43 +7032,43 @@ impl DeleteDomainEntryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDomainEntryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteDomainEntryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDomainEntryErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDomainEntryErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `DeleteDomainEntryErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDomainEntryErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDomainEntryErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteDomainEntryErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDomainEntryErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDomainEntryErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDomainEntryErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteDomainEntryErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteDomainEntryErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DeleteDomainEntryErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDomainEntryErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDomainEntryErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteDomainEntryErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteDomainEntryErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteDomainEntryErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteDomainEntryErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7126,7 +7126,7 @@ pub enum DeleteInstanceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInstanceError {
@@ -7195,43 +7195,43 @@ impl DeleteInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteInstanceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteInstanceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInstanceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInstanceErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `DeleteInstanceErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInstanceErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInstanceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteInstanceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInstanceErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInstanceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteInstanceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteInstanceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteInstanceErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DeleteInstanceErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInstanceErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInstanceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteInstanceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteInstanceErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteInstanceErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteInstanceErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7289,7 +7289,7 @@ pub enum DeleteInstanceSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInstanceSnapshotError {
@@ -7360,49 +7360,49 @@ impl DeleteInstanceSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteInstanceSnapshotErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteInstanceSnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInstanceSnapshotErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInstanceSnapshotErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `DeleteInstanceSnapshotErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInstanceSnapshotErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInstanceSnapshotErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteInstanceSnapshotErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInstanceSnapshotErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInstanceSnapshotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteInstanceSnapshotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInstanceSnapshotErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInstanceSnapshotErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DeleteInstanceSnapshotErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInstanceSnapshotErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInstanceSnapshotErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteInstanceSnapshotErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInstanceSnapshotErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInstanceSnapshotErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteInstanceSnapshotErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7462,7 +7462,7 @@ pub enum DeleteKeyPairErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteKeyPairError {
@@ -7531,37 +7531,37 @@ impl DeleteKeyPairError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteKeyPairErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteKeyPairErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteKeyPairErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteKeyPairErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `DeleteKeyPairErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteKeyPairErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteKeyPairErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteKeyPairErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeleteKeyPairErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DeleteKeyPairErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteKeyPairErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteKeyPairErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteKeyPairErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DeleteKeyPairErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteKeyPairErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteKeyPairErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteKeyPairErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteKeyPairErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteKeyPairErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteKeyPairErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7619,7 +7619,7 @@ pub enum DeleteKnownHostKeysErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteKnownHostKeysError {
@@ -7688,49 +7688,49 @@ impl DeleteKnownHostKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteKnownHostKeysErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteKnownHostKeysErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteKnownHostKeysErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteKnownHostKeysErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `DeleteKnownHostKeysErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteKnownHostKeysErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteKnownHostKeysErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteKnownHostKeysErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteKnownHostKeysErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteKnownHostKeysErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteKnownHostKeysErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteKnownHostKeysErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteKnownHostKeysErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DeleteKnownHostKeysErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteKnownHostKeysErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteKnownHostKeysErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteKnownHostKeysErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteKnownHostKeysErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteKnownHostKeysErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteKnownHostKeysErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7788,7 +7788,7 @@ pub enum DeleteLoadBalancerErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLoadBalancerError {
@@ -7857,46 +7857,46 @@ impl DeleteLoadBalancerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoadBalancerErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoadBalancerErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoadBalancerErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoadBalancerErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoadBalancerErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DeleteLoadBalancerErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7954,7 +7954,7 @@ pub enum DeleteLoadBalancerTlsCertificateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLoadBalancerTlsCertificateError {
@@ -8036,49 +8036,49 @@ impl DeleteLoadBalancerTlsCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerTlsCertificateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerTlsCertificateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoadBalancerTlsCertificateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerTlsCertificateErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerTlsCertificateErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoadBalancerTlsCertificateErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerTlsCertificateErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerTlsCertificateErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoadBalancerTlsCertificateErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerTlsCertificateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerTlsCertificateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoadBalancerTlsCertificateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerTlsCertificateErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerTlsCertificateErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoadBalancerTlsCertificateErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerTlsCertificateErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerTlsCertificateErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoadBalancerTlsCertificateErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerTlsCertificateErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerTlsCertificateErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8146,7 +8146,7 @@ pub enum DeleteRelationalDatabaseErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRelationalDatabaseError {
@@ -8217,49 +8217,49 @@ impl DeleteRelationalDatabaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRelationalDatabaseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteRelationalDatabaseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRelationalDatabaseErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRelationalDatabaseErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `DeleteRelationalDatabaseErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRelationalDatabaseErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRelationalDatabaseErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteRelationalDatabaseErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRelationalDatabaseErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRelationalDatabaseErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRelationalDatabaseErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRelationalDatabaseErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRelationalDatabaseErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DeleteRelationalDatabaseErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRelationalDatabaseErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRelationalDatabaseErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteRelationalDatabaseErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRelationalDatabaseErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRelationalDatabaseErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteRelationalDatabaseErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8319,7 +8319,7 @@ pub enum DeleteRelationalDatabaseSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRelationalDatabaseSnapshotError {
@@ -8401,49 +8401,49 @@ impl DeleteRelationalDatabaseSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRelationalDatabaseSnapshotErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteRelationalDatabaseSnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRelationalDatabaseSnapshotErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRelationalDatabaseSnapshotErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `DeleteRelationalDatabaseSnapshotErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRelationalDatabaseSnapshotErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRelationalDatabaseSnapshotErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteRelationalDatabaseSnapshotErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRelationalDatabaseSnapshotErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRelationalDatabaseSnapshotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRelationalDatabaseSnapshotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRelationalDatabaseSnapshotErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRelationalDatabaseSnapshotErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DeleteRelationalDatabaseSnapshotErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRelationalDatabaseSnapshotErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRelationalDatabaseSnapshotErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DeleteRelationalDatabaseSnapshotErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRelationalDatabaseSnapshotErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRelationalDatabaseSnapshotErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DeleteRelationalDatabaseSnapshotErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8508,7 +8508,7 @@ pub enum DetachCertificateFromDistributionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachCertificateFromDistributionError {
@@ -8587,42 +8587,42 @@ impl DetachCertificateFromDistributionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetachCertificateFromDistributionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DetachCertificateFromDistributionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachCertificateFromDistributionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DetachCertificateFromDistributionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DetachCertificateFromDistributionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachCertificateFromDistributionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DetachCertificateFromDistributionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DetachCertificateFromDistributionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachCertificateFromDistributionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DetachCertificateFromDistributionErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DetachCertificateFromDistributionErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachCertificateFromDistributionErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DetachCertificateFromDistributionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DetachCertificateFromDistributionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachCertificateFromDistributionErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DetachCertificateFromDistributionErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DetachCertificateFromDistributionErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8687,7 +8687,7 @@ pub enum DetachDiskErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachDiskError {
@@ -8756,37 +8756,37 @@ impl DetachDiskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetachDiskErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DetachDiskErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DetachDiskErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DetachDiskErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `DetachDiskErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachDiskErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DetachDiskErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DetachDiskErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DetachDiskErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DetachDiskErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DetachDiskErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DetachDiskErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DetachDiskErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DetachDiskErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachDiskErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DetachDiskErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DetachDiskErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DetachDiskErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DetachDiskErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DetachDiskErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(&self.kind, DetachDiskErrorKind::UnauthenticatedException(_))
     }
@@ -8841,7 +8841,7 @@ pub enum DetachInstancesFromLoadBalancerErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachInstancesFromLoadBalancerError {
@@ -8923,49 +8923,49 @@ impl DetachInstancesFromLoadBalancerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetachInstancesFromLoadBalancerErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DetachInstancesFromLoadBalancerErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachInstancesFromLoadBalancerErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DetachInstancesFromLoadBalancerErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `DetachInstancesFromLoadBalancerErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachInstancesFromLoadBalancerErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DetachInstancesFromLoadBalancerErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DetachInstancesFromLoadBalancerErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachInstancesFromLoadBalancerErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DetachInstancesFromLoadBalancerErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DetachInstancesFromLoadBalancerErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachInstancesFromLoadBalancerErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DetachInstancesFromLoadBalancerErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DetachInstancesFromLoadBalancerErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachInstancesFromLoadBalancerErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DetachInstancesFromLoadBalancerErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DetachInstancesFromLoadBalancerErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachInstancesFromLoadBalancerErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DetachInstancesFromLoadBalancerErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DetachInstancesFromLoadBalancerErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9029,7 +9029,7 @@ pub enum DetachStaticIpErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachStaticIpError {
@@ -9098,43 +9098,43 @@ impl DetachStaticIpError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetachStaticIpErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DetachStaticIpErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachStaticIpErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DetachStaticIpErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `DetachStaticIpErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachStaticIpErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DetachStaticIpErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DetachStaticIpErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachStaticIpErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DetachStaticIpErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DetachStaticIpErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DetachStaticIpErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DetachStaticIpErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DetachStaticIpErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachStaticIpErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DetachStaticIpErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DetachStaticIpErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DetachStaticIpErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DetachStaticIpErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DetachStaticIpErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9189,7 +9189,7 @@ pub enum DisableAddOnErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableAddOnError {
@@ -9257,30 +9257,30 @@ impl DisableAddOnError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableAddOnErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisableAddOnErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DisableAddOnErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DisableAddOnErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DisableAddOnErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DisableAddOnErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DisableAddOnErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DisableAddOnErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DisableAddOnErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DisableAddOnErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DisableAddOnErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableAddOnErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DisableAddOnErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DisableAddOnErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, DisableAddOnErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `DisableAddOnErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DisableAddOnErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9337,7 +9337,7 @@ pub enum DownloadDefaultKeyPairErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DownloadDefaultKeyPairError {
@@ -9408,49 +9408,49 @@ impl DownloadDefaultKeyPairError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DownloadDefaultKeyPairErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DownloadDefaultKeyPairErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DownloadDefaultKeyPairErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DownloadDefaultKeyPairErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `DownloadDefaultKeyPairErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DownloadDefaultKeyPairErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DownloadDefaultKeyPairErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DownloadDefaultKeyPairErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DownloadDefaultKeyPairErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DownloadDefaultKeyPairErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DownloadDefaultKeyPairErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DownloadDefaultKeyPairErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DownloadDefaultKeyPairErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `DownloadDefaultKeyPairErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DownloadDefaultKeyPairErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DownloadDefaultKeyPairErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `DownloadDefaultKeyPairErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DownloadDefaultKeyPairErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DownloadDefaultKeyPairErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `DownloadDefaultKeyPairErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9507,7 +9507,7 @@ pub enum EnableAddOnErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableAddOnError {
@@ -9575,30 +9575,30 @@ impl EnableAddOnError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableAddOnErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `EnableAddOnErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, EnableAddOnErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `EnableAddOnErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `EnableAddOnErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, EnableAddOnErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `EnableAddOnErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `EnableAddOnErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, EnableAddOnErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `EnableAddOnErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `EnableAddOnErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableAddOnErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `EnableAddOnErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `EnableAddOnErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, EnableAddOnErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `EnableAddOnErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `EnableAddOnErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9655,7 +9655,7 @@ pub enum ExportSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportSnapshotError {
@@ -9724,43 +9724,43 @@ impl ExportSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExportSnapshotErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ExportSnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportSnapshotErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ExportSnapshotErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `ExportSnapshotErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportSnapshotErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `ExportSnapshotErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ExportSnapshotErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportSnapshotErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ExportSnapshotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ExportSnapshotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ExportSnapshotErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ExportSnapshotErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `ExportSnapshotErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExportSnapshotErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ExportSnapshotErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ExportSnapshotErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ExportSnapshotErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ExportSnapshotErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `ExportSnapshotErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9818,7 +9818,7 @@ pub enum GetActiveNamesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetActiveNamesError {
@@ -9887,43 +9887,43 @@ impl GetActiveNamesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetActiveNamesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetActiveNamesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetActiveNamesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetActiveNamesErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetActiveNamesErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetActiveNamesErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetActiveNamesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetActiveNamesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetActiveNamesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetActiveNamesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetActiveNamesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetActiveNamesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetActiveNamesErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetActiveNamesErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetActiveNamesErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetActiveNamesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetActiveNamesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetActiveNamesErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetActiveNamesErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetActiveNamesErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9978,7 +9978,7 @@ pub enum GetAlarmsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAlarmsError {
@@ -10046,27 +10046,27 @@ impl GetAlarmsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAlarmsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetAlarmsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetAlarmsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetAlarmsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetAlarmsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetAlarmsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetAlarmsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetAlarmsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetAlarmsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetAlarmsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetAlarmsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(&self.kind, GetAlarmsErrorKind::OperationFailureException(_))
     }
-    /// Returns true if the error kind is `GetAlarmsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetAlarmsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetAlarmsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetAlarmsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetAlarmsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(&self.kind, GetAlarmsErrorKind::UnauthenticatedException(_))
     }
@@ -10117,7 +10117,7 @@ pub enum GetAutoSnapshotsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAutoSnapshotsError {
@@ -10185,36 +10185,36 @@ impl GetAutoSnapshotsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAutoSnapshotsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetAutoSnapshotsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAutoSnapshotsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAutoSnapshotsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetAutoSnapshotsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAutoSnapshotsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetAutoSnapshotsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetAutoSnapshotsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetAutoSnapshotsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetAutoSnapshotsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetAutoSnapshotsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAutoSnapshotsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetAutoSnapshotsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetAutoSnapshotsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetAutoSnapshotsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetAutoSnapshotsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetAutoSnapshotsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10271,7 +10271,7 @@ pub enum GetBlueprintsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBlueprintsError {
@@ -10340,37 +10340,37 @@ impl GetBlueprintsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBlueprintsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetBlueprintsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetBlueprintsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetBlueprintsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetBlueprintsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlueprintsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlueprintsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetBlueprintsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetBlueprintsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetBlueprintsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBlueprintsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetBlueprintsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetBlueprintsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetBlueprintsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlueprintsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlueprintsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetBlueprintsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetBlueprintsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetBlueprintsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetBlueprintsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10423,7 +10423,7 @@ pub enum GetBucketAccessKeysErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketAccessKeysError {
@@ -10490,35 +10490,35 @@ impl GetBucketAccessKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBucketAccessKeysErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetBucketAccessKeysErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBucketAccessKeysErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetBucketAccessKeysErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetBucketAccessKeysErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBucketAccessKeysErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetBucketAccessKeysErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBucketAccessKeysErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBucketAccessKeysErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetBucketAccessKeysErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetBucketAccessKeysErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBucketAccessKeysErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetBucketAccessKeysErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetBucketAccessKeysErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10567,7 +10567,7 @@ pub enum GetBucketBundlesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketBundlesError {
@@ -10633,25 +10633,25 @@ impl GetBucketBundlesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBucketBundlesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetBucketBundlesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBucketBundlesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetBucketBundlesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetBucketBundlesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBucketBundlesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetBucketBundlesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetBucketBundlesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetBucketBundlesErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetBucketBundlesErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetBucketBundlesErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10701,7 +10701,7 @@ pub enum GetBucketMetricDataErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketMetricDataError {
@@ -10768,35 +10768,35 @@ impl GetBucketMetricDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBucketMetricDataErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetBucketMetricDataErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBucketMetricDataErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetBucketMetricDataErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetBucketMetricDataErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBucketMetricDataErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetBucketMetricDataErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBucketMetricDataErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBucketMetricDataErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetBucketMetricDataErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetBucketMetricDataErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBucketMetricDataErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetBucketMetricDataErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetBucketMetricDataErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10847,7 +10847,7 @@ pub enum GetBucketsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketsError {
@@ -10914,23 +10914,23 @@ impl GetBucketsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBucketsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetBucketsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetBucketsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetBucketsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetBucketsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetBucketsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetBucketsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBucketsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetBucketsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetBucketsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetBucketsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetBucketsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetBucketsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetBucketsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(&self.kind, GetBucketsErrorKind::UnauthenticatedException(_))
     }
@@ -10983,7 +10983,7 @@ pub enum GetBundlesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBundlesError {
@@ -11052,37 +11052,37 @@ impl GetBundlesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBundlesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetBundlesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetBundlesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetBundlesErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetBundlesErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBundlesErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetBundlesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetBundlesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetBundlesErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetBundlesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBundlesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetBundlesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetBundlesErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetBundlesErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBundlesErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetBundlesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetBundlesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetBundlesErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetBundlesErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetBundlesErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(&self.kind, GetBundlesErrorKind::UnauthenticatedException(_))
     }
@@ -11132,7 +11132,7 @@ pub enum GetCertificatesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCertificatesError {
@@ -11199,29 +11199,29 @@ impl GetCertificatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCertificatesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetCertificatesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCertificatesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCertificatesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetCertificatesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCertificatesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetCertificatesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetCertificatesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetCertificatesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetCertificatesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetCertificatesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetCertificatesErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetCertificatesErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetCertificatesErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11277,7 +11277,7 @@ pub enum GetCloudFormationStackRecordsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCloudFormationStackRecordsError {
@@ -11355,49 +11355,49 @@ impl GetCloudFormationStackRecordsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCloudFormationStackRecordsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetCloudFormationStackRecordsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCloudFormationStackRecordsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCloudFormationStackRecordsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetCloudFormationStackRecordsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCloudFormationStackRecordsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetCloudFormationStackRecordsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetCloudFormationStackRecordsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCloudFormationStackRecordsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetCloudFormationStackRecordsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetCloudFormationStackRecordsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCloudFormationStackRecordsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCloudFormationStackRecordsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetCloudFormationStackRecordsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCloudFormationStackRecordsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetCloudFormationStackRecordsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetCloudFormationStackRecordsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCloudFormationStackRecordsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetCloudFormationStackRecordsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetCloudFormationStackRecordsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11458,7 +11458,7 @@ pub enum GetContactMethodsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContactMethodsError {
@@ -11526,36 +11526,36 @@ impl GetContactMethodsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContactMethodsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetContactMethodsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContactMethodsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetContactMethodsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetContactMethodsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContactMethodsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetContactMethodsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetContactMethodsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetContactMethodsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetContactMethodsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetContactMethodsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContactMethodsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetContactMethodsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetContactMethodsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetContactMethodsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetContactMethodsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetContactMethodsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11597,7 +11597,7 @@ pub enum GetContainerAPIMetadataErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContainerAPIMetadataError {
@@ -11662,21 +11662,21 @@ impl GetContainerAPIMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContainerAPIMetadataErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetContainerAPIMetadataErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerAPIMetadataErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerAPIMetadataErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetContainerAPIMetadataErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerAPIMetadataErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerAPIMetadataErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetContainerAPIMetadataErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11725,7 +11725,7 @@ pub enum GetContainerImagesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContainerImagesError {
@@ -11792,32 +11792,32 @@ impl GetContainerImagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContainerImagesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetContainerImagesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerImagesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerImagesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetContainerImagesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerImagesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerImagesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetContainerImagesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerImagesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerImagesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetContainerImagesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetContainerImagesErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetContainerImagesErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetContainerImagesErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11868,7 +11868,7 @@ pub enum GetContainerLogErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContainerLogError {
@@ -11935,29 +11935,29 @@ impl GetContainerLogError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContainerLogErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetContainerLogErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerLogErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerLogErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetContainerLogErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerLogErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerLogErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetContainerLogErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetContainerLogErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetContainerLogErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetContainerLogErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetContainerLogErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetContainerLogErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetContainerLogErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12008,7 +12008,7 @@ pub enum GetContainerServiceDeploymentsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContainerServiceDeploymentsError {
@@ -12080,35 +12080,35 @@ impl GetContainerServiceDeploymentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContainerServiceDeploymentsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetContainerServiceDeploymentsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerServiceDeploymentsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerServiceDeploymentsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetContainerServiceDeploymentsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerServiceDeploymentsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerServiceDeploymentsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetContainerServiceDeploymentsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerServiceDeploymentsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerServiceDeploymentsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetContainerServiceDeploymentsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerServiceDeploymentsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerServiceDeploymentsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetContainerServiceDeploymentsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12161,7 +12161,7 @@ pub enum GetContainerServiceMetricDataErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContainerServiceMetricDataError {
@@ -12233,35 +12233,35 @@ impl GetContainerServiceMetricDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContainerServiceMetricDataErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetContainerServiceMetricDataErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerServiceMetricDataErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerServiceMetricDataErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetContainerServiceMetricDataErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerServiceMetricDataErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerServiceMetricDataErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetContainerServiceMetricDataErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerServiceMetricDataErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerServiceMetricDataErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetContainerServiceMetricDataErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerServiceMetricDataErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerServiceMetricDataErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetContainerServiceMetricDataErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12314,7 +12314,7 @@ pub enum GetContainerServicePowersErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContainerServicePowersError {
@@ -12381,35 +12381,35 @@ impl GetContainerServicePowersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContainerServicePowersErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetContainerServicePowersErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerServicePowersErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerServicePowersErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetContainerServicePowersErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerServicePowersErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerServicePowersErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetContainerServicePowersErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerServicePowersErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerServicePowersErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetContainerServicePowersErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerServicePowersErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerServicePowersErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetContainerServicePowersErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12460,7 +12460,7 @@ pub enum GetContainerServicesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetContainerServicesError {
@@ -12527,35 +12527,35 @@ impl GetContainerServicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetContainerServicesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetContainerServicesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerServicesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerServicesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetContainerServicesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerServicesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerServicesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetContainerServicesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerServicesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerServicesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetContainerServicesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetContainerServicesErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetContainerServicesErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetContainerServicesErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12611,7 +12611,7 @@ pub enum GetDiskErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDiskError {
@@ -12680,34 +12680,34 @@ impl GetDiskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDiskErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDiskErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetDiskErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetDiskErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetDiskErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiskErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiskErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetDiskErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetDiskErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetDiskErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDiskErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDiskErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDiskErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetDiskErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(&self.kind, GetDiskErrorKind::OperationFailureException(_))
     }
-    /// Returns true if the error kind is `GetDiskErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetDiskErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetDiskErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetDiskErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetDiskErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(&self.kind, GetDiskErrorKind::UnauthenticatedException(_))
     }
@@ -12762,7 +12762,7 @@ pub enum GetDisksErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDisksError {
@@ -12831,34 +12831,34 @@ impl GetDisksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDisksErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDisksErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetDisksErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetDisksErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetDisksErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDisksErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetDisksErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetDisksErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetDisksErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetDisksErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDisksErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDisksErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDisksErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetDisksErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(&self.kind, GetDisksErrorKind::OperationFailureException(_))
     }
-    /// Returns true if the error kind is `GetDisksErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetDisksErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetDisksErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetDisksErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetDisksErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(&self.kind, GetDisksErrorKind::UnauthenticatedException(_))
     }
@@ -12913,7 +12913,7 @@ pub enum GetDiskSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDiskSnapshotError {
@@ -12982,43 +12982,43 @@ impl GetDiskSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDiskSnapshotErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDiskSnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiskSnapshotErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiskSnapshotErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetDiskSnapshotErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiskSnapshotErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiskSnapshotErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetDiskSnapshotErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiskSnapshotErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiskSnapshotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDiskSnapshotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDiskSnapshotErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDiskSnapshotErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetDiskSnapshotErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiskSnapshotErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiskSnapshotErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetDiskSnapshotErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetDiskSnapshotErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetDiskSnapshotErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetDiskSnapshotErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13076,7 +13076,7 @@ pub enum GetDiskSnapshotsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDiskSnapshotsError {
@@ -13145,43 +13145,43 @@ impl GetDiskSnapshotsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDiskSnapshotsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDiskSnapshotsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiskSnapshotsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiskSnapshotsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetDiskSnapshotsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiskSnapshotsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiskSnapshotsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetDiskSnapshotsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiskSnapshotsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiskSnapshotsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDiskSnapshotsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDiskSnapshotsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDiskSnapshotsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetDiskSnapshotsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDiskSnapshotsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetDiskSnapshotsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetDiskSnapshotsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetDiskSnapshotsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetDiskSnapshotsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetDiskSnapshotsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13236,7 +13236,7 @@ pub enum GetDistributionBundlesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDistributionBundlesError {
@@ -13304,42 +13304,42 @@ impl GetDistributionBundlesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDistributionBundlesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDistributionBundlesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionBundlesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionBundlesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetDistributionBundlesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionBundlesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionBundlesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDistributionBundlesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionBundlesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionBundlesErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetDistributionBundlesErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionBundlesErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionBundlesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetDistributionBundlesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionBundlesErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionBundlesErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetDistributionBundlesErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13393,7 +13393,7 @@ pub enum GetDistributionLatestCacheResetErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDistributionLatestCacheResetError {
@@ -13472,42 +13472,42 @@ impl GetDistributionLatestCacheResetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDistributionLatestCacheResetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDistributionLatestCacheResetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionLatestCacheResetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionLatestCacheResetErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetDistributionLatestCacheResetErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionLatestCacheResetErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionLatestCacheResetErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDistributionLatestCacheResetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionLatestCacheResetErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionLatestCacheResetErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetDistributionLatestCacheResetErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionLatestCacheResetErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionLatestCacheResetErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetDistributionLatestCacheResetErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionLatestCacheResetErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionLatestCacheResetErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetDistributionLatestCacheResetErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13565,7 +13565,7 @@ pub enum GetDistributionMetricDataErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDistributionMetricDataError {
@@ -13633,42 +13633,42 @@ impl GetDistributionMetricDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDistributionMetricDataErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDistributionMetricDataErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionMetricDataErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionMetricDataErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetDistributionMetricDataErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionMetricDataErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionMetricDataErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDistributionMetricDataErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionMetricDataErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionMetricDataErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetDistributionMetricDataErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionMetricDataErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionMetricDataErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetDistributionMetricDataErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionMetricDataErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionMetricDataErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetDistributionMetricDataErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13722,7 +13722,7 @@ pub enum GetDistributionsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDistributionsError {
@@ -13790,36 +13790,36 @@ impl GetDistributionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDistributionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDistributionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetDistributionsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDistributionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDistributionsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDistributionsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetDistributionsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDistributionsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetDistributionsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetDistributionsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetDistributionsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetDistributionsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetDistributionsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13876,7 +13876,7 @@ pub enum GetDomainErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDomainError {
@@ -13945,34 +13945,34 @@ impl GetDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDomainErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDomainErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetDomainErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetDomainErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetDomainErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDomainErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetDomainErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetDomainErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetDomainErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetDomainErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDomainErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDomainErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDomainErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetDomainErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(&self.kind, GetDomainErrorKind::OperationFailureException(_))
     }
-    /// Returns true if the error kind is `GetDomainErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetDomainErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetDomainErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetDomainErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetDomainErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(&self.kind, GetDomainErrorKind::UnauthenticatedException(_))
     }
@@ -14027,7 +14027,7 @@ pub enum GetDomainsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDomainsError {
@@ -14096,37 +14096,37 @@ impl GetDomainsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDomainsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDomainsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetDomainsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetDomainsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetDomainsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDomainsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetDomainsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetDomainsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetDomainsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetDomainsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetDomainsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDomainsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetDomainsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetDomainsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDomainsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetDomainsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetDomainsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetDomainsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetDomainsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetDomainsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(&self.kind, GetDomainsErrorKind::UnauthenticatedException(_))
     }
@@ -14181,7 +14181,7 @@ pub enum GetExportSnapshotRecordsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetExportSnapshotRecordsError {
@@ -14252,49 +14252,49 @@ impl GetExportSnapshotRecordsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetExportSnapshotRecordsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetExportSnapshotRecordsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetExportSnapshotRecordsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetExportSnapshotRecordsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetExportSnapshotRecordsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetExportSnapshotRecordsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetExportSnapshotRecordsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetExportSnapshotRecordsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetExportSnapshotRecordsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetExportSnapshotRecordsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetExportSnapshotRecordsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetExportSnapshotRecordsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetExportSnapshotRecordsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetExportSnapshotRecordsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetExportSnapshotRecordsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetExportSnapshotRecordsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetExportSnapshotRecordsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetExportSnapshotRecordsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetExportSnapshotRecordsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetExportSnapshotRecordsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14354,7 +14354,7 @@ pub enum GetInstanceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInstanceError {
@@ -14423,37 +14423,37 @@ impl GetInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInstanceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetInstanceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetInstanceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetInstanceErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetInstanceErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetInstanceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetInstanceErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetInstanceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetInstanceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetInstanceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetInstanceErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetInstanceErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetInstanceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetInstanceErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetInstanceErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetInstanceErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14511,7 +14511,7 @@ pub enum GetInstanceAccessDetailsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInstanceAccessDetailsError {
@@ -14582,49 +14582,49 @@ impl GetInstanceAccessDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInstanceAccessDetailsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetInstanceAccessDetailsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceAccessDetailsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceAccessDetailsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetInstanceAccessDetailsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceAccessDetailsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceAccessDetailsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetInstanceAccessDetailsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceAccessDetailsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceAccessDetailsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetInstanceAccessDetailsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceAccessDetailsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceAccessDetailsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetInstanceAccessDetailsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceAccessDetailsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceAccessDetailsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetInstanceAccessDetailsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceAccessDetailsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceAccessDetailsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetInstanceAccessDetailsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14684,7 +14684,7 @@ pub enum GetInstanceMetricDataErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInstanceMetricDataError {
@@ -14755,49 +14755,49 @@ impl GetInstanceMetricDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInstanceMetricDataErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetInstanceMetricDataErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceMetricDataErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceMetricDataErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetInstanceMetricDataErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceMetricDataErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceMetricDataErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetInstanceMetricDataErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceMetricDataErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceMetricDataErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetInstanceMetricDataErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceMetricDataErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceMetricDataErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetInstanceMetricDataErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceMetricDataErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceMetricDataErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetInstanceMetricDataErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceMetricDataErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceMetricDataErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetInstanceMetricDataErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14855,7 +14855,7 @@ pub enum GetInstancePortStatesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInstancePortStatesError {
@@ -14926,49 +14926,49 @@ impl GetInstancePortStatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInstancePortStatesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetInstancePortStatesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstancePortStatesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstancePortStatesErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetInstancePortStatesErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstancePortStatesErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstancePortStatesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetInstancePortStatesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstancePortStatesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstancePortStatesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetInstancePortStatesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstancePortStatesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstancePortStatesErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetInstancePortStatesErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstancePortStatesErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstancePortStatesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetInstancePortStatesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstancePortStatesErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstancePortStatesErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetInstancePortStatesErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15026,7 +15026,7 @@ pub enum GetInstancesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInstancesError {
@@ -15095,37 +15095,37 @@ impl GetInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInstancesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetInstancesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetInstancesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetInstancesErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetInstancesErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstancesErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstancesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetInstancesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetInstancesErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetInstancesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetInstancesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetInstancesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetInstancesErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetInstancesErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstancesErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstancesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetInstancesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetInstancesErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetInstancesErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetInstancesErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15183,7 +15183,7 @@ pub enum GetInstanceSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInstanceSnapshotError {
@@ -15252,49 +15252,49 @@ impl GetInstanceSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInstanceSnapshotErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetInstanceSnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceSnapshotErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceSnapshotErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetInstanceSnapshotErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceSnapshotErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceSnapshotErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetInstanceSnapshotErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceSnapshotErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceSnapshotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetInstanceSnapshotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceSnapshotErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceSnapshotErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetInstanceSnapshotErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceSnapshotErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceSnapshotErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetInstanceSnapshotErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceSnapshotErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceSnapshotErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetInstanceSnapshotErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15352,7 +15352,7 @@ pub enum GetInstanceSnapshotsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInstanceSnapshotsError {
@@ -15421,49 +15421,49 @@ impl GetInstanceSnapshotsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInstanceSnapshotsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetInstanceSnapshotsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceSnapshotsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceSnapshotsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetInstanceSnapshotsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceSnapshotsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceSnapshotsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetInstanceSnapshotsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceSnapshotsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceSnapshotsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetInstanceSnapshotsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceSnapshotsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceSnapshotsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetInstanceSnapshotsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceSnapshotsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceSnapshotsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetInstanceSnapshotsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceSnapshotsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceSnapshotsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetInstanceSnapshotsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15521,7 +15521,7 @@ pub enum GetInstanceStateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInstanceStateError {
@@ -15590,43 +15590,43 @@ impl GetInstanceStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInstanceStateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetInstanceStateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceStateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceStateErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetInstanceStateErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceStateErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceStateErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetInstanceStateErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceStateErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceStateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetInstanceStateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetInstanceStateErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetInstanceStateErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetInstanceStateErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInstanceStateErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetInstanceStateErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetInstanceStateErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetInstanceStateErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetInstanceStateErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetInstanceStateErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15684,7 +15684,7 @@ pub enum GetKeyPairErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetKeyPairError {
@@ -15753,37 +15753,37 @@ impl GetKeyPairError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetKeyPairErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetKeyPairErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetKeyPairErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetKeyPairErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetKeyPairErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetKeyPairErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetKeyPairErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetKeyPairErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetKeyPairErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetKeyPairErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetKeyPairErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetKeyPairErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetKeyPairErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetKeyPairErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetKeyPairErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetKeyPairErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetKeyPairErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetKeyPairErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetKeyPairErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetKeyPairErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(&self.kind, GetKeyPairErrorKind::UnauthenticatedException(_))
     }
@@ -15838,7 +15838,7 @@ pub enum GetKeyPairsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetKeyPairsError {
@@ -15907,37 +15907,37 @@ impl GetKeyPairsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetKeyPairsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetKeyPairsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetKeyPairsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetKeyPairsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetKeyPairsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetKeyPairsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetKeyPairsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetKeyPairsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetKeyPairsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetKeyPairsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetKeyPairsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetKeyPairsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetKeyPairsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetKeyPairsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetKeyPairsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetKeyPairsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetKeyPairsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetKeyPairsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetKeyPairsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetKeyPairsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15995,7 +15995,7 @@ pub enum GetLoadBalancerErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLoadBalancerError {
@@ -16064,43 +16064,43 @@ impl GetLoadBalancerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLoadBalancerErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancerErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancerErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancerErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancerErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancerErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancerErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetLoadBalancerErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetLoadBalancerErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancerErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancerErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetLoadBalancerErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetLoadBalancerErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16158,7 +16158,7 @@ pub enum GetLoadBalancerMetricDataErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLoadBalancerMetricDataError {
@@ -16229,49 +16229,49 @@ impl GetLoadBalancerMetricDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLoadBalancerMetricDataErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerMetricDataErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancerMetricDataErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancerMetricDataErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerMetricDataErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancerMetricDataErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancerMetricDataErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerMetricDataErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancerMetricDataErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancerMetricDataErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerMetricDataErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancerMetricDataErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancerMetricDataErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerMetricDataErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancerMetricDataErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancerMetricDataErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerMetricDataErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancerMetricDataErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancerMetricDataErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerMetricDataErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16331,7 +16331,7 @@ pub enum GetLoadBalancersErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLoadBalancersError {
@@ -16400,43 +16400,43 @@ impl GetLoadBalancersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLoadBalancersErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLoadBalancersErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancersErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancersErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetLoadBalancersErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancersErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancersErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetLoadBalancersErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancersErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancersErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetLoadBalancersErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetLoadBalancersErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetLoadBalancersErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetLoadBalancersErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancersErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancersErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetLoadBalancersErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetLoadBalancersErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetLoadBalancersErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetLoadBalancersErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16494,7 +16494,7 @@ pub enum GetLoadBalancerTlsCertificatesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLoadBalancerTlsCertificatesError {
@@ -16572,49 +16572,49 @@ impl GetLoadBalancerTlsCertificatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLoadBalancerTlsCertificatesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerTlsCertificatesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancerTlsCertificatesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancerTlsCertificatesErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerTlsCertificatesErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancerTlsCertificatesErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancerTlsCertificatesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerTlsCertificatesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancerTlsCertificatesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancerTlsCertificatesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerTlsCertificatesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancerTlsCertificatesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancerTlsCertificatesErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerTlsCertificatesErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancerTlsCertificatesErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancerTlsCertificatesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerTlsCertificatesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLoadBalancerTlsCertificatesErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetLoadBalancerTlsCertificatesErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetLoadBalancerTlsCertificatesErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16678,7 +16678,7 @@ pub enum GetOperationErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOperationError {
@@ -16747,37 +16747,37 @@ impl GetOperationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOperationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetOperationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetOperationErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetOperationErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetOperationErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOperationErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetOperationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetOperationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetOperationErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetOperationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetOperationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetOperationErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetOperationErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetOperationErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOperationErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetOperationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetOperationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetOperationErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetOperationErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetOperationErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16835,7 +16835,7 @@ pub enum GetOperationsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOperationsError {
@@ -16904,37 +16904,37 @@ impl GetOperationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOperationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetOperationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetOperationsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetOperationsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetOperationsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOperationsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetOperationsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetOperationsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetOperationsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetOperationsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetOperationsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetOperationsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetOperationsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetOperationsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOperationsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetOperationsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetOperationsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetOperationsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetOperationsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetOperationsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16992,7 +16992,7 @@ pub enum GetOperationsForResourceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetOperationsForResourceError {
@@ -17063,49 +17063,49 @@ impl GetOperationsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetOperationsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetOperationsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOperationsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetOperationsForResourceErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetOperationsForResourceErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOperationsForResourceErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetOperationsForResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetOperationsForResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOperationsForResourceErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetOperationsForResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetOperationsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOperationsForResourceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetOperationsForResourceErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetOperationsForResourceErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOperationsForResourceErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetOperationsForResourceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetOperationsForResourceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetOperationsForResourceErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetOperationsForResourceErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetOperationsForResourceErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17165,7 +17165,7 @@ pub enum GetRegionsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRegionsError {
@@ -17234,37 +17234,37 @@ impl GetRegionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRegionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRegionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetRegionsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetRegionsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetRegionsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRegionsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetRegionsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetRegionsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetRegionsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetRegionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRegionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetRegionsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetRegionsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetRegionsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRegionsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetRegionsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetRegionsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetRegionsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetRegionsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetRegionsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(&self.kind, GetRegionsErrorKind::UnauthenticatedException(_))
     }
@@ -17319,7 +17319,7 @@ pub enum GetRelationalDatabaseErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRelationalDatabaseError {
@@ -17390,49 +17390,49 @@ impl GetRelationalDatabaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17490,7 +17490,7 @@ pub enum GetRelationalDatabaseBlueprintsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRelationalDatabaseBlueprintsError {
@@ -17572,49 +17572,49 @@ impl GetRelationalDatabaseBlueprintsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseBlueprintsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseBlueprintsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseBlueprintsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseBlueprintsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseBlueprintsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseBlueprintsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseBlueprintsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseBlueprintsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseBlueprintsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseBlueprintsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseBlueprintsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseBlueprintsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseBlueprintsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseBlueprintsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseBlueprintsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseBlueprintsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseBlueprintsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseBlueprintsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseBlueprintsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseBlueprintsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17678,7 +17678,7 @@ pub enum GetRelationalDatabaseBundlesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRelationalDatabaseBundlesError {
@@ -17753,49 +17753,49 @@ impl GetRelationalDatabaseBundlesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseBundlesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseBundlesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseBundlesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseBundlesErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseBundlesErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseBundlesErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseBundlesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseBundlesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseBundlesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseBundlesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseBundlesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseBundlesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseBundlesErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseBundlesErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseBundlesErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseBundlesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseBundlesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseBundlesErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseBundlesErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseBundlesErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17857,7 +17857,7 @@ pub enum GetRelationalDatabaseEventsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRelationalDatabaseEventsError {
@@ -17930,49 +17930,49 @@ impl GetRelationalDatabaseEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseEventsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseEventsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseEventsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseEventsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseEventsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseEventsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseEventsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseEventsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseEventsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseEventsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseEventsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseEventsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseEventsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseEventsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseEventsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseEventsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseEventsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseEventsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseEventsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseEventsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18032,7 +18032,7 @@ pub enum GetRelationalDatabaseLogEventsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRelationalDatabaseLogEventsError {
@@ -18110,49 +18110,49 @@ impl GetRelationalDatabaseLogEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseLogEventsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseLogEventsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseLogEventsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseLogEventsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseLogEventsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseLogEventsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseLogEventsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseLogEventsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseLogEventsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseLogEventsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseLogEventsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseLogEventsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseLogEventsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseLogEventsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseLogEventsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseLogEventsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseLogEventsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseLogEventsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseLogEventsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseLogEventsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18216,7 +18216,7 @@ pub enum GetRelationalDatabaseLogStreamsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRelationalDatabaseLogStreamsError {
@@ -18298,49 +18298,49 @@ impl GetRelationalDatabaseLogStreamsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseLogStreamsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseLogStreamsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseLogStreamsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseLogStreamsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseLogStreamsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseLogStreamsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseLogStreamsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseLogStreamsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseLogStreamsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseLogStreamsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseLogStreamsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseLogStreamsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseLogStreamsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseLogStreamsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseLogStreamsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseLogStreamsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseLogStreamsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseLogStreamsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseLogStreamsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseLogStreamsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18404,7 +18404,7 @@ pub enum GetRelationalDatabaseMasterUserPasswordErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRelationalDatabaseMasterUserPasswordError {
@@ -18490,49 +18490,49 @@ impl GetRelationalDatabaseMasterUserPasswordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseMasterUserPasswordErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseMasterUserPasswordErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseMasterUserPasswordErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseMasterUserPasswordErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseMasterUserPasswordErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseMasterUserPasswordErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseMasterUserPasswordErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseMasterUserPasswordErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseMasterUserPasswordErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseMasterUserPasswordErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseMasterUserPasswordErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseMasterUserPasswordErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseMasterUserPasswordErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseMasterUserPasswordErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseMasterUserPasswordErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseMasterUserPasswordErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseMasterUserPasswordErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseMasterUserPasswordErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseMasterUserPasswordErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseMasterUserPasswordErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18606,7 +18606,7 @@ pub enum GetRelationalDatabaseMetricDataErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRelationalDatabaseMetricDataError {
@@ -18688,49 +18688,49 @@ impl GetRelationalDatabaseMetricDataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseMetricDataErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseMetricDataErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseMetricDataErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseMetricDataErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseMetricDataErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseMetricDataErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseMetricDataErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseMetricDataErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseMetricDataErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseMetricDataErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseMetricDataErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseMetricDataErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseMetricDataErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseMetricDataErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseMetricDataErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseMetricDataErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseMetricDataErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseMetricDataErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseMetricDataErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseMetricDataErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18794,7 +18794,7 @@ pub enum GetRelationalDatabaseParametersErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRelationalDatabaseParametersError {
@@ -18876,49 +18876,49 @@ impl GetRelationalDatabaseParametersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseParametersErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseParametersErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseParametersErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseParametersErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseParametersErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseParametersErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseParametersErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseParametersErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseParametersErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseParametersErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseParametersErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseParametersErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseParametersErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseParametersErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseParametersErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseParametersErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseParametersErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseParametersErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseParametersErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseParametersErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18982,7 +18982,7 @@ pub enum GetRelationalDatabasesErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRelationalDatabasesError {
@@ -19053,49 +19053,49 @@ impl GetRelationalDatabasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRelationalDatabasesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabasesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabasesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabasesErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabasesErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabasesErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabasesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabasesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabasesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabasesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabasesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabasesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabasesErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabasesErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabasesErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabasesErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabasesErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabasesErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabasesErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabasesErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19155,7 +19155,7 @@ pub enum GetRelationalDatabaseSnapshotErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRelationalDatabaseSnapshotError {
@@ -19233,49 +19233,49 @@ impl GetRelationalDatabaseSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseSnapshotErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseSnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseSnapshotErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseSnapshotErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseSnapshotErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseSnapshotErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseSnapshotErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseSnapshotErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseSnapshotErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseSnapshotErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseSnapshotErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseSnapshotErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseSnapshotErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseSnapshotErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseSnapshotErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseSnapshotErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseSnapshotErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseSnapshotErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseSnapshotErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseSnapshotErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19339,7 +19339,7 @@ pub enum GetRelationalDatabaseSnapshotsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRelationalDatabaseSnapshotsError {
@@ -19417,49 +19417,49 @@ impl GetRelationalDatabaseSnapshotsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseSnapshotsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseSnapshotsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseSnapshotsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseSnapshotsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseSnapshotsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseSnapshotsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseSnapshotsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseSnapshotsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseSnapshotsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseSnapshotsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseSnapshotsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseSnapshotsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseSnapshotsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseSnapshotsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseSnapshotsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseSnapshotsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseSnapshotsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRelationalDatabaseSnapshotsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetRelationalDatabaseSnapshotsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetRelationalDatabaseSnapshotsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19523,7 +19523,7 @@ pub enum GetStaticIpErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStaticIpError {
@@ -19592,37 +19592,37 @@ impl GetStaticIpError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetStaticIpErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetStaticIpErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetStaticIpErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetStaticIpErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetStaticIpErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStaticIpErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetStaticIpErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetStaticIpErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetStaticIpErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetStaticIpErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetStaticIpErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetStaticIpErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetStaticIpErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetStaticIpErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStaticIpErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetStaticIpErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetStaticIpErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetStaticIpErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetStaticIpErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetStaticIpErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19680,7 +19680,7 @@ pub enum GetStaticIpsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStaticIpsError {
@@ -19749,37 +19749,37 @@ impl GetStaticIpsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetStaticIpsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetStaticIpsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetStaticIpsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetStaticIpsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `GetStaticIpsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStaticIpsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetStaticIpsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetStaticIpsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, GetStaticIpsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `GetStaticIpsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetStaticIpsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetStaticIpsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetStaticIpsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `GetStaticIpsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetStaticIpsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetStaticIpsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `GetStaticIpsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, GetStaticIpsErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `GetStaticIpsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `GetStaticIpsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19837,7 +19837,7 @@ pub enum ImportKeyPairErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportKeyPairError {
@@ -19906,37 +19906,37 @@ impl ImportKeyPairError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportKeyPairErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ImportKeyPairErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ImportKeyPairErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ImportKeyPairErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `ImportKeyPairErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportKeyPairErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `ImportKeyPairErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ImportKeyPairErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, ImportKeyPairErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `ImportKeyPairErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ImportKeyPairErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ImportKeyPairErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ImportKeyPairErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `ImportKeyPairErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportKeyPairErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ImportKeyPairErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ImportKeyPairErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ImportKeyPairErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ImportKeyPairErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `ImportKeyPairErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19994,7 +19994,7 @@ pub enum IsVpcPeeredErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for IsVpcPeeredError {
@@ -20063,37 +20063,37 @@ impl IsVpcPeeredError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `IsVpcPeeredErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `IsVpcPeeredErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, IsVpcPeeredErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `IsVpcPeeredErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `IsVpcPeeredErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             IsVpcPeeredErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `IsVpcPeeredErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `IsVpcPeeredErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, IsVpcPeeredErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `IsVpcPeeredErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `IsVpcPeeredErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, IsVpcPeeredErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `IsVpcPeeredErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `IsVpcPeeredErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             IsVpcPeeredErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `IsVpcPeeredErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `IsVpcPeeredErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, IsVpcPeeredErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `IsVpcPeeredErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `IsVpcPeeredErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20151,7 +20151,7 @@ pub enum OpenInstancePublicPortsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for OpenInstancePublicPortsError {
@@ -20222,49 +20222,49 @@ impl OpenInstancePublicPortsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `OpenInstancePublicPortsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `OpenInstancePublicPortsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             OpenInstancePublicPortsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `OpenInstancePublicPortsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `OpenInstancePublicPortsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             OpenInstancePublicPortsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `OpenInstancePublicPortsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `OpenInstancePublicPortsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             OpenInstancePublicPortsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `OpenInstancePublicPortsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `OpenInstancePublicPortsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             OpenInstancePublicPortsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `OpenInstancePublicPortsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `OpenInstancePublicPortsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             OpenInstancePublicPortsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `OpenInstancePublicPortsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `OpenInstancePublicPortsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             OpenInstancePublicPortsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `OpenInstancePublicPortsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `OpenInstancePublicPortsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20324,7 +20324,7 @@ pub enum PeerVpcErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PeerVpcError {
@@ -20393,34 +20393,34 @@ impl PeerVpcError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PeerVpcErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PeerVpcErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, PeerVpcErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `PeerVpcErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `PeerVpcErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             PeerVpcErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `PeerVpcErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `PeerVpcErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, PeerVpcErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `PeerVpcErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PeerVpcErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, PeerVpcErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `PeerVpcErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `PeerVpcErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(&self.kind, PeerVpcErrorKind::OperationFailureException(_))
     }
-    /// Returns true if the error kind is `PeerVpcErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `PeerVpcErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, PeerVpcErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `PeerVpcErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `PeerVpcErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(&self.kind, PeerVpcErrorKind::UnauthenticatedException(_))
     }
@@ -20472,7 +20472,7 @@ pub enum PutAlarmErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAlarmError {
@@ -20540,27 +20540,27 @@ impl PutAlarmError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAlarmErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutAlarmErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, PutAlarmErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `PutAlarmErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `PutAlarmErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, PutAlarmErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `PutAlarmErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutAlarmErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutAlarmErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `PutAlarmErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `PutAlarmErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(&self.kind, PutAlarmErrorKind::OperationFailureException(_))
     }
-    /// Returns true if the error kind is `PutAlarmErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `PutAlarmErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, PutAlarmErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `PutAlarmErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `PutAlarmErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(&self.kind, PutAlarmErrorKind::UnauthenticatedException(_))
     }
@@ -20614,7 +20614,7 @@ pub enum PutInstancePublicPortsErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutInstancePublicPortsError {
@@ -20685,49 +20685,49 @@ impl PutInstancePublicPortsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutInstancePublicPortsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutInstancePublicPortsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInstancePublicPortsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutInstancePublicPortsErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `PutInstancePublicPortsErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInstancePublicPortsErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `PutInstancePublicPortsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `PutInstancePublicPortsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInstancePublicPortsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `PutInstancePublicPortsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutInstancePublicPortsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInstancePublicPortsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutInstancePublicPortsErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `PutInstancePublicPortsErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInstancePublicPortsErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutInstancePublicPortsErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `PutInstancePublicPortsErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutInstancePublicPortsErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `PutInstancePublicPortsErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `PutInstancePublicPortsErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20787,7 +20787,7 @@ pub enum RebootInstanceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RebootInstanceError {
@@ -20856,43 +20856,43 @@ impl RebootInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RebootInstanceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RebootInstanceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RebootInstanceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RebootInstanceErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `RebootInstanceErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             RebootInstanceErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `RebootInstanceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `RebootInstanceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             RebootInstanceErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `RebootInstanceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RebootInstanceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, RebootInstanceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `RebootInstanceErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `RebootInstanceErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             RebootInstanceErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `RebootInstanceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `RebootInstanceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, RebootInstanceErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `RebootInstanceErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `RebootInstanceErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20950,7 +20950,7 @@ pub enum RebootRelationalDatabaseErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RebootRelationalDatabaseError {
@@ -21021,49 +21021,49 @@ impl RebootRelationalDatabaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RebootRelationalDatabaseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RebootRelationalDatabaseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RebootRelationalDatabaseErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RebootRelationalDatabaseErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `RebootRelationalDatabaseErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             RebootRelationalDatabaseErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `RebootRelationalDatabaseErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `RebootRelationalDatabaseErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             RebootRelationalDatabaseErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `RebootRelationalDatabaseErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RebootRelationalDatabaseErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RebootRelationalDatabaseErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RebootRelationalDatabaseErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `RebootRelationalDatabaseErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             RebootRelationalDatabaseErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `RebootRelationalDatabaseErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `RebootRelationalDatabaseErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             RebootRelationalDatabaseErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `RebootRelationalDatabaseErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `RebootRelationalDatabaseErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -21118,7 +21118,7 @@ pub enum RegisterContainerImageErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterContainerImageError {
@@ -21185,35 +21185,35 @@ impl RegisterContainerImageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterContainerImageErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RegisterContainerImageErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterContainerImageErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterContainerImageErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `RegisterContainerImageErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterContainerImageErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterContainerImageErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RegisterContainerImageErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterContainerImageErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterContainerImageErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `RegisterContainerImageErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterContainerImageErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterContainerImageErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `RegisterContainerImageErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -21269,7 +21269,7 @@ pub enum ReleaseStaticIpErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReleaseStaticIpError {
@@ -21338,43 +21338,43 @@ impl ReleaseStaticIpError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ReleaseStaticIpErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ReleaseStaticIpErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReleaseStaticIpErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ReleaseStaticIpErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `ReleaseStaticIpErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReleaseStaticIpErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `ReleaseStaticIpErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ReleaseStaticIpErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReleaseStaticIpErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ReleaseStaticIpErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ReleaseStaticIpErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ReleaseStaticIpErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ReleaseStaticIpErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `ReleaseStaticIpErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReleaseStaticIpErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ReleaseStaticIpErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ReleaseStaticIpErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, ReleaseStaticIpErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `ReleaseStaticIpErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `ReleaseStaticIpErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -21429,7 +21429,7 @@ pub enum ResetDistributionCacheErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetDistributionCacheError {
@@ -21497,42 +21497,42 @@ impl ResetDistributionCacheError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResetDistributionCacheErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ResetDistributionCacheErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetDistributionCacheErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ResetDistributionCacheErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ResetDistributionCacheErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetDistributionCacheErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ResetDistributionCacheErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ResetDistributionCacheErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetDistributionCacheErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ResetDistributionCacheErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `ResetDistributionCacheErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetDistributionCacheErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ResetDistributionCacheErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `ResetDistributionCacheErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetDistributionCacheErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ResetDistributionCacheErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `ResetDistributionCacheErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -21586,7 +21586,7 @@ pub enum SendContactMethodVerificationErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendContactMethodVerificationError {
@@ -21661,42 +21661,42 @@ impl SendContactMethodVerificationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendContactMethodVerificationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SendContactMethodVerificationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendContactMethodVerificationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `SendContactMethodVerificationErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `SendContactMethodVerificationErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendContactMethodVerificationErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `SendContactMethodVerificationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `SendContactMethodVerificationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendContactMethodVerificationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SendContactMethodVerificationErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `SendContactMethodVerificationErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendContactMethodVerificationErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `SendContactMethodVerificationErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `SendContactMethodVerificationErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendContactMethodVerificationErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `SendContactMethodVerificationErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `SendContactMethodVerificationErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -21757,7 +21757,7 @@ pub enum SetIpAddressTypeErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetIpAddressTypeError {
@@ -21826,43 +21826,43 @@ impl SetIpAddressTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetIpAddressTypeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SetIpAddressTypeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetIpAddressTypeErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `SetIpAddressTypeErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `SetIpAddressTypeErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetIpAddressTypeErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `SetIpAddressTypeErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `SetIpAddressTypeErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetIpAddressTypeErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `SetIpAddressTypeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `SetIpAddressTypeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, SetIpAddressTypeErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `SetIpAddressTypeErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `SetIpAddressTypeErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetIpAddressTypeErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `SetIpAddressTypeErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `SetIpAddressTypeErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, SetIpAddressTypeErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `SetIpAddressTypeErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `SetIpAddressTypeErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -21915,7 +21915,7 @@ pub enum SetResourceAccessForBucketErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetResourceAccessForBucketError {
@@ -21982,35 +21982,35 @@ impl SetResourceAccessForBucketError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetResourceAccessForBucketErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SetResourceAccessForBucketErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetResourceAccessForBucketErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `SetResourceAccessForBucketErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `SetResourceAccessForBucketErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetResourceAccessForBucketErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `SetResourceAccessForBucketErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `SetResourceAccessForBucketErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetResourceAccessForBucketErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetResourceAccessForBucketErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `SetResourceAccessForBucketErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetResourceAccessForBucketErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `SetResourceAccessForBucketErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `SetResourceAccessForBucketErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -22066,7 +22066,7 @@ pub enum StartInstanceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartInstanceError {
@@ -22135,37 +22135,37 @@ impl StartInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartInstanceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartInstanceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, StartInstanceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `StartInstanceErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `StartInstanceErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartInstanceErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `StartInstanceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StartInstanceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, StartInstanceErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `StartInstanceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StartInstanceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, StartInstanceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `StartInstanceErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `StartInstanceErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartInstanceErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `StartInstanceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `StartInstanceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, StartInstanceErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `StartInstanceErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `StartInstanceErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -22223,7 +22223,7 @@ pub enum StartRelationalDatabaseErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartRelationalDatabaseError {
@@ -22294,49 +22294,49 @@ impl StartRelationalDatabaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartRelationalDatabaseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartRelationalDatabaseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartRelationalDatabaseErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartRelationalDatabaseErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `StartRelationalDatabaseErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartRelationalDatabaseErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `StartRelationalDatabaseErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StartRelationalDatabaseErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartRelationalDatabaseErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `StartRelationalDatabaseErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StartRelationalDatabaseErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartRelationalDatabaseErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartRelationalDatabaseErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `StartRelationalDatabaseErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartRelationalDatabaseErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `StartRelationalDatabaseErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `StartRelationalDatabaseErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartRelationalDatabaseErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StartRelationalDatabaseErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `StartRelationalDatabaseErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -22396,7 +22396,7 @@ pub enum StopInstanceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopInstanceError {
@@ -22465,37 +22465,37 @@ impl StopInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopInstanceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StopInstanceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, StopInstanceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `StopInstanceErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `StopInstanceErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopInstanceErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `StopInstanceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StopInstanceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, StopInstanceErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `StopInstanceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StopInstanceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopInstanceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `StopInstanceErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `StopInstanceErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopInstanceErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `StopInstanceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `StopInstanceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, StopInstanceErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `StopInstanceErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `StopInstanceErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -22553,7 +22553,7 @@ pub enum StopRelationalDatabaseErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopRelationalDatabaseError {
@@ -22624,49 +22624,49 @@ impl StopRelationalDatabaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopRelationalDatabaseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StopRelationalDatabaseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopRelationalDatabaseErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StopRelationalDatabaseErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `StopRelationalDatabaseErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopRelationalDatabaseErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `StopRelationalDatabaseErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StopRelationalDatabaseErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopRelationalDatabaseErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `StopRelationalDatabaseErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `StopRelationalDatabaseErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopRelationalDatabaseErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopRelationalDatabaseErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `StopRelationalDatabaseErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopRelationalDatabaseErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `StopRelationalDatabaseErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `StopRelationalDatabaseErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopRelationalDatabaseErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StopRelationalDatabaseErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `StopRelationalDatabaseErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -22726,7 +22726,7 @@ pub enum TagResourceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -22795,37 +22795,37 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -22880,7 +22880,7 @@ pub enum TestAlarmErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TestAlarmError {
@@ -22948,27 +22948,27 @@ impl TestAlarmError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TestAlarmErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TestAlarmErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TestAlarmErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TestAlarmErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `TestAlarmErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, TestAlarmErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `TestAlarmErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `TestAlarmErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, TestAlarmErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `TestAlarmErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `TestAlarmErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(&self.kind, TestAlarmErrorKind::OperationFailureException(_))
     }
-    /// Returns true if the error kind is `TestAlarmErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `TestAlarmErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, TestAlarmErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `TestAlarmErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `TestAlarmErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(&self.kind, TestAlarmErrorKind::UnauthenticatedException(_))
     }
@@ -23022,7 +23022,7 @@ pub enum UnpeerVpcErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UnpeerVpcError {
@@ -23091,34 +23091,34 @@ impl UnpeerVpcError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UnpeerVpcErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UnpeerVpcErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UnpeerVpcErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UnpeerVpcErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `UnpeerVpcErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnpeerVpcErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `UnpeerVpcErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UnpeerVpcErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, UnpeerVpcErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `UnpeerVpcErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UnpeerVpcErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UnpeerVpcErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UnpeerVpcErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `UnpeerVpcErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(&self.kind, UnpeerVpcErrorKind::OperationFailureException(_))
     }
-    /// Returns true if the error kind is `UnpeerVpcErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UnpeerVpcErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, UnpeerVpcErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `UnpeerVpcErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `UnpeerVpcErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(&self.kind, UnpeerVpcErrorKind::UnauthenticatedException(_))
     }
@@ -23173,7 +23173,7 @@ pub enum UntagResourceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -23242,37 +23242,37 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -23325,7 +23325,7 @@ pub enum UpdateBucketErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBucketError {
@@ -23392,23 +23392,23 @@ impl UpdateBucketError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBucketErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateBucketErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateBucketErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateBucketErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateBucketErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, UpdateBucketErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `UpdateBucketErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateBucketErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateBucketErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateBucketErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateBucketErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, UpdateBucketErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `UpdateBucketErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `UpdateBucketErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -23459,7 +23459,7 @@ pub enum UpdateBucketBundleErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBucketBundleError {
@@ -23526,32 +23526,32 @@ impl UpdateBucketBundleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBucketBundleErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateBucketBundleErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBucketBundleErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBucketBundleErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateBucketBundleErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBucketBundleErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBucketBundleErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateBucketBundleErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBucketBundleErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBucketBundleErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateBucketBundleErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, UpdateBucketBundleErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `UpdateBucketBundleErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `UpdateBucketBundleErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -23602,7 +23602,7 @@ pub enum UpdateContainerServiceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateContainerServiceError {
@@ -23669,35 +23669,35 @@ impl UpdateContainerServiceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateContainerServiceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateContainerServiceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContainerServiceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContainerServiceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateContainerServiceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContainerServiceErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContainerServiceErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateContainerServiceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContainerServiceErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContainerServiceErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateContainerServiceErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateContainerServiceErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateContainerServiceErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `UpdateContainerServiceErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -23750,7 +23750,7 @@ pub enum UpdateDistributionErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDistributionError {
@@ -23818,39 +23818,39 @@ impl UpdateDistributionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, UpdateDistributionErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `UpdateDistributionErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `UpdateDistributionErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -23904,7 +23904,7 @@ pub enum UpdateDistributionBundleErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDistributionBundleError {
@@ -23972,42 +23972,42 @@ impl UpdateDistributionBundleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDistributionBundleErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateDistributionBundleErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionBundleErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionBundleErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateDistributionBundleErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionBundleErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionBundleErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDistributionBundleErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionBundleErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionBundleErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `UpdateDistributionBundleErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionBundleErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionBundleErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateDistributionBundleErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDistributionBundleErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDistributionBundleErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `UpdateDistributionBundleErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -24064,7 +24064,7 @@ pub enum UpdateDomainEntryErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDomainEntryError {
@@ -24133,43 +24133,43 @@ impl UpdateDomainEntryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDomainEntryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateDomainEntryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainEntryErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainEntryErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `UpdateDomainEntryErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainEntryErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainEntryErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateDomainEntryErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainEntryErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainEntryErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDomainEntryErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateDomainEntryErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateDomainEntryErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `UpdateDomainEntryErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainEntryErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainEntryErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateDomainEntryErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(&self.kind, UpdateDomainEntryErrorKind::ServiceException(_))
     }
-    /// Returns true if the error kind is `UpdateDomainEntryErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `UpdateDomainEntryErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -24227,7 +24227,7 @@ pub enum UpdateLoadBalancerAttributeErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLoadBalancerAttributeError {
@@ -24300,49 +24300,49 @@ impl UpdateLoadBalancerAttributeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLoadBalancerAttributeErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateLoadBalancerAttributeErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLoadBalancerAttributeErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLoadBalancerAttributeErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `UpdateLoadBalancerAttributeErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLoadBalancerAttributeErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLoadBalancerAttributeErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateLoadBalancerAttributeErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLoadBalancerAttributeErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLoadBalancerAttributeErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateLoadBalancerAttributeErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLoadBalancerAttributeErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLoadBalancerAttributeErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `UpdateLoadBalancerAttributeErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLoadBalancerAttributeErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLoadBalancerAttributeErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateLoadBalancerAttributeErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLoadBalancerAttributeErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLoadBalancerAttributeErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `UpdateLoadBalancerAttributeErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -24402,7 +24402,7 @@ pub enum UpdateRelationalDatabaseErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRelationalDatabaseError {
@@ -24473,49 +24473,49 @@ impl UpdateRelationalDatabaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRelationalDatabaseErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateRelationalDatabaseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRelationalDatabaseErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRelationalDatabaseErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `UpdateRelationalDatabaseErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRelationalDatabaseErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRelationalDatabaseErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateRelationalDatabaseErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRelationalDatabaseErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRelationalDatabaseErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRelationalDatabaseErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRelationalDatabaseErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRelationalDatabaseErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `UpdateRelationalDatabaseErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRelationalDatabaseErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRelationalDatabaseErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateRelationalDatabaseErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRelationalDatabaseErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRelationalDatabaseErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `UpdateRelationalDatabaseErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -24575,7 +24575,7 @@ pub enum UpdateRelationalDatabaseParametersErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>Lightsail throws this exception when the user has not been authenticated.</p>
     UnauthenticatedException(crate::error::UnauthenticatedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRelationalDatabaseParametersError {
@@ -24657,49 +24657,49 @@ impl UpdateRelationalDatabaseParametersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRelationalDatabaseParametersErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateRelationalDatabaseParametersErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRelationalDatabaseParametersErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRelationalDatabaseParametersErrorKind::AccountSetupInProgressException`.
+    /// Returns `true` if the error kind is `UpdateRelationalDatabaseParametersErrorKind::AccountSetupInProgressException`.
     pub fn is_account_setup_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRelationalDatabaseParametersErrorKind::AccountSetupInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRelationalDatabaseParametersErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateRelationalDatabaseParametersErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRelationalDatabaseParametersErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRelationalDatabaseParametersErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRelationalDatabaseParametersErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRelationalDatabaseParametersErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRelationalDatabaseParametersErrorKind::OperationFailureException`.
+    /// Returns `true` if the error kind is `UpdateRelationalDatabaseParametersErrorKind::OperationFailureException`.
     pub fn is_operation_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRelationalDatabaseParametersErrorKind::OperationFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRelationalDatabaseParametersErrorKind::ServiceException`.
+    /// Returns `true` if the error kind is `UpdateRelationalDatabaseParametersErrorKind::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRelationalDatabaseParametersErrorKind::ServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRelationalDatabaseParametersErrorKind::UnauthenticatedException`.
+    /// Returns `true` if the error kind is `UpdateRelationalDatabaseParametersErrorKind::UnauthenticatedException`.
     pub fn is_unauthenticated_exception(&self) -> bool {
         matches!(
             &self.kind,

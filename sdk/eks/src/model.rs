@@ -4631,6 +4631,10 @@ pub enum AmiTypes {
     #[allow(missing_docs)] // documentation missing in model
     Al2X8664Gpu,
     #[allow(missing_docs)] // documentation missing in model
+    BottlerocketArm64,
+    #[allow(missing_docs)] // documentation missing in model
+    BottlerocketX8664,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4641,6 +4645,8 @@ impl std::convert::From<&str> for AmiTypes {
             "AL2_ARM_64" => AmiTypes::Al2Arm64,
             "AL2_x86_64" => AmiTypes::Al2X8664,
             "AL2_x86_64_GPU" => AmiTypes::Al2X8664Gpu,
+            "BOTTLEROCKET_ARM_64" => AmiTypes::BottlerocketArm64,
+            "BOTTLEROCKET_x86_64" => AmiTypes::BottlerocketX8664,
             "CUSTOM" => AmiTypes::Custom,
             other => AmiTypes::Unknown(other.to_owned()),
         }
@@ -4660,13 +4666,22 @@ impl AmiTypes {
             AmiTypes::Al2Arm64 => "AL2_ARM_64",
             AmiTypes::Al2X8664 => "AL2_x86_64",
             AmiTypes::Al2X8664Gpu => "AL2_x86_64_GPU",
+            AmiTypes::BottlerocketArm64 => "BOTTLEROCKET_ARM_64",
+            AmiTypes::BottlerocketX8664 => "BOTTLEROCKET_x86_64",
             AmiTypes::Custom => "CUSTOM",
             AmiTypes::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["AL2_ARM_64", "AL2_x86_64", "AL2_x86_64_GPU", "CUSTOM"]
+        &[
+            "AL2_ARM_64",
+            "AL2_x86_64",
+            "AL2_x86_64_GPU",
+            "BOTTLEROCKET_ARM_64",
+            "BOTTLEROCKET_x86_64",
+            "CUSTOM",
+        ]
     }
 }
 impl AsRef<str> for AmiTypes {

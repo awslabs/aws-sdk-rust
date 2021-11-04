@@ -25,7 +25,7 @@ pub enum DeleteHumanLoopErrorKind {
     /// <p>The
     /// request isn't valid. Check the syntax and try again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteHumanLoopError {
@@ -91,25 +91,25 @@ impl DeleteHumanLoopError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteHumanLoopErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteHumanLoopErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteHumanLoopErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteHumanLoopErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteHumanLoopErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteHumanLoopErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteHumanLoopErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteHumanLoopErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteHumanLoopErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteHumanLoopErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteHumanLoopErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteHumanLoopErrorKind::ValidationException(_))
     }
@@ -152,7 +152,7 @@ pub enum DescribeHumanLoopErrorKind {
     /// <p>The
     /// request isn't valid. Check the syntax and try again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeHumanLoopError {
@@ -218,28 +218,28 @@ impl DescribeHumanLoopError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeHumanLoopErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeHumanLoopErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHumanLoopErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHumanLoopErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeHumanLoopErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHumanLoopErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHumanLoopErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeHumanLoopErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeHumanLoopErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeHumanLoopErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeHumanLoopErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -285,7 +285,7 @@ pub enum ListHumanLoopsErrorKind {
     /// <p>The
     /// request isn't valid. Check the syntax and try again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListHumanLoopsError {
@@ -351,25 +351,25 @@ impl ListHumanLoopsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListHumanLoopsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListHumanLoopsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListHumanLoopsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListHumanLoopsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListHumanLoopsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListHumanLoopsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListHumanLoopsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListHumanLoopsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListHumanLoopsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListHumanLoopsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListHumanLoopsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListHumanLoopsErrorKind::ValidationException(_))
     }
@@ -419,7 +419,7 @@ pub enum StartHumanLoopErrorKind {
     /// <p>The
     /// request isn't valid. Check the syntax and try again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartHumanLoopError {
@@ -486,29 +486,29 @@ impl StartHumanLoopError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartHumanLoopErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartHumanLoopErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StartHumanLoopErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StartHumanLoopErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartHumanLoopErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartHumanLoopErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartHumanLoopErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `StartHumanLoopErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartHumanLoopErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartHumanLoopErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartHumanLoopErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, StartHumanLoopErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `StartHumanLoopErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartHumanLoopErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StartHumanLoopErrorKind::ValidationException(_))
     }
@@ -552,7 +552,7 @@ pub enum StopHumanLoopErrorKind {
     /// <p>The
     /// request isn't valid. Check the syntax and try again.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopHumanLoopError {
@@ -618,25 +618,25 @@ impl StopHumanLoopError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopHumanLoopErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StopHumanLoopErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopHumanLoopErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StopHumanLoopErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopHumanLoopErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopHumanLoopErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopHumanLoopErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StopHumanLoopErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, StopHumanLoopErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `StopHumanLoopErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StopHumanLoopErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StopHumanLoopErrorKind::ValidationException(_))
     }

@@ -47,7 +47,7 @@ pub(crate) mod util {
     ///
     /// STS Assume Role providers MUST assign a name to their generated session. When a user does not
     /// provide a name for the session, the provider will choose a name composed of a base + a timestamp,
-    /// eg. `profile-file-provider-123456789`
+    /// e.g. `profile-file-provider-123456789`
     pub(crate) fn default_session_name(base: &str) -> String {
         let now = SystemTime::now()
             .duration_since(UNIX_EPOCH)

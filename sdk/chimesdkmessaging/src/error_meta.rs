@@ -845,6 +845,32 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::GetChannelMembershipPreferencesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetChannelMembershipPreferencesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetChannelMembershipPreferencesErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::GetChannelMembershipPreferencesErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+                crate::error::GetChannelMembershipPreferencesErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+                crate::error::GetChannelMembershipPreferencesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::GetChannelMembershipPreferencesErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+                crate::error::GetChannelMembershipPreferencesErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+                crate::error::GetChannelMembershipPreferencesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetChannelMessageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1277,6 +1303,33 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::PutChannelMembershipPreferencesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::PutChannelMembershipPreferencesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::PutChannelMembershipPreferencesErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::PutChannelMembershipPreferencesErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+                crate::error::PutChannelMembershipPreferencesErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+                crate::error::PutChannelMembershipPreferencesErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+                crate::error::PutChannelMembershipPreferencesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::PutChannelMembershipPreferencesErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+                crate::error::PutChannelMembershipPreferencesErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+                crate::error::PutChannelMembershipPreferencesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

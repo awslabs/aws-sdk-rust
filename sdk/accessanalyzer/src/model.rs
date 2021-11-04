@@ -1304,8 +1304,8 @@ pub enum PathElement {
     Value(std::string::String),
 }
 impl PathElement {
-    /// Tries to convert the enum instance into its [`PathElement`](crate::model::PathElement) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Index`](crate::model::PathElement::Index), extracting the inner [`i32`](i32).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_index(&self) -> std::result::Result<&i32, &Self> {
         if let PathElement::Index(val) = &self {
             Ok(&val)
@@ -1313,12 +1313,12 @@ impl PathElement {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `PathElement` variant.
+    /// Returns true if this is a [`Index`](crate::model::PathElement::Index).
     pub fn is_index(&self) -> bool {
         self.as_index().is_ok()
     }
-    /// Tries to convert the enum instance into its [`PathElement`](crate::model::PathElement) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Key`](crate::model::PathElement::Key), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_key(&self) -> std::result::Result<&std::string::String, &Self> {
         if let PathElement::Key(val) = &self {
             Ok(&val)
@@ -1326,12 +1326,12 @@ impl PathElement {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `PathElement` variant.
+    /// Returns true if this is a [`Key`](crate::model::PathElement::Key).
     pub fn is_key(&self) -> bool {
         self.as_key().is_ok()
     }
-    /// Tries to convert the enum instance into its [`PathElement`](crate::model::PathElement) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Substring`](crate::model::PathElement::Substring), extracting the inner [`Substring`](crate::model::Substring).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_substring(&self) -> std::result::Result<&crate::model::Substring, &Self> {
         if let PathElement::Substring(val) = &self {
             Ok(&val)
@@ -1339,12 +1339,12 @@ impl PathElement {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `PathElement` variant.
+    /// Returns true if this is a [`Substring`](crate::model::PathElement::Substring).
     pub fn is_substring(&self) -> bool {
         self.as_substring().is_ok()
     }
-    /// Tries to convert the enum instance into its [`PathElement`](crate::model::PathElement) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Value`](crate::model::PathElement::Value), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let PathElement::Value(val) = &self {
             Ok(&val)
@@ -1352,7 +1352,7 @@ impl PathElement {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `PathElement` variant.
+    /// Returns true if this is a [`Value`](crate::model::PathElement::Value).
     pub fn is_value(&self) -> bool {
         self.as_value().is_ok()
     }
@@ -5314,8 +5314,8 @@ pub enum Configuration {
     SqsQueue(crate::model::SqsQueueConfiguration),
 }
 impl Configuration {
-    /// Tries to convert the enum instance into its [`Configuration`](crate::model::Configuration) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`IamRole`](crate::model::Configuration::IamRole), extracting the inner [`IamRoleConfiguration`](crate::model::IamRoleConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_iam_role(&self) -> std::result::Result<&crate::model::IamRoleConfiguration, &Self> {
         if let Configuration::IamRole(val) = &self {
             Ok(&val)
@@ -5323,12 +5323,12 @@ impl Configuration {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Configuration` variant.
+    /// Returns true if this is a [`IamRole`](crate::model::Configuration::IamRole).
     pub fn is_iam_role(&self) -> bool {
         self.as_iam_role().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Configuration`](crate::model::Configuration) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`KmsKey`](crate::model::Configuration::KmsKey), extracting the inner [`KmsKeyConfiguration`](crate::model::KmsKeyConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_kms_key(&self) -> std::result::Result<&crate::model::KmsKeyConfiguration, &Self> {
         if let Configuration::KmsKey(val) = &self {
             Ok(&val)
@@ -5336,12 +5336,12 @@ impl Configuration {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Configuration` variant.
+    /// Returns true if this is a [`KmsKey`](crate::model::Configuration::KmsKey).
     pub fn is_kms_key(&self) -> bool {
         self.as_kms_key().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Configuration`](crate::model::Configuration) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`S3Bucket`](crate::model::Configuration::S3Bucket), extracting the inner [`S3BucketConfiguration`](crate::model::S3BucketConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_bucket(&self) -> std::result::Result<&crate::model::S3BucketConfiguration, &Self> {
         if let Configuration::S3Bucket(val) = &self {
             Ok(&val)
@@ -5349,12 +5349,12 @@ impl Configuration {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Configuration` variant.
+    /// Returns true if this is a [`S3Bucket`](crate::model::Configuration::S3Bucket).
     pub fn is_s3_bucket(&self) -> bool {
         self.as_s3_bucket().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Configuration`](crate::model::Configuration) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`SecretsManagerSecret`](crate::model::Configuration::SecretsManagerSecret), extracting the inner [`SecretsManagerSecretConfiguration`](crate::model::SecretsManagerSecretConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_secrets_manager_secret(
         &self,
     ) -> std::result::Result<&crate::model::SecretsManagerSecretConfiguration, &Self> {
@@ -5364,12 +5364,12 @@ impl Configuration {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Configuration` variant.
+    /// Returns true if this is a [`SecretsManagerSecret`](crate::model::Configuration::SecretsManagerSecret).
     pub fn is_secrets_manager_secret(&self) -> bool {
         self.as_secrets_manager_secret().is_ok()
     }
-    /// Tries to convert the enum instance into its [`Configuration`](crate::model::Configuration) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`SqsQueue`](crate::model::Configuration::SqsQueue), extracting the inner [`SqsQueueConfiguration`](crate::model::SqsQueueConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sqs_queue(&self) -> std::result::Result<&crate::model::SqsQueueConfiguration, &Self> {
         if let Configuration::SqsQueue(val) = &self {
             Ok(&val)
@@ -5377,7 +5377,7 @@ impl Configuration {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `Configuration` variant.
+    /// Returns true if this is a [`SqsQueue`](crate::model::Configuration::SqsQueue).
     pub fn is_sqs_queue(&self) -> bool {
         self.as_sqs_queue().is_ok()
     }
@@ -5741,8 +5741,8 @@ pub enum NetworkOriginConfiguration {
     VpcConfiguration(crate::model::VpcConfiguration),
 }
 impl NetworkOriginConfiguration {
-    /// Tries to convert the enum instance into its [`NetworkOriginConfiguration`](crate::model::NetworkOriginConfiguration) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`InternetConfiguration`](crate::model::NetworkOriginConfiguration::InternetConfiguration), extracting the inner [`InternetConfiguration`](crate::model::InternetConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_internet_configuration(
         &self,
     ) -> std::result::Result<&crate::model::InternetConfiguration, &Self> {
@@ -5752,12 +5752,12 @@ impl NetworkOriginConfiguration {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `NetworkOriginConfiguration` variant.
+    /// Returns true if this is a [`InternetConfiguration`](crate::model::NetworkOriginConfiguration::InternetConfiguration).
     pub fn is_internet_configuration(&self) -> bool {
         self.as_internet_configuration().is_ok()
     }
-    /// Tries to convert the enum instance into its [`NetworkOriginConfiguration`](crate::model::NetworkOriginConfiguration) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`VpcConfiguration`](crate::model::NetworkOriginConfiguration::VpcConfiguration), extracting the inner [`VpcConfiguration`](crate::model::VpcConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_vpc_configuration(
         &self,
     ) -> std::result::Result<&crate::model::VpcConfiguration, &Self> {
@@ -5767,7 +5767,7 @@ impl NetworkOriginConfiguration {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `NetworkOriginConfiguration` variant.
+    /// Returns true if this is a [`VpcConfiguration`](crate::model::NetworkOriginConfiguration::VpcConfiguration).
     pub fn is_vpc_configuration(&self) -> bool {
         self.as_vpc_configuration().is_ok()
     }
@@ -6008,8 +6008,8 @@ pub enum AclGrantee {
     Uri(std::string::String),
 }
 impl AclGrantee {
-    /// Tries to convert the enum instance into its [`AclGrantee`](crate::model::AclGrantee) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Id`](crate::model::AclGrantee::Id), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_id(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AclGrantee::Id(val) = &self {
             Ok(&val)
@@ -6017,12 +6017,12 @@ impl AclGrantee {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AclGrantee` variant.
+    /// Returns true if this is a [`Id`](crate::model::AclGrantee::Id).
     pub fn is_id(&self) -> bool {
         self.as_id().is_ok()
     }
-    /// Tries to convert the enum instance into its [`AclGrantee`](crate::model::AclGrantee) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Uri`](crate::model::AclGrantee::Uri), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_uri(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AclGrantee::Uri(val) = &self {
             Ok(&val)
@@ -6030,7 +6030,7 @@ impl AclGrantee {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AclGrantee` variant.
+    /// Returns true if this is a [`Uri`](crate::model::AclGrantee::Uri).
     pub fn is_uri(&self) -> bool {
         self.as_uri().is_ok()
     }

@@ -24,7 +24,7 @@ pub enum CancelChangeSetErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>An error occurred during validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelChangeSetError {
@@ -92,39 +92,39 @@ impl CancelChangeSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelChangeSetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CancelChangeSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelChangeSetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CancelChangeSetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CancelChangeSetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelChangeSetErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CancelChangeSetErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `CancelChangeSetErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelChangeSetErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CancelChangeSetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CancelChangeSetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelChangeSetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CancelChangeSetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CancelChangeSetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CancelChangeSetErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CancelChangeSetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CancelChangeSetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CancelChangeSetErrorKind::ValidationException(_))
     }
@@ -166,7 +166,7 @@ pub enum DescribeChangeSetErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>An error occurred during validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeChangeSetError {
@@ -233,35 +233,35 @@ impl DescribeChangeSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeChangeSetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeChangeSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChangeSetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChangeSetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeChangeSetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChangeSetErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChangeSetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeChangeSetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChangeSetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChangeSetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeChangeSetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeChangeSetErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeChangeSetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeChangeSetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -307,7 +307,7 @@ pub enum DescribeEntityErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>An error occurred during validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEntityError {
@@ -375,39 +375,39 @@ impl DescribeEntityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEntityErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeEntityErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEntityErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEntityErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeEntityErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEntityErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEntityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeEntityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEntityErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEntityErrorKind::ResourceNotSupportedException`.
+    /// Returns `true` if the error kind is `DescribeEntityErrorKind::ResourceNotSupportedException`.
     pub fn is_resource_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEntityErrorKind::ResourceNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEntityErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeEntityErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeEntityErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DescribeEntityErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeEntityErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeEntityErrorKind::ValidationException(_))
     }
@@ -447,7 +447,7 @@ pub enum ListChangeSetsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>An error occurred during validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListChangeSetsError {
@@ -513,25 +513,25 @@ impl ListChangeSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListChangeSetsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListChangeSetsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChangeSetsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListChangeSetsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListChangeSetsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChangeSetsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListChangeSetsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListChangeSetsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListChangeSetsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListChangeSetsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListChangeSetsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListChangeSetsErrorKind::ValidationException(_))
     }
@@ -571,7 +571,7 @@ pub enum ListEntitiesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>An error occurred during validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEntitiesError {
@@ -638,29 +638,29 @@ impl ListEntitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEntitiesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListEntitiesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListEntitiesErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListEntitiesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListEntitiesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEntitiesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListEntitiesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListEntitiesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEntitiesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListEntitiesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListEntitiesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListEntitiesErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListEntitiesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListEntitiesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListEntitiesErrorKind::ValidationException(_))
     }
@@ -705,7 +705,7 @@ pub enum StartChangeSetErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>An error occurred during validation.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartChangeSetError {
@@ -774,46 +774,46 @@ impl StartChangeSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartChangeSetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartChangeSetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartChangeSetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartChangeSetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `StartChangeSetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartChangeSetErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `StartChangeSetErrorKind::ResourceInUseException`.
+    /// Returns `true` if the error kind is `StartChangeSetErrorKind::ResourceInUseException`.
     pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartChangeSetErrorKind::ResourceInUseException(_)
         )
     }
-    /// Returns true if the error kind is `StartChangeSetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartChangeSetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartChangeSetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartChangeSetErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `StartChangeSetErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartChangeSetErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartChangeSetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartChangeSetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, StartChangeSetErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `StartChangeSetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartChangeSetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StartChangeSetErrorKind::ValidationException(_))
     }

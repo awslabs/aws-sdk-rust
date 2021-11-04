@@ -57,7 +57,7 @@ pub enum AssociateApprovalRuleTemplateWithRepositoryErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateApprovalRuleTemplateWithRepositoryError {
@@ -162,37 +162,37 @@ impl AssociateApprovalRuleTemplateWithRepositoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::ApprovalRuleTemplateDoesNotExistException`.
+    /// Returns `true` if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::ApprovalRuleTemplateDoesNotExistException`.
     pub fn is_approval_rule_template_does_not_exist_exception(&self) -> bool {
         matches!(&self.kind, AssociateApprovalRuleTemplateWithRepositoryErrorKind::ApprovalRuleTemplateDoesNotExistException(_))
     }
-    /// Returns true if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::ApprovalRuleTemplateNameRequiredException`.
+    /// Returns `true` if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::ApprovalRuleTemplateNameRequiredException`.
     pub fn is_approval_rule_template_name_required_exception(&self) -> bool {
         matches!(&self.kind, AssociateApprovalRuleTemplateWithRepositoryErrorKind::ApprovalRuleTemplateNameRequiredException(_))
     }
-    /// Returns true if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(&self.kind, AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionIntegrityChecksFailedException(_))
     }
-    /// Returns true if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(&self.kind, AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionKeyAccessDeniedException(_))
     }
-    /// Returns true if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -201,22 +201,22 @@ impl AssociateApprovalRuleTemplateWithRepositoryError {
             )
         )
     }
-    /// Returns true if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::InvalidApprovalRuleTemplateNameException`.
+    /// Returns `true` if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::InvalidApprovalRuleTemplateNameException`.
     pub fn is_invalid_approval_rule_template_name_exception(&self) -> bool {
         matches!(&self.kind, AssociateApprovalRuleTemplateWithRepositoryErrorKind::InvalidApprovalRuleTemplateNameException(_))
     }
-    /// Returns true if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateApprovalRuleTemplateWithRepositoryErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::MaximumRuleTemplatesAssociatedWithRepositoryException`.
+    /// Returns `true` if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::MaximumRuleTemplatesAssociatedWithRepositoryException`.
     pub fn is_maximum_rule_templates_associated_with_repository_exception(&self) -> bool {
         matches!(&self.kind, AssociateApprovalRuleTemplateWithRepositoryErrorKind::MaximumRuleTemplatesAssociatedWithRepositoryException(_))
     }
-    /// Returns true if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -225,7 +225,7 @@ impl AssociateApprovalRuleTemplateWithRepositoryError {
             )
         )
     }
-    /// Returns true if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `AssociateApprovalRuleTemplateWithRepositoryErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -326,7 +326,7 @@ pub enum BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind {
     MaximumRepositoryNamesExceededException(crate::error::MaximumRepositoryNamesExceededException),
     /// <p>At least one repository name object is required, but was not specified.</p>
     RepositoryNamesRequiredException(crate::error::RepositoryNamesRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchAssociateApprovalRuleTemplateWithRepositoriesError {
@@ -429,43 +429,43 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::ApprovalRuleTemplateDoesNotExistException`.
+    /// Returns `true` if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::ApprovalRuleTemplateDoesNotExistException`.
     pub fn is_approval_rule_template_does_not_exist_exception(&self) -> bool {
         matches!(&self.kind, BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::ApprovalRuleTemplateDoesNotExistException(_))
     }
-    /// Returns true if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::ApprovalRuleTemplateNameRequiredException`.
+    /// Returns `true` if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::ApprovalRuleTemplateNameRequiredException`.
     pub fn is_approval_rule_template_name_required_exception(&self) -> bool {
         matches!(&self.kind, BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::ApprovalRuleTemplateNameRequiredException(_))
     }
-    /// Returns true if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(&self.kind, BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionIntegrityChecksFailedException(_))
     }
-    /// Returns true if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(&self.kind, BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionKeyAccessDeniedException(_))
     }
-    /// Returns true if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(&self.kind, BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionKeyDisabledException(_))
     }
-    /// Returns true if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(&self.kind, BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionKeyNotFoundException(_))
     }
-    /// Returns true if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(&self.kind, BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::EncryptionKeyUnavailableException(_))
     }
-    /// Returns true if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::InvalidApprovalRuleTemplateNameException`.
+    /// Returns `true` if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::InvalidApprovalRuleTemplateNameException`.
     pub fn is_invalid_approval_rule_template_name_exception(&self) -> bool {
         matches!(&self.kind, BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::InvalidApprovalRuleTemplateNameException(_))
     }
-    /// Returns true if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::MaximumRepositoryNamesExceededException`.
+    /// Returns `true` if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::MaximumRepositoryNamesExceededException`.
     pub fn is_maximum_repository_names_exceeded_exception(&self) -> bool {
         matches!(&self.kind, BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::MaximumRepositoryNamesExceededException(_))
     }
-    /// Returns true if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::RepositoryNamesRequiredException`.
+    /// Returns `true` if the error kind is `BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::RepositoryNamesRequiredException`.
     pub fn is_repository_names_required_exception(&self) -> bool {
         matches!(&self.kind, BatchAssociateApprovalRuleTemplateWithRepositoriesErrorKind::RepositoryNamesRequiredException(_))
     }
@@ -578,7 +578,7 @@ pub enum BatchDescribeMergeConflictsErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
     /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDescribeMergeConflictsError {
@@ -699,147 +699,147 @@ impl BatchDescribeMergeConflictsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::CommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::CommitDoesNotExistException`.
     pub fn is_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::CommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::CommitRequiredException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::CommitRequiredException`.
     pub fn is_commit_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::CommitRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::InvalidCommitException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::InvalidCommitException`.
     pub fn is_invalid_commit_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::InvalidCommitException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::InvalidConflictDetailLevelException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::InvalidConflictDetailLevelException`.
     pub fn is_invalid_conflict_detail_level_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::InvalidConflictDetailLevelException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::InvalidConflictResolutionStrategyException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::InvalidConflictResolutionStrategyException`.
     pub fn is_invalid_conflict_resolution_strategy_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::InvalidConflictResolutionStrategyException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::InvalidContinuationTokenException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::InvalidContinuationTokenException`.
     pub fn is_invalid_continuation_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::InvalidContinuationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::InvalidMaxConflictFilesException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::InvalidMaxConflictFilesException`.
     pub fn is_invalid_max_conflict_files_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::InvalidMaxConflictFilesException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::InvalidMaxMergeHunksException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::InvalidMaxMergeHunksException`.
     pub fn is_invalid_max_merge_hunks_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::InvalidMaxMergeHunksException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::InvalidMergeOptionException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::InvalidMergeOptionException`.
     pub fn is_invalid_merge_option_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::InvalidMergeOptionException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::MaximumFileContentToLoadExceededException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::MaximumFileContentToLoadExceededException`.
     pub fn is_maximum_file_content_to_load_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::MaximumFileContentToLoadExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::MaximumItemsToCompareExceededException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::MaximumItemsToCompareExceededException`.
     pub fn is_maximum_items_to_compare_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::MaximumItemsToCompareExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::MergeOptionRequiredException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::MergeOptionRequiredException`.
     pub fn is_merge_option_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::MergeOptionRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDescribeMergeConflictsErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDescribeMergeConflictsErrorKind::TipsDivergenceExceededException`.
+    /// Returns `true` if the error kind is `BatchDescribeMergeConflictsErrorKind::TipsDivergenceExceededException`.
     pub fn is_tips_divergence_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -959,7 +959,7 @@ pub enum BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind {
     MaximumRepositoryNamesExceededException(crate::error::MaximumRepositoryNamesExceededException),
     /// <p>At least one repository name object is required, but was not specified.</p>
     RepositoryNamesRequiredException(crate::error::RepositoryNamesRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
@@ -1062,43 +1062,43 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::ApprovalRuleTemplateDoesNotExistException`.
+    /// Returns `true` if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::ApprovalRuleTemplateDoesNotExistException`.
     pub fn is_approval_rule_template_does_not_exist_exception(&self) -> bool {
         matches!(&self.kind, BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::ApprovalRuleTemplateDoesNotExistException(_))
     }
-    /// Returns true if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::ApprovalRuleTemplateNameRequiredException`.
+    /// Returns `true` if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::ApprovalRuleTemplateNameRequiredException`.
     pub fn is_approval_rule_template_name_required_exception(&self) -> bool {
         matches!(&self.kind, BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::ApprovalRuleTemplateNameRequiredException(_))
     }
-    /// Returns true if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(&self.kind, BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionIntegrityChecksFailedException(_))
     }
-    /// Returns true if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(&self.kind, BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionKeyAccessDeniedException(_))
     }
-    /// Returns true if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(&self.kind, BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionKeyDisabledException(_))
     }
-    /// Returns true if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(&self.kind, BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionKeyNotFoundException(_))
     }
-    /// Returns true if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(&self.kind, BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::EncryptionKeyUnavailableException(_))
     }
-    /// Returns true if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::InvalidApprovalRuleTemplateNameException`.
+    /// Returns `true` if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::InvalidApprovalRuleTemplateNameException`.
     pub fn is_invalid_approval_rule_template_name_exception(&self) -> bool {
         matches!(&self.kind, BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::InvalidApprovalRuleTemplateNameException(_))
     }
-    /// Returns true if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::MaximumRepositoryNamesExceededException`.
+    /// Returns `true` if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::MaximumRepositoryNamesExceededException`.
     pub fn is_maximum_repository_names_exceeded_exception(&self) -> bool {
         matches!(&self.kind, BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::MaximumRepositoryNamesExceededException(_))
     }
-    /// Returns true if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::RepositoryNamesRequiredException`.
+    /// Returns `true` if the error kind is `BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::RepositoryNamesRequiredException`.
     pub fn is_repository_names_required_exception(&self) -> bool {
         matches!(&self.kind, BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorKind::RepositoryNamesRequiredException(_))
     }
@@ -1184,7 +1184,7 @@ pub enum BatchGetCommitsErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetCommitsError {
@@ -1258,70 +1258,70 @@ impl BatchGetCommitsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetCommitsErrorKind::CommitIdsLimitExceededException`.
+    /// Returns `true` if the error kind is `BatchGetCommitsErrorKind::CommitIdsLimitExceededException`.
     pub fn is_commit_ids_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetCommitsErrorKind::CommitIdsLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetCommitsErrorKind::CommitIdsListRequiredException`.
+    /// Returns `true` if the error kind is `BatchGetCommitsErrorKind::CommitIdsListRequiredException`.
     pub fn is_commit_ids_list_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetCommitsErrorKind::CommitIdsListRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetCommitsErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `BatchGetCommitsErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetCommitsErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetCommitsErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchGetCommitsErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetCommitsErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetCommitsErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `BatchGetCommitsErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetCommitsErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetCommitsErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `BatchGetCommitsErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetCommitsErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetCommitsErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `BatchGetCommitsErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetCommitsErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetCommitsErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `BatchGetCommitsErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetCommitsErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetCommitsErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `BatchGetCommitsErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetCommitsErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetCommitsErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `BatchGetCommitsErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1386,7 +1386,7 @@ pub enum BatchGetRepositoriesErrorKind {
     MaximumRepositoryNamesExceededException(crate::error::MaximumRepositoryNamesExceededException),
     /// <p>At least one repository name object is required, but was not specified.</p>
     RepositoryNamesRequiredException(crate::error::RepositoryNamesRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetRepositoriesError {
@@ -1466,56 +1466,56 @@ impl BatchGetRepositoriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetRepositoriesErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `BatchGetRepositoriesErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetRepositoriesErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetRepositoriesErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchGetRepositoriesErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetRepositoriesErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetRepositoriesErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `BatchGetRepositoriesErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetRepositoriesErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetRepositoriesErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `BatchGetRepositoriesErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetRepositoriesErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetRepositoriesErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `BatchGetRepositoriesErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetRepositoriesErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetRepositoriesErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `BatchGetRepositoriesErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetRepositoriesErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetRepositoriesErrorKind::MaximumRepositoryNamesExceededException`.
+    /// Returns `true` if the error kind is `BatchGetRepositoriesErrorKind::MaximumRepositoryNamesExceededException`.
     pub fn is_maximum_repository_names_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetRepositoriesErrorKind::MaximumRepositoryNamesExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetRepositoriesErrorKind::RepositoryNamesRequiredException`.
+    /// Returns `true` if the error kind is `BatchGetRepositoriesErrorKind::RepositoryNamesRequiredException`.
     pub fn is_repository_names_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1594,7 +1594,7 @@ pub enum CreateApprovalRuleTemplateErrorKind {
     ),
     /// <p>The maximum number of approval rule templates has been exceeded for this AWS Region. </p>
     NumberOfRuleTemplatesExceededException(crate::error::NumberOfRuleTemplatesExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateApprovalRuleTemplateError {
@@ -1679,49 +1679,49 @@ impl CreateApprovalRuleTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateApprovalRuleTemplateErrorKind::ApprovalRuleTemplateContentRequiredException`.
+    /// Returns `true` if the error kind is `CreateApprovalRuleTemplateErrorKind::ApprovalRuleTemplateContentRequiredException`.
     pub fn is_approval_rule_template_content_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApprovalRuleTemplateErrorKind::ApprovalRuleTemplateContentRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameAlreadyExistsException`.
     pub fn is_approval_rule_template_name_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameRequiredException`.
+    /// Returns `true` if the error kind is `CreateApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameRequiredException`.
     pub fn is_approval_rule_template_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateContentException`.
+    /// Returns `true` if the error kind is `CreateApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateContentException`.
     pub fn is_invalid_approval_rule_template_content_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateContentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateDescriptionException`.
+    /// Returns `true` if the error kind is `CreateApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateDescriptionException`.
     pub fn is_invalid_approval_rule_template_description_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateDescriptionException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateNameException`.
+    /// Returns `true` if the error kind is `CreateApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateNameException`.
     pub fn is_invalid_approval_rule_template_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApprovalRuleTemplateErrorKind::NumberOfRuleTemplatesExceededException`.
+    /// Returns `true` if the error kind is `CreateApprovalRuleTemplateErrorKind::NumberOfRuleTemplatesExceededException`.
     pub fn is_number_of_rule_templates_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1810,7 +1810,7 @@ pub enum CreateBranchErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBranchError {
@@ -1888,98 +1888,98 @@ impl CreateBranchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBranchErrorKind::BranchNameExistsException`.
+    /// Returns `true` if the error kind is `CreateBranchErrorKind::BranchNameExistsException`.
     pub fn is_branch_name_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBranchErrorKind::BranchNameExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBranchErrorKind::BranchNameRequiredException`.
+    /// Returns `true` if the error kind is `CreateBranchErrorKind::BranchNameRequiredException`.
     pub fn is_branch_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBranchErrorKind::BranchNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBranchErrorKind::CommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateBranchErrorKind::CommitDoesNotExistException`.
     pub fn is_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBranchErrorKind::CommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBranchErrorKind::CommitIdRequiredException`.
+    /// Returns `true` if the error kind is `CreateBranchErrorKind::CommitIdRequiredException`.
     pub fn is_commit_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBranchErrorKind::CommitIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBranchErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `CreateBranchErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBranchErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBranchErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateBranchErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBranchErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBranchErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `CreateBranchErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBranchErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBranchErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `CreateBranchErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBranchErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBranchErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `CreateBranchErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBranchErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBranchErrorKind::InvalidBranchNameException`.
+    /// Returns `true` if the error kind is `CreateBranchErrorKind::InvalidBranchNameException`.
     pub fn is_invalid_branch_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBranchErrorKind::InvalidBranchNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBranchErrorKind::InvalidCommitIdException`.
+    /// Returns `true` if the error kind is `CreateBranchErrorKind::InvalidCommitIdException`.
     pub fn is_invalid_commit_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBranchErrorKind::InvalidCommitIdException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBranchErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `CreateBranchErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBranchErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBranchErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateBranchErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateBranchErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateBranchErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `CreateBranchErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2133,7 +2133,7 @@ pub enum CreateCommitErrorKind {
     SamePathRequestException(crate::error::SamePathRequestException),
     /// <p>The commit cannot be created because no source files or file content have been specified for the commit.</p>
     SourceFileOrContentRequiredException(crate::error::SourceFileOrContentRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCommitError {
@@ -2243,254 +2243,254 @@ impl CreateCommitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::BranchDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::BranchDoesNotExistException`.
     pub fn is_branch_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::BranchDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::BranchNameIsTagNameException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::BranchNameIsTagNameException`.
     pub fn is_branch_name_is_tag_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::BranchNameIsTagNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::BranchNameRequiredException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::BranchNameRequiredException`.
     pub fn is_branch_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::BranchNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::CommitMessageLengthExceededException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::CommitMessageLengthExceededException`.
     pub fn is_commit_message_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::CommitMessageLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::DirectoryNameConflictsWithFileNameException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::DirectoryNameConflictsWithFileNameException`.
     pub fn is_directory_name_conflicts_with_file_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::DirectoryNameConflictsWithFileNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::FileContentAndSourceFileSpecifiedException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::FileContentAndSourceFileSpecifiedException`.
     pub fn is_file_content_and_source_file_specified_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::FileContentAndSourceFileSpecifiedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::FileContentSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::FileContentSizeLimitExceededException`.
     pub fn is_file_content_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::FileContentSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::FileDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::FileDoesNotExistException`.
     pub fn is_file_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::FileDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::FileEntryRequiredException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::FileEntryRequiredException`.
     pub fn is_file_entry_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::FileEntryRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::FileModeRequiredException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::FileModeRequiredException`.
     pub fn is_file_mode_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::FileModeRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::FileNameConflictsWithDirectoryNameException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::FileNameConflictsWithDirectoryNameException`.
     pub fn is_file_name_conflicts_with_directory_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::FileNameConflictsWithDirectoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::FilePathConflictsWithSubmodulePathException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::FilePathConflictsWithSubmodulePathException`.
     pub fn is_file_path_conflicts_with_submodule_path_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::FilePathConflictsWithSubmodulePathException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::FolderContentSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::FolderContentSizeLimitExceededException`.
     pub fn is_folder_content_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::FolderContentSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::InvalidBranchNameException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::InvalidBranchNameException`.
     pub fn is_invalid_branch_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::InvalidBranchNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::InvalidDeletionParameterException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::InvalidDeletionParameterException`.
     pub fn is_invalid_deletion_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::InvalidDeletionParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::InvalidEmailException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::InvalidEmailException`.
     pub fn is_invalid_email_exception(&self) -> bool {
         matches!(&self.kind, CreateCommitErrorKind::InvalidEmailException(_))
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::InvalidFileModeException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::InvalidFileModeException`.
     pub fn is_invalid_file_mode_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::InvalidFileModeException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::InvalidParentCommitIdException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::InvalidParentCommitIdException`.
     pub fn is_invalid_parent_commit_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::InvalidParentCommitIdException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::InvalidPathException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::InvalidPathException`.
     pub fn is_invalid_path_exception(&self) -> bool {
         matches!(&self.kind, CreateCommitErrorKind::InvalidPathException(_))
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::MaximumFileEntriesExceededException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::MaximumFileEntriesExceededException`.
     pub fn is_maximum_file_entries_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::MaximumFileEntriesExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::NameLengthExceededException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::NameLengthExceededException`.
     pub fn is_name_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::NameLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::NoChangeException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::NoChangeException`.
     pub fn is_no_change_exception(&self) -> bool {
         matches!(&self.kind, CreateCommitErrorKind::NoChangeException(_))
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::ParentCommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::ParentCommitDoesNotExistException`.
     pub fn is_parent_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::ParentCommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::ParentCommitIdOutdatedException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::ParentCommitIdOutdatedException`.
     pub fn is_parent_commit_id_outdated_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::ParentCommitIdOutdatedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::ParentCommitIdRequiredException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::ParentCommitIdRequiredException`.
     pub fn is_parent_commit_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::ParentCommitIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::PathRequiredException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::PathRequiredException`.
     pub fn is_path_required_exception(&self) -> bool {
         matches!(&self.kind, CreateCommitErrorKind::PathRequiredException(_))
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::PutFileEntryConflictException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::PutFileEntryConflictException`.
     pub fn is_put_file_entry_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::PutFileEntryConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::RestrictedSourceFileException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::RestrictedSourceFileException`.
     pub fn is_restricted_source_file_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::RestrictedSourceFileException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::SamePathRequestException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::SamePathRequestException`.
     pub fn is_same_path_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommitErrorKind::SamePathRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommitErrorKind::SourceFileOrContentRequiredException`.
+    /// Returns `true` if the error kind is `CreateCommitErrorKind::SourceFileOrContentRequiredException`.
     pub fn is_source_file_or_content_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2638,7 +2638,7 @@ pub enum CreatePullRequestErrorKind {
     TargetsRequiredException(crate::error::TargetsRequiredException),
     /// <p>A pull request title is required. It cannot be empty or null.</p>
     TitleRequiredException(crate::error::TitleRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePullRequestError {
@@ -2737,175 +2737,175 @@ impl CreatePullRequestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::ClientRequestTokenRequiredException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::ClientRequestTokenRequiredException`.
     pub fn is_client_request_token_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::ClientRequestTokenRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::IdempotencyParameterMismatchException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::IdempotencyParameterMismatchException`.
     pub fn is_idempotency_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::IdempotencyParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::InvalidClientRequestTokenException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::InvalidClientRequestTokenException`.
     pub fn is_invalid_client_request_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::InvalidClientRequestTokenException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::InvalidDescriptionException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::InvalidDescriptionException`.
     pub fn is_invalid_description_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::InvalidDescriptionException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::InvalidReferenceNameException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::InvalidReferenceNameException`.
     pub fn is_invalid_reference_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::InvalidReferenceNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::InvalidTargetException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::InvalidTargetException`.
     pub fn is_invalid_target_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::InvalidTargetException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::InvalidTargetsException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::InvalidTargetsException`.
     pub fn is_invalid_targets_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::InvalidTargetsException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::InvalidTitleException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::InvalidTitleException`.
     pub fn is_invalid_title_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::InvalidTitleException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::MaximumOpenPullRequestsExceededException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::MaximumOpenPullRequestsExceededException`.
     pub fn is_maximum_open_pull_requests_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::MaximumOpenPullRequestsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::MultipleRepositoriesInPullRequestException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::MultipleRepositoriesInPullRequestException`.
     pub fn is_multiple_repositories_in_pull_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::MultipleRepositoriesInPullRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::ReferenceDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::ReferenceDoesNotExistException`.
     pub fn is_reference_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::ReferenceDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::ReferenceNameRequiredException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::ReferenceNameRequiredException`.
     pub fn is_reference_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::ReferenceNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::ReferenceTypeNotSupportedException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::ReferenceTypeNotSupportedException`.
     pub fn is_reference_type_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::ReferenceTypeNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::SourceAndDestinationAreSameException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::SourceAndDestinationAreSameException`.
     pub fn is_source_and_destination_are_same_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::SourceAndDestinationAreSameException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::TargetRequiredException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::TargetRequiredException`.
     pub fn is_target_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::TargetRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::TargetsRequiredException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::TargetsRequiredException`.
     pub fn is_targets_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestErrorKind::TargetsRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestErrorKind::TitleRequiredException`.
+    /// Returns `true` if the error kind is `CreatePullRequestErrorKind::TitleRequiredException`.
     pub fn is_title_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3002,7 +3002,7 @@ pub enum CreatePullRequestApprovalRuleErrorKind {
     PullRequestDoesNotExistException(crate::error::PullRequestDoesNotExistException),
     /// <p>A pull request ID is required, but none was provided.</p>
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePullRequestApprovalRuleError {
@@ -3112,105 +3112,105 @@ impl CreatePullRequestApprovalRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePullRequestApprovalRuleErrorKind::ApprovalRuleContentRequiredException`.
+    /// Returns `true` if the error kind is `CreatePullRequestApprovalRuleErrorKind::ApprovalRuleContentRequiredException`.
     pub fn is_approval_rule_content_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestApprovalRuleErrorKind::ApprovalRuleContentRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestApprovalRuleErrorKind::ApprovalRuleNameAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreatePullRequestApprovalRuleErrorKind::ApprovalRuleNameAlreadyExistsException`.
     pub fn is_approval_rule_name_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestApprovalRuleErrorKind::ApprovalRuleNameAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestApprovalRuleErrorKind::ApprovalRuleNameRequiredException`.
+    /// Returns `true` if the error kind is `CreatePullRequestApprovalRuleErrorKind::ApprovalRuleNameRequiredException`.
     pub fn is_approval_rule_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestApprovalRuleErrorKind::ApprovalRuleNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestApprovalRuleErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `CreatePullRequestApprovalRuleErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestApprovalRuleErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestApprovalRuleErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `CreatePullRequestApprovalRuleErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestApprovalRuleErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestApprovalRuleErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `CreatePullRequestApprovalRuleErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestApprovalRuleErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestApprovalRuleErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `CreatePullRequestApprovalRuleErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestApprovalRuleErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestApprovalRuleErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `CreatePullRequestApprovalRuleErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestApprovalRuleErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestApprovalRuleErrorKind::InvalidApprovalRuleContentException`.
+    /// Returns `true` if the error kind is `CreatePullRequestApprovalRuleErrorKind::InvalidApprovalRuleContentException`.
     pub fn is_invalid_approval_rule_content_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestApprovalRuleErrorKind::InvalidApprovalRuleContentException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestApprovalRuleErrorKind::InvalidApprovalRuleNameException`.
+    /// Returns `true` if the error kind is `CreatePullRequestApprovalRuleErrorKind::InvalidApprovalRuleNameException`.
     pub fn is_invalid_approval_rule_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestApprovalRuleErrorKind::InvalidApprovalRuleNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestApprovalRuleErrorKind::InvalidPullRequestIdException`.
+    /// Returns `true` if the error kind is `CreatePullRequestApprovalRuleErrorKind::InvalidPullRequestIdException`.
     pub fn is_invalid_pull_request_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestApprovalRuleErrorKind::InvalidPullRequestIdException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestApprovalRuleErrorKind::NumberOfRulesExceededException`.
+    /// Returns `true` if the error kind is `CreatePullRequestApprovalRuleErrorKind::NumberOfRulesExceededException`.
     pub fn is_number_of_rules_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestApprovalRuleErrorKind::NumberOfRulesExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestApprovalRuleErrorKind::PullRequestAlreadyClosedException`.
+    /// Returns `true` if the error kind is `CreatePullRequestApprovalRuleErrorKind::PullRequestAlreadyClosedException`.
     pub fn is_pull_request_already_closed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestApprovalRuleErrorKind::PullRequestAlreadyClosedException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestApprovalRuleErrorKind::PullRequestDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreatePullRequestApprovalRuleErrorKind::PullRequestDoesNotExistException`.
     pub fn is_pull_request_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePullRequestApprovalRuleErrorKind::PullRequestDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePullRequestApprovalRuleErrorKind::PullRequestIdRequiredException`.
+    /// Returns `true` if the error kind is `CreatePullRequestApprovalRuleErrorKind::PullRequestIdRequiredException`.
     pub fn is_pull_request_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3320,7 +3320,7 @@ pub enum CreateRepositoryErrorKind {
     TagPolicyException(crate::error::TagPolicyException),
     /// <p>The maximum number of tags for an AWS CodeCommit resource has been exceeded.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRepositoryError {
@@ -3400,95 +3400,95 @@ impl CreateRepositoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRepositoryErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRepositoryErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRepositoryErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRepositoryErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRepositoryErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::InvalidRepositoryDescriptionException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::InvalidRepositoryDescriptionException`.
     pub fn is_invalid_repository_description_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRepositoryErrorKind::InvalidRepositoryDescriptionException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRepositoryErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::InvalidSystemTagUsageException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::InvalidSystemTagUsageException`.
     pub fn is_invalid_system_tag_usage_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRepositoryErrorKind::InvalidSystemTagUsageException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::InvalidTagsMapException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::InvalidTagsMapException`.
     pub fn is_invalid_tags_map_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRepositoryErrorKind::InvalidTagsMapException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::RepositoryLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::RepositoryLimitExceededException`.
     pub fn is_repository_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRepositoryErrorKind::RepositoryLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::RepositoryNameExistsException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::RepositoryNameExistsException`.
     pub fn is_repository_name_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRepositoryErrorKind::RepositoryNameExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRepositoryErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::TagPolicyException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::TagPolicyException`.
     pub fn is_tag_policy_exception(&self) -> bool {
         matches!(&self.kind, CreateRepositoryErrorKind::TagPolicyException(_))
     }
-    /// Returns true if the error kind is `CreateRepositoryErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreateRepositoryErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3630,7 +3630,7 @@ pub enum CreateUnreferencedMergeCommitErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
     /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUnreferencedMergeCommitError {
@@ -3805,249 +3805,249 @@ impl CreateUnreferencedMergeCommitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::CommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::CommitDoesNotExistException`.
     pub fn is_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::CommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::CommitMessageLengthExceededException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::CommitMessageLengthExceededException`.
     pub fn is_commit_message_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::CommitMessageLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::CommitRequiredException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::CommitRequiredException`.
     pub fn is_commit_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::CommitRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::ConcurrentReferenceUpdateException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::ConcurrentReferenceUpdateException`.
     pub fn is_concurrent_reference_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::ConcurrentReferenceUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::FileContentSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::FileContentSizeLimitExceededException`.
     pub fn is_file_content_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::FileContentSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::FileModeRequiredException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::FileModeRequiredException`.
     pub fn is_file_mode_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::FileModeRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::FolderContentSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::FolderContentSizeLimitExceededException`.
     pub fn is_folder_content_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::FolderContentSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidCommitException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidCommitException`.
     pub fn is_invalid_commit_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::InvalidCommitException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidConflictDetailLevelException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidConflictDetailLevelException`.
     pub fn is_invalid_conflict_detail_level_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::InvalidConflictDetailLevelException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidConflictResolutionException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidConflictResolutionException`.
     pub fn is_invalid_conflict_resolution_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::InvalidConflictResolutionException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidConflictResolutionStrategyException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidConflictResolutionStrategyException`.
     pub fn is_invalid_conflict_resolution_strategy_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::InvalidConflictResolutionStrategyException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidEmailException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidEmailException`.
     pub fn is_invalid_email_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::InvalidEmailException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidFileModeException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidFileModeException`.
     pub fn is_invalid_file_mode_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::InvalidFileModeException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidMergeOptionException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidMergeOptionException`.
     pub fn is_invalid_merge_option_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::InvalidMergeOptionException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidPathException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidPathException`.
     pub fn is_invalid_path_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::InvalidPathException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidReplacementContentException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidReplacementContentException`.
     pub fn is_invalid_replacement_content_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::InvalidReplacementContentException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidReplacementTypeException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidReplacementTypeException`.
     pub fn is_invalid_replacement_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::InvalidReplacementTypeException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::ManualMergeRequiredException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::ManualMergeRequiredException`.
     pub fn is_manual_merge_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::ManualMergeRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::MaximumConflictResolutionEntriesExceededException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::MaximumConflictResolutionEntriesExceededException`.
     pub fn is_maximum_conflict_resolution_entries_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateUnreferencedMergeCommitErrorKind::MaximumConflictResolutionEntriesExceededException(_))
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::MaximumFileContentToLoadExceededException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::MaximumFileContentToLoadExceededException`.
     pub fn is_maximum_file_content_to_load_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::MaximumFileContentToLoadExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::MaximumItemsToCompareExceededException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::MaximumItemsToCompareExceededException`.
     pub fn is_maximum_items_to_compare_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::MaximumItemsToCompareExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::MergeOptionRequiredException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::MergeOptionRequiredException`.
     pub fn is_merge_option_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::MergeOptionRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::MultipleConflictResolutionEntriesException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::MultipleConflictResolutionEntriesException`.
     pub fn is_multiple_conflict_resolution_entries_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::MultipleConflictResolutionEntriesException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::NameLengthExceededException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::NameLengthExceededException`.
     pub fn is_name_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::NameLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::PathRequiredException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::PathRequiredException`.
     pub fn is_path_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::PathRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::ReplacementContentRequiredException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::ReplacementContentRequiredException`.
     pub fn is_replacement_content_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::ReplacementContentRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::ReplacementTypeRequiredException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::ReplacementTypeRequiredException`.
     pub fn is_replacement_type_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::ReplacementTypeRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUnreferencedMergeCommitErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUnreferencedMergeCommitErrorKind::TipsDivergenceExceededException`.
+    /// Returns `true` if the error kind is `CreateUnreferencedMergeCommitErrorKind::TipsDivergenceExceededException`.
     pub fn is_tips_divergence_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4200,7 +4200,7 @@ pub enum DeleteApprovalRuleTemplateErrorKind {
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApprovalRuleTemplateError {
@@ -4271,21 +4271,21 @@ impl DeleteApprovalRuleTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApprovalRuleTemplateErrorKind::ApprovalRuleTemplateInUseException`.
+    /// Returns `true` if the error kind is `DeleteApprovalRuleTemplateErrorKind::ApprovalRuleTemplateInUseException`.
     pub fn is_approval_rule_template_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApprovalRuleTemplateErrorKind::ApprovalRuleTemplateInUseException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameRequiredException`.
+    /// Returns `true` if the error kind is `DeleteApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameRequiredException`.
     pub fn is_approval_rule_template_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateNameException`.
+    /// Returns `true` if the error kind is `DeleteApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateNameException`.
     pub fn is_invalid_approval_rule_template_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4353,7 +4353,7 @@ pub enum DeleteBranchErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBranchError {
@@ -4428,77 +4428,77 @@ impl DeleteBranchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBranchErrorKind::BranchNameRequiredException`.
+    /// Returns `true` if the error kind is `DeleteBranchErrorKind::BranchNameRequiredException`.
     pub fn is_branch_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBranchErrorKind::BranchNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBranchErrorKind::DefaultBranchCannotBeDeletedException`.
+    /// Returns `true` if the error kind is `DeleteBranchErrorKind::DefaultBranchCannotBeDeletedException`.
     pub fn is_default_branch_cannot_be_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBranchErrorKind::DefaultBranchCannotBeDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBranchErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `DeleteBranchErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBranchErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBranchErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteBranchErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBranchErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBranchErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `DeleteBranchErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBranchErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBranchErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBranchErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBranchErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBranchErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteBranchErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBranchErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBranchErrorKind::InvalidBranchNameException`.
+    /// Returns `true` if the error kind is `DeleteBranchErrorKind::InvalidBranchNameException`.
     pub fn is_invalid_branch_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBranchErrorKind::InvalidBranchNameException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBranchErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `DeleteBranchErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBranchErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBranchErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeleteBranchErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBranchErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBranchErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `DeleteBranchErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4547,7 +4547,7 @@ pub enum DeleteCommentContentErrorKind {
     CommentIdRequiredException(crate::error::CommentIdRequiredException),
     /// <p>The comment ID is not in a valid format. Make sure that you have provided the full comment ID.</p>
     InvalidCommentIdException(crate::error::InvalidCommentIdException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCommentContentError {
@@ -4613,28 +4613,28 @@ impl DeleteCommentContentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCommentContentErrorKind::CommentDeletedException`.
+    /// Returns `true` if the error kind is `DeleteCommentContentErrorKind::CommentDeletedException`.
     pub fn is_comment_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCommentContentErrorKind::CommentDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCommentContentErrorKind::CommentDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeleteCommentContentErrorKind::CommentDoesNotExistException`.
     pub fn is_comment_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCommentContentErrorKind::CommentDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCommentContentErrorKind::CommentIdRequiredException`.
+    /// Returns `true` if the error kind is `DeleteCommentContentErrorKind::CommentIdRequiredException`.
     pub fn is_comment_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCommentContentErrorKind::CommentIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCommentContentErrorKind::InvalidCommentIdException`.
+    /// Returns `true` if the error kind is `DeleteCommentContentErrorKind::InvalidCommentIdException`.
     pub fn is_invalid_comment_id_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4725,7 +4725,7 @@ pub enum DeleteFileErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFileError {
@@ -4809,145 +4809,145 @@ impl DeleteFileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::BranchDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::BranchDoesNotExistException`.
     pub fn is_branch_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileErrorKind::BranchDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::BranchNameIsTagNameException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::BranchNameIsTagNameException`.
     pub fn is_branch_name_is_tag_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileErrorKind::BranchNameIsTagNameException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::BranchNameRequiredException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::BranchNameRequiredException`.
     pub fn is_branch_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileErrorKind::BranchNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::CommitMessageLengthExceededException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::CommitMessageLengthExceededException`.
     pub fn is_commit_message_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileErrorKind::CommitMessageLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::FileDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::FileDoesNotExistException`.
     pub fn is_file_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileErrorKind::FileDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::InvalidBranchNameException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::InvalidBranchNameException`.
     pub fn is_invalid_branch_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileErrorKind::InvalidBranchNameException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::InvalidEmailException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::InvalidEmailException`.
     pub fn is_invalid_email_exception(&self) -> bool {
         matches!(&self.kind, DeleteFileErrorKind::InvalidEmailException(_))
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::InvalidParentCommitIdException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::InvalidParentCommitIdException`.
     pub fn is_invalid_parent_commit_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileErrorKind::InvalidParentCommitIdException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::InvalidPathException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::InvalidPathException`.
     pub fn is_invalid_path_exception(&self) -> bool {
         matches!(&self.kind, DeleteFileErrorKind::InvalidPathException(_))
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::NameLengthExceededException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::NameLengthExceededException`.
     pub fn is_name_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileErrorKind::NameLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::ParentCommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::ParentCommitDoesNotExistException`.
     pub fn is_parent_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileErrorKind::ParentCommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::ParentCommitIdOutdatedException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::ParentCommitIdOutdatedException`.
     pub fn is_parent_commit_id_outdated_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileErrorKind::ParentCommitIdOutdatedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::ParentCommitIdRequiredException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::ParentCommitIdRequiredException`.
     pub fn is_parent_commit_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileErrorKind::ParentCommitIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::PathRequiredException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::PathRequiredException`.
     pub fn is_path_required_exception(&self) -> bool {
         matches!(&self.kind, DeleteFileErrorKind::PathRequiredException(_))
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `DeleteFileErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5027,7 +5027,7 @@ pub enum DeletePullRequestApprovalRuleErrorKind {
     PullRequestDoesNotExistException(crate::error::PullRequestDoesNotExistException),
     /// <p>A pull request ID is required, but none was provided.</p>
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePullRequestApprovalRuleError {
@@ -5130,14 +5130,14 @@ impl DeletePullRequestApprovalRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePullRequestApprovalRuleErrorKind::ApprovalRuleNameRequiredException`.
+    /// Returns `true` if the error kind is `DeletePullRequestApprovalRuleErrorKind::ApprovalRuleNameRequiredException`.
     pub fn is_approval_rule_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePullRequestApprovalRuleErrorKind::ApprovalRuleNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePullRequestApprovalRuleErrorKind::CannotDeleteApprovalRuleFromTemplateException`.
+    /// Returns `true` if the error kind is `DeletePullRequestApprovalRuleErrorKind::CannotDeleteApprovalRuleFromTemplateException`.
     pub fn is_cannot_delete_approval_rule_from_template_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5146,70 +5146,70 @@ impl DeletePullRequestApprovalRuleError {
             )
         )
     }
-    /// Returns true if the error kind is `DeletePullRequestApprovalRuleErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `DeletePullRequestApprovalRuleErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePullRequestApprovalRuleErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePullRequestApprovalRuleErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `DeletePullRequestApprovalRuleErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePullRequestApprovalRuleErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePullRequestApprovalRuleErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `DeletePullRequestApprovalRuleErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePullRequestApprovalRuleErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePullRequestApprovalRuleErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `DeletePullRequestApprovalRuleErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePullRequestApprovalRuleErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePullRequestApprovalRuleErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `DeletePullRequestApprovalRuleErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePullRequestApprovalRuleErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePullRequestApprovalRuleErrorKind::InvalidApprovalRuleNameException`.
+    /// Returns `true` if the error kind is `DeletePullRequestApprovalRuleErrorKind::InvalidApprovalRuleNameException`.
     pub fn is_invalid_approval_rule_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePullRequestApprovalRuleErrorKind::InvalidApprovalRuleNameException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePullRequestApprovalRuleErrorKind::InvalidPullRequestIdException`.
+    /// Returns `true` if the error kind is `DeletePullRequestApprovalRuleErrorKind::InvalidPullRequestIdException`.
     pub fn is_invalid_pull_request_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePullRequestApprovalRuleErrorKind::InvalidPullRequestIdException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePullRequestApprovalRuleErrorKind::PullRequestAlreadyClosedException`.
+    /// Returns `true` if the error kind is `DeletePullRequestApprovalRuleErrorKind::PullRequestAlreadyClosedException`.
     pub fn is_pull_request_already_closed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePullRequestApprovalRuleErrorKind::PullRequestAlreadyClosedException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePullRequestApprovalRuleErrorKind::PullRequestDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeletePullRequestApprovalRuleErrorKind::PullRequestDoesNotExistException`.
     pub fn is_pull_request_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePullRequestApprovalRuleErrorKind::PullRequestDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePullRequestApprovalRuleErrorKind::PullRequestIdRequiredException`.
+    /// Returns `true` if the error kind is `DeletePullRequestApprovalRuleErrorKind::PullRequestIdRequiredException`.
     pub fn is_pull_request_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5298,7 +5298,7 @@ pub enum DeleteRepositoryErrorKind {
     InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRepositoryError {
@@ -5369,49 +5369,49 @@ impl DeleteRepositoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRepositoryErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `DeleteRepositoryErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRepositoryErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRepositoryErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteRepositoryErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRepositoryErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRepositoryErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `DeleteRepositoryErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRepositoryErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRepositoryErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRepositoryErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRepositoryErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRepositoryErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteRepositoryErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRepositoryErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRepositoryErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `DeleteRepositoryErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRepositoryErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRepositoryErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `DeleteRepositoryErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5509,7 +5509,7 @@ pub enum DescribeMergeConflictsErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
     /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMergeConflictsError {
@@ -5622,161 +5622,161 @@ impl DescribeMergeConflictsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::CommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::CommitDoesNotExistException`.
     pub fn is_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::CommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::CommitRequiredException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::CommitRequiredException`.
     pub fn is_commit_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::CommitRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::FileDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::FileDoesNotExistException`.
     pub fn is_file_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::FileDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::InvalidCommitException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::InvalidCommitException`.
     pub fn is_invalid_commit_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::InvalidCommitException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::InvalidConflictDetailLevelException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::InvalidConflictDetailLevelException`.
     pub fn is_invalid_conflict_detail_level_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::InvalidConflictDetailLevelException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::InvalidConflictResolutionStrategyException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::InvalidConflictResolutionStrategyException`.
     pub fn is_invalid_conflict_resolution_strategy_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::InvalidConflictResolutionStrategyException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::InvalidContinuationTokenException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::InvalidContinuationTokenException`.
     pub fn is_invalid_continuation_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::InvalidContinuationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::InvalidMaxMergeHunksException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::InvalidMaxMergeHunksException`.
     pub fn is_invalid_max_merge_hunks_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::InvalidMaxMergeHunksException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::InvalidMergeOptionException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::InvalidMergeOptionException`.
     pub fn is_invalid_merge_option_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::InvalidMergeOptionException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::InvalidPathException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::InvalidPathException`.
     pub fn is_invalid_path_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::InvalidPathException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::MaximumFileContentToLoadExceededException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::MaximumFileContentToLoadExceededException`.
     pub fn is_maximum_file_content_to_load_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::MaximumFileContentToLoadExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::MaximumItemsToCompareExceededException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::MaximumItemsToCompareExceededException`.
     pub fn is_maximum_items_to_compare_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::MaximumItemsToCompareExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::MergeOptionRequiredException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::MergeOptionRequiredException`.
     pub fn is_merge_option_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::MergeOptionRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::PathRequiredException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::PathRequiredException`.
     pub fn is_path_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::PathRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMergeConflictsErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMergeConflictsErrorKind::TipsDivergenceExceededException`.
+    /// Returns `true` if the error kind is `DescribeMergeConflictsErrorKind::TipsDivergenceExceededException`.
     pub fn is_tips_divergence_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5879,7 +5879,7 @@ pub enum DescribePullRequestEventsErrorKind {
     PullRequestDoesNotExistException(crate::error::PullRequestDoesNotExistException),
     /// <p>A pull request ID is required, but none was provided.</p>
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePullRequestEventsError {
@@ -5974,91 +5974,91 @@ impl DescribePullRequestEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePullRequestEventsErrorKind::ActorDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribePullRequestEventsErrorKind::ActorDoesNotExistException`.
     pub fn is_actor_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePullRequestEventsErrorKind::ActorDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePullRequestEventsErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `DescribePullRequestEventsErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePullRequestEventsErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePullRequestEventsErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribePullRequestEventsErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePullRequestEventsErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePullRequestEventsErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `DescribePullRequestEventsErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePullRequestEventsErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePullRequestEventsErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `DescribePullRequestEventsErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePullRequestEventsErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePullRequestEventsErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `DescribePullRequestEventsErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePullRequestEventsErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePullRequestEventsErrorKind::InvalidActorArnException`.
+    /// Returns `true` if the error kind is `DescribePullRequestEventsErrorKind::InvalidActorArnException`.
     pub fn is_invalid_actor_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePullRequestEventsErrorKind::InvalidActorArnException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePullRequestEventsErrorKind::InvalidContinuationTokenException`.
+    /// Returns `true` if the error kind is `DescribePullRequestEventsErrorKind::InvalidContinuationTokenException`.
     pub fn is_invalid_continuation_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePullRequestEventsErrorKind::InvalidContinuationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePullRequestEventsErrorKind::InvalidMaxResultsException`.
+    /// Returns `true` if the error kind is `DescribePullRequestEventsErrorKind::InvalidMaxResultsException`.
     pub fn is_invalid_max_results_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePullRequestEventsErrorKind::InvalidMaxResultsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePullRequestEventsErrorKind::InvalidPullRequestEventTypeException`.
+    /// Returns `true` if the error kind is `DescribePullRequestEventsErrorKind::InvalidPullRequestEventTypeException`.
     pub fn is_invalid_pull_request_event_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePullRequestEventsErrorKind::InvalidPullRequestEventTypeException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePullRequestEventsErrorKind::InvalidPullRequestIdException`.
+    /// Returns `true` if the error kind is `DescribePullRequestEventsErrorKind::InvalidPullRequestIdException`.
     pub fn is_invalid_pull_request_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePullRequestEventsErrorKind::InvalidPullRequestIdException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePullRequestEventsErrorKind::PullRequestDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribePullRequestEventsErrorKind::PullRequestDoesNotExistException`.
     pub fn is_pull_request_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePullRequestEventsErrorKind::PullRequestDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePullRequestEventsErrorKind::PullRequestIdRequiredException`.
+    /// Returns `true` if the error kind is `DescribePullRequestEventsErrorKind::PullRequestIdRequiredException`.
     pub fn is_pull_request_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6160,7 +6160,7 @@ pub enum DisassociateApprovalRuleTemplateFromRepositoryErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateApprovalRuleTemplateFromRepositoryError {
@@ -6262,23 +6262,23 @@ impl DisassociateApprovalRuleTemplateFromRepositoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::ApprovalRuleTemplateDoesNotExistException`.
+    /// Returns `true` if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::ApprovalRuleTemplateDoesNotExistException`.
     pub fn is_approval_rule_template_does_not_exist_exception(&self) -> bool {
         matches!(&self.kind, DisassociateApprovalRuleTemplateFromRepositoryErrorKind::ApprovalRuleTemplateDoesNotExistException(_))
     }
-    /// Returns true if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::ApprovalRuleTemplateNameRequiredException`.
+    /// Returns `true` if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::ApprovalRuleTemplateNameRequiredException`.
     pub fn is_approval_rule_template_name_required_exception(&self) -> bool {
         matches!(&self.kind, DisassociateApprovalRuleTemplateFromRepositoryErrorKind::ApprovalRuleTemplateNameRequiredException(_))
     }
-    /// Returns true if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(&self.kind, DisassociateApprovalRuleTemplateFromRepositoryErrorKind::EncryptionIntegrityChecksFailedException(_))
     }
-    /// Returns true if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DisassociateApprovalRuleTemplateFromRepositoryErrorKind::EncryptionKeyAccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6287,7 +6287,7 @@ impl DisassociateApprovalRuleTemplateFromRepositoryError {
             )
         )
     }
-    /// Returns true if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6296,15 +6296,15 @@ impl DisassociateApprovalRuleTemplateFromRepositoryError {
             )
         )
     }
-    /// Returns true if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(&self.kind, DisassociateApprovalRuleTemplateFromRepositoryErrorKind::EncryptionKeyUnavailableException(_))
     }
-    /// Returns true if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::InvalidApprovalRuleTemplateNameException`.
+    /// Returns `true` if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::InvalidApprovalRuleTemplateNameException`.
     pub fn is_invalid_approval_rule_template_name_exception(&self) -> bool {
         matches!(&self.kind, DisassociateApprovalRuleTemplateFromRepositoryErrorKind::InvalidApprovalRuleTemplateNameException(_))
     }
-    /// Returns true if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6313,11 +6313,11 @@ impl DisassociateApprovalRuleTemplateFromRepositoryError {
             )
         )
     }
-    /// Returns true if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(&self.kind, DisassociateApprovalRuleTemplateFromRepositoryErrorKind::RepositoryDoesNotExistException(_))
     }
-    /// Returns true if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `DisassociateApprovalRuleTemplateFromRepositoryErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(&self.kind, DisassociateApprovalRuleTemplateFromRepositoryErrorKind::RepositoryNameRequiredException(_))
     }
@@ -6402,7 +6402,7 @@ pub enum EvaluatePullRequestApprovalRulesErrorKind {
     RevisionIdRequiredException(crate::error::RevisionIdRequiredException),
     /// <p>The revision ID provided in the request does not match the current revision ID. Use GetPullRequest to retrieve the current revision ID.</p>
     RevisionNotCurrentException(crate::error::RevisionNotCurrentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EvaluatePullRequestApprovalRulesError {
@@ -6500,77 +6500,77 @@ impl EvaluatePullRequestApprovalRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             EvaluatePullRequestApprovalRulesErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             EvaluatePullRequestApprovalRulesErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             EvaluatePullRequestApprovalRulesErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             EvaluatePullRequestApprovalRulesErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             EvaluatePullRequestApprovalRulesErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::InvalidPullRequestIdException`.
+    /// Returns `true` if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::InvalidPullRequestIdException`.
     pub fn is_invalid_pull_request_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             EvaluatePullRequestApprovalRulesErrorKind::InvalidPullRequestIdException(_)
         )
     }
-    /// Returns true if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::InvalidRevisionIdException`.
+    /// Returns `true` if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::InvalidRevisionIdException`.
     pub fn is_invalid_revision_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             EvaluatePullRequestApprovalRulesErrorKind::InvalidRevisionIdException(_)
         )
     }
-    /// Returns true if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::PullRequestDoesNotExistException`.
+    /// Returns `true` if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::PullRequestDoesNotExistException`.
     pub fn is_pull_request_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             EvaluatePullRequestApprovalRulesErrorKind::PullRequestDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::PullRequestIdRequiredException`.
+    /// Returns `true` if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::PullRequestIdRequiredException`.
     pub fn is_pull_request_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             EvaluatePullRequestApprovalRulesErrorKind::PullRequestIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::RevisionIdRequiredException`.
+    /// Returns `true` if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::RevisionIdRequiredException`.
     pub fn is_revision_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             EvaluatePullRequestApprovalRulesErrorKind::RevisionIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::RevisionNotCurrentException`.
+    /// Returns `true` if the error kind is `EvaluatePullRequestApprovalRulesErrorKind::RevisionNotCurrentException`.
     pub fn is_revision_not_current_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6648,7 +6648,7 @@ pub enum GetApprovalRuleTemplateErrorKind {
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApprovalRuleTemplateError {
@@ -6719,21 +6719,21 @@ impl GetApprovalRuleTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetApprovalRuleTemplateErrorKind::ApprovalRuleTemplateDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetApprovalRuleTemplateErrorKind::ApprovalRuleTemplateDoesNotExistException`.
     pub fn is_approval_rule_template_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApprovalRuleTemplateErrorKind::ApprovalRuleTemplateDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameRequiredException`.
+    /// Returns `true` if the error kind is `GetApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameRequiredException`.
     pub fn is_approval_rule_template_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateNameException`.
+    /// Returns `true` if the error kind is `GetApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateNameException`.
     pub fn is_invalid_approval_rule_template_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6804,7 +6804,7 @@ pub enum GetBlobErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBlobError {
@@ -6878,72 +6878,72 @@ impl GetBlobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBlobErrorKind::BlobIdDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetBlobErrorKind::BlobIdDoesNotExistException`.
     pub fn is_blob_id_does_not_exist_exception(&self) -> bool {
         matches!(&self.kind, GetBlobErrorKind::BlobIdDoesNotExistException(_))
     }
-    /// Returns true if the error kind is `GetBlobErrorKind::BlobIdRequiredException`.
+    /// Returns `true` if the error kind is `GetBlobErrorKind::BlobIdRequiredException`.
     pub fn is_blob_id_required_exception(&self) -> bool {
         matches!(&self.kind, GetBlobErrorKind::BlobIdRequiredException(_))
     }
-    /// Returns true if the error kind is `GetBlobErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `GetBlobErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlobErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlobErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetBlobErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlobErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlobErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `GetBlobErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlobErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlobErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `GetBlobErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlobErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlobErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `GetBlobErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlobErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlobErrorKind::FileTooLargeException`.
+    /// Returns `true` if the error kind is `GetBlobErrorKind::FileTooLargeException`.
     pub fn is_file_too_large_exception(&self) -> bool {
         matches!(&self.kind, GetBlobErrorKind::FileTooLargeException(_))
     }
-    /// Returns true if the error kind is `GetBlobErrorKind::InvalidBlobIdException`.
+    /// Returns `true` if the error kind is `GetBlobErrorKind::InvalidBlobIdException`.
     pub fn is_invalid_blob_id_exception(&self) -> bool {
         matches!(&self.kind, GetBlobErrorKind::InvalidBlobIdException(_))
     }
-    /// Returns true if the error kind is `GetBlobErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `GetBlobErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlobErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlobErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetBlobErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBlobErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetBlobErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `GetBlobErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7014,7 +7014,7 @@ pub enum GetBranchErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBranchError {
@@ -7087,77 +7087,77 @@ impl GetBranchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBranchErrorKind::BranchDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetBranchErrorKind::BranchDoesNotExistException`.
     pub fn is_branch_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBranchErrorKind::BranchDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetBranchErrorKind::BranchNameRequiredException`.
+    /// Returns `true` if the error kind is `GetBranchErrorKind::BranchNameRequiredException`.
     pub fn is_branch_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBranchErrorKind::BranchNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetBranchErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `GetBranchErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBranchErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetBranchErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetBranchErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBranchErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetBranchErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `GetBranchErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBranchErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetBranchErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `GetBranchErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBranchErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetBranchErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `GetBranchErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBranchErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetBranchErrorKind::InvalidBranchNameException`.
+    /// Returns `true` if the error kind is `GetBranchErrorKind::InvalidBranchNameException`.
     pub fn is_invalid_branch_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBranchErrorKind::InvalidBranchNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetBranchErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `GetBranchErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBranchErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetBranchErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetBranchErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBranchErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetBranchErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `GetBranchErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7218,7 +7218,7 @@ pub enum GetCommentErrorKind {
     EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
     /// <p>The comment ID is not in a valid format. Make sure that you have provided the full comment ID.</p>
     InvalidCommentIdException(crate::error::InvalidCommentIdException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCommentError {
@@ -7289,60 +7289,60 @@ impl GetCommentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCommentErrorKind::CommentDeletedException`.
+    /// Returns `true` if the error kind is `GetCommentErrorKind::CommentDeletedException`.
     pub fn is_comment_deleted_exception(&self) -> bool {
         matches!(&self.kind, GetCommentErrorKind::CommentDeletedException(_))
     }
-    /// Returns true if the error kind is `GetCommentErrorKind::CommentDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetCommentErrorKind::CommentDoesNotExistException`.
     pub fn is_comment_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentErrorKind::CommentDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentErrorKind::CommentIdRequiredException`.
+    /// Returns `true` if the error kind is `GetCommentErrorKind::CommentIdRequiredException`.
     pub fn is_comment_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentErrorKind::CommentIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `GetCommentErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetCommentErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `GetCommentErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `GetCommentErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `GetCommentErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentErrorKind::InvalidCommentIdException`.
+    /// Returns `true` if the error kind is `GetCommentErrorKind::InvalidCommentIdException`.
     pub fn is_invalid_comment_id_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7395,7 +7395,7 @@ pub enum GetCommentReactionsErrorKind {
     InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
     /// <p>The Amazon Resource Name (ARN) of the user or identity is not valid.</p>
     InvalidReactionUserArnException(crate::error::InvalidReactionUserArnException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCommentReactionsError {
@@ -7466,49 +7466,49 @@ impl GetCommentReactionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCommentReactionsErrorKind::CommentDeletedException`.
+    /// Returns `true` if the error kind is `GetCommentReactionsErrorKind::CommentDeletedException`.
     pub fn is_comment_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentReactionsErrorKind::CommentDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentReactionsErrorKind::CommentDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetCommentReactionsErrorKind::CommentDoesNotExistException`.
     pub fn is_comment_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentReactionsErrorKind::CommentDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentReactionsErrorKind::CommentIdRequiredException`.
+    /// Returns `true` if the error kind is `GetCommentReactionsErrorKind::CommentIdRequiredException`.
     pub fn is_comment_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentReactionsErrorKind::CommentIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentReactionsErrorKind::InvalidCommentIdException`.
+    /// Returns `true` if the error kind is `GetCommentReactionsErrorKind::InvalidCommentIdException`.
     pub fn is_invalid_comment_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentReactionsErrorKind::InvalidCommentIdException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentReactionsErrorKind::InvalidContinuationTokenException`.
+    /// Returns `true` if the error kind is `GetCommentReactionsErrorKind::InvalidContinuationTokenException`.
     pub fn is_invalid_continuation_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentReactionsErrorKind::InvalidContinuationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentReactionsErrorKind::InvalidMaxResultsException`.
+    /// Returns `true` if the error kind is `GetCommentReactionsErrorKind::InvalidMaxResultsException`.
     pub fn is_invalid_max_results_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentReactionsErrorKind::InvalidMaxResultsException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentReactionsErrorKind::InvalidReactionUserArnException`.
+    /// Returns `true` if the error kind is `GetCommentReactionsErrorKind::InvalidReactionUserArnException`.
     pub fn is_invalid_reaction_user_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7578,7 +7578,7 @@ pub enum GetCommentsForComparedCommitErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCommentsForComparedCommitError {
@@ -7679,91 +7679,91 @@ impl GetCommentsForComparedCommitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCommentsForComparedCommitErrorKind::CommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetCommentsForComparedCommitErrorKind::CommitDoesNotExistException`.
     pub fn is_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForComparedCommitErrorKind::CommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForComparedCommitErrorKind::CommitIdRequiredException`.
+    /// Returns `true` if the error kind is `GetCommentsForComparedCommitErrorKind::CommitIdRequiredException`.
     pub fn is_commit_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForComparedCommitErrorKind::CommitIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForComparedCommitErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `GetCommentsForComparedCommitErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForComparedCommitErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForComparedCommitErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetCommentsForComparedCommitErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForComparedCommitErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForComparedCommitErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `GetCommentsForComparedCommitErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForComparedCommitErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForComparedCommitErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `GetCommentsForComparedCommitErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForComparedCommitErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForComparedCommitErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `GetCommentsForComparedCommitErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForComparedCommitErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForComparedCommitErrorKind::InvalidCommitIdException`.
+    /// Returns `true` if the error kind is `GetCommentsForComparedCommitErrorKind::InvalidCommitIdException`.
     pub fn is_invalid_commit_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForComparedCommitErrorKind::InvalidCommitIdException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForComparedCommitErrorKind::InvalidContinuationTokenException`.
+    /// Returns `true` if the error kind is `GetCommentsForComparedCommitErrorKind::InvalidContinuationTokenException`.
     pub fn is_invalid_continuation_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForComparedCommitErrorKind::InvalidContinuationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForComparedCommitErrorKind::InvalidMaxResultsException`.
+    /// Returns `true` if the error kind is `GetCommentsForComparedCommitErrorKind::InvalidMaxResultsException`.
     pub fn is_invalid_max_results_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForComparedCommitErrorKind::InvalidMaxResultsException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForComparedCommitErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `GetCommentsForComparedCommitErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForComparedCommitErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForComparedCommitErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetCommentsForComparedCommitErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForComparedCommitErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForComparedCommitErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `GetCommentsForComparedCommitErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7873,7 +7873,7 @@ pub enum GetCommentsForPullRequestErrorKind {
     RepositoryNotAssociatedWithPullRequestException(
         crate::error::RepositoryNotAssociatedWithPullRequestException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCommentsForPullRequestError {
@@ -7980,119 +7980,119 @@ impl GetCommentsForPullRequestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCommentsForPullRequestErrorKind::CommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetCommentsForPullRequestErrorKind::CommitDoesNotExistException`.
     pub fn is_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForPullRequestErrorKind::CommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForPullRequestErrorKind::CommitIdRequiredException`.
+    /// Returns `true` if the error kind is `GetCommentsForPullRequestErrorKind::CommitIdRequiredException`.
     pub fn is_commit_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForPullRequestErrorKind::CommitIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForPullRequestErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `GetCommentsForPullRequestErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForPullRequestErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForPullRequestErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetCommentsForPullRequestErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForPullRequestErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForPullRequestErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `GetCommentsForPullRequestErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForPullRequestErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForPullRequestErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `GetCommentsForPullRequestErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForPullRequestErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForPullRequestErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `GetCommentsForPullRequestErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForPullRequestErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForPullRequestErrorKind::InvalidCommitIdException`.
+    /// Returns `true` if the error kind is `GetCommentsForPullRequestErrorKind::InvalidCommitIdException`.
     pub fn is_invalid_commit_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForPullRequestErrorKind::InvalidCommitIdException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForPullRequestErrorKind::InvalidContinuationTokenException`.
+    /// Returns `true` if the error kind is `GetCommentsForPullRequestErrorKind::InvalidContinuationTokenException`.
     pub fn is_invalid_continuation_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForPullRequestErrorKind::InvalidContinuationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForPullRequestErrorKind::InvalidMaxResultsException`.
+    /// Returns `true` if the error kind is `GetCommentsForPullRequestErrorKind::InvalidMaxResultsException`.
     pub fn is_invalid_max_results_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForPullRequestErrorKind::InvalidMaxResultsException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForPullRequestErrorKind::InvalidPullRequestIdException`.
+    /// Returns `true` if the error kind is `GetCommentsForPullRequestErrorKind::InvalidPullRequestIdException`.
     pub fn is_invalid_pull_request_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForPullRequestErrorKind::InvalidPullRequestIdException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForPullRequestErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `GetCommentsForPullRequestErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForPullRequestErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForPullRequestErrorKind::PullRequestDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetCommentsForPullRequestErrorKind::PullRequestDoesNotExistException`.
     pub fn is_pull_request_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForPullRequestErrorKind::PullRequestDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForPullRequestErrorKind::PullRequestIdRequiredException`.
+    /// Returns `true` if the error kind is `GetCommentsForPullRequestErrorKind::PullRequestIdRequiredException`.
     pub fn is_pull_request_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForPullRequestErrorKind::PullRequestIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForPullRequestErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetCommentsForPullRequestErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForPullRequestErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForPullRequestErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `GetCommentsForPullRequestErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommentsForPullRequestErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommentsForPullRequestErrorKind::RepositoryNotAssociatedWithPullRequestException`.
+    /// Returns `true` if the error kind is `GetCommentsForPullRequestErrorKind::RepositoryNotAssociatedWithPullRequestException`.
     pub fn is_repository_not_associated_with_pull_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8194,7 +8194,7 @@ pub enum GetCommitErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCommitError {
@@ -8267,71 +8267,71 @@ impl GetCommitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCommitErrorKind::CommitIdDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetCommitErrorKind::CommitIdDoesNotExistException`.
     pub fn is_commit_id_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommitErrorKind::CommitIdDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommitErrorKind::CommitIdRequiredException`.
+    /// Returns `true` if the error kind is `GetCommitErrorKind::CommitIdRequiredException`.
     pub fn is_commit_id_required_exception(&self) -> bool {
         matches!(&self.kind, GetCommitErrorKind::CommitIdRequiredException(_))
     }
-    /// Returns true if the error kind is `GetCommitErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `GetCommitErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommitErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommitErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetCommitErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommitErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommitErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `GetCommitErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommitErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommitErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `GetCommitErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommitErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommitErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `GetCommitErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommitErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommitErrorKind::InvalidCommitIdException`.
+    /// Returns `true` if the error kind is `GetCommitErrorKind::InvalidCommitIdException`.
     pub fn is_invalid_commit_id_exception(&self) -> bool {
         matches!(&self.kind, GetCommitErrorKind::InvalidCommitIdException(_))
     }
-    /// Returns true if the error kind is `GetCommitErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `GetCommitErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommitErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommitErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetCommitErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCommitErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetCommitErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `GetCommitErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8411,7 +8411,7 @@ pub enum GetDifferencesErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDifferencesError {
@@ -8491,109 +8491,109 @@ impl GetDifferencesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDifferencesErrorKind::CommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetDifferencesErrorKind::CommitDoesNotExistException`.
     pub fn is_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDifferencesErrorKind::CommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetDifferencesErrorKind::CommitRequiredException`.
+    /// Returns `true` if the error kind is `GetDifferencesErrorKind::CommitRequiredException`.
     pub fn is_commit_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDifferencesErrorKind::CommitRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetDifferencesErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `GetDifferencesErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDifferencesErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDifferencesErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDifferencesErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDifferencesErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDifferencesErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `GetDifferencesErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDifferencesErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetDifferencesErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `GetDifferencesErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDifferencesErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDifferencesErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `GetDifferencesErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDifferencesErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetDifferencesErrorKind::InvalidCommitException`.
+    /// Returns `true` if the error kind is `GetDifferencesErrorKind::InvalidCommitException`.
     pub fn is_invalid_commit_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDifferencesErrorKind::InvalidCommitException(_)
         )
     }
-    /// Returns true if the error kind is `GetDifferencesErrorKind::InvalidCommitIdException`.
+    /// Returns `true` if the error kind is `GetDifferencesErrorKind::InvalidCommitIdException`.
     pub fn is_invalid_commit_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDifferencesErrorKind::InvalidCommitIdException(_)
         )
     }
-    /// Returns true if the error kind is `GetDifferencesErrorKind::InvalidContinuationTokenException`.
+    /// Returns `true` if the error kind is `GetDifferencesErrorKind::InvalidContinuationTokenException`.
     pub fn is_invalid_continuation_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDifferencesErrorKind::InvalidContinuationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetDifferencesErrorKind::InvalidMaxResultsException`.
+    /// Returns `true` if the error kind is `GetDifferencesErrorKind::InvalidMaxResultsException`.
     pub fn is_invalid_max_results_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDifferencesErrorKind::InvalidMaxResultsException(_)
         )
     }
-    /// Returns true if the error kind is `GetDifferencesErrorKind::InvalidPathException`.
+    /// Returns `true` if the error kind is `GetDifferencesErrorKind::InvalidPathException`.
     pub fn is_invalid_path_exception(&self) -> bool {
         matches!(&self.kind, GetDifferencesErrorKind::InvalidPathException(_))
     }
-    /// Returns true if the error kind is `GetDifferencesErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `GetDifferencesErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDifferencesErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetDifferencesErrorKind::PathDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetDifferencesErrorKind::PathDoesNotExistException`.
     pub fn is_path_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDifferencesErrorKind::PathDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetDifferencesErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetDifferencesErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDifferencesErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetDifferencesErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `GetDifferencesErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8678,7 +8678,7 @@ pub enum GetFileErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFileError {
@@ -8754,80 +8754,80 @@ impl GetFileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFileErrorKind::CommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetFileErrorKind::CommitDoesNotExistException`.
     pub fn is_commit_does_not_exist_exception(&self) -> bool {
         matches!(&self.kind, GetFileErrorKind::CommitDoesNotExistException(_))
     }
-    /// Returns true if the error kind is `GetFileErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `GetFileErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFileErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetFileErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetFileErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFileErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetFileErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `GetFileErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFileErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetFileErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `GetFileErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFileErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetFileErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `GetFileErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFileErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetFileErrorKind::FileDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetFileErrorKind::FileDoesNotExistException`.
     pub fn is_file_does_not_exist_exception(&self) -> bool {
         matches!(&self.kind, GetFileErrorKind::FileDoesNotExistException(_))
     }
-    /// Returns true if the error kind is `GetFileErrorKind::FileTooLargeException`.
+    /// Returns `true` if the error kind is `GetFileErrorKind::FileTooLargeException`.
     pub fn is_file_too_large_exception(&self) -> bool {
         matches!(&self.kind, GetFileErrorKind::FileTooLargeException(_))
     }
-    /// Returns true if the error kind is `GetFileErrorKind::InvalidCommitException`.
+    /// Returns `true` if the error kind is `GetFileErrorKind::InvalidCommitException`.
     pub fn is_invalid_commit_exception(&self) -> bool {
         matches!(&self.kind, GetFileErrorKind::InvalidCommitException(_))
     }
-    /// Returns true if the error kind is `GetFileErrorKind::InvalidPathException`.
+    /// Returns `true` if the error kind is `GetFileErrorKind::InvalidPathException`.
     pub fn is_invalid_path_exception(&self) -> bool {
         matches!(&self.kind, GetFileErrorKind::InvalidPathException(_))
     }
-    /// Returns true if the error kind is `GetFileErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `GetFileErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFileErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetFileErrorKind::PathRequiredException`.
+    /// Returns `true` if the error kind is `GetFileErrorKind::PathRequiredException`.
     pub fn is_path_required_exception(&self) -> bool {
         matches!(&self.kind, GetFileErrorKind::PathRequiredException(_))
     }
-    /// Returns true if the error kind is `GetFileErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetFileErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFileErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetFileErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `GetFileErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8905,7 +8905,7 @@ pub enum GetFolderErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFolderError {
@@ -8980,82 +8980,82 @@ impl GetFolderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::CommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::CommitDoesNotExistException`.
     pub fn is_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFolderErrorKind::CommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFolderErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFolderErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFolderErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFolderErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFolderErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::FolderDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::FolderDoesNotExistException`.
     pub fn is_folder_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFolderErrorKind::FolderDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::InvalidCommitException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::InvalidCommitException`.
     pub fn is_invalid_commit_exception(&self) -> bool {
         matches!(&self.kind, GetFolderErrorKind::InvalidCommitException(_))
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::InvalidPathException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::InvalidPathException`.
     pub fn is_invalid_path_exception(&self) -> bool {
         matches!(&self.kind, GetFolderErrorKind::InvalidPathException(_))
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFolderErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::PathRequiredException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::PathRequiredException`.
     pub fn is_path_required_exception(&self) -> bool {
         matches!(&self.kind, GetFolderErrorKind::PathRequiredException(_))
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFolderErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9133,7 +9133,7 @@ pub enum GetMergeCommitErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMergeCommitError {
@@ -9212,91 +9212,91 @@ impl GetMergeCommitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMergeCommitErrorKind::CommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetMergeCommitErrorKind::CommitDoesNotExistException`.
     pub fn is_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeCommitErrorKind::CommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeCommitErrorKind::CommitRequiredException`.
+    /// Returns `true` if the error kind is `GetMergeCommitErrorKind::CommitRequiredException`.
     pub fn is_commit_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeCommitErrorKind::CommitRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeCommitErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `GetMergeCommitErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeCommitErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeCommitErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetMergeCommitErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeCommitErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeCommitErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `GetMergeCommitErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeCommitErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeCommitErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `GetMergeCommitErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeCommitErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeCommitErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `GetMergeCommitErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeCommitErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeCommitErrorKind::InvalidCommitException`.
+    /// Returns `true` if the error kind is `GetMergeCommitErrorKind::InvalidCommitException`.
     pub fn is_invalid_commit_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeCommitErrorKind::InvalidCommitException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeCommitErrorKind::InvalidConflictDetailLevelException`.
+    /// Returns `true` if the error kind is `GetMergeCommitErrorKind::InvalidConflictDetailLevelException`.
     pub fn is_invalid_conflict_detail_level_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeCommitErrorKind::InvalidConflictDetailLevelException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeCommitErrorKind::InvalidConflictResolutionStrategyException`.
+    /// Returns `true` if the error kind is `GetMergeCommitErrorKind::InvalidConflictResolutionStrategyException`.
     pub fn is_invalid_conflict_resolution_strategy_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeCommitErrorKind::InvalidConflictResolutionStrategyException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeCommitErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `GetMergeCommitErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeCommitErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeCommitErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetMergeCommitErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeCommitErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeCommitErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `GetMergeCommitErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9401,7 +9401,7 @@ pub enum GetMergeConflictsErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
     /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMergeConflictsError {
@@ -9499,154 +9499,154 @@ impl GetMergeConflictsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::CommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::CommitDoesNotExistException`.
     pub fn is_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::CommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::CommitRequiredException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::CommitRequiredException`.
     pub fn is_commit_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::CommitRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::InvalidCommitException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::InvalidCommitException`.
     pub fn is_invalid_commit_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::InvalidCommitException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::InvalidConflictDetailLevelException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::InvalidConflictDetailLevelException`.
     pub fn is_invalid_conflict_detail_level_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::InvalidConflictDetailLevelException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::InvalidConflictResolutionStrategyException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::InvalidConflictResolutionStrategyException`.
     pub fn is_invalid_conflict_resolution_strategy_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::InvalidConflictResolutionStrategyException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::InvalidContinuationTokenException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::InvalidContinuationTokenException`.
     pub fn is_invalid_continuation_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::InvalidContinuationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::InvalidDestinationCommitSpecifierException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::InvalidDestinationCommitSpecifierException`.
     pub fn is_invalid_destination_commit_specifier_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::InvalidDestinationCommitSpecifierException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::InvalidMaxConflictFilesException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::InvalidMaxConflictFilesException`.
     pub fn is_invalid_max_conflict_files_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::InvalidMaxConflictFilesException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::InvalidMergeOptionException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::InvalidMergeOptionException`.
     pub fn is_invalid_merge_option_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::InvalidMergeOptionException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::InvalidSourceCommitSpecifierException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::InvalidSourceCommitSpecifierException`.
     pub fn is_invalid_source_commit_specifier_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::InvalidSourceCommitSpecifierException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::MaximumFileContentToLoadExceededException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::MaximumFileContentToLoadExceededException`.
     pub fn is_maximum_file_content_to_load_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::MaximumFileContentToLoadExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::MaximumItemsToCompareExceededException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::MaximumItemsToCompareExceededException`.
     pub fn is_maximum_items_to_compare_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::MaximumItemsToCompareExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::MergeOptionRequiredException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::MergeOptionRequiredException`.
     pub fn is_merge_option_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::MergeOptionRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeConflictsErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeConflictsErrorKind::TipsDivergenceExceededException`.
+    /// Returns `true` if the error kind is `GetMergeConflictsErrorKind::TipsDivergenceExceededException`.
     pub fn is_tips_divergence_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9754,7 +9754,7 @@ pub enum GetMergeOptionsErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
     /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMergeOptionsError {
@@ -9840,112 +9840,112 @@ impl GetMergeOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetMergeOptionsErrorKind::CommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetMergeOptionsErrorKind::CommitDoesNotExistException`.
     pub fn is_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeOptionsErrorKind::CommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeOptionsErrorKind::CommitRequiredException`.
+    /// Returns `true` if the error kind is `GetMergeOptionsErrorKind::CommitRequiredException`.
     pub fn is_commit_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeOptionsErrorKind::CommitRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeOptionsErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `GetMergeOptionsErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeOptionsErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeOptionsErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetMergeOptionsErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeOptionsErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeOptionsErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `GetMergeOptionsErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeOptionsErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeOptionsErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `GetMergeOptionsErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeOptionsErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeOptionsErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `GetMergeOptionsErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeOptionsErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeOptionsErrorKind::InvalidCommitException`.
+    /// Returns `true` if the error kind is `GetMergeOptionsErrorKind::InvalidCommitException`.
     pub fn is_invalid_commit_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeOptionsErrorKind::InvalidCommitException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeOptionsErrorKind::InvalidConflictDetailLevelException`.
+    /// Returns `true` if the error kind is `GetMergeOptionsErrorKind::InvalidConflictDetailLevelException`.
     pub fn is_invalid_conflict_detail_level_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeOptionsErrorKind::InvalidConflictDetailLevelException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeOptionsErrorKind::InvalidConflictResolutionStrategyException`.
+    /// Returns `true` if the error kind is `GetMergeOptionsErrorKind::InvalidConflictResolutionStrategyException`.
     pub fn is_invalid_conflict_resolution_strategy_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeOptionsErrorKind::InvalidConflictResolutionStrategyException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeOptionsErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `GetMergeOptionsErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeOptionsErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeOptionsErrorKind::MaximumFileContentToLoadExceededException`.
+    /// Returns `true` if the error kind is `GetMergeOptionsErrorKind::MaximumFileContentToLoadExceededException`.
     pub fn is_maximum_file_content_to_load_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeOptionsErrorKind::MaximumFileContentToLoadExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeOptionsErrorKind::MaximumItemsToCompareExceededException`.
+    /// Returns `true` if the error kind is `GetMergeOptionsErrorKind::MaximumItemsToCompareExceededException`.
     pub fn is_maximum_items_to_compare_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeOptionsErrorKind::MaximumItemsToCompareExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeOptionsErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetMergeOptionsErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeOptionsErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeOptionsErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `GetMergeOptionsErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetMergeOptionsErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetMergeOptionsErrorKind::TipsDivergenceExceededException`.
+    /// Returns `true` if the error kind is `GetMergeOptionsErrorKind::TipsDivergenceExceededException`.
     pub fn is_tips_divergence_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10016,7 +10016,7 @@ pub enum GetPullRequestErrorKind {
     PullRequestDoesNotExistException(crate::error::PullRequestDoesNotExistException),
     /// <p>A pull request ID is required, but none was provided.</p>
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPullRequestError {
@@ -10088,56 +10088,56 @@ impl GetPullRequestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPullRequestErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `GetPullRequestErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetPullRequestErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `GetPullRequestErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `GetPullRequestErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `GetPullRequestErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestErrorKind::InvalidPullRequestIdException`.
+    /// Returns `true` if the error kind is `GetPullRequestErrorKind::InvalidPullRequestIdException`.
     pub fn is_invalid_pull_request_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestErrorKind::InvalidPullRequestIdException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestErrorKind::PullRequestDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetPullRequestErrorKind::PullRequestDoesNotExistException`.
     pub fn is_pull_request_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestErrorKind::PullRequestDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestErrorKind::PullRequestIdRequiredException`.
+    /// Returns `true` if the error kind is `GetPullRequestErrorKind::PullRequestIdRequiredException`.
     pub fn is_pull_request_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10198,7 +10198,7 @@ pub enum GetPullRequestApprovalStatesErrorKind {
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
     /// <p>A revision ID is required, but was not provided.</p>
     RevisionIdRequiredException(crate::error::RevisionIdRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPullRequestApprovalStatesError {
@@ -10290,70 +10290,70 @@ impl GetPullRequestApprovalStatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPullRequestApprovalStatesErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `GetPullRequestApprovalStatesErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestApprovalStatesErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestApprovalStatesErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetPullRequestApprovalStatesErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestApprovalStatesErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestApprovalStatesErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `GetPullRequestApprovalStatesErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestApprovalStatesErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestApprovalStatesErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `GetPullRequestApprovalStatesErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestApprovalStatesErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestApprovalStatesErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `GetPullRequestApprovalStatesErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestApprovalStatesErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestApprovalStatesErrorKind::InvalidPullRequestIdException`.
+    /// Returns `true` if the error kind is `GetPullRequestApprovalStatesErrorKind::InvalidPullRequestIdException`.
     pub fn is_invalid_pull_request_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestApprovalStatesErrorKind::InvalidPullRequestIdException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestApprovalStatesErrorKind::InvalidRevisionIdException`.
+    /// Returns `true` if the error kind is `GetPullRequestApprovalStatesErrorKind::InvalidRevisionIdException`.
     pub fn is_invalid_revision_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestApprovalStatesErrorKind::InvalidRevisionIdException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestApprovalStatesErrorKind::PullRequestDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetPullRequestApprovalStatesErrorKind::PullRequestDoesNotExistException`.
     pub fn is_pull_request_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestApprovalStatesErrorKind::PullRequestDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestApprovalStatesErrorKind::PullRequestIdRequiredException`.
+    /// Returns `true` if the error kind is `GetPullRequestApprovalStatesErrorKind::PullRequestIdRequiredException`.
     pub fn is_pull_request_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestApprovalStatesErrorKind::PullRequestIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestApprovalStatesErrorKind::RevisionIdRequiredException`.
+    /// Returns `true` if the error kind is `GetPullRequestApprovalStatesErrorKind::RevisionIdRequiredException`.
     pub fn is_revision_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10434,7 +10434,7 @@ pub enum GetPullRequestOverrideStateErrorKind {
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
     /// <p>A revision ID is required, but was not provided.</p>
     RevisionIdRequiredException(crate::error::RevisionIdRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPullRequestOverrideStateError {
@@ -10526,70 +10526,70 @@ impl GetPullRequestOverrideStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPullRequestOverrideStateErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `GetPullRequestOverrideStateErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestOverrideStateErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestOverrideStateErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetPullRequestOverrideStateErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestOverrideStateErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestOverrideStateErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `GetPullRequestOverrideStateErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestOverrideStateErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestOverrideStateErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `GetPullRequestOverrideStateErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestOverrideStateErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestOverrideStateErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `GetPullRequestOverrideStateErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestOverrideStateErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestOverrideStateErrorKind::InvalidPullRequestIdException`.
+    /// Returns `true` if the error kind is `GetPullRequestOverrideStateErrorKind::InvalidPullRequestIdException`.
     pub fn is_invalid_pull_request_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestOverrideStateErrorKind::InvalidPullRequestIdException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestOverrideStateErrorKind::InvalidRevisionIdException`.
+    /// Returns `true` if the error kind is `GetPullRequestOverrideStateErrorKind::InvalidRevisionIdException`.
     pub fn is_invalid_revision_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestOverrideStateErrorKind::InvalidRevisionIdException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestOverrideStateErrorKind::PullRequestDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetPullRequestOverrideStateErrorKind::PullRequestDoesNotExistException`.
     pub fn is_pull_request_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestOverrideStateErrorKind::PullRequestDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestOverrideStateErrorKind::PullRequestIdRequiredException`.
+    /// Returns `true` if the error kind is `GetPullRequestOverrideStateErrorKind::PullRequestIdRequiredException`.
     pub fn is_pull_request_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPullRequestOverrideStateErrorKind::PullRequestIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `GetPullRequestOverrideStateErrorKind::RevisionIdRequiredException`.
+    /// Returns `true` if the error kind is `GetPullRequestOverrideStateErrorKind::RevisionIdRequiredException`.
     pub fn is_revision_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10672,7 +10672,7 @@ pub enum GetRepositoryErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRepositoryError {
@@ -10744,56 +10744,56 @@ impl GetRepositoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRepositoryErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `GetRepositoryErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRepositoryErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRepositoryErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRepositoryErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRepositoryErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRepositoryErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `GetRepositoryErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRepositoryErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetRepositoryErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `GetRepositoryErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRepositoryErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRepositoryErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `GetRepositoryErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRepositoryErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetRepositoryErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `GetRepositoryErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRepositoryErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetRepositoryErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetRepositoryErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRepositoryErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetRepositoryErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `GetRepositoryErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10856,7 +10856,7 @@ pub enum GetRepositoryTriggersErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRepositoryTriggersError {
@@ -10936,56 +10936,56 @@ impl GetRepositoryTriggersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRepositoryTriggersErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `GetRepositoryTriggersErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRepositoryTriggersErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRepositoryTriggersErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `GetRepositoryTriggersErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRepositoryTriggersErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRepositoryTriggersErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `GetRepositoryTriggersErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRepositoryTriggersErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetRepositoryTriggersErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `GetRepositoryTriggersErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRepositoryTriggersErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRepositoryTriggersErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `GetRepositoryTriggersErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRepositoryTriggersErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetRepositoryTriggersErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `GetRepositoryTriggersErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRepositoryTriggersErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `GetRepositoryTriggersErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetRepositoryTriggersErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRepositoryTriggersErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `GetRepositoryTriggersErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `GetRepositoryTriggersErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11032,7 +11032,7 @@ pub enum ListApprovalRuleTemplatesErrorKind {
     InvalidContinuationTokenException(crate::error::InvalidContinuationTokenException),
     /// <p>The specified number of maximum results is not valid.</p>
     InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListApprovalRuleTemplatesError {
@@ -11098,14 +11098,14 @@ impl ListApprovalRuleTemplatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListApprovalRuleTemplatesErrorKind::InvalidContinuationTokenException`.
+    /// Returns `true` if the error kind is `ListApprovalRuleTemplatesErrorKind::InvalidContinuationTokenException`.
     pub fn is_invalid_continuation_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListApprovalRuleTemplatesErrorKind::InvalidContinuationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListApprovalRuleTemplatesErrorKind::InvalidMaxResultsException`.
+    /// Returns `true` if the error kind is `ListApprovalRuleTemplatesErrorKind::InvalidMaxResultsException`.
     pub fn is_invalid_max_results_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11166,7 +11166,7 @@ pub enum ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssociatedApprovalRuleTemplatesForRepositoryError {
@@ -11265,31 +11265,31 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(&self.kind, ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionIntegrityChecksFailedException(_))
     }
-    /// Returns true if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionKeyAccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(&self.kind, ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionKeyDisabledException(_))
     }
-    /// Returns true if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionKeyNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(&self.kind, ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::EncryptionKeyUnavailableException(_))
     }
-    /// Returns true if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::InvalidContinuationTokenException`.
+    /// Returns `true` if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::InvalidContinuationTokenException`.
     pub fn is_invalid_continuation_token_exception(&self) -> bool {
         matches!(&self.kind, ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::InvalidContinuationTokenException(_))
     }
-    /// Returns true if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::InvalidMaxResultsException`.
+    /// Returns `true` if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::InvalidMaxResultsException`.
     pub fn is_invalid_max_results_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11298,15 +11298,15 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryError {
             )
         )
     }
-    /// Returns true if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(&self.kind, ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::InvalidRepositoryNameException(_))
     }
-    /// Returns true if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(&self.kind, ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::RepositoryDoesNotExistException(_))
     }
-    /// Returns true if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(&self.kind, ListAssociatedApprovalRuleTemplatesForRepositoryErrorKind::RepositoryNameRequiredException(_))
     }
@@ -11390,7 +11390,7 @@ pub enum ListBranchesErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBranchesError {
@@ -11463,63 +11463,63 @@ impl ListBranchesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBranchesErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `ListBranchesErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBranchesErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `ListBranchesErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `ListBranchesErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBranchesErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListBranchesErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `ListBranchesErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBranchesErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `ListBranchesErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `ListBranchesErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBranchesErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListBranchesErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `ListBranchesErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBranchesErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListBranchesErrorKind::InvalidContinuationTokenException`.
+    /// Returns `true` if the error kind is `ListBranchesErrorKind::InvalidContinuationTokenException`.
     pub fn is_invalid_continuation_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBranchesErrorKind::InvalidContinuationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListBranchesErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `ListBranchesErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBranchesErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `ListBranchesErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `ListBranchesErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBranchesErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ListBranchesErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `ListBranchesErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11591,7 +11591,7 @@ pub enum ListPullRequestsErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPullRequestsError {
@@ -11668,91 +11668,91 @@ impl ListPullRequestsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPullRequestsErrorKind::AuthorDoesNotExistException`.
+    /// Returns `true` if the error kind is `ListPullRequestsErrorKind::AuthorDoesNotExistException`.
     pub fn is_author_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPullRequestsErrorKind::AuthorDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ListPullRequestsErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `ListPullRequestsErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPullRequestsErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `ListPullRequestsErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `ListPullRequestsErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPullRequestsErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListPullRequestsErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `ListPullRequestsErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPullRequestsErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `ListPullRequestsErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `ListPullRequestsErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPullRequestsErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListPullRequestsErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `ListPullRequestsErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPullRequestsErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListPullRequestsErrorKind::InvalidAuthorArnException`.
+    /// Returns `true` if the error kind is `ListPullRequestsErrorKind::InvalidAuthorArnException`.
     pub fn is_invalid_author_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPullRequestsErrorKind::InvalidAuthorArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListPullRequestsErrorKind::InvalidContinuationTokenException`.
+    /// Returns `true` if the error kind is `ListPullRequestsErrorKind::InvalidContinuationTokenException`.
     pub fn is_invalid_continuation_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPullRequestsErrorKind::InvalidContinuationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListPullRequestsErrorKind::InvalidMaxResultsException`.
+    /// Returns `true` if the error kind is `ListPullRequestsErrorKind::InvalidMaxResultsException`.
     pub fn is_invalid_max_results_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPullRequestsErrorKind::InvalidMaxResultsException(_)
         )
     }
-    /// Returns true if the error kind is `ListPullRequestsErrorKind::InvalidPullRequestStatusException`.
+    /// Returns `true` if the error kind is `ListPullRequestsErrorKind::InvalidPullRequestStatusException`.
     pub fn is_invalid_pull_request_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPullRequestsErrorKind::InvalidPullRequestStatusException(_)
         )
     }
-    /// Returns true if the error kind is `ListPullRequestsErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `ListPullRequestsErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPullRequestsErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `ListPullRequestsErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `ListPullRequestsErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPullRequestsErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ListPullRequestsErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `ListPullRequestsErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11802,7 +11802,7 @@ pub enum ListRepositoriesErrorKind {
     InvalidOrderException(crate::error::InvalidOrderException),
     /// <p>The specified sort by value is not valid.</p>
     InvalidSortByException(crate::error::InvalidSortByException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRepositoriesError {
@@ -11867,21 +11867,21 @@ impl ListRepositoriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRepositoriesErrorKind::InvalidContinuationTokenException`.
+    /// Returns `true` if the error kind is `ListRepositoriesErrorKind::InvalidContinuationTokenException`.
     pub fn is_invalid_continuation_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRepositoriesErrorKind::InvalidContinuationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListRepositoriesErrorKind::InvalidOrderException`.
+    /// Returns `true` if the error kind is `ListRepositoriesErrorKind::InvalidOrderException`.
     pub fn is_invalid_order_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRepositoriesErrorKind::InvalidOrderException(_)
         )
     }
-    /// Returns true if the error kind is `ListRepositoriesErrorKind::InvalidSortByException`.
+    /// Returns `true` if the error kind is `ListRepositoriesErrorKind::InvalidSortByException`.
     pub fn is_invalid_sort_by_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11945,7 +11945,7 @@ pub enum ListRepositoriesForApprovalRuleTemplateErrorKind {
     InvalidContinuationTokenException(crate::error::InvalidContinuationTokenException),
     /// <p>The specified number of maximum results is not valid.</p>
     InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRepositoriesForApprovalRuleTemplateError {
@@ -12042,58 +12042,58 @@ impl ListRepositoriesForApprovalRuleTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::ApprovalRuleTemplateDoesNotExistException`.
+    /// Returns `true` if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::ApprovalRuleTemplateDoesNotExistException`.
     pub fn is_approval_rule_template_does_not_exist_exception(&self) -> bool {
         matches!(&self.kind, ListRepositoriesForApprovalRuleTemplateErrorKind::ApprovalRuleTemplateDoesNotExistException(_))
     }
-    /// Returns true if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameRequiredException`.
+    /// Returns `true` if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameRequiredException`.
     pub fn is_approval_rule_template_name_required_exception(&self) -> bool {
         matches!(&self.kind, ListRepositoriesForApprovalRuleTemplateErrorKind::ApprovalRuleTemplateNameRequiredException(_))
     }
-    /// Returns true if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(&self.kind, ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionIntegrityChecksFailedException(_))
     }
-    /// Returns true if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRepositoriesForApprovalRuleTemplateErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateNameException`.
+    /// Returns `true` if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateNameException`.
     pub fn is_invalid_approval_rule_template_name_exception(&self) -> bool {
         matches!(&self.kind, ListRepositoriesForApprovalRuleTemplateErrorKind::InvalidApprovalRuleTemplateNameException(_))
     }
-    /// Returns true if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::InvalidContinuationTokenException`.
+    /// Returns `true` if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::InvalidContinuationTokenException`.
     pub fn is_invalid_continuation_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRepositoriesForApprovalRuleTemplateErrorKind::InvalidContinuationTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::InvalidMaxResultsException`.
+    /// Returns `true` if the error kind is `ListRepositoriesForApprovalRuleTemplateErrorKind::InvalidMaxResultsException`.
     pub fn is_invalid_max_results_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12172,7 +12172,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a>
     /// in the AWS CodeCommit User Guide.</p>
     ResourceArnRequiredException(crate::error::ResourceArnRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -12238,28 +12238,28 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidResourceArnException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidResourceArnException`.
     pub fn is_invalid_resource_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidResourceArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceArnRequiredException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceArnRequiredException`.
     pub fn is_resource_arn_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12340,7 +12340,7 @@ pub enum MergeBranchesByFastForwardErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
     /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for MergeBranchesByFastForwardError {
@@ -12455,133 +12455,133 @@ impl MergeBranchesByFastForwardError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::BranchDoesNotExistException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::BranchDoesNotExistException`.
     pub fn is_branch_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByFastForwardErrorKind::BranchDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::BranchNameIsTagNameException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::BranchNameIsTagNameException`.
     pub fn is_branch_name_is_tag_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByFastForwardErrorKind::BranchNameIsTagNameException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::BranchNameRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::BranchNameRequiredException`.
     pub fn is_branch_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByFastForwardErrorKind::BranchNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::CommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::CommitDoesNotExistException`.
     pub fn is_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByFastForwardErrorKind::CommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::CommitRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::CommitRequiredException`.
     pub fn is_commit_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByFastForwardErrorKind::CommitRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::ConcurrentReferenceUpdateException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::ConcurrentReferenceUpdateException`.
     pub fn is_concurrent_reference_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByFastForwardErrorKind::ConcurrentReferenceUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByFastForwardErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByFastForwardErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByFastForwardErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByFastForwardErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByFastForwardErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::InvalidBranchNameException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::InvalidBranchNameException`.
     pub fn is_invalid_branch_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByFastForwardErrorKind::InvalidBranchNameException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::InvalidCommitException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::InvalidCommitException`.
     pub fn is_invalid_commit_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByFastForwardErrorKind::InvalidCommitException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByFastForwardErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::InvalidTargetBranchException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::InvalidTargetBranchException`.
     pub fn is_invalid_target_branch_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByFastForwardErrorKind::InvalidTargetBranchException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::ManualMergeRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::ManualMergeRequiredException`.
     pub fn is_manual_merge_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByFastForwardErrorKind::ManualMergeRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByFastForwardErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByFastForwardErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByFastForwardErrorKind::TipsDivergenceExceededException`.
+    /// Returns `true` if the error kind is `MergeBranchesByFastForwardErrorKind::TipsDivergenceExceededException`.
     pub fn is_tips_divergence_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12763,7 +12763,7 @@ pub enum MergeBranchesBySquashErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
     /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for MergeBranchesBySquashError {
@@ -12906,273 +12906,273 @@ impl MergeBranchesBySquashError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::BranchDoesNotExistException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::BranchDoesNotExistException`.
     pub fn is_branch_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::BranchDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::BranchNameIsTagNameException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::BranchNameIsTagNameException`.
     pub fn is_branch_name_is_tag_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::BranchNameIsTagNameException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::BranchNameRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::BranchNameRequiredException`.
     pub fn is_branch_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::BranchNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::CommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::CommitDoesNotExistException`.
     pub fn is_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::CommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::CommitMessageLengthExceededException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::CommitMessageLengthExceededException`.
     pub fn is_commit_message_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::CommitMessageLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::CommitRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::CommitRequiredException`.
     pub fn is_commit_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::CommitRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::ConcurrentReferenceUpdateException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::ConcurrentReferenceUpdateException`.
     pub fn is_concurrent_reference_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::ConcurrentReferenceUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::FileContentSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::FileContentSizeLimitExceededException`.
     pub fn is_file_content_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::FileContentSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::FileModeRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::FileModeRequiredException`.
     pub fn is_file_mode_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::FileModeRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::FolderContentSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::FolderContentSizeLimitExceededException`.
     pub fn is_folder_content_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::FolderContentSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::InvalidBranchNameException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::InvalidBranchNameException`.
     pub fn is_invalid_branch_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::InvalidBranchNameException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::InvalidCommitException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::InvalidCommitException`.
     pub fn is_invalid_commit_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::InvalidCommitException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::InvalidConflictDetailLevelException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::InvalidConflictDetailLevelException`.
     pub fn is_invalid_conflict_detail_level_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::InvalidConflictDetailLevelException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::InvalidConflictResolutionException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::InvalidConflictResolutionException`.
     pub fn is_invalid_conflict_resolution_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::InvalidConflictResolutionException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::InvalidConflictResolutionStrategyException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::InvalidConflictResolutionStrategyException`.
     pub fn is_invalid_conflict_resolution_strategy_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::InvalidConflictResolutionStrategyException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::InvalidEmailException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::InvalidEmailException`.
     pub fn is_invalid_email_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::InvalidEmailException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::InvalidFileModeException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::InvalidFileModeException`.
     pub fn is_invalid_file_mode_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::InvalidFileModeException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::InvalidPathException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::InvalidPathException`.
     pub fn is_invalid_path_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::InvalidPathException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::InvalidReplacementContentException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::InvalidReplacementContentException`.
     pub fn is_invalid_replacement_content_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::InvalidReplacementContentException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::InvalidReplacementTypeException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::InvalidReplacementTypeException`.
     pub fn is_invalid_replacement_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::InvalidReplacementTypeException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::InvalidTargetBranchException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::InvalidTargetBranchException`.
     pub fn is_invalid_target_branch_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::InvalidTargetBranchException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::ManualMergeRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::ManualMergeRequiredException`.
     pub fn is_manual_merge_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::ManualMergeRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::MaximumConflictResolutionEntriesExceededException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::MaximumConflictResolutionEntriesExceededException`.
     pub fn is_maximum_conflict_resolution_entries_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::MaximumConflictResolutionEntriesExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::MaximumFileContentToLoadExceededException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::MaximumFileContentToLoadExceededException`.
     pub fn is_maximum_file_content_to_load_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::MaximumFileContentToLoadExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::MaximumItemsToCompareExceededException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::MaximumItemsToCompareExceededException`.
     pub fn is_maximum_items_to_compare_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::MaximumItemsToCompareExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::MultipleConflictResolutionEntriesException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::MultipleConflictResolutionEntriesException`.
     pub fn is_multiple_conflict_resolution_entries_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::MultipleConflictResolutionEntriesException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::NameLengthExceededException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::NameLengthExceededException`.
     pub fn is_name_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::NameLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::PathRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::PathRequiredException`.
     pub fn is_path_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::PathRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::ReplacementContentRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::ReplacementContentRequiredException`.
     pub fn is_replacement_content_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::ReplacementContentRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::ReplacementTypeRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::ReplacementTypeRequiredException`.
     pub fn is_replacement_type_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::ReplacementTypeRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesBySquashErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesBySquashErrorKind::TipsDivergenceExceededException`.
+    /// Returns `true` if the error kind is `MergeBranchesBySquashErrorKind::TipsDivergenceExceededException`.
     pub fn is_tips_divergence_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13376,7 +13376,7 @@ pub enum MergeBranchesByThreeWayErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
     /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for MergeBranchesByThreeWayError {
@@ -13525,273 +13525,273 @@ impl MergeBranchesByThreeWayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::BranchDoesNotExistException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::BranchDoesNotExistException`.
     pub fn is_branch_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::BranchDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::BranchNameIsTagNameException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::BranchNameIsTagNameException`.
     pub fn is_branch_name_is_tag_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::BranchNameIsTagNameException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::BranchNameRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::BranchNameRequiredException`.
     pub fn is_branch_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::BranchNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::CommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::CommitDoesNotExistException`.
     pub fn is_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::CommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::CommitMessageLengthExceededException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::CommitMessageLengthExceededException`.
     pub fn is_commit_message_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::CommitMessageLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::CommitRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::CommitRequiredException`.
     pub fn is_commit_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::CommitRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::ConcurrentReferenceUpdateException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::ConcurrentReferenceUpdateException`.
     pub fn is_concurrent_reference_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::ConcurrentReferenceUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::FileContentSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::FileContentSizeLimitExceededException`.
     pub fn is_file_content_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::FileContentSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::FileModeRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::FileModeRequiredException`.
     pub fn is_file_mode_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::FileModeRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::FolderContentSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::FolderContentSizeLimitExceededException`.
     pub fn is_folder_content_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::FolderContentSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidBranchNameException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidBranchNameException`.
     pub fn is_invalid_branch_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::InvalidBranchNameException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidCommitException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidCommitException`.
     pub fn is_invalid_commit_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::InvalidCommitException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidConflictDetailLevelException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidConflictDetailLevelException`.
     pub fn is_invalid_conflict_detail_level_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::InvalidConflictDetailLevelException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidConflictResolutionException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidConflictResolutionException`.
     pub fn is_invalid_conflict_resolution_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::InvalidConflictResolutionException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidConflictResolutionStrategyException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidConflictResolutionStrategyException`.
     pub fn is_invalid_conflict_resolution_strategy_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::InvalidConflictResolutionStrategyException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidEmailException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidEmailException`.
     pub fn is_invalid_email_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::InvalidEmailException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidFileModeException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidFileModeException`.
     pub fn is_invalid_file_mode_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::InvalidFileModeException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidPathException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidPathException`.
     pub fn is_invalid_path_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::InvalidPathException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidReplacementContentException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidReplacementContentException`.
     pub fn is_invalid_replacement_content_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::InvalidReplacementContentException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidReplacementTypeException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidReplacementTypeException`.
     pub fn is_invalid_replacement_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::InvalidReplacementTypeException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidTargetBranchException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::InvalidTargetBranchException`.
     pub fn is_invalid_target_branch_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::InvalidTargetBranchException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::ManualMergeRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::ManualMergeRequiredException`.
     pub fn is_manual_merge_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::ManualMergeRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::MaximumConflictResolutionEntriesExceededException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::MaximumConflictResolutionEntriesExceededException`.
     pub fn is_maximum_conflict_resolution_entries_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::MaximumConflictResolutionEntriesExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::MaximumFileContentToLoadExceededException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::MaximumFileContentToLoadExceededException`.
     pub fn is_maximum_file_content_to_load_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::MaximumFileContentToLoadExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::MaximumItemsToCompareExceededException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::MaximumItemsToCompareExceededException`.
     pub fn is_maximum_items_to_compare_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::MaximumItemsToCompareExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::MultipleConflictResolutionEntriesException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::MultipleConflictResolutionEntriesException`.
     pub fn is_multiple_conflict_resolution_entries_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::MultipleConflictResolutionEntriesException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::NameLengthExceededException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::NameLengthExceededException`.
     pub fn is_name_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::NameLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::PathRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::PathRequiredException`.
     pub fn is_path_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::PathRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::ReplacementContentRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::ReplacementContentRequiredException`.
     pub fn is_replacement_content_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::ReplacementContentRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::ReplacementTypeRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::ReplacementTypeRequiredException`.
     pub fn is_replacement_type_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::ReplacementTypeRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergeBranchesByThreeWayErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergeBranchesByThreeWayErrorKind::TipsDivergenceExceededException`.
+    /// Returns `true` if the error kind is `MergeBranchesByThreeWayErrorKind::TipsDivergenceExceededException`.
     pub fn is_tips_divergence_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13960,7 +13960,7 @@ pub enum MergePullRequestByFastForwardErrorKind {
     TipOfSourceReferenceIsDifferentException(
         crate::error::TipOfSourceReferenceIsDifferentException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for MergePullRequestByFastForwardError {
@@ -14084,84 +14084,84 @@ impl MergePullRequestByFastForwardError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::ConcurrentReferenceUpdateException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::ConcurrentReferenceUpdateException`.
     pub fn is_concurrent_reference_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByFastForwardErrorKind::ConcurrentReferenceUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByFastForwardErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByFastForwardErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByFastForwardErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByFastForwardErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByFastForwardErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::InvalidCommitIdException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::InvalidCommitIdException`.
     pub fn is_invalid_commit_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByFastForwardErrorKind::InvalidCommitIdException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::InvalidPullRequestIdException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::InvalidPullRequestIdException`.
     pub fn is_invalid_pull_request_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByFastForwardErrorKind::InvalidPullRequestIdException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByFastForwardErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::ManualMergeRequiredException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::ManualMergeRequiredException`.
     pub fn is_manual_merge_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByFastForwardErrorKind::ManualMergeRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::PullRequestAlreadyClosedException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::PullRequestAlreadyClosedException`.
     pub fn is_pull_request_already_closed_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByFastForwardErrorKind::PullRequestAlreadyClosedException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::PullRequestApprovalRulesNotSatisfiedException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::PullRequestApprovalRulesNotSatisfiedException`.
     pub fn is_pull_request_approval_rules_not_satisfied_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14170,42 +14170,42 @@ impl MergePullRequestByFastForwardError {
             )
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::PullRequestDoesNotExistException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::PullRequestDoesNotExistException`.
     pub fn is_pull_request_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByFastForwardErrorKind::PullRequestDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::PullRequestIdRequiredException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::PullRequestIdRequiredException`.
     pub fn is_pull_request_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByFastForwardErrorKind::PullRequestIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::ReferenceDoesNotExistException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::ReferenceDoesNotExistException`.
     pub fn is_reference_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByFastForwardErrorKind::ReferenceDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByFastForwardErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByFastForwardErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::RepositoryNotAssociatedWithPullRequestException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::RepositoryNotAssociatedWithPullRequestException`.
     pub fn is_repository_not_associated_with_pull_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14214,7 +14214,7 @@ impl MergePullRequestByFastForwardError {
             )
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByFastForwardErrorKind::TipOfSourceReferenceIsDifferentException`.
+    /// Returns `true` if the error kind is `MergePullRequestByFastForwardErrorKind::TipOfSourceReferenceIsDifferentException`.
     pub fn is_tip_of_source_reference_is_different_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14407,7 +14407,7 @@ pub enum MergePullRequestBySquashErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
     /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for MergePullRequestBySquashError {
@@ -14585,266 +14585,266 @@ impl MergePullRequestBySquashError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::CommitMessageLengthExceededException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::CommitMessageLengthExceededException`.
     pub fn is_commit_message_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::CommitMessageLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::ConcurrentReferenceUpdateException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::ConcurrentReferenceUpdateException`.
     pub fn is_concurrent_reference_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::ConcurrentReferenceUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::FileContentSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::FileContentSizeLimitExceededException`.
     pub fn is_file_content_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::FileContentSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::FolderContentSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::FolderContentSizeLimitExceededException`.
     pub fn is_folder_content_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::FolderContentSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::InvalidCommitIdException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::InvalidCommitIdException`.
     pub fn is_invalid_commit_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::InvalidCommitIdException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::InvalidConflictDetailLevelException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::InvalidConflictDetailLevelException`.
     pub fn is_invalid_conflict_detail_level_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::InvalidConflictDetailLevelException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::InvalidConflictResolutionException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::InvalidConflictResolutionException`.
     pub fn is_invalid_conflict_resolution_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::InvalidConflictResolutionException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::InvalidConflictResolutionStrategyException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::InvalidConflictResolutionStrategyException`.
     pub fn is_invalid_conflict_resolution_strategy_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::InvalidConflictResolutionStrategyException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::InvalidEmailException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::InvalidEmailException`.
     pub fn is_invalid_email_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::InvalidEmailException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::InvalidFileModeException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::InvalidFileModeException`.
     pub fn is_invalid_file_mode_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::InvalidFileModeException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::InvalidPathException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::InvalidPathException`.
     pub fn is_invalid_path_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::InvalidPathException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::InvalidPullRequestIdException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::InvalidPullRequestIdException`.
     pub fn is_invalid_pull_request_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::InvalidPullRequestIdException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::InvalidReplacementContentException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::InvalidReplacementContentException`.
     pub fn is_invalid_replacement_content_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::InvalidReplacementContentException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::InvalidReplacementTypeException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::InvalidReplacementTypeException`.
     pub fn is_invalid_replacement_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::InvalidReplacementTypeException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::ManualMergeRequiredException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::ManualMergeRequiredException`.
     pub fn is_manual_merge_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::ManualMergeRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::MaximumConflictResolutionEntriesExceededException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::MaximumConflictResolutionEntriesExceededException`.
     pub fn is_maximum_conflict_resolution_entries_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::MaximumConflictResolutionEntriesExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::MaximumFileContentToLoadExceededException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::MaximumFileContentToLoadExceededException`.
     pub fn is_maximum_file_content_to_load_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::MaximumFileContentToLoadExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::MaximumItemsToCompareExceededException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::MaximumItemsToCompareExceededException`.
     pub fn is_maximum_items_to_compare_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::MaximumItemsToCompareExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::MultipleConflictResolutionEntriesException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::MultipleConflictResolutionEntriesException`.
     pub fn is_multiple_conflict_resolution_entries_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::MultipleConflictResolutionEntriesException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::NameLengthExceededException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::NameLengthExceededException`.
     pub fn is_name_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::NameLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::PathRequiredException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::PathRequiredException`.
     pub fn is_path_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::PathRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::PullRequestAlreadyClosedException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::PullRequestAlreadyClosedException`.
     pub fn is_pull_request_already_closed_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::PullRequestAlreadyClosedException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::PullRequestApprovalRulesNotSatisfiedException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::PullRequestApprovalRulesNotSatisfiedException`.
     pub fn is_pull_request_approval_rules_not_satisfied_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::PullRequestApprovalRulesNotSatisfiedException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::PullRequestDoesNotExistException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::PullRequestDoesNotExistException`.
     pub fn is_pull_request_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::PullRequestDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::PullRequestIdRequiredException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::PullRequestIdRequiredException`.
     pub fn is_pull_request_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::PullRequestIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::ReplacementContentRequiredException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::ReplacementContentRequiredException`.
     pub fn is_replacement_content_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::ReplacementContentRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::ReplacementTypeRequiredException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::ReplacementTypeRequiredException`.
     pub fn is_replacement_type_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::ReplacementTypeRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::RepositoryNotAssociatedWithPullRequestException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::RepositoryNotAssociatedWithPullRequestException`.
     pub fn is_repository_not_associated_with_pull_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::RepositoryNotAssociatedWithPullRequestException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::TipOfSourceReferenceIsDifferentException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::TipOfSourceReferenceIsDifferentException`.
     pub fn is_tip_of_source_reference_is_different_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestBySquashErrorKind::TipOfSourceReferenceIsDifferentException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestBySquashErrorKind::TipsDivergenceExceededException`.
+    /// Returns `true` if the error kind is `MergePullRequestBySquashErrorKind::TipsDivergenceExceededException`.
     pub fn is_tips_divergence_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15094,7 +15094,7 @@ pub enum MergePullRequestByThreeWayErrorKind {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be
     /// any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for MergePullRequestByThreeWayError {
@@ -15272,154 +15272,154 @@ impl MergePullRequestByThreeWayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::CommitMessageLengthExceededException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::CommitMessageLengthExceededException`.
     pub fn is_commit_message_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::CommitMessageLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::ConcurrentReferenceUpdateException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::ConcurrentReferenceUpdateException`.
     pub fn is_concurrent_reference_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::ConcurrentReferenceUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::FileContentSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::FileContentSizeLimitExceededException`.
     pub fn is_file_content_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::FileContentSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::FolderContentSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::FolderContentSizeLimitExceededException`.
     pub fn is_folder_content_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::FolderContentSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidCommitIdException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidCommitIdException`.
     pub fn is_invalid_commit_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::InvalidCommitIdException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidConflictDetailLevelException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidConflictDetailLevelException`.
     pub fn is_invalid_conflict_detail_level_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::InvalidConflictDetailLevelException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidConflictResolutionException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidConflictResolutionException`.
     pub fn is_invalid_conflict_resolution_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::InvalidConflictResolutionException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidConflictResolutionStrategyException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidConflictResolutionStrategyException`.
     pub fn is_invalid_conflict_resolution_strategy_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::InvalidConflictResolutionStrategyException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidEmailException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidEmailException`.
     pub fn is_invalid_email_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::InvalidEmailException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidFileModeException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidFileModeException`.
     pub fn is_invalid_file_mode_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::InvalidFileModeException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidPathException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidPathException`.
     pub fn is_invalid_path_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::InvalidPathException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidPullRequestIdException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidPullRequestIdException`.
     pub fn is_invalid_pull_request_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::InvalidPullRequestIdException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidReplacementContentException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidReplacementContentException`.
     pub fn is_invalid_replacement_content_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::InvalidReplacementContentException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidReplacementTypeException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidReplacementTypeException`.
     pub fn is_invalid_replacement_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::InvalidReplacementTypeException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::ManualMergeRequiredException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::ManualMergeRequiredException`.
     pub fn is_manual_merge_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::ManualMergeRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::MaximumConflictResolutionEntriesExceededException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::MaximumConflictResolutionEntriesExceededException`.
     pub fn is_maximum_conflict_resolution_entries_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15428,112 +15428,112 @@ impl MergePullRequestByThreeWayError {
             )
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::MaximumFileContentToLoadExceededException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::MaximumFileContentToLoadExceededException`.
     pub fn is_maximum_file_content_to_load_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::MaximumFileContentToLoadExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::MaximumItemsToCompareExceededException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::MaximumItemsToCompareExceededException`.
     pub fn is_maximum_items_to_compare_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::MaximumItemsToCompareExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::MultipleConflictResolutionEntriesException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::MultipleConflictResolutionEntriesException`.
     pub fn is_multiple_conflict_resolution_entries_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::MultipleConflictResolutionEntriesException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::NameLengthExceededException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::NameLengthExceededException`.
     pub fn is_name_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::NameLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::PathRequiredException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::PathRequiredException`.
     pub fn is_path_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::PathRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::PullRequestAlreadyClosedException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::PullRequestAlreadyClosedException`.
     pub fn is_pull_request_already_closed_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::PullRequestAlreadyClosedException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::PullRequestApprovalRulesNotSatisfiedException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::PullRequestApprovalRulesNotSatisfiedException`.
     pub fn is_pull_request_approval_rules_not_satisfied_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::PullRequestApprovalRulesNotSatisfiedException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::PullRequestDoesNotExistException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::PullRequestDoesNotExistException`.
     pub fn is_pull_request_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::PullRequestDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::PullRequestIdRequiredException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::PullRequestIdRequiredException`.
     pub fn is_pull_request_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::PullRequestIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::ReplacementContentRequiredException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::ReplacementContentRequiredException`.
     pub fn is_replacement_content_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::ReplacementContentRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::ReplacementTypeRequiredException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::ReplacementTypeRequiredException`.
     pub fn is_replacement_type_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::ReplacementTypeRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::RepositoryNotAssociatedWithPullRequestException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::RepositoryNotAssociatedWithPullRequestException`.
     pub fn is_repository_not_associated_with_pull_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::RepositoryNotAssociatedWithPullRequestException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::TipOfSourceReferenceIsDifferentException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::TipOfSourceReferenceIsDifferentException`.
     pub fn is_tip_of_source_reference_is_different_exception(&self) -> bool {
         matches!(
             &self.kind,
             MergePullRequestByThreeWayErrorKind::TipOfSourceReferenceIsDifferentException(_)
         )
     }
-    /// Returns true if the error kind is `MergePullRequestByThreeWayErrorKind::TipsDivergenceExceededException`.
+    /// Returns `true` if the error kind is `MergePullRequestByThreeWayErrorKind::TipsDivergenceExceededException`.
     pub fn is_tips_divergence_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15710,7 +15710,7 @@ pub enum OverridePullRequestApprovalRulesErrorKind {
     RevisionIdRequiredException(crate::error::RevisionIdRequiredException),
     /// <p>The revision ID provided in the request does not match the current revision ID. Use GetPullRequest to retrieve the current revision ID.</p>
     RevisionNotCurrentException(crate::error::RevisionNotCurrentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for OverridePullRequestApprovalRulesError {
@@ -15820,105 +15820,105 @@ impl OverridePullRequestApprovalRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `OverridePullRequestApprovalRulesErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `OverridePullRequestApprovalRulesErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             OverridePullRequestApprovalRulesErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `OverridePullRequestApprovalRulesErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `OverridePullRequestApprovalRulesErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             OverridePullRequestApprovalRulesErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `OverridePullRequestApprovalRulesErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `OverridePullRequestApprovalRulesErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             OverridePullRequestApprovalRulesErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `OverridePullRequestApprovalRulesErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `OverridePullRequestApprovalRulesErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             OverridePullRequestApprovalRulesErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `OverridePullRequestApprovalRulesErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `OverridePullRequestApprovalRulesErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             OverridePullRequestApprovalRulesErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `OverridePullRequestApprovalRulesErrorKind::InvalidOverrideStatusException`.
+    /// Returns `true` if the error kind is `OverridePullRequestApprovalRulesErrorKind::InvalidOverrideStatusException`.
     pub fn is_invalid_override_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             OverridePullRequestApprovalRulesErrorKind::InvalidOverrideStatusException(_)
         )
     }
-    /// Returns true if the error kind is `OverridePullRequestApprovalRulesErrorKind::InvalidPullRequestIdException`.
+    /// Returns `true` if the error kind is `OverridePullRequestApprovalRulesErrorKind::InvalidPullRequestIdException`.
     pub fn is_invalid_pull_request_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             OverridePullRequestApprovalRulesErrorKind::InvalidPullRequestIdException(_)
         )
     }
-    /// Returns true if the error kind is `OverridePullRequestApprovalRulesErrorKind::InvalidRevisionIdException`.
+    /// Returns `true` if the error kind is `OverridePullRequestApprovalRulesErrorKind::InvalidRevisionIdException`.
     pub fn is_invalid_revision_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             OverridePullRequestApprovalRulesErrorKind::InvalidRevisionIdException(_)
         )
     }
-    /// Returns true if the error kind is `OverridePullRequestApprovalRulesErrorKind::OverrideAlreadySetException`.
+    /// Returns `true` if the error kind is `OverridePullRequestApprovalRulesErrorKind::OverrideAlreadySetException`.
     pub fn is_override_already_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             OverridePullRequestApprovalRulesErrorKind::OverrideAlreadySetException(_)
         )
     }
-    /// Returns true if the error kind is `OverridePullRequestApprovalRulesErrorKind::OverrideStatusRequiredException`.
+    /// Returns `true` if the error kind is `OverridePullRequestApprovalRulesErrorKind::OverrideStatusRequiredException`.
     pub fn is_override_status_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             OverridePullRequestApprovalRulesErrorKind::OverrideStatusRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `OverridePullRequestApprovalRulesErrorKind::PullRequestAlreadyClosedException`.
+    /// Returns `true` if the error kind is `OverridePullRequestApprovalRulesErrorKind::PullRequestAlreadyClosedException`.
     pub fn is_pull_request_already_closed_exception(&self) -> bool {
         matches!(
             &self.kind,
             OverridePullRequestApprovalRulesErrorKind::PullRequestAlreadyClosedException(_)
         )
     }
-    /// Returns true if the error kind is `OverridePullRequestApprovalRulesErrorKind::PullRequestDoesNotExistException`.
+    /// Returns `true` if the error kind is `OverridePullRequestApprovalRulesErrorKind::PullRequestDoesNotExistException`.
     pub fn is_pull_request_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             OverridePullRequestApprovalRulesErrorKind::PullRequestDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `OverridePullRequestApprovalRulesErrorKind::PullRequestIdRequiredException`.
+    /// Returns `true` if the error kind is `OverridePullRequestApprovalRulesErrorKind::PullRequestIdRequiredException`.
     pub fn is_pull_request_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             OverridePullRequestApprovalRulesErrorKind::PullRequestIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `OverridePullRequestApprovalRulesErrorKind::RevisionIdRequiredException`.
+    /// Returns `true` if the error kind is `OverridePullRequestApprovalRulesErrorKind::RevisionIdRequiredException`.
     pub fn is_revision_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             OverridePullRequestApprovalRulesErrorKind::RevisionIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `OverridePullRequestApprovalRulesErrorKind::RevisionNotCurrentException`.
+    /// Returns `true` if the error kind is `OverridePullRequestApprovalRulesErrorKind::RevisionNotCurrentException`.
     pub fn is_revision_not_current_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16056,7 +16056,7 @@ pub enum PostCommentForComparedCommitErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PostCommentForComparedCommitError {
@@ -16189,7 +16189,7 @@ impl PostCommentForComparedCommitError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::BeforeCommitIdAndAfterCommitIdAreSameException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::BeforeCommitIdAndAfterCommitIdAreSameException`.
     pub fn is_before_commit_id_and_after_commit_id_are_same_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16198,154 +16198,154 @@ impl PostCommentForComparedCommitError {
             )
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::ClientRequestTokenRequiredException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::ClientRequestTokenRequiredException`.
     pub fn is_client_request_token_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::ClientRequestTokenRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::CommentContentRequiredException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::CommentContentRequiredException`.
     pub fn is_comment_content_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::CommentContentRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::CommentContentSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::CommentContentSizeLimitExceededException`.
     pub fn is_comment_content_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::CommentContentSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::CommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::CommitDoesNotExistException`.
     pub fn is_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::CommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::CommitIdRequiredException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::CommitIdRequiredException`.
     pub fn is_commit_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::CommitIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::IdempotencyParameterMismatchException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::IdempotencyParameterMismatchException`.
     pub fn is_idempotency_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::IdempotencyParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::InvalidClientRequestTokenException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::InvalidClientRequestTokenException`.
     pub fn is_invalid_client_request_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::InvalidClientRequestTokenException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::InvalidCommitIdException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::InvalidCommitIdException`.
     pub fn is_invalid_commit_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::InvalidCommitIdException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::InvalidFileLocationException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::InvalidFileLocationException`.
     pub fn is_invalid_file_location_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::InvalidFileLocationException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::InvalidFilePositionException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::InvalidFilePositionException`.
     pub fn is_invalid_file_position_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::InvalidFilePositionException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::InvalidPathException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::InvalidPathException`.
     pub fn is_invalid_path_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::InvalidPathException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::InvalidRelativeFileVersionEnumException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::InvalidRelativeFileVersionEnumException`.
     pub fn is_invalid_relative_file_version_enum_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::InvalidRelativeFileVersionEnumException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::PathDoesNotExistException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::PathDoesNotExistException`.
     pub fn is_path_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::PathDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::PathRequiredException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::PathRequiredException`.
     pub fn is_path_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::PathRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForComparedCommitErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForComparedCommitErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `PostCommentForComparedCommitErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16519,7 +16519,7 @@ pub enum PostCommentForPullRequestErrorKind {
     RepositoryNotAssociatedWithPullRequestException(
         crate::error::RepositoryNotAssociatedWithPullRequestException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PostCommentForPullRequestError {
@@ -16652,189 +16652,189 @@ impl PostCommentForPullRequestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::BeforeCommitIdAndAfterCommitIdAreSameException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::BeforeCommitIdAndAfterCommitIdAreSameException`.
     pub fn is_before_commit_id_and_after_commit_id_are_same_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::BeforeCommitIdAndAfterCommitIdAreSameException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::ClientRequestTokenRequiredException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::ClientRequestTokenRequiredException`.
     pub fn is_client_request_token_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::ClientRequestTokenRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::CommentContentRequiredException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::CommentContentRequiredException`.
     pub fn is_comment_content_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::CommentContentRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::CommentContentSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::CommentContentSizeLimitExceededException`.
     pub fn is_comment_content_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::CommentContentSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::CommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::CommitDoesNotExistException`.
     pub fn is_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::CommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::CommitIdRequiredException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::CommitIdRequiredException`.
     pub fn is_commit_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::CommitIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::IdempotencyParameterMismatchException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::IdempotencyParameterMismatchException`.
     pub fn is_idempotency_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::IdempotencyParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::InvalidClientRequestTokenException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::InvalidClientRequestTokenException`.
     pub fn is_invalid_client_request_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::InvalidClientRequestTokenException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::InvalidCommitIdException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::InvalidCommitIdException`.
     pub fn is_invalid_commit_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::InvalidCommitIdException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::InvalidFileLocationException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::InvalidFileLocationException`.
     pub fn is_invalid_file_location_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::InvalidFileLocationException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::InvalidFilePositionException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::InvalidFilePositionException`.
     pub fn is_invalid_file_position_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::InvalidFilePositionException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::InvalidPathException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::InvalidPathException`.
     pub fn is_invalid_path_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::InvalidPathException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::InvalidPullRequestIdException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::InvalidPullRequestIdException`.
     pub fn is_invalid_pull_request_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::InvalidPullRequestIdException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::InvalidRelativeFileVersionEnumException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::InvalidRelativeFileVersionEnumException`.
     pub fn is_invalid_relative_file_version_enum_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::InvalidRelativeFileVersionEnumException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::PathDoesNotExistException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::PathDoesNotExistException`.
     pub fn is_path_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::PathDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::PathRequiredException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::PathRequiredException`.
     pub fn is_path_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::PathRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::PullRequestDoesNotExistException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::PullRequestDoesNotExistException`.
     pub fn is_pull_request_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::PullRequestDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::PullRequestIdRequiredException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::PullRequestIdRequiredException`.
     pub fn is_pull_request_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::PullRequestIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentForPullRequestErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentForPullRequestErrorKind::RepositoryNotAssociatedWithPullRequestException`.
+    /// Returns `true` if the error kind is `PostCommentForPullRequestErrorKind::RepositoryNotAssociatedWithPullRequestException`.
     pub fn is_repository_not_associated_with_pull_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16956,7 +16956,7 @@ pub enum PostCommentReplyErrorKind {
     InvalidClientRequestTokenException(crate::error::InvalidClientRequestTokenException),
     /// <p>The comment ID is not in a valid format. Make sure that you have provided the full comment ID.</p>
     InvalidCommentIdException(crate::error::InvalidCommentIdException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PostCommentReplyError {
@@ -17030,56 +17030,56 @@ impl PostCommentReplyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PostCommentReplyErrorKind::ClientRequestTokenRequiredException`.
+    /// Returns `true` if the error kind is `PostCommentReplyErrorKind::ClientRequestTokenRequiredException`.
     pub fn is_client_request_token_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentReplyErrorKind::ClientRequestTokenRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentReplyErrorKind::CommentContentRequiredException`.
+    /// Returns `true` if the error kind is `PostCommentReplyErrorKind::CommentContentRequiredException`.
     pub fn is_comment_content_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentReplyErrorKind::CommentContentRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentReplyErrorKind::CommentContentSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `PostCommentReplyErrorKind::CommentContentSizeLimitExceededException`.
     pub fn is_comment_content_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentReplyErrorKind::CommentContentSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentReplyErrorKind::CommentDoesNotExistException`.
+    /// Returns `true` if the error kind is `PostCommentReplyErrorKind::CommentDoesNotExistException`.
     pub fn is_comment_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentReplyErrorKind::CommentDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentReplyErrorKind::CommentIdRequiredException`.
+    /// Returns `true` if the error kind is `PostCommentReplyErrorKind::CommentIdRequiredException`.
     pub fn is_comment_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentReplyErrorKind::CommentIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentReplyErrorKind::IdempotencyParameterMismatchException`.
+    /// Returns `true` if the error kind is `PostCommentReplyErrorKind::IdempotencyParameterMismatchException`.
     pub fn is_idempotency_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentReplyErrorKind::IdempotencyParameterMismatchException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentReplyErrorKind::InvalidClientRequestTokenException`.
+    /// Returns `true` if the error kind is `PostCommentReplyErrorKind::InvalidClientRequestTokenException`.
     pub fn is_invalid_client_request_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             PostCommentReplyErrorKind::InvalidClientRequestTokenException(_)
         )
     }
-    /// Returns true if the error kind is `PostCommentReplyErrorKind::InvalidCommentIdException`.
+    /// Returns `true` if the error kind is `PostCommentReplyErrorKind::InvalidCommentIdException`.
     pub fn is_invalid_comment_id_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17135,7 +17135,7 @@ pub enum PutCommentReactionErrorKind {
     ReactionLimitExceededException(crate::error::ReactionLimitExceededException),
     /// <p>A reaction value is required. </p>
     ReactionValueRequiredException(crate::error::ReactionValueRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutCommentReactionError {
@@ -17204,49 +17204,49 @@ impl PutCommentReactionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutCommentReactionErrorKind::CommentDeletedException`.
+    /// Returns `true` if the error kind is `PutCommentReactionErrorKind::CommentDeletedException`.
     pub fn is_comment_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutCommentReactionErrorKind::CommentDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `PutCommentReactionErrorKind::CommentDoesNotExistException`.
+    /// Returns `true` if the error kind is `PutCommentReactionErrorKind::CommentDoesNotExistException`.
     pub fn is_comment_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutCommentReactionErrorKind::CommentDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `PutCommentReactionErrorKind::CommentIdRequiredException`.
+    /// Returns `true` if the error kind is `PutCommentReactionErrorKind::CommentIdRequiredException`.
     pub fn is_comment_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutCommentReactionErrorKind::CommentIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PutCommentReactionErrorKind::InvalidCommentIdException`.
+    /// Returns `true` if the error kind is `PutCommentReactionErrorKind::InvalidCommentIdException`.
     pub fn is_invalid_comment_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutCommentReactionErrorKind::InvalidCommentIdException(_)
         )
     }
-    /// Returns true if the error kind is `PutCommentReactionErrorKind::InvalidReactionValueException`.
+    /// Returns `true` if the error kind is `PutCommentReactionErrorKind::InvalidReactionValueException`.
     pub fn is_invalid_reaction_value_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutCommentReactionErrorKind::InvalidReactionValueException(_)
         )
     }
-    /// Returns true if the error kind is `PutCommentReactionErrorKind::ReactionLimitExceededException`.
+    /// Returns `true` if the error kind is `PutCommentReactionErrorKind::ReactionLimitExceededException`.
     pub fn is_reaction_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutCommentReactionErrorKind::ReactionLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutCommentReactionErrorKind::ReactionValueRequiredException`.
+    /// Returns `true` if the error kind is `PutCommentReactionErrorKind::ReactionValueRequiredException`.
     pub fn is_reaction_value_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17369,7 +17369,7 @@ pub enum PutFileErrorKind {
     /// <p>The file was not added or updated because the content of the file is exactly the same as the content of that file in the repository and branch
     /// that you specified.</p>
     SameFileContentException(crate::error::SameFileContentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutFileError {
@@ -17461,186 +17461,186 @@ impl PutFileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutFileErrorKind::BranchDoesNotExistException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::BranchDoesNotExistException`.
     pub fn is_branch_does_not_exist_exception(&self) -> bool {
         matches!(&self.kind, PutFileErrorKind::BranchDoesNotExistException(_))
     }
-    /// Returns true if the error kind is `PutFileErrorKind::BranchNameIsTagNameException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::BranchNameIsTagNameException`.
     pub fn is_branch_name_is_tag_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::BranchNameIsTagNameException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::BranchNameRequiredException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::BranchNameRequiredException`.
     pub fn is_branch_name_required_exception(&self) -> bool {
         matches!(&self.kind, PutFileErrorKind::BranchNameRequiredException(_))
     }
-    /// Returns true if the error kind is `PutFileErrorKind::CommitMessageLengthExceededException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::CommitMessageLengthExceededException`.
     pub fn is_commit_message_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::CommitMessageLengthExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::DirectoryNameConflictsWithFileNameException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::DirectoryNameConflictsWithFileNameException`.
     pub fn is_directory_name_conflicts_with_file_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::DirectoryNameConflictsWithFileNameException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::FileContentRequiredException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::FileContentRequiredException`.
     pub fn is_file_content_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::FileContentRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::FileContentSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::FileContentSizeLimitExceededException`.
     pub fn is_file_content_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::FileContentSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::FileNameConflictsWithDirectoryNameException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::FileNameConflictsWithDirectoryNameException`.
     pub fn is_file_name_conflicts_with_directory_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::FileNameConflictsWithDirectoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::FilePathConflictsWithSubmodulePathException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::FilePathConflictsWithSubmodulePathException`.
     pub fn is_file_path_conflicts_with_submodule_path_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::FilePathConflictsWithSubmodulePathException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::FolderContentSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::FolderContentSizeLimitExceededException`.
     pub fn is_folder_content_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::FolderContentSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::InvalidBranchNameException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::InvalidBranchNameException`.
     pub fn is_invalid_branch_name_exception(&self) -> bool {
         matches!(&self.kind, PutFileErrorKind::InvalidBranchNameException(_))
     }
-    /// Returns true if the error kind is `PutFileErrorKind::InvalidDeletionParameterException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::InvalidDeletionParameterException`.
     pub fn is_invalid_deletion_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::InvalidDeletionParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::InvalidEmailException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::InvalidEmailException`.
     pub fn is_invalid_email_exception(&self) -> bool {
         matches!(&self.kind, PutFileErrorKind::InvalidEmailException(_))
     }
-    /// Returns true if the error kind is `PutFileErrorKind::InvalidFileModeException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::InvalidFileModeException`.
     pub fn is_invalid_file_mode_exception(&self) -> bool {
         matches!(&self.kind, PutFileErrorKind::InvalidFileModeException(_))
     }
-    /// Returns true if the error kind is `PutFileErrorKind::InvalidParentCommitIdException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::InvalidParentCommitIdException`.
     pub fn is_invalid_parent_commit_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::InvalidParentCommitIdException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::InvalidPathException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::InvalidPathException`.
     pub fn is_invalid_path_exception(&self) -> bool {
         matches!(&self.kind, PutFileErrorKind::InvalidPathException(_))
     }
-    /// Returns true if the error kind is `PutFileErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::NameLengthExceededException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::NameLengthExceededException`.
     pub fn is_name_length_exceeded_exception(&self) -> bool {
         matches!(&self.kind, PutFileErrorKind::NameLengthExceededException(_))
     }
-    /// Returns true if the error kind is `PutFileErrorKind::ParentCommitDoesNotExistException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::ParentCommitDoesNotExistException`.
     pub fn is_parent_commit_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::ParentCommitDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::ParentCommitIdOutdatedException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::ParentCommitIdOutdatedException`.
     pub fn is_parent_commit_id_outdated_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::ParentCommitIdOutdatedException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::ParentCommitIdRequiredException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::ParentCommitIdRequiredException`.
     pub fn is_parent_commit_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::ParentCommitIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::PathRequiredException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::PathRequiredException`.
     pub fn is_path_required_exception(&self) -> bool {
         matches!(&self.kind, PutFileErrorKind::PathRequiredException(_))
     }
-    /// Returns true if the error kind is `PutFileErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutFileErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PutFileErrorKind::SameFileContentException`.
+    /// Returns `true` if the error kind is `PutFileErrorKind::SameFileContentException`.
     pub fn is_same_file_content_exception(&self) -> bool {
         matches!(&self.kind, PutFileErrorKind::SameFileContentException(_))
     }
@@ -17764,7 +17764,7 @@ pub enum PutRepositoryTriggersErrorKind {
     RepositoryTriggerNameRequiredException(crate::error::RepositoryTriggerNameRequiredException),
     /// <p>The list of triggers for the repository is required, but was not specified.</p>
     RepositoryTriggersListRequiredException(crate::error::RepositoryTriggersListRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRepositoryTriggersError {
@@ -17883,147 +17883,147 @@ impl PutRepositoryTriggersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerBranchNameException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerBranchNameException`.
     pub fn is_invalid_repository_trigger_branch_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerBranchNameException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerCustomDataException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerCustomDataException`.
     pub fn is_invalid_repository_trigger_custom_data_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerCustomDataException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerDestinationArnException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerDestinationArnException`.
     pub fn is_invalid_repository_trigger_destination_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerDestinationArnException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerEventsException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerEventsException`.
     pub fn is_invalid_repository_trigger_events_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerEventsException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerNameException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerNameException`.
     pub fn is_invalid_repository_trigger_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerNameException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerRegionException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerRegionException`.
     pub fn is_invalid_repository_trigger_region_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::InvalidRepositoryTriggerRegionException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::MaximumBranchesExceededException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::MaximumBranchesExceededException`.
     pub fn is_maximum_branches_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::MaximumBranchesExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::MaximumRepositoryTriggersExceededException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::MaximumRepositoryTriggersExceededException`.
     pub fn is_maximum_repository_triggers_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::MaximumRepositoryTriggersExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::RepositoryTriggerBranchNameListRequiredException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::RepositoryTriggerBranchNameListRequiredException`.
     pub fn is_repository_trigger_branch_name_list_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::RepositoryTriggerBranchNameListRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::RepositoryTriggerDestinationArnRequiredException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::RepositoryTriggerDestinationArnRequiredException`.
     pub fn is_repository_trigger_destination_arn_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::RepositoryTriggerDestinationArnRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::RepositoryTriggerEventsListRequiredException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::RepositoryTriggerEventsListRequiredException`.
     pub fn is_repository_trigger_events_list_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::RepositoryTriggerEventsListRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::RepositoryTriggerNameRequiredException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::RepositoryTriggerNameRequiredException`.
     pub fn is_repository_trigger_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRepositoryTriggersErrorKind::RepositoryTriggerNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `PutRepositoryTriggersErrorKind::RepositoryTriggersListRequiredException`.
+    /// Returns `true` if the error kind is `PutRepositoryTriggersErrorKind::RepositoryTriggersListRequiredException`.
     pub fn is_repository_triggers_list_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18133,7 +18133,7 @@ pub enum TagResourceErrorKind {
     TagsMapRequiredException(crate::error::TagsMapRequiredException),
     /// <p>The maximum number of tags for an AWS CodeCommit resource has been exceeded.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -18204,57 +18204,57 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidResourceArnException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidResourceArnException`.
     pub fn is_invalid_resource_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidResourceArnException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidSystemTagUsageException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidSystemTagUsageException`.
     pub fn is_invalid_system_tag_usage_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidSystemTagUsageException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidTagsMapException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidTagsMapException`.
     pub fn is_invalid_tags_map_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidTagsMapException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceArnRequiredException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceArnRequiredException`.
     pub fn is_resource_arn_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceArnRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TagPolicyException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TagPolicyException`.
     pub fn is_tag_policy_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TagPolicyException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TagsMapRequiredException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TagsMapRequiredException`.
     pub fn is_tags_map_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::TagsMapRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
     }
@@ -18357,7 +18357,7 @@ pub enum TestRepositoryTriggersErrorKind {
     RepositoryTriggerNameRequiredException(crate::error::RepositoryTriggerNameRequiredException),
     /// <p>The list of triggers for the repository is required, but was not specified.</p>
     RepositoryTriggersListRequiredException(crate::error::RepositoryTriggersListRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TestRepositoryTriggersError {
@@ -18482,147 +18482,147 @@ impl TestRepositoryTriggersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerBranchNameException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerBranchNameException`.
     pub fn is_invalid_repository_trigger_branch_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerBranchNameException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerCustomDataException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerCustomDataException`.
     pub fn is_invalid_repository_trigger_custom_data_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerCustomDataException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerDestinationArnException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerDestinationArnException`.
     pub fn is_invalid_repository_trigger_destination_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerDestinationArnException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerEventsException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerEventsException`.
     pub fn is_invalid_repository_trigger_events_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerEventsException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerNameException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerNameException`.
     pub fn is_invalid_repository_trigger_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerNameException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerRegionException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerRegionException`.
     pub fn is_invalid_repository_trigger_region_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::InvalidRepositoryTriggerRegionException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::MaximumBranchesExceededException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::MaximumBranchesExceededException`.
     pub fn is_maximum_branches_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::MaximumBranchesExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::MaximumRepositoryTriggersExceededException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::MaximumRepositoryTriggersExceededException`.
     pub fn is_maximum_repository_triggers_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::MaximumRepositoryTriggersExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::RepositoryNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::RepositoryTriggerBranchNameListRequiredException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::RepositoryTriggerBranchNameListRequiredException`.
     pub fn is_repository_trigger_branch_name_list_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::RepositoryTriggerBranchNameListRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::RepositoryTriggerDestinationArnRequiredException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::RepositoryTriggerDestinationArnRequiredException`.
     pub fn is_repository_trigger_destination_arn_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::RepositoryTriggerDestinationArnRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::RepositoryTriggerEventsListRequiredException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::RepositoryTriggerEventsListRequiredException`.
     pub fn is_repository_trigger_events_list_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::RepositoryTriggerEventsListRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::RepositoryTriggerNameRequiredException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::RepositoryTriggerNameRequiredException`.
     pub fn is_repository_trigger_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRepositoryTriggersErrorKind::RepositoryTriggerNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `TestRepositoryTriggersErrorKind::RepositoryTriggersListRequiredException`.
+    /// Returns `true` if the error kind is `TestRepositoryTriggersErrorKind::RepositoryTriggersListRequiredException`.
     pub fn is_repository_triggers_list_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -18736,7 +18736,7 @@ pub enum UntagResourceErrorKind {
     TagPolicyException(crate::error::TagPolicyException),
     /// <p>The maximum number of tags for an AWS CodeCommit resource has been exceeded.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -18807,60 +18807,60 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidResourceArnException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidResourceArnException`.
     pub fn is_invalid_resource_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidResourceArnException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidSystemTagUsageException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidSystemTagUsageException`.
     pub fn is_invalid_system_tag_usage_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidSystemTagUsageException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidTagKeysListException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidTagKeysListException`.
     pub fn is_invalid_tag_keys_list_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidTagKeysListException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceArnRequiredException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceArnRequiredException`.
     pub fn is_resource_arn_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceArnRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TagKeysListRequiredException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TagKeysListRequiredException`.
     pub fn is_tag_keys_list_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::TagKeysListRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TagPolicyException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TagPolicyException`.
     pub fn is_tag_policy_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::TagPolicyException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::TooManyTagsException(_))
     }
@@ -18921,7 +18921,7 @@ pub enum UpdateApprovalRuleTemplateContentErrorKind {
     ),
     /// <p>The SHA-256 hash signature for the rule content is not valid.</p>
     InvalidRuleContentSha256Exception(crate::error::InvalidRuleContentSha256Exception),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApprovalRuleTemplateContentError {
@@ -19006,11 +19006,11 @@ impl UpdateApprovalRuleTemplateContentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApprovalRuleTemplateContentErrorKind::ApprovalRuleTemplateContentRequiredException`.
+    /// Returns `true` if the error kind is `UpdateApprovalRuleTemplateContentErrorKind::ApprovalRuleTemplateContentRequiredException`.
     pub fn is_approval_rule_template_content_required_exception(&self) -> bool {
         matches!(&self.kind, UpdateApprovalRuleTemplateContentErrorKind::ApprovalRuleTemplateContentRequiredException(_))
     }
-    /// Returns true if the error kind is `UpdateApprovalRuleTemplateContentErrorKind::ApprovalRuleTemplateDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateApprovalRuleTemplateContentErrorKind::ApprovalRuleTemplateDoesNotExistException`.
     pub fn is_approval_rule_template_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19019,7 +19019,7 @@ impl UpdateApprovalRuleTemplateContentError {
             )
         )
     }
-    /// Returns true if the error kind is `UpdateApprovalRuleTemplateContentErrorKind::ApprovalRuleTemplateNameRequiredException`.
+    /// Returns `true` if the error kind is `UpdateApprovalRuleTemplateContentErrorKind::ApprovalRuleTemplateNameRequiredException`.
     pub fn is_approval_rule_template_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19028,7 +19028,7 @@ impl UpdateApprovalRuleTemplateContentError {
             )
         )
     }
-    /// Returns true if the error kind is `UpdateApprovalRuleTemplateContentErrorKind::InvalidApprovalRuleTemplateContentException`.
+    /// Returns `true` if the error kind is `UpdateApprovalRuleTemplateContentErrorKind::InvalidApprovalRuleTemplateContentException`.
     pub fn is_invalid_approval_rule_template_content_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19037,14 +19037,14 @@ impl UpdateApprovalRuleTemplateContentError {
             )
         )
     }
-    /// Returns true if the error kind is `UpdateApprovalRuleTemplateContentErrorKind::InvalidApprovalRuleTemplateNameException`.
+    /// Returns `true` if the error kind is `UpdateApprovalRuleTemplateContentErrorKind::InvalidApprovalRuleTemplateNameException`.
     pub fn is_invalid_approval_rule_template_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApprovalRuleTemplateContentErrorKind::InvalidApprovalRuleTemplateNameException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApprovalRuleTemplateContentErrorKind::InvalidRuleContentSha256Exception`.
+    /// Returns `true` if the error kind is `UpdateApprovalRuleTemplateContentErrorKind::InvalidRuleContentSha256Exception`.
     pub fn is_invalid_rule_content_sha256_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19116,7 +19116,7 @@ pub enum UpdateApprovalRuleTemplateDescriptionErrorKind {
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApprovalRuleTemplateDescriptionError {
@@ -19195,19 +19195,19 @@ impl UpdateApprovalRuleTemplateDescriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApprovalRuleTemplateDescriptionErrorKind::ApprovalRuleTemplateDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateApprovalRuleTemplateDescriptionErrorKind::ApprovalRuleTemplateDoesNotExistException`.
     pub fn is_approval_rule_template_does_not_exist_exception(&self) -> bool {
         matches!(&self.kind, UpdateApprovalRuleTemplateDescriptionErrorKind::ApprovalRuleTemplateDoesNotExistException(_))
     }
-    /// Returns true if the error kind is `UpdateApprovalRuleTemplateDescriptionErrorKind::ApprovalRuleTemplateNameRequiredException`.
+    /// Returns `true` if the error kind is `UpdateApprovalRuleTemplateDescriptionErrorKind::ApprovalRuleTemplateNameRequiredException`.
     pub fn is_approval_rule_template_name_required_exception(&self) -> bool {
         matches!(&self.kind, UpdateApprovalRuleTemplateDescriptionErrorKind::ApprovalRuleTemplateNameRequiredException(_))
     }
-    /// Returns true if the error kind is `UpdateApprovalRuleTemplateDescriptionErrorKind::InvalidApprovalRuleTemplateDescriptionException`.
+    /// Returns `true` if the error kind is `UpdateApprovalRuleTemplateDescriptionErrorKind::InvalidApprovalRuleTemplateDescriptionException`.
     pub fn is_invalid_approval_rule_template_description_exception(&self) -> bool {
         matches!(&self.kind, UpdateApprovalRuleTemplateDescriptionErrorKind::InvalidApprovalRuleTemplateDescriptionException(_))
     }
-    /// Returns true if the error kind is `UpdateApprovalRuleTemplateDescriptionErrorKind::InvalidApprovalRuleTemplateNameException`.
+    /// Returns `true` if the error kind is `UpdateApprovalRuleTemplateDescriptionErrorKind::InvalidApprovalRuleTemplateNameException`.
     pub fn is_invalid_approval_rule_template_name_exception(&self) -> bool {
         matches!(&self.kind, UpdateApprovalRuleTemplateDescriptionErrorKind::InvalidApprovalRuleTemplateNameException(_))
     }
@@ -19269,7 +19269,7 @@ pub enum UpdateApprovalRuleTemplateNameErrorKind {
     InvalidApprovalRuleTemplateNameException(
         crate::error::InvalidApprovalRuleTemplateNameException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApprovalRuleTemplateNameError {
@@ -19348,14 +19348,14 @@ impl UpdateApprovalRuleTemplateNameError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApprovalRuleTemplateNameErrorKind::ApprovalRuleTemplateDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateApprovalRuleTemplateNameErrorKind::ApprovalRuleTemplateDoesNotExistException`.
     pub fn is_approval_rule_template_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApprovalRuleTemplateNameErrorKind::ApprovalRuleTemplateDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApprovalRuleTemplateNameErrorKind::ApprovalRuleTemplateNameAlreadyExistsException`.
+    /// Returns `true` if the error kind is `UpdateApprovalRuleTemplateNameErrorKind::ApprovalRuleTemplateNameAlreadyExistsException`.
     pub fn is_approval_rule_template_name_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19364,14 +19364,14 @@ impl UpdateApprovalRuleTemplateNameError {
             )
         )
     }
-    /// Returns true if the error kind is `UpdateApprovalRuleTemplateNameErrorKind::ApprovalRuleTemplateNameRequiredException`.
+    /// Returns `true` if the error kind is `UpdateApprovalRuleTemplateNameErrorKind::ApprovalRuleTemplateNameRequiredException`.
     pub fn is_approval_rule_template_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApprovalRuleTemplateNameErrorKind::ApprovalRuleTemplateNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApprovalRuleTemplateNameErrorKind::InvalidApprovalRuleTemplateNameException`.
+    /// Returns `true` if the error kind is `UpdateApprovalRuleTemplateNameErrorKind::InvalidApprovalRuleTemplateNameException`.
     pub fn is_invalid_approval_rule_template_name_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19431,7 +19431,7 @@ pub enum UpdateCommentErrorKind {
     CommentNotCreatedByCallerException(crate::error::CommentNotCreatedByCallerException),
     /// <p>The comment ID is not in a valid format. Make sure that you have provided the full comment ID.</p>
     InvalidCommentIdException(crate::error::InvalidCommentIdException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCommentError {
@@ -19502,49 +19502,49 @@ impl UpdateCommentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCommentErrorKind::CommentContentRequiredException`.
+    /// Returns `true` if the error kind is `UpdateCommentErrorKind::CommentContentRequiredException`.
     pub fn is_comment_content_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCommentErrorKind::CommentContentRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCommentErrorKind::CommentContentSizeLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateCommentErrorKind::CommentContentSizeLimitExceededException`.
     pub fn is_comment_content_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCommentErrorKind::CommentContentSizeLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCommentErrorKind::CommentDeletedException`.
+    /// Returns `true` if the error kind is `UpdateCommentErrorKind::CommentDeletedException`.
     pub fn is_comment_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCommentErrorKind::CommentDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCommentErrorKind::CommentDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateCommentErrorKind::CommentDoesNotExistException`.
     pub fn is_comment_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCommentErrorKind::CommentDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCommentErrorKind::CommentIdRequiredException`.
+    /// Returns `true` if the error kind is `UpdateCommentErrorKind::CommentIdRequiredException`.
     pub fn is_comment_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCommentErrorKind::CommentIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCommentErrorKind::CommentNotCreatedByCallerException`.
+    /// Returns `true` if the error kind is `UpdateCommentErrorKind::CommentNotCreatedByCallerException`.
     pub fn is_comment_not_created_by_caller_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCommentErrorKind::CommentNotCreatedByCallerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCommentErrorKind::InvalidCommentIdException`.
+    /// Returns `true` if the error kind is `UpdateCommentErrorKind::InvalidCommentIdException`.
     pub fn is_invalid_comment_id_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19612,7 +19612,7 @@ pub enum UpdateDefaultBranchErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDefaultBranchError {
@@ -19691,77 +19691,77 @@ impl UpdateDefaultBranchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDefaultBranchErrorKind::BranchDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateDefaultBranchErrorKind::BranchDoesNotExistException`.
     pub fn is_branch_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDefaultBranchErrorKind::BranchDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDefaultBranchErrorKind::BranchNameRequiredException`.
+    /// Returns `true` if the error kind is `UpdateDefaultBranchErrorKind::BranchNameRequiredException`.
     pub fn is_branch_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDefaultBranchErrorKind::BranchNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDefaultBranchErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `UpdateDefaultBranchErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDefaultBranchErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDefaultBranchErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateDefaultBranchErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDefaultBranchErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDefaultBranchErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `UpdateDefaultBranchErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDefaultBranchErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDefaultBranchErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDefaultBranchErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDefaultBranchErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDefaultBranchErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateDefaultBranchErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDefaultBranchErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDefaultBranchErrorKind::InvalidBranchNameException`.
+    /// Returns `true` if the error kind is `UpdateDefaultBranchErrorKind::InvalidBranchNameException`.
     pub fn is_invalid_branch_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDefaultBranchErrorKind::InvalidBranchNameException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDefaultBranchErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `UpdateDefaultBranchErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDefaultBranchErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDefaultBranchErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateDefaultBranchErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDefaultBranchErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDefaultBranchErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `UpdateDefaultBranchErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19842,7 +19842,7 @@ pub enum UpdatePullRequestApprovalRuleContentErrorKind {
     PullRequestDoesNotExistException(crate::error::PullRequestDoesNotExistException),
     /// <p>A pull request ID is required, but none was provided.</p>
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePullRequestApprovalRuleContentError {
@@ -19957,32 +19957,32 @@ impl UpdatePullRequestApprovalRuleContentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::ApprovalRuleContentRequiredException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::ApprovalRuleContentRequiredException`.
     pub fn is_approval_rule_content_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalRuleContentErrorKind::ApprovalRuleContentRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::ApprovalRuleDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::ApprovalRuleDoesNotExistException`.
     pub fn is_approval_rule_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalRuleContentErrorKind::ApprovalRuleDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::ApprovalRuleNameRequiredException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::ApprovalRuleNameRequiredException`.
     pub fn is_approval_rule_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalRuleContentErrorKind::ApprovalRuleNameRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::CannotModifyApprovalRuleFromTemplateException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::CannotModifyApprovalRuleFromTemplateException`.
     pub fn is_cannot_modify_approval_rule_from_template_exception(&self) -> bool {
         matches!(&self.kind, UpdatePullRequestApprovalRuleContentErrorKind::CannotModifyApprovalRuleFromTemplateException(_))
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -19991,77 +19991,77 @@ impl UpdatePullRequestApprovalRuleContentError {
             )
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalRuleContentErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalRuleContentErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalRuleContentErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalRuleContentErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::InvalidApprovalRuleContentException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::InvalidApprovalRuleContentException`.
     pub fn is_invalid_approval_rule_content_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalRuleContentErrorKind::InvalidApprovalRuleContentException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::InvalidApprovalRuleNameException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::InvalidApprovalRuleNameException`.
     pub fn is_invalid_approval_rule_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalRuleContentErrorKind::InvalidApprovalRuleNameException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::InvalidPullRequestIdException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::InvalidPullRequestIdException`.
     pub fn is_invalid_pull_request_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalRuleContentErrorKind::InvalidPullRequestIdException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::InvalidRuleContentSha256Exception`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::InvalidRuleContentSha256Exception`.
     pub fn is_invalid_rule_content_sha256_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalRuleContentErrorKind::InvalidRuleContentSha256Exception(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::PullRequestAlreadyClosedException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::PullRequestAlreadyClosedException`.
     pub fn is_pull_request_already_closed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalRuleContentErrorKind::PullRequestAlreadyClosedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::PullRequestDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::PullRequestDoesNotExistException`.
     pub fn is_pull_request_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalRuleContentErrorKind::PullRequestDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::PullRequestIdRequiredException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalRuleContentErrorKind::PullRequestIdRequiredException`.
     pub fn is_pull_request_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20179,7 +20179,7 @@ pub enum UpdatePullRequestApprovalStateErrorKind {
     RevisionIdRequiredException(crate::error::RevisionIdRequiredException),
     /// <p>The revision ID provided in the request does not match the current revision ID. Use GetPullRequest to retrieve the current revision ID.</p>
     RevisionNotCurrentException(crate::error::RevisionNotCurrentException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePullRequestApprovalStateError {
@@ -20294,84 +20294,84 @@ impl UpdatePullRequestApprovalStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalStateErrorKind::ApprovalStateRequiredException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalStateErrorKind::ApprovalStateRequiredException`.
     pub fn is_approval_state_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalStateErrorKind::ApprovalStateRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalStateErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalStateErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalStateErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalStateErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalStateErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalStateErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalStateErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalStateErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalStateErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalStateErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalStateErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalStateErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalStateErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalStateErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalStateErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalStateErrorKind::InvalidApprovalStateException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalStateErrorKind::InvalidApprovalStateException`.
     pub fn is_invalid_approval_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalStateErrorKind::InvalidApprovalStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalStateErrorKind::InvalidPullRequestIdException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalStateErrorKind::InvalidPullRequestIdException`.
     pub fn is_invalid_pull_request_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalStateErrorKind::InvalidPullRequestIdException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalStateErrorKind::InvalidRevisionIdException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalStateErrorKind::InvalidRevisionIdException`.
     pub fn is_invalid_revision_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalStateErrorKind::InvalidRevisionIdException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalStateErrorKind::MaximumNumberOfApprovalsExceededException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalStateErrorKind::MaximumNumberOfApprovalsExceededException`.
     pub fn is_maximum_number_of_approvals_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalStateErrorKind::MaximumNumberOfApprovalsExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalStateErrorKind::PullRequestAlreadyClosedException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalStateErrorKind::PullRequestAlreadyClosedException`.
     pub fn is_pull_request_already_closed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalStateErrorKind::PullRequestAlreadyClosedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalStateErrorKind::PullRequestCannotBeApprovedByAuthorException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalStateErrorKind::PullRequestCannotBeApprovedByAuthorException`.
     pub fn is_pull_request_cannot_be_approved_by_author_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20380,28 +20380,28 @@ impl UpdatePullRequestApprovalStateError {
             )
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalStateErrorKind::PullRequestDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalStateErrorKind::PullRequestDoesNotExistException`.
     pub fn is_pull_request_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalStateErrorKind::PullRequestDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalStateErrorKind::PullRequestIdRequiredException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalStateErrorKind::PullRequestIdRequiredException`.
     pub fn is_pull_request_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalStateErrorKind::PullRequestIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalStateErrorKind::RevisionIdRequiredException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalStateErrorKind::RevisionIdRequiredException`.
     pub fn is_revision_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestApprovalStateErrorKind::RevisionIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestApprovalStateErrorKind::RevisionNotCurrentException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestApprovalStateErrorKind::RevisionNotCurrentException`.
     pub fn is_revision_not_current_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20491,7 +20491,7 @@ pub enum UpdatePullRequestDescriptionErrorKind {
     PullRequestDoesNotExistException(crate::error::PullRequestDoesNotExistException),
     /// <p>A pull request ID is required, but none was provided.</p>
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePullRequestDescriptionError {
@@ -20568,35 +20568,35 @@ impl UpdatePullRequestDescriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePullRequestDescriptionErrorKind::InvalidDescriptionException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestDescriptionErrorKind::InvalidDescriptionException`.
     pub fn is_invalid_description_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestDescriptionErrorKind::InvalidDescriptionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestDescriptionErrorKind::InvalidPullRequestIdException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestDescriptionErrorKind::InvalidPullRequestIdException`.
     pub fn is_invalid_pull_request_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestDescriptionErrorKind::InvalidPullRequestIdException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestDescriptionErrorKind::PullRequestAlreadyClosedException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestDescriptionErrorKind::PullRequestAlreadyClosedException`.
     pub fn is_pull_request_already_closed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestDescriptionErrorKind::PullRequestAlreadyClosedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestDescriptionErrorKind::PullRequestDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestDescriptionErrorKind::PullRequestDoesNotExistException`.
     pub fn is_pull_request_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestDescriptionErrorKind::PullRequestDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestDescriptionErrorKind::PullRequestIdRequiredException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestDescriptionErrorKind::PullRequestIdRequiredException`.
     pub fn is_pull_request_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20664,7 +20664,7 @@ pub enum UpdatePullRequestStatusErrorKind {
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
     /// <p>A pull request status is required, but none was provided.</p>
     PullRequestStatusRequiredException(crate::error::PullRequestStatusRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePullRequestStatusError {
@@ -20759,77 +20759,77 @@ impl UpdatePullRequestStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePullRequestStatusErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestStatusErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestStatusErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestStatusErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestStatusErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestStatusErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestStatusErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestStatusErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestStatusErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestStatusErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestStatusErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestStatusErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestStatusErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestStatusErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestStatusErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestStatusErrorKind::InvalidPullRequestIdException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestStatusErrorKind::InvalidPullRequestIdException`.
     pub fn is_invalid_pull_request_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestStatusErrorKind::InvalidPullRequestIdException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestStatusErrorKind::InvalidPullRequestStatusException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestStatusErrorKind::InvalidPullRequestStatusException`.
     pub fn is_invalid_pull_request_status_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestStatusErrorKind::InvalidPullRequestStatusException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestStatusErrorKind::InvalidPullRequestStatusUpdateException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestStatusErrorKind::InvalidPullRequestStatusUpdateException`.
     pub fn is_invalid_pull_request_status_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestStatusErrorKind::InvalidPullRequestStatusUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestStatusErrorKind::PullRequestDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestStatusErrorKind::PullRequestDoesNotExistException`.
     pub fn is_pull_request_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestStatusErrorKind::PullRequestDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestStatusErrorKind::PullRequestIdRequiredException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestStatusErrorKind::PullRequestIdRequiredException`.
     pub fn is_pull_request_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestStatusErrorKind::PullRequestIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestStatusErrorKind::PullRequestStatusRequiredException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestStatusErrorKind::PullRequestStatusRequiredException`.
     pub fn is_pull_request_status_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -20901,7 +20901,7 @@ pub enum UpdatePullRequestTitleErrorKind {
     PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
     /// <p>A pull request title is required. It cannot be empty or null.</p>
     TitleRequiredException(crate::error::TitleRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePullRequestTitleError {
@@ -20975,42 +20975,42 @@ impl UpdatePullRequestTitleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePullRequestTitleErrorKind::InvalidPullRequestIdException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestTitleErrorKind::InvalidPullRequestIdException`.
     pub fn is_invalid_pull_request_id_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestTitleErrorKind::InvalidPullRequestIdException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestTitleErrorKind::InvalidTitleException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestTitleErrorKind::InvalidTitleException`.
     pub fn is_invalid_title_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestTitleErrorKind::InvalidTitleException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestTitleErrorKind::PullRequestAlreadyClosedException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestTitleErrorKind::PullRequestAlreadyClosedException`.
     pub fn is_pull_request_already_closed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestTitleErrorKind::PullRequestAlreadyClosedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestTitleErrorKind::PullRequestDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestTitleErrorKind::PullRequestDoesNotExistException`.
     pub fn is_pull_request_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestTitleErrorKind::PullRequestDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestTitleErrorKind::PullRequestIdRequiredException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestTitleErrorKind::PullRequestIdRequiredException`.
     pub fn is_pull_request_id_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePullRequestTitleErrorKind::PullRequestIdRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePullRequestTitleErrorKind::TitleRequiredException`.
+    /// Returns `true` if the error kind is `UpdatePullRequestTitleErrorKind::TitleRequiredException`.
     pub fn is_title_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -21075,7 +21075,7 @@ pub enum UpdateRepositoryDescriptionErrorKind {
     RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRepositoryDescriptionError {
@@ -21164,63 +21164,63 @@ impl UpdateRepositoryDescriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRepositoryDescriptionErrorKind::EncryptionIntegrityChecksFailedException`.
+    /// Returns `true` if the error kind is `UpdateRepositoryDescriptionErrorKind::EncryptionIntegrityChecksFailedException`.
     pub fn is_encryption_integrity_checks_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRepositoryDescriptionErrorKind::EncryptionIntegrityChecksFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRepositoryDescriptionErrorKind::EncryptionKeyAccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateRepositoryDescriptionErrorKind::EncryptionKeyAccessDeniedException`.
     pub fn is_encryption_key_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRepositoryDescriptionErrorKind::EncryptionKeyAccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRepositoryDescriptionErrorKind::EncryptionKeyDisabledException`.
+    /// Returns `true` if the error kind is `UpdateRepositoryDescriptionErrorKind::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRepositoryDescriptionErrorKind::EncryptionKeyDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRepositoryDescriptionErrorKind::EncryptionKeyNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRepositoryDescriptionErrorKind::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRepositoryDescriptionErrorKind::EncryptionKeyNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRepositoryDescriptionErrorKind::EncryptionKeyUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateRepositoryDescriptionErrorKind::EncryptionKeyUnavailableException`.
     pub fn is_encryption_key_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRepositoryDescriptionErrorKind::EncryptionKeyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRepositoryDescriptionErrorKind::InvalidRepositoryDescriptionException`.
+    /// Returns `true` if the error kind is `UpdateRepositoryDescriptionErrorKind::InvalidRepositoryDescriptionException`.
     pub fn is_invalid_repository_description_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRepositoryDescriptionErrorKind::InvalidRepositoryDescriptionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRepositoryDescriptionErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `UpdateRepositoryDescriptionErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRepositoryDescriptionErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRepositoryDescriptionErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateRepositoryDescriptionErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRepositoryDescriptionErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRepositoryDescriptionErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `UpdateRepositoryDescriptionErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -21290,7 +21290,7 @@ pub enum UpdateRepositoryNameErrorKind {
     RepositoryNameExistsException(crate::error::RepositoryNameExistsException),
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRepositoryNameError {
@@ -21356,28 +21356,28 @@ impl UpdateRepositoryNameError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRepositoryNameErrorKind::InvalidRepositoryNameException`.
+    /// Returns `true` if the error kind is `UpdateRepositoryNameErrorKind::InvalidRepositoryNameException`.
     pub fn is_invalid_repository_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRepositoryNameErrorKind::InvalidRepositoryNameException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRepositoryNameErrorKind::RepositoryDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateRepositoryNameErrorKind::RepositoryDoesNotExistException`.
     pub fn is_repository_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRepositoryNameErrorKind::RepositoryDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRepositoryNameErrorKind::RepositoryNameExistsException`.
+    /// Returns `true` if the error kind is `UpdateRepositoryNameErrorKind::RepositoryNameExistsException`.
     pub fn is_repository_name_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRepositoryNameErrorKind::RepositoryNameExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRepositoryNameErrorKind::RepositoryNameRequiredException`.
+    /// Returns `true` if the error kind is `UpdateRepositoryNameErrorKind::RepositoryNameRequiredException`.
     pub fn is_repository_name_required_exception(&self) -> bool {
         matches!(
             &self.kind,

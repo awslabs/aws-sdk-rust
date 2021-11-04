@@ -378,7 +378,7 @@ pub type GenerateDataSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl GenerateDataSetInput {
     /// Consumes the builder and constructs an Operation<[`GenerateDataSet`](crate::operation::GenerateDataSet)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -410,6 +410,7 @@ impl GenerateDataSetInput {
             input: &crate::input::GenerateDataSetInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -472,9 +473,10 @@ impl GenerateDataSetInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -672,7 +674,7 @@ pub type StartSupportDataExportInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl StartSupportDataExportInput {
     /// Consumes the builder and constructs an Operation<[`StartSupportDataExport`](crate::operation::StartSupportDataExport)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -704,6 +706,7 @@ impl StartSupportDataExportInput {
             input: &crate::input::StartSupportDataExportInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -768,9 +771,10 @@ impl StartSupportDataExportInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,

@@ -14,7 +14,7 @@ pub struct AbortMultipartUploadError {
 pub enum AbortMultipartUploadErrorKind {
     /// <p>The specified multipart upload does not exist.</p>
     NoSuchUpload(crate::error::NoSuchUpload),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AbortMultipartUploadError {
@@ -77,7 +77,7 @@ impl AbortMultipartUploadError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AbortMultipartUploadErrorKind::NoSuchUpload`.
+    /// Returns `true` if the error kind is `AbortMultipartUploadErrorKind::NoSuchUpload`.
     pub fn is_no_such_upload(&self) -> bool {
         matches!(&self.kind, AbortMultipartUploadErrorKind::NoSuchUpload(_))
     }
@@ -104,7 +104,7 @@ pub struct CompleteMultipartUploadError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CompleteMultipartUploadErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CompleteMultipartUploadError {
@@ -191,7 +191,7 @@ pub enum CopyObjectErrorKind {
     /// <p>The source object of the COPY action is not in the active tier and is only stored in
     /// Amazon S3 Glacier.</p>
     ObjectNotInActiveTierError(crate::error::ObjectNotInActiveTierError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopyObjectError {
@@ -254,7 +254,7 @@ impl CopyObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CopyObjectErrorKind::ObjectNotInActiveTierError`.
+    /// Returns `true` if the error kind is `CopyObjectErrorKind::ObjectNotInActiveTierError`.
     pub fn is_object_not_in_active_tier_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -292,7 +292,7 @@ pub enum CreateBucketErrorKind {
     /// re-create an existing bucket that you already own in the North Virginia Region, Amazon S3
     /// returns 200 OK and resets the bucket access control lists (ACLs).</p>
     BucketAlreadyOwnedByYou(crate::error::BucketAlreadyOwnedByYou),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBucketError {
@@ -356,11 +356,11 @@ impl CreateBucketError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBucketErrorKind::BucketAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateBucketErrorKind::BucketAlreadyExists`.
     pub fn is_bucket_already_exists(&self) -> bool {
         matches!(&self.kind, CreateBucketErrorKind::BucketAlreadyExists(_))
     }
-    /// Returns true if the error kind is `CreateBucketErrorKind::BucketAlreadyOwnedByYou`.
+    /// Returns `true` if the error kind is `CreateBucketErrorKind::BucketAlreadyOwnedByYou`.
     pub fn is_bucket_already_owned_by_you(&self) -> bool {
         matches!(
             &self.kind,
@@ -391,7 +391,7 @@ pub struct CreateMultipartUploadError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateMultipartUploadErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMultipartUploadError {
@@ -475,7 +475,7 @@ pub struct DeleteBucketError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketError {
@@ -559,7 +559,7 @@ pub struct DeleteBucketAnalyticsConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketAnalyticsConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketAnalyticsConfigurationError {
@@ -646,7 +646,7 @@ pub struct DeleteBucketCorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketCorsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketCorsError {
@@ -730,7 +730,7 @@ pub struct DeleteBucketEncryptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketEncryptionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketEncryptionError {
@@ -814,7 +814,7 @@ pub struct DeleteBucketIntelligentTieringConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketIntelligentTieringConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketIntelligentTieringConfigurationError {
@@ -907,7 +907,7 @@ pub struct DeleteBucketInventoryConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketInventoryConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketInventoryConfigurationError {
@@ -994,7 +994,7 @@ pub struct DeleteBucketLifecycleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketLifecycleErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketLifecycleError {
@@ -1078,7 +1078,7 @@ pub struct DeleteBucketMetricsConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketMetricsConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketMetricsConfigurationError {
@@ -1165,7 +1165,7 @@ pub struct DeleteBucketOwnershipControlsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketOwnershipControlsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketOwnershipControlsError {
@@ -1252,7 +1252,7 @@ pub struct DeleteBucketPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketPolicyError {
@@ -1336,7 +1336,7 @@ pub struct DeleteBucketReplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketReplicationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketReplicationError {
@@ -1420,7 +1420,7 @@ pub struct DeleteBucketTaggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketTaggingErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketTaggingError {
@@ -1504,7 +1504,7 @@ pub struct DeleteBucketWebsiteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketWebsiteErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketWebsiteError {
@@ -1588,7 +1588,7 @@ pub struct DeleteObjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteObjectErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteObjectError {
@@ -1672,7 +1672,7 @@ pub struct DeleteObjectsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteObjectsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteObjectsError {
@@ -1756,7 +1756,7 @@ pub struct DeleteObjectTaggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteObjectTaggingErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteObjectTaggingError {
@@ -1840,7 +1840,7 @@ pub struct DeletePublicAccessBlockError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePublicAccessBlockErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePublicAccessBlockError {
@@ -1924,7 +1924,7 @@ pub struct GetBucketAccelerateConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketAccelerateConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketAccelerateConfigurationError {
@@ -2011,7 +2011,7 @@ pub struct GetBucketAclError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketAclErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketAclError {
@@ -2095,7 +2095,7 @@ pub struct GetBucketAnalyticsConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketAnalyticsConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketAnalyticsConfigurationError {
@@ -2182,7 +2182,7 @@ pub struct GetBucketCorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketCorsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketCorsError {
@@ -2266,7 +2266,7 @@ pub struct GetBucketEncryptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketEncryptionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketEncryptionError {
@@ -2350,7 +2350,7 @@ pub struct GetBucketIntelligentTieringConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketIntelligentTieringConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketIntelligentTieringConfigurationError {
@@ -2439,7 +2439,7 @@ pub struct GetBucketInventoryConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketInventoryConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketInventoryConfigurationError {
@@ -2526,7 +2526,7 @@ pub struct GetBucketLifecycleConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketLifecycleConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketLifecycleConfigurationError {
@@ -2613,7 +2613,7 @@ pub struct GetBucketLocationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketLocationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketLocationError {
@@ -2697,7 +2697,7 @@ pub struct GetBucketLoggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketLoggingErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketLoggingError {
@@ -2781,7 +2781,7 @@ pub struct GetBucketMetricsConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketMetricsConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketMetricsConfigurationError {
@@ -2868,7 +2868,7 @@ pub struct GetBucketNotificationConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketNotificationConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketNotificationConfigurationError {
@@ -2955,7 +2955,7 @@ pub struct GetBucketOwnershipControlsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketOwnershipControlsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketOwnershipControlsError {
@@ -3039,7 +3039,7 @@ pub struct GetBucketPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketPolicyError {
@@ -3123,7 +3123,7 @@ pub struct GetBucketPolicyStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketPolicyStatusErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketPolicyStatusError {
@@ -3207,7 +3207,7 @@ pub struct GetBucketReplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketReplicationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketReplicationError {
@@ -3291,7 +3291,7 @@ pub struct GetBucketRequestPaymentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketRequestPaymentErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketRequestPaymentError {
@@ -3375,7 +3375,7 @@ pub struct GetBucketTaggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketTaggingErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketTaggingError {
@@ -3459,7 +3459,7 @@ pub struct GetBucketVersioningError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketVersioningErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketVersioningError {
@@ -3543,7 +3543,7 @@ pub struct GetBucketWebsiteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketWebsiteErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketWebsiteError {
@@ -3631,7 +3631,7 @@ pub enum GetObjectErrorKind {
     InvalidObjectState(crate::error::InvalidObjectState),
     /// <p>The specified key does not exist.</p>
     NoSuchKey(crate::error::NoSuchKey),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetObjectError {
@@ -3695,11 +3695,11 @@ impl GetObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetObjectErrorKind::InvalidObjectState`.
+    /// Returns `true` if the error kind is `GetObjectErrorKind::InvalidObjectState`.
     pub fn is_invalid_object_state(&self) -> bool {
         matches!(&self.kind, GetObjectErrorKind::InvalidObjectState(_))
     }
-    /// Returns true if the error kind is `GetObjectErrorKind::NoSuchKey`.
+    /// Returns `true` if the error kind is `GetObjectErrorKind::NoSuchKey`.
     pub fn is_no_such_key(&self) -> bool {
         matches!(&self.kind, GetObjectErrorKind::NoSuchKey(_))
     }
@@ -3729,7 +3729,7 @@ pub struct GetObjectAclError {
 pub enum GetObjectAclErrorKind {
     /// <p>The specified key does not exist.</p>
     NoSuchKey(crate::error::NoSuchKey),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetObjectAclError {
@@ -3792,7 +3792,7 @@ impl GetObjectAclError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetObjectAclErrorKind::NoSuchKey`.
+    /// Returns `true` if the error kind is `GetObjectAclErrorKind::NoSuchKey`.
     pub fn is_no_such_key(&self) -> bool {
         matches!(&self.kind, GetObjectAclErrorKind::NoSuchKey(_))
     }
@@ -3819,7 +3819,7 @@ pub struct GetObjectLegalHoldError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetObjectLegalHoldErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetObjectLegalHoldError {
@@ -3903,7 +3903,7 @@ pub struct GetObjectLockConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetObjectLockConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetObjectLockConfigurationError {
@@ -3987,7 +3987,7 @@ pub struct GetObjectRetentionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetObjectRetentionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetObjectRetentionError {
@@ -4071,7 +4071,7 @@ pub struct GetObjectTaggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetObjectTaggingErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetObjectTaggingError {
@@ -4155,7 +4155,7 @@ pub struct GetObjectTorrentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetObjectTorrentErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetObjectTorrentError {
@@ -4239,7 +4239,7 @@ pub struct GetPublicAccessBlockError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPublicAccessBlockErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPublicAccessBlockError {
@@ -4325,7 +4325,7 @@ pub struct HeadBucketError {
 pub enum HeadBucketErrorKind {
     /// <p>The specified content does not exist.</p>
     NotFound(crate::error::NotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for HeadBucketError {
@@ -4388,7 +4388,7 @@ impl HeadBucketError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `HeadBucketErrorKind::NotFound`.
+    /// Returns `true` if the error kind is `HeadBucketErrorKind::NotFound`.
     pub fn is_not_found(&self) -> bool {
         matches!(&self.kind, HeadBucketErrorKind::NotFound(_))
     }
@@ -4417,7 +4417,7 @@ pub struct HeadObjectError {
 pub enum HeadObjectErrorKind {
     /// <p>The specified content does not exist.</p>
     NotFound(crate::error::NotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for HeadObjectError {
@@ -4480,7 +4480,7 @@ impl HeadObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `HeadObjectErrorKind::NotFound`.
+    /// Returns `true` if the error kind is `HeadObjectErrorKind::NotFound`.
     pub fn is_not_found(&self) -> bool {
         matches!(&self.kind, HeadObjectErrorKind::NotFound(_))
     }
@@ -4507,7 +4507,7 @@ pub struct ListBucketAnalyticsConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBucketAnalyticsConfigurationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBucketAnalyticsConfigurationsError {
@@ -4594,7 +4594,7 @@ pub struct ListBucketIntelligentTieringConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBucketIntelligentTieringConfigurationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBucketIntelligentTieringConfigurationsError {
@@ -4683,7 +4683,7 @@ pub struct ListBucketInventoryConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBucketInventoryConfigurationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBucketInventoryConfigurationsError {
@@ -4770,7 +4770,7 @@ pub struct ListBucketMetricsConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBucketMetricsConfigurationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBucketMetricsConfigurationsError {
@@ -4857,7 +4857,7 @@ pub struct ListBucketsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBucketsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBucketsError {
@@ -4941,7 +4941,7 @@ pub struct ListMultipartUploadsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMultipartUploadsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMultipartUploadsError {
@@ -5027,7 +5027,7 @@ pub struct ListObjectsError {
 pub enum ListObjectsErrorKind {
     /// <p>The specified bucket does not exist.</p>
     NoSuchBucket(crate::error::NoSuchBucket),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListObjectsError {
@@ -5090,7 +5090,7 @@ impl ListObjectsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListObjectsErrorKind::NoSuchBucket`.
+    /// Returns `true` if the error kind is `ListObjectsErrorKind::NoSuchBucket`.
     pub fn is_no_such_bucket(&self) -> bool {
         matches!(&self.kind, ListObjectsErrorKind::NoSuchBucket(_))
     }
@@ -5119,7 +5119,7 @@ pub struct ListObjectsV2Error {
 pub enum ListObjectsV2ErrorKind {
     /// <p>The specified bucket does not exist.</p>
     NoSuchBucket(crate::error::NoSuchBucket),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListObjectsV2Error {
@@ -5182,7 +5182,7 @@ impl ListObjectsV2Error {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListObjectsV2ErrorKind::NoSuchBucket`.
+    /// Returns `true` if the error kind is `ListObjectsV2ErrorKind::NoSuchBucket`.
     pub fn is_no_such_bucket(&self) -> bool {
         matches!(&self.kind, ListObjectsV2ErrorKind::NoSuchBucket(_))
     }
@@ -5209,7 +5209,7 @@ pub struct ListObjectVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListObjectVersionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListObjectVersionsError {
@@ -5293,7 +5293,7 @@ pub struct ListPartsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPartsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPartsError {
@@ -5377,7 +5377,7 @@ pub struct PutBucketAccelerateConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketAccelerateConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketAccelerateConfigurationError {
@@ -5464,7 +5464,7 @@ pub struct PutBucketAclError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketAclErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketAclError {
@@ -5548,7 +5548,7 @@ pub struct PutBucketAnalyticsConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketAnalyticsConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketAnalyticsConfigurationError {
@@ -5635,7 +5635,7 @@ pub struct PutBucketCorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketCorsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketCorsError {
@@ -5719,7 +5719,7 @@ pub struct PutBucketEncryptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketEncryptionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketEncryptionError {
@@ -5803,7 +5803,7 @@ pub struct PutBucketIntelligentTieringConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketIntelligentTieringConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketIntelligentTieringConfigurationError {
@@ -5892,7 +5892,7 @@ pub struct PutBucketInventoryConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketInventoryConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketInventoryConfigurationError {
@@ -5979,7 +5979,7 @@ pub struct PutBucketLifecycleConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketLifecycleConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketLifecycleConfigurationError {
@@ -6066,7 +6066,7 @@ pub struct PutBucketLoggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketLoggingErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketLoggingError {
@@ -6150,7 +6150,7 @@ pub struct PutBucketMetricsConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketMetricsConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketMetricsConfigurationError {
@@ -6237,7 +6237,7 @@ pub struct PutBucketNotificationConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketNotificationConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketNotificationConfigurationError {
@@ -6324,7 +6324,7 @@ pub struct PutBucketOwnershipControlsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketOwnershipControlsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketOwnershipControlsError {
@@ -6408,7 +6408,7 @@ pub struct PutBucketPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketPolicyError {
@@ -6492,7 +6492,7 @@ pub struct PutBucketReplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketReplicationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketReplicationError {
@@ -6576,7 +6576,7 @@ pub struct PutBucketRequestPaymentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketRequestPaymentErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketRequestPaymentError {
@@ -6660,7 +6660,7 @@ pub struct PutBucketTaggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketTaggingErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketTaggingError {
@@ -6744,7 +6744,7 @@ pub struct PutBucketVersioningError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketVersioningErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketVersioningError {
@@ -6828,7 +6828,7 @@ pub struct PutBucketWebsiteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketWebsiteErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketWebsiteError {
@@ -6912,7 +6912,7 @@ pub struct PutObjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutObjectErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutObjectError {
@@ -6998,7 +6998,7 @@ pub struct PutObjectAclError {
 pub enum PutObjectAclErrorKind {
     /// <p>The specified key does not exist.</p>
     NoSuchKey(crate::error::NoSuchKey),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutObjectAclError {
@@ -7061,7 +7061,7 @@ impl PutObjectAclError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutObjectAclErrorKind::NoSuchKey`.
+    /// Returns `true` if the error kind is `PutObjectAclErrorKind::NoSuchKey`.
     pub fn is_no_such_key(&self) -> bool {
         matches!(&self.kind, PutObjectAclErrorKind::NoSuchKey(_))
     }
@@ -7088,7 +7088,7 @@ pub struct PutObjectLegalHoldError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutObjectLegalHoldErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutObjectLegalHoldError {
@@ -7172,7 +7172,7 @@ pub struct PutObjectLockConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutObjectLockConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutObjectLockConfigurationError {
@@ -7256,7 +7256,7 @@ pub struct PutObjectRetentionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutObjectRetentionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutObjectRetentionError {
@@ -7340,7 +7340,7 @@ pub struct PutObjectTaggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutObjectTaggingErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutObjectTaggingError {
@@ -7424,7 +7424,7 @@ pub struct PutPublicAccessBlockError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutPublicAccessBlockErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutPublicAccessBlockError {
@@ -7510,7 +7510,7 @@ pub struct RestoreObjectError {
 pub enum RestoreObjectErrorKind {
     /// <p>This action is not allowed against this storage tier.</p>
     ObjectAlreadyInActiveTierError(crate::error::ObjectAlreadyInActiveTierError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreObjectError {
@@ -7573,7 +7573,7 @@ impl RestoreObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RestoreObjectErrorKind::ObjectAlreadyInActiveTierError`.
+    /// Returns `true` if the error kind is `RestoreObjectErrorKind::ObjectAlreadyInActiveTierError`.
     pub fn is_object_already_in_active_tier_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -7603,7 +7603,7 @@ pub struct SelectObjectContentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SelectObjectContentErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SelectObjectContentError {
@@ -7687,7 +7687,7 @@ pub struct UploadPartError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UploadPartErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UploadPartError {
@@ -7771,7 +7771,7 @@ pub struct UploadPartCopyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UploadPartCopyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UploadPartCopyError {
@@ -7855,7 +7855,7 @@ pub struct WriteGetObjectResponseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum WriteGetObjectResponseErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for WriteGetObjectResponseError {

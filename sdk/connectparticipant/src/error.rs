@@ -24,7 +24,7 @@ pub enum CompleteAttachmentUploadErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by Amazon Connect.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CompleteAttachmentUploadError {
@@ -94,42 +94,42 @@ impl CompleteAttachmentUploadError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CompleteAttachmentUploadErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CompleteAttachmentUploadErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompleteAttachmentUploadErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CompleteAttachmentUploadErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CompleteAttachmentUploadErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompleteAttachmentUploadErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CompleteAttachmentUploadErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CompleteAttachmentUploadErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompleteAttachmentUploadErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CompleteAttachmentUploadErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CompleteAttachmentUploadErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompleteAttachmentUploadErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CompleteAttachmentUploadErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CompleteAttachmentUploadErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompleteAttachmentUploadErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CompleteAttachmentUploadErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CompleteAttachmentUploadErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -174,7 +174,7 @@ pub enum CreateParticipantConnectionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by Amazon Connect.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateParticipantConnectionError {
@@ -240,28 +240,28 @@ impl CreateParticipantConnectionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateParticipantConnectionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateParticipantConnectionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateParticipantConnectionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateParticipantConnectionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateParticipantConnectionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateParticipantConnectionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateParticipantConnectionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateParticipantConnectionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateParticipantConnectionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateParticipantConnectionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateParticipantConnectionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -302,7 +302,7 @@ pub enum DisconnectParticipantErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by Amazon Connect.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisconnectParticipantError {
@@ -368,28 +368,28 @@ impl DisconnectParticipantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisconnectParticipantErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisconnectParticipantErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisconnectParticipantErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisconnectParticipantErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DisconnectParticipantErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisconnectParticipantErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DisconnectParticipantErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DisconnectParticipantErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisconnectParticipantErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DisconnectParticipantErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DisconnectParticipantErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -430,7 +430,7 @@ pub enum GetAttachmentErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by Amazon Connect.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAttachmentError {
@@ -496,22 +496,22 @@ impl GetAttachmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAttachmentErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetAttachmentErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetAttachmentErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetAttachmentErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetAttachmentErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAttachmentErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetAttachmentErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetAttachmentErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetAttachmentErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetAttachmentErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetAttachmentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetAttachmentErrorKind::ValidationException(_))
     }
@@ -549,7 +549,7 @@ pub enum GetTranscriptErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by Amazon Connect.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTranscriptError {
@@ -615,22 +615,22 @@ impl GetTranscriptError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTranscriptErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetTranscriptErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetTranscriptErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetTranscriptErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetTranscriptErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTranscriptErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetTranscriptErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetTranscriptErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetTranscriptErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetTranscriptErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetTranscriptErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetTranscriptErrorKind::ValidationException(_))
     }
@@ -668,7 +668,7 @@ pub enum SendEventErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by Amazon Connect.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendEventError {
@@ -734,19 +734,19 @@ impl SendEventError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendEventErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SendEventErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, SendEventErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `SendEventErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `SendEventErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, SendEventErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `SendEventErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `SendEventErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, SendEventErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `SendEventErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `SendEventErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, SendEventErrorKind::ValidationException(_))
     }
@@ -784,7 +784,7 @@ pub enum SendMessageErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by Amazon Connect.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendMessageError {
@@ -850,19 +850,19 @@ impl SendMessageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendMessageErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SendMessageErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, SendMessageErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `SendMessageErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `SendMessageErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, SendMessageErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `SendMessageErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `SendMessageErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, SendMessageErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `SendMessageErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `SendMessageErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, SendMessageErrorKind::ValidationException(_))
     }
@@ -902,7 +902,7 @@ pub enum StartAttachmentUploadErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by Amazon Connect.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartAttachmentUploadError {
@@ -969,35 +969,35 @@ impl StartAttachmentUploadError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartAttachmentUploadErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartAttachmentUploadErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAttachmentUploadErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartAttachmentUploadErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartAttachmentUploadErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAttachmentUploadErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartAttachmentUploadErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `StartAttachmentUploadErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAttachmentUploadErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartAttachmentUploadErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartAttachmentUploadErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAttachmentUploadErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `StartAttachmentUploadErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartAttachmentUploadErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

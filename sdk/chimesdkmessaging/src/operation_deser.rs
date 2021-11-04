@@ -3457,6 +3457,164 @@ pub fn parse_disassociate_channel_flow_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_channel_membership_preferences_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetChannelMembershipPreferencesOutput,
+    crate::error::GetChannelMembershipPreferencesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetChannelMembershipPreferencesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::GetChannelMembershipPreferencesError {
+            meta: generic,
+            kind: crate::error::GetChannelMembershipPreferencesErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => crate::error::GetChannelMembershipPreferencesError {
+            meta: generic,
+            kind: crate::error::GetChannelMembershipPreferencesErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceFailureException" => crate::error::GetChannelMembershipPreferencesError {
+            meta: generic,
+            kind: crate::error::GetChannelMembershipPreferencesErrorKind::ServiceFailureException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_failure_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ServiceUnavailableException" => crate::error::GetChannelMembershipPreferencesError {
+            meta: generic,
+            kind:
+                crate::error::GetChannelMembershipPreferencesErrorKind::ServiceUnavailableException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::service_unavailable_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "ThrottledClientException" => crate::error::GetChannelMembershipPreferencesError {
+            meta: generic,
+            kind: crate::error::GetChannelMembershipPreferencesErrorKind::ThrottledClientException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::throttled_client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "UnauthorizedClientException" => crate::error::GetChannelMembershipPreferencesError {
+            meta: generic,
+            kind:
+                crate::error::GetChannelMembershipPreferencesErrorKind::UnauthorizedClientException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::unauthorized_client_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        _ => crate::error::GetChannelMembershipPreferencesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_channel_membership_preferences_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetChannelMembershipPreferencesOutput,
+    crate::error::GetChannelMembershipPreferencesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_channel_membership_preferences_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_get_channel_membership_preferences(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_channel_message_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetChannelMessageOutput, crate::error::GetChannelMessageError>
@@ -5264,6 +5422,183 @@ pub fn parse_list_tags_for_resource_response(
             output,
         )
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_channel_membership_preferences_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutChannelMembershipPreferencesOutput,
+    crate::error::PutChannelMembershipPreferencesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::PutChannelMembershipPreferencesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::PutChannelMembershipPreferencesError {
+            meta: generic,
+            kind: crate::error::PutChannelMembershipPreferencesErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => {
+            crate::error::PutChannelMembershipPreferencesError {
+                meta: generic,
+                kind: crate::error::PutChannelMembershipPreferencesErrorKind::ConflictException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::conflict_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ForbiddenException" => crate::error::PutChannelMembershipPreferencesError {
+            meta: generic,
+            kind: crate::error::PutChannelMembershipPreferencesErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceFailureException" => crate::error::PutChannelMembershipPreferencesError {
+            meta: generic,
+            kind: crate::error::PutChannelMembershipPreferencesErrorKind::ServiceFailureException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_failure_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ServiceUnavailableException" => crate::error::PutChannelMembershipPreferencesError {
+            meta: generic,
+            kind:
+                crate::error::PutChannelMembershipPreferencesErrorKind::ServiceUnavailableException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::service_unavailable_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        "ThrottledClientException" => crate::error::PutChannelMembershipPreferencesError {
+            meta: generic,
+            kind: crate::error::PutChannelMembershipPreferencesErrorKind::ThrottledClientException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::throttled_client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "UnauthorizedClientException" => crate::error::PutChannelMembershipPreferencesError {
+            meta: generic,
+            kind:
+                crate::error::PutChannelMembershipPreferencesErrorKind::UnauthorizedClientException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::unauthorized_client_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+        },
+        _ => crate::error::PutChannelMembershipPreferencesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_channel_membership_preferences_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutChannelMembershipPreferencesOutput,
+    crate::error::PutChannelMembershipPreferencesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::put_channel_membership_preferences_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_put_channel_membership_preferences(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
         output.build()
     })
 }

@@ -26,7 +26,7 @@ pub enum AbortDocumentVersionUploadErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AbortDocumentVersionUploadError {
@@ -100,42 +100,42 @@ impl AbortDocumentVersionUploadError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AbortDocumentVersionUploadErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `AbortDocumentVersionUploadErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             AbortDocumentVersionUploadErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `AbortDocumentVersionUploadErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `AbortDocumentVersionUploadErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             AbortDocumentVersionUploadErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `AbortDocumentVersionUploadErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `AbortDocumentVersionUploadErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             AbortDocumentVersionUploadErrorKind::ProhibitedStateException(_)
         )
     }
-    /// Returns true if the error kind is `AbortDocumentVersionUploadErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `AbortDocumentVersionUploadErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AbortDocumentVersionUploadErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `AbortDocumentVersionUploadErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `AbortDocumentVersionUploadErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             AbortDocumentVersionUploadErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `AbortDocumentVersionUploadErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `AbortDocumentVersionUploadErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -188,7 +188,7 @@ pub enum ActivateUserErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ActivateUserError {
@@ -255,35 +255,35 @@ impl ActivateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ActivateUserErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `ActivateUserErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivateUserErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `ActivateUserErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `ActivateUserErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivateUserErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `ActivateUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ActivateUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivateUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `ActivateUserErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `ActivateUserErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             ActivateUserErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `ActivateUserErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `ActivateUserErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -327,7 +327,7 @@ pub enum AddResourcePermissionsErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddResourcePermissionsError {
@@ -397,28 +397,28 @@ impl AddResourcePermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddResourcePermissionsErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `AddResourcePermissionsErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddResourcePermissionsErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `AddResourcePermissionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `AddResourcePermissionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddResourcePermissionsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `AddResourcePermissionsErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `AddResourcePermissionsErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddResourcePermissionsErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `AddResourcePermissionsErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `AddResourcePermissionsErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -472,7 +472,7 @@ pub enum CreateCommentErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCommentError {
@@ -542,56 +542,56 @@ impl CreateCommentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCommentErrorKind::DocumentLockedForCommentsException`.
+    /// Returns `true` if the error kind is `CreateCommentErrorKind::DocumentLockedForCommentsException`.
     pub fn is_document_locked_for_comments_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommentErrorKind::DocumentLockedForCommentsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommentErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `CreateCommentErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommentErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommentErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `CreateCommentErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommentErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommentErrorKind::InvalidCommentOperationException`.
+    /// Returns `true` if the error kind is `CreateCommentErrorKind::InvalidCommentOperationException`.
     pub fn is_invalid_comment_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommentErrorKind::InvalidCommentOperationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommentErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `CreateCommentErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommentErrorKind::ProhibitedStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommentErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateCommentErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommentErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommentErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `CreateCommentErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCommentErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCommentErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `CreateCommentErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -645,7 +645,7 @@ pub enum CreateCustomMetadataErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCustomMetadataError {
@@ -718,49 +718,49 @@ impl CreateCustomMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCustomMetadataErrorKind::CustomMetadataLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateCustomMetadataErrorKind::CustomMetadataLimitExceededException`.
     pub fn is_custom_metadata_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomMetadataErrorKind::CustomMetadataLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomMetadataErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `CreateCustomMetadataErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomMetadataErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomMetadataErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `CreateCustomMetadataErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomMetadataErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomMetadataErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `CreateCustomMetadataErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomMetadataErrorKind::ProhibitedStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomMetadataErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateCustomMetadataErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomMetadataErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomMetadataErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `CreateCustomMetadataErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomMetadataErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomMetadataErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `CreateCustomMetadataErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -820,7 +820,7 @@ pub enum CreateFolderErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFolderError {
@@ -891,60 +891,60 @@ impl CreateFolderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFolderErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFolderErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFolderErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFolderErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFolderErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFolderErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFolderErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFolderErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFolderErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateFolderErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateFolderErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFolderErrorKind::ProhibitedStateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFolderErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFolderErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFolderErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFolderErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFolderErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `CreateFolderErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -997,7 +997,7 @@ pub enum CreateLabelsErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLabelsError {
@@ -1065,39 +1065,39 @@ impl CreateLabelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLabelsErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `CreateLabelsErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLabelsErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLabelsErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `CreateLabelsErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLabelsErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLabelsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateLabelsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLabelsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLabelsErrorKind::TooManyLabelsException`.
+    /// Returns `true` if the error kind is `CreateLabelsErrorKind::TooManyLabelsException`.
     pub fn is_too_many_labels_exception(&self) -> bool {
         matches!(&self.kind, CreateLabelsErrorKind::TooManyLabelsException(_))
     }
-    /// Returns true if the error kind is `CreateLabelsErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `CreateLabelsErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLabelsErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLabelsErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `CreateLabelsErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1139,7 +1139,7 @@ pub enum CreateNotificationSubscriptionErrorKind {
     TooManySubscriptionsException(crate::error::TooManySubscriptionsException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateNotificationSubscriptionError {
@@ -1213,21 +1213,21 @@ impl CreateNotificationSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateNotificationSubscriptionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateNotificationSubscriptionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNotificationSubscriptionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNotificationSubscriptionErrorKind::TooManySubscriptionsException`.
+    /// Returns `true` if the error kind is `CreateNotificationSubscriptionErrorKind::TooManySubscriptionsException`.
     pub fn is_too_many_subscriptions_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNotificationSubscriptionErrorKind::TooManySubscriptionsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNotificationSubscriptionErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `CreateNotificationSubscriptionErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1277,7 +1277,7 @@ pub enum CreateUserErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUserError {
@@ -1344,35 +1344,35 @@ impl CreateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateUserErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateUserErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `CreateUserErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1418,7 +1418,7 @@ pub enum DeactivateUserErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeactivateUserError {
@@ -1485,35 +1485,35 @@ impl DeactivateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeactivateUserErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `DeactivateUserErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateUserErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateUserErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `DeactivateUserErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateUserErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeactivateUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateUserErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DeactivateUserErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeactivateUserErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeactivateUserErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `DeactivateUserErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1564,7 +1564,7 @@ pub enum DeleteCommentErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCommentError {
@@ -1633,49 +1633,49 @@ impl DeleteCommentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCommentErrorKind::DocumentLockedForCommentsException`.
+    /// Returns `true` if the error kind is `DeleteCommentErrorKind::DocumentLockedForCommentsException`.
     pub fn is_document_locked_for_comments_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCommentErrorKind::DocumentLockedForCommentsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCommentErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `DeleteCommentErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCommentErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCommentErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `DeleteCommentErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCommentErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCommentErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `DeleteCommentErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCommentErrorKind::ProhibitedStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCommentErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteCommentErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCommentErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCommentErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DeleteCommentErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCommentErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCommentErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `DeleteCommentErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1725,7 +1725,7 @@ pub enum DeleteCustomMetadataErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCustomMetadataError {
@@ -1795,42 +1795,42 @@ impl DeleteCustomMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCustomMetadataErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `DeleteCustomMetadataErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomMetadataErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomMetadataErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `DeleteCustomMetadataErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomMetadataErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomMetadataErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `DeleteCustomMetadataErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomMetadataErrorKind::ProhibitedStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomMetadataErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteCustomMetadataErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomMetadataErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomMetadataErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DeleteCustomMetadataErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomMetadataErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomMetadataErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `DeleteCustomMetadataErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1885,7 +1885,7 @@ pub enum DeleteDocumentErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDocumentError {
@@ -1955,56 +1955,56 @@ impl DeleteDocumentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDocumentErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteDocumentErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDocumentErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDocumentErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `DeleteDocumentErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDocumentErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDocumentErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `DeleteDocumentErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDocumentErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDocumentErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `DeleteDocumentErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDocumentErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDocumentErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `DeleteDocumentErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDocumentErrorKind::ProhibitedStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDocumentErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteDocumentErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDocumentErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDocumentErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DeleteDocumentErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDocumentErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDocumentErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `DeleteDocumentErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2059,7 +2059,7 @@ pub enum DeleteFolderErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFolderError {
@@ -2129,56 +2129,56 @@ impl DeleteFolderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFolderErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteFolderErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `DeleteFolderErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `DeleteFolderErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `DeleteFolderErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `DeleteFolderErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderErrorKind::ProhibitedStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteFolderErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DeleteFolderErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `DeleteFolderErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2231,7 +2231,7 @@ pub enum DeleteFolderContentsErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFolderContentsError {
@@ -2302,49 +2302,49 @@ impl DeleteFolderContentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFolderContentsErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `DeleteFolderContentsErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderContentsErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderContentsErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `DeleteFolderContentsErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderContentsErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderContentsErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `DeleteFolderContentsErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderContentsErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderContentsErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `DeleteFolderContentsErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderContentsErrorKind::ProhibitedStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderContentsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteFolderContentsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderContentsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderContentsErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DeleteFolderContentsErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFolderContentsErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFolderContentsErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `DeleteFolderContentsErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2394,7 +2394,7 @@ pub enum DeleteLabelsErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLabelsError {
@@ -2461,35 +2461,35 @@ impl DeleteLabelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLabelsErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `DeleteLabelsErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLabelsErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLabelsErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `DeleteLabelsErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLabelsErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLabelsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteLabelsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLabelsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLabelsErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DeleteLabelsErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLabelsErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLabelsErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `DeleteLabelsErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2531,7 +2531,7 @@ pub enum DeleteNotificationSubscriptionErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNotificationSubscriptionError {
@@ -2608,28 +2608,28 @@ impl DeleteNotificationSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteNotificationSubscriptionErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `DeleteNotificationSubscriptionErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNotificationSubscriptionErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNotificationSubscriptionErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `DeleteNotificationSubscriptionErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNotificationSubscriptionErrorKind::ProhibitedStateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNotificationSubscriptionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteNotificationSubscriptionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNotificationSubscriptionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNotificationSubscriptionErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `DeleteNotificationSubscriptionErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2682,7 +2682,7 @@ pub enum DeleteUserErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserError {
@@ -2749,32 +2749,32 @@ impl DeleteUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::EntityNotExistsException(_))
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2820,7 +2820,7 @@ pub enum DescribeActivitiesErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeActivitiesError {
@@ -2889,35 +2889,35 @@ impl DescribeActivitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeActivitiesErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `DescribeActivitiesErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeActivitiesErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeActivitiesErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DescribeActivitiesErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeActivitiesErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeActivitiesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeActivitiesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeActivitiesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeActivitiesErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DescribeActivitiesErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeActivitiesErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeActivitiesErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `DescribeActivitiesErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2967,7 +2967,7 @@ pub enum DescribeCommentsErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCommentsError {
@@ -3035,42 +3035,42 @@ impl DescribeCommentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCommentsErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `DescribeCommentsErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCommentsErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCommentsErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `DescribeCommentsErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCommentsErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCommentsErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `DescribeCommentsErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCommentsErrorKind::ProhibitedStateException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCommentsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeCommentsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCommentsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCommentsErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DescribeCommentsErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeCommentsErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeCommentsErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `DescribeCommentsErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3121,7 +3121,7 @@ pub enum DescribeDocumentVersionsErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDocumentVersionsError {
@@ -3194,49 +3194,49 @@ impl DescribeDocumentVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDocumentVersionsErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `DescribeDocumentVersionsErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDocumentVersionsErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDocumentVersionsErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `DescribeDocumentVersionsErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDocumentVersionsErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDocumentVersionsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DescribeDocumentVersionsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDocumentVersionsErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDocumentVersionsErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `DescribeDocumentVersionsErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDocumentVersionsErrorKind::ProhibitedStateException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDocumentVersionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeDocumentVersionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDocumentVersionsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDocumentVersionsErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DescribeDocumentVersionsErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDocumentVersionsErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDocumentVersionsErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `DescribeDocumentVersionsErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3290,7 +3290,7 @@ pub enum DescribeFolderContentsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFolderContentsError {
@@ -3360,42 +3360,42 @@ impl DescribeFolderContentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFolderContentsErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `DescribeFolderContentsErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderContentsErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderContentsErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `DescribeFolderContentsErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderContentsErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderContentsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DescribeFolderContentsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderContentsErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderContentsErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `DescribeFolderContentsErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderContentsErrorKind::ProhibitedStateException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderContentsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeFolderContentsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFolderContentsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFolderContentsErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `DescribeFolderContentsErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3442,7 +3442,7 @@ pub enum DescribeGroupsErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGroupsError {
@@ -3508,28 +3508,28 @@ impl DescribeGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGroupsErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `DescribeGroupsErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGroupsErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGroupsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeGroupsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGroupsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGroupsErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DescribeGroupsErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGroupsErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGroupsErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `DescribeGroupsErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3568,7 +3568,7 @@ pub enum DescribeNotificationSubscriptionsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNotificationSubscriptionsError {
@@ -3642,21 +3642,21 @@ impl DescribeNotificationSubscriptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeNotificationSubscriptionsErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `DescribeNotificationSubscriptionsErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNotificationSubscriptionsErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNotificationSubscriptionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeNotificationSubscriptionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNotificationSubscriptionsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNotificationSubscriptionsErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `DescribeNotificationSubscriptionsErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3704,7 +3704,7 @@ pub enum DescribeResourcePermissionsErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeResourcePermissionsError {
@@ -3778,28 +3778,28 @@ impl DescribeResourcePermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeResourcePermissionsErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `DescribeResourcePermissionsErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeResourcePermissionsErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeResourcePermissionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeResourcePermissionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeResourcePermissionsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeResourcePermissionsErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DescribeResourcePermissionsErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeResourcePermissionsErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeResourcePermissionsErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `DescribeResourcePermissionsErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3850,7 +3850,7 @@ pub enum DescribeRootFoldersErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRootFoldersError {
@@ -3919,35 +3919,35 @@ impl DescribeRootFoldersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRootFoldersErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `DescribeRootFoldersErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRootFoldersErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRootFoldersErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DescribeRootFoldersErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRootFoldersErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRootFoldersErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeRootFoldersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRootFoldersErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRootFoldersErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DescribeRootFoldersErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRootFoldersErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRootFoldersErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `DescribeRootFoldersErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3999,7 +3999,7 @@ pub enum DescribeUsersErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeUsersError {
@@ -4068,49 +4068,49 @@ impl DescribeUsersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeUsersErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `DescribeUsersErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUsersErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUsersErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `DescribeUsersErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUsersErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUsersErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DescribeUsersErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUsersErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUsersErrorKind::RequestedEntityTooLargeException`.
+    /// Returns `true` if the error kind is `DescribeUsersErrorKind::RequestedEntityTooLargeException`.
     pub fn is_requested_entity_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUsersErrorKind::RequestedEntityTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUsersErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeUsersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUsersErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUsersErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DescribeUsersErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeUsersErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeUsersErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `DescribeUsersErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4158,7 +4158,7 @@ pub enum GetCurrentUserErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCurrentUserError {
@@ -4225,35 +4225,35 @@ impl GetCurrentUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCurrentUserErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `GetCurrentUserErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCurrentUserErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `GetCurrentUserErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `GetCurrentUserErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCurrentUserErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `GetCurrentUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetCurrentUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCurrentUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetCurrentUserErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `GetCurrentUserErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCurrentUserErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `GetCurrentUserErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `GetCurrentUserErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4303,7 +4303,7 @@ pub enum GetDocumentErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDocumentError {
@@ -4372,49 +4372,49 @@ impl GetDocumentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDocumentErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `GetDocumentErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `GetDocumentErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `GetDocumentErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentErrorKind::InvalidPasswordException`.
+    /// Returns `true` if the error kind is `GetDocumentErrorKind::InvalidPasswordException`.
     pub fn is_invalid_password_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentErrorKind::InvalidPasswordException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetDocumentErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `GetDocumentErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `GetDocumentErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4462,7 +4462,7 @@ pub enum GetDocumentPathErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDocumentPathError {
@@ -4529,35 +4529,35 @@ impl GetDocumentPathError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDocumentPathErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `GetDocumentPathErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentPathErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentPathErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `GetDocumentPathErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentPathErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentPathErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetDocumentPathErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentPathErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentPathErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `GetDocumentPathErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentPathErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentPathErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `GetDocumentPathErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4607,7 +4607,7 @@ pub enum GetDocumentVersionErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDocumentVersionError {
@@ -4678,49 +4678,49 @@ impl GetDocumentVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDocumentVersionErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `GetDocumentVersionErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentVersionErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentVersionErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `GetDocumentVersionErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentVersionErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentVersionErrorKind::InvalidPasswordException`.
+    /// Returns `true` if the error kind is `GetDocumentVersionErrorKind::InvalidPasswordException`.
     pub fn is_invalid_password_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentVersionErrorKind::InvalidPasswordException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentVersionErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `GetDocumentVersionErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentVersionErrorKind::ProhibitedStateException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentVersionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetDocumentVersionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentVersionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentVersionErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `GetDocumentVersionErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDocumentVersionErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `GetDocumentVersionErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `GetDocumentVersionErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4774,7 +4774,7 @@ pub enum GetFolderErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFolderError {
@@ -4843,37 +4843,37 @@ impl GetFolderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(&self.kind, GetFolderErrorKind::EntityNotExistsException(_))
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(&self.kind, GetFolderErrorKind::FailedDependencyException(_))
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(&self.kind, GetFolderErrorKind::InvalidArgumentException(_))
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(&self.kind, GetFolderErrorKind::ProhibitedStateException(_))
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFolderErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFolderErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `GetFolderErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `GetFolderErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4921,7 +4921,7 @@ pub enum GetFolderPathErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFolderPathError {
@@ -4988,35 +4988,35 @@ impl GetFolderPathError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFolderPathErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `GetFolderPathErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFolderPathErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `GetFolderPathErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `GetFolderPathErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFolderPathErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `GetFolderPathErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetFolderPathErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFolderPathErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetFolderPathErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `GetFolderPathErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetFolderPathErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `GetFolderPathErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `GetFolderPathErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5062,7 +5062,7 @@ pub enum GetResourcesErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourcesError {
@@ -5129,35 +5129,35 @@ impl GetResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourcesErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `GetResourcesErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcesErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcesErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `GetResourcesErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcesErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetResourcesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcesErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `GetResourcesErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcesErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcesErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `GetResourcesErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5216,7 +5216,7 @@ pub enum InitiateDocumentVersionUploadErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InitiateDocumentVersionUploadError {
@@ -5314,77 +5314,77 @@ impl InitiateDocumentVersionUploadError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InitiateDocumentVersionUploadErrorKind::DraftUploadOutOfSyncException`.
+    /// Returns `true` if the error kind is `InitiateDocumentVersionUploadErrorKind::DraftUploadOutOfSyncException`.
     pub fn is_draft_upload_out_of_sync_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateDocumentVersionUploadErrorKind::DraftUploadOutOfSyncException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateDocumentVersionUploadErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `InitiateDocumentVersionUploadErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateDocumentVersionUploadErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateDocumentVersionUploadErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `InitiateDocumentVersionUploadErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateDocumentVersionUploadErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateDocumentVersionUploadErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `InitiateDocumentVersionUploadErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateDocumentVersionUploadErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateDocumentVersionUploadErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `InitiateDocumentVersionUploadErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateDocumentVersionUploadErrorKind::ProhibitedStateException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateDocumentVersionUploadErrorKind::ResourceAlreadyCheckedOutException`.
+    /// Returns `true` if the error kind is `InitiateDocumentVersionUploadErrorKind::ResourceAlreadyCheckedOutException`.
     pub fn is_resource_already_checked_out_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateDocumentVersionUploadErrorKind::ResourceAlreadyCheckedOutException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateDocumentVersionUploadErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `InitiateDocumentVersionUploadErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateDocumentVersionUploadErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateDocumentVersionUploadErrorKind::StorageLimitExceededException`.
+    /// Returns `true` if the error kind is `InitiateDocumentVersionUploadErrorKind::StorageLimitExceededException`.
     pub fn is_storage_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateDocumentVersionUploadErrorKind::StorageLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateDocumentVersionUploadErrorKind::StorageLimitWillExceedException`.
+    /// Returns `true` if the error kind is `InitiateDocumentVersionUploadErrorKind::StorageLimitWillExceedException`.
     pub fn is_storage_limit_will_exceed_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateDocumentVersionUploadErrorKind::StorageLimitWillExceedException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateDocumentVersionUploadErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `InitiateDocumentVersionUploadErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             InitiateDocumentVersionUploadErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `InitiateDocumentVersionUploadErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `InitiateDocumentVersionUploadErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5456,7 +5456,7 @@ pub enum RemoveAllResourcePermissionsErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveAllResourcePermissionsError {
@@ -5530,28 +5530,28 @@ impl RemoveAllResourcePermissionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveAllResourcePermissionsErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `RemoveAllResourcePermissionsErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAllResourcePermissionsErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAllResourcePermissionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `RemoveAllResourcePermissionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAllResourcePermissionsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAllResourcePermissionsErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `RemoveAllResourcePermissionsErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAllResourcePermissionsErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAllResourcePermissionsErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `RemoveAllResourcePermissionsErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5602,7 +5602,7 @@ pub enum RemoveResourcePermissionErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveResourcePermissionError {
@@ -5672,28 +5672,28 @@ impl RemoveResourcePermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveResourcePermissionErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `RemoveResourcePermissionErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveResourcePermissionErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveResourcePermissionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `RemoveResourcePermissionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveResourcePermissionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveResourcePermissionErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `RemoveResourcePermissionErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveResourcePermissionErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveResourcePermissionErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `RemoveResourcePermissionErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5752,7 +5752,7 @@ pub enum UpdateDocumentErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDocumentError {
@@ -5824,70 +5824,70 @@ impl UpdateDocumentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentErrorKind::ProhibitedStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `UpdateDocumentErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5944,7 +5944,7 @@ pub enum UpdateDocumentVersionErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDocumentVersionError {
@@ -6018,56 +6018,56 @@ impl UpdateDocumentVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDocumentVersionErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateDocumentVersionErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentVersionErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentVersionErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `UpdateDocumentVersionErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentVersionErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentVersionErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `UpdateDocumentVersionErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentVersionErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentVersionErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `UpdateDocumentVersionErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentVersionErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentVersionErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `UpdateDocumentVersionErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentVersionErrorKind::ProhibitedStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentVersionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateDocumentVersionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentVersionErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentVersionErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `UpdateDocumentVersionErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDocumentVersionErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDocumentVersionErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `UpdateDocumentVersionErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6128,7 +6128,7 @@ pub enum UpdateFolderErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFolderError {
@@ -6200,67 +6200,67 @@ impl UpdateFolderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFolderErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UpdateFolderErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFolderErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFolderErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `UpdateFolderErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFolderErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFolderErrorKind::EntityAlreadyExistsException`.
+    /// Returns `true` if the error kind is `UpdateFolderErrorKind::EntityAlreadyExistsException`.
     pub fn is_entity_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFolderErrorKind::EntityAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFolderErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `UpdateFolderErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFolderErrorKind::EntityNotExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFolderErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `UpdateFolderErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFolderErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFolderErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateFolderErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, UpdateFolderErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `UpdateFolderErrorKind::ProhibitedStateException`.
+    /// Returns `true` if the error kind is `UpdateFolderErrorKind::ProhibitedStateException`.
     pub fn is_prohibited_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFolderErrorKind::ProhibitedStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFolderErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateFolderErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFolderErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFolderErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `UpdateFolderErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFolderErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFolderErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `UpdateFolderErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6317,7 +6317,7 @@ pub enum UpdateUserErrorKind {
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUserError {
@@ -6387,50 +6387,50 @@ impl UpdateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::DeactivatingLastSystemUserException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::DeactivatingLastSystemUserException`.
     pub fn is_deactivating_last_system_user_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserErrorKind::DeactivatingLastSystemUserException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::EntityNotExistsException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::EntityNotExistsException`.
     pub fn is_entity_not_exists_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::EntityNotExistsException(_))
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::FailedDependencyException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserErrorKind::FailedDependencyException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::IllegalUserStateException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::IllegalUserStateException`.
     pub fn is_illegal_user_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserErrorKind::IllegalUserStateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(&self.kind, UpdateUserErrorKind::InvalidArgumentException(_))
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateUserErrorKind::UnauthorizedOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateUserErrorKind::UnauthorizedResourceAccessException`.
+    /// Returns `true` if the error kind is `UpdateUserErrorKind::UnauthorizedResourceAccessException`.
     pub fn is_unauthorized_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,

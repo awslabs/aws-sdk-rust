@@ -90,6 +90,14 @@ pub fn deser_structure_crate_error_conflict_exception_json_err(
                             .transpose()?,
                         );
                     }
+                    "retryAfter" => {
+                        builder = builder.set_retry_after(
+                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                aws_smithy_types::instant::Format::EpochSeconds,
+                            )?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

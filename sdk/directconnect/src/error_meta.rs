@@ -293,6 +293,30 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ConfirmCustomerAgreementError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ConfirmCustomerAgreementError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ConfirmCustomerAgreementErrorKind::DirectConnectClientException(
+                    inner,
+                ) => Error::DirectConnectClientException(inner),
+                crate::error::ConfirmCustomerAgreementErrorKind::DirectConnectServerException(
+                    inner,
+                ) => Error::DirectConnectServerException(inner),
+                crate::error::ConfirmCustomerAgreementErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R>
     From<aws_smithy_http::result::SdkError<crate::error::ConfirmPrivateVirtualInterfaceError, R>>
     for Error
@@ -846,6 +870,30 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeCustomerMetadataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeCustomerMetadataError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeCustomerMetadataErrorKind::DirectConnectClientException(
+                    inner,
+                ) => Error::DirectConnectClientException(inner),
+                crate::error::DescribeCustomerMetadataErrorKind::DirectConnectServerException(
+                    inner,
+                ) => Error::DirectConnectServerException(inner),
+                crate::error::DescribeCustomerMetadataErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -1071,6 +1119,24 @@ where
                     Error::Unhandled(inner)
                 }
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeRouterConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeRouterConfigurationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeRouterConfigurationErrorKind::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
+                crate::error::DescribeRouterConfigurationErrorKind::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
+                crate::error::DescribeRouterConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1313,6 +1379,30 @@ where
                     Error::DirectConnectServerException(inner)
                 }
                 crate::error::UpdateConnectionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDirectConnectGatewayError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateDirectConnectGatewayError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateDirectConnectGatewayErrorKind::DirectConnectClientException(
+                    inner,
+                ) => Error::DirectConnectClientException(inner),
+                crate::error::UpdateDirectConnectGatewayErrorKind::DirectConnectServerException(
+                    inner,
+                ) => Error::DirectConnectServerException(inner),
+                crate::error::UpdateDirectConnectGatewayErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

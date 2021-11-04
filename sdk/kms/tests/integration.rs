@@ -84,6 +84,7 @@ async fn generate_random() {
         .build()
         .unwrap()
         .make_operation(&conf)
+        .await
         .expect("valid operation");
     op.properties_mut()
         .insert(UNIX_EPOCH + Duration::from_secs(1614952162));
@@ -126,6 +127,7 @@ async fn generate_random_malformed_response() {
         .build()
         .unwrap()
         .make_operation(&conf)
+        .await
         .expect("valid operation");
     client.call(op).await.expect_err("response was malformed");
 }
@@ -171,6 +173,7 @@ async fn generate_random_keystore_not_found() {
         .build()
         .unwrap()
         .make_operation(&conf)
+        .await
         .expect("valid operation");
 
     op.properties_mut()

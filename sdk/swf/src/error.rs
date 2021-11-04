@@ -16,7 +16,7 @@ pub enum CountClosedWorkflowExecutionsErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CountClosedWorkflowExecutionsError {
@@ -85,14 +85,14 @@ impl CountClosedWorkflowExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CountClosedWorkflowExecutionsErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `CountClosedWorkflowExecutionsErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             CountClosedWorkflowExecutionsErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `CountClosedWorkflowExecutionsErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `CountClosedWorkflowExecutionsErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -129,7 +129,7 @@ pub enum CountOpenWorkflowExecutionsErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CountOpenWorkflowExecutionsError {
@@ -195,14 +195,14 @@ impl CountOpenWorkflowExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CountOpenWorkflowExecutionsErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `CountOpenWorkflowExecutionsErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             CountOpenWorkflowExecutionsErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `CountOpenWorkflowExecutionsErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `CountOpenWorkflowExecutionsErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -239,7 +239,7 @@ pub enum CountPendingActivityTasksErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CountPendingActivityTasksError {
@@ -303,14 +303,14 @@ impl CountPendingActivityTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CountPendingActivityTasksErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `CountPendingActivityTasksErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             CountPendingActivityTasksErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `CountPendingActivityTasksErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `CountPendingActivityTasksErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -345,7 +345,7 @@ pub enum CountPendingDecisionTasksErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CountPendingDecisionTasksError {
@@ -409,14 +409,14 @@ impl CountPendingDecisionTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CountPendingDecisionTasksErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `CountPendingDecisionTasksErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             CountPendingDecisionTasksErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `CountPendingDecisionTasksErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `CountPendingDecisionTasksErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -453,7 +453,7 @@ pub enum DeprecateActivityTypeErrorKind {
     TypeDeprecatedFault(crate::error::TypeDeprecatedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeprecateActivityTypeError {
@@ -518,21 +518,21 @@ impl DeprecateActivityTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeprecateActivityTypeErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `DeprecateActivityTypeErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeprecateActivityTypeErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `DeprecateActivityTypeErrorKind::TypeDeprecatedFault`.
+    /// Returns `true` if the error kind is `DeprecateActivityTypeErrorKind::TypeDeprecatedFault`.
     pub fn is_type_deprecated_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeprecateActivityTypeErrorKind::TypeDeprecatedFault(_)
         )
     }
-    /// Returns true if the error kind is `DeprecateActivityTypeErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `DeprecateActivityTypeErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -570,7 +570,7 @@ pub enum DeprecateDomainErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeprecateDomainError {
@@ -635,21 +635,21 @@ impl DeprecateDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeprecateDomainErrorKind::DomainDeprecatedFault`.
+    /// Returns `true` if the error kind is `DeprecateDomainErrorKind::DomainDeprecatedFault`.
     pub fn is_domain_deprecated_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeprecateDomainErrorKind::DomainDeprecatedFault(_)
         )
     }
-    /// Returns true if the error kind is `DeprecateDomainErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `DeprecateDomainErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeprecateDomainErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `DeprecateDomainErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `DeprecateDomainErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -687,7 +687,7 @@ pub enum DeprecateWorkflowTypeErrorKind {
     TypeDeprecatedFault(crate::error::TypeDeprecatedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeprecateWorkflowTypeError {
@@ -752,21 +752,21 @@ impl DeprecateWorkflowTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeprecateWorkflowTypeErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `DeprecateWorkflowTypeErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeprecateWorkflowTypeErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `DeprecateWorkflowTypeErrorKind::TypeDeprecatedFault`.
+    /// Returns `true` if the error kind is `DeprecateWorkflowTypeErrorKind::TypeDeprecatedFault`.
     pub fn is_type_deprecated_fault(&self) -> bool {
         matches!(
             &self.kind,
             DeprecateWorkflowTypeErrorKind::TypeDeprecatedFault(_)
         )
     }
-    /// Returns true if the error kind is `DeprecateWorkflowTypeErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `DeprecateWorkflowTypeErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -802,7 +802,7 @@ pub enum DescribeActivityTypeErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeActivityTypeError {
@@ -866,14 +866,14 @@ impl DescribeActivityTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeActivityTypeErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `DescribeActivityTypeErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeActivityTypeErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeActivityTypeErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `DescribeActivityTypeErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -908,7 +908,7 @@ pub enum DescribeDomainErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDomainError {
@@ -972,14 +972,14 @@ impl DescribeDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDomainErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `DescribeDomainErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDomainErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDomainErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `DescribeDomainErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(&self.kind, DescribeDomainErrorKind::UnknownResourceFault(_))
     }
@@ -1011,7 +1011,7 @@ pub enum DescribeWorkflowExecutionErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorkflowExecutionError {
@@ -1075,14 +1075,14 @@ impl DescribeWorkflowExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorkflowExecutionErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `DescribeWorkflowExecutionErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkflowExecutionErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkflowExecutionErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `DescribeWorkflowExecutionErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1117,7 +1117,7 @@ pub enum DescribeWorkflowTypeErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeWorkflowTypeError {
@@ -1181,14 +1181,14 @@ impl DescribeWorkflowTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeWorkflowTypeErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `DescribeWorkflowTypeErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             DescribeWorkflowTypeErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `DescribeWorkflowTypeErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `DescribeWorkflowTypeErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1223,7 +1223,7 @@ pub enum GetWorkflowExecutionHistoryErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetWorkflowExecutionHistoryError {
@@ -1289,14 +1289,14 @@ impl GetWorkflowExecutionHistoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetWorkflowExecutionHistoryErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `GetWorkflowExecutionHistoryErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             GetWorkflowExecutionHistoryErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `GetWorkflowExecutionHistoryErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `GetWorkflowExecutionHistoryErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1333,7 +1333,7 @@ pub enum ListActivityTypesErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListActivityTypesError {
@@ -1397,14 +1397,14 @@ impl ListActivityTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListActivityTypesErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `ListActivityTypesErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             ListActivityTypesErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `ListActivityTypesErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `ListActivityTypesErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1439,7 +1439,7 @@ pub enum ListClosedWorkflowExecutionsErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListClosedWorkflowExecutionsError {
@@ -1505,14 +1505,14 @@ impl ListClosedWorkflowExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListClosedWorkflowExecutionsErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `ListClosedWorkflowExecutionsErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             ListClosedWorkflowExecutionsErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `ListClosedWorkflowExecutionsErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `ListClosedWorkflowExecutionsErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1547,7 +1547,7 @@ pub struct ListDomainsError {
 pub enum ListDomainsErrorKind {
     /// <p>Returned when the caller doesn't have sufficient permissions to invoke the action.</p>
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDomainsError {
@@ -1610,7 +1610,7 @@ impl ListDomainsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDomainsErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `ListDomainsErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1644,7 +1644,7 @@ pub enum ListOpenWorkflowExecutionsErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOpenWorkflowExecutionsError {
@@ -1710,14 +1710,14 @@ impl ListOpenWorkflowExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOpenWorkflowExecutionsErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `ListOpenWorkflowExecutionsErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             ListOpenWorkflowExecutionsErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `ListOpenWorkflowExecutionsErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `ListOpenWorkflowExecutionsErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1754,7 +1754,7 @@ pub enum ListTagsForResourceErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -1819,21 +1819,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::LimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1869,7 +1869,7 @@ pub enum ListWorkflowTypesErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWorkflowTypesError {
@@ -1933,14 +1933,14 @@ impl ListWorkflowTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWorkflowTypesErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `ListWorkflowTypesErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             ListWorkflowTypesErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `ListWorkflowTypesErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `ListWorkflowTypesErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -1977,7 +1977,7 @@ pub enum PollForActivityTaskErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PollForActivityTaskError {
@@ -2042,21 +2042,21 @@ impl PollForActivityTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PollForActivityTaskErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `PollForActivityTaskErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             PollForActivityTaskErrorKind::LimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `PollForActivityTaskErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `PollForActivityTaskErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             PollForActivityTaskErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `PollForActivityTaskErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `PollForActivityTaskErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2094,7 +2094,7 @@ pub enum PollForDecisionTaskErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PollForDecisionTaskError {
@@ -2159,21 +2159,21 @@ impl PollForDecisionTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PollForDecisionTaskErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `PollForDecisionTaskErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             PollForDecisionTaskErrorKind::LimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `PollForDecisionTaskErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `PollForDecisionTaskErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             PollForDecisionTaskErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `PollForDecisionTaskErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `PollForDecisionTaskErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2209,7 +2209,7 @@ pub enum RecordActivityTaskHeartbeatErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RecordActivityTaskHeartbeatError {
@@ -2275,14 +2275,14 @@ impl RecordActivityTaskHeartbeatError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RecordActivityTaskHeartbeatErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `RecordActivityTaskHeartbeatErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             RecordActivityTaskHeartbeatErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `RecordActivityTaskHeartbeatErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `RecordActivityTaskHeartbeatErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2323,7 +2323,7 @@ pub enum RegisterActivityTypeErrorKind {
     TypeAlreadyExistsFault(crate::error::TypeAlreadyExistsFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterActivityTypeError {
@@ -2389,28 +2389,28 @@ impl RegisterActivityTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterActivityTypeErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `RegisterActivityTypeErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             RegisterActivityTypeErrorKind::LimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `RegisterActivityTypeErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `RegisterActivityTypeErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             RegisterActivityTypeErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `RegisterActivityTypeErrorKind::TypeAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `RegisterActivityTypeErrorKind::TypeAlreadyExistsFault`.
     pub fn is_type_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             RegisterActivityTypeErrorKind::TypeAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `RegisterActivityTypeErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `RegisterActivityTypeErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2451,7 +2451,7 @@ pub enum RegisterDomainErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>You've exceeded the number of tags allowed for a domain.</p>
     TooManyTagsFault(crate::error::TooManyTagsFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterDomainError {
@@ -2517,25 +2517,25 @@ impl RegisterDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterDomainErrorKind::DomainAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `RegisterDomainErrorKind::DomainAlreadyExistsFault`.
     pub fn is_domain_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDomainErrorKind::DomainAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDomainErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `RegisterDomainErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(&self.kind, RegisterDomainErrorKind::LimitExceededFault(_))
     }
-    /// Returns true if the error kind is `RegisterDomainErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `RegisterDomainErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             RegisterDomainErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `RegisterDomainErrorKind::TooManyTagsFault`.
+    /// Returns `true` if the error kind is `RegisterDomainErrorKind::TooManyTagsFault`.
     pub fn is_too_many_tags_fault(&self) -> bool {
         matches!(&self.kind, RegisterDomainErrorKind::TooManyTagsFault(_))
     }
@@ -2573,7 +2573,7 @@ pub enum RegisterWorkflowTypeErrorKind {
     TypeAlreadyExistsFault(crate::error::TypeAlreadyExistsFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterWorkflowTypeError {
@@ -2639,28 +2639,28 @@ impl RegisterWorkflowTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterWorkflowTypeErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `RegisterWorkflowTypeErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             RegisterWorkflowTypeErrorKind::LimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `RegisterWorkflowTypeErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `RegisterWorkflowTypeErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             RegisterWorkflowTypeErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `RegisterWorkflowTypeErrorKind::TypeAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `RegisterWorkflowTypeErrorKind::TypeAlreadyExistsFault`.
     pub fn is_type_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             RegisterWorkflowTypeErrorKind::TypeAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `RegisterWorkflowTypeErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `RegisterWorkflowTypeErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2697,7 +2697,7 @@ pub enum RequestCancelWorkflowExecutionErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RequestCancelWorkflowExecutionError {
@@ -2766,14 +2766,14 @@ impl RequestCancelWorkflowExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RequestCancelWorkflowExecutionErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `RequestCancelWorkflowExecutionErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             RequestCancelWorkflowExecutionErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `RequestCancelWorkflowExecutionErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `RequestCancelWorkflowExecutionErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2810,7 +2810,7 @@ pub enum RespondActivityTaskCanceledErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RespondActivityTaskCanceledError {
@@ -2876,14 +2876,14 @@ impl RespondActivityTaskCanceledError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RespondActivityTaskCanceledErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `RespondActivityTaskCanceledErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             RespondActivityTaskCanceledErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `RespondActivityTaskCanceledErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `RespondActivityTaskCanceledErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -2920,7 +2920,7 @@ pub enum RespondActivityTaskCompletedErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RespondActivityTaskCompletedError {
@@ -2986,14 +2986,14 @@ impl RespondActivityTaskCompletedError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RespondActivityTaskCompletedErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `RespondActivityTaskCompletedErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             RespondActivityTaskCompletedErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `RespondActivityTaskCompletedErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `RespondActivityTaskCompletedErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3030,7 +3030,7 @@ pub enum RespondActivityTaskFailedErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RespondActivityTaskFailedError {
@@ -3094,14 +3094,14 @@ impl RespondActivityTaskFailedError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RespondActivityTaskFailedErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `RespondActivityTaskFailedErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             RespondActivityTaskFailedErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `RespondActivityTaskFailedErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `RespondActivityTaskFailedErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3136,7 +3136,7 @@ pub enum RespondDecisionTaskCompletedErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RespondDecisionTaskCompletedError {
@@ -3202,14 +3202,14 @@ impl RespondDecisionTaskCompletedError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RespondDecisionTaskCompletedErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `RespondDecisionTaskCompletedErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             RespondDecisionTaskCompletedErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `RespondDecisionTaskCompletedErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `RespondDecisionTaskCompletedErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3246,7 +3246,7 @@ pub enum SignalWorkflowExecutionErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SignalWorkflowExecutionError {
@@ -3310,14 +3310,14 @@ impl SignalWorkflowExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SignalWorkflowExecutionErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `SignalWorkflowExecutionErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             SignalWorkflowExecutionErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `SignalWorkflowExecutionErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `SignalWorkflowExecutionErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3371,7 +3371,7 @@ pub enum StartWorkflowExecutionErrorKind {
     /// <p>Returned by <a>StartWorkflowExecution</a> when an open execution with the same workflowId is already running in
     /// the specified domain.</p>
     WorkflowExecutionAlreadyStartedFault(crate::error::WorkflowExecutionAlreadyStartedFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartWorkflowExecutionError {
@@ -3441,42 +3441,42 @@ impl StartWorkflowExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartWorkflowExecutionErrorKind::DefaultUndefinedFault`.
+    /// Returns `true` if the error kind is `StartWorkflowExecutionErrorKind::DefaultUndefinedFault`.
     pub fn is_default_undefined_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartWorkflowExecutionErrorKind::DefaultUndefinedFault(_)
         )
     }
-    /// Returns true if the error kind is `StartWorkflowExecutionErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `StartWorkflowExecutionErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartWorkflowExecutionErrorKind::LimitExceededFault(_)
         )
     }
-    /// Returns true if the error kind is `StartWorkflowExecutionErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `StartWorkflowExecutionErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartWorkflowExecutionErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `StartWorkflowExecutionErrorKind::TypeDeprecatedFault`.
+    /// Returns `true` if the error kind is `StartWorkflowExecutionErrorKind::TypeDeprecatedFault`.
     pub fn is_type_deprecated_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartWorkflowExecutionErrorKind::TypeDeprecatedFault(_)
         )
     }
-    /// Returns true if the error kind is `StartWorkflowExecutionErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `StartWorkflowExecutionErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
             StartWorkflowExecutionErrorKind::UnknownResourceFault(_)
         )
     }
-    /// Returns true if the error kind is `StartWorkflowExecutionErrorKind::WorkflowExecutionAlreadyStartedFault`.
+    /// Returns `true` if the error kind is `StartWorkflowExecutionErrorKind::WorkflowExecutionAlreadyStartedFault`.
     pub fn is_workflow_execution_already_started_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3521,7 +3521,7 @@ pub enum TagResourceErrorKind {
     TooManyTagsFault(crate::error::TooManyTagsFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3587,22 +3587,22 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::LimitExceededFault(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyTagsFault`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsFault`.
     pub fn is_too_many_tags_fault(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TooManyTagsFault(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::UnknownResourceFault(_))
     }
@@ -3636,7 +3636,7 @@ pub enum TerminateWorkflowExecutionErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TerminateWorkflowExecutionError {
@@ -3702,14 +3702,14 @@ impl TerminateWorkflowExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TerminateWorkflowExecutionErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `TerminateWorkflowExecutionErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             TerminateWorkflowExecutionErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `TerminateWorkflowExecutionErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `TerminateWorkflowExecutionErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3746,7 +3746,7 @@ pub enum UndeprecateActivityTypeErrorKind {
     TypeAlreadyExistsFault(crate::error::TypeAlreadyExistsFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UndeprecateActivityTypeError {
@@ -3811,21 +3811,21 @@ impl UndeprecateActivityTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UndeprecateActivityTypeErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `UndeprecateActivityTypeErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             UndeprecateActivityTypeErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `UndeprecateActivityTypeErrorKind::TypeAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `UndeprecateActivityTypeErrorKind::TypeAlreadyExistsFault`.
     pub fn is_type_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             UndeprecateActivityTypeErrorKind::TypeAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `UndeprecateActivityTypeErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `UndeprecateActivityTypeErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3863,7 +3863,7 @@ pub enum UndeprecateDomainErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UndeprecateDomainError {
@@ -3928,21 +3928,21 @@ impl UndeprecateDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UndeprecateDomainErrorKind::DomainAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `UndeprecateDomainErrorKind::DomainAlreadyExistsFault`.
     pub fn is_domain_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             UndeprecateDomainErrorKind::DomainAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `UndeprecateDomainErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `UndeprecateDomainErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             UndeprecateDomainErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `UndeprecateDomainErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `UndeprecateDomainErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -3980,7 +3980,7 @@ pub enum UndeprecateWorkflowTypeErrorKind {
     TypeAlreadyExistsFault(crate::error::TypeAlreadyExistsFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UndeprecateWorkflowTypeError {
@@ -4045,21 +4045,21 @@ impl UndeprecateWorkflowTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UndeprecateWorkflowTypeErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `UndeprecateWorkflowTypeErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             UndeprecateWorkflowTypeErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `UndeprecateWorkflowTypeErrorKind::TypeAlreadyExistsFault`.
+    /// Returns `true` if the error kind is `UndeprecateWorkflowTypeErrorKind::TypeAlreadyExistsFault`.
     pub fn is_type_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
             UndeprecateWorkflowTypeErrorKind::TypeAlreadyExistsFault(_)
         )
     }
-    /// Returns true if the error kind is `UndeprecateWorkflowTypeErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `UndeprecateWorkflowTypeErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(
             &self.kind,
@@ -4097,7 +4097,7 @@ pub enum UntagResourceErrorKind {
     OperationNotPermittedFault(crate::error::OperationNotPermittedFault),
     /// <p>Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was never created or is no longer available for this operation.</p>
     UnknownResourceFault(crate::error::UnknownResourceFault),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -4162,18 +4162,18 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::LimitExceededFault`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::LimitExceededFault(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::OperationNotPermittedFault`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::OperationNotPermittedFault`.
     pub fn is_operation_not_permitted_fault(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::OperationNotPermittedFault(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::UnknownResourceFault`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::UnknownResourceFault`.
     pub fn is_unknown_resource_fault(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::UnknownResourceFault(_))
     }

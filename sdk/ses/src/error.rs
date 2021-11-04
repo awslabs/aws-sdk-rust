@@ -20,7 +20,7 @@ pub enum CloneReceiptRuleSetErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Indicates that the provided receipt rule set does not exist.</p>
     RuleSetDoesNotExistException(crate::error::RuleSetDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CloneReceiptRuleSetError {
@@ -85,21 +85,21 @@ impl CloneReceiptRuleSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CloneReceiptRuleSetErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CloneReceiptRuleSetErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CloneReceiptRuleSetErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CloneReceiptRuleSetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CloneReceiptRuleSetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CloneReceiptRuleSetErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CloneReceiptRuleSetErrorKind::RuleSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `CloneReceiptRuleSetErrorKind::RuleSetDoesNotExistException`.
     pub fn is_rule_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -141,7 +141,7 @@ pub enum CreateConfigurationSetErrorKind {
     /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
     /// Guide</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConfigurationSetError {
@@ -210,21 +210,21 @@ impl CreateConfigurationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConfigurationSetErrorKind::ConfigurationSetAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::ConfigurationSetAlreadyExistsException`.
     pub fn is_configuration_set_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetErrorKind::ConfigurationSetAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetErrorKind::InvalidConfigurationSetException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::InvalidConfigurationSetException`.
     pub fn is_invalid_configuration_set_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetErrorKind::InvalidConfigurationSetException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -278,7 +278,7 @@ pub enum CreateConfigurationSetEventDestinationErrorKind {
     /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
     /// Guide</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConfigurationSetEventDestinationError {
@@ -363,7 +363,7 @@ impl CreateConfigurationSetEventDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConfigurationSetEventDestinationErrorKind::ConfigurationSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::ConfigurationSetDoesNotExistException`.
     pub fn is_configuration_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -372,7 +372,7 @@ impl CreateConfigurationSetEventDestinationError {
             )
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetEventDestinationErrorKind::EventDestinationAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::EventDestinationAlreadyExistsException`.
     pub fn is_event_destination_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -381,7 +381,7 @@ impl CreateConfigurationSetEventDestinationError {
             )
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetEventDestinationErrorKind::InvalidCloudWatchDestinationException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::InvalidCloudWatchDestinationException`.
     pub fn is_invalid_cloud_watch_destination_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -390,21 +390,21 @@ impl CreateConfigurationSetEventDestinationError {
             )
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetEventDestinationErrorKind::InvalidFirehoseDestinationException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::InvalidFirehoseDestinationException`.
     pub fn is_invalid_firehose_destination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetEventDestinationErrorKind::InvalidFirehoseDestinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetEventDestinationErrorKind::InvalidSnsDestinationException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::InvalidSnsDestinationException`.
     pub fn is_invalid_sns_destination_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetEventDestinationErrorKind::InvalidSnsDestinationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetEventDestinationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -470,7 +470,7 @@ pub enum CreateConfigurationSetTrackingOptionsErrorKind {
     /// <p>Indicates that the configuration set you specified already contains a TrackingOptions
     /// object.</p>
     TrackingOptionsAlreadyExistsException(crate::error::TrackingOptionsAlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConfigurationSetTrackingOptionsError {
@@ -546,7 +546,7 @@ impl CreateConfigurationSetTrackingOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConfigurationSetTrackingOptionsErrorKind::ConfigurationSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetTrackingOptionsErrorKind::ConfigurationSetDoesNotExistException`.
     pub fn is_configuration_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -555,14 +555,14 @@ impl CreateConfigurationSetTrackingOptionsError {
             )
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetTrackingOptionsErrorKind::InvalidTrackingOptionsException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetTrackingOptionsErrorKind::InvalidTrackingOptionsException`.
     pub fn is_invalid_tracking_options_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationSetTrackingOptionsErrorKind::InvalidTrackingOptionsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationSetTrackingOptionsErrorKind::TrackingOptionsAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateConfigurationSetTrackingOptionsErrorKind::TrackingOptionsAlreadyExistsException`.
     pub fn is_tracking_options_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -620,7 +620,7 @@ pub enum CreateCustomVerificationEmailTemplateErrorKind {
     /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
     /// Guide</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCustomVerificationEmailTemplateError {
@@ -699,22 +699,22 @@ impl CreateCustomVerificationEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailInvalidContentException`.
+    /// Returns `true` if the error kind is `CreateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailInvalidContentException`.
     pub fn is_custom_verification_email_invalid_content_exception(&self) -> bool {
         matches!(&self.kind, CreateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailInvalidContentException(_))
     }
-    /// Returns true if the error kind is `CreateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailTemplateAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailTemplateAlreadyExistsException`.
     pub fn is_custom_verification_email_template_already_exists_exception(&self) -> bool {
         matches!(&self.kind, CreateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailTemplateAlreadyExistsException(_))
     }
-    /// Returns true if the error kind is `CreateCustomVerificationEmailTemplateErrorKind::FromEmailAddressNotVerifiedException`.
+    /// Returns `true` if the error kind is `CreateCustomVerificationEmailTemplateErrorKind::FromEmailAddressNotVerifiedException`.
     pub fn is_from_email_address_not_verified_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomVerificationEmailTemplateErrorKind::FromEmailAddressNotVerifiedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomVerificationEmailTemplateErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateCustomVerificationEmailTemplateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -763,7 +763,7 @@ pub enum CreateReceiptFilterErrorKind {
     /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
     /// Guide</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateReceiptFilterError {
@@ -827,14 +827,14 @@ impl CreateReceiptFilterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateReceiptFilterErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateReceiptFilterErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReceiptFilterErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReceiptFilterErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateReceiptFilterErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -890,7 +890,7 @@ pub enum CreateReceiptRuleErrorKind {
     RuleDoesNotExistException(crate::error::RuleDoesNotExistException),
     /// <p>Indicates that the provided receipt rule set does not exist.</p>
     RuleSetDoesNotExistException(crate::error::RuleSetDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateReceiptRuleError {
@@ -959,49 +959,49 @@ impl CreateReceiptRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateReceiptRuleErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateReceiptRuleErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReceiptRuleErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReceiptRuleErrorKind::InvalidLambdaFunctionException`.
+    /// Returns `true` if the error kind is `CreateReceiptRuleErrorKind::InvalidLambdaFunctionException`.
     pub fn is_invalid_lambda_function_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReceiptRuleErrorKind::InvalidLambdaFunctionException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReceiptRuleErrorKind::InvalidS3ConfigurationException`.
+    /// Returns `true` if the error kind is `CreateReceiptRuleErrorKind::InvalidS3ConfigurationException`.
     pub fn is_invalid_s3_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReceiptRuleErrorKind::InvalidS3ConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReceiptRuleErrorKind::InvalidSnsTopicException`.
+    /// Returns `true` if the error kind is `CreateReceiptRuleErrorKind::InvalidSnsTopicException`.
     pub fn is_invalid_sns_topic_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReceiptRuleErrorKind::InvalidSnsTopicException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReceiptRuleErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateReceiptRuleErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReceiptRuleErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReceiptRuleErrorKind::RuleDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateReceiptRuleErrorKind::RuleDoesNotExistException`.
     pub fn is_rule_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReceiptRuleErrorKind::RuleDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReceiptRuleErrorKind::RuleSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `CreateReceiptRuleErrorKind::RuleSetDoesNotExistException`.
     pub fn is_rule_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1043,7 +1043,7 @@ pub enum CreateReceiptRuleSetErrorKind {
     /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
     /// Guide</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateReceiptRuleSetError {
@@ -1107,14 +1107,14 @@ impl CreateReceiptRuleSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateReceiptRuleSetErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateReceiptRuleSetErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReceiptRuleSetErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReceiptRuleSetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateReceiptRuleSetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1154,7 +1154,7 @@ pub enum CreateTemplateErrorKind {
     /// of Amazon SES limits, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES Developer
     /// Guide</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTemplateError {
@@ -1219,21 +1219,21 @@ impl CreateTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTemplateErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateTemplateErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTemplateErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTemplateErrorKind::InvalidTemplateException`.
+    /// Returns `true` if the error kind is `CreateTemplateErrorKind::InvalidTemplateException`.
     pub fn is_invalid_template_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTemplateErrorKind::InvalidTemplateException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTemplateErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateTemplateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1267,7 +1267,7 @@ pub struct DeleteConfigurationSetError {
 pub enum DeleteConfigurationSetErrorKind {
     /// <p>Indicates that the configuration set does not exist.</p>
     ConfigurationSetDoesNotExistException(crate::error::ConfigurationSetDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConfigurationSetError {
@@ -1332,7 +1332,7 @@ impl DeleteConfigurationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetErrorKind::ConfigurationSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetErrorKind::ConfigurationSetDoesNotExistException`.
     pub fn is_configuration_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1368,7 +1368,7 @@ pub enum DeleteConfigurationSetEventDestinationErrorKind {
     ConfigurationSetDoesNotExistException(crate::error::ConfigurationSetDoesNotExistException),
     /// <p>Indicates that the event destination does not exist.</p>
     EventDestinationDoesNotExistException(crate::error::EventDestinationDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConfigurationSetEventDestinationError {
@@ -1441,7 +1441,7 @@ impl DeleteConfigurationSetEventDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::ConfigurationSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::ConfigurationSetDoesNotExistException`.
     pub fn is_configuration_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1450,7 +1450,7 @@ impl DeleteConfigurationSetEventDestinationError {
             )
         )
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::EventDestinationDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::EventDestinationDoesNotExistException`.
     pub fn is_event_destination_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1493,7 +1493,7 @@ pub enum DeleteConfigurationSetTrackingOptionsErrorKind {
     ConfigurationSetDoesNotExistException(crate::error::ConfigurationSetDoesNotExistException),
     /// <p>Indicates that the TrackingOptions object you specified does not exist.</p>
     TrackingOptionsDoesNotExistException(crate::error::TrackingOptionsDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConfigurationSetTrackingOptionsError {
@@ -1566,7 +1566,7 @@ impl DeleteConfigurationSetTrackingOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetTrackingOptionsErrorKind::ConfigurationSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetTrackingOptionsErrorKind::ConfigurationSetDoesNotExistException`.
     pub fn is_configuration_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1575,7 +1575,7 @@ impl DeleteConfigurationSetTrackingOptionsError {
             )
         )
     }
-    /// Returns true if the error kind is `DeleteConfigurationSetTrackingOptionsErrorKind::TrackingOptionsDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationSetTrackingOptionsErrorKind::TrackingOptionsDoesNotExistException`.
     pub fn is_tracking_options_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1612,7 +1612,7 @@ pub struct DeleteCustomVerificationEmailTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCustomVerificationEmailTemplateErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCustomVerificationEmailTemplateError {
@@ -1701,7 +1701,7 @@ pub struct DeleteIdentityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteIdentityErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteIdentityError {
@@ -1785,7 +1785,7 @@ pub struct DeleteIdentityPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteIdentityPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteIdentityPolicyError {
@@ -1869,7 +1869,7 @@ pub struct DeleteReceiptFilterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteReceiptFilterErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteReceiptFilterError {
@@ -1955,7 +1955,7 @@ pub struct DeleteReceiptRuleError {
 pub enum DeleteReceiptRuleErrorKind {
     /// <p>Indicates that the provided receipt rule set does not exist.</p>
     RuleSetDoesNotExistException(crate::error::RuleSetDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteReceiptRuleError {
@@ -2018,7 +2018,7 @@ impl DeleteReceiptRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteReceiptRuleErrorKind::RuleSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `DeleteReceiptRuleErrorKind::RuleSetDoesNotExistException`.
     pub fn is_rule_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2050,7 +2050,7 @@ pub struct DeleteReceiptRuleSetError {
 pub enum DeleteReceiptRuleSetErrorKind {
     /// <p>Indicates that the delete operation could not be completed.</p>
     CannotDeleteException(crate::error::CannotDeleteException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteReceiptRuleSetError {
@@ -2113,7 +2113,7 @@ impl DeleteReceiptRuleSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteReceiptRuleSetErrorKind::CannotDeleteException`.
+    /// Returns `true` if the error kind is `DeleteReceiptRuleSetErrorKind::CannotDeleteException`.
     pub fn is_cannot_delete_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2143,7 +2143,7 @@ pub struct DeleteTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTemplateErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTemplateError {
@@ -2227,7 +2227,7 @@ pub struct DeleteVerifiedEmailAddressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVerifiedEmailAddressErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVerifiedEmailAddressError {
@@ -2311,7 +2311,7 @@ pub struct DescribeActiveReceiptRuleSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeActiveReceiptRuleSetErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeActiveReceiptRuleSetError {
@@ -2397,7 +2397,7 @@ pub struct DescribeConfigurationSetError {
 pub enum DescribeConfigurationSetErrorKind {
     /// <p>Indicates that the configuration set does not exist.</p>
     ConfigurationSetDoesNotExistException(crate::error::ConfigurationSetDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConfigurationSetError {
@@ -2462,7 +2462,7 @@ impl DescribeConfigurationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConfigurationSetErrorKind::ConfigurationSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationSetErrorKind::ConfigurationSetDoesNotExistException`.
     pub fn is_configuration_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2498,7 +2498,7 @@ pub enum DescribeReceiptRuleErrorKind {
     RuleDoesNotExistException(crate::error::RuleDoesNotExistException),
     /// <p>Indicates that the provided receipt rule set does not exist.</p>
     RuleSetDoesNotExistException(crate::error::RuleSetDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReceiptRuleError {
@@ -2562,14 +2562,14 @@ impl DescribeReceiptRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReceiptRuleErrorKind::RuleDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeReceiptRuleErrorKind::RuleDoesNotExistException`.
     pub fn is_rule_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeReceiptRuleErrorKind::RuleDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeReceiptRuleErrorKind::RuleSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeReceiptRuleErrorKind::RuleSetDoesNotExistException`.
     pub fn is_rule_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2602,7 +2602,7 @@ pub struct DescribeReceiptRuleSetError {
 pub enum DescribeReceiptRuleSetErrorKind {
     /// <p>Indicates that the provided receipt rule set does not exist.</p>
     RuleSetDoesNotExistException(crate::error::RuleSetDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReceiptRuleSetError {
@@ -2665,7 +2665,7 @@ impl DescribeReceiptRuleSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeReceiptRuleSetErrorKind::RuleSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `DescribeReceiptRuleSetErrorKind::RuleSetDoesNotExistException`.
     pub fn is_rule_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2695,7 +2695,7 @@ pub struct GetAccountSendingEnabledError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccountSendingEnabledErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccountSendingEnabledError {
@@ -2784,7 +2784,7 @@ pub enum GetCustomVerificationEmailTemplateErrorKind {
     CustomVerificationEmailTemplateDoesNotExistException(
         crate::error::CustomVerificationEmailTemplateDoesNotExistException,
     ),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCustomVerificationEmailTemplateError {
@@ -2854,7 +2854,7 @@ impl GetCustomVerificationEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailTemplateDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailTemplateDoesNotExistException`.
     pub fn is_custom_verification_email_template_does_not_exist_exception(&self) -> bool {
         matches!(&self.kind, GetCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailTemplateDoesNotExistException(_))
     }
@@ -2885,7 +2885,7 @@ pub struct GetIdentityDkimAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetIdentityDkimAttributesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIdentityDkimAttributesError {
@@ -2969,7 +2969,7 @@ pub struct GetIdentityMailFromDomainAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetIdentityMailFromDomainAttributesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIdentityMailFromDomainAttributesError {
@@ -3058,7 +3058,7 @@ pub struct GetIdentityNotificationAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetIdentityNotificationAttributesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIdentityNotificationAttributesError {
@@ -3145,7 +3145,7 @@ pub struct GetIdentityPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetIdentityPoliciesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIdentityPoliciesError {
@@ -3229,7 +3229,7 @@ pub struct GetIdentityVerificationAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetIdentityVerificationAttributesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIdentityVerificationAttributesError {
@@ -3316,7 +3316,7 @@ pub struct GetSendQuotaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSendQuotaErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSendQuotaError {
@@ -3400,7 +3400,7 @@ pub struct GetSendStatisticsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSendStatisticsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSendStatisticsError {
@@ -3487,7 +3487,7 @@ pub enum GetTemplateErrorKind {
     /// <p>Indicates that the Template object you specified does not exist in your Amazon SES
     /// account.</p>
     TemplateDoesNotExistException(crate::error::TemplateDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTemplateError {
@@ -3550,7 +3550,7 @@ impl GetTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTemplateErrorKind::TemplateDoesNotExistException`.
+    /// Returns `true` if the error kind is `GetTemplateErrorKind::TemplateDoesNotExistException`.
     pub fn is_template_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3580,7 +3580,7 @@ pub struct ListConfigurationSetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListConfigurationSetsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListConfigurationSetsError {
@@ -3664,7 +3664,7 @@ pub struct ListCustomVerificationEmailTemplatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListCustomVerificationEmailTemplatesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCustomVerificationEmailTemplatesError {
@@ -3753,7 +3753,7 @@ pub struct ListIdentitiesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListIdentitiesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListIdentitiesError {
@@ -3837,7 +3837,7 @@ pub struct ListIdentityPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListIdentityPoliciesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListIdentityPoliciesError {
@@ -3921,7 +3921,7 @@ pub struct ListReceiptFiltersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListReceiptFiltersErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReceiptFiltersError {
@@ -4005,7 +4005,7 @@ pub struct ListReceiptRuleSetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListReceiptRuleSetsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReceiptRuleSetsError {
@@ -4089,7 +4089,7 @@ pub struct ListTemplatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTemplatesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTemplatesError {
@@ -4173,7 +4173,7 @@ pub struct ListVerifiedEmailAddressesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListVerifiedEmailAddressesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVerifiedEmailAddressesError {
@@ -4261,7 +4261,7 @@ pub enum PutConfigurationSetDeliveryOptionsErrorKind {
     ConfigurationSetDoesNotExistException(crate::error::ConfigurationSetDoesNotExistException),
     /// <p>Indicates that provided delivery option is invalid.</p>
     InvalidDeliveryOptionsException(crate::error::InvalidDeliveryOptionsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutConfigurationSetDeliveryOptionsError {
@@ -4332,14 +4332,14 @@ impl PutConfigurationSetDeliveryOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutConfigurationSetDeliveryOptionsErrorKind::ConfigurationSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `PutConfigurationSetDeliveryOptionsErrorKind::ConfigurationSetDoesNotExistException`.
     pub fn is_configuration_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutConfigurationSetDeliveryOptionsErrorKind::ConfigurationSetDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `PutConfigurationSetDeliveryOptionsErrorKind::InvalidDeliveryOptionsException`.
+    /// Returns `true` if the error kind is `PutConfigurationSetDeliveryOptionsErrorKind::InvalidDeliveryOptionsException`.
     pub fn is_invalid_delivery_options_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4377,7 +4377,7 @@ pub enum PutIdentityPolicyErrorKind {
     /// <p>Indicates that the provided policy is invalid. Check the error stack for more
     /// information about what caused the error.</p>
     InvalidPolicyException(crate::error::InvalidPolicyException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutIdentityPolicyError {
@@ -4440,7 +4440,7 @@ impl PutIdentityPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutIdentityPolicyErrorKind::InvalidPolicyException`.
+    /// Returns `true` if the error kind is `PutIdentityPolicyErrorKind::InvalidPolicyException`.
     pub fn is_invalid_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4474,7 +4474,7 @@ pub enum ReorderReceiptRuleSetErrorKind {
     RuleDoesNotExistException(crate::error::RuleDoesNotExistException),
     /// <p>Indicates that the provided receipt rule set does not exist.</p>
     RuleSetDoesNotExistException(crate::error::RuleSetDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ReorderReceiptRuleSetError {
@@ -4538,14 +4538,14 @@ impl ReorderReceiptRuleSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ReorderReceiptRuleSetErrorKind::RuleDoesNotExistException`.
+    /// Returns `true` if the error kind is `ReorderReceiptRuleSetErrorKind::RuleDoesNotExistException`.
     pub fn is_rule_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             ReorderReceiptRuleSetErrorKind::RuleDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `ReorderReceiptRuleSetErrorKind::RuleSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `ReorderReceiptRuleSetErrorKind::RuleSetDoesNotExistException`.
     pub fn is_rule_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4579,7 +4579,7 @@ pub enum SendBounceErrorKind {
     /// <p>Indicates that the action failed, and the message could not be sent. Check the error
     /// stack for more information about what caused the error.</p>
     MessageRejected(crate::error::MessageRejected),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendBounceError {
@@ -4642,7 +4642,7 @@ impl SendBounceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendBounceErrorKind::MessageRejected`.
+    /// Returns `true` if the error kind is `SendBounceErrorKind::MessageRejected`.
     pub fn is_message_rejected(&self) -> bool {
         matches!(&self.kind, SendBounceErrorKind::MessageRejected(_))
     }
@@ -4688,7 +4688,7 @@ pub enum SendBulkTemplatedEmailErrorKind {
     /// <p>Indicates that the Template object you specified does not exist in your Amazon SES
     /// account.</p>
     TemplateDoesNotExistException(crate::error::TemplateDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendBulkTemplatedEmailError {
@@ -4762,42 +4762,42 @@ impl SendBulkTemplatedEmailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendBulkTemplatedEmailErrorKind::AccountSendingPausedException`.
+    /// Returns `true` if the error kind is `SendBulkTemplatedEmailErrorKind::AccountSendingPausedException`.
     pub fn is_account_sending_paused_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendBulkTemplatedEmailErrorKind::AccountSendingPausedException(_)
         )
     }
-    /// Returns true if the error kind is `SendBulkTemplatedEmailErrorKind::ConfigurationSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `SendBulkTemplatedEmailErrorKind::ConfigurationSetDoesNotExistException`.
     pub fn is_configuration_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendBulkTemplatedEmailErrorKind::ConfigurationSetDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `SendBulkTemplatedEmailErrorKind::ConfigurationSetSendingPausedException`.
+    /// Returns `true` if the error kind is `SendBulkTemplatedEmailErrorKind::ConfigurationSetSendingPausedException`.
     pub fn is_configuration_set_sending_paused_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendBulkTemplatedEmailErrorKind::ConfigurationSetSendingPausedException(_)
         )
     }
-    /// Returns true if the error kind is `SendBulkTemplatedEmailErrorKind::MailFromDomainNotVerifiedException`.
+    /// Returns `true` if the error kind is `SendBulkTemplatedEmailErrorKind::MailFromDomainNotVerifiedException`.
     pub fn is_mail_from_domain_not_verified_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendBulkTemplatedEmailErrorKind::MailFromDomainNotVerifiedException(_)
         )
     }
-    /// Returns true if the error kind is `SendBulkTemplatedEmailErrorKind::MessageRejected`.
+    /// Returns `true` if the error kind is `SendBulkTemplatedEmailErrorKind::MessageRejected`.
     pub fn is_message_rejected(&self) -> bool {
         matches!(
             &self.kind,
             SendBulkTemplatedEmailErrorKind::MessageRejected(_)
         )
     }
-    /// Returns true if the error kind is `SendBulkTemplatedEmailErrorKind::TemplateDoesNotExistException`.
+    /// Returns `true` if the error kind is `SendBulkTemplatedEmailErrorKind::TemplateDoesNotExistException`.
     pub fn is_template_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4853,7 +4853,7 @@ pub enum SendCustomVerificationEmailErrorKind {
     MessageRejected(crate::error::MessageRejected),
     /// <p>Indicates that the account has not been granted production access.</p>
     ProductionAccessNotGrantedException(crate::error::ProductionAccessNotGrantedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendCustomVerificationEmailError {
@@ -4932,32 +4932,32 @@ impl SendCustomVerificationEmailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendCustomVerificationEmailErrorKind::ConfigurationSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `SendCustomVerificationEmailErrorKind::ConfigurationSetDoesNotExistException`.
     pub fn is_configuration_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendCustomVerificationEmailErrorKind::ConfigurationSetDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `SendCustomVerificationEmailErrorKind::CustomVerificationEmailTemplateDoesNotExistException`.
+    /// Returns `true` if the error kind is `SendCustomVerificationEmailErrorKind::CustomVerificationEmailTemplateDoesNotExistException`.
     pub fn is_custom_verification_email_template_does_not_exist_exception(&self) -> bool {
         matches!(&self.kind, SendCustomVerificationEmailErrorKind::CustomVerificationEmailTemplateDoesNotExistException(_))
     }
-    /// Returns true if the error kind is `SendCustomVerificationEmailErrorKind::FromEmailAddressNotVerifiedException`.
+    /// Returns `true` if the error kind is `SendCustomVerificationEmailErrorKind::FromEmailAddressNotVerifiedException`.
     pub fn is_from_email_address_not_verified_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendCustomVerificationEmailErrorKind::FromEmailAddressNotVerifiedException(_)
         )
     }
-    /// Returns true if the error kind is `SendCustomVerificationEmailErrorKind::MessageRejected`.
+    /// Returns `true` if the error kind is `SendCustomVerificationEmailErrorKind::MessageRejected`.
     pub fn is_message_rejected(&self) -> bool {
         matches!(
             &self.kind,
             SendCustomVerificationEmailErrorKind::MessageRejected(_)
         )
     }
-    /// Returns true if the error kind is `SendCustomVerificationEmailErrorKind::ProductionAccessNotGrantedException`.
+    /// Returns `true` if the error kind is `SendCustomVerificationEmailErrorKind::ProductionAccessNotGrantedException`.
     pub fn is_production_access_not_granted_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5019,7 +5019,7 @@ pub enum SendEmailErrorKind {
     /// <p>Indicates that the action failed, and the message could not be sent. Check the error
     /// stack for more information about what caused the error.</p>
     MessageRejected(crate::error::MessageRejected),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendEmailError {
@@ -5086,35 +5086,35 @@ impl SendEmailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendEmailErrorKind::AccountSendingPausedException`.
+    /// Returns `true` if the error kind is `SendEmailErrorKind::AccountSendingPausedException`.
     pub fn is_account_sending_paused_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendEmailErrorKind::AccountSendingPausedException(_)
         )
     }
-    /// Returns true if the error kind is `SendEmailErrorKind::ConfigurationSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `SendEmailErrorKind::ConfigurationSetDoesNotExistException`.
     pub fn is_configuration_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendEmailErrorKind::ConfigurationSetDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `SendEmailErrorKind::ConfigurationSetSendingPausedException`.
+    /// Returns `true` if the error kind is `SendEmailErrorKind::ConfigurationSetSendingPausedException`.
     pub fn is_configuration_set_sending_paused_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendEmailErrorKind::ConfigurationSetSendingPausedException(_)
         )
     }
-    /// Returns true if the error kind is `SendEmailErrorKind::MailFromDomainNotVerifiedException`.
+    /// Returns `true` if the error kind is `SendEmailErrorKind::MailFromDomainNotVerifiedException`.
     pub fn is_mail_from_domain_not_verified_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendEmailErrorKind::MailFromDomainNotVerifiedException(_)
         )
     }
-    /// Returns true if the error kind is `SendEmailErrorKind::MessageRejected`.
+    /// Returns `true` if the error kind is `SendEmailErrorKind::MessageRejected`.
     pub fn is_message_rejected(&self) -> bool {
         matches!(&self.kind, SendEmailErrorKind::MessageRejected(_))
     }
@@ -5161,7 +5161,7 @@ pub enum SendRawEmailErrorKind {
     /// <p>Indicates that the action failed, and the message could not be sent. Check the error
     /// stack for more information about what caused the error.</p>
     MessageRejected(crate::error::MessageRejected),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendRawEmailError {
@@ -5228,35 +5228,35 @@ impl SendRawEmailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendRawEmailErrorKind::AccountSendingPausedException`.
+    /// Returns `true` if the error kind is `SendRawEmailErrorKind::AccountSendingPausedException`.
     pub fn is_account_sending_paused_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendRawEmailErrorKind::AccountSendingPausedException(_)
         )
     }
-    /// Returns true if the error kind is `SendRawEmailErrorKind::ConfigurationSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `SendRawEmailErrorKind::ConfigurationSetDoesNotExistException`.
     pub fn is_configuration_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendRawEmailErrorKind::ConfigurationSetDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `SendRawEmailErrorKind::ConfigurationSetSendingPausedException`.
+    /// Returns `true` if the error kind is `SendRawEmailErrorKind::ConfigurationSetSendingPausedException`.
     pub fn is_configuration_set_sending_paused_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendRawEmailErrorKind::ConfigurationSetSendingPausedException(_)
         )
     }
-    /// Returns true if the error kind is `SendRawEmailErrorKind::MailFromDomainNotVerifiedException`.
+    /// Returns `true` if the error kind is `SendRawEmailErrorKind::MailFromDomainNotVerifiedException`.
     pub fn is_mail_from_domain_not_verified_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendRawEmailErrorKind::MailFromDomainNotVerifiedException(_)
         )
     }
-    /// Returns true if the error kind is `SendRawEmailErrorKind::MessageRejected`.
+    /// Returns `true` if the error kind is `SendRawEmailErrorKind::MessageRejected`.
     pub fn is_message_rejected(&self) -> bool {
         matches!(&self.kind, SendRawEmailErrorKind::MessageRejected(_))
     }
@@ -5306,7 +5306,7 @@ pub enum SendTemplatedEmailErrorKind {
     /// <p>Indicates that the Template object you specified does not exist in your Amazon SES
     /// account.</p>
     TemplateDoesNotExistException(crate::error::TemplateDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendTemplatedEmailError {
@@ -5380,39 +5380,39 @@ impl SendTemplatedEmailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendTemplatedEmailErrorKind::AccountSendingPausedException`.
+    /// Returns `true` if the error kind is `SendTemplatedEmailErrorKind::AccountSendingPausedException`.
     pub fn is_account_sending_paused_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendTemplatedEmailErrorKind::AccountSendingPausedException(_)
         )
     }
-    /// Returns true if the error kind is `SendTemplatedEmailErrorKind::ConfigurationSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `SendTemplatedEmailErrorKind::ConfigurationSetDoesNotExistException`.
     pub fn is_configuration_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendTemplatedEmailErrorKind::ConfigurationSetDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `SendTemplatedEmailErrorKind::ConfigurationSetSendingPausedException`.
+    /// Returns `true` if the error kind is `SendTemplatedEmailErrorKind::ConfigurationSetSendingPausedException`.
     pub fn is_configuration_set_sending_paused_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendTemplatedEmailErrorKind::ConfigurationSetSendingPausedException(_)
         )
     }
-    /// Returns true if the error kind is `SendTemplatedEmailErrorKind::MailFromDomainNotVerifiedException`.
+    /// Returns `true` if the error kind is `SendTemplatedEmailErrorKind::MailFromDomainNotVerifiedException`.
     pub fn is_mail_from_domain_not_verified_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendTemplatedEmailErrorKind::MailFromDomainNotVerifiedException(_)
         )
     }
-    /// Returns true if the error kind is `SendTemplatedEmailErrorKind::MessageRejected`.
+    /// Returns `true` if the error kind is `SendTemplatedEmailErrorKind::MessageRejected`.
     pub fn is_message_rejected(&self) -> bool {
         matches!(&self.kind, SendTemplatedEmailErrorKind::MessageRejected(_))
     }
-    /// Returns true if the error kind is `SendTemplatedEmailErrorKind::TemplateDoesNotExistException`.
+    /// Returns `true` if the error kind is `SendTemplatedEmailErrorKind::TemplateDoesNotExistException`.
     pub fn is_template_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5453,7 +5453,7 @@ pub struct SetActiveReceiptRuleSetError {
 pub enum SetActiveReceiptRuleSetErrorKind {
     /// <p>Indicates that the provided receipt rule set does not exist.</p>
     RuleSetDoesNotExistException(crate::error::RuleSetDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetActiveReceiptRuleSetError {
@@ -5516,7 +5516,7 @@ impl SetActiveReceiptRuleSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetActiveReceiptRuleSetErrorKind::RuleSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `SetActiveReceiptRuleSetErrorKind::RuleSetDoesNotExistException`.
     pub fn is_rule_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5546,7 +5546,7 @@ pub struct SetIdentityDkimEnabledError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetIdentityDkimEnabledErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetIdentityDkimEnabledError {
@@ -5630,7 +5630,7 @@ pub struct SetIdentityFeedbackForwardingEnabledError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetIdentityFeedbackForwardingEnabledErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetIdentityFeedbackForwardingEnabledError {
@@ -5719,7 +5719,7 @@ pub struct SetIdentityHeadersInNotificationsEnabledError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetIdentityHeadersInNotificationsEnabledErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetIdentityHeadersInNotificationsEnabledError {
@@ -5808,7 +5808,7 @@ pub struct SetIdentityMailFromDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetIdentityMailFromDomainErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetIdentityMailFromDomainError {
@@ -5892,7 +5892,7 @@ pub struct SetIdentityNotificationTopicError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetIdentityNotificationTopicErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetIdentityNotificationTopicError {
@@ -5980,7 +5980,7 @@ pub enum SetReceiptRulePositionErrorKind {
     RuleDoesNotExistException(crate::error::RuleDoesNotExistException),
     /// <p>Indicates that the provided receipt rule set does not exist.</p>
     RuleSetDoesNotExistException(crate::error::RuleSetDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetReceiptRulePositionError {
@@ -6044,14 +6044,14 @@ impl SetReceiptRulePositionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetReceiptRulePositionErrorKind::RuleDoesNotExistException`.
+    /// Returns `true` if the error kind is `SetReceiptRulePositionErrorKind::RuleDoesNotExistException`.
     pub fn is_rule_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetReceiptRulePositionErrorKind::RuleDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `SetReceiptRulePositionErrorKind::RuleSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `SetReceiptRulePositionErrorKind::RuleSetDoesNotExistException`.
     pub fn is_rule_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6092,7 +6092,7 @@ pub enum TestRenderTemplateErrorKind {
     /// <p>Indicates that the Template object you specified does not exist in your Amazon SES
     /// account.</p>
     TemplateDoesNotExistException(crate::error::TemplateDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TestRenderTemplateError {
@@ -6161,21 +6161,21 @@ impl TestRenderTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TestRenderTemplateErrorKind::InvalidRenderingParameterException`.
+    /// Returns `true` if the error kind is `TestRenderTemplateErrorKind::InvalidRenderingParameterException`.
     pub fn is_invalid_rendering_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRenderTemplateErrorKind::InvalidRenderingParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TestRenderTemplateErrorKind::MissingRenderingAttributeException`.
+    /// Returns `true` if the error kind is `TestRenderTemplateErrorKind::MissingRenderingAttributeException`.
     pub fn is_missing_rendering_attribute_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestRenderTemplateErrorKind::MissingRenderingAttributeException(_)
         )
     }
-    /// Returns true if the error kind is `TestRenderTemplateErrorKind::TemplateDoesNotExistException`.
+    /// Returns `true` if the error kind is `TestRenderTemplateErrorKind::TemplateDoesNotExistException`.
     pub fn is_template_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6207,7 +6207,7 @@ pub struct UpdateAccountSendingEnabledError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAccountSendingEnabledErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAccountSendingEnabledError {
@@ -6304,7 +6304,7 @@ pub enum UpdateConfigurationSetEventDestinationErrorKind {
     /// <p>Indicates that the Amazon Simple Notification Service (Amazon SNS) destination is
     /// invalid. See the error message for details.</p>
     InvalidSnsDestinationException(crate::error::InvalidSnsDestinationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConfigurationSetEventDestinationError {
@@ -6386,7 +6386,7 @@ impl UpdateConfigurationSetEventDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::ConfigurationSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::ConfigurationSetDoesNotExistException`.
     pub fn is_configuration_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6395,7 +6395,7 @@ impl UpdateConfigurationSetEventDestinationError {
             )
         )
     }
-    /// Returns true if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::EventDestinationDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::EventDestinationDoesNotExistException`.
     pub fn is_event_destination_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6404,7 +6404,7 @@ impl UpdateConfigurationSetEventDestinationError {
             )
         )
     }
-    /// Returns true if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::InvalidCloudWatchDestinationException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::InvalidCloudWatchDestinationException`.
     pub fn is_invalid_cloud_watch_destination_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6413,14 +6413,14 @@ impl UpdateConfigurationSetEventDestinationError {
             )
         )
     }
-    /// Returns true if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::InvalidFirehoseDestinationException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::InvalidFirehoseDestinationException`.
     pub fn is_invalid_firehose_destination_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConfigurationSetEventDestinationErrorKind::InvalidFirehoseDestinationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::InvalidSnsDestinationException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::InvalidSnsDestinationException`.
     pub fn is_invalid_sns_destination_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6468,7 +6468,7 @@ pub struct UpdateConfigurationSetReputationMetricsEnabledError {
 pub enum UpdateConfigurationSetReputationMetricsEnabledErrorKind {
     /// <p>Indicates that the configuration set does not exist.</p>
     ConfigurationSetDoesNotExistException(crate::error::ConfigurationSetDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConfigurationSetReputationMetricsEnabledError {
@@ -6540,7 +6540,7 @@ impl UpdateConfigurationSetReputationMetricsEnabledError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConfigurationSetReputationMetricsEnabledErrorKind::ConfigurationSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationSetReputationMetricsEnabledErrorKind::ConfigurationSetDoesNotExistException`.
     pub fn is_configuration_set_does_not_exist_exception(&self) -> bool {
         matches!(&self.kind, UpdateConfigurationSetReputationMetricsEnabledErrorKind::ConfigurationSetDoesNotExistException(_))
     }
@@ -6573,7 +6573,7 @@ pub struct UpdateConfigurationSetSendingEnabledError {
 pub enum UpdateConfigurationSetSendingEnabledErrorKind {
     /// <p>Indicates that the configuration set does not exist.</p>
     ConfigurationSetDoesNotExistException(crate::error::ConfigurationSetDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConfigurationSetSendingEnabledError {
@@ -6643,7 +6643,7 @@ impl UpdateConfigurationSetSendingEnabledError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConfigurationSetSendingEnabledErrorKind::ConfigurationSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationSetSendingEnabledErrorKind::ConfigurationSetDoesNotExistException`.
     pub fn is_configuration_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6693,7 +6693,7 @@ pub enum UpdateConfigurationSetTrackingOptionsErrorKind {
     InvalidTrackingOptionsException(crate::error::InvalidTrackingOptionsException),
     /// <p>Indicates that the TrackingOptions object you specified does not exist.</p>
     TrackingOptionsDoesNotExistException(crate::error::TrackingOptionsDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConfigurationSetTrackingOptionsError {
@@ -6769,7 +6769,7 @@ impl UpdateConfigurationSetTrackingOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConfigurationSetTrackingOptionsErrorKind::ConfigurationSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationSetTrackingOptionsErrorKind::ConfigurationSetDoesNotExistException`.
     pub fn is_configuration_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6778,14 +6778,14 @@ impl UpdateConfigurationSetTrackingOptionsError {
             )
         )
     }
-    /// Returns true if the error kind is `UpdateConfigurationSetTrackingOptionsErrorKind::InvalidTrackingOptionsException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationSetTrackingOptionsErrorKind::InvalidTrackingOptionsException`.
     pub fn is_invalid_tracking_options_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConfigurationSetTrackingOptionsErrorKind::InvalidTrackingOptionsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConfigurationSetTrackingOptionsErrorKind::TrackingOptionsDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationSetTrackingOptionsErrorKind::TrackingOptionsDoesNotExistException`.
     pub fn is_tracking_options_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6837,7 +6837,7 @@ pub enum UpdateCustomVerificationEmailTemplateErrorKind {
     /// <p>Indicates that the sender address specified for a custom verification email is not
     /// verified, and is therefore not eligible to send the custom verification email. </p>
     FromEmailAddressNotVerifiedException(crate::error::FromEmailAddressNotVerifiedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCustomVerificationEmailTemplateError {
@@ -6913,15 +6913,15 @@ impl UpdateCustomVerificationEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailInvalidContentException`.
+    /// Returns `true` if the error kind is `UpdateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailInvalidContentException`.
     pub fn is_custom_verification_email_invalid_content_exception(&self) -> bool {
         matches!(&self.kind, UpdateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailInvalidContentException(_))
     }
-    /// Returns true if the error kind is `UpdateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailTemplateDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailTemplateDoesNotExistException`.
     pub fn is_custom_verification_email_template_does_not_exist_exception(&self) -> bool {
         matches!(&self.kind, UpdateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailTemplateDoesNotExistException(_))
     }
-    /// Returns true if the error kind is `UpdateCustomVerificationEmailTemplateErrorKind::FromEmailAddressNotVerifiedException`.
+    /// Returns `true` if the error kind is `UpdateCustomVerificationEmailTemplateErrorKind::FromEmailAddressNotVerifiedException`.
     pub fn is_from_email_address_not_verified_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6984,7 +6984,7 @@ pub enum UpdateReceiptRuleErrorKind {
     RuleDoesNotExistException(crate::error::RuleDoesNotExistException),
     /// <p>Indicates that the provided receipt rule set does not exist.</p>
     RuleSetDoesNotExistException(crate::error::RuleSetDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateReceiptRuleError {
@@ -7052,42 +7052,42 @@ impl UpdateReceiptRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateReceiptRuleErrorKind::InvalidLambdaFunctionException`.
+    /// Returns `true` if the error kind is `UpdateReceiptRuleErrorKind::InvalidLambdaFunctionException`.
     pub fn is_invalid_lambda_function_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReceiptRuleErrorKind::InvalidLambdaFunctionException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReceiptRuleErrorKind::InvalidS3ConfigurationException`.
+    /// Returns `true` if the error kind is `UpdateReceiptRuleErrorKind::InvalidS3ConfigurationException`.
     pub fn is_invalid_s3_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReceiptRuleErrorKind::InvalidS3ConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReceiptRuleErrorKind::InvalidSnsTopicException`.
+    /// Returns `true` if the error kind is `UpdateReceiptRuleErrorKind::InvalidSnsTopicException`.
     pub fn is_invalid_sns_topic_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReceiptRuleErrorKind::InvalidSnsTopicException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReceiptRuleErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateReceiptRuleErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReceiptRuleErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReceiptRuleErrorKind::RuleDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateReceiptRuleErrorKind::RuleDoesNotExistException`.
     pub fn is_rule_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReceiptRuleErrorKind::RuleDoesNotExistException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReceiptRuleErrorKind::RuleSetDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateReceiptRuleErrorKind::RuleSetDoesNotExistException`.
     pub fn is_rule_set_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7128,7 +7128,7 @@ pub enum UpdateTemplateErrorKind {
     /// <p>Indicates that the Template object you specified does not exist in your Amazon SES
     /// account.</p>
     TemplateDoesNotExistException(crate::error::TemplateDoesNotExistException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTemplateError {
@@ -7192,14 +7192,14 @@ impl UpdateTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTemplateErrorKind::InvalidTemplateException`.
+    /// Returns `true` if the error kind is `UpdateTemplateErrorKind::InvalidTemplateException`.
     pub fn is_invalid_template_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplateErrorKind::InvalidTemplateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplateErrorKind::TemplateDoesNotExistException`.
+    /// Returns `true` if the error kind is `UpdateTemplateErrorKind::TemplateDoesNotExistException`.
     pub fn is_template_does_not_exist_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7230,7 +7230,7 @@ pub struct VerifyDomainDkimError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum VerifyDomainDkimErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for VerifyDomainDkimError {
@@ -7314,7 +7314,7 @@ pub struct VerifyDomainIdentityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum VerifyDomainIdentityErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for VerifyDomainIdentityError {
@@ -7398,7 +7398,7 @@ pub struct VerifyEmailAddressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum VerifyEmailAddressErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for VerifyEmailAddressError {
@@ -7482,7 +7482,7 @@ pub struct VerifyEmailIdentityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum VerifyEmailIdentityErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for VerifyEmailIdentityError {

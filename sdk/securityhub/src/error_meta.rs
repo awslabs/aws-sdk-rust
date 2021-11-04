@@ -252,6 +252,39 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFindingAggregatorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateFindingAggregatorError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateFindingAggregatorErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::CreateFindingAggregatorErrorKind::InternalException(inner) => {
+                    Error::InternalException(inner)
+                }
+                crate::error::CreateFindingAggregatorErrorKind::InvalidAccessException(inner) => {
+                    Error::InvalidAccessException(inner)
+                }
+                crate::error::CreateFindingAggregatorErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::CreateFindingAggregatorErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::CreateFindingAggregatorErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateInsightError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -359,6 +392,42 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::DeleteActionTargetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFindingAggregatorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DeleteFindingAggregatorError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteFindingAggregatorErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::DeleteFindingAggregatorErrorKind::InternalException(inner) => {
+                    Error::InternalException(inner)
+                }
+                crate::error::DeleteFindingAggregatorErrorKind::InvalidAccessException(inner) => {
+                    Error::InvalidAccessException(inner)
+                }
+                crate::error::DeleteFindingAggregatorErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::DeleteFindingAggregatorErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::DeleteFindingAggregatorErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DeleteFindingAggregatorErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -956,6 +1025,42 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFindingAggregatorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetFindingAggregatorError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetFindingAggregatorErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::GetFindingAggregatorErrorKind::InternalException(inner) => {
+                    Error::InternalException(inner)
+                }
+                crate::error::GetFindingAggregatorErrorKind::InvalidAccessException(inner) => {
+                    Error::InvalidAccessException(inner)
+                }
+                crate::error::GetFindingAggregatorErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::GetFindingAggregatorErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::GetFindingAggregatorErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::GetFindingAggregatorErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFindingsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1185,6 +1290,39 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFindingAggregatorsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListFindingAggregatorsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListFindingAggregatorsErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::ListFindingAggregatorsErrorKind::InternalException(inner) => {
+                    Error::InternalException(inner)
+                }
+                crate::error::ListFindingAggregatorsErrorKind::InvalidAccessException(inner) => {
+                    Error::InvalidAccessException(inner)
+                }
+                crate::error::ListFindingAggregatorsErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::ListFindingAggregatorsErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::ListFindingAggregatorsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListInvitationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1357,6 +1495,42 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::UpdateActionTargetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFindingAggregatorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateFindingAggregatorError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateFindingAggregatorErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::UpdateFindingAggregatorErrorKind::InternalException(inner) => {
+                    Error::InternalException(inner)
+                }
+                crate::error::UpdateFindingAggregatorErrorKind::InvalidAccessException(inner) => {
+                    Error::InvalidAccessException(inner)
+                }
+                crate::error::UpdateFindingAggregatorErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::UpdateFindingAggregatorErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::UpdateFindingAggregatorErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateFindingAggregatorErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

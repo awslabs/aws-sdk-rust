@@ -28,7 +28,7 @@ pub enum CreateDatasetErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDatasetError {
@@ -96,33 +96,33 @@ impl CreateDatasetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateDatasetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateDatasetErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatasetErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDatasetErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateDatasetErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateDatasetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateDatasetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateDatasetErrorKind::ValidationException(_))
     }
@@ -173,7 +173,7 @@ pub enum CreateInferenceSchedulerErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInferenceSchedulerError {
@@ -244,49 +244,49 @@ impl CreateInferenceSchedulerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateInferenceSchedulerErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateInferenceSchedulerErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInferenceSchedulerErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInferenceSchedulerErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateInferenceSchedulerErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInferenceSchedulerErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInferenceSchedulerErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateInferenceSchedulerErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInferenceSchedulerErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInferenceSchedulerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateInferenceSchedulerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInferenceSchedulerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInferenceSchedulerErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateInferenceSchedulerErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInferenceSchedulerErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInferenceSchedulerErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateInferenceSchedulerErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInferenceSchedulerErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInferenceSchedulerErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateInferenceSchedulerErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -343,7 +343,7 @@ pub enum CreateModelErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateModelError {
@@ -412,37 +412,37 @@ impl CreateModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateModelErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateModelErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, CreateModelErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateModelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateModelErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateModelErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateModelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateModelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateModelErrorKind::ValidationException(_))
     }
@@ -489,7 +489,7 @@ pub enum DeleteDatasetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDatasetError {
@@ -556,29 +556,29 @@ impl DeleteDatasetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDatasetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteDatasetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteDatasetErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteDatasetErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteDatasetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDatasetErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDatasetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDatasetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDatasetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteDatasetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteDatasetErrorKind::ThrottlingException(_))
     }
@@ -626,7 +626,7 @@ pub enum DeleteInferenceSchedulerErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInferenceSchedulerError {
@@ -694,42 +694,42 @@ impl DeleteInferenceSchedulerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteInferenceSchedulerErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteInferenceSchedulerErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInferenceSchedulerErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInferenceSchedulerErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteInferenceSchedulerErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInferenceSchedulerErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInferenceSchedulerErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteInferenceSchedulerErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInferenceSchedulerErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInferenceSchedulerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteInferenceSchedulerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInferenceSchedulerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInferenceSchedulerErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteInferenceSchedulerErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInferenceSchedulerErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInferenceSchedulerErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteInferenceSchedulerErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -778,7 +778,7 @@ pub enum DeleteModelErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteModelError {
@@ -845,26 +845,26 @@ impl DeleteModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteModelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteModelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteModelErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteModelErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteModelErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteModelErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteModelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteModelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, DeleteModelErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `DeleteModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteModelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteModelErrorKind::ThrottlingException(_))
     }
@@ -909,7 +909,7 @@ pub enum DescribeDataIngestionJobErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDataIngestionJobError {
@@ -976,35 +976,35 @@ impl DescribeDataIngestionJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDataIngestionJobErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeDataIngestionJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataIngestionJobErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataIngestionJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeDataIngestionJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataIngestionJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataIngestionJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDataIngestionJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataIngestionJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataIngestionJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeDataIngestionJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDataIngestionJobErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDataIngestionJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeDataIngestionJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1052,7 +1052,7 @@ pub enum DescribeDatasetErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDatasetError {
@@ -1119,32 +1119,32 @@ impl DescribeDatasetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDatasetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDatasetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDatasetErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDatasetErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDatasetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDatasetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDatasetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeDatasetErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DescribeDatasetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeDatasetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeDatasetErrorKind::ValidationException(_))
     }
@@ -1189,7 +1189,7 @@ pub enum DescribeInferenceSchedulerErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInferenceSchedulerError {
@@ -1256,35 +1256,35 @@ impl DescribeInferenceSchedulerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInferenceSchedulerErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeInferenceSchedulerErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInferenceSchedulerErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInferenceSchedulerErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeInferenceSchedulerErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInferenceSchedulerErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInferenceSchedulerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeInferenceSchedulerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInferenceSchedulerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInferenceSchedulerErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeInferenceSchedulerErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInferenceSchedulerErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInferenceSchedulerErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeInferenceSchedulerErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1332,7 +1332,7 @@ pub enum DescribeModelErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeModelError {
@@ -1399,29 +1399,29 @@ impl DescribeModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeModelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DescribeModelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DescribeModelErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DescribeModelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DescribeModelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeModelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeModelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeModelErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DescribeModelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeModelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DescribeModelErrorKind::ValidationException(_))
     }
@@ -1463,7 +1463,7 @@ pub enum ListDataIngestionJobsErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDataIngestionJobsError {
@@ -1529,28 +1529,28 @@ impl ListDataIngestionJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDataIngestionJobsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListDataIngestionJobsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataIngestionJobsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataIngestionJobsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListDataIngestionJobsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataIngestionJobsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataIngestionJobsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDataIngestionJobsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataIngestionJobsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataIngestionJobsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListDataIngestionJobsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1594,7 +1594,7 @@ pub enum ListDatasetsErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDatasetsError {
@@ -1660,22 +1660,22 @@ impl ListDatasetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDatasetsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListDatasetsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListDatasetsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListDatasetsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListDatasetsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDatasetsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListDatasetsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDatasetsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListDatasetsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListDatasetsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListDatasetsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListDatasetsErrorKind::ValidationException(_))
     }
@@ -1719,7 +1719,7 @@ pub enum ListInferenceExecutionsErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInferenceExecutionsError {
@@ -1786,35 +1786,35 @@ impl ListInferenceExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInferenceExecutionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListInferenceExecutionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInferenceExecutionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListInferenceExecutionsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListInferenceExecutionsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInferenceExecutionsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListInferenceExecutionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListInferenceExecutionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInferenceExecutionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListInferenceExecutionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListInferenceExecutionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInferenceExecutionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListInferenceExecutionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListInferenceExecutionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1859,7 +1859,7 @@ pub enum ListInferenceSchedulersErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListInferenceSchedulersError {
@@ -1925,28 +1925,28 @@ impl ListInferenceSchedulersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListInferenceSchedulersErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListInferenceSchedulersErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInferenceSchedulersErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListInferenceSchedulersErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListInferenceSchedulersErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInferenceSchedulersErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListInferenceSchedulersErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListInferenceSchedulersErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListInferenceSchedulersErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListInferenceSchedulersErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListInferenceSchedulersErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1990,7 +1990,7 @@ pub enum ListModelsErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListModelsError {
@@ -2056,19 +2056,19 @@ impl ListModelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListModelsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListModelsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListModelsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListModelsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListModelsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, ListModelsErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `ListModelsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListModelsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListModelsErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListModelsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListModelsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListModelsErrorKind::ValidationException(_))
     }
@@ -2112,7 +2112,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2179,35 +2179,35 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2260,7 +2260,7 @@ pub enum StartDataIngestionJobErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartDataIngestionJobError {
@@ -2329,49 +2329,49 @@ impl StartDataIngestionJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartDataIngestionJobErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartDataIngestionJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDataIngestionJobErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartDataIngestionJobErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartDataIngestionJobErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDataIngestionJobErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `StartDataIngestionJobErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartDataIngestionJobErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDataIngestionJobErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartDataIngestionJobErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartDataIngestionJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDataIngestionJobErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartDataIngestionJobErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `StartDataIngestionJobErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDataIngestionJobErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartDataIngestionJobErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartDataIngestionJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartDataIngestionJobErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `StartDataIngestionJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartDataIngestionJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2424,7 +2424,7 @@ pub enum StartInferenceSchedulerErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartInferenceSchedulerError {
@@ -2492,42 +2492,42 @@ impl StartInferenceSchedulerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartInferenceSchedulerErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartInferenceSchedulerErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartInferenceSchedulerErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartInferenceSchedulerErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartInferenceSchedulerErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartInferenceSchedulerErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `StartInferenceSchedulerErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartInferenceSchedulerErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartInferenceSchedulerErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartInferenceSchedulerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartInferenceSchedulerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartInferenceSchedulerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartInferenceSchedulerErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StartInferenceSchedulerErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartInferenceSchedulerErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `StartInferenceSchedulerErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartInferenceSchedulerErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2579,7 +2579,7 @@ pub enum StopInferenceSchedulerErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopInferenceSchedulerError {
@@ -2647,42 +2647,42 @@ impl StopInferenceSchedulerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopInferenceSchedulerErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StopInferenceSchedulerErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopInferenceSchedulerErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StopInferenceSchedulerErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StopInferenceSchedulerErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopInferenceSchedulerErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `StopInferenceSchedulerErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StopInferenceSchedulerErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopInferenceSchedulerErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StopInferenceSchedulerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopInferenceSchedulerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopInferenceSchedulerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopInferenceSchedulerErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `StopInferenceSchedulerErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopInferenceSchedulerErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `StopInferenceSchedulerErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StopInferenceSchedulerErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2733,7 +2733,7 @@ pub enum TagResourceErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -2801,33 +2801,33 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -2873,7 +2873,7 @@ pub enum UntagResourceErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -2940,29 +2940,29 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -3010,7 +3010,7 @@ pub enum UpdateInferenceSchedulerErrorKind {
     /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
     /// service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateInferenceSchedulerError {
@@ -3078,42 +3078,42 @@ impl UpdateInferenceSchedulerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateInferenceSchedulerErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateInferenceSchedulerErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInferenceSchedulerErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInferenceSchedulerErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateInferenceSchedulerErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInferenceSchedulerErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInferenceSchedulerErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateInferenceSchedulerErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInferenceSchedulerErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInferenceSchedulerErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateInferenceSchedulerErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInferenceSchedulerErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInferenceSchedulerErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateInferenceSchedulerErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInferenceSchedulerErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInferenceSchedulerErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateInferenceSchedulerErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

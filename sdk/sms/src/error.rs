@@ -23,7 +23,7 @@ pub enum CreateAppErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAppError {
@@ -90,29 +90,29 @@ impl CreateAppError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAppErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `CreateAppErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(&self.kind, CreateAppErrorKind::InternalError(_))
     }
-    /// Returns true if the error kind is `CreateAppErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateAppErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, CreateAppErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `CreateAppErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `CreateAppErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `CreateAppErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `CreateAppErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -165,7 +165,7 @@ pub enum CreateReplicationJobErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateReplicationJobError {
@@ -242,60 +242,60 @@ impl CreateReplicationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateReplicationJobErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `CreateReplicationJobErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(&self.kind, CreateReplicationJobErrorKind::InternalError(_))
     }
-    /// Returns true if the error kind is `CreateReplicationJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateReplicationJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationJobErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `CreateReplicationJobErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationJobErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationJobErrorKind::NoConnectorsAvailableException`.
+    /// Returns `true` if the error kind is `CreateReplicationJobErrorKind::NoConnectorsAvailableException`.
     pub fn is_no_connectors_available_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationJobErrorKind::NoConnectorsAvailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationJobErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `CreateReplicationJobErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationJobErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationJobErrorKind::ReplicationJobAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateReplicationJobErrorKind::ReplicationJobAlreadyExistsException`.
     pub fn is_replication_job_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationJobErrorKind::ReplicationJobAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationJobErrorKind::ServerCannotBeReplicatedException`.
+    /// Returns `true` if the error kind is `CreateReplicationJobErrorKind::ServerCannotBeReplicatedException`.
     pub fn is_server_cannot_be_replicated_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationJobErrorKind::ServerCannotBeReplicatedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationJobErrorKind::TemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `CreateReplicationJobErrorKind::TemporarilyUnavailableException`.
     pub fn is_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReplicationJobErrorKind::TemporarilyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReplicationJobErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `CreateReplicationJobErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -350,7 +350,7 @@ pub enum DeleteAppErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAppError {
@@ -417,29 +417,29 @@ impl DeleteAppError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAppErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `DeleteAppErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(&self.kind, DeleteAppErrorKind::InternalError(_))
     }
-    /// Returns true if the error kind is `DeleteAppErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteAppErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, DeleteAppErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `DeleteAppErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `DeleteAppErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DeleteAppErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DeleteAppErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -484,7 +484,7 @@ pub enum DeleteAppLaunchConfigurationErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAppLaunchConfigurationError {
@@ -559,35 +559,35 @@ impl DeleteAppLaunchConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAppLaunchConfigurationErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `DeleteAppLaunchConfigurationErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppLaunchConfigurationErrorKind::InternalError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppLaunchConfigurationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteAppLaunchConfigurationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppLaunchConfigurationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppLaunchConfigurationErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `DeleteAppLaunchConfigurationErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppLaunchConfigurationErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppLaunchConfigurationErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DeleteAppLaunchConfigurationErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppLaunchConfigurationErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppLaunchConfigurationErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DeleteAppLaunchConfigurationErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -640,7 +640,7 @@ pub enum DeleteAppReplicationConfigurationErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAppReplicationConfigurationError {
@@ -718,35 +718,35 @@ impl DeleteAppReplicationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAppReplicationConfigurationErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `DeleteAppReplicationConfigurationErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppReplicationConfigurationErrorKind::InternalError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppReplicationConfigurationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteAppReplicationConfigurationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppReplicationConfigurationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppReplicationConfigurationErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `DeleteAppReplicationConfigurationErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppReplicationConfigurationErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppReplicationConfigurationErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DeleteAppReplicationConfigurationErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppReplicationConfigurationErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppReplicationConfigurationErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DeleteAppReplicationConfigurationErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -799,7 +799,7 @@ pub enum DeleteAppValidationConfigurationErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAppValidationConfigurationError {
@@ -877,35 +877,35 @@ impl DeleteAppValidationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAppValidationConfigurationErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `DeleteAppValidationConfigurationErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppValidationConfigurationErrorKind::InternalError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppValidationConfigurationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteAppValidationConfigurationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppValidationConfigurationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppValidationConfigurationErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `DeleteAppValidationConfigurationErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppValidationConfigurationErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppValidationConfigurationErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DeleteAppValidationConfigurationErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppValidationConfigurationErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppValidationConfigurationErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DeleteAppValidationConfigurationErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -958,7 +958,7 @@ pub enum DeleteReplicationJobErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteReplicationJobError {
@@ -1027,35 +1027,35 @@ impl DeleteReplicationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteReplicationJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteReplicationJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReplicationJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReplicationJobErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `DeleteReplicationJobErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReplicationJobErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReplicationJobErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DeleteReplicationJobErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReplicationJobErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReplicationJobErrorKind::ReplicationJobNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteReplicationJobErrorKind::ReplicationJobNotFoundException`.
     pub fn is_replication_job_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteReplicationJobErrorKind::ReplicationJobNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteReplicationJobErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DeleteReplicationJobErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1100,7 +1100,7 @@ pub enum DeleteServerCatalogErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteServerCatalogError {
@@ -1168,28 +1168,28 @@ impl DeleteServerCatalogError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteServerCatalogErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteServerCatalogErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServerCatalogErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServerCatalogErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `DeleteServerCatalogErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServerCatalogErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServerCatalogErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DeleteServerCatalogErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServerCatalogErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServerCatalogErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DeleteServerCatalogErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1231,7 +1231,7 @@ pub enum DisassociateConnectorErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateConnectorError {
@@ -1299,28 +1299,28 @@ impl DisassociateConnectorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateConnectorErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DisassociateConnectorErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateConnectorErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateConnectorErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `DisassociateConnectorErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateConnectorErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateConnectorErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `DisassociateConnectorErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateConnectorErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateConnectorErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `DisassociateConnectorErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1366,7 +1366,7 @@ pub enum GenerateChangeSetErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateChangeSetError {
@@ -1433,32 +1433,32 @@ impl GenerateChangeSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GenerateChangeSetErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `GenerateChangeSetErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(&self.kind, GenerateChangeSetErrorKind::InternalError(_))
     }
-    /// Returns true if the error kind is `GenerateChangeSetErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GenerateChangeSetErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateChangeSetErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateChangeSetErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `GenerateChangeSetErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateChangeSetErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateChangeSetErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `GenerateChangeSetErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateChangeSetErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateChangeSetErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `GenerateChangeSetErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1503,7 +1503,7 @@ pub enum GenerateTemplateErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateTemplateError {
@@ -1570,32 +1570,32 @@ impl GenerateTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GenerateTemplateErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `GenerateTemplateErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(&self.kind, GenerateTemplateErrorKind::InternalError(_))
     }
-    /// Returns true if the error kind is `GenerateTemplateErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GenerateTemplateErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateTemplateErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateTemplateErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `GenerateTemplateErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateTemplateErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateTemplateErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `GenerateTemplateErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             GenerateTemplateErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `GenerateTemplateErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `GenerateTemplateErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1640,7 +1640,7 @@ pub enum GetAppErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAppError {
@@ -1707,29 +1707,29 @@ impl GetAppError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAppErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `GetAppErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(&self.kind, GetAppErrorKind::InternalError(_))
     }
-    /// Returns true if the error kind is `GetAppErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetAppErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, GetAppErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `GetAppErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `GetAppErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `GetAppErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `GetAppErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1774,7 +1774,7 @@ pub enum GetAppLaunchConfigurationErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAppLaunchConfigurationError {
@@ -1847,35 +1847,35 @@ impl GetAppLaunchConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAppLaunchConfigurationErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `GetAppLaunchConfigurationErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(
             &self.kind,
             GetAppLaunchConfigurationErrorKind::InternalError(_)
         )
     }
-    /// Returns true if the error kind is `GetAppLaunchConfigurationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetAppLaunchConfigurationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppLaunchConfigurationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppLaunchConfigurationErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `GetAppLaunchConfigurationErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppLaunchConfigurationErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppLaunchConfigurationErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `GetAppLaunchConfigurationErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppLaunchConfigurationErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppLaunchConfigurationErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `GetAppLaunchConfigurationErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1926,7 +1926,7 @@ pub enum GetAppReplicationConfigurationErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAppReplicationConfigurationError {
@@ -2004,35 +2004,35 @@ impl GetAppReplicationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAppReplicationConfigurationErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `GetAppReplicationConfigurationErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(
             &self.kind,
             GetAppReplicationConfigurationErrorKind::InternalError(_)
         )
     }
-    /// Returns true if the error kind is `GetAppReplicationConfigurationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetAppReplicationConfigurationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppReplicationConfigurationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppReplicationConfigurationErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `GetAppReplicationConfigurationErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppReplicationConfigurationErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppReplicationConfigurationErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `GetAppReplicationConfigurationErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppReplicationConfigurationErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppReplicationConfigurationErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `GetAppReplicationConfigurationErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2085,7 +2085,7 @@ pub enum GetAppValidationConfigurationErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAppValidationConfigurationError {
@@ -2163,35 +2163,35 @@ impl GetAppValidationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAppValidationConfigurationErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `GetAppValidationConfigurationErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(
             &self.kind,
             GetAppValidationConfigurationErrorKind::InternalError(_)
         )
     }
-    /// Returns true if the error kind is `GetAppValidationConfigurationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetAppValidationConfigurationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppValidationConfigurationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppValidationConfigurationErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `GetAppValidationConfigurationErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppValidationConfigurationErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppValidationConfigurationErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `GetAppValidationConfigurationErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppValidationConfigurationErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppValidationConfigurationErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `GetAppValidationConfigurationErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2244,7 +2244,7 @@ pub enum GetAppValidationOutputErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAppValidationOutputError {
@@ -2317,35 +2317,35 @@ impl GetAppValidationOutputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAppValidationOutputErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `GetAppValidationOutputErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(
             &self.kind,
             GetAppValidationOutputErrorKind::InternalError(_)
         )
     }
-    /// Returns true if the error kind is `GetAppValidationOutputErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetAppValidationOutputErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppValidationOutputErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppValidationOutputErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `GetAppValidationOutputErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppValidationOutputErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppValidationOutputErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `GetAppValidationOutputErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppValidationOutputErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppValidationOutputErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `GetAppValidationOutputErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2384,7 +2384,7 @@ pub enum GetConnectorsErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetConnectorsError {
@@ -2447,7 +2447,7 @@ impl GetConnectorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetConnectorsErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `GetConnectorsErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2484,7 +2484,7 @@ pub enum GetReplicationJobsErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetReplicationJobsError {
@@ -2549,21 +2549,21 @@ impl GetReplicationJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetReplicationJobsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetReplicationJobsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReplicationJobsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetReplicationJobsErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `GetReplicationJobsErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReplicationJobsErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetReplicationJobsErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `GetReplicationJobsErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2602,7 +2602,7 @@ pub enum GetReplicationRunsErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetReplicationRunsError {
@@ -2667,21 +2667,21 @@ impl GetReplicationRunsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetReplicationRunsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetReplicationRunsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReplicationRunsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetReplicationRunsErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `GetReplicationRunsErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReplicationRunsErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetReplicationRunsErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `GetReplicationRunsErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2722,7 +2722,7 @@ pub enum GetServersErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServersError {
@@ -2788,25 +2788,25 @@ impl GetServersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetServersErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `GetServersErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(&self.kind, GetServersErrorKind::InternalError(_))
     }
-    /// Returns true if the error kind is `GetServersErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetServersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServersErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetServersErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `GetServersErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServersErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetServersErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `GetServersErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2850,7 +2850,7 @@ pub enum ImportAppCatalogErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportAppCatalogError {
@@ -2917,32 +2917,32 @@ impl ImportAppCatalogError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportAppCatalogErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `ImportAppCatalogErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(&self.kind, ImportAppCatalogErrorKind::InternalError(_))
     }
-    /// Returns true if the error kind is `ImportAppCatalogErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ImportAppCatalogErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportAppCatalogErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ImportAppCatalogErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `ImportAppCatalogErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportAppCatalogErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ImportAppCatalogErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `ImportAppCatalogErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportAppCatalogErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `ImportAppCatalogErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `ImportAppCatalogErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2987,7 +2987,7 @@ pub enum ImportServerCatalogErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportServerCatalogError {
@@ -3056,35 +3056,35 @@ impl ImportServerCatalogError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportServerCatalogErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ImportServerCatalogErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportServerCatalogErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ImportServerCatalogErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `ImportServerCatalogErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportServerCatalogErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ImportServerCatalogErrorKind::NoConnectorsAvailableException`.
+    /// Returns `true` if the error kind is `ImportServerCatalogErrorKind::NoConnectorsAvailableException`.
     pub fn is_no_connectors_available_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportServerCatalogErrorKind::NoConnectorsAvailableException(_)
         )
     }
-    /// Returns true if the error kind is `ImportServerCatalogErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `ImportServerCatalogErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportServerCatalogErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `ImportServerCatalogErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `ImportServerCatalogErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3129,7 +3129,7 @@ pub enum LaunchAppErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for LaunchAppError {
@@ -3196,29 +3196,29 @@ impl LaunchAppError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `LaunchAppErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `LaunchAppErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(&self.kind, LaunchAppErrorKind::InternalError(_))
     }
-    /// Returns true if the error kind is `LaunchAppErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `LaunchAppErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, LaunchAppErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `LaunchAppErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `LaunchAppErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             LaunchAppErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `LaunchAppErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `LaunchAppErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             LaunchAppErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `LaunchAppErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `LaunchAppErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3263,7 +3263,7 @@ pub enum ListAppsErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAppsError {
@@ -3330,29 +3330,29 @@ impl ListAppsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAppsErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `ListAppsErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(&self.kind, ListAppsErrorKind::InternalError(_))
     }
-    /// Returns true if the error kind is `ListAppsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `ListAppsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, ListAppsErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `ListAppsErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `ListAppsErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppsErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppsErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `ListAppsErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppsErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppsErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `ListAppsErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3397,7 +3397,7 @@ pub enum NotifyAppValidationOutputErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for NotifyAppValidationOutputError {
@@ -3470,35 +3470,35 @@ impl NotifyAppValidationOutputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `NotifyAppValidationOutputErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `NotifyAppValidationOutputErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(
             &self.kind,
             NotifyAppValidationOutputErrorKind::InternalError(_)
         )
     }
-    /// Returns true if the error kind is `NotifyAppValidationOutputErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `NotifyAppValidationOutputErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             NotifyAppValidationOutputErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `NotifyAppValidationOutputErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `NotifyAppValidationOutputErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             NotifyAppValidationOutputErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `NotifyAppValidationOutputErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `NotifyAppValidationOutputErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             NotifyAppValidationOutputErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `NotifyAppValidationOutputErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `NotifyAppValidationOutputErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3549,7 +3549,7 @@ pub enum PutAppLaunchConfigurationErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAppLaunchConfigurationError {
@@ -3622,35 +3622,35 @@ impl PutAppLaunchConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAppLaunchConfigurationErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `PutAppLaunchConfigurationErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(
             &self.kind,
             PutAppLaunchConfigurationErrorKind::InternalError(_)
         )
     }
-    /// Returns true if the error kind is `PutAppLaunchConfigurationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutAppLaunchConfigurationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppLaunchConfigurationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppLaunchConfigurationErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `PutAppLaunchConfigurationErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppLaunchConfigurationErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppLaunchConfigurationErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `PutAppLaunchConfigurationErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppLaunchConfigurationErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppLaunchConfigurationErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `PutAppLaunchConfigurationErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3701,7 +3701,7 @@ pub enum PutAppReplicationConfigurationErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAppReplicationConfigurationError {
@@ -3779,35 +3779,35 @@ impl PutAppReplicationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAppReplicationConfigurationErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `PutAppReplicationConfigurationErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(
             &self.kind,
             PutAppReplicationConfigurationErrorKind::InternalError(_)
         )
     }
-    /// Returns true if the error kind is `PutAppReplicationConfigurationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutAppReplicationConfigurationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppReplicationConfigurationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppReplicationConfigurationErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `PutAppReplicationConfigurationErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppReplicationConfigurationErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppReplicationConfigurationErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `PutAppReplicationConfigurationErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppReplicationConfigurationErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppReplicationConfigurationErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `PutAppReplicationConfigurationErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3860,7 +3860,7 @@ pub enum PutAppValidationConfigurationErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAppValidationConfigurationError {
@@ -3938,35 +3938,35 @@ impl PutAppValidationConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAppValidationConfigurationErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `PutAppValidationConfigurationErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(
             &self.kind,
             PutAppValidationConfigurationErrorKind::InternalError(_)
         )
     }
-    /// Returns true if the error kind is `PutAppValidationConfigurationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutAppValidationConfigurationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppValidationConfigurationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppValidationConfigurationErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `PutAppValidationConfigurationErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppValidationConfigurationErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppValidationConfigurationErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `PutAppValidationConfigurationErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutAppValidationConfigurationErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `PutAppValidationConfigurationErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `PutAppValidationConfigurationErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4019,7 +4019,7 @@ pub enum StartAppReplicationErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartAppReplicationError {
@@ -4088,32 +4088,32 @@ impl StartAppReplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartAppReplicationErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `StartAppReplicationErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(&self.kind, StartAppReplicationErrorKind::InternalError(_))
     }
-    /// Returns true if the error kind is `StartAppReplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartAppReplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAppReplicationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartAppReplicationErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `StartAppReplicationErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAppReplicationErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartAppReplicationErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `StartAppReplicationErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAppReplicationErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `StartAppReplicationErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `StartAppReplicationErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4158,7 +4158,7 @@ pub enum StartOnDemandAppReplicationErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartOnDemandAppReplicationError {
@@ -4233,35 +4233,35 @@ impl StartOnDemandAppReplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartOnDemandAppReplicationErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `StartOnDemandAppReplicationErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(
             &self.kind,
             StartOnDemandAppReplicationErrorKind::InternalError(_)
         )
     }
-    /// Returns true if the error kind is `StartOnDemandAppReplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartOnDemandAppReplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartOnDemandAppReplicationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartOnDemandAppReplicationErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `StartOnDemandAppReplicationErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartOnDemandAppReplicationErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartOnDemandAppReplicationErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `StartOnDemandAppReplicationErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartOnDemandAppReplicationErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `StartOnDemandAppReplicationErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `StartOnDemandAppReplicationErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4316,7 +4316,7 @@ pub enum StartOnDemandReplicationRunErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartOnDemandReplicationRunError {
@@ -4394,42 +4394,42 @@ impl StartOnDemandReplicationRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartOnDemandReplicationRunErrorKind::DryRunOperationException`.
+    /// Returns `true` if the error kind is `StartOnDemandReplicationRunErrorKind::DryRunOperationException`.
     pub fn is_dry_run_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartOnDemandReplicationRunErrorKind::DryRunOperationException(_)
         )
     }
-    /// Returns true if the error kind is `StartOnDemandReplicationRunErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartOnDemandReplicationRunErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartOnDemandReplicationRunErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartOnDemandReplicationRunErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `StartOnDemandReplicationRunErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartOnDemandReplicationRunErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartOnDemandReplicationRunErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `StartOnDemandReplicationRunErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartOnDemandReplicationRunErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `StartOnDemandReplicationRunErrorKind::ReplicationRunLimitExceededException`.
+    /// Returns `true` if the error kind is `StartOnDemandReplicationRunErrorKind::ReplicationRunLimitExceededException`.
     pub fn is_replication_run_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartOnDemandReplicationRunErrorKind::ReplicationRunLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartOnDemandReplicationRunErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `StartOnDemandReplicationRunErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4483,7 +4483,7 @@ pub enum StopAppReplicationErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopAppReplicationError {
@@ -4550,32 +4550,32 @@ impl StopAppReplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopAppReplicationErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `StopAppReplicationErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(&self.kind, StopAppReplicationErrorKind::InternalError(_))
     }
-    /// Returns true if the error kind is `StopAppReplicationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StopAppReplicationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopAppReplicationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StopAppReplicationErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `StopAppReplicationErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopAppReplicationErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StopAppReplicationErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `StopAppReplicationErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopAppReplicationErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `StopAppReplicationErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `StopAppReplicationErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4620,7 +4620,7 @@ pub enum TerminateAppErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TerminateAppError {
@@ -4687,32 +4687,32 @@ impl TerminateAppError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TerminateAppErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `TerminateAppErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(&self.kind, TerminateAppErrorKind::InternalError(_))
     }
-    /// Returns true if the error kind is `TerminateAppErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `TerminateAppErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TerminateAppErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TerminateAppErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `TerminateAppErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TerminateAppErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TerminateAppErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `TerminateAppErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             TerminateAppErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `TerminateAppErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `TerminateAppErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4757,7 +4757,7 @@ pub enum UpdateAppErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAppError {
@@ -4824,29 +4824,29 @@ impl UpdateAppError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAppErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `UpdateAppErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(&self.kind, UpdateAppErrorKind::InternalError(_))
     }
-    /// Returns true if the error kind is `UpdateAppErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateAppErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, UpdateAppErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `UpdateAppErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `UpdateAppErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAppErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAppErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `UpdateAppErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAppErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAppErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `UpdateAppErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4897,7 +4897,7 @@ pub enum UpdateReplicationJobErrorKind {
     /// <p>You lack permissions needed to perform this operation. Check your IAM policies,
     /// and ensure that you are using the correct access keys.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateReplicationJobError {
@@ -4971,53 +4971,53 @@ impl UpdateReplicationJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateReplicationJobErrorKind::InternalError`.
+    /// Returns `true` if the error kind is `UpdateReplicationJobErrorKind::InternalError`.
     pub fn is_internal_error(&self) -> bool {
         matches!(&self.kind, UpdateReplicationJobErrorKind::InternalError(_))
     }
-    /// Returns true if the error kind is `UpdateReplicationJobErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `UpdateReplicationJobErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReplicationJobErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReplicationJobErrorKind::MissingRequiredParameterException`.
+    /// Returns `true` if the error kind is `UpdateReplicationJobErrorKind::MissingRequiredParameterException`.
     pub fn is_missing_required_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReplicationJobErrorKind::MissingRequiredParameterException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReplicationJobErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `UpdateReplicationJobErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReplicationJobErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReplicationJobErrorKind::ReplicationJobNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateReplicationJobErrorKind::ReplicationJobNotFoundException`.
     pub fn is_replication_job_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReplicationJobErrorKind::ReplicationJobNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReplicationJobErrorKind::ServerCannotBeReplicatedException`.
+    /// Returns `true` if the error kind is `UpdateReplicationJobErrorKind::ServerCannotBeReplicatedException`.
     pub fn is_server_cannot_be_replicated_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReplicationJobErrorKind::ServerCannotBeReplicatedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReplicationJobErrorKind::TemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateReplicationJobErrorKind::TemporarilyUnavailableException`.
     pub fn is_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReplicationJobErrorKind::TemporarilyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReplicationJobErrorKind::UnauthorizedOperationException`.
+    /// Returns `true` if the error kind is `UpdateReplicationJobErrorKind::UnauthorizedOperationException`.
     pub fn is_unauthorized_operation_exception(&self) -> bool {
         matches!(
             &self.kind,

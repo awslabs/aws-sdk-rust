@@ -25,7 +25,7 @@ pub enum CompleteSnapshotErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CompleteSnapshotError {
@@ -93,42 +93,42 @@ impl CompleteSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CompleteSnapshotErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CompleteSnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompleteSnapshotErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CompleteSnapshotErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CompleteSnapshotErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompleteSnapshotErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CompleteSnapshotErrorKind::RequestThrottledException`.
+    /// Returns `true` if the error kind is `CompleteSnapshotErrorKind::RequestThrottledException`.
     pub fn is_request_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompleteSnapshotErrorKind::RequestThrottledException(_)
         )
     }
-    /// Returns true if the error kind is `CompleteSnapshotErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CompleteSnapshotErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompleteSnapshotErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CompleteSnapshotErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `CompleteSnapshotErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CompleteSnapshotErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CompleteSnapshotErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CompleteSnapshotErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -176,7 +176,7 @@ pub enum GetSnapshotBlockErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSnapshotBlockError {
@@ -244,42 +244,42 @@ impl GetSnapshotBlockError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSnapshotBlockErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetSnapshotBlockErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSnapshotBlockErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetSnapshotBlockErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetSnapshotBlockErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSnapshotBlockErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetSnapshotBlockErrorKind::RequestThrottledException`.
+    /// Returns `true` if the error kind is `GetSnapshotBlockErrorKind::RequestThrottledException`.
     pub fn is_request_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSnapshotBlockErrorKind::RequestThrottledException(_)
         )
     }
-    /// Returns true if the error kind is `GetSnapshotBlockErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetSnapshotBlockErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSnapshotBlockErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSnapshotBlockErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `GetSnapshotBlockErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSnapshotBlockErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetSnapshotBlockErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetSnapshotBlockErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -327,7 +327,7 @@ pub enum ListChangedBlocksErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListChangedBlocksError {
@@ -395,42 +395,42 @@ impl ListChangedBlocksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListChangedBlocksErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListChangedBlocksErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChangedBlocksErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListChangedBlocksErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListChangedBlocksErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChangedBlocksErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListChangedBlocksErrorKind::RequestThrottledException`.
+    /// Returns `true` if the error kind is `ListChangedBlocksErrorKind::RequestThrottledException`.
     pub fn is_request_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChangedBlocksErrorKind::RequestThrottledException(_)
         )
     }
-    /// Returns true if the error kind is `ListChangedBlocksErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListChangedBlocksErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChangedBlocksErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListChangedBlocksErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListChangedBlocksErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListChangedBlocksErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListChangedBlocksErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListChangedBlocksErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -478,7 +478,7 @@ pub enum ListSnapshotBlocksErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSnapshotBlocksError {
@@ -546,42 +546,42 @@ impl ListSnapshotBlocksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSnapshotBlocksErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListSnapshotBlocksErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSnapshotBlocksErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListSnapshotBlocksErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListSnapshotBlocksErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSnapshotBlocksErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListSnapshotBlocksErrorKind::RequestThrottledException`.
+    /// Returns `true` if the error kind is `ListSnapshotBlocksErrorKind::RequestThrottledException`.
     pub fn is_request_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSnapshotBlocksErrorKind::RequestThrottledException(_)
         )
     }
-    /// Returns true if the error kind is `ListSnapshotBlocksErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListSnapshotBlocksErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSnapshotBlocksErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListSnapshotBlocksErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `ListSnapshotBlocksErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSnapshotBlocksErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListSnapshotBlocksErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListSnapshotBlocksErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -629,7 +629,7 @@ pub enum PutSnapshotBlockErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutSnapshotBlockError {
@@ -697,42 +697,42 @@ impl PutSnapshotBlockError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutSnapshotBlockErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutSnapshotBlockErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSnapshotBlockErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutSnapshotBlockErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `PutSnapshotBlockErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSnapshotBlockErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `PutSnapshotBlockErrorKind::RequestThrottledException`.
+    /// Returns `true` if the error kind is `PutSnapshotBlockErrorKind::RequestThrottledException`.
     pub fn is_request_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSnapshotBlockErrorKind::RequestThrottledException(_)
         )
     }
-    /// Returns true if the error kind is `PutSnapshotBlockErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutSnapshotBlockErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSnapshotBlockErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutSnapshotBlockErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `PutSnapshotBlockErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSnapshotBlockErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutSnapshotBlockErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutSnapshotBlockErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -787,7 +787,7 @@ pub enum StartSnapshotErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartSnapshotError {
@@ -857,50 +857,50 @@ impl StartSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartSnapshotErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartSnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, StartSnapshotErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `StartSnapshotErrorKind::ConcurrentLimitExceededException`.
+    /// Returns `true` if the error kind is `StartSnapshotErrorKind::ConcurrentLimitExceededException`.
     pub fn is_concurrent_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSnapshotErrorKind::ConcurrentLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartSnapshotErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartSnapshotErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StartSnapshotErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StartSnapshotErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartSnapshotErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSnapshotErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartSnapshotErrorKind::RequestThrottledException`.
+    /// Returns `true` if the error kind is `StartSnapshotErrorKind::RequestThrottledException`.
     pub fn is_request_throttled_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSnapshotErrorKind::RequestThrottledException(_)
         )
     }
-    /// Returns true if the error kind is `StartSnapshotErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartSnapshotErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSnapshotErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartSnapshotErrorKind::ServiceQuotaExceededException`.
+    /// Returns `true` if the error kind is `StartSnapshotErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSnapshotErrorKind::ServiceQuotaExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartSnapshotErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartSnapshotErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StartSnapshotErrorKind::ValidationException(_))
     }

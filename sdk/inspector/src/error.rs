@@ -24,7 +24,7 @@ pub enum AddAttributesToFindingsErrorKind {
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddAttributesToFindingsError {
@@ -93,35 +93,35 @@ impl AddAttributesToFindingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddAttributesToFindingsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AddAttributesToFindingsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddAttributesToFindingsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AddAttributesToFindingsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `AddAttributesToFindingsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddAttributesToFindingsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `AddAttributesToFindingsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `AddAttributesToFindingsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddAttributesToFindingsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `AddAttributesToFindingsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `AddAttributesToFindingsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddAttributesToFindingsErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `AddAttributesToFindingsErrorKind::ServiceTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `AddAttributesToFindingsErrorKind::ServiceTemporarilyUnavailableException`.
     pub fn is_service_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -175,7 +175,7 @@ pub enum CreateAssessmentTargetErrorKind {
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAssessmentTargetError {
@@ -248,49 +248,49 @@ impl CreateAssessmentTargetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAssessmentTargetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateAssessmentTargetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentTargetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentTargetErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateAssessmentTargetErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentTargetErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentTargetErrorKind::InvalidCrossAccountRoleException`.
+    /// Returns `true` if the error kind is `CreateAssessmentTargetErrorKind::InvalidCrossAccountRoleException`.
     pub fn is_invalid_cross_account_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentTargetErrorKind::InvalidCrossAccountRoleException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentTargetErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateAssessmentTargetErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentTargetErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentTargetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAssessmentTargetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentTargetErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentTargetErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `CreateAssessmentTargetErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentTargetErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentTargetErrorKind::ServiceTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `CreateAssessmentTargetErrorKind::ServiceTemporarilyUnavailableException`.
     pub fn is_service_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -345,7 +345,7 @@ pub enum CreateAssessmentTemplateErrorKind {
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAssessmentTemplateError {
@@ -415,42 +415,42 @@ impl CreateAssessmentTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAssessmentTemplateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateAssessmentTemplateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentTemplateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentTemplateErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateAssessmentTemplateErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentTemplateErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentTemplateErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateAssessmentTemplateErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentTemplateErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentTemplateErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAssessmentTemplateErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentTemplateErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentTemplateErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `CreateAssessmentTemplateErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssessmentTemplateErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssessmentTemplateErrorKind::ServiceTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `CreateAssessmentTemplateErrorKind::ServiceTemporarilyUnavailableException`.
     pub fn is_service_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -502,7 +502,7 @@ pub enum CreateExclusionsPreviewErrorKind {
     PreviewGenerationInProgressException(crate::error::PreviewGenerationInProgressException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateExclusionsPreviewError {
@@ -574,42 +574,42 @@ impl CreateExclusionsPreviewError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateExclusionsPreviewErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateExclusionsPreviewErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExclusionsPreviewErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExclusionsPreviewErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateExclusionsPreviewErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExclusionsPreviewErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExclusionsPreviewErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateExclusionsPreviewErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExclusionsPreviewErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExclusionsPreviewErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `CreateExclusionsPreviewErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExclusionsPreviewErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExclusionsPreviewErrorKind::PreviewGenerationInProgressException`.
+    /// Returns `true` if the error kind is `CreateExclusionsPreviewErrorKind::PreviewGenerationInProgressException`.
     pub fn is_preview_generation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExclusionsPreviewErrorKind::PreviewGenerationInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExclusionsPreviewErrorKind::ServiceTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `CreateExclusionsPreviewErrorKind::ServiceTemporarilyUnavailableException`.
     pub fn is_service_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -660,7 +660,7 @@ pub enum CreateResourceGroupErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateResourceGroupError {
@@ -729,35 +729,35 @@ impl CreateResourceGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateResourceGroupErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateResourceGroupErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceGroupErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceGroupErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateResourceGroupErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceGroupErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceGroupErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateResourceGroupErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceGroupErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceGroupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateResourceGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceGroupErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceGroupErrorKind::ServiceTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `CreateResourceGroupErrorKind::ServiceTemporarilyUnavailableException`.
     pub fn is_service_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -808,7 +808,7 @@ pub enum DeleteAssessmentRunErrorKind {
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAssessmentRunError {
@@ -878,42 +878,42 @@ impl DeleteAssessmentRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAssessmentRunErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentRunErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentRunErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentRunErrorKind::AssessmentRunInProgressException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentRunErrorKind::AssessmentRunInProgressException`.
     pub fn is_assessment_run_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentRunErrorKind::AssessmentRunInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentRunErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentRunErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentRunErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentRunErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentRunErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentRunErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentRunErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentRunErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentRunErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentRunErrorKind::ServiceTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentRunErrorKind::ServiceTemporarilyUnavailableException`.
     pub fn is_service_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -965,7 +965,7 @@ pub enum DeleteAssessmentTargetErrorKind {
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAssessmentTargetError {
@@ -1037,42 +1037,42 @@ impl DeleteAssessmentTargetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAssessmentTargetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentTargetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentTargetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentTargetErrorKind::AssessmentRunInProgressException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentTargetErrorKind::AssessmentRunInProgressException`.
     pub fn is_assessment_run_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentTargetErrorKind::AssessmentRunInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentTargetErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentTargetErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentTargetErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentTargetErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentTargetErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentTargetErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentTargetErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentTargetErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentTargetErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentTargetErrorKind::ServiceTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentTargetErrorKind::ServiceTemporarilyUnavailableException`.
     pub fn is_service_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1126,7 +1126,7 @@ pub enum DeleteAssessmentTemplateErrorKind {
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAssessmentTemplateError {
@@ -1198,42 +1198,42 @@ impl DeleteAssessmentTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAssessmentTemplateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentTemplateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentTemplateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentTemplateErrorKind::AssessmentRunInProgressException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentTemplateErrorKind::AssessmentRunInProgressException`.
     pub fn is_assessment_run_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentTemplateErrorKind::AssessmentRunInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentTemplateErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentTemplateErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentTemplateErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentTemplateErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentTemplateErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentTemplateErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentTemplateErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentTemplateErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssessmentTemplateErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssessmentTemplateErrorKind::ServiceTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteAssessmentTemplateErrorKind::ServiceTemporarilyUnavailableException`.
     pub fn is_service_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1277,7 +1277,7 @@ pub enum DescribeAssessmentRunsErrorKind {
     /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
     /// input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAssessmentRunsError {
@@ -1341,14 +1341,14 @@ impl DescribeAssessmentRunsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAssessmentRunsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeAssessmentRunsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssessmentRunsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssessmentRunsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeAssessmentRunsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1384,7 +1384,7 @@ pub enum DescribeAssessmentTargetsErrorKind {
     /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
     /// input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAssessmentTargetsError {
@@ -1448,14 +1448,14 @@ impl DescribeAssessmentTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAssessmentTargetsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeAssessmentTargetsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssessmentTargetsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssessmentTargetsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeAssessmentTargetsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1491,7 +1491,7 @@ pub enum DescribeAssessmentTemplatesErrorKind {
     /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
     /// input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAssessmentTemplatesError {
@@ -1555,14 +1555,14 @@ impl DescribeAssessmentTemplatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAssessmentTemplatesErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeAssessmentTemplatesErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssessmentTemplatesErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssessmentTemplatesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeAssessmentTemplatesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1595,7 +1595,7 @@ pub struct DescribeCrossAccountAccessRoleError {
 pub enum DescribeCrossAccountAccessRoleErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCrossAccountAccessRoleError {
@@ -1661,7 +1661,7 @@ impl DescribeCrossAccountAccessRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCrossAccountAccessRoleErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeCrossAccountAccessRoleErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1696,7 +1696,7 @@ pub enum DescribeExclusionsErrorKind {
     /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
     /// input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeExclusionsError {
@@ -1760,14 +1760,14 @@ impl DescribeExclusionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeExclusionsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeExclusionsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExclusionsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExclusionsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeExclusionsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1803,7 +1803,7 @@ pub enum DescribeFindingsErrorKind {
     /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
     /// input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFindingsError {
@@ -1867,11 +1867,11 @@ impl DescribeFindingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFindingsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeFindingsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DescribeFindingsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DescribeFindingsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeFindingsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1907,7 +1907,7 @@ pub enum DescribeResourceGroupsErrorKind {
     /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
     /// input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeResourceGroupsError {
@@ -1971,14 +1971,14 @@ impl DescribeResourceGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeResourceGroupsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeResourceGroupsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeResourceGroupsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeResourceGroupsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeResourceGroupsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2014,7 +2014,7 @@ pub enum DescribeRulesPackagesErrorKind {
     /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
     /// input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeRulesPackagesError {
@@ -2078,14 +2078,14 @@ impl DescribeRulesPackagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeRulesPackagesErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeRulesPackagesErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeRulesPackagesErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeRulesPackagesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeRulesPackagesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2137,7 +2137,7 @@ pub enum GetAssessmentReportErrorKind {
     /// took place or will take place after generating reports in Amazon Inspector became
     /// available.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAssessmentReportError {
@@ -2208,49 +2208,49 @@ impl GetAssessmentReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAssessmentReportErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetAssessmentReportErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssessmentReportErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssessmentReportErrorKind::AssessmentRunInProgressException`.
+    /// Returns `true` if the error kind is `GetAssessmentReportErrorKind::AssessmentRunInProgressException`.
     pub fn is_assessment_run_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssessmentReportErrorKind::AssessmentRunInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssessmentReportErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `GetAssessmentReportErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssessmentReportErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssessmentReportErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetAssessmentReportErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssessmentReportErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssessmentReportErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetAssessmentReportErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssessmentReportErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssessmentReportErrorKind::ServiceTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `GetAssessmentReportErrorKind::ServiceTemporarilyUnavailableException`.
     pub fn is_service_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssessmentReportErrorKind::ServiceTemporarilyUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssessmentReportErrorKind::UnsupportedFeatureException`.
+    /// Returns `true` if the error kind is `GetAssessmentReportErrorKind::UnsupportedFeatureException`.
     pub fn is_unsupported_feature_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2298,7 +2298,7 @@ pub enum GetExclusionsPreviewErrorKind {
     /// <p>The request was rejected because it referenced an entity that does not exist. The
     /// error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetExclusionsPreviewError {
@@ -2364,28 +2364,28 @@ impl GetExclusionsPreviewError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetExclusionsPreviewErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetExclusionsPreviewErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetExclusionsPreviewErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetExclusionsPreviewErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `GetExclusionsPreviewErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetExclusionsPreviewErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `GetExclusionsPreviewErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetExclusionsPreviewErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetExclusionsPreviewErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetExclusionsPreviewErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetExclusionsPreviewErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2428,7 +2428,7 @@ pub enum GetTelemetryMetadataErrorKind {
     /// <p>The request was rejected because it referenced an entity that does not exist. The
     /// error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTelemetryMetadataError {
@@ -2494,28 +2494,28 @@ impl GetTelemetryMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTelemetryMetadataErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetTelemetryMetadataErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTelemetryMetadataErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetTelemetryMetadataErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `GetTelemetryMetadataErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTelemetryMetadataErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `GetTelemetryMetadataErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetTelemetryMetadataErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTelemetryMetadataErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetTelemetryMetadataErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `GetTelemetryMetadataErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2558,7 +2558,7 @@ pub enum ListAssessmentRunAgentsErrorKind {
     /// <p>The request was rejected because it referenced an entity that does not exist. The
     /// error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssessmentRunAgentsError {
@@ -2624,28 +2624,28 @@ impl ListAssessmentRunAgentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssessmentRunAgentsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAssessmentRunAgentsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssessmentRunAgentsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssessmentRunAgentsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListAssessmentRunAgentsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssessmentRunAgentsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssessmentRunAgentsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListAssessmentRunAgentsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssessmentRunAgentsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssessmentRunAgentsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListAssessmentRunAgentsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2688,7 +2688,7 @@ pub enum ListAssessmentRunsErrorKind {
     /// <p>The request was rejected because it referenced an entity that does not exist. The
     /// error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssessmentRunsError {
@@ -2754,28 +2754,28 @@ impl ListAssessmentRunsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssessmentRunsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAssessmentRunsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssessmentRunsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssessmentRunsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListAssessmentRunsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssessmentRunsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssessmentRunsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListAssessmentRunsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssessmentRunsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssessmentRunsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListAssessmentRunsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2815,7 +2815,7 @@ pub enum ListAssessmentTargetsErrorKind {
     /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
     /// input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssessmentTargetsError {
@@ -2880,21 +2880,21 @@ impl ListAssessmentTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssessmentTargetsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAssessmentTargetsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssessmentTargetsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssessmentTargetsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListAssessmentTargetsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssessmentTargetsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssessmentTargetsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListAssessmentTargetsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2936,7 +2936,7 @@ pub enum ListAssessmentTemplatesErrorKind {
     /// <p>The request was rejected because it referenced an entity that does not exist. The
     /// error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssessmentTemplatesError {
@@ -3002,28 +3002,28 @@ impl ListAssessmentTemplatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssessmentTemplatesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAssessmentTemplatesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssessmentTemplatesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssessmentTemplatesErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListAssessmentTemplatesErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssessmentTemplatesErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssessmentTemplatesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListAssessmentTemplatesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssessmentTemplatesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssessmentTemplatesErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListAssessmentTemplatesErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3066,7 +3066,7 @@ pub enum ListEventSubscriptionsErrorKind {
     /// <p>The request was rejected because it referenced an entity that does not exist. The
     /// error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEventSubscriptionsError {
@@ -3132,28 +3132,28 @@ impl ListEventSubscriptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEventSubscriptionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListEventSubscriptionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEventSubscriptionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListEventSubscriptionsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListEventSubscriptionsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEventSubscriptionsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListEventSubscriptionsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListEventSubscriptionsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEventSubscriptionsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListEventSubscriptionsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListEventSubscriptionsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3196,7 +3196,7 @@ pub enum ListExclusionsErrorKind {
     /// <p>The request was rejected because it referenced an entity that does not exist. The
     /// error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListExclusionsError {
@@ -3262,25 +3262,25 @@ impl ListExclusionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListExclusionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListExclusionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListExclusionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListExclusionsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListExclusionsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, ListExclusionsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `ListExclusionsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListExclusionsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListExclusionsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListExclusionsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListExclusionsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3323,7 +3323,7 @@ pub enum ListFindingsErrorKind {
     /// <p>The request was rejected because it referenced an entity that does not exist. The
     /// error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFindingsError {
@@ -3389,19 +3389,19 @@ impl ListFindingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFindingsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListFindingsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListFindingsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListFindingsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListFindingsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, ListFindingsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `ListFindingsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListFindingsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, ListFindingsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `ListFindingsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListFindingsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, ListFindingsErrorKind::NoSuchEntityException(_))
     }
@@ -3438,7 +3438,7 @@ pub enum ListRulesPackagesErrorKind {
     /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
     /// input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRulesPackagesError {
@@ -3503,18 +3503,18 @@ impl ListRulesPackagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListRulesPackagesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListRulesPackagesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListRulesPackagesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListRulesPackagesErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListRulesPackagesErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, ListRulesPackagesErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `ListRulesPackagesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListRulesPackagesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3556,7 +3556,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>The request was rejected because it referenced an entity that does not exist. The
     /// error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -3622,28 +3622,28 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3689,7 +3689,7 @@ pub enum PreviewAgentsErrorKind {
     /// <p>The request was rejected because it referenced an entity that does not exist. The
     /// error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PreviewAgentsError {
@@ -3756,26 +3756,26 @@ impl PreviewAgentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PreviewAgentsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PreviewAgentsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, PreviewAgentsErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `PreviewAgentsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `PreviewAgentsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, PreviewAgentsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `PreviewAgentsErrorKind::InvalidCrossAccountRoleException`.
+    /// Returns `true` if the error kind is `PreviewAgentsErrorKind::InvalidCrossAccountRoleException`.
     pub fn is_invalid_cross_account_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             PreviewAgentsErrorKind::InvalidCrossAccountRoleException(_)
         )
     }
-    /// Returns true if the error kind is `PreviewAgentsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `PreviewAgentsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, PreviewAgentsErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `PreviewAgentsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `PreviewAgentsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(&self.kind, PreviewAgentsErrorKind::NoSuchEntityException(_))
     }
@@ -3818,7 +3818,7 @@ pub enum RegisterCrossAccountAccessRoleErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterCrossAccountAccessRoleError {
@@ -3892,35 +3892,35 @@ impl RegisterCrossAccountAccessRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterCrossAccountAccessRoleErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RegisterCrossAccountAccessRoleErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterCrossAccountAccessRoleErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterCrossAccountAccessRoleErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `RegisterCrossAccountAccessRoleErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterCrossAccountAccessRoleErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterCrossAccountAccessRoleErrorKind::InvalidCrossAccountRoleException`.
+    /// Returns `true` if the error kind is `RegisterCrossAccountAccessRoleErrorKind::InvalidCrossAccountRoleException`.
     pub fn is_invalid_cross_account_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterCrossAccountAccessRoleErrorKind::InvalidCrossAccountRoleException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterCrossAccountAccessRoleErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `RegisterCrossAccountAccessRoleErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterCrossAccountAccessRoleErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterCrossAccountAccessRoleErrorKind::ServiceTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `RegisterCrossAccountAccessRoleErrorKind::ServiceTemporarilyUnavailableException`.
     pub fn is_service_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3970,7 +3970,7 @@ pub enum RemoveAttributesFromFindingsErrorKind {
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveAttributesFromFindingsError {
@@ -4039,35 +4039,35 @@ impl RemoveAttributesFromFindingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveAttributesFromFindingsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RemoveAttributesFromFindingsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAttributesFromFindingsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAttributesFromFindingsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `RemoveAttributesFromFindingsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAttributesFromFindingsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAttributesFromFindingsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `RemoveAttributesFromFindingsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAttributesFromFindingsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAttributesFromFindingsErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `RemoveAttributesFromFindingsErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAttributesFromFindingsErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAttributesFromFindingsErrorKind::ServiceTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `RemoveAttributesFromFindingsErrorKind::ServiceTemporarilyUnavailableException`.
     pub fn is_service_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4115,7 +4115,7 @@ pub enum SetTagsForResourceErrorKind {
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetTagsForResourceError {
@@ -4184,35 +4184,35 @@ impl SetTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetTagsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SetTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetTagsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `SetTagsForResourceErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `SetTagsForResourceErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetTagsForResourceErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `SetTagsForResourceErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `SetTagsForResourceErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetTagsForResourceErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `SetTagsForResourceErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `SetTagsForResourceErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetTagsForResourceErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `SetTagsForResourceErrorKind::ServiceTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `SetTagsForResourceErrorKind::ServiceTemporarilyUnavailableException`.
     pub fn is_service_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4269,7 +4269,7 @@ pub enum StartAssessmentRunErrorKind {
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartAssessmentRunError {
@@ -4343,56 +4343,56 @@ impl StartAssessmentRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartAssessmentRunErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StartAssessmentRunErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAssessmentRunErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StartAssessmentRunErrorKind::AgentsAlreadyRunningAssessmentException`.
+    /// Returns `true` if the error kind is `StartAssessmentRunErrorKind::AgentsAlreadyRunningAssessmentException`.
     pub fn is_agents_already_running_assessment_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAssessmentRunErrorKind::AgentsAlreadyRunningAssessmentException(_)
         )
     }
-    /// Returns true if the error kind is `StartAssessmentRunErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `StartAssessmentRunErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAssessmentRunErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `StartAssessmentRunErrorKind::InvalidCrossAccountRoleException`.
+    /// Returns `true` if the error kind is `StartAssessmentRunErrorKind::InvalidCrossAccountRoleException`.
     pub fn is_invalid_cross_account_role_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAssessmentRunErrorKind::InvalidCrossAccountRoleException(_)
         )
     }
-    /// Returns true if the error kind is `StartAssessmentRunErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StartAssessmentRunErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAssessmentRunErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `StartAssessmentRunErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartAssessmentRunErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAssessmentRunErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartAssessmentRunErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `StartAssessmentRunErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartAssessmentRunErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `StartAssessmentRunErrorKind::ServiceTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `StartAssessmentRunErrorKind::ServiceTemporarilyUnavailableException`.
     pub fn is_service_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4445,7 +4445,7 @@ pub enum StopAssessmentRunErrorKind {
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopAssessmentRunError {
@@ -4514,32 +4514,32 @@ impl StopAssessmentRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopAssessmentRunErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `StopAssessmentRunErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopAssessmentRunErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `StopAssessmentRunErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `StopAssessmentRunErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, StopAssessmentRunErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `StopAssessmentRunErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StopAssessmentRunErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopAssessmentRunErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `StopAssessmentRunErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `StopAssessmentRunErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopAssessmentRunErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `StopAssessmentRunErrorKind::ServiceTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `StopAssessmentRunErrorKind::ServiceTemporarilyUnavailableException`.
     pub fn is_service_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4590,7 +4590,7 @@ pub enum SubscribeToEventErrorKind {
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SubscribeToEventError {
@@ -4660,39 +4660,39 @@ impl SubscribeToEventError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SubscribeToEventErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `SubscribeToEventErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             SubscribeToEventErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `SubscribeToEventErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `SubscribeToEventErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, SubscribeToEventErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `SubscribeToEventErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `SubscribeToEventErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             SubscribeToEventErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `SubscribeToEventErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `SubscribeToEventErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             SubscribeToEventErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `SubscribeToEventErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `SubscribeToEventErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             SubscribeToEventErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `SubscribeToEventErrorKind::ServiceTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `SubscribeToEventErrorKind::ServiceTemporarilyUnavailableException`.
     pub fn is_service_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4741,7 +4741,7 @@ pub enum UnsubscribeFromEventErrorKind {
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UnsubscribeFromEventError {
@@ -4810,35 +4810,35 @@ impl UnsubscribeFromEventError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UnsubscribeFromEventErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UnsubscribeFromEventErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnsubscribeFromEventErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UnsubscribeFromEventErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UnsubscribeFromEventErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnsubscribeFromEventErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `UnsubscribeFromEventErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UnsubscribeFromEventErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnsubscribeFromEventErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UnsubscribeFromEventErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UnsubscribeFromEventErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             UnsubscribeFromEventErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `UnsubscribeFromEventErrorKind::ServiceTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `UnsubscribeFromEventErrorKind::ServiceTemporarilyUnavailableException`.
     pub fn is_service_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4886,7 +4886,7 @@ pub enum UpdateAssessmentTargetErrorKind {
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAssessmentTargetError {
@@ -4955,35 +4955,35 @@ impl UpdateAssessmentTargetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAssessmentTargetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentTargetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentTargetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentTargetErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentTargetErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentTargetErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentTargetErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentTargetErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentTargetErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentTargetErrorKind::NoSuchEntityException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentTargetErrorKind::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssessmentTargetErrorKind::NoSuchEntityException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssessmentTargetErrorKind::ServiceTemporarilyUnavailableException`.
+    /// Returns `true` if the error kind is `UpdateAssessmentTargetErrorKind::ServiceTemporarilyUnavailableException`.
     pub fn is_service_temporarily_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,

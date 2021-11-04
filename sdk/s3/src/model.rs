@@ -503,8 +503,8 @@ pub enum SelectObjectContentEventStream {
     Stats(crate::model::StatsEvent),
 }
 impl SelectObjectContentEventStream {
-    /// Tries to convert the enum instance into its [`SelectObjectContentEventStream`](crate::model::SelectObjectContentEventStream) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Cont`](crate::model::SelectObjectContentEventStream::Cont), extracting the inner [`ContinuationEvent`](crate::model::ContinuationEvent).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_cont(&self) -> std::result::Result<&crate::model::ContinuationEvent, &Self> {
         if let SelectObjectContentEventStream::Cont(val) = &self {
             Ok(&val)
@@ -512,12 +512,12 @@ impl SelectObjectContentEventStream {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `SelectObjectContentEventStream` variant.
+    /// Returns true if this is a [`Cont`](crate::model::SelectObjectContentEventStream::Cont).
     pub fn is_cont(&self) -> bool {
         self.as_cont().is_ok()
     }
-    /// Tries to convert the enum instance into its [`SelectObjectContentEventStream`](crate::model::SelectObjectContentEventStream) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`End`](crate::model::SelectObjectContentEventStream::End), extracting the inner [`EndEvent`](crate::model::EndEvent).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_end(&self) -> std::result::Result<&crate::model::EndEvent, &Self> {
         if let SelectObjectContentEventStream::End(val) = &self {
             Ok(&val)
@@ -525,12 +525,12 @@ impl SelectObjectContentEventStream {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `SelectObjectContentEventStream` variant.
+    /// Returns true if this is a [`End`](crate::model::SelectObjectContentEventStream::End).
     pub fn is_end(&self) -> bool {
         self.as_end().is_ok()
     }
-    /// Tries to convert the enum instance into its [`SelectObjectContentEventStream`](crate::model::SelectObjectContentEventStream) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Progress`](crate::model::SelectObjectContentEventStream::Progress), extracting the inner [`ProgressEvent`](crate::model::ProgressEvent).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_progress(&self) -> std::result::Result<&crate::model::ProgressEvent, &Self> {
         if let SelectObjectContentEventStream::Progress(val) = &self {
             Ok(&val)
@@ -538,12 +538,12 @@ impl SelectObjectContentEventStream {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `SelectObjectContentEventStream` variant.
+    /// Returns true if this is a [`Progress`](crate::model::SelectObjectContentEventStream::Progress).
     pub fn is_progress(&self) -> bool {
         self.as_progress().is_ok()
     }
-    /// Tries to convert the enum instance into its [`SelectObjectContentEventStream`](crate::model::SelectObjectContentEventStream) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Records`](crate::model::SelectObjectContentEventStream::Records), extracting the inner [`RecordsEvent`](crate::model::RecordsEvent).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_records(&self) -> std::result::Result<&crate::model::RecordsEvent, &Self> {
         if let SelectObjectContentEventStream::Records(val) = &self {
             Ok(&val)
@@ -551,12 +551,12 @@ impl SelectObjectContentEventStream {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `SelectObjectContentEventStream` variant.
+    /// Returns true if this is a [`Records`](crate::model::SelectObjectContentEventStream::Records).
     pub fn is_records(&self) -> bool {
         self.as_records().is_ok()
     }
-    /// Tries to convert the enum instance into its [`SelectObjectContentEventStream`](crate::model::SelectObjectContentEventStream) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Stats`](crate::model::SelectObjectContentEventStream::Stats), extracting the inner [`StatsEvent`](crate::model::StatsEvent).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_stats(&self) -> std::result::Result<&crate::model::StatsEvent, &Self> {
         if let SelectObjectContentEventStream::Stats(val) = &self {
             Ok(&val)
@@ -564,7 +564,7 @@ impl SelectObjectContentEventStream {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `SelectObjectContentEventStream` variant.
+    /// Returns true if this is a [`Stats`](crate::model::SelectObjectContentEventStream::Stats).
     pub fn is_stats(&self) -> bool {
         self.as_stats().is_ok()
     }
@@ -7028,8 +7028,8 @@ pub enum ReplicationRuleFilter {
     Tag(crate::model::Tag),
 }
 impl ReplicationRuleFilter {
-    /// Tries to convert the enum instance into its [`ReplicationRuleFilter`](crate::model::ReplicationRuleFilter) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`And`](crate::model::ReplicationRuleFilter::And), extracting the inner [`ReplicationRuleAndOperator`](crate::model::ReplicationRuleAndOperator).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_and(&self) -> std::result::Result<&crate::model::ReplicationRuleAndOperator, &Self> {
         if let ReplicationRuleFilter::And(val) = &self {
             Ok(&val)
@@ -7037,12 +7037,12 @@ impl ReplicationRuleFilter {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ReplicationRuleFilter` variant.
+    /// Returns true if this is a [`And`](crate::model::ReplicationRuleFilter::And).
     pub fn is_and(&self) -> bool {
         self.as_and().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ReplicationRuleFilter`](crate::model::ReplicationRuleFilter) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Prefix`](crate::model::ReplicationRuleFilter::Prefix), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let ReplicationRuleFilter::Prefix(val) = &self {
             Ok(&val)
@@ -7050,12 +7050,12 @@ impl ReplicationRuleFilter {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ReplicationRuleFilter` variant.
+    /// Returns true if this is a [`Prefix`](crate::model::ReplicationRuleFilter::Prefix).
     pub fn is_prefix(&self) -> bool {
         self.as_prefix().is_ok()
     }
-    /// Tries to convert the enum instance into its [`ReplicationRuleFilter`](crate::model::ReplicationRuleFilter) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Tag`](crate::model::ReplicationRuleFilter::Tag), extracting the inner [`Tag`](crate::model::Tag).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tag(&self) -> std::result::Result<&crate::model::Tag, &Self> {
         if let ReplicationRuleFilter::Tag(val) = &self {
             Ok(&val)
@@ -7063,7 +7063,7 @@ impl ReplicationRuleFilter {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `ReplicationRuleFilter` variant.
+    /// Returns true if this is a [`Tag`](crate::model::ReplicationRuleFilter::Tag).
     pub fn is_tag(&self) -> bool {
         self.as_tag().is_ok()
     }
@@ -8218,8 +8218,8 @@ pub enum MetricsFilter {
     Tag(crate::model::Tag),
 }
 impl MetricsFilter {
-    /// Tries to convert the enum instance into its [`MetricsFilter`](crate::model::MetricsFilter) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`AccessPointArn`](crate::model::MetricsFilter::AccessPointArn), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_access_point_arn(&self) -> std::result::Result<&std::string::String, &Self> {
         if let MetricsFilter::AccessPointArn(val) = &self {
             Ok(&val)
@@ -8227,12 +8227,12 @@ impl MetricsFilter {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `MetricsFilter` variant.
+    /// Returns true if this is a [`AccessPointArn`](crate::model::MetricsFilter::AccessPointArn).
     pub fn is_access_point_arn(&self) -> bool {
         self.as_access_point_arn().is_ok()
     }
-    /// Tries to convert the enum instance into its [`MetricsFilter`](crate::model::MetricsFilter) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`And`](crate::model::MetricsFilter::And), extracting the inner [`MetricsAndOperator`](crate::model::MetricsAndOperator).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_and(&self) -> std::result::Result<&crate::model::MetricsAndOperator, &Self> {
         if let MetricsFilter::And(val) = &self {
             Ok(&val)
@@ -8240,12 +8240,12 @@ impl MetricsFilter {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `MetricsFilter` variant.
+    /// Returns true if this is a [`And`](crate::model::MetricsFilter::And).
     pub fn is_and(&self) -> bool {
         self.as_and().is_ok()
     }
-    /// Tries to convert the enum instance into its [`MetricsFilter`](crate::model::MetricsFilter) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Prefix`](crate::model::MetricsFilter::Prefix), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let MetricsFilter::Prefix(val) = &self {
             Ok(&val)
@@ -8253,12 +8253,12 @@ impl MetricsFilter {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `MetricsFilter` variant.
+    /// Returns true if this is a [`Prefix`](crate::model::MetricsFilter::Prefix).
     pub fn is_prefix(&self) -> bool {
         self.as_prefix().is_ok()
     }
-    /// Tries to convert the enum instance into its [`MetricsFilter`](crate::model::MetricsFilter) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Tag`](crate::model::MetricsFilter::Tag), extracting the inner [`Tag`](crate::model::Tag).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tag(&self) -> std::result::Result<&crate::model::Tag, &Self> {
         if let MetricsFilter::Tag(val) = &self {
             Ok(&val)
@@ -8266,7 +8266,7 @@ impl MetricsFilter {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `MetricsFilter` variant.
+    /// Returns true if this is a [`Tag`](crate::model::MetricsFilter::Tag).
     pub fn is_tag(&self) -> bool {
         self.as_tag().is_ok()
     }
@@ -9435,8 +9435,8 @@ pub enum LifecycleRuleFilter {
     Tag(crate::model::Tag),
 }
 impl LifecycleRuleFilter {
-    /// Tries to convert the enum instance into its [`LifecycleRuleFilter`](crate::model::LifecycleRuleFilter) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`And`](crate::model::LifecycleRuleFilter::And), extracting the inner [`LifecycleRuleAndOperator`](crate::model::LifecycleRuleAndOperator).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_and(&self) -> std::result::Result<&crate::model::LifecycleRuleAndOperator, &Self> {
         if let LifecycleRuleFilter::And(val) = &self {
             Ok(&val)
@@ -9444,12 +9444,12 @@ impl LifecycleRuleFilter {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `LifecycleRuleFilter` variant.
+    /// Returns true if this is a [`And`](crate::model::LifecycleRuleFilter::And).
     pub fn is_and(&self) -> bool {
         self.as_and().is_ok()
     }
-    /// Tries to convert the enum instance into its [`LifecycleRuleFilter`](crate::model::LifecycleRuleFilter) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Prefix`](crate::model::LifecycleRuleFilter::Prefix), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let LifecycleRuleFilter::Prefix(val) = &self {
             Ok(&val)
@@ -9457,12 +9457,12 @@ impl LifecycleRuleFilter {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `LifecycleRuleFilter` variant.
+    /// Returns true if this is a [`Prefix`](crate::model::LifecycleRuleFilter::Prefix).
     pub fn is_prefix(&self) -> bool {
         self.as_prefix().is_ok()
     }
-    /// Tries to convert the enum instance into its [`LifecycleRuleFilter`](crate::model::LifecycleRuleFilter) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Tag`](crate::model::LifecycleRuleFilter::Tag), extracting the inner [`Tag`](crate::model::Tag).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tag(&self) -> std::result::Result<&crate::model::Tag, &Self> {
         if let LifecycleRuleFilter::Tag(val) = &self {
             Ok(&val)
@@ -9470,7 +9470,7 @@ impl LifecycleRuleFilter {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `LifecycleRuleFilter` variant.
+    /// Returns true if this is a [`Tag`](crate::model::LifecycleRuleFilter::Tag).
     pub fn is_tag(&self) -> bool {
         self.as_tag().is_ok()
     }
@@ -12084,8 +12084,8 @@ pub enum AnalyticsFilter {
     Tag(crate::model::Tag),
 }
 impl AnalyticsFilter {
-    /// Tries to convert the enum instance into its [`AnalyticsFilter`](crate::model::AnalyticsFilter) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`And`](crate::model::AnalyticsFilter::And), extracting the inner [`AnalyticsAndOperator`](crate::model::AnalyticsAndOperator).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_and(&self) -> std::result::Result<&crate::model::AnalyticsAndOperator, &Self> {
         if let AnalyticsFilter::And(val) = &self {
             Ok(&val)
@@ -12093,12 +12093,12 @@ impl AnalyticsFilter {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AnalyticsFilter` variant.
+    /// Returns true if this is a [`And`](crate::model::AnalyticsFilter::And).
     pub fn is_and(&self) -> bool {
         self.as_and().is_ok()
     }
-    /// Tries to convert the enum instance into its [`AnalyticsFilter`](crate::model::AnalyticsFilter) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Prefix`](crate::model::AnalyticsFilter::Prefix), extracting the inner [`String`](std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AnalyticsFilter::Prefix(val) = &self {
             Ok(&val)
@@ -12106,12 +12106,12 @@ impl AnalyticsFilter {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AnalyticsFilter` variant.
+    /// Returns true if this is a [`Prefix`](crate::model::AnalyticsFilter::Prefix).
     pub fn is_prefix(&self) -> bool {
         self.as_prefix().is_ok()
     }
-    /// Tries to convert the enum instance into its [`AnalyticsFilter`](crate::model::AnalyticsFilter) variant.
-    /// Returns `Err(&Self) if it can't be converted.`
+    /// Tries to convert the enum instance into [`Tag`](crate::model::AnalyticsFilter::Tag), extracting the inner [`Tag`](crate::model::Tag).
+    /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tag(&self) -> std::result::Result<&crate::model::Tag, &Self> {
         if let AnalyticsFilter::Tag(val) = &self {
             Ok(&val)
@@ -12119,7 +12119,7 @@ impl AnalyticsFilter {
             Err(&self)
         }
     }
-    /// Returns true if the enum instance is the `AnalyticsFilter` variant.
+    /// Returns true if this is a [`Tag`](crate::model::AnalyticsFilter::Tag).
     pub fn is_tag(&self) -> bool {
         self.as_tag().is_ok()
     }

@@ -148,9 +148,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p> Indicates the source language used in the input audio stream. For Amazon Transcribe Medical, this is US
@@ -397,9 +400,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>Indicates the source language used in the input audio stream.</p>
@@ -646,14 +652,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>List the PII entity types you want to identify or redact. In order to specify entity types, you must have
-        /// either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code> enabled.</p>
-        /// <p>
-        /// <code>PIIEntityTypes</code> must be comma-separated; the available values are:
-        /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
-        /// <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
-        /// <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-        /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>,
-        /// <code>SSN</code>, and <code>ALL</code>.</p>
+        /// either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code> enabled.</p>    
         /// <p>
         /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
         pub fn pii_entity_types(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -661,14 +660,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>List the PII entity types you want to identify or redact. In order to specify entity types, you must have
-        /// either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code> enabled.</p>
-        /// <p>
-        /// <code>PIIEntityTypes</code> must be comma-separated; the available values are:
-        /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
-        /// <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
-        /// <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-        /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>,
-        /// <code>SSN</code>, and <code>ALL</code>.</p>
+        /// either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code> enabled.</p>    
         /// <p>
         /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
         pub fn set_pii_entity_types(
@@ -676,6 +668,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_pii_entity_types(input);
+            self
+        }
+        /// <p>The name of the language model you want to use.</p>
+        pub fn language_model_name(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language_model_name(inp);
+            self
+        }
+        /// <p>The name of the language model you want to use.</p>
+        pub fn set_language_model_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_language_model_name(input);
             self
         }
     }

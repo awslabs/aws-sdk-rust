@@ -18,7 +18,7 @@ pub enum AddTagsErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>The quota for the number of tags that can be assigned to a load balancer has been reached.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddTagsError {
@@ -83,18 +83,18 @@ impl AddTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddTagsErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::DuplicateTagKeysException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::DuplicateTagKeysException(_))
     }
-    /// Returns true if the error kind is `AddTagsErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `AddTagsErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, AddTagsErrorKind::TooManyTagsException(_))
     }
@@ -129,7 +129,7 @@ pub enum ApplySecurityGroupsToLoadBalancerErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>One or more of the specified security groups do not exist.</p>
     InvalidSecurityGroupException(crate::error::InvalidSecurityGroupException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ApplySecurityGroupsToLoadBalancerError {
@@ -203,21 +203,21 @@ impl ApplySecurityGroupsToLoadBalancerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ApplySecurityGroupsToLoadBalancerErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `ApplySecurityGroupsToLoadBalancerErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ApplySecurityGroupsToLoadBalancerErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ApplySecurityGroupsToLoadBalancerErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `ApplySecurityGroupsToLoadBalancerErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ApplySecurityGroupsToLoadBalancerErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ApplySecurityGroupsToLoadBalancerErrorKind::InvalidSecurityGroupException`.
+    /// Returns `true` if the error kind is `ApplySecurityGroupsToLoadBalancerErrorKind::InvalidSecurityGroupException`.
     pub fn is_invalid_security_group_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -263,7 +263,7 @@ pub enum AttachLoadBalancerToSubnetsErrorKind {
     InvalidSubnetException(crate::error::InvalidSubnetException),
     /// <p>One or more of the specified subnets do not exist.</p>
     SubnetNotFoundException(crate::error::SubnetNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachLoadBalancerToSubnetsError {
@@ -333,28 +333,28 @@ impl AttachLoadBalancerToSubnetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachLoadBalancerToSubnetsErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `AttachLoadBalancerToSubnetsErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachLoadBalancerToSubnetsErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AttachLoadBalancerToSubnetsErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `AttachLoadBalancerToSubnetsErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachLoadBalancerToSubnetsErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AttachLoadBalancerToSubnetsErrorKind::InvalidSubnetException`.
+    /// Returns `true` if the error kind is `AttachLoadBalancerToSubnetsErrorKind::InvalidSubnetException`.
     pub fn is_invalid_subnet_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachLoadBalancerToSubnetsErrorKind::InvalidSubnetException(_)
         )
     }
-    /// Returns true if the error kind is `AttachLoadBalancerToSubnetsErrorKind::SubnetNotFoundException`.
+    /// Returns `true` if the error kind is `AttachLoadBalancerToSubnetsErrorKind::SubnetNotFoundException`.
     pub fn is_subnet_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -393,7 +393,7 @@ pub struct ConfigureHealthCheckError {
 pub enum ConfigureHealthCheckErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ConfigureHealthCheckError {
@@ -456,7 +456,7 @@ impl ConfigureHealthCheckError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ConfigureHealthCheckErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `ConfigureHealthCheckErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -494,7 +494,7 @@ pub enum CreateAppCookieStickinessPolicyErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>The quota for the number of policies for this load balancer has been reached.</p>
     TooManyPoliciesException(crate::error::TooManyPoliciesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAppCookieStickinessPolicyError {
@@ -571,28 +571,28 @@ impl CreateAppCookieStickinessPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAppCookieStickinessPolicyErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAppCookieStickinessPolicyErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppCookieStickinessPolicyErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppCookieStickinessPolicyErrorKind::DuplicatePolicyNameException`.
+    /// Returns `true` if the error kind is `CreateAppCookieStickinessPolicyErrorKind::DuplicatePolicyNameException`.
     pub fn is_duplicate_policy_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppCookieStickinessPolicyErrorKind::DuplicatePolicyNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppCookieStickinessPolicyErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `CreateAppCookieStickinessPolicyErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppCookieStickinessPolicyErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppCookieStickinessPolicyErrorKind::TooManyPoliciesException`.
+    /// Returns `true` if the error kind is `CreateAppCookieStickinessPolicyErrorKind::TooManyPoliciesException`.
     pub fn is_too_many_policies_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -641,7 +641,7 @@ pub enum CreateLBCookieStickinessPolicyErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>The quota for the number of policies for this load balancer has been reached.</p>
     TooManyPoliciesException(crate::error::TooManyPoliciesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLBCookieStickinessPolicyError {
@@ -718,28 +718,28 @@ impl CreateLBCookieStickinessPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLBCookieStickinessPolicyErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `CreateLBCookieStickinessPolicyErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLBCookieStickinessPolicyErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLBCookieStickinessPolicyErrorKind::DuplicatePolicyNameException`.
+    /// Returns `true` if the error kind is `CreateLBCookieStickinessPolicyErrorKind::DuplicatePolicyNameException`.
     pub fn is_duplicate_policy_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLBCookieStickinessPolicyErrorKind::DuplicatePolicyNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLBCookieStickinessPolicyErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `CreateLBCookieStickinessPolicyErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLBCookieStickinessPolicyErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLBCookieStickinessPolicyErrorKind::TooManyPoliciesException`.
+    /// Returns `true` if the error kind is `CreateLBCookieStickinessPolicyErrorKind::TooManyPoliciesException`.
     pub fn is_too_many_policies_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -806,7 +806,7 @@ pub enum CreateLoadBalancerErrorKind {
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>The specified protocol or signature version is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLoadBalancerError {
@@ -882,84 +882,84 @@ impl CreateLoadBalancerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::CertificateNotFoundException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::CertificateNotFoundException`.
     pub fn is_certificate_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::CertificateNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::DuplicateAccessPointNameException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::DuplicateAccessPointNameException`.
     pub fn is_duplicate_access_point_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::DuplicateAccessPointNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::DuplicateTagKeysException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::DuplicateTagKeysException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::InvalidSchemeException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::InvalidSchemeException`.
     pub fn is_invalid_scheme_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::InvalidSchemeException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::InvalidSecurityGroupException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::InvalidSecurityGroupException`.
     pub fn is_invalid_security_group_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::InvalidSecurityGroupException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::InvalidSubnetException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::InvalidSubnetException`.
     pub fn is_invalid_subnet_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::InvalidSubnetException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::OperationNotPermittedException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::OperationNotPermittedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::SubnetNotFoundException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::SubnetNotFoundException`.
     pub fn is_subnet_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::SubnetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::TooManyAccessPointsException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::TooManyAccessPointsException`.
     pub fn is_too_many_access_points_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::TooManyAccessPointsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerErrorKind::TooManyTagsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerErrorKind::UnsupportedProtocolException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerErrorKind::UnsupportedProtocolException`.
     pub fn is_unsupported_protocol_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1014,7 +1014,7 @@ pub enum CreateLoadBalancerListenersErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>The specified protocol or signature version is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLoadBalancerListenersError {
@@ -1091,35 +1091,35 @@ impl CreateLoadBalancerListenersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLoadBalancerListenersErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerListenersErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerListenersErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerListenersErrorKind::CertificateNotFoundException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerListenersErrorKind::CertificateNotFoundException`.
     pub fn is_certificate_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerListenersErrorKind::CertificateNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerListenersErrorKind::DuplicateListenerException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerListenersErrorKind::DuplicateListenerException`.
     pub fn is_duplicate_listener_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerListenersErrorKind::DuplicateListenerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerListenersErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerListenersErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerListenersErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerListenersErrorKind::UnsupportedProtocolException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerListenersErrorKind::UnsupportedProtocolException`.
     pub fn is_unsupported_protocol_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1173,7 +1173,7 @@ pub enum CreateLoadBalancerPolicyErrorKind {
     PolicyTypeNotFoundException(crate::error::PolicyTypeNotFoundException),
     /// <p>The quota for the number of policies for this load balancer has been reached.</p>
     TooManyPoliciesException(crate::error::TooManyPoliciesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLoadBalancerPolicyError {
@@ -1246,35 +1246,35 @@ impl CreateLoadBalancerPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLoadBalancerPolicyErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerPolicyErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerPolicyErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerPolicyErrorKind::DuplicatePolicyNameException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerPolicyErrorKind::DuplicatePolicyNameException`.
     pub fn is_duplicate_policy_name_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerPolicyErrorKind::DuplicatePolicyNameException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerPolicyErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerPolicyErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerPolicyErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerPolicyErrorKind::PolicyTypeNotFoundException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerPolicyErrorKind::PolicyTypeNotFoundException`.
     pub fn is_policy_type_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLoadBalancerPolicyErrorKind::PolicyTypeNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLoadBalancerPolicyErrorKind::TooManyPoliciesException`.
+    /// Returns `true` if the error kind is `CreateLoadBalancerPolicyErrorKind::TooManyPoliciesException`.
     pub fn is_too_many_policies_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1310,7 +1310,7 @@ pub struct DeleteLoadBalancerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLoadBalancerErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLoadBalancerError {
@@ -1396,7 +1396,7 @@ pub struct DeleteLoadBalancerListenersError {
 pub enum DeleteLoadBalancerListenersErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLoadBalancerListenersError {
@@ -1461,7 +1461,7 @@ impl DeleteLoadBalancerListenersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerListenersErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerListenersErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1497,7 +1497,7 @@ pub enum DeleteLoadBalancerPolicyErrorKind {
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
     /// <p>The requested configuration change is not valid.</p>
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLoadBalancerPolicyError {
@@ -1565,14 +1565,14 @@ impl DeleteLoadBalancerPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerPolicyErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerPolicyErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLoadBalancerPolicyErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLoadBalancerPolicyErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `DeleteLoadBalancerPolicyErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1609,7 +1609,7 @@ pub enum DeregisterInstancesFromLoadBalancerErrorKind {
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
     /// <p>The specified endpoint is not valid.</p>
     InvalidEndPointException(crate::error::InvalidEndPointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterInstancesFromLoadBalancerError {
@@ -1680,14 +1680,14 @@ impl DeregisterInstancesFromLoadBalancerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterInstancesFromLoadBalancerErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterInstancesFromLoadBalancerErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterInstancesFromLoadBalancerErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterInstancesFromLoadBalancerErrorKind::InvalidEndPointException`.
+    /// Returns `true` if the error kind is `DeregisterInstancesFromLoadBalancerErrorKind::InvalidEndPointException`.
     pub fn is_invalid_end_point_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1724,7 +1724,7 @@ pub struct DescribeAccountLimitsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountLimitsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccountLimitsError {
@@ -1812,7 +1812,7 @@ pub enum DescribeInstanceHealthErrorKind {
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
     /// <p>The specified endpoint is not valid.</p>
     InvalidEndPointException(crate::error::InvalidEndPointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstanceHealthError {
@@ -1876,14 +1876,14 @@ impl DescribeInstanceHealthError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInstanceHealthErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeInstanceHealthErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstanceHealthErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInstanceHealthErrorKind::InvalidEndPointException`.
+    /// Returns `true` if the error kind is `DescribeInstanceHealthErrorKind::InvalidEndPointException`.
     pub fn is_invalid_end_point_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1918,7 +1918,7 @@ pub enum DescribeLoadBalancerAttributesErrorKind {
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
     /// <p>The specified load balancer attribute does not exist.</p>
     LoadBalancerAttributeNotFoundException(crate::error::LoadBalancerAttributeNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLoadBalancerAttributesError {
@@ -1989,14 +1989,14 @@ impl DescribeLoadBalancerAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLoadBalancerAttributesErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeLoadBalancerAttributesErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLoadBalancerAttributesErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLoadBalancerAttributesErrorKind::LoadBalancerAttributeNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeLoadBalancerAttributesErrorKind::LoadBalancerAttributeNotFoundException`.
     pub fn is_load_balancer_attribute_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2035,7 +2035,7 @@ pub enum DescribeLoadBalancerPoliciesErrorKind {
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
     /// <p>One or more of the specified policies do not exist.</p>
     PolicyNotFoundException(crate::error::PolicyNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLoadBalancerPoliciesError {
@@ -2101,14 +2101,14 @@ impl DescribeLoadBalancerPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLoadBalancerPoliciesErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeLoadBalancerPoliciesErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLoadBalancerPoliciesErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLoadBalancerPoliciesErrorKind::PolicyNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeLoadBalancerPoliciesErrorKind::PolicyNotFoundException`.
     pub fn is_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2143,7 +2143,7 @@ pub struct DescribeLoadBalancerPolicyTypesError {
 pub enum DescribeLoadBalancerPolicyTypesErrorKind {
     /// <p>One or more of the specified policy types do not exist.</p>
     PolicyTypeNotFoundException(crate::error::PolicyTypeNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLoadBalancerPolicyTypesError {
@@ -2211,7 +2211,7 @@ impl DescribeLoadBalancerPolicyTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLoadBalancerPolicyTypesErrorKind::PolicyTypeNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeLoadBalancerPolicyTypesErrorKind::PolicyTypeNotFoundException`.
     pub fn is_policy_type_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2247,7 +2247,7 @@ pub enum DescribeLoadBalancersErrorKind {
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
     /// <p>A request made by Elastic Load Balancing to another service exceeds the maximum request rate permitted for your account.</p>
     DependencyThrottleException(crate::error::DependencyThrottleException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLoadBalancersError {
@@ -2311,14 +2311,14 @@ impl DescribeLoadBalancersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLoadBalancersErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeLoadBalancersErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLoadBalancersErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLoadBalancersErrorKind::DependencyThrottleException`.
+    /// Returns `true` if the error kind is `DescribeLoadBalancersErrorKind::DependencyThrottleException`.
     pub fn is_dependency_throttle_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2351,7 +2351,7 @@ pub struct DescribeTagsError {
 pub enum DescribeTagsErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTagsError {
@@ -2414,7 +2414,7 @@ impl DescribeTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2448,7 +2448,7 @@ pub enum DetachLoadBalancerFromSubnetsErrorKind {
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
     /// <p>The requested configuration change is not valid.</p>
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachLoadBalancerFromSubnetsError {
@@ -2519,14 +2519,14 @@ impl DetachLoadBalancerFromSubnetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetachLoadBalancerFromSubnetsErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `DetachLoadBalancerFromSubnetsErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachLoadBalancerFromSubnetsErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DetachLoadBalancerFromSubnetsErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `DetachLoadBalancerFromSubnetsErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2565,7 +2565,7 @@ pub enum DisableAvailabilityZonesForLoadBalancerErrorKind {
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
     /// <p>The requested configuration change is not valid.</p>
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableAvailabilityZonesForLoadBalancerError {
@@ -2638,14 +2638,14 @@ impl DisableAvailabilityZonesForLoadBalancerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableAvailabilityZonesForLoadBalancerErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `DisableAvailabilityZonesForLoadBalancerErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableAvailabilityZonesForLoadBalancerErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisableAvailabilityZonesForLoadBalancerErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `DisableAvailabilityZonesForLoadBalancerErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2686,7 +2686,7 @@ pub struct EnableAvailabilityZonesForLoadBalancerError {
 pub enum EnableAvailabilityZonesForLoadBalancerErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableAvailabilityZonesForLoadBalancerError {
@@ -2754,7 +2754,7 @@ impl EnableAvailabilityZonesForLoadBalancerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableAvailabilityZonesForLoadBalancerErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `EnableAvailabilityZonesForLoadBalancerErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2794,7 +2794,7 @@ pub enum ModifyLoadBalancerAttributesErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>The specified load balancer attribute does not exist.</p>
     LoadBalancerAttributeNotFoundException(crate::error::LoadBalancerAttributeNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyLoadBalancerAttributesError {
@@ -2865,21 +2865,21 @@ impl ModifyLoadBalancerAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyLoadBalancerAttributesErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyLoadBalancerAttributesErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyLoadBalancerAttributesErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyLoadBalancerAttributesErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `ModifyLoadBalancerAttributesErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ModifyLoadBalancerAttributesErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ModifyLoadBalancerAttributesErrorKind::LoadBalancerAttributeNotFoundException`.
+    /// Returns `true` if the error kind is `ModifyLoadBalancerAttributesErrorKind::LoadBalancerAttributeNotFoundException`.
     pub fn is_load_balancer_attribute_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2921,7 +2921,7 @@ pub enum RegisterInstancesWithLoadBalancerErrorKind {
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
     /// <p>The specified endpoint is not valid.</p>
     InvalidEndPointException(crate::error::InvalidEndPointException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterInstancesWithLoadBalancerError {
@@ -2992,14 +2992,14 @@ impl RegisterInstancesWithLoadBalancerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterInstancesWithLoadBalancerErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterInstancesWithLoadBalancerErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterInstancesWithLoadBalancerErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterInstancesWithLoadBalancerErrorKind::InvalidEndPointException`.
+    /// Returns `true` if the error kind is `RegisterInstancesWithLoadBalancerErrorKind::InvalidEndPointException`.
     pub fn is_invalid_end_point_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3036,7 +3036,7 @@ pub struct RemoveTagsError {
 pub enum RemoveTagsErrorKind {
     /// <p>The specified load balancer does not exist.</p>
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveTagsError {
@@ -3099,7 +3099,7 @@ impl RemoveTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveTagsErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveTagsErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3141,7 +3141,7 @@ pub enum SetLoadBalancerListenerSSLCertificateErrorKind {
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// <p>The specified protocol or signature version is not supported.</p>
     UnsupportedProtocolException(crate::error::UnsupportedProtocolException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetLoadBalancerListenerSSLCertificateError {
@@ -3223,35 +3223,35 @@ impl SetLoadBalancerListenerSSLCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetLoadBalancerListenerSSLCertificateErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `SetLoadBalancerListenerSSLCertificateErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetLoadBalancerListenerSSLCertificateErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetLoadBalancerListenerSSLCertificateErrorKind::CertificateNotFoundException`.
+    /// Returns `true` if the error kind is `SetLoadBalancerListenerSSLCertificateErrorKind::CertificateNotFoundException`.
     pub fn is_certificate_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetLoadBalancerListenerSSLCertificateErrorKind::CertificateNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetLoadBalancerListenerSSLCertificateErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `SetLoadBalancerListenerSSLCertificateErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetLoadBalancerListenerSSLCertificateErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `SetLoadBalancerListenerSSLCertificateErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `SetLoadBalancerListenerSSLCertificateErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetLoadBalancerListenerSSLCertificateErrorKind::ListenerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetLoadBalancerListenerSSLCertificateErrorKind::UnsupportedProtocolException`.
+    /// Returns `true` if the error kind is `SetLoadBalancerListenerSSLCertificateErrorKind::UnsupportedProtocolException`.
     pub fn is_unsupported_protocol_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3303,7 +3303,7 @@ pub enum SetLoadBalancerPoliciesForBackendServerErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>One or more of the specified policies do not exist.</p>
     PolicyNotFoundException(crate::error::PolicyNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetLoadBalancerPoliciesForBackendServerError {
@@ -3379,14 +3379,14 @@ impl SetLoadBalancerPoliciesForBackendServerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetLoadBalancerPoliciesForBackendServerErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `SetLoadBalancerPoliciesForBackendServerErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetLoadBalancerPoliciesForBackendServerErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetLoadBalancerPoliciesForBackendServerErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `SetLoadBalancerPoliciesForBackendServerErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3395,7 +3395,7 @@ impl SetLoadBalancerPoliciesForBackendServerError {
             )
         )
     }
-    /// Returns true if the error kind is `SetLoadBalancerPoliciesForBackendServerErrorKind::PolicyNotFoundException`.
+    /// Returns `true` if the error kind is `SetLoadBalancerPoliciesForBackendServerErrorKind::PolicyNotFoundException`.
     pub fn is_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3443,7 +3443,7 @@ pub enum SetLoadBalancerPoliciesOfListenerErrorKind {
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// <p>One or more of the specified policies do not exist.</p>
     PolicyNotFoundException(crate::error::PolicyNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetLoadBalancerPoliciesOfListenerError {
@@ -3520,28 +3520,28 @@ impl SetLoadBalancerPoliciesOfListenerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SetLoadBalancerPoliciesOfListenerErrorKind::AccessPointNotFoundException`.
+    /// Returns `true` if the error kind is `SetLoadBalancerPoliciesOfListenerErrorKind::AccessPointNotFoundException`.
     pub fn is_access_point_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetLoadBalancerPoliciesOfListenerErrorKind::AccessPointNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetLoadBalancerPoliciesOfListenerErrorKind::InvalidConfigurationRequestException`.
+    /// Returns `true` if the error kind is `SetLoadBalancerPoliciesOfListenerErrorKind::InvalidConfigurationRequestException`.
     pub fn is_invalid_configuration_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetLoadBalancerPoliciesOfListenerErrorKind::InvalidConfigurationRequestException(_)
         )
     }
-    /// Returns true if the error kind is `SetLoadBalancerPoliciesOfListenerErrorKind::ListenerNotFoundException`.
+    /// Returns `true` if the error kind is `SetLoadBalancerPoliciesOfListenerErrorKind::ListenerNotFoundException`.
     pub fn is_listener_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SetLoadBalancerPoliciesOfListenerErrorKind::ListenerNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SetLoadBalancerPoliciesOfListenerErrorKind::PolicyNotFoundException`.
+    /// Returns `true` if the error kind is `SetLoadBalancerPoliciesOfListenerErrorKind::PolicyNotFoundException`.
     pub fn is_policy_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

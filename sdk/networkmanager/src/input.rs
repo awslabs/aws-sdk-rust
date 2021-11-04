@@ -12,14 +12,12 @@ pub mod associate_customer_gateway_input {
         pub(crate) link_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the customer gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
         pub fn customer_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.customer_gateway_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the customer gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
         pub fn set_customer_gateway_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -84,7 +82,7 @@ pub type AssociateCustomerGatewayInputOperationRetryAlias = aws_http::AwsErrorRe
 impl AssociateCustomerGatewayInput {
     /// Consumes the builder and constructs an Operation<[`AssociateCustomerGateway`](crate::operation::AssociateCustomerGateway)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -136,6 +134,7 @@ impl AssociateCustomerGatewayInput {
             input: &crate::input::AssociateCustomerGatewayInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -195,9 +194,10 @@ impl AssociateCustomerGatewayInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -279,7 +279,7 @@ pub type AssociateLinkInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl AssociateLinkInput {
     /// Consumes the builder and constructs an Operation<[`AssociateLink`](crate::operation::AssociateLink)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -331,6 +331,7 @@ impl AssociateLinkInput {
             input: &crate::input::AssociateLinkInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -387,9 +388,10 @@ impl AssociateLinkInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -490,7 +492,7 @@ pub type AssociateTransitGatewayConnectPeerInputOperationRetryAlias = aws_http::
 impl AssociateTransitGatewayConnectPeerInput {
     /// Consumes the builder and constructs an Operation<[`AssociateTransitGatewayConnectPeer`](crate::operation::AssociateTransitGatewayConnectPeer)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -542,6 +544,7 @@ impl AssociateTransitGatewayConnectPeerInput {
             input: &crate::input::AssociateTransitGatewayConnectPeerInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -597,9 +600,10 @@ impl AssociateTransitGatewayConnectPeerInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -746,7 +750,7 @@ pub type CreateConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl CreateConnectionInput {
     /// Consumes the builder and constructs an Operation<[`CreateConnection`](crate::operation::CreateConnection)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -798,6 +802,7 @@ impl CreateConnectionInput {
             input: &crate::input::CreateConnectionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -855,9 +860,10 @@ impl CreateConnectionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -904,12 +910,12 @@ pub mod create_device_input {
             self.global_network_id = input;
             self
         }
-        /// <p>The AWS location of the device.</p>
+        /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
         pub fn aws_location(mut self, input: crate::model::AwsLocation) -> Self {
             self.aws_location = Some(input);
             self
         }
-        /// <p>The AWS location of the device.</p>
+        /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
         pub fn set_aws_location(
             mut self,
             input: std::option::Option<crate::model::AwsLocation>,
@@ -918,13 +924,13 @@ pub mod create_device_input {
             self
         }
         /// <p>A description of the device.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
         /// <p>A description of the device.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -940,37 +946,37 @@ pub mod create_device_input {
             self
         }
         /// <p>The vendor of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn vendor(mut self, input: impl Into<std::string::String>) -> Self {
             self.vendor = Some(input.into());
             self
         }
         /// <p>The vendor of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn set_vendor(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vendor = input;
             self
         }
         /// <p>The model of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn model(mut self, input: impl Into<std::string::String>) -> Self {
             self.model = Some(input.into());
             self
         }
         /// <p>The model of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model = input;
             self
         }
         /// <p>The serial number of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.serial_number = Some(input.into());
             self
         }
         /// <p>The serial number of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn set_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1046,7 +1052,7 @@ pub type CreateDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateDeviceInput {
     /// Consumes the builder and constructs an Operation<[`CreateDevice`](crate::operation::CreateDevice)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1098,6 +1104,7 @@ impl CreateDeviceInput {
             input: &crate::input::CreateDeviceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1154,9 +1161,10 @@ impl CreateDeviceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1183,13 +1191,13 @@ pub mod create_global_network_input {
     }
     impl Builder {
         /// <p>A description of the global network.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
         /// <p>A description of the global network.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1234,7 +1242,7 @@ pub type CreateGlobalNetworkInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl CreateGlobalNetworkInput {
     /// Consumes the builder and constructs an Operation<[`CreateGlobalNetwork`](crate::operation::CreateGlobalNetwork)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1266,6 +1274,7 @@ impl CreateGlobalNetworkInput {
             input: &crate::input::CreateGlobalNetworkInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1323,9 +1332,10 @@ impl CreateGlobalNetworkInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1370,27 +1380,25 @@ pub mod create_link_input {
             self
         }
         /// <p>A description of the link.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
         /// <p>A description of the link.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The type of the link.</p>
-        /// <p>Constraints: Cannot include the following characters: | \ ^</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
         /// <p>The type of the link.</p>
-        /// <p>Constraints: Cannot include the following characters: | \ ^</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -1409,15 +1417,13 @@ pub mod create_link_input {
             self
         }
         /// <p>The provider of the link.</p>
-        /// <p>Constraints: Cannot include the following characters: | \ ^</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
         pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
             self.provider = Some(input.into());
             self
         }
         /// <p>The provider of the link.</p>
-        /// <p>Constraints: Cannot include the following characters: | \ ^</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
         pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.provider = input;
             self
@@ -1477,7 +1483,7 @@ pub type CreateLinkInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateLinkInput {
     /// Consumes the builder and constructs an Operation<[`CreateLink`](crate::operation::CreateLink)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1529,6 +1535,7 @@ impl CreateLinkInput {
             input: &crate::input::CreateLinkInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1585,9 +1592,10 @@ impl CreateLinkInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1629,13 +1637,13 @@ pub mod create_site_input {
             self
         }
         /// <p>A description of your site.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
         /// <p>A description of your site.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1720,7 +1728,7 @@ pub type CreateSiteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl CreateSiteInput {
     /// Consumes the builder and constructs an Operation<[`CreateSite`](crate::operation::CreateSite)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1772,6 +1780,7 @@ impl CreateSiteInput {
             input: &crate::input::CreateSiteInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1828,9 +1837,10 @@ impl CreateSiteInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1903,7 +1913,7 @@ pub type DeleteConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DeleteConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnection`](crate::operation::DeleteConnection)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1971,12 +1981,8 @@ impl DeleteConnectionInput {
             input: &crate::input::DeleteConnectionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2024,16 +2030,9 @@ impl DeleteConnectionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteConnectionInput`](crate::input::DeleteConnectionInput)
@@ -2096,7 +2095,7 @@ pub type DeleteDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteDeviceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDevice`](crate::operation::DeleteDevice)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2164,12 +2163,8 @@ impl DeleteDeviceInput {
             input: &crate::input::DeleteDeviceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2217,16 +2212,9 @@ impl DeleteDeviceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteDeviceInput`](crate::input::DeleteDeviceInput)
@@ -2277,7 +2265,7 @@ pub type DeleteGlobalNetworkInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DeleteGlobalNetworkInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGlobalNetwork`](crate::operation::DeleteGlobalNetwork)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2329,12 +2317,8 @@ impl DeleteGlobalNetworkInput {
             input: &crate::input::DeleteGlobalNetworkInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2382,16 +2366,9 @@ impl DeleteGlobalNetworkInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteGlobalNetworkInput`](crate::input::DeleteGlobalNetworkInput)
@@ -2454,7 +2431,7 @@ pub type DeleteLinkInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteLinkInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLink`](crate::operation::DeleteLink)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2522,12 +2499,8 @@ impl DeleteLinkInput {
             input: &crate::input::DeleteLinkInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2575,16 +2548,9 @@ impl DeleteLinkInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteLinkInput`](crate::input::DeleteLinkInput)
@@ -2647,7 +2613,7 @@ pub type DeleteSiteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DeleteSiteInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSite`](crate::operation::DeleteSite)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2715,12 +2681,8 @@ impl DeleteSiteInput {
             input: &crate::input::DeleteSiteInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2768,16 +2730,9 @@ impl DeleteSiteInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteSiteInput`](crate::input::DeleteSiteInput)
@@ -2844,7 +2799,7 @@ pub type DeregisterTransitGatewayInputOperationRetryAlias = aws_http::AwsErrorRe
 impl DeregisterTransitGatewayInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterTransitGateway`](crate::operation::DeregisterTransitGateway)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2906,12 +2861,8 @@ impl DeregisterTransitGatewayInput {
             input: &crate::input::DeregisterTransitGatewayInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2959,16 +2910,9 @@ impl DeregisterTransitGatewayInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeregisterTransitGatewayInput`](crate::input::DeregisterTransitGatewayInput)
@@ -3049,7 +2993,7 @@ pub type DescribeGlobalNetworksInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl DescribeGlobalNetworksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGlobalNetworks`](crate::operation::DescribeGlobalNetworks)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3102,12 +3046,8 @@ impl DescribeGlobalNetworksInput {
             input: &crate::input::DescribeGlobalNetworksInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3155,16 +3095,9 @@ impl DescribeGlobalNetworksInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeGlobalNetworksInput`](crate::input::DescribeGlobalNetworksInput)
@@ -3196,14 +3129,12 @@ pub mod disassociate_customer_gateway_input {
             self.global_network_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the customer gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
         pub fn customer_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.customer_gateway_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the customer gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
         pub fn set_customer_gateway_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3233,7 +3164,7 @@ pub type DisassociateCustomerGatewayInputOperationRetryAlias = aws_http::AwsErro
 impl DisassociateCustomerGatewayInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateCustomerGateway`](crate::operation::DisassociateCustomerGateway)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3295,12 +3226,8 @@ impl DisassociateCustomerGatewayInput {
             input: &crate::input::DisassociateCustomerGatewayInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3348,16 +3275,9 @@ impl DisassociateCustomerGatewayInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DisassociateCustomerGatewayInput`](crate::input::DisassociateCustomerGatewayInput)
@@ -3432,7 +3352,7 @@ pub type DisassociateLinkInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl DisassociateLinkInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateLink`](crate::operation::DisassociateLink)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3494,12 +3414,8 @@ impl DisassociateLinkInput {
             input: &crate::input::DisassociateLinkInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3547,16 +3463,9 @@ impl DisassociateLinkInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DisassociateLinkInput`](crate::input::DisassociateLinkInput)
@@ -3627,7 +3536,7 @@ pub type DisassociateTransitGatewayConnectPeerInputOperationRetryAlias =
 impl DisassociateTransitGatewayConnectPeerInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateTransitGatewayConnectPeer`](crate::operation::DisassociateTransitGatewayConnectPeer)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3690,12 +3599,8 @@ impl DisassociateTransitGatewayConnectPeerInput {
             input: &crate::input::DisassociateTransitGatewayConnectPeerInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3743,16 +3648,9 @@ impl DisassociateTransitGatewayConnectPeerInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DisassociateTransitGatewayConnectPeerInput`](crate::input::DisassociateTransitGatewayConnectPeerInput)
@@ -3860,7 +3758,7 @@ pub type GetConnectionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetConnectionsInput {
     /// Consumes the builder and constructs an Operation<[`GetConnections`](crate::operation::GetConnections)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3936,12 +3834,8 @@ impl GetConnectionsInput {
             input: &crate::input::GetConnectionsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -3989,16 +3883,9 @@ impl GetConnectionsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetConnectionsInput`](crate::input::GetConnectionsInput)
@@ -4036,16 +3923,14 @@ pub mod get_customer_gateway_associations_input {
         ///
         /// To override the contents of this collection use [`set_customer_gateway_arns`](Self::set_customer_gateway_arns).
         ///
-        /// <p>One or more customer gateway Amazon Resource Names (ARNs). For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>. The maximum is 10.</p>
+        /// <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.</p>
         pub fn customer_gateway_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.customer_gateway_arns.unwrap_or_default();
             v.push(input.into());
             self.customer_gateway_arns = Some(v);
             self
         }
-        /// <p>One or more customer gateway Amazon Resource Names (ARNs). For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>. The maximum is 10.</p>
+        /// <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.</p>
         pub fn set_customer_gateway_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4097,7 +3982,7 @@ pub type GetCustomerGatewayAssociationsInputOperationRetryAlias = aws_http::AwsE
 impl GetCustomerGatewayAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`GetCustomerGatewayAssociations`](crate::operation::GetCustomerGatewayAssociations)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4173,12 +4058,8 @@ impl GetCustomerGatewayAssociationsInput {
             input: &crate::input::GetCustomerGatewayAssociationsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4226,16 +4107,9 @@ impl GetCustomerGatewayAssociationsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetCustomerGatewayAssociationsInput`](crate::input::GetCustomerGatewayAssociationsInput)
@@ -4343,7 +4217,7 @@ pub type GetDevicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetDevicesInput {
     /// Consumes the builder and constructs an Operation<[`GetDevices`](crate::operation::GetDevices)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4416,12 +4290,8 @@ impl GetDevicesInput {
             input: &crate::input::GetDevicesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4469,16 +4339,9 @@ impl GetDevicesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetDevicesInput`](crate::input::GetDevicesInput)
@@ -4577,7 +4440,7 @@ pub type GetLinkAssociationsInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl GetLinkAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`GetLinkAssociations`](crate::operation::GetLinkAssociations)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4648,12 +4511,8 @@ impl GetLinkAssociationsInput {
             input: &crate::input::GetLinkAssociationsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4701,16 +4560,9 @@ impl GetLinkAssociationsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetLinkAssociationsInput`](crate::input::GetLinkAssociationsInput)
@@ -4840,7 +4692,7 @@ pub type GetLinksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetLinksInput {
     /// Consumes the builder and constructs an Operation<[`GetLinks`](crate::operation::GetLinks)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -4919,12 +4771,8 @@ impl GetLinksInput {
             input: &crate::input::GetLinksInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -4970,9 +4818,1602 @@ impl GetLinksInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetLinksInput`](crate::input::GetLinksInput)
+    pub fn builder() -> crate::input::get_links_input::Builder {
+        crate::input::get_links_input::Builder::default()
+    }
+}
+
+/// See [`GetNetworkResourceCountsInput`](crate::input::GetNetworkResourceCountsInput)
+pub mod get_network_resource_counts_input {
+    /// A builder for [`GetNetworkResourceCountsInput`](crate::input::GetNetworkResourceCountsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_network_id: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_network_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_network_id = input;
+            self
+        }
+        /// <p>The resource type.</p>
+        /// <p>The following are the supported resource types for Direct Connect:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dxcon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-vif</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Network Manager:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>connection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>device</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>link</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>site</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Amazon VPC:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>customer-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-attachment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-connect-peer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-route-table</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vpn-connection</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>The resource type.</p>
+        /// <p>The following are the supported resource types for Direct Connect:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dxcon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-vif</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Network Manager:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>connection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>device</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>link</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>site</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Amazon VPC:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>customer-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-attachment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-connect-peer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-route-table</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vpn-connection</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetNetworkResourceCountsInput`](crate::input::GetNetworkResourceCountsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetNetworkResourceCountsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetNetworkResourceCountsInput {
+                global_network_id: self.global_network_id,
+                resource_type: self.resource_type,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetNetworkResourceCountsInputOperationOutputAlias =
+    crate::operation::GetNetworkResourceCounts;
+#[doc(hidden)]
+pub type GetNetworkResourceCountsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetNetworkResourceCountsInput {
+    /// Consumes the builder and constructs an Operation<[`GetNetworkResourceCounts`](crate::operation::GetNetworkResourceCounts)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetNetworkResourceCounts,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetNetworkResourceCountsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_60 = &_input.global_network_id;
+            let input_60 =
+                input_60
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "global_network_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let global_network_id = aws_smithy_http::label::fmt_string(input_60, false);
+            if global_network_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "global_network_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/global-networks/{GlobalNetworkId}/network-resource-count",
+                GlobalNetworkId = global_network_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::GetNetworkResourceCountsInput,
+            mut output: &mut String,
+        ) {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_61) = &_input.resource_type {
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_61),
+                );
+            }
+            if let Some(inner_62) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &aws_smithy_types::primitive::Encoder::from(*inner_62).encode(),
+                );
+            }
+            if let Some(inner_63) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_63));
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetNetworkResourceCountsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetNetworkResourceCountsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetNetworkResourceCounts::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetNetworkResourceCounts",
+            "networkmanager",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetNetworkResourceCountsInput`](crate::input::GetNetworkResourceCountsInput)
+    pub fn builder() -> crate::input::get_network_resource_counts_input::Builder {
+        crate::input::get_network_resource_counts_input::Builder::default()
+    }
+}
+
+/// See [`GetNetworkResourceRelationshipsInput`](crate::input::GetNetworkResourceRelationshipsInput)
+pub mod get_network_resource_relationships_input {
+    /// A builder for [`GetNetworkResourceRelationshipsInput`](crate::input::GetNetworkResourceRelationshipsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_network_id: std::option::Option<std::string::String>,
+        pub(crate) registered_gateway_arn: std::option::Option<std::string::String>,
+        pub(crate) aws_region: std::option::Option<std::string::String>,
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_network_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_network_id = input;
+            self
+        }
+        /// <p>The ARN of the registered gateway.</p>
+        pub fn registered_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registered_gateway_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the registered gateway.</p>
+        pub fn set_registered_gateway_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.registered_gateway_arn = input;
+            self
+        }
+        /// <p>The Amazon Web Services Region.</p>
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_region = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services Region.</p>
+        pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_region = input;
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>The resource type.</p>
+        /// <p>The following are the supported resource types for Direct Connect:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dxcon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-vif</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Network Manager:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>connection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>device</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>link</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>site</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Amazon VPC:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>customer-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-attachment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-connect-peer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-route-table</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vpn-connection</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>The resource type.</p>
+        /// <p>The following are the supported resource types for Direct Connect:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dxcon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-vif</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Network Manager:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>connection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>device</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>link</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>site</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Amazon VPC:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>customer-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-attachment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-connect-peer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-route-table</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vpn-connection</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>The ARN of the gateway.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the gateway.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetNetworkResourceRelationshipsInput`](crate::input::GetNetworkResourceRelationshipsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetNetworkResourceRelationshipsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetNetworkResourceRelationshipsInput {
+                global_network_id: self.global_network_id,
+                registered_gateway_arn: self.registered_gateway_arn,
+                aws_region: self.aws_region,
+                account_id: self.account_id,
+                resource_type: self.resource_type,
+                resource_arn: self.resource_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetNetworkResourceRelationshipsInputOperationOutputAlias =
+    crate::operation::GetNetworkResourceRelationships;
+#[doc(hidden)]
+pub type GetNetworkResourceRelationshipsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetNetworkResourceRelationshipsInput {
+    /// Consumes the builder and constructs an Operation<[`GetNetworkResourceRelationships`](crate::operation::GetNetworkResourceRelationships)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetNetworkResourceRelationships,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetNetworkResourceRelationshipsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_64 = &_input.global_network_id;
+            let input_64 =
+                input_64
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "global_network_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let global_network_id = aws_smithy_http::label::fmt_string(input_64, false);
+            if global_network_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "global_network_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/global-networks/{GlobalNetworkId}/network-resource-relationships",
+                GlobalNetworkId = global_network_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::GetNetworkResourceRelationshipsInput,
+            mut output: &mut String,
+        ) {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_65) = &_input.registered_gateway_arn {
+                query.push_kv(
+                    "registeredGatewayArn",
+                    &aws_smithy_http::query::fmt_string(&inner_65),
+                );
+            }
+            if let Some(inner_66) = &_input.aws_region {
+                query.push_kv("awsRegion", &aws_smithy_http::query::fmt_string(&inner_66));
+            }
+            if let Some(inner_67) = &_input.account_id {
+                query.push_kv("accountId", &aws_smithy_http::query::fmt_string(&inner_67));
+            }
+            if let Some(inner_68) = &_input.resource_type {
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_68),
+                );
+            }
+            if let Some(inner_69) = &_input.resource_arn {
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_69),
+                );
+            }
+            if let Some(inner_70) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &aws_smithy_types::primitive::Encoder::from(*inner_70).encode(),
+                );
+            }
+            if let Some(inner_71) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_71));
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetNetworkResourceRelationshipsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetNetworkResourceRelationshipsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetNetworkResourceRelationships::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetNetworkResourceRelationships",
+            "networkmanager",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetNetworkResourceRelationshipsInput`](crate::input::GetNetworkResourceRelationshipsInput)
+    pub fn builder() -> crate::input::get_network_resource_relationships_input::Builder {
+        crate::input::get_network_resource_relationships_input::Builder::default()
+    }
+}
+
+/// See [`GetNetworkResourcesInput`](crate::input::GetNetworkResourcesInput)
+pub mod get_network_resources_input {
+    /// A builder for [`GetNetworkResourcesInput`](crate::input::GetNetworkResourcesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_network_id: std::option::Option<std::string::String>,
+        pub(crate) registered_gateway_arn: std::option::Option<std::string::String>,
+        pub(crate) aws_region: std::option::Option<std::string::String>,
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_network_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_network_id = input;
+            self
+        }
+        /// <p>The ARN of the gateway.</p>
+        pub fn registered_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registered_gateway_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the gateway.</p>
+        pub fn set_registered_gateway_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.registered_gateway_arn = input;
+            self
+        }
+        /// <p>The Amazon Web Services Region.</p>
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_region = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services Region.</p>
+        pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_region = input;
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>The resource type.</p>
+        /// <p>The following are the supported resource types for Direct Connect:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dxcon</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-gateway</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-vif</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Network Manager:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>connection</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>device</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>link</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>site</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Amazon VPC:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>customer-gateway</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-attachment</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-connect-peer</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-route-table</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vpn-connection</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
+        /// </li>
+        /// </ul>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>The resource type.</p>
+        /// <p>The following are the supported resource types for Direct Connect:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dxcon</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-gateway</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-vif</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Network Manager:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>connection</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>device</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>link</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>site</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Amazon VPC:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>customer-gateway</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-attachment</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-connect-peer</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-route-table</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vpn-connection</code> - The definition model is
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetNetworkResourcesInput`](crate::input::GetNetworkResourcesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetNetworkResourcesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetNetworkResourcesInput {
+                global_network_id: self.global_network_id,
+                registered_gateway_arn: self.registered_gateway_arn,
+                aws_region: self.aws_region,
+                account_id: self.account_id,
+                resource_type: self.resource_type,
+                resource_arn: self.resource_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetNetworkResourcesInputOperationOutputAlias = crate::operation::GetNetworkResources;
+#[doc(hidden)]
+pub type GetNetworkResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetNetworkResourcesInput {
+    /// Consumes the builder and constructs an Operation<[`GetNetworkResources`](crate::operation::GetNetworkResources)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetNetworkResources,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetNetworkResourcesInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_72 = &_input.global_network_id;
+            let input_72 =
+                input_72
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "global_network_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let global_network_id = aws_smithy_http::label::fmt_string(input_72, false);
+            if global_network_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "global_network_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/global-networks/{GlobalNetworkId}/network-resources",
+                GlobalNetworkId = global_network_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(_input: &crate::input::GetNetworkResourcesInput, mut output: &mut String) {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_73) = &_input.registered_gateway_arn {
+                query.push_kv(
+                    "registeredGatewayArn",
+                    &aws_smithy_http::query::fmt_string(&inner_73),
+                );
+            }
+            if let Some(inner_74) = &_input.aws_region {
+                query.push_kv("awsRegion", &aws_smithy_http::query::fmt_string(&inner_74));
+            }
+            if let Some(inner_75) = &_input.account_id {
+                query.push_kv("accountId", &aws_smithy_http::query::fmt_string(&inner_75));
+            }
+            if let Some(inner_76) = &_input.resource_type {
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_76),
+                );
+            }
+            if let Some(inner_77) = &_input.resource_arn {
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_77),
+                );
+            }
+            if let Some(inner_78) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &aws_smithy_types::primitive::Encoder::from(*inner_78).encode(),
+                );
+            }
+            if let Some(inner_79) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_79));
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetNetworkResourcesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetNetworkResourcesInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetNetworkResources::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetNetworkResources",
+            "networkmanager",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetNetworkResourcesInput`](crate::input::GetNetworkResourcesInput)
+    pub fn builder() -> crate::input::get_network_resources_input::Builder {
+        crate::input::get_network_resources_input::Builder::default()
+    }
+}
+
+/// See [`GetNetworkRoutesInput`](crate::input::GetNetworkRoutesInput)
+pub mod get_network_routes_input {
+    /// A builder for [`GetNetworkRoutesInput`](crate::input::GetNetworkRoutesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_network_id: std::option::Option<std::string::String>,
+        pub(crate) route_table_identifier: std::option::Option<crate::model::RouteTableIdentifier>,
+        pub(crate) exact_cidr_matches: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) longest_prefix_matches: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) subnet_of_matches: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) supernet_of_matches: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) prefix_list_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) states: std::option::Option<std::vec::Vec<crate::model::RouteState>>,
+        pub(crate) types: std::option::Option<std::vec::Vec<crate::model::RouteType>>,
+        pub(crate) destination_filters: std::option::Option<
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    }
+    impl Builder {
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_network_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_network_id = input;
+            self
+        }
+        /// <p>The ID of the route table.</p>
+        pub fn route_table_identifier(mut self, input: crate::model::RouteTableIdentifier) -> Self {
+            self.route_table_identifier = Some(input);
+            self
+        }
+        /// <p>The ID of the route table.</p>
+        pub fn set_route_table_identifier(
+            mut self,
+            input: std::option::Option<crate::model::RouteTableIdentifier>,
+        ) -> Self {
+            self.route_table_identifier = input;
+            self
+        }
+        /// Appends an item to `exact_cidr_matches`.
+        ///
+        /// To override the contents of this collection use [`set_exact_cidr_matches`](Self::set_exact_cidr_matches).
+        ///
+        /// <p>An exact CIDR block.</p>
+        pub fn exact_cidr_matches(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.exact_cidr_matches.unwrap_or_default();
+            v.push(input.into());
+            self.exact_cidr_matches = Some(v);
+            self
+        }
+        /// <p>An exact CIDR block.</p>
+        pub fn set_exact_cidr_matches(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.exact_cidr_matches = input;
+            self
+        }
+        /// Appends an item to `longest_prefix_matches`.
+        ///
+        /// To override the contents of this collection use [`set_longest_prefix_matches`](Self::set_longest_prefix_matches).
+        ///
+        /// <p>The most specific route that matches the traffic (longest prefix match).</p>
+        pub fn longest_prefix_matches(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.longest_prefix_matches.unwrap_or_default();
+            v.push(input.into());
+            self.longest_prefix_matches = Some(v);
+            self
+        }
+        /// <p>The most specific route that matches the traffic (longest prefix match).</p>
+        pub fn set_longest_prefix_matches(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.longest_prefix_matches = input;
+            self
+        }
+        /// Appends an item to `subnet_of_matches`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_of_matches`](Self::set_subnet_of_matches).
+        ///
+        /// <p>The routes with a subnet that match the specified CIDR filter.</p>
+        pub fn subnet_of_matches(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnet_of_matches.unwrap_or_default();
+            v.push(input.into());
+            self.subnet_of_matches = Some(v);
+            self
+        }
+        /// <p>The routes with a subnet that match the specified CIDR filter.</p>
+        pub fn set_subnet_of_matches(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnet_of_matches = input;
+            self
+        }
+        /// Appends an item to `supernet_of_matches`.
+        ///
+        /// To override the contents of this collection use [`set_supernet_of_matches`](Self::set_supernet_of_matches).
+        ///
+        /// <p>The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.</p>
+        pub fn supernet_of_matches(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.supernet_of_matches.unwrap_or_default();
+            v.push(input.into());
+            self.supernet_of_matches = Some(v);
+            self
+        }
+        /// <p>The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.</p>
+        pub fn set_supernet_of_matches(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.supernet_of_matches = input;
+            self
+        }
+        /// Appends an item to `prefix_list_ids`.
+        ///
+        /// To override the contents of this collection use [`set_prefix_list_ids`](Self::set_prefix_list_ids).
+        ///
+        /// <p>The IDs of the prefix lists.</p>
+        pub fn prefix_list_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.prefix_list_ids.unwrap_or_default();
+            v.push(input.into());
+            self.prefix_list_ids = Some(v);
+            self
+        }
+        /// <p>The IDs of the prefix lists.</p>
+        pub fn set_prefix_list_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.prefix_list_ids = input;
+            self
+        }
+        /// Appends an item to `states`.
+        ///
+        /// To override the contents of this collection use [`set_states`](Self::set_states).
+        ///
+        /// <p>The route states.</p>
+        pub fn states(mut self, input: impl Into<crate::model::RouteState>) -> Self {
+            let mut v = self.states.unwrap_or_default();
+            v.push(input.into());
+            self.states = Some(v);
+            self
+        }
+        /// <p>The route states.</p>
+        pub fn set_states(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RouteState>>,
+        ) -> Self {
+            self.states = input;
+            self
+        }
+        /// Appends an item to `types`.
+        ///
+        /// To override the contents of this collection use [`set_types`](Self::set_types).
+        ///
+        /// <p>The route types.</p>
+        pub fn types(mut self, input: impl Into<crate::model::RouteType>) -> Self {
+            let mut v = self.types.unwrap_or_default();
+            v.push(input.into());
+            self.types = Some(v);
+            self
+        }
+        /// <p>The route types.</p>
+        pub fn set_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RouteType>>,
+        ) -> Self {
+            self.types = input;
+            self
+        }
+        /// Adds a key-value pair to `destination_filters`.
+        ///
+        /// To override the contents of this collection use [`set_destination_filters`](Self::set_destination_filters).
+        ///
+        /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
+        pub fn destination_filters(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            let mut hash_map = self.destination_filters.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.destination_filters = Some(hash_map);
+            self
+        }
+        /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
+        pub fn set_destination_filters(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+            >,
+        ) -> Self {
+            self.destination_filters = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetNetworkRoutesInput`](crate::input::GetNetworkRoutesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetNetworkRoutesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetNetworkRoutesInput {
+                global_network_id: self.global_network_id,
+                route_table_identifier: self.route_table_identifier,
+                exact_cidr_matches: self.exact_cidr_matches,
+                longest_prefix_matches: self.longest_prefix_matches,
+                subnet_of_matches: self.subnet_of_matches,
+                supernet_of_matches: self.supernet_of_matches,
+                prefix_list_ids: self.prefix_list_ids,
+                states: self.states,
+                types: self.types,
+                destination_filters: self.destination_filters,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetNetworkRoutesInputOperationOutputAlias = crate::operation::GetNetworkRoutes;
+#[doc(hidden)]
+pub type GetNetworkRoutesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetNetworkRoutesInput {
+    /// Consumes the builder and constructs an Operation<[`GetNetworkRoutes`](crate::operation::GetNetworkRoutes)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetNetworkRoutes,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetNetworkRoutesInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_80 = &_input.global_network_id;
+            let input_80 =
+                input_80
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "global_network_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let global_network_id = aws_smithy_http::label::fmt_string(input_80, false);
+            if global_network_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "global_network_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/global-networks/{GlobalNetworkId}/network-routes",
+                GlobalNetworkId = global_network_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetNetworkRoutesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetNetworkRoutesInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_network_routes(&self)
+                .map_err(|err| {
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetNetworkRoutes::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetNetworkRoutes",
+            "networkmanager",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -4982,9 +6423,627 @@ impl GetLinksInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`GetLinksInput`](crate::input::GetLinksInput)
-    pub fn builder() -> crate::input::get_links_input::Builder {
-        crate::input::get_links_input::Builder::default()
+    /// Creates a new builder-style object to manufacture [`GetNetworkRoutesInput`](crate::input::GetNetworkRoutesInput)
+    pub fn builder() -> crate::input::get_network_routes_input::Builder {
+        crate::input::get_network_routes_input::Builder::default()
+    }
+}
+
+/// See [`GetNetworkTelemetryInput`](crate::input::GetNetworkTelemetryInput)
+pub mod get_network_telemetry_input {
+    /// A builder for [`GetNetworkTelemetryInput`](crate::input::GetNetworkTelemetryInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_network_id: std::option::Option<std::string::String>,
+        pub(crate) registered_gateway_arn: std::option::Option<std::string::String>,
+        pub(crate) aws_region: std::option::Option<std::string::String>,
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_network_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_network_id = input;
+            self
+        }
+        /// <p>The ARN of the gateway.</p>
+        pub fn registered_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registered_gateway_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the gateway.</p>
+        pub fn set_registered_gateway_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.registered_gateway_arn = input;
+            self
+        }
+        /// <p>The Amazon Web Services Region.</p>
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_region = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services Region.</p>
+        pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_region = input;
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>The resource type.</p>
+        /// <p>The following are the supported resource types for Direct Connect:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dxcon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-vif</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Network Manager:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>connection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>device</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>link</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>site</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Amazon VPC:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>customer-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-attachment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-connect-peer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-route-table</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vpn-connection</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>The resource type.</p>
+        /// <p>The following are the supported resource types for Direct Connect:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dxcon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-vif</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Network Manager:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>connection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>device</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>link</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>site</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Amazon VPC:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>customer-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-attachment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-connect-peer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-route-table</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vpn-connection</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetNetworkTelemetryInput`](crate::input::GetNetworkTelemetryInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetNetworkTelemetryInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetNetworkTelemetryInput {
+                global_network_id: self.global_network_id,
+                registered_gateway_arn: self.registered_gateway_arn,
+                aws_region: self.aws_region,
+                account_id: self.account_id,
+                resource_type: self.resource_type,
+                resource_arn: self.resource_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetNetworkTelemetryInputOperationOutputAlias = crate::operation::GetNetworkTelemetry;
+#[doc(hidden)]
+pub type GetNetworkTelemetryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetNetworkTelemetryInput {
+    /// Consumes the builder and constructs an Operation<[`GetNetworkTelemetry`](crate::operation::GetNetworkTelemetry)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetNetworkTelemetry,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetNetworkTelemetryInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_81 = &_input.global_network_id;
+            let input_81 =
+                input_81
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "global_network_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let global_network_id = aws_smithy_http::label::fmt_string(input_81, false);
+            if global_network_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "global_network_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/global-networks/{GlobalNetworkId}/network-telemetry",
+                GlobalNetworkId = global_network_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(_input: &crate::input::GetNetworkTelemetryInput, mut output: &mut String) {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_82) = &_input.registered_gateway_arn {
+                query.push_kv(
+                    "registeredGatewayArn",
+                    &aws_smithy_http::query::fmt_string(&inner_82),
+                );
+            }
+            if let Some(inner_83) = &_input.aws_region {
+                query.push_kv("awsRegion", &aws_smithy_http::query::fmt_string(&inner_83));
+            }
+            if let Some(inner_84) = &_input.account_id {
+                query.push_kv("accountId", &aws_smithy_http::query::fmt_string(&inner_84));
+            }
+            if let Some(inner_85) = &_input.resource_type {
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_85),
+                );
+            }
+            if let Some(inner_86) = &_input.resource_arn {
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_86),
+                );
+            }
+            if let Some(inner_87) = &_input.max_results {
+                query.push_kv(
+                    "maxResults",
+                    &aws_smithy_types::primitive::Encoder::from(*inner_87).encode(),
+                );
+            }
+            if let Some(inner_88) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_88));
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetNetworkTelemetryInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetNetworkTelemetryInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetNetworkTelemetry::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetNetworkTelemetry",
+            "networkmanager",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetNetworkTelemetryInput`](crate::input::GetNetworkTelemetryInput)
+    pub fn builder() -> crate::input::get_network_telemetry_input::Builder {
+        crate::input::get_network_telemetry_input::Builder::default()
+    }
+}
+
+/// See [`GetRouteAnalysisInput`](crate::input::GetRouteAnalysisInput)
+pub mod get_route_analysis_input {
+    /// A builder for [`GetRouteAnalysisInput`](crate::input::GetRouteAnalysisInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_network_id: std::option::Option<std::string::String>,
+        pub(crate) route_analysis_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_network_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_network_id = input;
+            self
+        }
+        /// <p>The ID of the route analysis.</p>
+        pub fn route_analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.route_analysis_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the route analysis.</p>
+        pub fn set_route_analysis_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.route_analysis_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetRouteAnalysisInput`](crate::input::GetRouteAnalysisInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetRouteAnalysisInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetRouteAnalysisInput {
+                global_network_id: self.global_network_id,
+                route_analysis_id: self.route_analysis_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetRouteAnalysisInputOperationOutputAlias = crate::operation::GetRouteAnalysis;
+#[doc(hidden)]
+pub type GetRouteAnalysisInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetRouteAnalysisInput {
+    /// Consumes the builder and constructs an Operation<[`GetRouteAnalysis`](crate::operation::GetRouteAnalysis)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetRouteAnalysis,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetRouteAnalysisInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_89 = &_input.global_network_id;
+            let input_89 =
+                input_89
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "global_network_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let global_network_id = aws_smithy_http::label::fmt_string(input_89, false);
+            if global_network_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "global_network_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_90 = &_input.route_analysis_id;
+            let input_90 =
+                input_90
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "route_analysis_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let route_analysis_id = aws_smithy_http::label::fmt_string(input_90, false);
+            if route_analysis_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "route_analysis_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/global-networks/{GlobalNetworkId}/route-analyses/{RouteAnalysisId}",
+                GlobalNetworkId = global_network_id,
+                RouteAnalysisId = route_analysis_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetRouteAnalysisInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetRouteAnalysisInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetRouteAnalysis::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetRouteAnalysis",
+            "networkmanager",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetRouteAnalysisInput`](crate::input::GetRouteAnalysisInput)
+    pub fn builder() -> crate::input::get_route_analysis_input::Builder {
+        crate::input::get_route_analysis_input::Builder::default()
     }
 }
 
@@ -5073,7 +7132,7 @@ pub type GetSitesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetSitesInput {
     /// Consumes the builder and constructs an Operation<[`GetSites`](crate::operation::GetSites)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5087,15 +7146,15 @@ impl GetSitesInput {
             _input: &crate::input::GetSitesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_60 = &_input.global_network_id;
-            let input_60 =
-                input_60
+            let input_91 = &_input.global_network_id;
+            let input_91 =
+                input_91
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     })?;
-            let global_network_id = aws_smithy_http::label::fmt_string(input_60, false);
+            let global_network_id = aws_smithy_http::label::fmt_string(input_91, false);
             if global_network_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
@@ -5112,19 +7171,19 @@ impl GetSitesInput {
         }
         fn uri_query(_input: &crate::input::GetSitesInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_61) = &_input.site_ids {
-                for inner_62 in inner_61 {
-                    query.push_kv("siteIds", &aws_smithy_http::query::fmt_string(&inner_62));
+            if let Some(inner_92) = &_input.site_ids {
+                for inner_93 in inner_92 {
+                    query.push_kv("siteIds", &aws_smithy_http::query::fmt_string(&inner_93));
                 }
             }
-            if let Some(inner_63) = &_input.max_results {
+            if let Some(inner_94) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_63).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_94).encode(),
                 );
             }
-            if let Some(inner_64) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_64));
+            if let Some(inner_95) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_95));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -5143,12 +7202,8 @@ impl GetSitesInput {
             input: &crate::input::GetSitesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5194,16 +7249,9 @@ impl GetSitesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetSitesInput`](crate::input::GetSitesInput)
@@ -5307,7 +7355,7 @@ pub type GetTransitGatewayConnectPeerAssociationsInputOperationRetryAlias =
 impl GetTransitGatewayConnectPeerAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`GetTransitGatewayConnectPeerAssociations`](crate::operation::GetTransitGatewayConnectPeerAssociations)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5321,15 +7369,15 @@ impl GetTransitGatewayConnectPeerAssociationsInput {
             _input: &crate::input::GetTransitGatewayConnectPeerAssociationsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_65 = &_input.global_network_id;
-            let input_65 =
-                input_65
+            let input_96 = &_input.global_network_id;
+            let input_96 =
+                input_96
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     })?;
-            let global_network_id = aws_smithy_http::label::fmt_string(input_65, false);
+            let global_network_id = aws_smithy_http::label::fmt_string(input_96, false);
             if global_network_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
@@ -5349,22 +7397,22 @@ impl GetTransitGatewayConnectPeerAssociationsInput {
             mut output: &mut String,
         ) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_66) = &_input.transit_gateway_connect_peer_arns {
-                for inner_67 in inner_66 {
+            if let Some(inner_97) = &_input.transit_gateway_connect_peer_arns {
+                for inner_98 in inner_97 {
                     query.push_kv(
                         "transitGatewayConnectPeerArns",
-                        &aws_smithy_http::query::fmt_string(&inner_67),
+                        &aws_smithy_http::query::fmt_string(&inner_98),
                     );
                 }
             }
-            if let Some(inner_68) = &_input.max_results {
+            if let Some(inner_99) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_68).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_99).encode(),
                 );
             }
-            if let Some(inner_69) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_69));
+            if let Some(inner_100) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_100));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -5383,12 +7431,8 @@ impl GetTransitGatewayConnectPeerAssociationsInput {
             input: &crate::input::GetTransitGatewayConnectPeerAssociationsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5436,16 +7480,9 @@ impl GetTransitGatewayConnectPeerAssociationsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayConnectPeerAssociationsInput`](crate::input::GetTransitGatewayConnectPeerAssociationsInput)
@@ -5544,7 +7581,7 @@ pub type GetTransitGatewayRegistrationsInputOperationRetryAlias = aws_http::AwsE
 impl GetTransitGatewayRegistrationsInput {
     /// Consumes the builder and constructs an Operation<[`GetTransitGatewayRegistrations`](crate::operation::GetTransitGatewayRegistrations)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5558,15 +7595,15 @@ impl GetTransitGatewayRegistrationsInput {
             _input: &crate::input::GetTransitGatewayRegistrationsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_70 = &_input.global_network_id;
-            let input_70 =
-                input_70
+            let input_101 = &_input.global_network_id;
+            let input_101 =
+                input_101
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     })?;
-            let global_network_id = aws_smithy_http::label::fmt_string(input_70, false);
+            let global_network_id = aws_smithy_http::label::fmt_string(input_101, false);
             if global_network_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
@@ -5586,22 +7623,22 @@ impl GetTransitGatewayRegistrationsInput {
             mut output: &mut String,
         ) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_71) = &_input.transit_gateway_arns {
-                for inner_72 in inner_71 {
+            if let Some(inner_102) = &_input.transit_gateway_arns {
+                for inner_103 in inner_102 {
                     query.push_kv(
                         "transitGatewayArns",
-                        &aws_smithy_http::query::fmt_string(&inner_72),
+                        &aws_smithy_http::query::fmt_string(&inner_103),
                     );
                 }
             }
-            if let Some(inner_73) = &_input.max_results {
+            if let Some(inner_104) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_73).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_104).encode(),
                 );
             }
-            if let Some(inner_74) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_74));
+            if let Some(inner_105) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_105));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -5620,12 +7657,8 @@ impl GetTransitGatewayRegistrationsInput {
             input: &crate::input::GetTransitGatewayRegistrationsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5673,16 +7706,9 @@ impl GetTransitGatewayRegistrationsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayRegistrationsInput`](crate::input::GetTransitGatewayRegistrationsInput)
@@ -5730,7 +7756,7 @@ pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5744,15 +7770,15 @@ impl ListTagsForResourceInput {
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_75 = &_input.resource_arn;
-            let input_75 =
-                input_75
+            let input_106 = &_input.resource_arn;
+            let input_106 =
+                input_106
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_75, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_106, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -5778,12 +7804,8 @@ impl ListTagsForResourceInput {
             input: &crate::input::ListTagsForResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -5831,16 +7853,9 @@ impl ListTagsForResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
@@ -5872,14 +7887,12 @@ pub mod register_transit_gateway_input {
             self.global_network_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the transit gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
         pub fn transit_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.transit_gateway_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the transit gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
         pub fn set_transit_gateway_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5908,7 +7921,7 @@ pub type RegisterTransitGatewayInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl RegisterTransitGatewayInput {
     /// Consumes the builder and constructs an Operation<[`RegisterTransitGateway`](crate::operation::RegisterTransitGateway)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -5922,15 +7935,15 @@ impl RegisterTransitGatewayInput {
             _input: &crate::input::RegisterTransitGatewayInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_76 = &_input.global_network_id;
-            let input_76 =
-                input_76
+            let input_107 = &_input.global_network_id;
+            let input_107 =
+                input_107
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     })?;
-            let global_network_id = aws_smithy_http::label::fmt_string(input_76, false);
+            let global_network_id = aws_smithy_http::label::fmt_string(input_107, false);
             if global_network_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
@@ -5960,6 +7973,7 @@ impl RegisterTransitGatewayInput {
             input: &crate::input::RegisterTransitGatewayInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6019,9 +8033,10 @@ impl RegisterTransitGatewayInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6034,6 +8049,241 @@ impl RegisterTransitGatewayInput {
     /// Creates a new builder-style object to manufacture [`RegisterTransitGatewayInput`](crate::input::RegisterTransitGatewayInput)
     pub fn builder() -> crate::input::register_transit_gateway_input::Builder {
         crate::input::register_transit_gateway_input::Builder::default()
+    }
+}
+
+/// See [`StartRouteAnalysisInput`](crate::input::StartRouteAnalysisInput)
+pub mod start_route_analysis_input {
+    /// A builder for [`StartRouteAnalysisInput`](crate::input::StartRouteAnalysisInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_network_id: std::option::Option<std::string::String>,
+        pub(crate) source:
+            std::option::Option<crate::model::RouteAnalysisEndpointOptionsSpecification>,
+        pub(crate) destination:
+            std::option::Option<crate::model::RouteAnalysisEndpointOptionsSpecification>,
+        pub(crate) include_return_path: std::option::Option<bool>,
+        pub(crate) use_middleboxes: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_network_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_network_id = input;
+            self
+        }
+        /// <p>The source from which traffic originates.</p>
+        pub fn source(
+            mut self,
+            input: crate::model::RouteAnalysisEndpointOptionsSpecification,
+        ) -> Self {
+            self.source = Some(input);
+            self
+        }
+        /// <p>The source from which traffic originates.</p>
+        pub fn set_source(
+            mut self,
+            input: std::option::Option<crate::model::RouteAnalysisEndpointOptionsSpecification>,
+        ) -> Self {
+            self.source = input;
+            self
+        }
+        /// <p>The destination.</p>
+        pub fn destination(
+            mut self,
+            input: crate::model::RouteAnalysisEndpointOptionsSpecification,
+        ) -> Self {
+            self.destination = Some(input);
+            self
+        }
+        /// <p>The destination.</p>
+        pub fn set_destination(
+            mut self,
+            input: std::option::Option<crate::model::RouteAnalysisEndpointOptionsSpecification>,
+        ) -> Self {
+            self.destination = input;
+            self
+        }
+        /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
+        pub fn include_return_path(mut self, input: bool) -> Self {
+            self.include_return_path = Some(input);
+            self
+        }
+        /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
+        pub fn set_include_return_path(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_return_path = input;
+            self
+        }
+        /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.
+        /// The default is <code>false</code>.</p>
+        pub fn use_middleboxes(mut self, input: bool) -> Self {
+            self.use_middleboxes = Some(input);
+            self
+        }
+        /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.
+        /// The default is <code>false</code>.</p>
+        pub fn set_use_middleboxes(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_middleboxes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartRouteAnalysisInput`](crate::input::StartRouteAnalysisInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StartRouteAnalysisInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StartRouteAnalysisInput {
+                global_network_id: self.global_network_id,
+                source: self.source,
+                destination: self.destination,
+                include_return_path: self.include_return_path.unwrap_or_default(),
+                use_middleboxes: self.use_middleboxes.unwrap_or_default(),
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StartRouteAnalysisInputOperationOutputAlias = crate::operation::StartRouteAnalysis;
+#[doc(hidden)]
+pub type StartRouteAnalysisInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl StartRouteAnalysisInput {
+    /// Consumes the builder and constructs an Operation<[`StartRouteAnalysis`](crate::operation::StartRouteAnalysis)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartRouteAnalysis,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::StartRouteAnalysisInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_108 = &_input.global_network_id;
+            let input_108 =
+                input_108
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "global_network_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let global_network_id = aws_smithy_http::label::fmt_string(input_108, false);
+            if global_network_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "global_network_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/global-networks/{GlobalNetworkId}/route-analyses",
+                GlobalNetworkId = global_network_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::StartRouteAnalysisInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::StartRouteAnalysisInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_start_route_analysis(&self)
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartRouteAnalysis::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartRouteAnalysis",
+            "networkmanager",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`StartRouteAnalysisInput`](crate::input::StartRouteAnalysisInput)
+    pub fn builder() -> crate::input::start_route_analysis_input::Builder {
+        crate::input::start_route_analysis_input::Builder::default()
     }
 }
 
@@ -6097,7 +8347,7 @@ pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6111,15 +8361,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_77 = &_input.resource_arn;
-            let input_77 =
-                input_77
+            let input_109 = &_input.resource_arn;
+            let input_109 =
+                input_109
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_77, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_109, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -6145,6 +8395,7 @@ impl TagResourceInput {
             input: &crate::input::TagResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6201,9 +8452,10 @@ impl TagResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6279,7 +8531,7 @@ pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6293,15 +8545,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_78 = &_input.resource_arn;
-            let input_78 =
-                input_78
+            let input_110 = &_input.resource_arn;
+            let input_110 =
+                input_110
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_78, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_110, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -6314,9 +8566,9 @@ impl UntagResourceInput {
         }
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_79) = &_input.tag_keys {
-                for inner_80 in inner_79 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_80));
+            if let Some(inner_111) = &_input.tag_keys {
+                for inner_112 in inner_111 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_112));
                 }
             }
         }
@@ -6336,12 +8588,8 @@ impl UntagResourceInput {
             input: &crate::input::UntagResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -6389,16 +8637,9 @@ impl UntagResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
@@ -6505,7 +8746,7 @@ pub type UpdateConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl UpdateConnectionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConnection`](crate::operation::UpdateConnection)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6519,30 +8760,30 @@ impl UpdateConnectionInput {
             _input: &crate::input::UpdateConnectionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_81 = &_input.global_network_id;
-            let input_81 =
-                input_81
+            let input_113 = &_input.global_network_id;
+            let input_113 =
+                input_113
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     })?;
-            let global_network_id = aws_smithy_http::label::fmt_string(input_81, false);
+            let global_network_id = aws_smithy_http::label::fmt_string(input_113, false);
             if global_network_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_82 = &_input.connection_id;
-            let input_82 =
-                input_82
+            let input_114 = &_input.connection_id;
+            let input_114 =
+                input_114
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "connection_id",
                         details: "cannot be empty or unset",
                     })?;
-            let connection_id = aws_smithy_http::label::fmt_string(input_82, false);
+            let connection_id = aws_smithy_http::label::fmt_string(input_114, false);
             if connection_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "connection_id",
@@ -6573,6 +8814,7 @@ impl UpdateConnectionInput {
             input: &crate::input::UpdateConnectionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6630,9 +8872,10 @@ impl UpdateConnectionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6689,12 +8932,12 @@ pub mod update_device_input {
             self.device_id = input;
             self
         }
-        /// <p>The AWS location of the device.</p>
+        /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
         pub fn aws_location(mut self, input: crate::model::AwsLocation) -> Self {
             self.aws_location = Some(input);
             self
         }
-        /// <p>The AWS location of the device.</p>
+        /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
         pub fn set_aws_location(
             mut self,
             input: std::option::Option<crate::model::AwsLocation>,
@@ -6703,13 +8946,13 @@ pub mod update_device_input {
             self
         }
         /// <p>A description of the device.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
         /// <p>A description of the device.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -6725,37 +8968,37 @@ pub mod update_device_input {
             self
         }
         /// <p>The vendor of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn vendor(mut self, input: impl Into<std::string::String>) -> Self {
             self.vendor = Some(input.into());
             self
         }
         /// <p>The vendor of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn set_vendor(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vendor = input;
             self
         }
         /// <p>The model of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn model(mut self, input: impl Into<std::string::String>) -> Self {
             self.model = Some(input.into());
             self
         }
         /// <p>The model of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model = input;
             self
         }
         /// <p>The serial number of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.serial_number = Some(input.into());
             self
         }
         /// <p>The serial number of the device.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn set_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6812,7 +9055,7 @@ pub type UpdateDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateDeviceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDevice`](crate::operation::UpdateDevice)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -6826,30 +9069,30 @@ impl UpdateDeviceInput {
             _input: &crate::input::UpdateDeviceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_83 = &_input.global_network_id;
-            let input_83 =
-                input_83
+            let input_115 = &_input.global_network_id;
+            let input_115 =
+                input_115
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     })?;
-            let global_network_id = aws_smithy_http::label::fmt_string(input_83, false);
+            let global_network_id = aws_smithy_http::label::fmt_string(input_115, false);
             if global_network_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_84 = &_input.device_id;
-            let input_84 =
-                input_84
+            let input_116 = &_input.device_id;
+            let input_116 =
+                input_116
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "device_id",
                         details: "cannot be empty or unset",
                     })?;
-            let device_id = aws_smithy_http::label::fmt_string(input_84, false);
+            let device_id = aws_smithy_http::label::fmt_string(input_116, false);
             if device_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "device_id",
@@ -6880,6 +9123,7 @@ impl UpdateDeviceInput {
             input: &crate::input::UpdateDeviceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6936,9 +9180,10 @@ impl UpdateDeviceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -6978,13 +9223,13 @@ pub mod update_global_network_input {
             self
         }
         /// <p>A description of the global network.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
         /// <p>A description of the global network.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -7010,7 +9255,7 @@ pub type UpdateGlobalNetworkInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl UpdateGlobalNetworkInput {
     /// Consumes the builder and constructs an Operation<[`UpdateGlobalNetwork`](crate::operation::UpdateGlobalNetwork)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7024,15 +9269,15 @@ impl UpdateGlobalNetworkInput {
             _input: &crate::input::UpdateGlobalNetworkInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_85 = &_input.global_network_id;
-            let input_85 =
-                input_85
+            let input_117 = &_input.global_network_id;
+            let input_117 =
+                input_117
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     })?;
-            let global_network_id = aws_smithy_http::label::fmt_string(input_85, false);
+            let global_network_id = aws_smithy_http::label::fmt_string(input_117, false);
             if global_network_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
@@ -7062,6 +9307,7 @@ impl UpdateGlobalNetworkInput {
             input: &crate::input::UpdateGlobalNetworkInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7119,9 +9365,10 @@ impl UpdateGlobalNetworkInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7175,25 +9422,25 @@ pub mod update_link_input {
             self
         }
         /// <p>A description of the link.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
         /// <p>A description of the link.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The type of the link.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
         /// <p>The type of the link.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -7212,13 +9459,13 @@ pub mod update_link_input {
             self
         }
         /// <p>The provider of the link.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
             self.provider = Some(input.into());
             self
         }
         /// <p>The provider of the link.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.provider = input;
             self
@@ -7248,7 +9495,7 @@ pub type UpdateLinkInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateLinkInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLink`](crate::operation::UpdateLink)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7262,30 +9509,30 @@ impl UpdateLinkInput {
             _input: &crate::input::UpdateLinkInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_86 = &_input.global_network_id;
-            let input_86 =
-                input_86
+            let input_118 = &_input.global_network_id;
+            let input_118 =
+                input_118
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     })?;
-            let global_network_id = aws_smithy_http::label::fmt_string(input_86, false);
+            let global_network_id = aws_smithy_http::label::fmt_string(input_118, false);
             if global_network_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_87 = &_input.link_id;
-            let input_87 =
-                input_87
+            let input_119 = &_input.link_id;
+            let input_119 =
+                input_119
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "link_id",
                         details: "cannot be empty or unset",
                     })?;
-            let link_id = aws_smithy_http::label::fmt_string(input_87, false);
+            let link_id = aws_smithy_http::label::fmt_string(input_119, false);
             if link_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "link_id",
@@ -7316,6 +9563,7 @@ impl UpdateLinkInput {
             input: &crate::input::UpdateLinkInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7372,9 +9620,10 @@ impl UpdateLinkInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7387,6 +9636,233 @@ impl UpdateLinkInput {
     /// Creates a new builder-style object to manufacture [`UpdateLinkInput`](crate::input::UpdateLinkInput)
     pub fn builder() -> crate::input::update_link_input::Builder {
         crate::input::update_link_input::Builder::default()
+    }
+}
+
+/// See [`UpdateNetworkResourceMetadataInput`](crate::input::UpdateNetworkResourceMetadataInput)
+pub mod update_network_resource_metadata_input {
+    /// A builder for [`UpdateNetworkResourceMetadataInput`](crate::input::UpdateNetworkResourceMetadataInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_network_id: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) metadata: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_network_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_network_id = input;
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Adds a key-value pair to `metadata`.
+        ///
+        /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+        ///
+        /// <p>The resource metadata.</p>
+        pub fn metadata(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.metadata.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.metadata = Some(hash_map);
+            self
+        }
+        /// <p>The resource metadata.</p>
+        pub fn set_metadata(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.metadata = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateNetworkResourceMetadataInput`](crate::input::UpdateNetworkResourceMetadataInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateNetworkResourceMetadataInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateNetworkResourceMetadataInput {
+                global_network_id: self.global_network_id,
+                resource_arn: self.resource_arn,
+                metadata: self.metadata,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateNetworkResourceMetadataInputOperationOutputAlias =
+    crate::operation::UpdateNetworkResourceMetadata;
+#[doc(hidden)]
+pub type UpdateNetworkResourceMetadataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateNetworkResourceMetadataInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateNetworkResourceMetadata`](crate::operation::UpdateNetworkResourceMetadata)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateNetworkResourceMetadata,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateNetworkResourceMetadataInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_120 = &_input.global_network_id;
+            let input_120 =
+                input_120
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "global_network_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let global_network_id = aws_smithy_http::label::fmt_string(input_120, false);
+            if global_network_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "global_network_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_121 = &_input.resource_arn;
+            let input_121 =
+                input_121
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "resource_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let resource_arn = aws_smithy_http::label::fmt_string(input_121, false);
+            if resource_arn.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "resource_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/global-networks/{GlobalNetworkId}/network-resources/{ResourceArn}/metadata",
+                GlobalNetworkId = global_network_id,
+                ResourceArn = resource_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateNetworkResourceMetadataInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PATCH").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateNetworkResourceMetadataInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_network_resource_metadata(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateNetworkResourceMetadata::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateNetworkResourceMetadata",
+            "networkmanager",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateNetworkResourceMetadataInput`](crate::input::UpdateNetworkResourceMetadataInput)
+    pub fn builder() -> crate::input::update_network_resource_metadata_input::Builder {
+        crate::input::update_network_resource_metadata_input::Builder::default()
     }
 }
 
@@ -7426,13 +9902,13 @@ pub mod update_site_input {
             self
         }
         /// <p>A description of your site.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
         /// <p>A description of your site.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -7498,7 +9974,7 @@ pub type UpdateSiteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl UpdateSiteInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSite`](crate::operation::UpdateSite)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -7512,30 +9988,30 @@ impl UpdateSiteInput {
             _input: &crate::input::UpdateSiteInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_88 = &_input.global_network_id;
-            let input_88 =
-                input_88
+            let input_122 = &_input.global_network_id;
+            let input_122 =
+                input_122
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "global_network_id",
                         details: "cannot be empty or unset",
                     })?;
-            let global_network_id = aws_smithy_http::label::fmt_string(input_88, false);
+            let global_network_id = aws_smithy_http::label::fmt_string(input_122, false);
             if global_network_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "global_network_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_89 = &_input.site_id;
-            let input_89 =
-                input_89
+            let input_123 = &_input.site_id;
+            let input_123 =
+                input_123
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
                         details: "cannot be empty or unset",
                     })?;
-            let site_id = aws_smithy_http::label::fmt_string(input_89, false);
+            let site_id = aws_smithy_http::label::fmt_string(input_123, false);
             if site_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "site_id",
@@ -7566,6 +10042,7 @@ impl UpdateSiteInput {
             input: &crate::input::UpdateSiteInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7622,9 +10099,10 @@ impl UpdateSiteInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -7649,7 +10127,7 @@ pub struct UpdateSiteInput {
     /// <p>The ID of your site.</p>
     pub site_id: std::option::Option<std::string::String>,
     /// <p>A description of your site.</p>
-    /// <p>Length Constraints: Maximum length of 256 characters.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The site location:</p>
     /// <ul>
@@ -7682,21 +10160,43 @@ impl std::fmt::Debug for UpdateSiteInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateNetworkResourceMetadataInput {
+    /// <p>The ID of the global network.</p>
+    pub global_network_id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the resource.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The resource metadata.</p>
+    pub metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl std::fmt::Debug for UpdateNetworkResourceMetadataInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateNetworkResourceMetadataInput");
+        formatter.field("global_network_id", &self.global_network_id);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("metadata", &self.metadata);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLinkInput {
     /// <p>The ID of the global network.</p>
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the link.</p>
     pub link_id: std::option::Option<std::string::String>,
     /// <p>A description of the link.</p>
-    /// <p>Length Constraints: Maximum length of 256 characters.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the link.</p>
-    /// <p>Length Constraints: Maximum length of 128 characters.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The upload and download speed in Mbps. </p>
     pub bandwidth: std::option::Option<crate::model::Bandwidth>,
     /// <p>The provider of the link.</p>
-    /// <p>Length Constraints: Maximum length of 128 characters.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
     pub provider: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateLinkInput {
@@ -7719,7 +10219,7 @@ pub struct UpdateGlobalNetworkInput {
     /// <p>The ID of your global network.</p>
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>A description of the global network.</p>
-    /// <p>Length Constraints: Maximum length of 256 characters.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
     pub description: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateGlobalNetworkInput {
@@ -7739,21 +10239,21 @@ pub struct UpdateDeviceInput {
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>The ID of the device.</p>
     pub device_id: std::option::Option<std::string::String>,
-    /// <p>The AWS location of the device.</p>
+    /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
     pub aws_location: std::option::Option<crate::model::AwsLocation>,
     /// <p>A description of the device.</p>
-    /// <p>Length Constraints: Maximum length of 256 characters.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the device.</p>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The vendor of the device.</p>
-    /// <p>Length Constraints: Maximum length of 128 characters.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
     pub vendor: std::option::Option<std::string::String>,
     /// <p>The model of the device.</p>
-    /// <p>Length Constraints: Maximum length of 128 characters.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
     pub model: std::option::Option<std::string::String>,
     /// <p>The serial number of the device.</p>
-    /// <p>Length Constraints: Maximum length of 128 characters.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
     pub serial_number: std::option::Option<std::string::String>,
     /// <p>Describes a location.</p>
     pub location: std::option::Option<crate::model::Location>,
@@ -7844,11 +10344,38 @@ impl std::fmt::Debug for TagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartRouteAnalysisInput {
+    /// <p>The ID of the global network.</p>
+    pub global_network_id: std::option::Option<std::string::String>,
+    /// <p>The source from which traffic originates.</p>
+    pub source: std::option::Option<crate::model::RouteAnalysisEndpointOptionsSpecification>,
+    /// <p>The destination.</p>
+    pub destination: std::option::Option<crate::model::RouteAnalysisEndpointOptionsSpecification>,
+    /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
+    pub include_return_path: bool,
+    /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.
+    /// The default is <code>false</code>.</p>
+    pub use_middleboxes: bool,
+}
+impl std::fmt::Debug for StartRouteAnalysisInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartRouteAnalysisInput");
+        formatter.field("global_network_id", &self.global_network_id);
+        formatter.field("source", &self.source);
+        formatter.field("destination", &self.destination);
+        formatter.field("include_return_path", &self.include_return_path);
+        formatter.field("use_middleboxes", &self.use_middleboxes);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTransitGatewayInput {
     /// <p>The ID of the global network.</p>
     pub global_network_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the transit gateway. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
     pub transit_gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RegisterTransitGatewayInput {
@@ -7954,6 +10481,504 @@ impl std::fmt::Debug for GetSitesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetRouteAnalysisInput {
+    /// <p>The ID of the global network.</p>
+    pub global_network_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the route analysis.</p>
+    pub route_analysis_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetRouteAnalysisInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetRouteAnalysisInput");
+        formatter.field("global_network_id", &self.global_network_id);
+        formatter.field("route_analysis_id", &self.route_analysis_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetNetworkTelemetryInput {
+    /// <p>The ID of the global network.</p>
+    pub global_network_id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the gateway.</p>
+    pub registered_gateway_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services Region.</p>
+    pub aws_region: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services account ID.</p>
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>The resource type.</p>
+    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>dxcon</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-vif</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Network Manager:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>connection</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>device</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>link</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>site</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Amazon VPC:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>customer-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-attachment</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-connect-peer</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-route-table</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>vpn-connection</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub resource_type: std::option::Option<std::string::String>,
+    /// <p>The ARN of the resource.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetNetworkTelemetryInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetNetworkTelemetryInput");
+        formatter.field("global_network_id", &self.global_network_id);
+        formatter.field("registered_gateway_arn", &self.registered_gateway_arn);
+        formatter.field("aws_region", &self.aws_region);
+        formatter.field("account_id", &self.account_id);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetNetworkRoutesInput {
+    /// <p>The ID of the global network.</p>
+    pub global_network_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the route table.</p>
+    pub route_table_identifier: std::option::Option<crate::model::RouteTableIdentifier>,
+    /// <p>An exact CIDR block.</p>
+    pub exact_cidr_matches: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The most specific route that matches the traffic (longest prefix match).</p>
+    pub longest_prefix_matches: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The routes with a subnet that match the specified CIDR filter.</p>
+    pub subnet_of_matches: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.</p>
+    pub supernet_of_matches: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The IDs of the prefix lists.</p>
+    pub prefix_list_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The route states.</p>
+    pub states: std::option::Option<std::vec::Vec<crate::model::RouteState>>,
+    /// <p>The route types.</p>
+    pub types: std::option::Option<std::vec::Vec<crate::model::RouteType>>,
+    /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
+    pub destination_filters: std::option::Option<
+        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    >,
+}
+impl std::fmt::Debug for GetNetworkRoutesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetNetworkRoutesInput");
+        formatter.field("global_network_id", &self.global_network_id);
+        formatter.field("route_table_identifier", &self.route_table_identifier);
+        formatter.field("exact_cidr_matches", &self.exact_cidr_matches);
+        formatter.field("longest_prefix_matches", &self.longest_prefix_matches);
+        formatter.field("subnet_of_matches", &self.subnet_of_matches);
+        formatter.field("supernet_of_matches", &self.supernet_of_matches);
+        formatter.field("prefix_list_ids", &self.prefix_list_ids);
+        formatter.field("states", &self.states);
+        formatter.field("types", &self.types);
+        formatter.field("destination_filters", &self.destination_filters);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetNetworkResourcesInput {
+    /// <p>The ID of the global network.</p>
+    pub global_network_id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the gateway.</p>
+    pub registered_gateway_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services Region.</p>
+    pub aws_region: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services account ID.</p>
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>The resource type.</p>
+    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>dxcon</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-gateway</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-vif</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Network Manager:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>connection</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>device</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>link</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>site</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Amazon VPC:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>customer-gateway</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-attachment</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-connect-peer</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-route-table</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>vpn-connection</code> - The definition model is
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
+    /// </li>
+    /// </ul>
+    pub resource_type: std::option::Option<std::string::String>,
+    /// <p>The ARN of the resource.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetNetworkResourcesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetNetworkResourcesInput");
+        formatter.field("global_network_id", &self.global_network_id);
+        formatter.field("registered_gateway_arn", &self.registered_gateway_arn);
+        formatter.field("aws_region", &self.aws_region);
+        formatter.field("account_id", &self.account_id);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetNetworkResourceRelationshipsInput {
+    /// <p>The ID of the global network.</p>
+    pub global_network_id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the registered gateway.</p>
+    pub registered_gateway_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services Region.</p>
+    pub aws_region: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services account ID.</p>
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>The resource type.</p>
+    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>dxcon</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-vif</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Network Manager:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>connection</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>device</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>link</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>site</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Amazon VPC:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>customer-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-attachment</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-connect-peer</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-route-table</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>vpn-connection</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub resource_type: std::option::Option<std::string::String>,
+    /// <p>The ARN of the gateway.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetNetworkResourceRelationshipsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetNetworkResourceRelationshipsInput");
+        formatter.field("global_network_id", &self.global_network_id);
+        formatter.field("registered_gateway_arn", &self.registered_gateway_arn);
+        formatter.field("aws_region", &self.aws_region);
+        formatter.field("account_id", &self.account_id);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetNetworkResourceCountsInput {
+    /// <p>The ID of the global network.</p>
+    pub global_network_id: std::option::Option<std::string::String>,
+    /// <p>The resource type.</p>
+    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>dxcon</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-vif</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Network Manager:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>connection</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>device</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>link</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>site</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Amazon VPC:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>customer-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-attachment</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-connect-peer</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-route-table</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>vpn-connection</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub resource_type: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetNetworkResourceCountsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetNetworkResourceCountsInput");
+        formatter.field("global_network_id", &self.global_network_id);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLinksInput {
     /// <p>The ID of the global network.</p>
     pub global_network_id: std::option::Option<std::string::String>,
@@ -8044,8 +11069,7 @@ impl std::fmt::Debug for GetDevicesInput {
 pub struct GetCustomerGatewayAssociationsInput {
     /// <p>The ID of the global network.</p>
     pub global_network_id: std::option::Option<std::string::String>,
-    /// <p>One or more customer gateway Amazon Resource Names (ARNs). For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>. The maximum is 10.</p>
+    /// <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.</p>
     pub customer_gateway_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -8138,8 +11162,7 @@ impl std::fmt::Debug for DisassociateLinkInput {
 pub struct DisassociateCustomerGatewayInput {
     /// <p>The ID of the global network.</p>
     pub global_network_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the customer gateway. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
     pub customer_gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DisassociateCustomerGatewayInput {
@@ -8284,7 +11307,7 @@ pub struct CreateSiteInput {
     /// <p>The ID of the global network.</p>
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>A description of your site.</p>
-    /// <p>Length Constraints: Maximum length of 256 characters.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.</p>
     /// <ul>
@@ -8323,17 +11346,15 @@ pub struct CreateLinkInput {
     /// <p>The ID of the global network.</p>
     pub global_network_id: std::option::Option<std::string::String>,
     /// <p>A description of the link.</p>
-    /// <p>Length Constraints: Maximum length of 256 characters.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the link.</p>
-    /// <p>Constraints: Cannot include the following characters: | \ ^</p>
-    /// <p>Length Constraints: Maximum length of 128 characters.</p>
+    /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
     pub r#type: std::option::Option<std::string::String>,
     /// <p> The upload speed and download speed in Mbps. </p>
     pub bandwidth: std::option::Option<crate::model::Bandwidth>,
     /// <p>The provider of the link.</p>
-    /// <p>Constraints: Cannot include the following characters: | \ ^</p>
-    /// <p>Length Constraints: Maximum length of 128 characters.</p>
+    /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
     pub provider: std::option::Option<std::string::String>,
     /// <p>The ID of the site.</p>
     pub site_id: std::option::Option<std::string::String>,
@@ -8359,7 +11380,7 @@ impl std::fmt::Debug for CreateLinkInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGlobalNetworkInput {
     /// <p>A description of the global network.</p>
-    /// <p>Length Constraints: Maximum length of 256 characters.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags to apply to the resource during creation.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8379,21 +11400,21 @@ impl std::fmt::Debug for CreateGlobalNetworkInput {
 pub struct CreateDeviceInput {
     /// <p>The ID of the global network.</p>
     pub global_network_id: std::option::Option<std::string::String>,
-    /// <p>The AWS location of the device.</p>
+    /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
     pub aws_location: std::option::Option<crate::model::AwsLocation>,
     /// <p>A description of the device.</p>
-    /// <p>Length Constraints: Maximum length of 256 characters.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the device.</p>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The vendor of the device.</p>
-    /// <p>Length Constraints: Maximum length of 128 characters.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
     pub vendor: std::option::Option<std::string::String>,
     /// <p>The model of the device.</p>
-    /// <p>Length Constraints: Maximum length of 128 characters.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
     pub model: std::option::Option<std::string::String>,
     /// <p>The serial number of the device.</p>
-    /// <p>Length Constraints: Maximum length of 128 characters.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
     pub serial_number: std::option::Option<std::string::String>,
     /// <p>The location of the device.</p>
     pub location: std::option::Option<crate::model::Location>,
@@ -8505,8 +11526,7 @@ impl std::fmt::Debug for AssociateLinkInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateCustomerGatewayInput {
-    /// <p>The Amazon Resource Name (ARN) of the customer gateway. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources Defined by Amazon EC2</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
     pub customer_gateway_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the global network.</p>
     pub global_network_id: std::option::Option<std::string::String>,

@@ -28,7 +28,7 @@ pub enum CreateAccessPointErrorKind {
     IncorrectFileSystemLifeCycleState(crate::error::IncorrectFileSystemLifeCycleState),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAccessPointError {
@@ -96,39 +96,39 @@ impl CreateAccessPointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAccessPointErrorKind::AccessPointAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateAccessPointErrorKind::AccessPointAlreadyExists`.
     pub fn is_access_point_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccessPointErrorKind::AccessPointAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccessPointErrorKind::AccessPointLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateAccessPointErrorKind::AccessPointLimitExceeded`.
     pub fn is_access_point_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccessPointErrorKind::AccessPointLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccessPointErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `CreateAccessPointErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, CreateAccessPointErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `CreateAccessPointErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `CreateAccessPointErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccessPointErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccessPointErrorKind::IncorrectFileSystemLifeCycleState`.
+    /// Returns `true` if the error kind is `CreateAccessPointErrorKind::IncorrectFileSystemLifeCycleState`.
     pub fn is_incorrect_file_system_life_cycle_state(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccessPointErrorKind::IncorrectFileSystemLifeCycleState(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccessPointErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateAccessPointErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -185,7 +185,7 @@ pub enum CreateFileSystemErrorKind {
     ThroughputLimitExceeded(crate::error::ThroughputLimitExceeded),
     /// <p>Returned if the requested Amazon EFS functionality is not available in the specified Availability Zone.</p>
     UnsupportedAvailabilityZone(crate::error::UnsupportedAvailabilityZone),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFileSystemError {
@@ -254,46 +254,46 @@ impl CreateFileSystemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFileSystemErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `CreateFileSystemErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, CreateFileSystemErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `CreateFileSystemErrorKind::FileSystemAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateFileSystemErrorKind::FileSystemAlreadyExists`.
     pub fn is_file_system_already_exists(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemErrorKind::FileSystemAlreadyExists(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemErrorKind::FileSystemLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateFileSystemErrorKind::FileSystemLimitExceeded`.
     pub fn is_file_system_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemErrorKind::FileSystemLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemErrorKind::InsufficientThroughputCapacity`.
+    /// Returns `true` if the error kind is `CreateFileSystemErrorKind::InsufficientThroughputCapacity`.
     pub fn is_insufficient_throughput_capacity(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemErrorKind::InsufficientThroughputCapacity(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateFileSystemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemErrorKind::ThroughputLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateFileSystemErrorKind::ThroughputLimitExceeded`.
     pub fn is_throughput_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateFileSystemErrorKind::ThroughputLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateFileSystemErrorKind::UnsupportedAvailabilityZone`.
+    /// Returns `true` if the error kind is `CreateFileSystemErrorKind::UnsupportedAvailabilityZone`.
     pub fn is_unsupported_availability_zone(&self) -> bool {
         matches!(
             &self.kind,
@@ -368,7 +368,7 @@ pub enum CreateMountTargetErrorKind {
     SubnetNotFound(crate::error::SubnetNotFound),
     /// <p>Returned if the requested Amazon EFS functionality is not available in the specified Availability Zone.</p>
     UnsupportedAvailabilityZone(crate::error::UnsupportedAvailabilityZone),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMountTargetError {
@@ -443,82 +443,82 @@ impl CreateMountTargetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateMountTargetErrorKind::AvailabilityZonesMismatch`.
+    /// Returns `true` if the error kind is `CreateMountTargetErrorKind::AvailabilityZonesMismatch`.
     pub fn is_availability_zones_mismatch(&self) -> bool {
         matches!(
             &self.kind,
             CreateMountTargetErrorKind::AvailabilityZonesMismatch(_)
         )
     }
-    /// Returns true if the error kind is `CreateMountTargetErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `CreateMountTargetErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, CreateMountTargetErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `CreateMountTargetErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `CreateMountTargetErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             CreateMountTargetErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `CreateMountTargetErrorKind::IncorrectFileSystemLifeCycleState`.
+    /// Returns `true` if the error kind is `CreateMountTargetErrorKind::IncorrectFileSystemLifeCycleState`.
     pub fn is_incorrect_file_system_life_cycle_state(&self) -> bool {
         matches!(
             &self.kind,
             CreateMountTargetErrorKind::IncorrectFileSystemLifeCycleState(_)
         )
     }
-    /// Returns true if the error kind is `CreateMountTargetErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateMountTargetErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             CreateMountTargetErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `CreateMountTargetErrorKind::IpAddressInUse`.
+    /// Returns `true` if the error kind is `CreateMountTargetErrorKind::IpAddressInUse`.
     pub fn is_ip_address_in_use(&self) -> bool {
         matches!(&self.kind, CreateMountTargetErrorKind::IpAddressInUse(_))
     }
-    /// Returns true if the error kind is `CreateMountTargetErrorKind::MountTargetConflict`.
+    /// Returns `true` if the error kind is `CreateMountTargetErrorKind::MountTargetConflict`.
     pub fn is_mount_target_conflict(&self) -> bool {
         matches!(
             &self.kind,
             CreateMountTargetErrorKind::MountTargetConflict(_)
         )
     }
-    /// Returns true if the error kind is `CreateMountTargetErrorKind::NetworkInterfaceLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateMountTargetErrorKind::NetworkInterfaceLimitExceeded`.
     pub fn is_network_interface_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateMountTargetErrorKind::NetworkInterfaceLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateMountTargetErrorKind::NoFreeAddressesInSubnet`.
+    /// Returns `true` if the error kind is `CreateMountTargetErrorKind::NoFreeAddressesInSubnet`.
     pub fn is_no_free_addresses_in_subnet(&self) -> bool {
         matches!(
             &self.kind,
             CreateMountTargetErrorKind::NoFreeAddressesInSubnet(_)
         )
     }
-    /// Returns true if the error kind is `CreateMountTargetErrorKind::SecurityGroupLimitExceeded`.
+    /// Returns `true` if the error kind is `CreateMountTargetErrorKind::SecurityGroupLimitExceeded`.
     pub fn is_security_group_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             CreateMountTargetErrorKind::SecurityGroupLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `CreateMountTargetErrorKind::SecurityGroupNotFound`.
+    /// Returns `true` if the error kind is `CreateMountTargetErrorKind::SecurityGroupNotFound`.
     pub fn is_security_group_not_found(&self) -> bool {
         matches!(
             &self.kind,
             CreateMountTargetErrorKind::SecurityGroupNotFound(_)
         )
     }
-    /// Returns true if the error kind is `CreateMountTargetErrorKind::SubnetNotFound`.
+    /// Returns `true` if the error kind is `CreateMountTargetErrorKind::SubnetNotFound`.
     pub fn is_subnet_not_found(&self) -> bool {
         matches!(&self.kind, CreateMountTargetErrorKind::SubnetNotFound(_))
     }
-    /// Returns true if the error kind is `CreateMountTargetErrorKind::UnsupportedAvailabilityZone`.
+    /// Returns `true` if the error kind is `CreateMountTargetErrorKind::UnsupportedAvailabilityZone`.
     pub fn is_unsupported_availability_zone(&self) -> bool {
         matches!(
             &self.kind,
@@ -568,7 +568,7 @@ pub enum CreateTagsErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTagsError {
@@ -633,15 +633,15 @@ impl CreateTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, CreateTagsErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(&self.kind, CreateTagsErrorKind::FileSystemNotFound(_))
     }
-    /// Returns true if the error kind is `CreateTagsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `CreateTagsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CreateTagsErrorKind::InternalServerError(_))
     }
@@ -678,7 +678,7 @@ pub enum DeleteAccessPointErrorKind {
     BadRequest(crate::error::BadRequest),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccessPointError {
@@ -743,18 +743,18 @@ impl DeleteAccessPointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAccessPointErrorKind::AccessPointNotFound`.
+    /// Returns `true` if the error kind is `DeleteAccessPointErrorKind::AccessPointNotFound`.
     pub fn is_access_point_not_found(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccessPointErrorKind::AccessPointNotFound(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccessPointErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DeleteAccessPointErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, DeleteAccessPointErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `DeleteAccessPointErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteAccessPointErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -796,7 +796,7 @@ pub enum DeleteFileSystemErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFileSystemError {
@@ -862,19 +862,19 @@ impl DeleteFileSystemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFileSystemErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DeleteFileSystemErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, DeleteFileSystemErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `DeleteFileSystemErrorKind::FileSystemInUse`.
+    /// Returns `true` if the error kind is `DeleteFileSystemErrorKind::FileSystemInUse`.
     pub fn is_file_system_in_use(&self) -> bool {
         matches!(&self.kind, DeleteFileSystemErrorKind::FileSystemInUse(_))
     }
-    /// Returns true if the error kind is `DeleteFileSystemErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `DeleteFileSystemErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(&self.kind, DeleteFileSystemErrorKind::FileSystemNotFound(_))
     }
-    /// Returns true if the error kind is `DeleteFileSystemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteFileSystemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -914,7 +914,7 @@ pub enum DeleteFileSystemPolicyErrorKind {
     IncorrectFileSystemLifeCycleState(crate::error::IncorrectFileSystemLifeCycleState),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFileSystemPolicyError {
@@ -981,21 +981,21 @@ impl DeleteFileSystemPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFileSystemPolicyErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `DeleteFileSystemPolicyErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileSystemPolicyErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileSystemPolicyErrorKind::IncorrectFileSystemLifeCycleState`.
+    /// Returns `true` if the error kind is `DeleteFileSystemPolicyErrorKind::IncorrectFileSystemLifeCycleState`.
     pub fn is_incorrect_file_system_life_cycle_state(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFileSystemPolicyErrorKind::IncorrectFileSystemLifeCycleState(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFileSystemPolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteFileSystemPolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -1040,7 +1040,7 @@ pub enum DeleteMountTargetErrorKind {
     /// <p>Returned if there is no mount target with the specified ID found in the
     /// caller's Amazon Web Services account.</p>
     MountTargetNotFound(crate::error::MountTargetNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMountTargetError {
@@ -1106,22 +1106,22 @@ impl DeleteMountTargetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMountTargetErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DeleteMountTargetErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, DeleteMountTargetErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `DeleteMountTargetErrorKind::DependencyTimeout`.
+    /// Returns `true` if the error kind is `DeleteMountTargetErrorKind::DependencyTimeout`.
     pub fn is_dependency_timeout(&self) -> bool {
         matches!(&self.kind, DeleteMountTargetErrorKind::DependencyTimeout(_))
     }
-    /// Returns true if the error kind is `DeleteMountTargetErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteMountTargetErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMountTargetErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMountTargetErrorKind::MountTargetNotFound`.
+    /// Returns `true` if the error kind is `DeleteMountTargetErrorKind::MountTargetNotFound`.
     pub fn is_mount_target_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -1162,7 +1162,7 @@ pub enum DeleteTagsErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTagsError {
@@ -1227,15 +1227,15 @@ impl DeleteTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, DeleteTagsErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(&self.kind, DeleteTagsErrorKind::FileSystemNotFound(_))
     }
-    /// Returns true if the error kind is `DeleteTagsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DeleteTagsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteTagsErrorKind::InternalServerError(_))
     }
@@ -1275,7 +1275,7 @@ pub enum DescribeAccessPointsErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccessPointsError {
@@ -1341,25 +1341,25 @@ impl DescribeAccessPointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAccessPointsErrorKind::AccessPointNotFound`.
+    /// Returns `true` if the error kind is `DescribeAccessPointsErrorKind::AccessPointNotFound`.
     pub fn is_access_point_not_found(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccessPointsErrorKind::AccessPointNotFound(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccessPointsErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DescribeAccessPointsErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, DescribeAccessPointsErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `DescribeAccessPointsErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `DescribeAccessPointsErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccessPointsErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccessPointsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeAccessPointsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -1394,7 +1394,7 @@ pub struct DescribeAccountPreferencesError {
 pub enum DescribeAccountPreferencesErrorKind {
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccountPreferencesError {
@@ -1457,7 +1457,7 @@ impl DescribeAccountPreferencesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAccountPreferencesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeAccountPreferencesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -1499,7 +1499,7 @@ pub enum DescribeBackupPolicyErrorKind {
     PolicyNotFound(crate::error::PolicyNotFound),
     /// <p>Returned if the Backup service is not available in the Amazon Web Services Region in which the request was made.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBackupPolicyError {
@@ -1566,29 +1566,29 @@ impl DescribeBackupPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeBackupPolicyErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DescribeBackupPolicyErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, DescribeBackupPolicyErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `DescribeBackupPolicyErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `DescribeBackupPolicyErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBackupPolicyErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBackupPolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeBackupPolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeBackupPolicyErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeBackupPolicyErrorKind::PolicyNotFound`.
+    /// Returns `true` if the error kind is `DescribeBackupPolicyErrorKind::PolicyNotFound`.
     pub fn is_policy_not_found(&self) -> bool {
         matches!(&self.kind, DescribeBackupPolicyErrorKind::PolicyNotFound(_))
     }
-    /// Returns true if the error kind is `DescribeBackupPolicyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeBackupPolicyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1629,7 +1629,7 @@ pub enum DescribeFileSystemPolicyErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Returned if the default file system policy is in effect for the EFS file system specified.</p>
     PolicyNotFound(crate::error::PolicyNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFileSystemPolicyError {
@@ -1694,21 +1694,21 @@ impl DescribeFileSystemPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFileSystemPolicyErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `DescribeFileSystemPolicyErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFileSystemPolicyErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFileSystemPolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeFileSystemPolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFileSystemPolicyErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFileSystemPolicyErrorKind::PolicyNotFound`.
+    /// Returns `true` if the error kind is `DescribeFileSystemPolicyErrorKind::PolicyNotFound`.
     pub fn is_policy_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -1748,7 +1748,7 @@ pub enum DescribeFileSystemsErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeFileSystemsError {
@@ -1813,18 +1813,18 @@ impl DescribeFileSystemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeFileSystemsErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DescribeFileSystemsErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, DescribeFileSystemsErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `DescribeFileSystemsErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `DescribeFileSystemsErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             DescribeFileSystemsErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `DescribeFileSystemsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeFileSystemsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -1864,7 +1864,7 @@ pub enum DescribeLifecycleConfigurationErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLifecycleConfigurationError {
@@ -1932,21 +1932,21 @@ impl DescribeLifecycleConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLifecycleConfigurationErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DescribeLifecycleConfigurationErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLifecycleConfigurationErrorKind::BadRequest(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLifecycleConfigurationErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `DescribeLifecycleConfigurationErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLifecycleConfigurationErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLifecycleConfigurationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeLifecycleConfigurationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -1992,7 +1992,7 @@ pub enum DescribeMountTargetsErrorKind {
     /// <p>Returned if there is no mount target with the specified ID found in the
     /// caller's Amazon Web Services account.</p>
     MountTargetNotFound(crate::error::MountTargetNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMountTargetsError {
@@ -2059,32 +2059,32 @@ impl DescribeMountTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMountTargetsErrorKind::AccessPointNotFound`.
+    /// Returns `true` if the error kind is `DescribeMountTargetsErrorKind::AccessPointNotFound`.
     pub fn is_access_point_not_found(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMountTargetsErrorKind::AccessPointNotFound(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMountTargetsErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DescribeMountTargetsErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, DescribeMountTargetsErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `DescribeMountTargetsErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `DescribeMountTargetsErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMountTargetsErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMountTargetsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeMountTargetsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMountTargetsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMountTargetsErrorKind::MountTargetNotFound`.
+    /// Returns `true` if the error kind is `DescribeMountTargetsErrorKind::MountTargetNotFound`.
     pub fn is_mount_target_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -2129,7 +2129,7 @@ pub enum DescribeMountTargetSecurityGroupsErrorKind {
     /// <p>Returned if there is no mount target with the specified ID found in the
     /// caller's Amazon Web Services account.</p>
     MountTargetNotFound(crate::error::MountTargetNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMountTargetSecurityGroupsError {
@@ -2204,28 +2204,28 @@ impl DescribeMountTargetSecurityGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMountTargetSecurityGroupsErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DescribeMountTargetSecurityGroupsErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMountTargetSecurityGroupsErrorKind::BadRequest(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMountTargetSecurityGroupsErrorKind::IncorrectMountTargetState`.
+    /// Returns `true` if the error kind is `DescribeMountTargetSecurityGroupsErrorKind::IncorrectMountTargetState`.
     pub fn is_incorrect_mount_target_state(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMountTargetSecurityGroupsErrorKind::IncorrectMountTargetState(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMountTargetSecurityGroupsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeMountTargetSecurityGroupsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMountTargetSecurityGroupsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMountTargetSecurityGroupsErrorKind::MountTargetNotFound`.
+    /// Returns `true` if the error kind is `DescribeMountTargetSecurityGroupsErrorKind::MountTargetNotFound`.
     pub fn is_mount_target_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -2268,7 +2268,7 @@ pub enum DescribeTagsErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTagsError {
@@ -2333,15 +2333,15 @@ impl DescribeTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, DescribeTagsErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(&self.kind, DescribeTagsErrorKind::FileSystemNotFound(_))
     }
-    /// Returns true if the error kind is `DescribeTagsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `DescribeTagsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeTagsErrorKind::InternalServerError(_))
     }
@@ -2381,7 +2381,7 @@ pub enum ListTagsForResourceErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2447,25 +2447,25 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessPointNotFound`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessPointNotFound`.
     pub fn is_access_point_not_found(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AccessPointNotFound(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, ListTagsForResourceErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -2515,7 +2515,7 @@ pub enum ModifyMountTargetSecurityGroupsErrorKind {
     /// <p>Returned if one of the specified security groups doesn't exist in the subnet's
     /// VPC.</p>
     SecurityGroupNotFound(crate::error::SecurityGroupNotFound),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyMountTargetSecurityGroupsError {
@@ -2592,42 +2592,42 @@ impl ModifyMountTargetSecurityGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ModifyMountTargetSecurityGroupsErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `ModifyMountTargetSecurityGroupsErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(
             &self.kind,
             ModifyMountTargetSecurityGroupsErrorKind::BadRequest(_)
         )
     }
-    /// Returns true if the error kind is `ModifyMountTargetSecurityGroupsErrorKind::IncorrectMountTargetState`.
+    /// Returns `true` if the error kind is `ModifyMountTargetSecurityGroupsErrorKind::IncorrectMountTargetState`.
     pub fn is_incorrect_mount_target_state(&self) -> bool {
         matches!(
             &self.kind,
             ModifyMountTargetSecurityGroupsErrorKind::IncorrectMountTargetState(_)
         )
     }
-    /// Returns true if the error kind is `ModifyMountTargetSecurityGroupsErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `ModifyMountTargetSecurityGroupsErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             ModifyMountTargetSecurityGroupsErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `ModifyMountTargetSecurityGroupsErrorKind::MountTargetNotFound`.
+    /// Returns `true` if the error kind is `ModifyMountTargetSecurityGroupsErrorKind::MountTargetNotFound`.
     pub fn is_mount_target_not_found(&self) -> bool {
         matches!(
             &self.kind,
             ModifyMountTargetSecurityGroupsErrorKind::MountTargetNotFound(_)
         )
     }
-    /// Returns true if the error kind is `ModifyMountTargetSecurityGroupsErrorKind::SecurityGroupLimitExceeded`.
+    /// Returns `true` if the error kind is `ModifyMountTargetSecurityGroupsErrorKind::SecurityGroupLimitExceeded`.
     pub fn is_security_group_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             ModifyMountTargetSecurityGroupsErrorKind::SecurityGroupLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `ModifyMountTargetSecurityGroupsErrorKind::SecurityGroupNotFound`.
+    /// Returns `true` if the error kind is `ModifyMountTargetSecurityGroupsErrorKind::SecurityGroupNotFound`.
     pub fn is_security_group_not_found(&self) -> bool {
         matches!(
             &self.kind,
@@ -2671,7 +2671,7 @@ pub enum PutAccountPreferencesErrorKind {
     BadRequest(crate::error::BadRequest),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAccountPreferencesError {
@@ -2735,11 +2735,11 @@ impl PutAccountPreferencesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutAccountPreferencesErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `PutAccountPreferencesErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, PutAccountPreferencesErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `PutAccountPreferencesErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `PutAccountPreferencesErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -2782,7 +2782,7 @@ pub enum PutBackupPolicyErrorKind {
     InternalServerError(crate::error::InternalServerError),
     /// <p>Returned if the Backup service is not available in the Amazon Web Services Region in which the request was made.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBackupPolicyError {
@@ -2849,26 +2849,26 @@ impl PutBackupPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutBackupPolicyErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `PutBackupPolicyErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, PutBackupPolicyErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `PutBackupPolicyErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `PutBackupPolicyErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(&self.kind, PutBackupPolicyErrorKind::FileSystemNotFound(_))
     }
-    /// Returns true if the error kind is `PutBackupPolicyErrorKind::IncorrectFileSystemLifeCycleState`.
+    /// Returns `true` if the error kind is `PutBackupPolicyErrorKind::IncorrectFileSystemLifeCycleState`.
     pub fn is_incorrect_file_system_life_cycle_state(&self) -> bool {
         matches!(
             &self.kind,
             PutBackupPolicyErrorKind::IncorrectFileSystemLifeCycleState(_)
         )
     }
-    /// Returns true if the error kind is `PutBackupPolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `PutBackupPolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, PutBackupPolicyErrorKind::InternalServerError(_))
     }
-    /// Returns true if the error kind is `PutBackupPolicyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutBackupPolicyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, PutBackupPolicyErrorKind::ValidationException(_))
     }
@@ -2909,7 +2909,7 @@ pub enum PutFileSystemPolicyErrorKind {
     /// <p>Returned if the <code>FileSystemPolicy</code> is is malformed or contains an error such as an invalid
     /// parameter value or a missing required parameter. Returned in the case of a policy lockout safety check error.</p>
     InvalidPolicyException(crate::error::InvalidPolicyException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutFileSystemPolicyError {
@@ -2977,28 +2977,28 @@ impl PutFileSystemPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutFileSystemPolicyErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `PutFileSystemPolicyErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             PutFileSystemPolicyErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `PutFileSystemPolicyErrorKind::IncorrectFileSystemLifeCycleState`.
+    /// Returns `true` if the error kind is `PutFileSystemPolicyErrorKind::IncorrectFileSystemLifeCycleState`.
     pub fn is_incorrect_file_system_life_cycle_state(&self) -> bool {
         matches!(
             &self.kind,
             PutFileSystemPolicyErrorKind::IncorrectFileSystemLifeCycleState(_)
         )
     }
-    /// Returns true if the error kind is `PutFileSystemPolicyErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `PutFileSystemPolicyErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             PutFileSystemPolicyErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `PutFileSystemPolicyErrorKind::InvalidPolicyException`.
+    /// Returns `true` if the error kind is `PutFileSystemPolicyErrorKind::InvalidPolicyException`.
     pub fn is_invalid_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3041,7 +3041,7 @@ pub enum PutLifecycleConfigurationErrorKind {
     IncorrectFileSystemLifeCycleState(crate::error::IncorrectFileSystemLifeCycleState),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutLifecycleConfigurationError {
@@ -3109,28 +3109,28 @@ impl PutLifecycleConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutLifecycleConfigurationErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `PutLifecycleConfigurationErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(
             &self.kind,
             PutLifecycleConfigurationErrorKind::BadRequest(_)
         )
     }
-    /// Returns true if the error kind is `PutLifecycleConfigurationErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `PutLifecycleConfigurationErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
             &self.kind,
             PutLifecycleConfigurationErrorKind::FileSystemNotFound(_)
         )
     }
-    /// Returns true if the error kind is `PutLifecycleConfigurationErrorKind::IncorrectFileSystemLifeCycleState`.
+    /// Returns `true` if the error kind is `PutLifecycleConfigurationErrorKind::IncorrectFileSystemLifeCycleState`.
     pub fn is_incorrect_file_system_life_cycle_state(&self) -> bool {
         matches!(
             &self.kind,
             PutLifecycleConfigurationErrorKind::IncorrectFileSystemLifeCycleState(_)
         )
     }
-    /// Returns true if the error kind is `PutLifecycleConfigurationErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `PutLifecycleConfigurationErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
@@ -3176,7 +3176,7 @@ pub enum TagResourceErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3242,19 +3242,19 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessPointNotFound`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessPointNotFound`.
     pub fn is_access_point_not_found(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessPointNotFound(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::FileSystemNotFound(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerError(_))
     }
@@ -3295,7 +3295,7 @@ pub enum UntagResourceErrorKind {
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>Returned if an error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3361,19 +3361,19 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessPointNotFound`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessPointNotFound`.
     pub fn is_access_point_not_found(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessPointNotFound(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::FileSystemNotFound(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InternalServerError(_))
     }
@@ -3425,7 +3425,7 @@ pub enum UpdateFileSystemErrorKind {
     /// <p>Returned if you don’t wait at least 24 hours before changing the throughput mode, or
     /// decreasing the Provisioned Throughput value.</p>
     TooManyRequests(crate::error::TooManyRequests),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFileSystemError {
@@ -3494,43 +3494,43 @@ impl UpdateFileSystemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFileSystemErrorKind::BadRequest`.
+    /// Returns `true` if the error kind is `UpdateFileSystemErrorKind::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(&self.kind, UpdateFileSystemErrorKind::BadRequest(_))
     }
-    /// Returns true if the error kind is `UpdateFileSystemErrorKind::FileSystemNotFound`.
+    /// Returns `true` if the error kind is `UpdateFileSystemErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(&self.kind, UpdateFileSystemErrorKind::FileSystemNotFound(_))
     }
-    /// Returns true if the error kind is `UpdateFileSystemErrorKind::IncorrectFileSystemLifeCycleState`.
+    /// Returns `true` if the error kind is `UpdateFileSystemErrorKind::IncorrectFileSystemLifeCycleState`.
     pub fn is_incorrect_file_system_life_cycle_state(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFileSystemErrorKind::IncorrectFileSystemLifeCycleState(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFileSystemErrorKind::InsufficientThroughputCapacity`.
+    /// Returns `true` if the error kind is `UpdateFileSystemErrorKind::InsufficientThroughputCapacity`.
     pub fn is_insufficient_throughput_capacity(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFileSystemErrorKind::InsufficientThroughputCapacity(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFileSystemErrorKind::InternalServerError`.
+    /// Returns `true` if the error kind is `UpdateFileSystemErrorKind::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFileSystemErrorKind::InternalServerError(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFileSystemErrorKind::ThroughputLimitExceeded`.
+    /// Returns `true` if the error kind is `UpdateFileSystemErrorKind::ThroughputLimitExceeded`.
     pub fn is_throughput_limit_exceeded(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFileSystemErrorKind::ThroughputLimitExceeded(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFileSystemErrorKind::TooManyRequests`.
+    /// Returns `true` if the error kind is `UpdateFileSystemErrorKind::TooManyRequests`.
     pub fn is_too_many_requests(&self) -> bool {
         matches!(&self.kind, UpdateFileSystemErrorKind::TooManyRequests(_))
     }

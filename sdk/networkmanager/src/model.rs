@@ -303,10 +303,10 @@ impl Site {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The tag key.</p>
-    /// <p>Length Constraints: Maximum length of 128 characters.</p>
+    /// <p>Constraints: Maximum length of 128 characters.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>The tag value.</p>
-    /// <p>Length Constraints: Maximum length of 256 characters.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Tag {
@@ -328,25 +328,25 @@ pub mod tag {
     }
     impl Builder {
         /// <p>The tag key.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
         /// <p>The tag key.</p>
-        /// <p>Length Constraints: Maximum length of 128 characters.</p>
+        /// <p>Constraints: Maximum length of 128 characters.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
         /// <p>The tag value.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
         /// <p>The tag value.</p>
-        /// <p>Length Constraints: Maximum length of 256 characters.</p>
+        /// <p>Constraints: Maximum length of 256 characters.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1067,7 +1067,7 @@ pub struct Device {
     pub device_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the global network.</p>
     pub global_network_id: std::option::Option<std::string::String>,
-    /// <p>The AWS location of the device.</p>
+    /// <p>The Amazon Web Services location of the device.</p>
     pub aws_location: std::option::Option<crate::model::AwsLocation>,
     /// <p>The description of the device.</p>
     pub description: std::option::Option<std::string::String>,
@@ -1165,12 +1165,12 @@ pub mod device {
             self.global_network_id = input;
             self
         }
-        /// <p>The AWS location of the device.</p>
+        /// <p>The Amazon Web Services location of the device.</p>
         pub fn aws_location(mut self, input: crate::model::AwsLocation) -> Self {
             self.aws_location = Some(input);
             self
         }
-        /// <p>The AWS location of the device.</p>
+        /// <p>The Amazon Web Services location of the device.</p>
         pub fn set_aws_location(
             mut self,
             input: std::option::Option<crate::model::AwsLocation>,
@@ -1384,13 +1384,14 @@ impl AsRef<str> for DeviceState {
     }
 }
 
-/// <p>Specifies a location in AWS.</p>
+/// <p>Specifies a location in Amazon Web Services.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsLocation {
-    /// <p>The Zone the device is located in. This can be the ID of an Availability Zone, Local Zone, Wavelength Zone, or an Outpost.</p>
+    /// <p>The Zone that the device is located in. Specify the ID of an Availability Zone, Local
+    /// Zone, Wavelength Zone, or an Outpost.</p>
     pub zone: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the subnet the device is located in.</p>
+    /// <p>The Amazon Resource Name (ARN) of the subnet that the device is located in.</p>
     pub subnet_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AwsLocation {
@@ -1411,22 +1412,24 @@ pub mod aws_location {
         pub(crate) subnet_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Zone the device is located in. This can be the ID of an Availability Zone, Local Zone, Wavelength Zone, or an Outpost.</p>
+        /// <p>The Zone that the device is located in. Specify the ID of an Availability Zone, Local
+        /// Zone, Wavelength Zone, or an Outpost.</p>
         pub fn zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.zone = Some(input.into());
             self
         }
-        /// <p>The Zone the device is located in. This can be the ID of an Availability Zone, Local Zone, Wavelength Zone, or an Outpost.</p>
+        /// <p>The Zone that the device is located in. Specify the ID of an Availability Zone, Local
+        /// Zone, Wavelength Zone, or an Outpost.</p>
         pub fn set_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.zone = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the subnet the device is located in.</p>
+        /// <p>The Amazon Resource Name (ARN) of the subnet that the device is located in.</p>
         pub fn subnet_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.subnet_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the subnet the device is located in.</p>
+        /// <p>The Amazon Resource Name (ARN) of the subnet that the device is located in.</p>
         pub fn set_subnet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_arn = input;
             self
@@ -1735,6 +1738,1156 @@ impl ConnectionState {
 impl AsRef<str> for ConnectionState {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Describes a route analysis.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RouteAnalysis {
+    /// <p>The ID of the global network.</p>
+    pub global_network_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the AWS account that created the route analysis.</p>
+    pub owner_account_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the route analysis.</p>
+    pub route_analysis_id: std::option::Option<std::string::String>,
+    /// <p>The time that the analysis started.</p>
+    pub start_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    /// <p>The status of the route analysis.</p>
+    pub status: std::option::Option<crate::model::RouteAnalysisStatus>,
+    /// <p>The source.</p>
+    pub source: std::option::Option<crate::model::RouteAnalysisEndpointOptions>,
+    /// <p>The destination.</p>
+    pub destination: std::option::Option<crate::model::RouteAnalysisEndpointOptions>,
+    /// <p>Indicates whether to analyze the return path. The return path is not analyzed if the forward path
+    /// analysis does not succeed.</p>
+    pub include_return_path: bool,
+    /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.</p>
+    pub use_middleboxes: bool,
+    /// <p>The forward path.</p>
+    pub forward_path: std::option::Option<crate::model::RouteAnalysisPath>,
+    /// <p>The return path.</p>
+    pub return_path: std::option::Option<crate::model::RouteAnalysisPath>,
+}
+impl std::fmt::Debug for RouteAnalysis {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteAnalysis");
+        formatter.field("global_network_id", &self.global_network_id);
+        formatter.field("owner_account_id", &self.owner_account_id);
+        formatter.field("route_analysis_id", &self.route_analysis_id);
+        formatter.field("start_timestamp", &self.start_timestamp);
+        formatter.field("status", &self.status);
+        formatter.field("source", &self.source);
+        formatter.field("destination", &self.destination);
+        formatter.field("include_return_path", &self.include_return_path);
+        formatter.field("use_middleboxes", &self.use_middleboxes);
+        formatter.field("forward_path", &self.forward_path);
+        formatter.field("return_path", &self.return_path);
+        formatter.finish()
+    }
+}
+/// See [`RouteAnalysis`](crate::model::RouteAnalysis)
+pub mod route_analysis {
+    /// A builder for [`RouteAnalysis`](crate::model::RouteAnalysis)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) global_network_id: std::option::Option<std::string::String>,
+        pub(crate) owner_account_id: std::option::Option<std::string::String>,
+        pub(crate) route_analysis_id: std::option::Option<std::string::String>,
+        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) status: std::option::Option<crate::model::RouteAnalysisStatus>,
+        pub(crate) source: std::option::Option<crate::model::RouteAnalysisEndpointOptions>,
+        pub(crate) destination: std::option::Option<crate::model::RouteAnalysisEndpointOptions>,
+        pub(crate) include_return_path: std::option::Option<bool>,
+        pub(crate) use_middleboxes: std::option::Option<bool>,
+        pub(crate) forward_path: std::option::Option<crate::model::RouteAnalysisPath>,
+        pub(crate) return_path: std::option::Option<crate::model::RouteAnalysisPath>,
+    }
+    impl Builder {
+        /// <p>The ID of the global network.</p>
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_network_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the global network.</p>
+        pub fn set_global_network_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.global_network_id = input;
+            self
+        }
+        /// <p>The ID of the AWS account that created the route analysis.</p>
+        pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner_account_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the AWS account that created the route analysis.</p>
+        pub fn set_owner_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.owner_account_id = input;
+            self
+        }
+        /// <p>The ID of the route analysis.</p>
+        pub fn route_analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.route_analysis_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the route analysis.</p>
+        pub fn set_route_analysis_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.route_analysis_id = input;
+            self
+        }
+        /// <p>The time that the analysis started.</p>
+        pub fn start_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+            self.start_timestamp = Some(input);
+            self
+        }
+        /// <p>The time that the analysis started.</p>
+        pub fn set_start_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
+            self.start_timestamp = input;
+            self
+        }
+        /// <p>The status of the route analysis.</p>
+        pub fn status(mut self, input: crate::model::RouteAnalysisStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the route analysis.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::RouteAnalysisStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The source.</p>
+        pub fn source(mut self, input: crate::model::RouteAnalysisEndpointOptions) -> Self {
+            self.source = Some(input);
+            self
+        }
+        /// <p>The source.</p>
+        pub fn set_source(
+            mut self,
+            input: std::option::Option<crate::model::RouteAnalysisEndpointOptions>,
+        ) -> Self {
+            self.source = input;
+            self
+        }
+        /// <p>The destination.</p>
+        pub fn destination(mut self, input: crate::model::RouteAnalysisEndpointOptions) -> Self {
+            self.destination = Some(input);
+            self
+        }
+        /// <p>The destination.</p>
+        pub fn set_destination(
+            mut self,
+            input: std::option::Option<crate::model::RouteAnalysisEndpointOptions>,
+        ) -> Self {
+            self.destination = input;
+            self
+        }
+        /// <p>Indicates whether to analyze the return path. The return path is not analyzed if the forward path
+        /// analysis does not succeed.</p>
+        pub fn include_return_path(mut self, input: bool) -> Self {
+            self.include_return_path = Some(input);
+            self
+        }
+        /// <p>Indicates whether to analyze the return path. The return path is not analyzed if the forward path
+        /// analysis does not succeed.</p>
+        pub fn set_include_return_path(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_return_path = input;
+            self
+        }
+        /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.</p>
+        pub fn use_middleboxes(mut self, input: bool) -> Self {
+            self.use_middleboxes = Some(input);
+            self
+        }
+        /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.</p>
+        pub fn set_use_middleboxes(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_middleboxes = input;
+            self
+        }
+        /// <p>The forward path.</p>
+        pub fn forward_path(mut self, input: crate::model::RouteAnalysisPath) -> Self {
+            self.forward_path = Some(input);
+            self
+        }
+        /// <p>The forward path.</p>
+        pub fn set_forward_path(
+            mut self,
+            input: std::option::Option<crate::model::RouteAnalysisPath>,
+        ) -> Self {
+            self.forward_path = input;
+            self
+        }
+        /// <p>The return path.</p>
+        pub fn return_path(mut self, input: crate::model::RouteAnalysisPath) -> Self {
+            self.return_path = Some(input);
+            self
+        }
+        /// <p>The return path.</p>
+        pub fn set_return_path(
+            mut self,
+            input: std::option::Option<crate::model::RouteAnalysisPath>,
+        ) -> Self {
+            self.return_path = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RouteAnalysis`](crate::model::RouteAnalysis)
+        pub fn build(self) -> crate::model::RouteAnalysis {
+            crate::model::RouteAnalysis {
+                global_network_id: self.global_network_id,
+                owner_account_id: self.owner_account_id,
+                route_analysis_id: self.route_analysis_id,
+                start_timestamp: self.start_timestamp,
+                status: self.status,
+                source: self.source,
+                destination: self.destination,
+                include_return_path: self.include_return_path.unwrap_or_default(),
+                use_middleboxes: self.use_middleboxes.unwrap_or_default(),
+                forward_path: self.forward_path,
+                return_path: self.return_path,
+            }
+        }
+    }
+}
+impl RouteAnalysis {
+    /// Creates a new builder-style object to manufacture [`RouteAnalysis`](crate::model::RouteAnalysis)
+    pub fn builder() -> crate::model::route_analysis::Builder {
+        crate::model::route_analysis::Builder::default()
+    }
+}
+
+/// <p>Describes a route analysis path.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RouteAnalysisPath {
+    /// <p>The status of the analysis at completion.</p>
+    pub completion_status: std::option::Option<crate::model::RouteAnalysisCompletion>,
+    /// <p>The route analysis path.</p>
+    pub path: std::option::Option<std::vec::Vec<crate::model::PathComponent>>,
+}
+impl std::fmt::Debug for RouteAnalysisPath {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteAnalysisPath");
+        formatter.field("completion_status", &self.completion_status);
+        formatter.field("path", &self.path);
+        formatter.finish()
+    }
+}
+/// See [`RouteAnalysisPath`](crate::model::RouteAnalysisPath)
+pub mod route_analysis_path {
+    /// A builder for [`RouteAnalysisPath`](crate::model::RouteAnalysisPath)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) completion_status: std::option::Option<crate::model::RouteAnalysisCompletion>,
+        pub(crate) path: std::option::Option<std::vec::Vec<crate::model::PathComponent>>,
+    }
+    impl Builder {
+        /// <p>The status of the analysis at completion.</p>
+        pub fn completion_status(mut self, input: crate::model::RouteAnalysisCompletion) -> Self {
+            self.completion_status = Some(input);
+            self
+        }
+        /// <p>The status of the analysis at completion.</p>
+        pub fn set_completion_status(
+            mut self,
+            input: std::option::Option<crate::model::RouteAnalysisCompletion>,
+        ) -> Self {
+            self.completion_status = input;
+            self
+        }
+        /// Appends an item to `path`.
+        ///
+        /// To override the contents of this collection use [`set_path`](Self::set_path).
+        ///
+        /// <p>The route analysis path.</p>
+        pub fn path(mut self, input: impl Into<crate::model::PathComponent>) -> Self {
+            let mut v = self.path.unwrap_or_default();
+            v.push(input.into());
+            self.path = Some(v);
+            self
+        }
+        /// <p>The route analysis path.</p>
+        pub fn set_path(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PathComponent>>,
+        ) -> Self {
+            self.path = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RouteAnalysisPath`](crate::model::RouteAnalysisPath)
+        pub fn build(self) -> crate::model::RouteAnalysisPath {
+            crate::model::RouteAnalysisPath {
+                completion_status: self.completion_status,
+                path: self.path,
+            }
+        }
+    }
+}
+impl RouteAnalysisPath {
+    /// Creates a new builder-style object to manufacture [`RouteAnalysisPath`](crate::model::RouteAnalysisPath)
+    pub fn builder() -> crate::model::route_analysis_path::Builder {
+        crate::model::route_analysis_path::Builder::default()
+    }
+}
+
+/// <p>Describes a path component.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PathComponent {
+    /// <p>The sequence number in the path. The destination is 0.</p>
+    pub sequence: std::option::Option<i32>,
+    /// <p>The resource.</p>
+    pub resource: std::option::Option<crate::model::NetworkResourceSummary>,
+    /// <p>The destination CIDR block in the route table.</p>
+    pub destination_cidr_block: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for PathComponent {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PathComponent");
+        formatter.field("sequence", &self.sequence);
+        formatter.field("resource", &self.resource);
+        formatter.field("destination_cidr_block", &self.destination_cidr_block);
+        formatter.finish()
+    }
+}
+/// See [`PathComponent`](crate::model::PathComponent)
+pub mod path_component {
+    /// A builder for [`PathComponent`](crate::model::PathComponent)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sequence: std::option::Option<i32>,
+        pub(crate) resource: std::option::Option<crate::model::NetworkResourceSummary>,
+        pub(crate) destination_cidr_block: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The sequence number in the path. The destination is 0.</p>
+        pub fn sequence(mut self, input: i32) -> Self {
+            self.sequence = Some(input);
+            self
+        }
+        /// <p>The sequence number in the path. The destination is 0.</p>
+        pub fn set_sequence(mut self, input: std::option::Option<i32>) -> Self {
+            self.sequence = input;
+            self
+        }
+        /// <p>The resource.</p>
+        pub fn resource(mut self, input: crate::model::NetworkResourceSummary) -> Self {
+            self.resource = Some(input);
+            self
+        }
+        /// <p>The resource.</p>
+        pub fn set_resource(
+            mut self,
+            input: std::option::Option<crate::model::NetworkResourceSummary>,
+        ) -> Self {
+            self.resource = input;
+            self
+        }
+        /// <p>The destination CIDR block in the route table.</p>
+        pub fn destination_cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination_cidr_block = Some(input.into());
+            self
+        }
+        /// <p>The destination CIDR block in the route table.</p>
+        pub fn set_destination_cidr_block(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.destination_cidr_block = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PathComponent`](crate::model::PathComponent)
+        pub fn build(self) -> crate::model::PathComponent {
+            crate::model::PathComponent {
+                sequence: self.sequence,
+                resource: self.resource,
+                destination_cidr_block: self.destination_cidr_block,
+            }
+        }
+    }
+}
+impl PathComponent {
+    /// Creates a new builder-style object to manufacture [`PathComponent`](crate::model::PathComponent)
+    pub fn builder() -> crate::model::path_component::Builder {
+        crate::model::path_component::Builder::default()
+    }
+}
+
+/// <p>Describes a network resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NetworkResourceSummary {
+    /// <p>The ARN of the gateway.</p>
+    pub registered_gateway_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the resource.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The resource type.</p>
+    pub resource_type: std::option::Option<std::string::String>,
+    /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
+    pub definition: std::option::Option<std::string::String>,
+    /// <p>The value for the Name tag.</p>
+    pub name_tag: std::option::Option<std::string::String>,
+    /// <p>Indicates whether this is a middlebox appliance.</p>
+    pub is_middlebox: bool,
+}
+impl std::fmt::Debug for NetworkResourceSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NetworkResourceSummary");
+        formatter.field("registered_gateway_arn", &self.registered_gateway_arn);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("definition", &self.definition);
+        formatter.field("name_tag", &self.name_tag);
+        formatter.field("is_middlebox", &self.is_middlebox);
+        formatter.finish()
+    }
+}
+/// See [`NetworkResourceSummary`](crate::model::NetworkResourceSummary)
+pub mod network_resource_summary {
+    /// A builder for [`NetworkResourceSummary`](crate::model::NetworkResourceSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) registered_gateway_arn: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) definition: std::option::Option<std::string::String>,
+        pub(crate) name_tag: std::option::Option<std::string::String>,
+        pub(crate) is_middlebox: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The ARN of the gateway.</p>
+        pub fn registered_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registered_gateway_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the gateway.</p>
+        pub fn set_registered_gateway_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.registered_gateway_arn = input;
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The resource type.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>The resource type.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
+        pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.definition = Some(input.into());
+            self
+        }
+        /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
+        pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.definition = input;
+            self
+        }
+        /// <p>The value for the Name tag.</p>
+        pub fn name_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name_tag = Some(input.into());
+            self
+        }
+        /// <p>The value for the Name tag.</p>
+        pub fn set_name_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name_tag = input;
+            self
+        }
+        /// <p>Indicates whether this is a middlebox appliance.</p>
+        pub fn is_middlebox(mut self, input: bool) -> Self {
+            self.is_middlebox = Some(input);
+            self
+        }
+        /// <p>Indicates whether this is a middlebox appliance.</p>
+        pub fn set_is_middlebox(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_middlebox = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NetworkResourceSummary`](crate::model::NetworkResourceSummary)
+        pub fn build(self) -> crate::model::NetworkResourceSummary {
+            crate::model::NetworkResourceSummary {
+                registered_gateway_arn: self.registered_gateway_arn,
+                resource_arn: self.resource_arn,
+                resource_type: self.resource_type,
+                definition: self.definition,
+                name_tag: self.name_tag,
+                is_middlebox: self.is_middlebox.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl NetworkResourceSummary {
+    /// Creates a new builder-style object to manufacture [`NetworkResourceSummary`](crate::model::NetworkResourceSummary)
+    pub fn builder() -> crate::model::network_resource_summary::Builder {
+        crate::model::network_resource_summary::Builder::default()
+    }
+}
+
+/// <p>Describes the status of an analysis at completion.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RouteAnalysisCompletion {
+    /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the
+    /// reason code.</p>
+    pub result_code: std::option::Option<crate::model::RouteAnalysisCompletionResultCode>,
+    /// <p>The reason code. Available only if a connection is not found.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p>
+    /// </li>
+    /// </ul>
+    pub reason_code: std::option::Option<crate::model::RouteAnalysisCompletionReasonCode>,
+    /// <p>Additional information about the path. Available only if a connection is not found.</p>
+    pub reason_context:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl std::fmt::Debug for RouteAnalysisCompletion {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteAnalysisCompletion");
+        formatter.field("result_code", &self.result_code);
+        formatter.field("reason_code", &self.reason_code);
+        formatter.field("reason_context", &self.reason_context);
+        formatter.finish()
+    }
+}
+/// See [`RouteAnalysisCompletion`](crate::model::RouteAnalysisCompletion)
+pub mod route_analysis_completion {
+    /// A builder for [`RouteAnalysisCompletion`](crate::model::RouteAnalysisCompletion)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) result_code:
+            std::option::Option<crate::model::RouteAnalysisCompletionResultCode>,
+        pub(crate) reason_code:
+            std::option::Option<crate::model::RouteAnalysisCompletionReasonCode>,
+        pub(crate) reason_context: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the
+        /// reason code.</p>
+        pub fn result_code(
+            mut self,
+            input: crate::model::RouteAnalysisCompletionResultCode,
+        ) -> Self {
+            self.result_code = Some(input);
+            self
+        }
+        /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the
+        /// reason code.</p>
+        pub fn set_result_code(
+            mut self,
+            input: std::option::Option<crate::model::RouteAnalysisCompletionResultCode>,
+        ) -> Self {
+            self.result_code = input;
+            self
+        }
+        /// <p>The reason code. Available only if a connection is not found.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p>
+        /// </li>
+        /// </ul>
+        pub fn reason_code(
+            mut self,
+            input: crate::model::RouteAnalysisCompletionReasonCode,
+        ) -> Self {
+            self.reason_code = Some(input);
+            self
+        }
+        /// <p>The reason code. Available only if a connection is not found.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_reason_code(
+            mut self,
+            input: std::option::Option<crate::model::RouteAnalysisCompletionReasonCode>,
+        ) -> Self {
+            self.reason_code = input;
+            self
+        }
+        /// Adds a key-value pair to `reason_context`.
+        ///
+        /// To override the contents of this collection use [`set_reason_context`](Self::set_reason_context).
+        ///
+        /// <p>Additional information about the path. Available only if a connection is not found.</p>
+        pub fn reason_context(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.reason_context.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.reason_context = Some(hash_map);
+            self
+        }
+        /// <p>Additional information about the path. Available only if a connection is not found.</p>
+        pub fn set_reason_context(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.reason_context = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RouteAnalysisCompletion`](crate::model::RouteAnalysisCompletion)
+        pub fn build(self) -> crate::model::RouteAnalysisCompletion {
+            crate::model::RouteAnalysisCompletion {
+                result_code: self.result_code,
+                reason_code: self.reason_code,
+                reason_context: self.reason_context,
+            }
+        }
+    }
+}
+impl RouteAnalysisCompletion {
+    /// Creates a new builder-style object to manufacture [`RouteAnalysisCompletion`](crate::model::RouteAnalysisCompletion)
+    pub fn builder() -> crate::model::route_analysis_completion::Builder {
+        crate::model::route_analysis_completion::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RouteAnalysisCompletionReasonCode {
+    #[allow(missing_docs)] // documentation missing in model
+    BlackholeRouteForDestinationFound,
+    #[allow(missing_docs)] // documentation missing in model
+    CyclicPathDetected,
+    #[allow(missing_docs)] // documentation missing in model
+    InactiveRouteForDestinationFound,
+    #[allow(missing_docs)] // documentation missing in model
+    MaxHopsExceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    NoDestinationArnProvided,
+    #[allow(missing_docs)] // documentation missing in model
+    PossibleMiddlebox,
+    #[allow(missing_docs)] // documentation missing in model
+    RouteNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    TransitGatewayAttachment,
+    #[allow(missing_docs)] // documentation missing in model
+    TransitGatewayAttachmentNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    TransitGatewayAttachmentNotInTransitGateway,
+    #[allow(missing_docs)] // documentation missing in model
+    TransitGatewayAttachmentStableRouteTableNotFound,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RouteAnalysisCompletionReasonCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND" => {
+                RouteAnalysisCompletionReasonCode::BlackholeRouteForDestinationFound
+            }
+            "CYCLIC_PATH_DETECTED" => RouteAnalysisCompletionReasonCode::CyclicPathDetected,
+            "INACTIVE_ROUTE_FOR_DESTINATION_FOUND" => {
+                RouteAnalysisCompletionReasonCode::InactiveRouteForDestinationFound
+            }
+            "MAX_HOPS_EXCEEDED" => RouteAnalysisCompletionReasonCode::MaxHopsExceeded,
+            "NO_DESTINATION_ARN_PROVIDED" => {
+                RouteAnalysisCompletionReasonCode::NoDestinationArnProvided
+            }
+            "POSSIBLE_MIDDLEBOX" => RouteAnalysisCompletionReasonCode::PossibleMiddlebox,
+            "ROUTE_NOT_FOUND" => RouteAnalysisCompletionReasonCode::RouteNotFound,
+            "TRANSIT_GATEWAY_ATTACHMENT_ATTACH_ARN_NO_MATCH" => {
+                RouteAnalysisCompletionReasonCode::TransitGatewayAttachment
+            }
+            "TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND" => {
+                RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentNotFound
+            }
+            "TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY" => {
+                RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentNotInTransitGateway
+            }
+            "TRANSIT_GATEWAY_ATTACHMENT_STABLE_ROUTE_TABLE_NOT_FOUND" => {
+                RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentStableRouteTableNotFound
+            }
+            other => RouteAnalysisCompletionReasonCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RouteAnalysisCompletionReasonCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RouteAnalysisCompletionReasonCode::from(s))
+    }
+}
+impl RouteAnalysisCompletionReasonCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RouteAnalysisCompletionReasonCode::BlackholeRouteForDestinationFound => {
+                "BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND"
+            }
+            RouteAnalysisCompletionReasonCode::CyclicPathDetected => "CYCLIC_PATH_DETECTED",
+            RouteAnalysisCompletionReasonCode::InactiveRouteForDestinationFound => {
+                "INACTIVE_ROUTE_FOR_DESTINATION_FOUND"
+            }
+            RouteAnalysisCompletionReasonCode::MaxHopsExceeded => "MAX_HOPS_EXCEEDED",
+            RouteAnalysisCompletionReasonCode::NoDestinationArnProvided => {
+                "NO_DESTINATION_ARN_PROVIDED"
+            }
+            RouteAnalysisCompletionReasonCode::PossibleMiddlebox => "POSSIBLE_MIDDLEBOX",
+            RouteAnalysisCompletionReasonCode::RouteNotFound => "ROUTE_NOT_FOUND",
+            RouteAnalysisCompletionReasonCode::TransitGatewayAttachment => {
+                "TRANSIT_GATEWAY_ATTACHMENT_ATTACH_ARN_NO_MATCH"
+            }
+            RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentNotFound => {
+                "TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND"
+            }
+            RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentNotInTransitGateway => {
+                "TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY"
+            }
+            RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentStableRouteTableNotFound => {
+                "TRANSIT_GATEWAY_ATTACHMENT_STABLE_ROUTE_TABLE_NOT_FOUND"
+            }
+            RouteAnalysisCompletionReasonCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND",
+            "CYCLIC_PATH_DETECTED",
+            "INACTIVE_ROUTE_FOR_DESTINATION_FOUND",
+            "MAX_HOPS_EXCEEDED",
+            "NO_DESTINATION_ARN_PROVIDED",
+            "POSSIBLE_MIDDLEBOX",
+            "ROUTE_NOT_FOUND",
+            "TRANSIT_GATEWAY_ATTACHMENT_ATTACH_ARN_NO_MATCH",
+            "TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND",
+            "TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY",
+            "TRANSIT_GATEWAY_ATTACHMENT_STABLE_ROUTE_TABLE_NOT_FOUND",
+        ]
+    }
+}
+impl AsRef<str> for RouteAnalysisCompletionReasonCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RouteAnalysisCompletionResultCode {
+    #[allow(missing_docs)] // documentation missing in model
+    Connected,
+    #[allow(missing_docs)] // documentation missing in model
+    NotConnected,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RouteAnalysisCompletionResultCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "CONNECTED" => RouteAnalysisCompletionResultCode::Connected,
+            "NOT_CONNECTED" => RouteAnalysisCompletionResultCode::NotConnected,
+            other => RouteAnalysisCompletionResultCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RouteAnalysisCompletionResultCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RouteAnalysisCompletionResultCode::from(s))
+    }
+}
+impl RouteAnalysisCompletionResultCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RouteAnalysisCompletionResultCode::Connected => "CONNECTED",
+            RouteAnalysisCompletionResultCode::NotConnected => "NOT_CONNECTED",
+            RouteAnalysisCompletionResultCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CONNECTED", "NOT_CONNECTED"]
+    }
+}
+impl AsRef<str> for RouteAnalysisCompletionResultCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes a source or a destination.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RouteAnalysisEndpointOptions {
+    /// <p>The ARN of the transit gateway attachment.</p>
+    pub transit_gateway_attachment_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the transit gateway.</p>
+    pub transit_gateway_arn: std::option::Option<std::string::String>,
+    /// <p>The IP address.</p>
+    pub ip_address: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RouteAnalysisEndpointOptions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteAnalysisEndpointOptions");
+        formatter.field(
+            "transit_gateway_attachment_arn",
+            &self.transit_gateway_attachment_arn,
+        );
+        formatter.field("transit_gateway_arn", &self.transit_gateway_arn);
+        formatter.field("ip_address", &self.ip_address);
+        formatter.finish()
+    }
+}
+/// See [`RouteAnalysisEndpointOptions`](crate::model::RouteAnalysisEndpointOptions)
+pub mod route_analysis_endpoint_options {
+    /// A builder for [`RouteAnalysisEndpointOptions`](crate::model::RouteAnalysisEndpointOptions)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transit_gateway_attachment_arn: std::option::Option<std::string::String>,
+        pub(crate) transit_gateway_arn: std::option::Option<std::string::String>,
+        pub(crate) ip_address: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the transit gateway attachment.</p>
+        pub fn transit_gateway_attachment_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.transit_gateway_attachment_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the transit gateway attachment.</p>
+        pub fn set_transit_gateway_attachment_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transit_gateway_attachment_arn = input;
+            self
+        }
+        /// <p>The ARN of the transit gateway.</p>
+        pub fn transit_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transit_gateway_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the transit gateway.</p>
+        pub fn set_transit_gateway_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transit_gateway_arn = input;
+            self
+        }
+        /// <p>The IP address.</p>
+        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip_address = Some(input.into());
+            self
+        }
+        /// <p>The IP address.</p>
+        pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip_address = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RouteAnalysisEndpointOptions`](crate::model::RouteAnalysisEndpointOptions)
+        pub fn build(self) -> crate::model::RouteAnalysisEndpointOptions {
+            crate::model::RouteAnalysisEndpointOptions {
+                transit_gateway_attachment_arn: self.transit_gateway_attachment_arn,
+                transit_gateway_arn: self.transit_gateway_arn,
+                ip_address: self.ip_address,
+            }
+        }
+    }
+}
+impl RouteAnalysisEndpointOptions {
+    /// Creates a new builder-style object to manufacture [`RouteAnalysisEndpointOptions`](crate::model::RouteAnalysisEndpointOptions)
+    pub fn builder() -> crate::model::route_analysis_endpoint_options::Builder {
+        crate::model::route_analysis_endpoint_options::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RouteAnalysisStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Running,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RouteAnalysisStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "COMPLETED" => RouteAnalysisStatus::Completed,
+            "FAILED" => RouteAnalysisStatus::Failed,
+            "RUNNING" => RouteAnalysisStatus::Running,
+            other => RouteAnalysisStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RouteAnalysisStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RouteAnalysisStatus::from(s))
+    }
+}
+impl RouteAnalysisStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RouteAnalysisStatus::Completed => "COMPLETED",
+            RouteAnalysisStatus::Failed => "FAILED",
+            RouteAnalysisStatus::Running => "RUNNING",
+            RouteAnalysisStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETED", "FAILED", "RUNNING"]
+    }
+}
+impl AsRef<str> for RouteAnalysisStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes a source or a destination.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RouteAnalysisEndpointOptionsSpecification {
+    /// <p>The ARN of the transit gateway attachment.</p>
+    pub transit_gateway_attachment_arn: std::option::Option<std::string::String>,
+    /// <p>The IP address.</p>
+    pub ip_address: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RouteAnalysisEndpointOptionsSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteAnalysisEndpointOptionsSpecification");
+        formatter.field(
+            "transit_gateway_attachment_arn",
+            &self.transit_gateway_attachment_arn,
+        );
+        formatter.field("ip_address", &self.ip_address);
+        formatter.finish()
+    }
+}
+/// See [`RouteAnalysisEndpointOptionsSpecification`](crate::model::RouteAnalysisEndpointOptionsSpecification)
+pub mod route_analysis_endpoint_options_specification {
+    /// A builder for [`RouteAnalysisEndpointOptionsSpecification`](crate::model::RouteAnalysisEndpointOptionsSpecification)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transit_gateway_attachment_arn: std::option::Option<std::string::String>,
+        pub(crate) ip_address: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the transit gateway attachment.</p>
+        pub fn transit_gateway_attachment_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.transit_gateway_attachment_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the transit gateway attachment.</p>
+        pub fn set_transit_gateway_attachment_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transit_gateway_attachment_arn = input;
+            self
+        }
+        /// <p>The IP address.</p>
+        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip_address = Some(input.into());
+            self
+        }
+        /// <p>The IP address.</p>
+        pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip_address = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RouteAnalysisEndpointOptionsSpecification`](crate::model::RouteAnalysisEndpointOptionsSpecification)
+        pub fn build(self) -> crate::model::RouteAnalysisEndpointOptionsSpecification {
+            crate::model::RouteAnalysisEndpointOptionsSpecification {
+                transit_gateway_attachment_arn: self.transit_gateway_attachment_arn,
+                ip_address: self.ip_address,
+            }
+        }
+    }
+}
+impl RouteAnalysisEndpointOptionsSpecification {
+    /// Creates a new builder-style object to manufacture [`RouteAnalysisEndpointOptionsSpecification`](crate::model::RouteAnalysisEndpointOptionsSpecification)
+    pub fn builder() -> crate::model::route_analysis_endpoint_options_specification::Builder {
+        crate::model::route_analysis_endpoint_options_specification::Builder::default()
     }
 }
 
@@ -2145,6 +3298,1376 @@ impl TransitGatewayConnectPeerAssociationState {
 impl AsRef<str> for TransitGatewayConnectPeerAssociationState {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Describes the telemetry information for a resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NetworkTelemetry {
+    /// <p>The ARN of the gateway.</p>
+    pub registered_gateway_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services Region.</p>
+    pub aws_region: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services account ID.</p>
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>The resource type.</p>
+    pub resource_type: std::option::Option<std::string::String>,
+    /// <p>The ID of the resource.</p>
+    pub resource_id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the resource.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The address.</p>
+    pub address: std::option::Option<std::string::String>,
+    /// <p>The connection health.</p>
+    pub health: std::option::Option<crate::model::ConnectionHealth>,
+}
+impl std::fmt::Debug for NetworkTelemetry {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NetworkTelemetry");
+        formatter.field("registered_gateway_arn", &self.registered_gateway_arn);
+        formatter.field("aws_region", &self.aws_region);
+        formatter.field("account_id", &self.account_id);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("resource_id", &self.resource_id);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("address", &self.address);
+        formatter.field("health", &self.health);
+        formatter.finish()
+    }
+}
+/// See [`NetworkTelemetry`](crate::model::NetworkTelemetry)
+pub mod network_telemetry {
+    /// A builder for [`NetworkTelemetry`](crate::model::NetworkTelemetry)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) registered_gateway_arn: std::option::Option<std::string::String>,
+        pub(crate) aws_region: std::option::Option<std::string::String>,
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) address: std::option::Option<std::string::String>,
+        pub(crate) health: std::option::Option<crate::model::ConnectionHealth>,
+    }
+    impl Builder {
+        /// <p>The ARN of the gateway.</p>
+        pub fn registered_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registered_gateway_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the gateway.</p>
+        pub fn set_registered_gateway_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.registered_gateway_arn = input;
+            self
+        }
+        /// <p>The Amazon Web Services Region.</p>
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_region = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services Region.</p>
+        pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_region = input;
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>The resource type.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>The resource type.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>The ID of the resource.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the resource.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The address.</p>
+        pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.address = Some(input.into());
+            self
+        }
+        /// <p>The address.</p>
+        pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.address = input;
+            self
+        }
+        /// <p>The connection health.</p>
+        pub fn health(mut self, input: crate::model::ConnectionHealth) -> Self {
+            self.health = Some(input);
+            self
+        }
+        /// <p>The connection health.</p>
+        pub fn set_health(
+            mut self,
+            input: std::option::Option<crate::model::ConnectionHealth>,
+        ) -> Self {
+            self.health = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NetworkTelemetry`](crate::model::NetworkTelemetry)
+        pub fn build(self) -> crate::model::NetworkTelemetry {
+            crate::model::NetworkTelemetry {
+                registered_gateway_arn: self.registered_gateway_arn,
+                aws_region: self.aws_region,
+                account_id: self.account_id,
+                resource_type: self.resource_type,
+                resource_id: self.resource_id,
+                resource_arn: self.resource_arn,
+                address: self.address,
+                health: self.health,
+            }
+        }
+    }
+}
+impl NetworkTelemetry {
+    /// Creates a new builder-style object to manufacture [`NetworkTelemetry`](crate::model::NetworkTelemetry)
+    pub fn builder() -> crate::model::network_telemetry::Builder {
+        crate::model::network_telemetry::Builder::default()
+    }
+}
+
+/// <p>Describes connection health.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConnectionHealth {
+    /// <p>The connection type.</p>
+    pub r#type: std::option::Option<crate::model::ConnectionType>,
+    /// <p>The connection status.</p>
+    pub status: std::option::Option<crate::model::ConnectionStatus>,
+    /// <p>The time the status was last updated.</p>
+    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
+}
+impl std::fmt::Debug for ConnectionHealth {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConnectionHealth");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("status", &self.status);
+        formatter.field("timestamp", &self.timestamp);
+        formatter.finish()
+    }
+}
+/// See [`ConnectionHealth`](crate::model::ConnectionHealth)
+pub mod connection_health {
+    /// A builder for [`ConnectionHealth`](crate::model::ConnectionHealth)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::ConnectionType>,
+        pub(crate) status: std::option::Option<crate::model::ConnectionStatus>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>The connection type.</p>
+        pub fn r#type(mut self, input: crate::model::ConnectionType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The connection type.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ConnectionType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The connection status.</p>
+        pub fn status(mut self, input: crate::model::ConnectionStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The connection status.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ConnectionStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The time the status was last updated.</p>
+        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+            self.timestamp = Some(input);
+            self
+        }
+        /// <p>The time the status was last updated.</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
+            self.timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConnectionHealth`](crate::model::ConnectionHealth)
+        pub fn build(self) -> crate::model::ConnectionHealth {
+            crate::model::ConnectionHealth {
+                r#type: self.r#type,
+                status: self.status,
+                timestamp: self.timestamp,
+            }
+        }
+    }
+}
+impl ConnectionHealth {
+    /// Creates a new builder-style object to manufacture [`ConnectionHealth`](crate::model::ConnectionHealth)
+    pub fn builder() -> crate::model::connection_health::Builder {
+        crate::model::connection_health::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ConnectionStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Down,
+    #[allow(missing_docs)] // documentation missing in model
+    Up,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ConnectionStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DOWN" => ConnectionStatus::Down,
+            "UP" => ConnectionStatus::Up,
+            other => ConnectionStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ConnectionStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ConnectionStatus::from(s))
+    }
+}
+impl ConnectionStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ConnectionStatus::Down => "DOWN",
+            ConnectionStatus::Up => "UP",
+            ConnectionStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DOWN", "UP"]
+    }
+}
+impl AsRef<str> for ConnectionStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ConnectionType {
+    #[allow(missing_docs)] // documentation missing in model
+    Bgp,
+    #[allow(missing_docs)] // documentation missing in model
+    Ipsec,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ConnectionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "BGP" => ConnectionType::Bgp,
+            "IPSEC" => ConnectionType::Ipsec,
+            other => ConnectionType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ConnectionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ConnectionType::from(s))
+    }
+}
+impl ConnectionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ConnectionType::Bgp => "BGP",
+            ConnectionType::Ipsec => "IPSEC",
+            ConnectionType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["BGP", "IPSEC"]
+    }
+}
+impl AsRef<str> for ConnectionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes a network route.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NetworkRoute {
+    /// <p>A unique identifier for the route, such as a CIDR block.</p>
+    pub destination_cidr_block: std::option::Option<std::string::String>,
+    /// <p>The destinations.</p>
+    pub destinations: std::option::Option<std::vec::Vec<crate::model::NetworkRouteDestination>>,
+    /// <p>The ID of the prefix list.</p>
+    pub prefix_list_id: std::option::Option<std::string::String>,
+    /// <p>The route state. The possible values are <code>active</code> and <code>blackhole</code>.</p>
+    pub state: std::option::Option<crate::model::RouteState>,
+    /// <p>The route type. The possible values are <code>propagated</code> and <code>static</code>.</p>
+    pub r#type: std::option::Option<crate::model::RouteType>,
+}
+impl std::fmt::Debug for NetworkRoute {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NetworkRoute");
+        formatter.field("destination_cidr_block", &self.destination_cidr_block);
+        formatter.field("destinations", &self.destinations);
+        formatter.field("prefix_list_id", &self.prefix_list_id);
+        formatter.field("state", &self.state);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+/// See [`NetworkRoute`](crate::model::NetworkRoute)
+pub mod network_route {
+    /// A builder for [`NetworkRoute`](crate::model::NetworkRoute)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) destination_cidr_block: std::option::Option<std::string::String>,
+        pub(crate) destinations:
+            std::option::Option<std::vec::Vec<crate::model::NetworkRouteDestination>>,
+        pub(crate) prefix_list_id: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::RouteState>,
+        pub(crate) r#type: std::option::Option<crate::model::RouteType>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the route, such as a CIDR block.</p>
+        pub fn destination_cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination_cidr_block = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the route, such as a CIDR block.</p>
+        pub fn set_destination_cidr_block(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.destination_cidr_block = input;
+            self
+        }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// <p>The destinations.</p>
+        pub fn destinations(
+            mut self,
+            input: impl Into<crate::model::NetworkRouteDestination>,
+        ) -> Self {
+            let mut v = self.destinations.unwrap_or_default();
+            v.push(input.into());
+            self.destinations = Some(v);
+            self
+        }
+        /// <p>The destinations.</p>
+        pub fn set_destinations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::NetworkRouteDestination>>,
+        ) -> Self {
+            self.destinations = input;
+            self
+        }
+        /// <p>The ID of the prefix list.</p>
+        pub fn prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix_list_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the prefix list.</p>
+        pub fn set_prefix_list_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.prefix_list_id = input;
+            self
+        }
+        /// <p>The route state. The possible values are <code>active</code> and <code>blackhole</code>.</p>
+        pub fn state(mut self, input: crate::model::RouteState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The route state. The possible values are <code>active</code> and <code>blackhole</code>.</p>
+        pub fn set_state(mut self, input: std::option::Option<crate::model::RouteState>) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The route type. The possible values are <code>propagated</code> and <code>static</code>.</p>
+        pub fn r#type(mut self, input: crate::model::RouteType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The route type. The possible values are <code>propagated</code> and <code>static</code>.</p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RouteType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NetworkRoute`](crate::model::NetworkRoute)
+        pub fn build(self) -> crate::model::NetworkRoute {
+            crate::model::NetworkRoute {
+                destination_cidr_block: self.destination_cidr_block,
+                destinations: self.destinations,
+                prefix_list_id: self.prefix_list_id,
+                state: self.state,
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl NetworkRoute {
+    /// Creates a new builder-style object to manufacture [`NetworkRoute`](crate::model::NetworkRoute)
+    pub fn builder() -> crate::model::network_route::Builder {
+        crate::model::network_route::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RouteType {
+    #[allow(missing_docs)] // documentation missing in model
+    Propagated,
+    #[allow(missing_docs)] // documentation missing in model
+    Static,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RouteType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PROPAGATED" => RouteType::Propagated,
+            "STATIC" => RouteType::Static,
+            other => RouteType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RouteType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RouteType::from(s))
+    }
+}
+impl RouteType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RouteType::Propagated => "PROPAGATED",
+            RouteType::Static => "STATIC",
+            RouteType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["PROPAGATED", "STATIC"]
+    }
+}
+impl AsRef<str> for RouteType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RouteState {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Blackhole,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RouteState {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => RouteState::Active,
+            "BLACKHOLE" => RouteState::Blackhole,
+            other => RouteState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RouteState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RouteState::from(s))
+    }
+}
+impl RouteState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RouteState::Active => "ACTIVE",
+            RouteState::Blackhole => "BLACKHOLE",
+            RouteState::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "BLACKHOLE"]
+    }
+}
+impl AsRef<str> for RouteState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes the destination of a network route.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NetworkRouteDestination {
+    /// <p>The ID of the transit gateway attachment.</p>
+    pub transit_gateway_attachment_id: std::option::Option<std::string::String>,
+    /// <p>The resource type.</p>
+    pub resource_type: std::option::Option<std::string::String>,
+    /// <p>The ID of the resource.</p>
+    pub resource_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for NetworkRouteDestination {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NetworkRouteDestination");
+        formatter.field(
+            "transit_gateway_attachment_id",
+            &self.transit_gateway_attachment_id,
+        );
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("resource_id", &self.resource_id);
+        formatter.finish()
+    }
+}
+/// See [`NetworkRouteDestination`](crate::model::NetworkRouteDestination)
+pub mod network_route_destination {
+    /// A builder for [`NetworkRouteDestination`](crate::model::NetworkRouteDestination)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transit_gateway_attachment_id: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the transit gateway attachment.</p>
+        pub fn transit_gateway_attachment_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.transit_gateway_attachment_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the transit gateway attachment.</p>
+        pub fn set_transit_gateway_attachment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transit_gateway_attachment_id = input;
+            self
+        }
+        /// <p>The resource type.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>The resource type.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>The ID of the resource.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the resource.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NetworkRouteDestination`](crate::model::NetworkRouteDestination)
+        pub fn build(self) -> crate::model::NetworkRouteDestination {
+            crate::model::NetworkRouteDestination {
+                transit_gateway_attachment_id: self.transit_gateway_attachment_id,
+                resource_type: self.resource_type,
+                resource_id: self.resource_id,
+            }
+        }
+    }
+}
+impl NetworkRouteDestination {
+    /// Creates a new builder-style object to manufacture [`NetworkRouteDestination`](crate::model::NetworkRouteDestination)
+    pub fn builder() -> crate::model::network_route_destination::Builder {
+        crate::model::network_route_destination::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RouteTableType {
+    #[allow(missing_docs)] // documentation missing in model
+    TransitGatewayRouteTable,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RouteTableType {
+    fn from(s: &str) -> Self {
+        match s {
+            "TRANSIT_GATEWAY_ROUTE_TABLE" => RouteTableType::TransitGatewayRouteTable,
+            other => RouteTableType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RouteTableType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RouteTableType::from(s))
+    }
+}
+impl RouteTableType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RouteTableType::TransitGatewayRouteTable => "TRANSIT_GATEWAY_ROUTE_TABLE",
+            RouteTableType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["TRANSIT_GATEWAY_ROUTE_TABLE"]
+    }
+}
+impl AsRef<str> for RouteTableType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes a route table.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RouteTableIdentifier {
+    /// <p>The ARN of the transit gateway route table.</p>
+    pub transit_gateway_route_table_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RouteTableIdentifier {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTableIdentifier");
+        formatter.field(
+            "transit_gateway_route_table_arn",
+            &self.transit_gateway_route_table_arn,
+        );
+        formatter.finish()
+    }
+}
+/// See [`RouteTableIdentifier`](crate::model::RouteTableIdentifier)
+pub mod route_table_identifier {
+    /// A builder for [`RouteTableIdentifier`](crate::model::RouteTableIdentifier)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transit_gateway_route_table_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the transit gateway route table.</p>
+        pub fn transit_gateway_route_table_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.transit_gateway_route_table_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the transit gateway route table.</p>
+        pub fn set_transit_gateway_route_table_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transit_gateway_route_table_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RouteTableIdentifier`](crate::model::RouteTableIdentifier)
+        pub fn build(self) -> crate::model::RouteTableIdentifier {
+            crate::model::RouteTableIdentifier {
+                transit_gateway_route_table_arn: self.transit_gateway_route_table_arn,
+            }
+        }
+    }
+}
+impl RouteTableIdentifier {
+    /// Creates a new builder-style object to manufacture [`RouteTableIdentifier`](crate::model::RouteTableIdentifier)
+    pub fn builder() -> crate::model::route_table_identifier::Builder {
+        crate::model::route_table_identifier::Builder::default()
+    }
+}
+
+/// <p>Describes a network resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NetworkResource {
+    /// <p>The ARN of the gateway.</p>
+    pub registered_gateway_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services Region.</p>
+    pub aws_region: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services account ID.</p>
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>The resource type.</p>
+    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>dxcon</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>dx-vif</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Network Manager:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>connection</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>device</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>link</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>site</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    ///
+    /// <p>The following are the supported resource types for Amazon VPC:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>customer-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-attachment</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-connect-peer</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>transit-gateway-route-table</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>vpn-connection</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    pub resource_type: std::option::Option<std::string::String>,
+    /// <p>The ID of the resource.</p>
+    pub resource_id: std::option::Option<std::string::String>,
+    /// <p>The ARN of the resource.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
+    pub definition: std::option::Option<std::string::String>,
+    /// <p>The time that the resource definition was retrieved.</p>
+    pub definition_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    /// <p>The tags.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The resource metadata.</p>
+    pub metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl std::fmt::Debug for NetworkResource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NetworkResource");
+        formatter.field("registered_gateway_arn", &self.registered_gateway_arn);
+        formatter.field("aws_region", &self.aws_region);
+        formatter.field("account_id", &self.account_id);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("resource_id", &self.resource_id);
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("definition", &self.definition);
+        formatter.field("definition_timestamp", &self.definition_timestamp);
+        formatter.field("tags", &self.tags);
+        formatter.field("metadata", &self.metadata);
+        formatter.finish()
+    }
+}
+/// See [`NetworkResource`](crate::model::NetworkResource)
+pub mod network_resource {
+    /// A builder for [`NetworkResource`](crate::model::NetworkResource)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) registered_gateway_arn: std::option::Option<std::string::String>,
+        pub(crate) aws_region: std::option::Option<std::string::String>,
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) definition: std::option::Option<std::string::String>,
+        pub(crate) definition_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) metadata: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The ARN of the gateway.</p>
+        pub fn registered_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registered_gateway_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the gateway.</p>
+        pub fn set_registered_gateway_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.registered_gateway_arn = input;
+            self
+        }
+        /// <p>The Amazon Web Services Region.</p>
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_region = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services Region.</p>
+        pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_region = input;
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>The resource type.</p>
+        /// <p>The following are the supported resource types for Direct Connect:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dxcon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-vif</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Network Manager:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>connection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>device</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>link</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>site</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Amazon VPC:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>customer-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-attachment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-connect-peer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-route-table</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vpn-connection</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>The resource type.</p>
+        /// <p>The following are the supported resource types for Direct Connect:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dxcon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dx-vif</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Network Manager:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>connection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>device</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>link</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>site</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following are the supported resource types for Amazon VPC:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>customer-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-attachment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-connect-peer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>transit-gateway-route-table</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vpn-connection</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>The ID of the resource.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the resource.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
+        pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.definition = Some(input.into());
+            self
+        }
+        /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
+        pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.definition = input;
+            self
+        }
+        /// <p>The time that the resource definition was retrieved.</p>
+        pub fn definition_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
+            self.definition_timestamp = Some(input);
+            self
+        }
+        /// <p>The time that the resource definition was retrieved.</p>
+        pub fn set_definition_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
+            self.definition_timestamp = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags.</p>
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The tags.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Adds a key-value pair to `metadata`.
+        ///
+        /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+        ///
+        /// <p>The resource metadata.</p>
+        pub fn metadata(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.metadata.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.metadata = Some(hash_map);
+            self
+        }
+        /// <p>The resource metadata.</p>
+        pub fn set_metadata(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.metadata = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NetworkResource`](crate::model::NetworkResource)
+        pub fn build(self) -> crate::model::NetworkResource {
+            crate::model::NetworkResource {
+                registered_gateway_arn: self.registered_gateway_arn,
+                aws_region: self.aws_region,
+                account_id: self.account_id,
+                resource_type: self.resource_type,
+                resource_id: self.resource_id,
+                resource_arn: self.resource_arn,
+                definition: self.definition,
+                definition_timestamp: self.definition_timestamp,
+                tags: self.tags,
+                metadata: self.metadata,
+            }
+        }
+    }
+}
+impl NetworkResource {
+    /// Creates a new builder-style object to manufacture [`NetworkResource`](crate::model::NetworkResource)
+    pub fn builder() -> crate::model::network_resource::Builder {
+        crate::model::network_resource::Builder::default()
+    }
+}
+
+/// <p>Describes a resource relationship.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Relationship {
+    /// <p>The ARN of the resource.</p>
+    pub from: std::option::Option<std::string::String>,
+    /// <p>The ARN of the resource.</p>
+    pub to: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Relationship {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Relationship");
+        formatter.field("from", &self.from);
+        formatter.field("to", &self.to);
+        formatter.finish()
+    }
+}
+/// See [`Relationship`](crate::model::Relationship)
+pub mod relationship {
+    /// A builder for [`Relationship`](crate::model::Relationship)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) from: std::option::Option<std::string::String>,
+        pub(crate) to: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the resource.</p>
+        pub fn from(mut self, input: impl Into<std::string::String>) -> Self {
+            self.from = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_from(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.from = input;
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn to(mut self, input: impl Into<std::string::String>) -> Self {
+            self.to = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_to(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.to = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Relationship`](crate::model::Relationship)
+        pub fn build(self) -> crate::model::Relationship {
+            crate::model::Relationship {
+                from: self.from,
+                to: self.to,
+            }
+        }
+    }
+}
+impl Relationship {
+    /// Creates a new builder-style object to manufacture [`Relationship`](crate::model::Relationship)
+    pub fn builder() -> crate::model::relationship::Builder {
+        crate::model::relationship::Builder::default()
+    }
+}
+
+/// <p>Describes a resource count.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NetworkResourceCount {
+    /// <p>The resource type.</p>
+    pub resource_type: std::option::Option<std::string::String>,
+    /// <p>The resource count.</p>
+    pub count: std::option::Option<i32>,
+}
+impl std::fmt::Debug for NetworkResourceCount {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NetworkResourceCount");
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("count", &self.count);
+        formatter.finish()
+    }
+}
+/// See [`NetworkResourceCount`](crate::model::NetworkResourceCount)
+pub mod network_resource_count {
+    /// A builder for [`NetworkResourceCount`](crate::model::NetworkResourceCount)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The resource type.</p>
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
+            self
+        }
+        /// <p>The resource type.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>The resource count.</p>
+        pub fn count(mut self, input: i32) -> Self {
+            self.count = Some(input);
+            self
+        }
+        /// <p>The resource count.</p>
+        pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NetworkResourceCount`](crate::model::NetworkResourceCount)
+        pub fn build(self) -> crate::model::NetworkResourceCount {
+            crate::model::NetworkResourceCount {
+                resource_type: self.resource_type,
+                count: self.count,
+            }
+        }
+    }
+}
+impl NetworkResourceCount {
+    /// Creates a new builder-style object to manufacture [`NetworkResourceCount`](crate::model::NetworkResourceCount)
+    pub fn builder() -> crate::model::network_resource_count::Builder {
+        crate::model::network_resource_count::Builder::default()
     }
 }
 

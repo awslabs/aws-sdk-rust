@@ -227,6 +227,9 @@ where
                 crate::error::CreateFleetErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
+                crate::error::CreateFleetErrorKind::UnsupportedRegionException(inner) => {
+                    Error::UnsupportedRegionException(inner)
+                }
                 crate::error::CreateFleetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
@@ -257,6 +260,9 @@ where
                 }
                 crate::error::CreateFleetLocationsErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
+                }
+                crate::error::CreateFleetLocationsErrorKind::UnsupportedRegionException(inner) => {
+                    Error::UnsupportedRegionException(inner)
                 }
                 crate::error::CreateFleetLocationsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -337,6 +343,9 @@ where
                 ) => Error::TerminalRoutingStrategyException(inner),
                 crate::error::CreateGameSessionErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
+                }
+                crate::error::CreateGameSessionErrorKind::UnsupportedRegionException(inner) => {
+                    Error::UnsupportedRegionException(inner)
                 }
                 crate::error::CreateGameSessionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -712,6 +721,9 @@ where
                 crate::error::DeleteFleetLocationsErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
+                crate::error::DeleteFleetLocationsErrorKind::UnsupportedRegionException(inner) => {
+                    Error::UnsupportedRegionException(inner)
+                }
                 crate::error::DeleteFleetLocationsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -1057,6 +1069,9 @@ where
                 crate::error::DescribeEC2InstanceLimitsErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
+                crate::error::DescribeEC2InstanceLimitsErrorKind::UnsupportedRegionException(
+                    inner,
+                ) => Error::UnsupportedRegionException(inner),
                 crate::error::DescribeEC2InstanceLimitsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -1172,6 +1187,7 @@ where
                 crate::error::DescribeFleetLocationAttributesErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DescribeFleetLocationAttributesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::DescribeFleetLocationAttributesErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+                crate::error::DescribeFleetLocationAttributesErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
                 crate::error::DescribeFleetLocationAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -1187,23 +1203,14 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetLocationCapacityError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeFleetLocationCapacityErrorKind::InternalServiceException(
-                    inner,
-                ) => Error::InternalServiceException(inner),
-                crate::error::DescribeFleetLocationCapacityErrorKind::InvalidRequestException(
-                    inner,
-                ) => Error::InvalidRequestException(inner),
-                crate::error::DescribeFleetLocationCapacityErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DescribeFleetLocationCapacityErrorKind::UnauthorizedException(
-                    inner,
-                ) => Error::UnauthorizedException(inner),
-                crate::error::DescribeFleetLocationCapacityErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeFleetLocationCapacityErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+                crate::error::DescribeFleetLocationCapacityErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+                crate::error::DescribeFleetLocationCapacityErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::DescribeFleetLocationCapacityErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+                crate::error::DescribeFleetLocationCapacityErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+                crate::error::DescribeFleetLocationCapacityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1226,6 +1233,7 @@ where
                 crate::error::DescribeFleetLocationUtilizationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
                 crate::error::DescribeFleetLocationUtilizationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::DescribeFleetLocationUtilizationErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+                crate::error::DescribeFleetLocationUtilizationErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
                 crate::error::DescribeFleetLocationUtilizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -1396,6 +1404,7 @@ where
                 crate::error::DescribeGameSessionDetailsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
                 crate::error::DescribeGameSessionDetailsErrorKind::TerminalRoutingStrategyException(inner) => Error::TerminalRoutingStrategyException(inner),
                 crate::error::DescribeGameSessionDetailsErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+                crate::error::DescribeGameSessionDetailsErrorKind::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
                 crate::error::DescribeGameSessionDetailsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -1487,6 +1496,9 @@ where
                 crate::error::DescribeGameSessionsErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
+                crate::error::DescribeGameSessionsErrorKind::UnsupportedRegionException(inner) => {
+                    Error::UnsupportedRegionException(inner)
+                }
                 crate::error::DescribeGameSessionsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -1515,6 +1527,9 @@ where
                 }
                 crate::error::DescribeInstancesErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
+                }
+                crate::error::DescribeInstancesErrorKind::UnsupportedRegionException(inner) => {
+                    Error::UnsupportedRegionException(inner)
                 }
                 crate::error::DescribeInstancesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1685,6 +1700,9 @@ where
                 crate::error::DescribeScalingPoliciesErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
+                crate::error::DescribeScalingPoliciesErrorKind::UnsupportedRegionException(
+                    inner,
+                ) => Error::UnsupportedRegionException(inner),
                 crate::error::DescribeScalingPoliciesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -2172,6 +2190,9 @@ where
                 crate::error::SearchGameSessionsErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
                 }
+                crate::error::SearchGameSessionsErrorKind::UnsupportedRegionException(inner) => {
+                    Error::UnsupportedRegionException(inner)
+                }
                 crate::error::SearchGameSessionsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -2200,6 +2221,9 @@ where
                 }
                 crate::error::StartFleetActionsErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
+                }
+                crate::error::StartFleetActionsErrorKind::UnsupportedRegionException(inner) => {
+                    Error::UnsupportedRegionException(inner)
                 }
                 crate::error::StartFleetActionsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2317,6 +2341,9 @@ where
                 }
                 crate::error::StopFleetActionsErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
+                }
+                crate::error::StopFleetActionsErrorKind::UnsupportedRegionException(inner) => {
+                    Error::UnsupportedRegionException(inner)
                 }
                 crate::error::StopFleetActionsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -2579,6 +2606,9 @@ where
                 }
                 crate::error::UpdateFleetCapacityErrorKind::UnauthorizedException(inner) => {
                     Error::UnauthorizedException(inner)
+                }
+                crate::error::UpdateFleetCapacityErrorKind::UnsupportedRegionException(inner) => {
+                    Error::UnsupportedRegionException(inner)
                 }
                 crate::error::UpdateFleetCapacityErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)

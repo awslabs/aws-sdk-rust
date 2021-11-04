@@ -21,14 +21,17 @@ pub fn serialize_structure_crate_input_create_participant_connection_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateParticipantConnectionInput,
 ) {
-    if let Some(var_5) = &input.r#type {
-        let mut array_6 = object.key("Type").start_array();
-        for item_7 in var_5 {
+    if let Some(var_5) = &input.connect_participant {
+        object.key("ConnectParticipant").boolean(*var_5);
+    }
+    if let Some(var_6) = &input.r#type {
+        let mut array_7 = object.key("Type").start_array();
+        for item_8 in var_6 {
             {
-                array_6.value().string(item_7.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
 }
 
@@ -36,8 +39,8 @@ pub fn serialize_structure_crate_input_disconnect_participant_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisconnectParticipantInput,
 ) {
-    if let Some(var_8) = &input.client_token {
-        object.key("ClientToken").string(var_8);
+    if let Some(var_9) = &input.client_token {
+        object.key("ClientToken").string(var_9);
     }
 }
 
@@ -45,8 +48,8 @@ pub fn serialize_structure_crate_input_get_attachment_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetAttachmentInput,
 ) {
-    if let Some(var_9) = &input.attachment_id {
-        object.key("AttachmentId").string(var_9);
+    if let Some(var_10) = &input.attachment_id {
+        object.key("AttachmentId").string(var_10);
     }
 }
 
@@ -54,28 +57,28 @@ pub fn serialize_structure_crate_input_get_transcript_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetTranscriptInput,
 ) {
-    if let Some(var_10) = &input.contact_id {
-        object.key("ContactId").string(var_10);
+    if let Some(var_11) = &input.contact_id {
+        object.key("ContactId").string(var_11);
     }
-    if let Some(var_11) = &input.max_results {
+    if let Some(var_12) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_11).into()),
+            aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
-    if let Some(var_12) = &input.next_token {
-        object.key("NextToken").string(var_12);
+    if let Some(var_13) = &input.next_token {
+        object.key("NextToken").string(var_13);
     }
-    if let Some(var_13) = &input.scan_direction {
-        object.key("ScanDirection").string(var_13.as_str());
+    if let Some(var_14) = &input.scan_direction {
+        object.key("ScanDirection").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.sort_order {
-        object.key("SortOrder").string(var_14.as_str());
+    if let Some(var_15) = &input.sort_order {
+        object.key("SortOrder").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.start_position {
-        let mut object_16 = object.key("StartPosition").start_object();
-        crate::json_ser::serialize_structure_crate_model_start_position(&mut object_16, var_15);
-        object_16.finish();
+    if let Some(var_16) = &input.start_position {
+        let mut object_17 = object.key("StartPosition").start_object();
+        crate::json_ser::serialize_structure_crate_model_start_position(&mut object_17, var_16);
+        object_17.finish();
     }
 }
 
@@ -83,14 +86,14 @@ pub fn serialize_structure_crate_input_send_event_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SendEventInput,
 ) {
-    if let Some(var_17) = &input.client_token {
-        object.key("ClientToken").string(var_17);
+    if let Some(var_18) = &input.client_token {
+        object.key("ClientToken").string(var_18);
     }
-    if let Some(var_18) = &input.content {
-        object.key("Content").string(var_18);
+    if let Some(var_19) = &input.content {
+        object.key("Content").string(var_19);
     }
-    if let Some(var_19) = &input.content_type {
-        object.key("ContentType").string(var_19);
+    if let Some(var_20) = &input.content_type {
+        object.key("ContentType").string(var_20);
     }
 }
 
@@ -98,14 +101,14 @@ pub fn serialize_structure_crate_input_send_message_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::SendMessageInput,
 ) {
-    if let Some(var_20) = &input.client_token {
-        object.key("ClientToken").string(var_20);
+    if let Some(var_21) = &input.client_token {
+        object.key("ClientToken").string(var_21);
     }
-    if let Some(var_21) = &input.content {
-        object.key("Content").string(var_21);
+    if let Some(var_22) = &input.content {
+        object.key("Content").string(var_22);
     }
-    if let Some(var_22) = &input.content_type {
-        object.key("ContentType").string(var_22);
+    if let Some(var_23) = &input.content_type {
+        object.key("ContentType").string(var_23);
     }
 }
 
@@ -113,8 +116,8 @@ pub fn serialize_structure_crate_input_start_attachment_upload_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartAttachmentUploadInput,
 ) {
-    if let Some(var_23) = &input.attachment_name {
-        object.key("AttachmentName").string(var_23);
+    if let Some(var_24) = &input.attachment_name {
+        object.key("AttachmentName").string(var_24);
     }
     {
         object.key("AttachmentSizeInBytes").number(
@@ -122,11 +125,11 @@ pub fn serialize_structure_crate_input_start_attachment_upload_input(
             aws_smithy_types::Number::NegInt((input.attachment_size_in_bytes).into()),
         );
     }
-    if let Some(var_24) = &input.client_token {
-        object.key("ClientToken").string(var_24);
+    if let Some(var_25) = &input.client_token {
+        object.key("ClientToken").string(var_25);
     }
-    if let Some(var_25) = &input.content_type {
-        object.key("ContentType").string(var_25);
+    if let Some(var_26) = &input.content_type {
+        object.key("ContentType").string(var_26);
     }
 }
 
@@ -134,11 +137,11 @@ pub fn serialize_structure_crate_model_start_position(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StartPosition,
 ) {
-    if let Some(var_26) = &input.id {
-        object.key("Id").string(var_26);
+    if let Some(var_27) = &input.id {
+        object.key("Id").string(var_27);
     }
-    if let Some(var_27) = &input.absolute_time {
-        object.key("AbsoluteTime").string(var_27);
+    if let Some(var_28) = &input.absolute_time {
+        object.key("AbsoluteTime").string(var_28);
     }
     if input.most_recent != 0 {
         object.key("MostRecent").number(

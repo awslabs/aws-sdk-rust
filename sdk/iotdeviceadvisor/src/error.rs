@@ -16,7 +16,7 @@ pub enum CreateSuiteDefinitionErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>Sends invalid request exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSuiteDefinitionError {
@@ -80,14 +80,14 @@ impl CreateSuiteDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSuiteDefinitionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateSuiteDefinitionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSuiteDefinitionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSuiteDefinitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateSuiteDefinitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -122,7 +122,7 @@ pub enum DeleteSuiteDefinitionErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>Sends invalid request exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSuiteDefinitionError {
@@ -186,14 +186,14 @@ impl DeleteSuiteDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSuiteDefinitionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteSuiteDefinitionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSuiteDefinitionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSuiteDefinitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteSuiteDefinitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -230,7 +230,7 @@ pub enum GetSuiteDefinitionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Sends invalid request exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSuiteDefinitionError {
@@ -295,21 +295,21 @@ impl GetSuiteDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSuiteDefinitionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetSuiteDefinitionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSuiteDefinitionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetSuiteDefinitionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetSuiteDefinitionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSuiteDefinitionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSuiteDefinitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetSuiteDefinitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -347,7 +347,7 @@ pub enum GetSuiteRunErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Sends invalid request exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSuiteRunError {
@@ -412,18 +412,18 @@ impl GetSuiteRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSuiteRunErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetSuiteRunErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, GetSuiteRunErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `GetSuiteRunErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetSuiteRunErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSuiteRunErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSuiteRunErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetSuiteRunErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetSuiteRunErrorKind::ValidationException(_))
     }
@@ -458,7 +458,7 @@ pub enum GetSuiteRunReportErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Sends invalid request exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSuiteRunReportError {
@@ -523,21 +523,21 @@ impl GetSuiteRunReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSuiteRunReportErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetSuiteRunReportErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSuiteRunReportErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetSuiteRunReportErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetSuiteRunReportErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSuiteRunReportErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSuiteRunReportErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetSuiteRunReportErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -573,7 +573,7 @@ pub enum ListSuiteDefinitionsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>Sends invalid request exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSuiteDefinitionsError {
@@ -637,14 +637,14 @@ impl ListSuiteDefinitionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSuiteDefinitionsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListSuiteDefinitionsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSuiteDefinitionsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListSuiteDefinitionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListSuiteDefinitionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -679,7 +679,7 @@ pub enum ListSuiteRunsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>Sends invalid request exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSuiteRunsError {
@@ -743,14 +743,14 @@ impl ListSuiteRunsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSuiteRunsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListSuiteRunsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListSuiteRunsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListSuiteRunsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListSuiteRunsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListSuiteRunsErrorKind::ValidationException(_))
     }
@@ -784,7 +784,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Sends invalid request exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -849,21 +849,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -901,7 +901,7 @@ pub enum StartSuiteRunErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>Sends invalid request exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartSuiteRunError {
@@ -966,18 +966,18 @@ impl StartSuiteRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartSuiteRunErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartSuiteRunErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, StartSuiteRunErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `StartSuiteRunErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartSuiteRunErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartSuiteRunErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartSuiteRunErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartSuiteRunErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StartSuiteRunErrorKind::ValidationException(_))
     }
@@ -1012,7 +1012,7 @@ pub enum StopSuiteRunErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Sends invalid request exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopSuiteRunError {
@@ -1077,21 +1077,21 @@ impl StopSuiteRunError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopSuiteRunErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StopSuiteRunErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopSuiteRunErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StopSuiteRunErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopSuiteRunErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopSuiteRunErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopSuiteRunErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StopSuiteRunErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, StopSuiteRunErrorKind::ValidationException(_))
     }
@@ -1126,7 +1126,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Sends invalid request exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -1191,18 +1191,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -1237,7 +1237,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Sends invalid request exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -1302,21 +1302,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -1349,7 +1349,7 @@ pub enum UpdateSuiteDefinitionErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>Sends invalid request exception.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSuiteDefinitionError {
@@ -1413,14 +1413,14 @@ impl UpdateSuiteDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSuiteDefinitionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateSuiteDefinitionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSuiteDefinitionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSuiteDefinitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateSuiteDefinitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

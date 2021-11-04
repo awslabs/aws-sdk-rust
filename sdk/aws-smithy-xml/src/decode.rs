@@ -58,7 +58,7 @@ impl Name<'_> {
 #[derive(Debug, PartialEq)]
 pub struct Attr<'a> {
     name: Name<'a>,
-    // attribute values can be escaped (eg. with double quotes, so we need a Cow)
+    // attribute values can be escaped (e.g. with double quotes, so we need a Cow)
     value: Cow<'a, str>,
 }
 

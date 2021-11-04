@@ -20,7 +20,7 @@ pub enum AssociateKmsKeyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateKmsKeyError {
@@ -86,28 +86,28 @@ impl AssociateKmsKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateKmsKeyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `AssociateKmsKeyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateKmsKeyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateKmsKeyErrorKind::OperationAbortedException`.
+    /// Returns `true` if the error kind is `AssociateKmsKeyErrorKind::OperationAbortedException`.
     pub fn is_operation_aborted_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateKmsKeyErrorKind::OperationAbortedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateKmsKeyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateKmsKeyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateKmsKeyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateKmsKeyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `AssociateKmsKeyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -148,7 +148,7 @@ pub enum CancelExportTaskErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelExportTaskError {
@@ -214,28 +214,28 @@ impl CancelExportTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelExportTaskErrorKind::InvalidOperationException`.
+    /// Returns `true` if the error kind is `CancelExportTaskErrorKind::InvalidOperationException`.
     pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelExportTaskErrorKind::InvalidOperationException(_)
         )
     }
-    /// Returns true if the error kind is `CancelExportTaskErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CancelExportTaskErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelExportTaskErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CancelExportTaskErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CancelExportTaskErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelExportTaskErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CancelExportTaskErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CancelExportTaskErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -280,7 +280,7 @@ pub enum CreateExportTaskErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateExportTaskError {
@@ -348,42 +348,42 @@ impl CreateExportTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateExportTaskErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateExportTaskErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExportTaskErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExportTaskErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateExportTaskErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExportTaskErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExportTaskErrorKind::OperationAbortedException`.
+    /// Returns `true` if the error kind is `CreateExportTaskErrorKind::OperationAbortedException`.
     pub fn is_operation_aborted_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExportTaskErrorKind::OperationAbortedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExportTaskErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateExportTaskErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExportTaskErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExportTaskErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateExportTaskErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExportTaskErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExportTaskErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateExportTaskErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -428,7 +428,7 @@ pub enum CreateLogGroupErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLogGroupError {
@@ -495,35 +495,35 @@ impl CreateLogGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLogGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateLogGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLogGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLogGroupErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateLogGroupErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLogGroupErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLogGroupErrorKind::OperationAbortedException`.
+    /// Returns `true` if the error kind is `CreateLogGroupErrorKind::OperationAbortedException`.
     pub fn is_operation_aborted_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLogGroupErrorKind::OperationAbortedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLogGroupErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateLogGroupErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLogGroupErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLogGroupErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateLogGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -565,7 +565,7 @@ pub enum CreateLogStreamErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateLogStreamError {
@@ -631,28 +631,28 @@ impl CreateLogStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateLogStreamErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `CreateLogStreamErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLogStreamErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLogStreamErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateLogStreamErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLogStreamErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLogStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateLogStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateLogStreamErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateLogStreamErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `CreateLogStreamErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -693,7 +693,7 @@ pub enum DeleteDestinationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDestinationError {
@@ -759,28 +759,28 @@ impl DeleteDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDestinationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteDestinationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDestinationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDestinationErrorKind::OperationAbortedException`.
+    /// Returns `true` if the error kind is `DeleteDestinationErrorKind::OperationAbortedException`.
     pub fn is_operation_aborted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDestinationErrorKind::OperationAbortedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDestinationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDestinationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDestinationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDestinationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteDestinationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -821,7 +821,7 @@ pub enum DeleteLogGroupErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLogGroupError {
@@ -887,28 +887,28 @@ impl DeleteLogGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLogGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteLogGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLogGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLogGroupErrorKind::OperationAbortedException`.
+    /// Returns `true` if the error kind is `DeleteLogGroupErrorKind::OperationAbortedException`.
     pub fn is_operation_aborted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLogGroupErrorKind::OperationAbortedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLogGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLogGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLogGroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLogGroupErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteLogGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -949,7 +949,7 @@ pub enum DeleteLogStreamErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLogStreamError {
@@ -1015,28 +1015,28 @@ impl DeleteLogStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteLogStreamErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteLogStreamErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLogStreamErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLogStreamErrorKind::OperationAbortedException`.
+    /// Returns `true` if the error kind is `DeleteLogStreamErrorKind::OperationAbortedException`.
     pub fn is_operation_aborted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLogStreamErrorKind::OperationAbortedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLogStreamErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteLogStreamErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteLogStreamErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteLogStreamErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteLogStreamErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1077,7 +1077,7 @@ pub enum DeleteMetricFilterErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMetricFilterError {
@@ -1143,28 +1143,28 @@ impl DeleteMetricFilterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteMetricFilterErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteMetricFilterErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMetricFilterErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMetricFilterErrorKind::OperationAbortedException`.
+    /// Returns `true` if the error kind is `DeleteMetricFilterErrorKind::OperationAbortedException`.
     pub fn is_operation_aborted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMetricFilterErrorKind::OperationAbortedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMetricFilterErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteMetricFilterErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteMetricFilterErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteMetricFilterErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteMetricFilterErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1203,7 +1203,7 @@ pub enum DeleteQueryDefinitionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteQueryDefinitionError {
@@ -1268,21 +1268,21 @@ impl DeleteQueryDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteQueryDefinitionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteQueryDefinitionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteQueryDefinitionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteQueryDefinitionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteQueryDefinitionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteQueryDefinitionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteQueryDefinitionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteQueryDefinitionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1320,7 +1320,7 @@ pub enum DeleteResourcePolicyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResourcePolicyError {
@@ -1385,21 +1385,21 @@ impl DeleteResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourcePolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1439,7 +1439,7 @@ pub enum DeleteRetentionPolicyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRetentionPolicyError {
@@ -1505,28 +1505,28 @@ impl DeleteRetentionPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRetentionPolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteRetentionPolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRetentionPolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRetentionPolicyErrorKind::OperationAbortedException`.
+    /// Returns `true` if the error kind is `DeleteRetentionPolicyErrorKind::OperationAbortedException`.
     pub fn is_operation_aborted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRetentionPolicyErrorKind::OperationAbortedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRetentionPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRetentionPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRetentionPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRetentionPolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteRetentionPolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1567,7 +1567,7 @@ pub enum DeleteSubscriptionFilterErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSubscriptionFilterError {
@@ -1633,28 +1633,28 @@ impl DeleteSubscriptionFilterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSubscriptionFilterErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DeleteSubscriptionFilterErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSubscriptionFilterErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSubscriptionFilterErrorKind::OperationAbortedException`.
+    /// Returns `true` if the error kind is `DeleteSubscriptionFilterErrorKind::OperationAbortedException`.
     pub fn is_operation_aborted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSubscriptionFilterErrorKind::OperationAbortedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSubscriptionFilterErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSubscriptionFilterErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSubscriptionFilterErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSubscriptionFilterErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DeleteSubscriptionFilterErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1691,7 +1691,7 @@ pub enum DescribeDestinationsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDestinationsError {
@@ -1755,14 +1755,14 @@ impl DescribeDestinationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDestinationsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeDestinationsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDestinationsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDestinationsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeDestinationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1797,7 +1797,7 @@ pub enum DescribeExportTasksErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeExportTasksError {
@@ -1861,14 +1861,14 @@ impl DescribeExportTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeExportTasksErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeExportTasksErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExportTasksErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExportTasksErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeExportTasksErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1903,7 +1903,7 @@ pub enum DescribeLogGroupsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLogGroupsError {
@@ -1967,14 +1967,14 @@ impl DescribeLogGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLogGroupsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeLogGroupsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLogGroupsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLogGroupsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeLogGroupsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2011,7 +2011,7 @@ pub enum DescribeLogStreamsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLogStreamsError {
@@ -2076,21 +2076,21 @@ impl DescribeLogStreamsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLogStreamsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeLogStreamsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLogStreamsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLogStreamsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeLogStreamsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLogStreamsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLogStreamsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeLogStreamsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2128,7 +2128,7 @@ pub enum DescribeMetricFiltersErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMetricFiltersError {
@@ -2193,21 +2193,21 @@ impl DescribeMetricFiltersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeMetricFiltersErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeMetricFiltersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMetricFiltersErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMetricFiltersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeMetricFiltersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeMetricFiltersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeMetricFiltersErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeMetricFiltersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2245,7 +2245,7 @@ pub enum DescribeQueriesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeQueriesError {
@@ -2310,21 +2310,21 @@ impl DescribeQueriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeQueriesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeQueriesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeQueriesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeQueriesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeQueriesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeQueriesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeQueriesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeQueriesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2360,7 +2360,7 @@ pub enum DescribeQueryDefinitionsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeQueryDefinitionsError {
@@ -2424,14 +2424,14 @@ impl DescribeQueryDefinitionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeQueryDefinitionsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeQueryDefinitionsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeQueryDefinitionsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeQueryDefinitionsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeQueryDefinitionsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2466,7 +2466,7 @@ pub enum DescribeResourcePoliciesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeResourcePoliciesError {
@@ -2530,14 +2530,14 @@ impl DescribeResourcePoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeResourcePoliciesErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeResourcePoliciesErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeResourcePoliciesErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeResourcePoliciesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeResourcePoliciesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2574,7 +2574,7 @@ pub enum DescribeSubscriptionFiltersErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSubscriptionFiltersError {
@@ -2645,21 +2645,21 @@ impl DescribeSubscriptionFiltersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSubscriptionFiltersErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DescribeSubscriptionFiltersErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSubscriptionFiltersErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSubscriptionFiltersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeSubscriptionFiltersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSubscriptionFiltersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSubscriptionFiltersErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DescribeSubscriptionFiltersErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2701,7 +2701,7 @@ pub enum DisassociateKmsKeyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateKmsKeyError {
@@ -2767,28 +2767,28 @@ impl DisassociateKmsKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateKmsKeyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `DisassociateKmsKeyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateKmsKeyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateKmsKeyErrorKind::OperationAbortedException`.
+    /// Returns `true` if the error kind is `DisassociateKmsKeyErrorKind::OperationAbortedException`.
     pub fn is_operation_aborted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateKmsKeyErrorKind::OperationAbortedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateKmsKeyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateKmsKeyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateKmsKeyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateKmsKeyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `DisassociateKmsKeyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2827,7 +2827,7 @@ pub enum FilterLogEventsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for FilterLogEventsError {
@@ -2892,21 +2892,21 @@ impl FilterLogEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `FilterLogEventsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `FilterLogEventsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             FilterLogEventsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `FilterLogEventsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `FilterLogEventsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             FilterLogEventsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `FilterLogEventsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `FilterLogEventsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2944,7 +2944,7 @@ pub enum GetLogEventsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLogEventsError {
@@ -3009,21 +3009,21 @@ impl GetLogEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLogEventsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetLogEventsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLogEventsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetLogEventsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLogEventsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLogEventsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLogEventsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetLogEventsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3063,7 +3063,7 @@ pub enum GetLogGroupFieldsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLogGroupFieldsError {
@@ -3129,28 +3129,28 @@ impl GetLogGroupFieldsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLogGroupFieldsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetLogGroupFieldsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLogGroupFieldsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetLogGroupFieldsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetLogGroupFieldsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLogGroupFieldsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetLogGroupFieldsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLogGroupFieldsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLogGroupFieldsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLogGroupFieldsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetLogGroupFieldsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3191,7 +3191,7 @@ pub enum GetLogRecordErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLogRecordError {
@@ -3257,25 +3257,25 @@ impl GetLogRecordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLogRecordErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetLogRecordErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLogRecordErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetLogRecordErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetLogRecordErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetLogRecordErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetLogRecordErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLogRecordErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLogRecordErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLogRecordErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetLogRecordErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3314,7 +3314,7 @@ pub enum GetQueryResultsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetQueryResultsError {
@@ -3379,21 +3379,21 @@ impl GetQueryResultsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetQueryResultsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `GetQueryResultsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetQueryResultsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `GetQueryResultsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetQueryResultsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetQueryResultsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetQueryResultsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetQueryResultsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3429,7 +3429,7 @@ pub enum ListTagsLogGroupErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsLogGroupError {
@@ -3493,14 +3493,14 @@ impl ListTagsLogGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsLogGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsLogGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsLogGroupErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsLogGroupErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `ListTagsLogGroupErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3537,7 +3537,7 @@ pub enum PutDestinationErrorKind {
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutDestinationError {
@@ -3602,21 +3602,21 @@ impl PutDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutDestinationErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutDestinationErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDestinationErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutDestinationErrorKind::OperationAbortedException`.
+    /// Returns `true` if the error kind is `PutDestinationErrorKind::OperationAbortedException`.
     pub fn is_operation_aborted_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDestinationErrorKind::OperationAbortedException(_)
         )
     }
-    /// Returns true if the error kind is `PutDestinationErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutDestinationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3654,7 +3654,7 @@ pub enum PutDestinationPolicyErrorKind {
     OperationAbortedException(crate::error::OperationAbortedException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutDestinationPolicyError {
@@ -3719,21 +3719,21 @@ impl PutDestinationPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutDestinationPolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutDestinationPolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDestinationPolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutDestinationPolicyErrorKind::OperationAbortedException`.
+    /// Returns `true` if the error kind is `PutDestinationPolicyErrorKind::OperationAbortedException`.
     pub fn is_operation_aborted_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDestinationPolicyErrorKind::OperationAbortedException(_)
         )
     }
-    /// Returns true if the error kind is `PutDestinationPolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutDestinationPolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3779,7 +3779,7 @@ pub enum PutLogEventsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The most likely cause is an invalid Amazon Web Services access key ID or secret key.</p>
     UnrecognizedClientException(crate::error::UnrecognizedClientException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutLogEventsError {
@@ -3847,42 +3847,42 @@ impl PutLogEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutLogEventsErrorKind::DataAlreadyAcceptedException`.
+    /// Returns `true` if the error kind is `PutLogEventsErrorKind::DataAlreadyAcceptedException`.
     pub fn is_data_already_accepted_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLogEventsErrorKind::DataAlreadyAcceptedException(_)
         )
     }
-    /// Returns true if the error kind is `PutLogEventsErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutLogEventsErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLogEventsErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutLogEventsErrorKind::InvalidSequenceTokenException`.
+    /// Returns `true` if the error kind is `PutLogEventsErrorKind::InvalidSequenceTokenException`.
     pub fn is_invalid_sequence_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLogEventsErrorKind::InvalidSequenceTokenException(_)
         )
     }
-    /// Returns true if the error kind is `PutLogEventsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutLogEventsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLogEventsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutLogEventsErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutLogEventsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLogEventsErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `PutLogEventsErrorKind::UnrecognizedClientException`.
+    /// Returns `true` if the error kind is `PutLogEventsErrorKind::UnrecognizedClientException`.
     pub fn is_unrecognized_client_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3927,7 +3927,7 @@ pub enum PutMetricFilterErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutMetricFilterError {
@@ -3994,35 +3994,35 @@ impl PutMetricFilterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutMetricFilterErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutMetricFilterErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMetricFilterErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutMetricFilterErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutMetricFilterErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMetricFilterErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutMetricFilterErrorKind::OperationAbortedException`.
+    /// Returns `true` if the error kind is `PutMetricFilterErrorKind::OperationAbortedException`.
     pub fn is_operation_aborted_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMetricFilterErrorKind::OperationAbortedException(_)
         )
     }
-    /// Returns true if the error kind is `PutMetricFilterErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutMetricFilterErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutMetricFilterErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutMetricFilterErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutMetricFilterErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4062,7 +4062,7 @@ pub enum PutQueryDefinitionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutQueryDefinitionError {
@@ -4127,21 +4127,21 @@ impl PutQueryDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutQueryDefinitionErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutQueryDefinitionErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutQueryDefinitionErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutQueryDefinitionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutQueryDefinitionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutQueryDefinitionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutQueryDefinitionErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutQueryDefinitionErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4179,7 +4179,7 @@ pub enum PutResourcePolicyErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutResourcePolicyError {
@@ -4244,21 +4244,21 @@ impl PutResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4298,7 +4298,7 @@ pub enum PutRetentionPolicyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRetentionPolicyError {
@@ -4364,28 +4364,28 @@ impl PutRetentionPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutRetentionPolicyErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutRetentionPolicyErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRetentionPolicyErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutRetentionPolicyErrorKind::OperationAbortedException`.
+    /// Returns `true` if the error kind is `PutRetentionPolicyErrorKind::OperationAbortedException`.
     pub fn is_operation_aborted_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRetentionPolicyErrorKind::OperationAbortedException(_)
         )
     }
-    /// Returns true if the error kind is `PutRetentionPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutRetentionPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutRetentionPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutRetentionPolicyErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutRetentionPolicyErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4428,7 +4428,7 @@ pub enum PutSubscriptionFilterErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutSubscriptionFilterError {
@@ -4495,35 +4495,35 @@ impl PutSubscriptionFilterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutSubscriptionFilterErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `PutSubscriptionFilterErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSubscriptionFilterErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `PutSubscriptionFilterErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutSubscriptionFilterErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSubscriptionFilterErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutSubscriptionFilterErrorKind::OperationAbortedException`.
+    /// Returns `true` if the error kind is `PutSubscriptionFilterErrorKind::OperationAbortedException`.
     pub fn is_operation_aborted_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSubscriptionFilterErrorKind::OperationAbortedException(_)
         )
     }
-    /// Returns true if the error kind is `PutSubscriptionFilterErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutSubscriptionFilterErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSubscriptionFilterErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutSubscriptionFilterErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `PutSubscriptionFilterErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4571,7 +4571,7 @@ pub enum StartQueryErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartQueryError {
@@ -4638,29 +4638,29 @@ impl StartQueryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartQueryErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StartQueryErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartQueryErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `StartQueryErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `StartQueryErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, StartQueryErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `StartQueryErrorKind::MalformedQueryException`.
+    /// Returns `true` if the error kind is `StartQueryErrorKind::MalformedQueryException`.
     pub fn is_malformed_query_exception(&self) -> bool {
         matches!(&self.kind, StartQueryErrorKind::MalformedQueryException(_))
     }
-    /// Returns true if the error kind is `StartQueryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartQueryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartQueryErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartQueryErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StartQueryErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4700,7 +4700,7 @@ pub enum StopQueryErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopQueryError {
@@ -4765,15 +4765,15 @@ impl StopQueryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopQueryErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `StopQueryErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(&self.kind, StopQueryErrorKind::InvalidParameterException(_))
     }
-    /// Returns true if the error kind is `StopQueryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopQueryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopQueryErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `StopQueryErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `StopQueryErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4809,7 +4809,7 @@ pub enum TagLogGroupErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagLogGroupError {
@@ -4873,14 +4873,14 @@ impl TagLogGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagLogGroupErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `TagLogGroupErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagLogGroupErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TagLogGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagLogGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4915,7 +4915,7 @@ pub enum TestMetricFilterErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TestMetricFilterError {
@@ -4979,14 +4979,14 @@ impl TestMetricFilterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TestMetricFilterErrorKind::InvalidParameterException`.
+    /// Returns `true` if the error kind is `TestMetricFilterErrorKind::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestMetricFilterErrorKind::InvalidParameterException(_)
         )
     }
-    /// Returns true if the error kind is `TestMetricFilterErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `TestMetricFilterErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5019,7 +5019,7 @@ pub struct UntagLogGroupError {
 pub enum UntagLogGroupErrorKind {
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagLogGroupError {
@@ -5082,7 +5082,7 @@ impl UntagLogGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagLogGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagLogGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

@@ -29,7 +29,7 @@ pub enum CreateNotificationRuleErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateNotificationRuleError {
@@ -101,42 +101,42 @@ impl CreateNotificationRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateNotificationRuleErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateNotificationRuleErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNotificationRuleErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNotificationRuleErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateNotificationRuleErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNotificationRuleErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNotificationRuleErrorKind::ConfigurationException`.
+    /// Returns `true` if the error kind is `CreateNotificationRuleErrorKind::ConfigurationException`.
     pub fn is_configuration_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNotificationRuleErrorKind::ConfigurationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNotificationRuleErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateNotificationRuleErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNotificationRuleErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNotificationRuleErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateNotificationRuleErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNotificationRuleErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNotificationRuleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateNotificationRuleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -182,7 +182,7 @@ pub enum DeleteNotificationRuleErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNotificationRuleError {
@@ -249,21 +249,21 @@ impl DeleteNotificationRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteNotificationRuleErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteNotificationRuleErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNotificationRuleErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNotificationRuleErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteNotificationRuleErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNotificationRuleErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNotificationRuleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteNotificationRuleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -299,7 +299,7 @@ pub struct DeleteTargetError {
 pub enum DeleteTargetErrorKind {
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTargetError {
@@ -362,7 +362,7 @@ impl DeleteTargetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTargetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteTargetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteTargetErrorKind::ValidationException(_))
     }
@@ -393,7 +393,7 @@ pub enum DescribeNotificationRuleErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeNotificationRuleError {
@@ -457,14 +457,14 @@ impl DescribeNotificationRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeNotificationRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeNotificationRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeNotificationRuleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeNotificationRuleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeNotificationRuleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -499,7 +499,7 @@ pub enum ListEventTypesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEventTypesError {
@@ -563,14 +563,14 @@ impl ListEventTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEventTypesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListEventTypesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEventTypesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListEventTypesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListEventTypesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListEventTypesErrorKind::ValidationException(_))
     }
@@ -602,7 +602,7 @@ pub enum ListNotificationRulesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListNotificationRulesError {
@@ -666,14 +666,14 @@ impl ListNotificationRulesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListNotificationRulesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListNotificationRulesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNotificationRulesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListNotificationRulesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListNotificationRulesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -708,7 +708,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -772,14 +772,14 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -814,7 +814,7 @@ pub enum ListTargetsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTargetsError {
@@ -878,14 +878,14 @@ impl ListTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTargetsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListTargetsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTargetsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTargetsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTargetsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListTargetsErrorKind::ValidationException(_))
     }
@@ -917,7 +917,7 @@ pub enum SubscribeErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SubscribeError {
@@ -981,11 +981,11 @@ impl SubscribeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SubscribeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SubscribeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, SubscribeErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `SubscribeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `SubscribeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, SubscribeErrorKind::ValidationException(_))
     }
@@ -1020,7 +1020,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -1085,21 +1085,21 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -1130,7 +1130,7 @@ pub struct UnsubscribeError {
 pub enum UnsubscribeErrorKind {
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UnsubscribeError {
@@ -1193,7 +1193,7 @@ impl UnsubscribeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UnsubscribeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UnsubscribeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UnsubscribeErrorKind::ValidationException(_))
     }
@@ -1227,7 +1227,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -1292,21 +1292,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -1339,7 +1339,7 @@ pub enum UpdateNotificationRuleErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateNotificationRuleError {
@@ -1403,14 +1403,14 @@ impl UpdateNotificationRuleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateNotificationRuleErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateNotificationRuleErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateNotificationRuleErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateNotificationRuleErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateNotificationRuleErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

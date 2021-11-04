@@ -21,7 +21,7 @@ pub enum BuildSuggestersErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because it has invalid parameters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BuildSuggestersError {
@@ -87,22 +87,22 @@ impl BuildSuggestersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BuildSuggestersErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `BuildSuggestersErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(&self.kind, BuildSuggestersErrorKind::BaseException(_))
     }
-    /// Returns true if the error kind is `BuildSuggestersErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `BuildSuggestersErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, BuildSuggestersErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `BuildSuggestersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BuildSuggestersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BuildSuggestersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BuildSuggestersErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BuildSuggestersErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, BuildSuggestersErrorKind::ValidationException(_))
     }
@@ -143,7 +143,7 @@ pub enum CreateDomainErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The request was rejected because it has invalid parameters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDomainError {
@@ -210,26 +210,26 @@ impl CreateDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(&self.kind, CreateDomainErrorKind::BaseException(_))
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, CreateDomainErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateDomainErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDomainErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDomainErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateDomainErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateDomainErrorKind::ValidationException(_))
     }
@@ -273,7 +273,7 @@ pub enum DefineAnalysisSchemeErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because it has invalid parameters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DefineAnalysisSchemeError {
@@ -341,39 +341,39 @@ impl DefineAnalysisSchemeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DefineAnalysisSchemeErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `DefineAnalysisSchemeErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(&self.kind, DefineAnalysisSchemeErrorKind::BaseException(_))
     }
-    /// Returns true if the error kind is `DefineAnalysisSchemeErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DefineAnalysisSchemeErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DefineAnalysisSchemeErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DefineAnalysisSchemeErrorKind::InvalidTypeException`.
+    /// Returns `true` if the error kind is `DefineAnalysisSchemeErrorKind::InvalidTypeException`.
     pub fn is_invalid_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             DefineAnalysisSchemeErrorKind::InvalidTypeException(_)
         )
     }
-    /// Returns true if the error kind is `DefineAnalysisSchemeErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DefineAnalysisSchemeErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DefineAnalysisSchemeErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DefineAnalysisSchemeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DefineAnalysisSchemeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DefineAnalysisSchemeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DefineAnalysisSchemeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DefineAnalysisSchemeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -421,7 +421,7 @@ pub enum DefineExpressionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because it has invalid parameters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DefineExpressionError {
@@ -489,36 +489,36 @@ impl DefineExpressionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DefineExpressionErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `DefineExpressionErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(&self.kind, DefineExpressionErrorKind::BaseException(_))
     }
-    /// Returns true if the error kind is `DefineExpressionErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DefineExpressionErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DefineExpressionErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DefineExpressionErrorKind::InvalidTypeException`.
+    /// Returns `true` if the error kind is `DefineExpressionErrorKind::InvalidTypeException`.
     pub fn is_invalid_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             DefineExpressionErrorKind::InvalidTypeException(_)
         )
     }
-    /// Returns true if the error kind is `DefineExpressionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DefineExpressionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DefineExpressionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DefineExpressionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DefineExpressionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DefineExpressionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DefineExpressionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DefineExpressionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -566,7 +566,7 @@ pub enum DefineIndexFieldErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because it has invalid parameters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DefineIndexFieldError {
@@ -634,36 +634,36 @@ impl DefineIndexFieldError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DefineIndexFieldErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `DefineIndexFieldErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(&self.kind, DefineIndexFieldErrorKind::BaseException(_))
     }
-    /// Returns true if the error kind is `DefineIndexFieldErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DefineIndexFieldErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DefineIndexFieldErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DefineIndexFieldErrorKind::InvalidTypeException`.
+    /// Returns `true` if the error kind is `DefineIndexFieldErrorKind::InvalidTypeException`.
     pub fn is_invalid_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             DefineIndexFieldErrorKind::InvalidTypeException(_)
         )
     }
-    /// Returns true if the error kind is `DefineIndexFieldErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DefineIndexFieldErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DefineIndexFieldErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DefineIndexFieldErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DefineIndexFieldErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DefineIndexFieldErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DefineIndexFieldErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DefineIndexFieldErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -711,7 +711,7 @@ pub enum DefineSuggesterErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because it has invalid parameters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DefineSuggesterError {
@@ -779,36 +779,36 @@ impl DefineSuggesterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DefineSuggesterErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `DefineSuggesterErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(&self.kind, DefineSuggesterErrorKind::BaseException(_))
     }
-    /// Returns true if the error kind is `DefineSuggesterErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DefineSuggesterErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DefineSuggesterErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DefineSuggesterErrorKind::InvalidTypeException`.
+    /// Returns `true` if the error kind is `DefineSuggesterErrorKind::InvalidTypeException`.
     pub fn is_invalid_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             DefineSuggesterErrorKind::InvalidTypeException(_)
         )
     }
-    /// Returns true if the error kind is `DefineSuggesterErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DefineSuggesterErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DefineSuggesterErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DefineSuggesterErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DefineSuggesterErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DefineSuggesterErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DefineSuggesterErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DefineSuggesterErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DefineSuggesterErrorKind::ValidationException(_))
     }
@@ -851,7 +851,7 @@ pub enum DeleteAnalysisSchemeErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because it has invalid parameters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAnalysisSchemeError {
@@ -918,32 +918,32 @@ impl DeleteAnalysisSchemeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAnalysisSchemeErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `DeleteAnalysisSchemeErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(&self.kind, DeleteAnalysisSchemeErrorKind::BaseException(_))
     }
-    /// Returns true if the error kind is `DeleteAnalysisSchemeErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteAnalysisSchemeErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAnalysisSchemeErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAnalysisSchemeErrorKind::InvalidTypeException`.
+    /// Returns `true` if the error kind is `DeleteAnalysisSchemeErrorKind::InvalidTypeException`.
     pub fn is_invalid_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAnalysisSchemeErrorKind::InvalidTypeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAnalysisSchemeErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAnalysisSchemeErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAnalysisSchemeErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAnalysisSchemeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteAnalysisSchemeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -982,7 +982,7 @@ pub enum DeleteDomainErrorKind {
     /// <p>An internal error occurred while processing the request. If this problem persists,
     /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDomainError {
@@ -1046,11 +1046,11 @@ impl DeleteDomainError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDomainErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(&self.kind, DeleteDomainErrorKind::BaseException(_))
     }
-    /// Returns true if the error kind is `DeleteDomainErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteDomainErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DeleteDomainErrorKind::InternalException(_))
     }
@@ -1089,7 +1089,7 @@ pub enum DeleteExpressionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because it has invalid parameters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteExpressionError {
@@ -1156,29 +1156,29 @@ impl DeleteExpressionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteExpressionErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `DeleteExpressionErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(&self.kind, DeleteExpressionErrorKind::BaseException(_))
     }
-    /// Returns true if the error kind is `DeleteExpressionErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteExpressionErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DeleteExpressionErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DeleteExpressionErrorKind::InvalidTypeException`.
+    /// Returns `true` if the error kind is `DeleteExpressionErrorKind::InvalidTypeException`.
     pub fn is_invalid_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteExpressionErrorKind::InvalidTypeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteExpressionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteExpressionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteExpressionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteExpressionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteExpressionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1223,7 +1223,7 @@ pub enum DeleteIndexFieldErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because it has invalid parameters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteIndexFieldError {
@@ -1290,29 +1290,29 @@ impl DeleteIndexFieldError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteIndexFieldErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `DeleteIndexFieldErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(&self.kind, DeleteIndexFieldErrorKind::BaseException(_))
     }
-    /// Returns true if the error kind is `DeleteIndexFieldErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteIndexFieldErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DeleteIndexFieldErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DeleteIndexFieldErrorKind::InvalidTypeException`.
+    /// Returns `true` if the error kind is `DeleteIndexFieldErrorKind::InvalidTypeException`.
     pub fn is_invalid_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIndexFieldErrorKind::InvalidTypeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIndexFieldErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteIndexFieldErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteIndexFieldErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteIndexFieldErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteIndexFieldErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1357,7 +1357,7 @@ pub enum DeleteSuggesterErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because it has invalid parameters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSuggesterError {
@@ -1424,29 +1424,29 @@ impl DeleteSuggesterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSuggesterErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `DeleteSuggesterErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(&self.kind, DeleteSuggesterErrorKind::BaseException(_))
     }
-    /// Returns true if the error kind is `DeleteSuggesterErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DeleteSuggesterErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DeleteSuggesterErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `DeleteSuggesterErrorKind::InvalidTypeException`.
+    /// Returns `true` if the error kind is `DeleteSuggesterErrorKind::InvalidTypeException`.
     pub fn is_invalid_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSuggesterErrorKind::InvalidTypeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSuggesterErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSuggesterErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSuggesterErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSuggesterErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteSuggesterErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteSuggesterErrorKind::ValidationException(_))
     }
@@ -1484,7 +1484,7 @@ pub enum DescribeAnalysisSchemesErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAnalysisSchemesError {
@@ -1549,21 +1549,21 @@ impl DescribeAnalysisSchemesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAnalysisSchemesErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `DescribeAnalysisSchemesErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnalysisSchemesErrorKind::BaseException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnalysisSchemesErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeAnalysisSchemesErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAnalysisSchemesErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAnalysisSchemesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAnalysisSchemesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1608,7 +1608,7 @@ pub enum DescribeAvailabilityOptionsErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAvailabilityOptionsError {
@@ -1680,42 +1680,42 @@ impl DescribeAvailabilityOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAvailabilityOptionsErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `DescribeAvailabilityOptionsErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAvailabilityOptionsErrorKind::BaseException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAvailabilityOptionsErrorKind::DisabledOperationException`.
+    /// Returns `true` if the error kind is `DescribeAvailabilityOptionsErrorKind::DisabledOperationException`.
     pub fn is_disabled_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAvailabilityOptionsErrorKind::DisabledOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAvailabilityOptionsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeAvailabilityOptionsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAvailabilityOptionsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAvailabilityOptionsErrorKind::InvalidTypeException`.
+    /// Returns `true` if the error kind is `DescribeAvailabilityOptionsErrorKind::InvalidTypeException`.
     pub fn is_invalid_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAvailabilityOptionsErrorKind::InvalidTypeException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAvailabilityOptionsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DescribeAvailabilityOptionsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAvailabilityOptionsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAvailabilityOptionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAvailabilityOptionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1763,7 +1763,7 @@ pub enum DescribeDomainEndpointOptionsErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDomainEndpointOptionsError {
@@ -1837,35 +1837,35 @@ impl DescribeDomainEndpointOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDomainEndpointOptionsErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `DescribeDomainEndpointOptionsErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDomainEndpointOptionsErrorKind::BaseException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDomainEndpointOptionsErrorKind::DisabledOperationException`.
+    /// Returns `true` if the error kind is `DescribeDomainEndpointOptionsErrorKind::DisabledOperationException`.
     pub fn is_disabled_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDomainEndpointOptionsErrorKind::DisabledOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDomainEndpointOptionsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeDomainEndpointOptionsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDomainEndpointOptionsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDomainEndpointOptionsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DescribeDomainEndpointOptionsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDomainEndpointOptionsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDomainEndpointOptionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDomainEndpointOptionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1908,7 +1908,7 @@ pub enum DescribeDomainsErrorKind {
     /// <p>An internal error occurred while processing the request. If this problem persists,
     /// report an issue from the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.</p>
     InternalException(crate::error::InternalException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDomainsError {
@@ -1972,11 +1972,11 @@ impl DescribeDomainsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDomainsErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `DescribeDomainsErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(&self.kind, DescribeDomainsErrorKind::BaseException(_))
     }
-    /// Returns true if the error kind is `DescribeDomainsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeDomainsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, DescribeDomainsErrorKind::InternalException(_))
     }
@@ -2011,7 +2011,7 @@ pub enum DescribeExpressionsErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeExpressionsError {
@@ -2076,18 +2076,18 @@ impl DescribeExpressionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeExpressionsErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `DescribeExpressionsErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(&self.kind, DescribeExpressionsErrorKind::BaseException(_))
     }
-    /// Returns true if the error kind is `DescribeExpressionsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeExpressionsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeExpressionsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeExpressionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeExpressionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2126,7 +2126,7 @@ pub enum DescribeIndexFieldsErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeIndexFieldsError {
@@ -2191,18 +2191,18 @@ impl DescribeIndexFieldsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeIndexFieldsErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `DescribeIndexFieldsErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(&self.kind, DescribeIndexFieldsErrorKind::BaseException(_))
     }
-    /// Returns true if the error kind is `DescribeIndexFieldsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeIndexFieldsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeIndexFieldsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeIndexFieldsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeIndexFieldsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2241,7 +2241,7 @@ pub enum DescribeScalingParametersErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeScalingParametersError {
@@ -2306,21 +2306,21 @@ impl DescribeScalingParametersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeScalingParametersErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `DescribeScalingParametersErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingParametersErrorKind::BaseException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingParametersErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeScalingParametersErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingParametersErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingParametersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeScalingParametersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2359,7 +2359,7 @@ pub enum DescribeServiceAccessPoliciesErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeServiceAccessPoliciesError {
@@ -2429,21 +2429,21 @@ impl DescribeServiceAccessPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeServiceAccessPoliciesErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `DescribeServiceAccessPoliciesErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeServiceAccessPoliciesErrorKind::BaseException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeServiceAccessPoliciesErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeServiceAccessPoliciesErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeServiceAccessPoliciesErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeServiceAccessPoliciesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeServiceAccessPoliciesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2484,7 +2484,7 @@ pub enum DescribeSuggestersErrorKind {
     InternalException(crate::error::InternalException),
     /// <p>The request was rejected because it attempted to reference a resource that does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeSuggestersError {
@@ -2549,18 +2549,18 @@ impl DescribeSuggestersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeSuggestersErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `DescribeSuggestersErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(&self.kind, DescribeSuggestersErrorKind::BaseException(_))
     }
-    /// Returns true if the error kind is `DescribeSuggestersErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `DescribeSuggestersErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeSuggestersErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeSuggestersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeSuggestersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2601,7 +2601,7 @@ pub enum IndexDocumentsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because it has invalid parameters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for IndexDocumentsError {
@@ -2667,22 +2667,22 @@ impl IndexDocumentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `IndexDocumentsErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `IndexDocumentsErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(&self.kind, IndexDocumentsErrorKind::BaseException(_))
     }
-    /// Returns true if the error kind is `IndexDocumentsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `IndexDocumentsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(&self.kind, IndexDocumentsErrorKind::InternalException(_))
     }
-    /// Returns true if the error kind is `IndexDocumentsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `IndexDocumentsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             IndexDocumentsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `IndexDocumentsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `IndexDocumentsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, IndexDocumentsErrorKind::ValidationException(_))
     }
@@ -2714,7 +2714,7 @@ pub struct ListDomainNamesError {
 pub enum ListDomainNamesErrorKind {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::error::BaseException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDomainNamesError {
@@ -2777,7 +2777,7 @@ impl ListDomainNamesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDomainNamesErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `ListDomainNamesErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(&self.kind, ListDomainNamesErrorKind::BaseException(_))
     }
@@ -2819,7 +2819,7 @@ pub enum UpdateAvailabilityOptionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because it has invalid parameters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAvailabilityOptionsError {
@@ -2888,49 +2888,49 @@ impl UpdateAvailabilityOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAvailabilityOptionsErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `UpdateAvailabilityOptionsErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAvailabilityOptionsErrorKind::BaseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAvailabilityOptionsErrorKind::DisabledOperationException`.
+    /// Returns `true` if the error kind is `UpdateAvailabilityOptionsErrorKind::DisabledOperationException`.
     pub fn is_disabled_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAvailabilityOptionsErrorKind::DisabledOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAvailabilityOptionsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateAvailabilityOptionsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAvailabilityOptionsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAvailabilityOptionsErrorKind::InvalidTypeException`.
+    /// Returns `true` if the error kind is `UpdateAvailabilityOptionsErrorKind::InvalidTypeException`.
     pub fn is_invalid_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAvailabilityOptionsErrorKind::InvalidTypeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAvailabilityOptionsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateAvailabilityOptionsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAvailabilityOptionsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAvailabilityOptionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAvailabilityOptionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAvailabilityOptionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAvailabilityOptionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateAvailabilityOptionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2981,7 +2981,7 @@ pub enum UpdateDomainEndpointOptionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because it has invalid parameters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDomainEndpointOptionsError {
@@ -3054,49 +3054,49 @@ impl UpdateDomainEndpointOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDomainEndpointOptionsErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `UpdateDomainEndpointOptionsErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainEndpointOptionsErrorKind::BaseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainEndpointOptionsErrorKind::DisabledOperationException`.
+    /// Returns `true` if the error kind is `UpdateDomainEndpointOptionsErrorKind::DisabledOperationException`.
     pub fn is_disabled_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainEndpointOptionsErrorKind::DisabledOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainEndpointOptionsErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateDomainEndpointOptionsErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainEndpointOptionsErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainEndpointOptionsErrorKind::InvalidTypeException`.
+    /// Returns `true` if the error kind is `UpdateDomainEndpointOptionsErrorKind::InvalidTypeException`.
     pub fn is_invalid_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainEndpointOptionsErrorKind::InvalidTypeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainEndpointOptionsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateDomainEndpointOptionsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainEndpointOptionsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainEndpointOptionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDomainEndpointOptionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDomainEndpointOptionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDomainEndpointOptionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateDomainEndpointOptionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3147,7 +3147,7 @@ pub enum UpdateScalingParametersErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because it has invalid parameters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateScalingParametersError {
@@ -3215,42 +3215,42 @@ impl UpdateScalingParametersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateScalingParametersErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `UpdateScalingParametersErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateScalingParametersErrorKind::BaseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateScalingParametersErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateScalingParametersErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateScalingParametersErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateScalingParametersErrorKind::InvalidTypeException`.
+    /// Returns `true` if the error kind is `UpdateScalingParametersErrorKind::InvalidTypeException`.
     pub fn is_invalid_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateScalingParametersErrorKind::InvalidTypeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateScalingParametersErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateScalingParametersErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateScalingParametersErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateScalingParametersErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateScalingParametersErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateScalingParametersErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateScalingParametersErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateScalingParametersErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3298,7 +3298,7 @@ pub enum UpdateServiceAccessPoliciesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was rejected because it has invalid parameters.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateServiceAccessPoliciesError {
@@ -3368,42 +3368,42 @@ impl UpdateServiceAccessPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateServiceAccessPoliciesErrorKind::BaseException`.
+    /// Returns `true` if the error kind is `UpdateServiceAccessPoliciesErrorKind::BaseException`.
     pub fn is_base_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceAccessPoliciesErrorKind::BaseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceAccessPoliciesErrorKind::InternalException`.
+    /// Returns `true` if the error kind is `UpdateServiceAccessPoliciesErrorKind::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceAccessPoliciesErrorKind::InternalException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceAccessPoliciesErrorKind::InvalidTypeException`.
+    /// Returns `true` if the error kind is `UpdateServiceAccessPoliciesErrorKind::InvalidTypeException`.
     pub fn is_invalid_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceAccessPoliciesErrorKind::InvalidTypeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceAccessPoliciesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateServiceAccessPoliciesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceAccessPoliciesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceAccessPoliciesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateServiceAccessPoliciesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateServiceAccessPoliciesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateServiceAccessPoliciesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateServiceAccessPoliciesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

@@ -308,6 +308,54 @@ impl UpdateTrainingJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateProjectOutput {
+    /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    pub project_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateProjectOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateProjectOutput");
+        formatter.field("project_arn", &self.project_arn);
+        formatter.finish()
+    }
+}
+/// See [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
+pub mod update_project_output {
+    /// A builder for [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) project_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the project.</p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.project_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the project.</p>
+        pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.project_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
+        pub fn build(self) -> crate::output::UpdateProjectOutput {
+            crate::output::UpdateProjectOutput {
+                project_arn: self.project_arn,
+            }
+        }
+    }
+}
+impl UpdateProjectOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
+    pub fn builder() -> crate::output::update_project_output::Builder {
+        crate::output::update_project_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePipelineExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated pipeline execution.</p>
     pub pipeline_execution_arn: std::option::Option<std::string::String>,
@@ -10096,6 +10144,11 @@ pub struct DescribeProjectOutput {
     pub created_by: std::option::Option<crate::model::UserContext>,
     /// <p>The time when the project was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::Instant>,
+    /// <p>The timestamp when project was last modified.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+    /// <p>Information about the user who created or modified an experiment, trial, trial
+    /// component, or project.</p>
+    pub last_modified_by: std::option::Option<crate::model::UserContext>,
 }
 impl std::fmt::Debug for DescribeProjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10115,6 +10168,8 @@ impl std::fmt::Debug for DescribeProjectOutput {
         formatter.field("project_status", &self.project_status);
         formatter.field("created_by", &self.created_by);
         formatter.field("creation_time", &self.creation_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("last_modified_by", &self.last_modified_by);
         formatter.finish()
     }
 }
@@ -10135,6 +10190,8 @@ pub mod describe_project_output {
         pub(crate) project_status: std::option::Option<crate::model::ProjectStatus>,
         pub(crate) created_by: std::option::Option<crate::model::UserContext>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_by: std::option::Option<crate::model::UserContext>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the project.</p>
@@ -10255,6 +10312,34 @@ pub mod describe_project_output {
             self.creation_time = input;
             self
         }
+        /// <p>The timestamp when project was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The timestamp when project was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
+        pub fn last_modified_by(mut self, input: crate::model::UserContext) -> Self {
+            self.last_modified_by = Some(input);
+            self
+        }
+        /// <p>Information about the user who created or modified an experiment, trial, trial
+        /// component, or project.</p>
+        pub fn set_last_modified_by(
+            mut self,
+            input: std::option::Option<crate::model::UserContext>,
+        ) -> Self {
+            self.last_modified_by = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeProjectOutput`](crate::output::DescribeProjectOutput)
         pub fn build(self) -> crate::output::DescribeProjectOutput {
             crate::output::DescribeProjectOutput {
@@ -10268,6 +10353,8 @@ pub mod describe_project_output {
                 project_status: self.project_status,
                 created_by: self.created_by,
                 creation_time: self.creation_time,
+                last_modified_time: self.last_modified_time,
+                last_modified_by: self.last_modified_by,
             }
         }
     }
@@ -12768,7 +12855,7 @@ pub struct DescribeModelPackageOutput {
     /// <p>Details about the algorithm that was used to create the model package.</p>
     pub source_algorithm_specification:
         std::option::Option<crate::model::SourceAlgorithmSpecification>,
-    /// <p>Configurations for one or more transform jobs that Amazon SageMaker runs to test the model
+    /// <p>Configurations for one or more transform jobs that SageMaker runs to test the model
     /// package.</p>
     pub validation_specification:
         std::option::Option<crate::model::ModelPackageValidationSpecification>,
@@ -12794,6 +12881,9 @@ pub struct DescribeModelPackageOutput {
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>A description provided for the model approval.</p>
     pub approval_description: std::option::Option<std::string::String>,
+    /// <p>The metadata properties associated with the model package versions.</p>
+    pub customer_metadata_properties:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl std::fmt::Debug for DescribeModelPackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12823,6 +12913,10 @@ impl std::fmt::Debug for DescribeModelPackageOutput {
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("last_modified_by", &self.last_modified_by);
         formatter.field("approval_description", &self.approval_description);
+        formatter.field(
+            "customer_metadata_properties",
+            &self.customer_metadata_properties,
+        );
         formatter.finish()
     }
 }
@@ -12855,6 +12949,9 @@ pub mod describe_model_package_output {
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) last_modified_by: std::option::Option<crate::model::UserContext>,
         pub(crate) approval_description: std::option::Option<std::string::String>,
+        pub(crate) customer_metadata_properties: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The name of the model package being described.</p>
@@ -12968,7 +13065,7 @@ pub mod describe_model_package_output {
             self.source_algorithm_specification = input;
             self
         }
-        /// <p>Configurations for one or more transform jobs that Amazon SageMaker runs to test the model
+        /// <p>Configurations for one or more transform jobs that SageMaker runs to test the model
         /// package.</p>
         pub fn validation_specification(
             mut self,
@@ -12977,7 +13074,7 @@ pub mod describe_model_package_output {
             self.validation_specification = Some(input);
             self
         }
-        /// <p>Configurations for one or more transform jobs that Amazon SageMaker runs to test the model
+        /// <p>Configurations for one or more transform jobs that SageMaker runs to test the model
         /// package.</p>
         pub fn set_validation_specification(
             mut self,
@@ -13120,6 +13217,31 @@ pub mod describe_model_package_output {
             self.approval_description = input;
             self
         }
+        /// Adds a key-value pair to `customer_metadata_properties`.
+        ///
+        /// To override the contents of this collection use [`set_customer_metadata_properties`](Self::set_customer_metadata_properties).
+        ///
+        /// <p>The metadata properties associated with the model package versions.</p>
+        pub fn customer_metadata_properties(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.customer_metadata_properties.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.customer_metadata_properties = Some(hash_map);
+            self
+        }
+        /// <p>The metadata properties associated with the model package versions.</p>
+        pub fn set_customer_metadata_properties(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.customer_metadata_properties = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeModelPackageOutput`](crate::output::DescribeModelPackageOutput)
         pub fn build(self) -> crate::output::DescribeModelPackageOutput {
             crate::output::DescribeModelPackageOutput {
@@ -13142,6 +13264,7 @@ pub mod describe_model_package_output {
                 last_modified_time: self.last_modified_time,
                 last_modified_by: self.last_modified_by,
                 approval_description: self.approval_description,
+                customer_metadata_properties: self.customer_metadata_properties,
             }
         }
     }
@@ -17129,6 +17252,14 @@ pub struct DescribeDomainOutput {
     /// <p>The Amazon Web Services KMS customer managed key used to encrypt
     /// the EFS volume attached to the domain.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
+    /// <p>A collection of <code>Domain</code> settings.</p>
+    pub domain_settings: std::option::Option<crate::model::DomainSettings>,
+    /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode.
+    /// Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
+    pub app_security_group_management:
+        std::option::Option<crate::model::AppSecurityGroupManagement>,
+    /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+    pub security_group_id_for_domain_boundary: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDomainOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17156,6 +17287,15 @@ impl std::fmt::Debug for DescribeDomainOutput {
         formatter.field("url", &self.url);
         formatter.field("vpc_id", &self.vpc_id);
         formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("domain_settings", &self.domain_settings);
+        formatter.field(
+            "app_security_group_management",
+            &self.app_security_group_management,
+        );
+        formatter.field(
+            "security_group_id_for_domain_boundary",
+            &self.security_group_id_for_domain_boundary,
+        );
         formatter.finish()
     }
 }
@@ -17183,6 +17323,10 @@ pub mod describe_domain_output {
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) domain_settings: std::option::Option<crate::model::DomainSettings>,
+        pub(crate) app_security_group_management:
+            std::option::Option<crate::model::AppSecurityGroupManagement>,
+        pub(crate) security_group_id_for_domain_boundary: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The domain's Amazon Resource Name (ARN).</p>
@@ -17430,6 +17574,53 @@ pub mod describe_domain_output {
             self.kms_key_id = input;
             self
         }
+        /// <p>A collection of <code>Domain</code> settings.</p>
+        pub fn domain_settings(mut self, input: crate::model::DomainSettings) -> Self {
+            self.domain_settings = Some(input);
+            self
+        }
+        /// <p>A collection of <code>Domain</code> settings.</p>
+        pub fn set_domain_settings(
+            mut self,
+            input: std::option::Option<crate::model::DomainSettings>,
+        ) -> Self {
+            self.domain_settings = input;
+            self
+        }
+        /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode.
+        /// Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
+        pub fn app_security_group_management(
+            mut self,
+            input: crate::model::AppSecurityGroupManagement,
+        ) -> Self {
+            self.app_security_group_management = Some(input);
+            self
+        }
+        /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode.
+        /// Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
+        pub fn set_app_security_group_management(
+            mut self,
+            input: std::option::Option<crate::model::AppSecurityGroupManagement>,
+        ) -> Self {
+            self.app_security_group_management = input;
+            self
+        }
+        /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+        pub fn security_group_id_for_domain_boundary(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.security_group_id_for_domain_boundary = Some(input.into());
+            self
+        }
+        /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+        pub fn set_security_group_id_for_domain_boundary(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.security_group_id_for_domain_boundary = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeDomainOutput`](crate::output::DescribeDomainOutput)
         pub fn build(self) -> crate::output::DescribeDomainOutput {
             crate::output::DescribeDomainOutput {
@@ -17451,6 +17642,9 @@ pub mod describe_domain_output {
                 url: self.url,
                 vpc_id: self.vpc_id,
                 kms_key_id: self.kms_key_id,
+                domain_settings: self.domain_settings,
+                app_security_group_management: self.app_security_group_management,
+                security_group_id_for_domain_boundary: self.security_group_id_for_domain_boundary,
             }
         }
     }
@@ -24024,6 +24218,133 @@ impl CreateActionOutput {
     /// Creates a new builder-style object to manufacture [`CreateActionOutput`](crate::output::CreateActionOutput)
     pub fn builder() -> crate::output::create_action_output::Builder {
         crate::output::create_action_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchDescribeModelPackageOutput {
+    /// <p>The summaries for the model package versions</p>
+    pub model_package_summaries: std::option::Option<
+        std::collections::HashMap<
+            std::string::String,
+            crate::model::BatchDescribeModelPackageSummary,
+        >,
+    >,
+    /// <p>A map of the resource and BatchDescribeModelPackageError objects
+    /// reporting the error associated with describing the model package.</p>
+    pub batch_describe_model_package_error_map: std::option::Option<
+        std::collections::HashMap<
+            std::string::String,
+            crate::model::BatchDescribeModelPackageError,
+        >,
+    >,
+}
+impl std::fmt::Debug for BatchDescribeModelPackageOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchDescribeModelPackageOutput");
+        formatter.field("model_package_summaries", &self.model_package_summaries);
+        formatter.field(
+            "batch_describe_model_package_error_map",
+            &self.batch_describe_model_package_error_map,
+        );
+        formatter.finish()
+    }
+}
+/// See [`BatchDescribeModelPackageOutput`](crate::output::BatchDescribeModelPackageOutput)
+pub mod batch_describe_model_package_output {
+    /// A builder for [`BatchDescribeModelPackageOutput`](crate::output::BatchDescribeModelPackageOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_package_summaries: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                crate::model::BatchDescribeModelPackageSummary,
+            >,
+        >,
+        pub(crate) batch_describe_model_package_error_map: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                crate::model::BatchDescribeModelPackageError,
+            >,
+        >,
+    }
+    impl Builder {
+        /// Adds a key-value pair to `model_package_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_model_package_summaries`](Self::set_model_package_summaries).
+        ///
+        /// <p>The summaries for the model package versions</p>
+        pub fn model_package_summaries(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<crate::model::BatchDescribeModelPackageSummary>,
+        ) -> Self {
+            let mut hash_map = self.model_package_summaries.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.model_package_summaries = Some(hash_map);
+            self
+        }
+        /// <p>The summaries for the model package versions</p>
+        pub fn set_model_package_summaries(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    crate::model::BatchDescribeModelPackageSummary,
+                >,
+            >,
+        ) -> Self {
+            self.model_package_summaries = input;
+            self
+        }
+        /// Adds a key-value pair to `batch_describe_model_package_error_map`.
+        ///
+        /// To override the contents of this collection use [`set_batch_describe_model_package_error_map`](Self::set_batch_describe_model_package_error_map).
+        ///
+        /// <p>A map of the resource and BatchDescribeModelPackageError objects
+        /// reporting the error associated with describing the model package.</p>
+        pub fn batch_describe_model_package_error_map(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<crate::model::BatchDescribeModelPackageError>,
+        ) -> Self {
+            let mut hash_map = self
+                .batch_describe_model_package_error_map
+                .unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.batch_describe_model_package_error_map = Some(hash_map);
+            self
+        }
+        /// <p>A map of the resource and BatchDescribeModelPackageError objects
+        /// reporting the error associated with describing the model package.</p>
+        pub fn set_batch_describe_model_package_error_map(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    crate::model::BatchDescribeModelPackageError,
+                >,
+            >,
+        ) -> Self {
+            self.batch_describe_model_package_error_map = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchDescribeModelPackageOutput`](crate::output::BatchDescribeModelPackageOutput)
+        pub fn build(self) -> crate::output::BatchDescribeModelPackageOutput {
+            crate::output::BatchDescribeModelPackageOutput {
+                model_package_summaries: self.model_package_summaries,
+                batch_describe_model_package_error_map: self.batch_describe_model_package_error_map,
+            }
+        }
+    }
+}
+impl BatchDescribeModelPackageOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDescribeModelPackageOutput`](crate::output::BatchDescribeModelPackageOutput)
+    pub fn builder() -> crate::output::batch_describe_model_package_output::Builder {
+        crate::output::batch_describe_model_package_output::Builder::default()
     }
 }
 

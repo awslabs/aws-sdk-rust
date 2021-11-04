@@ -32,7 +32,7 @@ pub enum AddFacetToObjectErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddFacetToObjectError {
@@ -103,63 +103,63 @@ impl AddFacetToObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AddFacetToObjectErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AddFacetToObjectErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFacetToObjectErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AddFacetToObjectErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `AddFacetToObjectErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFacetToObjectErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `AddFacetToObjectErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `AddFacetToObjectErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFacetToObjectErrorKind::FacetValidationException(_)
         )
     }
-    /// Returns true if the error kind is `AddFacetToObjectErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `AddFacetToObjectErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFacetToObjectErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `AddFacetToObjectErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `AddFacetToObjectErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFacetToObjectErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `AddFacetToObjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AddFacetToObjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFacetToObjectErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AddFacetToObjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AddFacetToObjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFacetToObjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AddFacetToObjectErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `AddFacetToObjectErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AddFacetToObjectErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AddFacetToObjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AddFacetToObjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -218,7 +218,7 @@ pub enum ApplySchemaErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ApplySchemaError {
@@ -289,54 +289,54 @@ impl ApplySchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ApplySchemaErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ApplySchemaErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ApplySchemaErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ApplySchemaErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ApplySchemaErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ApplySchemaErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ApplySchemaErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ApplySchemaErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, ApplySchemaErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `ApplySchemaErrorKind::InvalidAttachmentException`.
+    /// Returns `true` if the error kind is `ApplySchemaErrorKind::InvalidAttachmentException`.
     pub fn is_invalid_attachment_exception(&self) -> bool {
         matches!(
             &self.kind,
             ApplySchemaErrorKind::InvalidAttachmentException(_)
         )
     }
-    /// Returns true if the error kind is `ApplySchemaErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ApplySchemaErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ApplySchemaErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `ApplySchemaErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ApplySchemaErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ApplySchemaErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ApplySchemaErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ApplySchemaErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ApplySchemaErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ApplySchemaErrorKind::SchemaAlreadyExistsException`.
+    /// Returns `true` if the error kind is `ApplySchemaErrorKind::SchemaAlreadyExistsException`.
     pub fn is_schema_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             ApplySchemaErrorKind::SchemaAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `ApplySchemaErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ApplySchemaErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ApplySchemaErrorKind::ValidationException(_))
     }
@@ -397,7 +397,7 @@ pub enum AttachObjectErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachObjectError {
@@ -470,68 +470,68 @@ impl AttachObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachObjectErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AttachObjectErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, AttachObjectErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `AttachObjectErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `AttachObjectErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachObjectErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `AttachObjectErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `AttachObjectErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachObjectErrorKind::FacetValidationException(_)
         )
     }
-    /// Returns true if the error kind is `AttachObjectErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `AttachObjectErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachObjectErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `AttachObjectErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `AttachObjectErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, AttachObjectErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `AttachObjectErrorKind::InvalidAttachmentException`.
+    /// Returns `true` if the error kind is `AttachObjectErrorKind::InvalidAttachmentException`.
     pub fn is_invalid_attachment_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachObjectErrorKind::InvalidAttachmentException(_)
         )
     }
-    /// Returns true if the error kind is `AttachObjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AttachObjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, AttachObjectErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `AttachObjectErrorKind::LinkNameAlreadyInUseException`.
+    /// Returns `true` if the error kind is `AttachObjectErrorKind::LinkNameAlreadyInUseException`.
     pub fn is_link_name_already_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachObjectErrorKind::LinkNameAlreadyInUseException(_)
         )
     }
-    /// Returns true if the error kind is `AttachObjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AttachObjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachObjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AttachObjectErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `AttachObjectErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachObjectErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AttachObjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AttachObjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, AttachObjectErrorKind::ValidationException(_))
     }
@@ -587,7 +587,7 @@ pub enum AttachPolicyErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachPolicyError {
@@ -658,51 +658,51 @@ impl AttachPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, AttachPolicyErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachPolicyErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachPolicyErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, AttachPolicyErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, AttachPolicyErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::NotPolicyException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::NotPolicyException`.
     pub fn is_not_policy_exception(&self) -> bool {
         matches!(&self.kind, AttachPolicyErrorKind::NotPolicyException(_))
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachPolicyErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AttachPolicyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AttachPolicyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, AttachPolicyErrorKind::ValidationException(_))
     }
@@ -764,7 +764,7 @@ pub enum AttachToIndexErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachToIndexError {
@@ -838,75 +838,75 @@ impl AttachToIndexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachToIndexErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AttachToIndexErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, AttachToIndexErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `AttachToIndexErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `AttachToIndexErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachToIndexErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `AttachToIndexErrorKind::IndexedAttributeMissingException`.
+    /// Returns `true` if the error kind is `AttachToIndexErrorKind::IndexedAttributeMissingException`.
     pub fn is_indexed_attribute_missing_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachToIndexErrorKind::IndexedAttributeMissingException(_)
         )
     }
-    /// Returns true if the error kind is `AttachToIndexErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `AttachToIndexErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachToIndexErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `AttachToIndexErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `AttachToIndexErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, AttachToIndexErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `AttachToIndexErrorKind::InvalidAttachmentException`.
+    /// Returns `true` if the error kind is `AttachToIndexErrorKind::InvalidAttachmentException`.
     pub fn is_invalid_attachment_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachToIndexErrorKind::InvalidAttachmentException(_)
         )
     }
-    /// Returns true if the error kind is `AttachToIndexErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AttachToIndexErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachToIndexErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AttachToIndexErrorKind::LinkNameAlreadyInUseException`.
+    /// Returns `true` if the error kind is `AttachToIndexErrorKind::LinkNameAlreadyInUseException`.
     pub fn is_link_name_already_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachToIndexErrorKind::LinkNameAlreadyInUseException(_)
         )
     }
-    /// Returns true if the error kind is `AttachToIndexErrorKind::NotIndexException`.
+    /// Returns `true` if the error kind is `AttachToIndexErrorKind::NotIndexException`.
     pub fn is_not_index_exception(&self) -> bool {
         matches!(&self.kind, AttachToIndexErrorKind::NotIndexException(_))
     }
-    /// Returns true if the error kind is `AttachToIndexErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AttachToIndexErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachToIndexErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AttachToIndexErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `AttachToIndexErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachToIndexErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AttachToIndexErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AttachToIndexErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, AttachToIndexErrorKind::ValidationException(_))
     }
@@ -967,7 +967,7 @@ pub enum AttachTypedLinkErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AttachTypedLinkError {
@@ -1039,67 +1039,67 @@ impl AttachTypedLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AttachTypedLinkErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AttachTypedLinkErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachTypedLinkErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AttachTypedLinkErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `AttachTypedLinkErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachTypedLinkErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `AttachTypedLinkErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `AttachTypedLinkErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachTypedLinkErrorKind::FacetValidationException(_)
         )
     }
-    /// Returns true if the error kind is `AttachTypedLinkErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `AttachTypedLinkErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachTypedLinkErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `AttachTypedLinkErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `AttachTypedLinkErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, AttachTypedLinkErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `AttachTypedLinkErrorKind::InvalidAttachmentException`.
+    /// Returns `true` if the error kind is `AttachTypedLinkErrorKind::InvalidAttachmentException`.
     pub fn is_invalid_attachment_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachTypedLinkErrorKind::InvalidAttachmentException(_)
         )
     }
-    /// Returns true if the error kind is `AttachTypedLinkErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AttachTypedLinkErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachTypedLinkErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AttachTypedLinkErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AttachTypedLinkErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachTypedLinkErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AttachTypedLinkErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `AttachTypedLinkErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AttachTypedLinkErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AttachTypedLinkErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AttachTypedLinkErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, AttachTypedLinkErrorKind::ValidationException(_))
     }
@@ -1150,7 +1150,7 @@ pub enum BatchReadErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchReadError {
@@ -1219,37 +1219,37 @@ impl BatchReadError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchReadErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchReadErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, BatchReadErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `BatchReadErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `BatchReadErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchReadErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `BatchReadErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `BatchReadErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, BatchReadErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `BatchReadErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `BatchReadErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, BatchReadErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `BatchReadErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `BatchReadErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, BatchReadErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `BatchReadErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `BatchReadErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchReadErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `BatchReadErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BatchReadErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, BatchReadErrorKind::ValidationException(_))
     }
@@ -1299,7 +1299,7 @@ pub enum BatchWriteErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchWriteError {
@@ -1369,41 +1369,41 @@ impl BatchWriteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchWriteErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `BatchWriteErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, BatchWriteErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `BatchWriteErrorKind::BatchWriteException`.
+    /// Returns `true` if the error kind is `BatchWriteErrorKind::BatchWriteException`.
     pub fn is_batch_write_exception(&self) -> bool {
         matches!(&self.kind, BatchWriteErrorKind::BatchWriteException(_))
     }
-    /// Returns true if the error kind is `BatchWriteErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `BatchWriteErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchWriteErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `BatchWriteErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `BatchWriteErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, BatchWriteErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `BatchWriteErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `BatchWriteErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, BatchWriteErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `BatchWriteErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `BatchWriteErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, BatchWriteErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `BatchWriteErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `BatchWriteErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchWriteErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `BatchWriteErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `BatchWriteErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, BatchWriteErrorKind::ValidationException(_))
     }
@@ -1455,7 +1455,7 @@ pub enum CreateDirectoryErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDirectoryError {
@@ -1525,53 +1525,53 @@ impl CreateDirectoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDirectoryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDirectoryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDirectoryErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDirectoryErrorKind::DirectoryAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateDirectoryErrorKind::DirectoryAlreadyExistsException`.
     pub fn is_directory_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDirectoryErrorKind::DirectoryAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDirectoryErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateDirectoryErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDirectoryErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDirectoryErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `CreateDirectoryErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, CreateDirectoryErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `CreateDirectoryErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDirectoryErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDirectoryErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDirectoryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateDirectoryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDirectoryErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDirectoryErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `CreateDirectoryErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDirectoryErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDirectoryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateDirectoryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateDirectoryErrorKind::ValidationException(_))
     }
@@ -1627,7 +1627,7 @@ pub enum CreateFacetErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFacetError {
@@ -1699,58 +1699,58 @@ impl CreateFacetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateFacetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateFacetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateFacetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateFacetErrorKind::FacetAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateFacetErrorKind::FacetAlreadyExistsException`.
     pub fn is_facet_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFacetErrorKind::FacetAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFacetErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `CreateFacetErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFacetErrorKind::FacetValidationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFacetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateFacetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFacetErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFacetErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `CreateFacetErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, CreateFacetErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `CreateFacetErrorKind::InvalidRuleException`.
+    /// Returns `true` if the error kind is `CreateFacetErrorKind::InvalidRuleException`.
     pub fn is_invalid_rule_exception(&self) -> bool {
         matches!(&self.kind, CreateFacetErrorKind::InvalidRuleException(_))
     }
-    /// Returns true if the error kind is `CreateFacetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateFacetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateFacetErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateFacetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateFacetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFacetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFacetErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `CreateFacetErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateFacetErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateFacetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateFacetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateFacetErrorKind::ValidationException(_))
     }
@@ -1811,7 +1811,7 @@ pub enum CreateIndexErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateIndexError {
@@ -1884,68 +1884,68 @@ impl CreateIndexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateIndexErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateIndexErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateIndexErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateIndexErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `CreateIndexErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIndexErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIndexErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `CreateIndexErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIndexErrorKind::FacetValidationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIndexErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateIndexErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIndexErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIndexErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `CreateIndexErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, CreateIndexErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `CreateIndexErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateIndexErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateIndexErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateIndexErrorKind::LinkNameAlreadyInUseException`.
+    /// Returns `true` if the error kind is `CreateIndexErrorKind::LinkNameAlreadyInUseException`.
     pub fn is_link_name_already_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIndexErrorKind::LinkNameAlreadyInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIndexErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateIndexErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIndexErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIndexErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `CreateIndexErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIndexErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIndexErrorKind::UnsupportedIndexTypeException`.
+    /// Returns `true` if the error kind is `CreateIndexErrorKind::UnsupportedIndexTypeException`.
     pub fn is_unsupported_index_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateIndexErrorKind::UnsupportedIndexTypeException(_)
         )
     }
-    /// Returns true if the error kind is `CreateIndexErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateIndexErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateIndexErrorKind::ValidationException(_))
     }
@@ -2007,7 +2007,7 @@ pub enum CreateObjectErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateObjectError {
@@ -2080,68 +2080,68 @@ impl CreateObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateObjectErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateObjectErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateObjectErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateObjectErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `CreateObjectErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateObjectErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `CreateObjectErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `CreateObjectErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateObjectErrorKind::FacetValidationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateObjectErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateObjectErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateObjectErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateObjectErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `CreateObjectErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, CreateObjectErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `CreateObjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateObjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateObjectErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateObjectErrorKind::LinkNameAlreadyInUseException`.
+    /// Returns `true` if the error kind is `CreateObjectErrorKind::LinkNameAlreadyInUseException`.
     pub fn is_link_name_already_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateObjectErrorKind::LinkNameAlreadyInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreateObjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateObjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateObjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateObjectErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `CreateObjectErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateObjectErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateObjectErrorKind::UnsupportedIndexTypeException`.
+    /// Returns `true` if the error kind is `CreateObjectErrorKind::UnsupportedIndexTypeException`.
     pub fn is_unsupported_index_type_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateObjectErrorKind::UnsupportedIndexTypeException(_)
         )
     }
-    /// Returns true if the error kind is `CreateObjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateObjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateObjectErrorKind::ValidationException(_))
     }
@@ -2194,7 +2194,7 @@ pub enum CreateSchemaErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSchemaError {
@@ -2263,40 +2263,40 @@ impl CreateSchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSchemaErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateSchemaErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateSchemaErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `CreateSchemaErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateSchemaErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSchemaErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSchemaErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `CreateSchemaErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, CreateSchemaErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `CreateSchemaErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateSchemaErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateSchemaErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateSchemaErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `CreateSchemaErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSchemaErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSchemaErrorKind::SchemaAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateSchemaErrorKind::SchemaAlreadyExistsException`.
     pub fn is_schema_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSchemaErrorKind::SchemaAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSchemaErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateSchemaErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateSchemaErrorKind::ValidationException(_))
     }
@@ -2351,7 +2351,7 @@ pub enum CreateTypedLinkFacetErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateTypedLinkFacetError {
@@ -2423,70 +2423,70 @@ impl CreateTypedLinkFacetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateTypedLinkFacetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateTypedLinkFacetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTypedLinkFacetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTypedLinkFacetErrorKind::FacetAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateTypedLinkFacetErrorKind::FacetAlreadyExistsException`.
     pub fn is_facet_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTypedLinkFacetErrorKind::FacetAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTypedLinkFacetErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `CreateTypedLinkFacetErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTypedLinkFacetErrorKind::FacetValidationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTypedLinkFacetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateTypedLinkFacetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTypedLinkFacetErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTypedLinkFacetErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `CreateTypedLinkFacetErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTypedLinkFacetErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTypedLinkFacetErrorKind::InvalidRuleException`.
+    /// Returns `true` if the error kind is `CreateTypedLinkFacetErrorKind::InvalidRuleException`.
     pub fn is_invalid_rule_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTypedLinkFacetErrorKind::InvalidRuleException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTypedLinkFacetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateTypedLinkFacetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTypedLinkFacetErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTypedLinkFacetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateTypedLinkFacetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTypedLinkFacetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTypedLinkFacetErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `CreateTypedLinkFacetErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateTypedLinkFacetErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateTypedLinkFacetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateTypedLinkFacetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2545,7 +2545,7 @@ pub enum DeleteDirectoryErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDirectoryError {
@@ -2616,60 +2616,60 @@ impl DeleteDirectoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDirectoryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteDirectoryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDirectoryErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDirectoryErrorKind::DirectoryDeletedException`.
+    /// Returns `true` if the error kind is `DeleteDirectoryErrorKind::DirectoryDeletedException`.
     pub fn is_directory_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDirectoryErrorKind::DirectoryDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDirectoryErrorKind::DirectoryNotDisabledException`.
+    /// Returns `true` if the error kind is `DeleteDirectoryErrorKind::DirectoryNotDisabledException`.
     pub fn is_directory_not_disabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDirectoryErrorKind::DirectoryNotDisabledException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDirectoryErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteDirectoryErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDirectoryErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDirectoryErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DeleteDirectoryErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, DeleteDirectoryErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `DeleteDirectoryErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteDirectoryErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDirectoryErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDirectoryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDirectoryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDirectoryErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDirectoryErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `DeleteDirectoryErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDirectoryErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDirectoryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteDirectoryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteDirectoryErrorKind::ValidationException(_))
     }
@@ -2724,7 +2724,7 @@ pub enum DeleteFacetErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFacetError {
@@ -2795,48 +2795,48 @@ impl DeleteFacetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteFacetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteFacetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteFacetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteFacetErrorKind::FacetInUseException`.
+    /// Returns `true` if the error kind is `DeleteFacetErrorKind::FacetInUseException`.
     pub fn is_facet_in_use_exception(&self) -> bool {
         matches!(&self.kind, DeleteFacetErrorKind::FacetInUseException(_))
     }
-    /// Returns true if the error kind is `DeleteFacetErrorKind::FacetNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFacetErrorKind::FacetNotFoundException`.
     pub fn is_facet_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteFacetErrorKind::FacetNotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteFacetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteFacetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFacetErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFacetErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DeleteFacetErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, DeleteFacetErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `DeleteFacetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteFacetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, DeleteFacetErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `DeleteFacetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteFacetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFacetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFacetErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `DeleteFacetErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteFacetErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteFacetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteFacetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteFacetErrorKind::ValidationException(_))
     }
@@ -2891,7 +2891,7 @@ pub enum DeleteObjectErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteObjectError {
@@ -2962,54 +2962,54 @@ impl DeleteObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteObjectErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteObjectErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteObjectErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteObjectErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `DeleteObjectErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteObjectErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteObjectErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteObjectErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteObjectErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteObjectErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DeleteObjectErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, DeleteObjectErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `DeleteObjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteObjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, DeleteObjectErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `DeleteObjectErrorKind::ObjectNotDetachedException`.
+    /// Returns `true` if the error kind is `DeleteObjectErrorKind::ObjectNotDetachedException`.
     pub fn is_object_not_detached_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteObjectErrorKind::ObjectNotDetachedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteObjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteObjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteObjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteObjectErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `DeleteObjectErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteObjectErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteObjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteObjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteObjectErrorKind::ValidationException(_))
     }
@@ -3062,7 +3062,7 @@ pub enum DeleteSchemaErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSchemaError {
@@ -3132,47 +3132,47 @@ impl DeleteSchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSchemaErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteSchemaErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteSchemaErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DeleteSchemaErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteSchemaErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSchemaErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSchemaErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DeleteSchemaErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, DeleteSchemaErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `DeleteSchemaErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteSchemaErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, DeleteSchemaErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `DeleteSchemaErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSchemaErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSchemaErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSchemaErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `DeleteSchemaErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSchemaErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSchemaErrorKind::StillContainsLinksException`.
+    /// Returns `true` if the error kind is `DeleteSchemaErrorKind::StillContainsLinksException`.
     pub fn is_still_contains_links_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSchemaErrorKind::StillContainsLinksException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSchemaErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteSchemaErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteSchemaErrorKind::ValidationException(_))
     }
@@ -3223,7 +3223,7 @@ pub enum DeleteTypedLinkFacetErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteTypedLinkFacetError {
@@ -3293,56 +3293,56 @@ impl DeleteTypedLinkFacetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteTypedLinkFacetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteTypedLinkFacetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTypedLinkFacetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTypedLinkFacetErrorKind::FacetNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTypedLinkFacetErrorKind::FacetNotFoundException`.
     pub fn is_facet_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTypedLinkFacetErrorKind::FacetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTypedLinkFacetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteTypedLinkFacetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTypedLinkFacetErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTypedLinkFacetErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DeleteTypedLinkFacetErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTypedLinkFacetErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTypedLinkFacetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteTypedLinkFacetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTypedLinkFacetErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTypedLinkFacetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteTypedLinkFacetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTypedLinkFacetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTypedLinkFacetErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `DeleteTypedLinkFacetErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteTypedLinkFacetErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteTypedLinkFacetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteTypedLinkFacetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3400,7 +3400,7 @@ pub enum DetachFromIndexErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachFromIndexError {
@@ -3472,64 +3472,64 @@ impl DetachFromIndexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetachFromIndexErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DetachFromIndexErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachFromIndexErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DetachFromIndexErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `DetachFromIndexErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachFromIndexErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `DetachFromIndexErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DetachFromIndexErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachFromIndexErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DetachFromIndexErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DetachFromIndexErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, DetachFromIndexErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `DetachFromIndexErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DetachFromIndexErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachFromIndexErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DetachFromIndexErrorKind::NotIndexException`.
+    /// Returns `true` if the error kind is `DetachFromIndexErrorKind::NotIndexException`.
     pub fn is_not_index_exception(&self) -> bool {
         matches!(&self.kind, DetachFromIndexErrorKind::NotIndexException(_))
     }
-    /// Returns true if the error kind is `DetachFromIndexErrorKind::ObjectAlreadyDetachedException`.
+    /// Returns `true` if the error kind is `DetachFromIndexErrorKind::ObjectAlreadyDetachedException`.
     pub fn is_object_already_detached_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachFromIndexErrorKind::ObjectAlreadyDetachedException(_)
         )
     }
-    /// Returns true if the error kind is `DetachFromIndexErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DetachFromIndexErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachFromIndexErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DetachFromIndexErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `DetachFromIndexErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachFromIndexErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DetachFromIndexErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DetachFromIndexErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DetachFromIndexErrorKind::ValidationException(_))
     }
@@ -3585,7 +3585,7 @@ pub enum DetachObjectErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachObjectError {
@@ -3656,51 +3656,51 @@ impl DetachObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetachObjectErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DetachObjectErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DetachObjectErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DetachObjectErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `DetachObjectErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachObjectErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `DetachObjectErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DetachObjectErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachObjectErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DetachObjectErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DetachObjectErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, DetachObjectErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `DetachObjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DetachObjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, DetachObjectErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `DetachObjectErrorKind::NotNodeException`.
+    /// Returns `true` if the error kind is `DetachObjectErrorKind::NotNodeException`.
     pub fn is_not_node_exception(&self) -> bool {
         matches!(&self.kind, DetachObjectErrorKind::NotNodeException(_))
     }
-    /// Returns true if the error kind is `DetachObjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DetachObjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachObjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DetachObjectErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `DetachObjectErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachObjectErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DetachObjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DetachObjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DetachObjectErrorKind::ValidationException(_))
     }
@@ -3754,7 +3754,7 @@ pub enum DetachPolicyErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachPolicyError {
@@ -3825,51 +3825,51 @@ impl DetachPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DetachPolicyErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachPolicyErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachPolicyErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, DetachPolicyErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, DetachPolicyErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::NotPolicyException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::NotPolicyException`.
     pub fn is_not_policy_exception(&self) -> bool {
         matches!(&self.kind, DetachPolicyErrorKind::NotPolicyException(_))
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachPolicyErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DetachPolicyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DetachPolicyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DetachPolicyErrorKind::ValidationException(_))
     }
@@ -3924,7 +3924,7 @@ pub enum DetachTypedLinkErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetachTypedLinkError {
@@ -3995,60 +3995,60 @@ impl DetachTypedLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DetachTypedLinkErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DetachTypedLinkErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachTypedLinkErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DetachTypedLinkErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `DetachTypedLinkErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachTypedLinkErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `DetachTypedLinkErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `DetachTypedLinkErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachTypedLinkErrorKind::FacetValidationException(_)
         )
     }
-    /// Returns true if the error kind is `DetachTypedLinkErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DetachTypedLinkErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachTypedLinkErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DetachTypedLinkErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DetachTypedLinkErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, DetachTypedLinkErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `DetachTypedLinkErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DetachTypedLinkErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachTypedLinkErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DetachTypedLinkErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DetachTypedLinkErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachTypedLinkErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DetachTypedLinkErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `DetachTypedLinkErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DetachTypedLinkErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DetachTypedLinkErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DetachTypedLinkErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DetachTypedLinkErrorKind::ValidationException(_))
     }
@@ -4101,7 +4101,7 @@ pub enum DisableDirectoryErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableDirectoryError {
@@ -4171,56 +4171,56 @@ impl DisableDirectoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableDirectoryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisableDirectoryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableDirectoryErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisableDirectoryErrorKind::DirectoryDeletedException`.
+    /// Returns `true` if the error kind is `DisableDirectoryErrorKind::DirectoryDeletedException`.
     pub fn is_directory_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableDirectoryErrorKind::DirectoryDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `DisableDirectoryErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DisableDirectoryErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableDirectoryErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DisableDirectoryErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `DisableDirectoryErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableDirectoryErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `DisableDirectoryErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DisableDirectoryErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableDirectoryErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DisableDirectoryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisableDirectoryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableDirectoryErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisableDirectoryErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `DisableDirectoryErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableDirectoryErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DisableDirectoryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DisableDirectoryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4275,7 +4275,7 @@ pub enum EnableDirectoryErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableDirectoryError {
@@ -4345,53 +4345,53 @@ impl EnableDirectoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableDirectoryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `EnableDirectoryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableDirectoryErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `EnableDirectoryErrorKind::DirectoryDeletedException`.
+    /// Returns `true` if the error kind is `EnableDirectoryErrorKind::DirectoryDeletedException`.
     pub fn is_directory_deleted_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableDirectoryErrorKind::DirectoryDeletedException(_)
         )
     }
-    /// Returns true if the error kind is `EnableDirectoryErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `EnableDirectoryErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableDirectoryErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `EnableDirectoryErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `EnableDirectoryErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, EnableDirectoryErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `EnableDirectoryErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `EnableDirectoryErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableDirectoryErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `EnableDirectoryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `EnableDirectoryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableDirectoryErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `EnableDirectoryErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `EnableDirectoryErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableDirectoryErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `EnableDirectoryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `EnableDirectoryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, EnableDirectoryErrorKind::ValidationException(_))
     }
@@ -4440,7 +4440,7 @@ pub enum GetAppliedSchemaVersionErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAppliedSchemaVersionError {
@@ -4509,49 +4509,49 @@ impl GetAppliedSchemaVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAppliedSchemaVersionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetAppliedSchemaVersionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppliedSchemaVersionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppliedSchemaVersionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetAppliedSchemaVersionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppliedSchemaVersionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppliedSchemaVersionErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `GetAppliedSchemaVersionErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppliedSchemaVersionErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppliedSchemaVersionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetAppliedSchemaVersionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppliedSchemaVersionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppliedSchemaVersionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetAppliedSchemaVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppliedSchemaVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppliedSchemaVersionErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `GetAppliedSchemaVersionErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppliedSchemaVersionErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppliedSchemaVersionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetAppliedSchemaVersionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4600,7 +4600,7 @@ pub enum GetDirectoryErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDirectoryError {
@@ -4668,33 +4668,33 @@ impl GetDirectoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDirectoryErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDirectoryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetDirectoryErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetDirectoryErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetDirectoryErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDirectoryErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetDirectoryErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `GetDirectoryErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, GetDirectoryErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `GetDirectoryErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetDirectoryErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetDirectoryErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetDirectoryErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `GetDirectoryErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDirectoryErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetDirectoryErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetDirectoryErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetDirectoryErrorKind::ValidationException(_))
     }
@@ -4743,7 +4743,7 @@ pub enum GetFacetErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFacetError {
@@ -4813,35 +4813,35 @@ impl GetFacetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetFacetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetFacetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetFacetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `GetFacetErrorKind::FacetNotFoundException`.
+    /// Returns `true` if the error kind is `GetFacetErrorKind::FacetNotFoundException`.
     pub fn is_facet_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetFacetErrorKind::FacetNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetFacetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetFacetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, GetFacetErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `GetFacetErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `GetFacetErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, GetFacetErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `GetFacetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetFacetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, GetFacetErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `GetFacetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetFacetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetFacetErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetFacetErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `GetFacetErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(&self.kind, GetFacetErrorKind::RetryableConflictException(_))
     }
-    /// Returns true if the error kind is `GetFacetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetFacetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetFacetErrorKind::ValidationException(_))
     }
@@ -4895,7 +4895,7 @@ pub enum GetLinkAttributesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLinkAttributesError {
@@ -4966,63 +4966,63 @@ impl GetLinkAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLinkAttributesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLinkAttributesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLinkAttributesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetLinkAttributesErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `GetLinkAttributesErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLinkAttributesErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetLinkAttributesErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `GetLinkAttributesErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLinkAttributesErrorKind::FacetValidationException(_)
         )
     }
-    /// Returns true if the error kind is `GetLinkAttributesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetLinkAttributesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLinkAttributesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetLinkAttributesErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `GetLinkAttributesErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLinkAttributesErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `GetLinkAttributesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetLinkAttributesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLinkAttributesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetLinkAttributesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLinkAttributesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLinkAttributesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLinkAttributesErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `GetLinkAttributesErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLinkAttributesErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetLinkAttributesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetLinkAttributesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5080,7 +5080,7 @@ pub enum GetObjectAttributesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetObjectAttributesError {
@@ -5151,63 +5151,63 @@ impl GetObjectAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetObjectAttributesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetObjectAttributesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetObjectAttributesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetObjectAttributesErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `GetObjectAttributesErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetObjectAttributesErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetObjectAttributesErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `GetObjectAttributesErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetObjectAttributesErrorKind::FacetValidationException(_)
         )
     }
-    /// Returns true if the error kind is `GetObjectAttributesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetObjectAttributesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetObjectAttributesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetObjectAttributesErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `GetObjectAttributesErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetObjectAttributesErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `GetObjectAttributesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetObjectAttributesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetObjectAttributesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetObjectAttributesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetObjectAttributesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetObjectAttributesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetObjectAttributesErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `GetObjectAttributesErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetObjectAttributesErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetObjectAttributesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetObjectAttributesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5262,7 +5262,7 @@ pub enum GetObjectInformationErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetObjectInformationError {
@@ -5332,56 +5332,56 @@ impl GetObjectInformationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetObjectInformationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetObjectInformationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetObjectInformationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetObjectInformationErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `GetObjectInformationErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetObjectInformationErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `GetObjectInformationErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetObjectInformationErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetObjectInformationErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetObjectInformationErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `GetObjectInformationErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetObjectInformationErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `GetObjectInformationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetObjectInformationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetObjectInformationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetObjectInformationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetObjectInformationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetObjectInformationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetObjectInformationErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `GetObjectInformationErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetObjectInformationErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetObjectInformationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetObjectInformationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5433,7 +5433,7 @@ pub enum GetSchemaAsJsonErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSchemaAsJsonError {
@@ -5502,46 +5502,46 @@ impl GetSchemaAsJsonError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSchemaAsJsonErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetSchemaAsJsonErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSchemaAsJsonErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetSchemaAsJsonErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetSchemaAsJsonErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSchemaAsJsonErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetSchemaAsJsonErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `GetSchemaAsJsonErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, GetSchemaAsJsonErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `GetSchemaAsJsonErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetSchemaAsJsonErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSchemaAsJsonErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetSchemaAsJsonErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetSchemaAsJsonErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSchemaAsJsonErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSchemaAsJsonErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `GetSchemaAsJsonErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSchemaAsJsonErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetSchemaAsJsonErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetSchemaAsJsonErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetSchemaAsJsonErrorKind::ValidationException(_))
     }
@@ -5593,7 +5593,7 @@ pub enum GetTypedLinkFacetInformationErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTypedLinkFacetInformationError {
@@ -5672,63 +5672,63 @@ impl GetTypedLinkFacetInformationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTypedLinkFacetInformationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetTypedLinkFacetInformationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTypedLinkFacetInformationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetTypedLinkFacetInformationErrorKind::FacetNotFoundException`.
+    /// Returns `true` if the error kind is `GetTypedLinkFacetInformationErrorKind::FacetNotFoundException`.
     pub fn is_facet_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTypedLinkFacetInformationErrorKind::FacetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetTypedLinkFacetInformationErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetTypedLinkFacetInformationErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTypedLinkFacetInformationErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetTypedLinkFacetInformationErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `GetTypedLinkFacetInformationErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTypedLinkFacetInformationErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `GetTypedLinkFacetInformationErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `GetTypedLinkFacetInformationErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTypedLinkFacetInformationErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetTypedLinkFacetInformationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `GetTypedLinkFacetInformationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTypedLinkFacetInformationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetTypedLinkFacetInformationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetTypedLinkFacetInformationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTypedLinkFacetInformationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetTypedLinkFacetInformationErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `GetTypedLinkFacetInformationErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTypedLinkFacetInformationErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetTypedLinkFacetInformationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetTypedLinkFacetInformationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5789,7 +5789,7 @@ pub enum ListAppliedSchemaArnsErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAppliedSchemaArnsError {
@@ -5859,56 +5859,56 @@ impl ListAppliedSchemaArnsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAppliedSchemaArnsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAppliedSchemaArnsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppliedSchemaArnsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppliedSchemaArnsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListAppliedSchemaArnsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppliedSchemaArnsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppliedSchemaArnsErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListAppliedSchemaArnsErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppliedSchemaArnsErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppliedSchemaArnsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListAppliedSchemaArnsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppliedSchemaArnsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppliedSchemaArnsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListAppliedSchemaArnsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppliedSchemaArnsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppliedSchemaArnsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAppliedSchemaArnsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppliedSchemaArnsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppliedSchemaArnsErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListAppliedSchemaArnsErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAppliedSchemaArnsErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListAppliedSchemaArnsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListAppliedSchemaArnsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5962,7 +5962,7 @@ pub enum ListAttachedIndicesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAttachedIndicesError {
@@ -6032,56 +6032,56 @@ impl ListAttachedIndicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAttachedIndicesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListAttachedIndicesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttachedIndicesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttachedIndicesErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `ListAttachedIndicesErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttachedIndicesErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttachedIndicesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListAttachedIndicesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttachedIndicesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttachedIndicesErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListAttachedIndicesErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttachedIndicesErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttachedIndicesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListAttachedIndicesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttachedIndicesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttachedIndicesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAttachedIndicesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttachedIndicesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttachedIndicesErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListAttachedIndicesErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAttachedIndicesErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListAttachedIndicesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListAttachedIndicesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6135,7 +6135,7 @@ pub enum ListDevelopmentSchemaArnsErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDevelopmentSchemaArnsError {
@@ -6205,56 +6205,56 @@ impl ListDevelopmentSchemaArnsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDevelopmentSchemaArnsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListDevelopmentSchemaArnsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevelopmentSchemaArnsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevelopmentSchemaArnsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListDevelopmentSchemaArnsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevelopmentSchemaArnsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevelopmentSchemaArnsErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListDevelopmentSchemaArnsErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevelopmentSchemaArnsErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevelopmentSchemaArnsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListDevelopmentSchemaArnsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevelopmentSchemaArnsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevelopmentSchemaArnsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListDevelopmentSchemaArnsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevelopmentSchemaArnsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevelopmentSchemaArnsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListDevelopmentSchemaArnsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevelopmentSchemaArnsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevelopmentSchemaArnsErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListDevelopmentSchemaArnsErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDevelopmentSchemaArnsErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListDevelopmentSchemaArnsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListDevelopmentSchemaArnsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6306,7 +6306,7 @@ pub enum ListDirectoriesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDirectoriesError {
@@ -6375,46 +6375,46 @@ impl ListDirectoriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDirectoriesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListDirectoriesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDirectoriesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListDirectoriesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListDirectoriesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDirectoriesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListDirectoriesErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListDirectoriesErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, ListDirectoriesErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `ListDirectoriesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListDirectoriesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDirectoriesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListDirectoriesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListDirectoriesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDirectoriesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListDirectoriesErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListDirectoriesErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDirectoriesErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListDirectoriesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListDirectoriesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListDirectoriesErrorKind::ValidationException(_))
     }
@@ -6466,7 +6466,7 @@ pub enum ListFacetAttributesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFacetAttributesError {
@@ -6537,63 +6537,63 @@ impl ListFacetAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFacetAttributesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListFacetAttributesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFacetAttributesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListFacetAttributesErrorKind::FacetNotFoundException`.
+    /// Returns `true` if the error kind is `ListFacetAttributesErrorKind::FacetNotFoundException`.
     pub fn is_facet_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFacetAttributesErrorKind::FacetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListFacetAttributesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListFacetAttributesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFacetAttributesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListFacetAttributesErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListFacetAttributesErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFacetAttributesErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListFacetAttributesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListFacetAttributesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFacetAttributesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListFacetAttributesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListFacetAttributesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFacetAttributesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListFacetAttributesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListFacetAttributesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFacetAttributesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListFacetAttributesErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListFacetAttributesErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFacetAttributesErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListFacetAttributesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListFacetAttributesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6648,7 +6648,7 @@ pub enum ListFacetNamesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFacetNamesError {
@@ -6718,53 +6718,53 @@ impl ListFacetNamesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListFacetNamesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListFacetNamesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFacetNamesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListFacetNamesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListFacetNamesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFacetNamesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListFacetNamesErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListFacetNamesErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, ListFacetNamesErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `ListFacetNamesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListFacetNamesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFacetNamesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListFacetNamesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListFacetNamesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFacetNamesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListFacetNamesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListFacetNamesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFacetNamesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListFacetNamesErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListFacetNamesErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListFacetNamesErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListFacetNamesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListFacetNamesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListFacetNamesErrorKind::ValidationException(_))
     }
@@ -6820,7 +6820,7 @@ pub enum ListIncomingTypedLinksErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListIncomingTypedLinksError {
@@ -6892,70 +6892,70 @@ impl ListIncomingTypedLinksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListIncomingTypedLinksErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListIncomingTypedLinksErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIncomingTypedLinksErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListIncomingTypedLinksErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `ListIncomingTypedLinksErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIncomingTypedLinksErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `ListIncomingTypedLinksErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `ListIncomingTypedLinksErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIncomingTypedLinksErrorKind::FacetValidationException(_)
         )
     }
-    /// Returns true if the error kind is `ListIncomingTypedLinksErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListIncomingTypedLinksErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIncomingTypedLinksErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListIncomingTypedLinksErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListIncomingTypedLinksErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIncomingTypedLinksErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListIncomingTypedLinksErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListIncomingTypedLinksErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIncomingTypedLinksErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListIncomingTypedLinksErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListIncomingTypedLinksErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIncomingTypedLinksErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListIncomingTypedLinksErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListIncomingTypedLinksErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIncomingTypedLinksErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListIncomingTypedLinksErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListIncomingTypedLinksErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIncomingTypedLinksErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListIncomingTypedLinksErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListIncomingTypedLinksErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7018,7 +7018,7 @@ pub enum ListIndexErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListIndexError {
@@ -7091,53 +7091,53 @@ impl ListIndexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListIndexErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListIndexErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListIndexErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `ListIndexErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `ListIndexErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIndexErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `ListIndexErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `ListIndexErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(&self.kind, ListIndexErrorKind::FacetValidationException(_))
     }
-    /// Returns true if the error kind is `ListIndexErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListIndexErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, ListIndexErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `ListIndexErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListIndexErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, ListIndexErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `ListIndexErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListIndexErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(&self.kind, ListIndexErrorKind::InvalidNextTokenException(_))
     }
-    /// Returns true if the error kind is `ListIndexErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListIndexErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, ListIndexErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `ListIndexErrorKind::NotIndexException`.
+    /// Returns `true` if the error kind is `ListIndexErrorKind::NotIndexException`.
     pub fn is_not_index_exception(&self) -> bool {
         matches!(&self.kind, ListIndexErrorKind::NotIndexException(_))
     }
-    /// Returns true if the error kind is `ListIndexErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListIndexErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListIndexErrorKind::ResourceNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListIndexErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListIndexErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListIndexErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListIndexErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListIndexErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListIndexErrorKind::ValidationException(_))
     }
@@ -7187,7 +7187,7 @@ pub enum ListManagedSchemaArnsErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListManagedSchemaArnsError {
@@ -7255,42 +7255,42 @@ impl ListManagedSchemaArnsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListManagedSchemaArnsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListManagedSchemaArnsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListManagedSchemaArnsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListManagedSchemaArnsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListManagedSchemaArnsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListManagedSchemaArnsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListManagedSchemaArnsErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListManagedSchemaArnsErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListManagedSchemaArnsErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListManagedSchemaArnsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListManagedSchemaArnsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListManagedSchemaArnsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListManagedSchemaArnsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListManagedSchemaArnsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListManagedSchemaArnsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListManagedSchemaArnsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListManagedSchemaArnsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7347,7 +7347,7 @@ pub enum ListObjectAttributesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListObjectAttributesError {
@@ -7419,70 +7419,70 @@ impl ListObjectAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListObjectAttributesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListObjectAttributesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectAttributesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectAttributesErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `ListObjectAttributesErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectAttributesErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectAttributesErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `ListObjectAttributesErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectAttributesErrorKind::FacetValidationException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectAttributesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListObjectAttributesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectAttributesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectAttributesErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListObjectAttributesErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectAttributesErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectAttributesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListObjectAttributesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectAttributesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectAttributesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListObjectAttributesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectAttributesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectAttributesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListObjectAttributesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectAttributesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectAttributesErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListObjectAttributesErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectAttributesErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectAttributesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListObjectAttributesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7543,7 +7543,7 @@ pub enum ListObjectChildrenErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListObjectChildrenError {
@@ -7615,67 +7615,67 @@ impl ListObjectChildrenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListObjectChildrenErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListObjectChildrenErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectChildrenErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectChildrenErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `ListObjectChildrenErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectChildrenErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectChildrenErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListObjectChildrenErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectChildrenErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectChildrenErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListObjectChildrenErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectChildrenErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectChildrenErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListObjectChildrenErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectChildrenErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectChildrenErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListObjectChildrenErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectChildrenErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectChildrenErrorKind::NotNodeException`.
+    /// Returns `true` if the error kind is `ListObjectChildrenErrorKind::NotNodeException`.
     pub fn is_not_node_exception(&self) -> bool {
         matches!(&self.kind, ListObjectChildrenErrorKind::NotNodeException(_))
     }
-    /// Returns true if the error kind is `ListObjectChildrenErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListObjectChildrenErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectChildrenErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectChildrenErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListObjectChildrenErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectChildrenErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectChildrenErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListObjectChildrenErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7733,7 +7733,7 @@ pub enum ListObjectParentPathsErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListObjectParentPathsError {
@@ -7804,63 +7804,63 @@ impl ListObjectParentPathsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListObjectParentPathsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListObjectParentPathsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectParentPathsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectParentPathsErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `ListObjectParentPathsErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectParentPathsErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectParentPathsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListObjectParentPathsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectParentPathsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectParentPathsErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListObjectParentPathsErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectParentPathsErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectParentPathsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListObjectParentPathsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectParentPathsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectParentPathsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListObjectParentPathsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectParentPathsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectParentPathsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListObjectParentPathsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectParentPathsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectParentPathsErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListObjectParentPathsErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectParentPathsErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectParentPathsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListObjectParentPathsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7919,7 +7919,7 @@ pub enum ListObjectParentsErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListObjectParentsError {
@@ -7991,70 +7991,70 @@ impl ListObjectParentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListObjectParentsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListObjectParentsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectParentsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectParentsErrorKind::CannotListParentOfRootException`.
+    /// Returns `true` if the error kind is `ListObjectParentsErrorKind::CannotListParentOfRootException`.
     pub fn is_cannot_list_parent_of_root_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectParentsErrorKind::CannotListParentOfRootException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectParentsErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `ListObjectParentsErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectParentsErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectParentsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListObjectParentsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectParentsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectParentsErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListObjectParentsErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectParentsErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectParentsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListObjectParentsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectParentsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectParentsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListObjectParentsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectParentsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectParentsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListObjectParentsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectParentsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectParentsErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListObjectParentsErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectParentsErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectParentsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListObjectParentsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8112,7 +8112,7 @@ pub enum ListObjectPoliciesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListObjectPoliciesError {
@@ -8183,63 +8183,63 @@ impl ListObjectPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListObjectPoliciesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListObjectPoliciesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectPoliciesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectPoliciesErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `ListObjectPoliciesErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectPoliciesErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectPoliciesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListObjectPoliciesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectPoliciesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectPoliciesErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListObjectPoliciesErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectPoliciesErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectPoliciesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListObjectPoliciesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectPoliciesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectPoliciesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListObjectPoliciesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectPoliciesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectPoliciesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListObjectPoliciesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectPoliciesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectPoliciesErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListObjectPoliciesErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListObjectPoliciesErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListObjectPoliciesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListObjectPoliciesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8299,7 +8299,7 @@ pub enum ListOutgoingTypedLinksErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOutgoingTypedLinksError {
@@ -8371,70 +8371,70 @@ impl ListOutgoingTypedLinksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListOutgoingTypedLinksErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListOutgoingTypedLinksErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOutgoingTypedLinksErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListOutgoingTypedLinksErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `ListOutgoingTypedLinksErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOutgoingTypedLinksErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `ListOutgoingTypedLinksErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `ListOutgoingTypedLinksErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOutgoingTypedLinksErrorKind::FacetValidationException(_)
         )
     }
-    /// Returns true if the error kind is `ListOutgoingTypedLinksErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListOutgoingTypedLinksErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOutgoingTypedLinksErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListOutgoingTypedLinksErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListOutgoingTypedLinksErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOutgoingTypedLinksErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListOutgoingTypedLinksErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListOutgoingTypedLinksErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOutgoingTypedLinksErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListOutgoingTypedLinksErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListOutgoingTypedLinksErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOutgoingTypedLinksErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListOutgoingTypedLinksErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListOutgoingTypedLinksErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOutgoingTypedLinksErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListOutgoingTypedLinksErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListOutgoingTypedLinksErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListOutgoingTypedLinksErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListOutgoingTypedLinksErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListOutgoingTypedLinksErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8494,7 +8494,7 @@ pub enum ListPolicyAttachmentsErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPolicyAttachmentsError {
@@ -8566,70 +8566,70 @@ impl ListPolicyAttachmentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPolicyAttachmentsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListPolicyAttachmentsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPolicyAttachmentsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListPolicyAttachmentsErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `ListPolicyAttachmentsErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPolicyAttachmentsErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `ListPolicyAttachmentsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListPolicyAttachmentsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPolicyAttachmentsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListPolicyAttachmentsErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListPolicyAttachmentsErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPolicyAttachmentsErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListPolicyAttachmentsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListPolicyAttachmentsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPolicyAttachmentsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListPolicyAttachmentsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListPolicyAttachmentsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPolicyAttachmentsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListPolicyAttachmentsErrorKind::NotPolicyException`.
+    /// Returns `true` if the error kind is `ListPolicyAttachmentsErrorKind::NotPolicyException`.
     pub fn is_not_policy_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPolicyAttachmentsErrorKind::NotPolicyException(_)
         )
     }
-    /// Returns true if the error kind is `ListPolicyAttachmentsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListPolicyAttachmentsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPolicyAttachmentsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListPolicyAttachmentsErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListPolicyAttachmentsErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPolicyAttachmentsErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListPolicyAttachmentsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListPolicyAttachmentsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8685,7 +8685,7 @@ pub enum ListPublishedSchemaArnsErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPublishedSchemaArnsError {
@@ -8755,56 +8755,56 @@ impl ListPublishedSchemaArnsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPublishedSchemaArnsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListPublishedSchemaArnsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPublishedSchemaArnsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListPublishedSchemaArnsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListPublishedSchemaArnsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPublishedSchemaArnsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListPublishedSchemaArnsErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListPublishedSchemaArnsErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPublishedSchemaArnsErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListPublishedSchemaArnsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListPublishedSchemaArnsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPublishedSchemaArnsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListPublishedSchemaArnsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListPublishedSchemaArnsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPublishedSchemaArnsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListPublishedSchemaArnsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListPublishedSchemaArnsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPublishedSchemaArnsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListPublishedSchemaArnsErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListPublishedSchemaArnsErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPublishedSchemaArnsErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListPublishedSchemaArnsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListPublishedSchemaArnsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8858,7 +8858,7 @@ pub enum ListTagsForResourceErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -8928,56 +8928,56 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidTaggingRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidTaggingRequestException`.
     pub fn is_invalid_tagging_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidTaggingRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9033,7 +9033,7 @@ pub enum ListTypedLinkFacetAttributesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTypedLinkFacetAttributesError {
@@ -9112,63 +9112,63 @@ impl ListTypedLinkFacetAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTypedLinkFacetAttributesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTypedLinkFacetAttributesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTypedLinkFacetAttributesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTypedLinkFacetAttributesErrorKind::FacetNotFoundException`.
+    /// Returns `true` if the error kind is `ListTypedLinkFacetAttributesErrorKind::FacetNotFoundException`.
     pub fn is_facet_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTypedLinkFacetAttributesErrorKind::FacetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTypedLinkFacetAttributesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListTypedLinkFacetAttributesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTypedLinkFacetAttributesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListTypedLinkFacetAttributesErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListTypedLinkFacetAttributesErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTypedLinkFacetAttributesErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListTypedLinkFacetAttributesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListTypedLinkFacetAttributesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTypedLinkFacetAttributesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTypedLinkFacetAttributesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListTypedLinkFacetAttributesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTypedLinkFacetAttributesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListTypedLinkFacetAttributesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTypedLinkFacetAttributesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTypedLinkFacetAttributesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTypedLinkFacetAttributesErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListTypedLinkFacetAttributesErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTypedLinkFacetAttributesErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListTypedLinkFacetAttributesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTypedLinkFacetAttributesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9229,7 +9229,7 @@ pub enum ListTypedLinkFacetNamesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTypedLinkFacetNamesError {
@@ -9299,56 +9299,56 @@ impl ListTypedLinkFacetNamesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTypedLinkFacetNamesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListTypedLinkFacetNamesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTypedLinkFacetNamesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTypedLinkFacetNamesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListTypedLinkFacetNamesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTypedLinkFacetNamesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListTypedLinkFacetNamesErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListTypedLinkFacetNamesErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTypedLinkFacetNamesErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListTypedLinkFacetNamesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListTypedLinkFacetNamesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTypedLinkFacetNamesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTypedLinkFacetNamesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListTypedLinkFacetNamesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTypedLinkFacetNamesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListTypedLinkFacetNamesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTypedLinkFacetNamesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTypedLinkFacetNamesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTypedLinkFacetNamesErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `ListTypedLinkFacetNamesErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTypedLinkFacetNamesErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListTypedLinkFacetNamesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTypedLinkFacetNamesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9404,7 +9404,7 @@ pub enum LookupPolicyErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for LookupPolicyError {
@@ -9475,54 +9475,54 @@ impl LookupPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `LookupPolicyErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `LookupPolicyErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, LookupPolicyErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `LookupPolicyErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `LookupPolicyErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             LookupPolicyErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `LookupPolicyErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `LookupPolicyErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             LookupPolicyErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `LookupPolicyErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `LookupPolicyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, LookupPolicyErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `LookupPolicyErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `LookupPolicyErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             LookupPolicyErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `LookupPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `LookupPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, LookupPolicyErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `LookupPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `LookupPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             LookupPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `LookupPolicyErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `LookupPolicyErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             LookupPolicyErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `LookupPolicyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `LookupPolicyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, LookupPolicyErrorKind::ValidationException(_))
     }
@@ -9574,7 +9574,7 @@ pub enum PublishSchemaErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PublishSchemaError {
@@ -9644,50 +9644,50 @@ impl PublishSchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PublishSchemaErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PublishSchemaErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, PublishSchemaErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `PublishSchemaErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `PublishSchemaErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             PublishSchemaErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `PublishSchemaErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `PublishSchemaErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, PublishSchemaErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `PublishSchemaErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PublishSchemaErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PublishSchemaErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PublishSchemaErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PublishSchemaErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PublishSchemaErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PublishSchemaErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `PublishSchemaErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             PublishSchemaErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `PublishSchemaErrorKind::SchemaAlreadyPublishedException`.
+    /// Returns `true` if the error kind is `PublishSchemaErrorKind::SchemaAlreadyPublishedException`.
     pub fn is_schema_already_published_exception(&self) -> bool {
         matches!(
             &self.kind,
             PublishSchemaErrorKind::SchemaAlreadyPublishedException(_)
         )
     }
-    /// Returns true if the error kind is `PublishSchemaErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PublishSchemaErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, PublishSchemaErrorKind::ValidationException(_))
     }
@@ -9738,7 +9738,7 @@ pub enum PutSchemaFromJsonErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutSchemaFromJsonError {
@@ -9808,56 +9808,56 @@ impl PutSchemaFromJsonError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutSchemaFromJsonErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutSchemaFromJsonErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSchemaFromJsonErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutSchemaFromJsonErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `PutSchemaFromJsonErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSchemaFromJsonErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `PutSchemaFromJsonErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `PutSchemaFromJsonErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSchemaFromJsonErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `PutSchemaFromJsonErrorKind::InvalidRuleException`.
+    /// Returns `true` if the error kind is `PutSchemaFromJsonErrorKind::InvalidRuleException`.
     pub fn is_invalid_rule_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSchemaFromJsonErrorKind::InvalidRuleException(_)
         )
     }
-    /// Returns true if the error kind is `PutSchemaFromJsonErrorKind::InvalidSchemaDocException`.
+    /// Returns `true` if the error kind is `PutSchemaFromJsonErrorKind::InvalidSchemaDocException`.
     pub fn is_invalid_schema_doc_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSchemaFromJsonErrorKind::InvalidSchemaDocException(_)
         )
     }
-    /// Returns true if the error kind is `PutSchemaFromJsonErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutSchemaFromJsonErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSchemaFromJsonErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutSchemaFromJsonErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `PutSchemaFromJsonErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutSchemaFromJsonErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `PutSchemaFromJsonErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutSchemaFromJsonErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9914,7 +9914,7 @@ pub enum RemoveFacetFromObjectErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveFacetFromObjectError {
@@ -9985,63 +9985,63 @@ impl RemoveFacetFromObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveFacetFromObjectErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `RemoveFacetFromObjectErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFacetFromObjectErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFacetFromObjectErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `RemoveFacetFromObjectErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFacetFromObjectErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFacetFromObjectErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `RemoveFacetFromObjectErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFacetFromObjectErrorKind::FacetValidationException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFacetFromObjectErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `RemoveFacetFromObjectErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFacetFromObjectErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFacetFromObjectErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `RemoveFacetFromObjectErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFacetFromObjectErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFacetFromObjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `RemoveFacetFromObjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFacetFromObjectErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFacetFromObjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RemoveFacetFromObjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFacetFromObjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFacetFromObjectErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `RemoveFacetFromObjectErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveFacetFromObjectErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveFacetFromObjectErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RemoveFacetFromObjectErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10096,7 +10096,7 @@ pub enum TagResourceErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -10166,47 +10166,47 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidTaggingRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidTaggingRequestException`.
     pub fn is_invalid_tagging_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InvalidTaggingRequestException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -10257,7 +10257,7 @@ pub enum UntagResourceErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -10327,50 +10327,50 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidTaggingRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidTaggingRequestException`.
     pub fn is_invalid_tagging_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidTaggingRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -10429,7 +10429,7 @@ pub enum UpdateFacetErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFacetError {
@@ -10502,62 +10502,62 @@ impl UpdateFacetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateFacetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateFacetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateFacetErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateFacetErrorKind::FacetNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFacetErrorKind::FacetNotFoundException`.
     pub fn is_facet_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateFacetErrorKind::FacetNotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateFacetErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `UpdateFacetErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFacetErrorKind::FacetValidationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFacetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateFacetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFacetErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFacetErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `UpdateFacetErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, UpdateFacetErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `UpdateFacetErrorKind::InvalidFacetUpdateException`.
+    /// Returns `true` if the error kind is `UpdateFacetErrorKind::InvalidFacetUpdateException`.
     pub fn is_invalid_facet_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFacetErrorKind::InvalidFacetUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFacetErrorKind::InvalidRuleException`.
+    /// Returns `true` if the error kind is `UpdateFacetErrorKind::InvalidRuleException`.
     pub fn is_invalid_rule_exception(&self) -> bool {
         matches!(&self.kind, UpdateFacetErrorKind::InvalidRuleException(_))
     }
-    /// Returns true if the error kind is `UpdateFacetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateFacetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, UpdateFacetErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `UpdateFacetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateFacetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFacetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFacetErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `UpdateFacetErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateFacetErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateFacetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateFacetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateFacetErrorKind::ValidationException(_))
     }
@@ -10614,7 +10614,7 @@ pub enum UpdateLinkAttributesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLinkAttributesError {
@@ -10685,63 +10685,63 @@ impl UpdateLinkAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLinkAttributesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateLinkAttributesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLinkAttributesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLinkAttributesErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `UpdateLinkAttributesErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLinkAttributesErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLinkAttributesErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `UpdateLinkAttributesErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLinkAttributesErrorKind::FacetValidationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLinkAttributesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateLinkAttributesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLinkAttributesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLinkAttributesErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `UpdateLinkAttributesErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLinkAttributesErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLinkAttributesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateLinkAttributesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLinkAttributesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLinkAttributesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateLinkAttributesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLinkAttributesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLinkAttributesErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `UpdateLinkAttributesErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLinkAttributesErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLinkAttributesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateLinkAttributesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10802,7 +10802,7 @@ pub enum UpdateObjectAttributesErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateObjectAttributesError {
@@ -10874,70 +10874,70 @@ impl UpdateObjectAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateObjectAttributesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateObjectAttributesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateObjectAttributesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateObjectAttributesErrorKind::DirectoryNotEnabledException`.
+    /// Returns `true` if the error kind is `UpdateObjectAttributesErrorKind::DirectoryNotEnabledException`.
     pub fn is_directory_not_enabled_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateObjectAttributesErrorKind::DirectoryNotEnabledException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateObjectAttributesErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `UpdateObjectAttributesErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateObjectAttributesErrorKind::FacetValidationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateObjectAttributesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateObjectAttributesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateObjectAttributesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateObjectAttributesErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `UpdateObjectAttributesErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateObjectAttributesErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateObjectAttributesErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateObjectAttributesErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateObjectAttributesErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateObjectAttributesErrorKind::LinkNameAlreadyInUseException`.
+    /// Returns `true` if the error kind is `UpdateObjectAttributesErrorKind::LinkNameAlreadyInUseException`.
     pub fn is_link_name_already_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateObjectAttributesErrorKind::LinkNameAlreadyInUseException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateObjectAttributesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateObjectAttributesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateObjectAttributesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateObjectAttributesErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `UpdateObjectAttributesErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateObjectAttributesErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateObjectAttributesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateObjectAttributesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10991,7 +10991,7 @@ pub enum UpdateSchemaErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSchemaError {
@@ -11060,40 +11060,40 @@ impl UpdateSchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSchemaErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateSchemaErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UpdateSchemaErrorKind::AccessDeniedException(_))
     }
-    /// Returns true if the error kind is `UpdateSchemaErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateSchemaErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSchemaErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSchemaErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `UpdateSchemaErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, UpdateSchemaErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `UpdateSchemaErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateSchemaErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, UpdateSchemaErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `UpdateSchemaErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSchemaErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSchemaErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSchemaErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `UpdateSchemaErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSchemaErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSchemaErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateSchemaErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdateSchemaErrorKind::ValidationException(_))
     }
@@ -11151,7 +11151,7 @@ pub enum UpdateTypedLinkFacetErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTypedLinkFacetError {
@@ -11224,77 +11224,77 @@ impl UpdateTypedLinkFacetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTypedLinkFacetErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateTypedLinkFacetErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTypedLinkFacetErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTypedLinkFacetErrorKind::FacetNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTypedLinkFacetErrorKind::FacetNotFoundException`.
     pub fn is_facet_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTypedLinkFacetErrorKind::FacetNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTypedLinkFacetErrorKind::FacetValidationException`.
+    /// Returns `true` if the error kind is `UpdateTypedLinkFacetErrorKind::FacetValidationException`.
     pub fn is_facet_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTypedLinkFacetErrorKind::FacetValidationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTypedLinkFacetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateTypedLinkFacetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTypedLinkFacetErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTypedLinkFacetErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `UpdateTypedLinkFacetErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTypedLinkFacetErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTypedLinkFacetErrorKind::InvalidFacetUpdateException`.
+    /// Returns `true` if the error kind is `UpdateTypedLinkFacetErrorKind::InvalidFacetUpdateException`.
     pub fn is_invalid_facet_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTypedLinkFacetErrorKind::InvalidFacetUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTypedLinkFacetErrorKind::InvalidRuleException`.
+    /// Returns `true` if the error kind is `UpdateTypedLinkFacetErrorKind::InvalidRuleException`.
     pub fn is_invalid_rule_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTypedLinkFacetErrorKind::InvalidRuleException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTypedLinkFacetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateTypedLinkFacetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTypedLinkFacetErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTypedLinkFacetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTypedLinkFacetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTypedLinkFacetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTypedLinkFacetErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `UpdateTypedLinkFacetErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTypedLinkFacetErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTypedLinkFacetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateTypedLinkFacetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11355,7 +11355,7 @@ pub enum UpgradeAppliedSchemaErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpgradeAppliedSchemaError {
@@ -11426,63 +11426,63 @@ impl UpgradeAppliedSchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpgradeAppliedSchemaErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpgradeAppliedSchemaErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpgradeAppliedSchemaErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpgradeAppliedSchemaErrorKind::IncompatibleSchemaException`.
+    /// Returns `true` if the error kind is `UpgradeAppliedSchemaErrorKind::IncompatibleSchemaException`.
     pub fn is_incompatible_schema_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpgradeAppliedSchemaErrorKind::IncompatibleSchemaException(_)
         )
     }
-    /// Returns true if the error kind is `UpgradeAppliedSchemaErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpgradeAppliedSchemaErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpgradeAppliedSchemaErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpgradeAppliedSchemaErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `UpgradeAppliedSchemaErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpgradeAppliedSchemaErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `UpgradeAppliedSchemaErrorKind::InvalidAttachmentException`.
+    /// Returns `true` if the error kind is `UpgradeAppliedSchemaErrorKind::InvalidAttachmentException`.
     pub fn is_invalid_attachment_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpgradeAppliedSchemaErrorKind::InvalidAttachmentException(_)
         )
     }
-    /// Returns true if the error kind is `UpgradeAppliedSchemaErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpgradeAppliedSchemaErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpgradeAppliedSchemaErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpgradeAppliedSchemaErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `UpgradeAppliedSchemaErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpgradeAppliedSchemaErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpgradeAppliedSchemaErrorKind::SchemaAlreadyExistsException`.
+    /// Returns `true` if the error kind is `UpgradeAppliedSchemaErrorKind::SchemaAlreadyExistsException`.
     pub fn is_schema_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpgradeAppliedSchemaErrorKind::SchemaAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpgradeAppliedSchemaErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpgradeAppliedSchemaErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11540,7 +11540,7 @@ pub enum UpgradePublishedSchemaErrorKind {
     /// <p>Indicates that your request is malformed in some manner. See the exception
     /// message.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpgradePublishedSchemaError {
@@ -11611,63 +11611,63 @@ impl UpgradePublishedSchemaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpgradePublishedSchemaErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpgradePublishedSchemaErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpgradePublishedSchemaErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpgradePublishedSchemaErrorKind::IncompatibleSchemaException`.
+    /// Returns `true` if the error kind is `UpgradePublishedSchemaErrorKind::IncompatibleSchemaException`.
     pub fn is_incompatible_schema_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpgradePublishedSchemaErrorKind::IncompatibleSchemaException(_)
         )
     }
-    /// Returns true if the error kind is `UpgradePublishedSchemaErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpgradePublishedSchemaErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpgradePublishedSchemaErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpgradePublishedSchemaErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `UpgradePublishedSchemaErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpgradePublishedSchemaErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `UpgradePublishedSchemaErrorKind::InvalidAttachmentException`.
+    /// Returns `true` if the error kind is `UpgradePublishedSchemaErrorKind::InvalidAttachmentException`.
     pub fn is_invalid_attachment_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpgradePublishedSchemaErrorKind::InvalidAttachmentException(_)
         )
     }
-    /// Returns true if the error kind is `UpgradePublishedSchemaErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpgradePublishedSchemaErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpgradePublishedSchemaErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpgradePublishedSchemaErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpgradePublishedSchemaErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpgradePublishedSchemaErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpgradePublishedSchemaErrorKind::RetryableConflictException`.
+    /// Returns `true` if the error kind is `UpgradePublishedSchemaErrorKind::RetryableConflictException`.
     pub fn is_retryable_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpgradePublishedSchemaErrorKind::RetryableConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpgradePublishedSchemaErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpgradePublishedSchemaErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

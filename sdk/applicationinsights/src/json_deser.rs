@@ -1017,6 +1017,15 @@ pub fn deser_operation_crate_operation_list_problems(
                             .transpose()?,
                         );
                     }
+                    "ResourceGroupName" => {
+                        builder = builder.set_resource_group_name(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
@@ -1285,6 +1294,25 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "AutoConfigEnabled" => {
+                                builder = builder.set_auto_config_enabled(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "DiscoveryType" => {
+                                builder = builder.set_discovery_type(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::DiscoveryType::from(u.as_ref()))
+                                    })
                                     .transpose()?,
                                 );
                             }
@@ -2060,6 +2088,22 @@ where
                             "Feedback" => {
                                 builder = builder.set_feedback(
                                     crate::json_deser::deser_map_com_amazonaws_applicationinsights_feedback(tokens)?
+                                );
+                            }
+                            "RecurringCount" => {
+                                builder = builder.set_recurring_count(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
+                                );
+                            }
+                            "LastRecurrenceTime" => {
+                                builder = builder.set_last_recurrence_time(
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        aws_smithy_types::instant::Format::EpochSeconds,
+                                    )?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

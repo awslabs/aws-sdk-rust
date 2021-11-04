@@ -97,7 +97,7 @@ async fn main() -> Result<(), Error> {
     }
 
     raw_client
-        .call(wait_for_ready_table(&table.to_string(), client.conf()))
+        .call(wait_for_ready_table(&table.to_string(), client.conf()).await)
         .await
         .expect("table should become ready");
 
@@ -255,7 +255,7 @@ where
 
 /// Construct a `DescribeTable` request with a policy to retry every second until the table
 /// is ready
-fn wait_for_ready_table(
+async fn wait_for_ready_table(
     table_name: &str,
     conf: &Config,
 ) -> Operation<DescribeTable, WaitForReadyTable<AwsErrorRetryPolicy>> {
@@ -264,6 +264,7 @@ fn wait_for_ready_table(
         .build()
         .expect("valid input")
         .make_operation(&conf)
+        .await
         .expect("valid operation");
     let waiting_policy = WaitForReadyTable {
         inner: operation.retry_policy().clone(),

@@ -95,7 +95,7 @@ pub fn parse_build_bot_locale_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BuildBotLocaleError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_build_bot_locale_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::BuildBotLocaleError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::BuildBotLocaleError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -239,7 +239,7 @@ pub fn parse_create_bot_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateBotError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_bot_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::CreateBotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::CreateBotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -383,7 +383,7 @@ pub fn parse_create_bot_alias_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateBotAliasError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_bot_alias_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::CreateBotAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::CreateBotAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -527,7 +527,7 @@ pub fn parse_create_bot_locale_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateBotLocaleError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_bot_locale_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::CreateBotLocaleError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::CreateBotLocaleError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -672,7 +672,7 @@ pub fn parse_create_bot_version_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateBotVersionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_bot_version_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::CreateBotVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::CreateBotVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -816,7 +816,7 @@ pub fn parse_create_export_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateExportError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_export_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::CreateExportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::CreateExportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -960,7 +960,7 @@ pub fn parse_create_intent_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateIntentError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_intent_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::CreateIntentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::CreateIntentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -1105,7 +1105,7 @@ pub fn parse_create_resource_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_resource_policy_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::CreateResourcePolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::CreateResourcePolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -1284,7 +1284,7 @@ pub fn parse_create_resource_policy_statement_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateResourcePolicyStatementError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_resource_policy_statement_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::CreateResourcePolicyStatementError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::CreateResourcePolicyStatementError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -1432,7 +1432,7 @@ pub fn parse_create_slot_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSlotError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_slot_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::CreateSlotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::CreateSlotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -1576,7 +1576,7 @@ pub fn parse_create_slot_type_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSlotTypeError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_slot_type_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::CreateSlotTypeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::CreateSlotTypeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -1701,7 +1701,7 @@ pub fn parse_create_upload_url_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUploadUrlError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_upload_url_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::CreateUploadUrlError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::CreateUploadUrlError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -1845,7 +1845,7 @@ pub fn parse_delete_bot_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_bot_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DeleteBotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DeleteBotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -1989,7 +1989,7 @@ pub fn parse_delete_bot_alias_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotAliasError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_bot_alias_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DeleteBotAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DeleteBotAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -2133,7 +2133,7 @@ pub fn parse_delete_bot_locale_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotLocaleError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_bot_locale_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DeleteBotLocaleError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DeleteBotLocaleError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -2278,7 +2278,7 @@ pub fn parse_delete_bot_version_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotVersionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_bot_version_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DeleteBotVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DeleteBotVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -2404,7 +2404,7 @@ pub fn parse_delete_export_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteExportError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_export_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DeleteExportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DeleteExportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -2529,7 +2529,7 @@ pub fn parse_delete_import_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_import_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DeleteImportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DeleteImportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -2673,7 +2673,7 @@ pub fn parse_delete_intent_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteIntentError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_intent_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DeleteIntentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DeleteIntentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -2795,7 +2795,7 @@ pub fn parse_delete_resource_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourcePolicyError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_resource_policy_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DeleteResourcePolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DeleteResourcePolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -2917,7 +2917,7 @@ pub fn parse_delete_resource_policy_statement_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourcePolicyStatementError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_resource_policy_statement_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DeleteResourcePolicyStatementError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DeleteResourcePolicyStatementError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -3048,7 +3048,7 @@ pub fn parse_delete_slot_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSlotError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_slot_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DeleteSlotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DeleteSlotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -3187,7 +3187,7 @@ pub fn parse_delete_slot_type_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSlotTypeError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_slot_type_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DeleteSlotTypeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DeleteSlotTypeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -3272,7 +3272,7 @@ pub fn parse_delete_utterances_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteUtterancesError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_utterances_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DeleteUtterancesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DeleteUtterancesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -3392,7 +3392,7 @@ pub fn parse_describe_bot_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_bot_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DescribeBotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DescribeBotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -3517,7 +3517,7 @@ pub fn parse_describe_bot_alias_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotAliasError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_bot_alias_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DescribeBotAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DescribeBotAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -3643,7 +3643,7 @@ pub fn parse_describe_bot_locale_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotLocaleError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_bot_locale_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DescribeBotLocaleError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DescribeBotLocaleError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -3771,7 +3771,7 @@ pub fn parse_describe_bot_version_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBotVersionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_bot_version_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DescribeBotVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DescribeBotVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -3880,7 +3880,7 @@ pub fn parse_describe_export_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeExportError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_export_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DescribeExportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DescribeExportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -3986,7 +3986,7 @@ pub fn parse_describe_import_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeImportError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_import_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DescribeImportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DescribeImportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -4110,7 +4110,7 @@ pub fn parse_describe_intent_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeIntentError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_intent_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DescribeIntentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DescribeIntentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -4223,7 +4223,7 @@ pub fn parse_describe_resource_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeResourcePolicyError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_resource_policy_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DescribeResourcePolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DescribeResourcePolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -4333,7 +4333,7 @@ pub fn parse_describe_slot_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSlotError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_slot_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DescribeSlotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DescribeSlotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -4458,7 +4458,7 @@ pub fn parse_describe_slot_type_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSlotTypeError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_describe_slot_type_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::DescribeSlotTypeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::DescribeSlotTypeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -4573,7 +4573,7 @@ pub fn parse_list_aggregated_utterances_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAggregatedUtterancesError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_aggregated_utterances_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::ListAggregatedUtterancesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::ListAggregatedUtterancesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -4683,7 +4683,7 @@ pub fn parse_list_bot_aliases_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBotAliasesError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_bot_aliases_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::ListBotAliasesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::ListBotAliasesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -4790,7 +4790,7 @@ pub fn parse_list_bot_locales_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBotLocalesError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_bot_locales_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::ListBotLocalesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::ListBotLocalesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -4897,7 +4897,7 @@ pub fn parse_list_bots_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBotsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_bots_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::ListBotsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::ListBotsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -5004,7 +5004,7 @@ pub fn parse_list_bot_versions_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBotVersionsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_bot_versions_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::ListBotVersionsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::ListBotVersionsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -5114,7 +5114,7 @@ pub fn parse_list_built_in_intents_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBuiltInIntentsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_built_in_intents_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::ListBuiltInIntentsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::ListBuiltInIntentsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -5227,7 +5227,7 @@ pub fn parse_list_built_in_slot_types_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBuiltInSlotTypesError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_built_in_slot_types_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::ListBuiltInSlotTypesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::ListBuiltInSlotTypesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -5319,7 +5319,7 @@ pub fn parse_list_exports_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListExportsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_exports_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::ListExportsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::ListExportsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -5408,7 +5408,7 @@ pub fn parse_list_imports_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListImportsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_imports_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::ListImportsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::ListImportsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -5515,7 +5515,7 @@ pub fn parse_list_intents_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListIntentsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_intents_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::ListIntentsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::ListIntentsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -5622,7 +5622,7 @@ pub fn parse_list_slots_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSlotsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_slots_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::ListSlotsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::ListSlotsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -5729,7 +5729,7 @@ pub fn parse_list_slot_types_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSlotTypesError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_slot_types_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::ListSlotTypesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::ListSlotTypesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -5838,7 +5838,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_tags_for_resource_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::ListTagsForResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::ListTagsForResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -5984,7 +5984,7 @@ pub fn parse_start_import_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_start_import_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::StartImportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::StartImportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -6090,7 +6090,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_tag_resource_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::TagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::TagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -6191,7 +6191,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_untag_resource_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::UntagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::UntagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -6330,7 +6330,7 @@ pub fn parse_update_bot_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_bot_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::UpdateBotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::UpdateBotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -6474,7 +6474,7 @@ pub fn parse_update_bot_alias_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotAliasError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_bot_alias_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::UpdateBotAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::UpdateBotAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -6618,7 +6618,7 @@ pub fn parse_update_bot_locale_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateBotLocaleError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_bot_locale_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::UpdateBotLocaleError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::UpdateBotLocaleError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -6761,7 +6761,7 @@ pub fn parse_update_export_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateExportError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_export_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::UpdateExportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::UpdateExportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -6905,7 +6905,7 @@ pub fn parse_update_intent_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIntentError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_intent_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::UpdateIntentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::UpdateIntentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -7050,7 +7050,7 @@ pub fn parse_update_resource_policy_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourcePolicyError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_resource_policy_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::UpdateResourcePolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::UpdateResourcePolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -7197,7 +7197,7 @@ pub fn parse_update_slot_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSlotError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_slot_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::UpdateSlotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::UpdateSlotError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };
@@ -7341,7 +7341,7 @@ pub fn parse_update_slot_type_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSlotTypeError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_slot_type_throttling_exception_retry_after_seconds(response.headers())
-                                                    .map_err(|_|crate::error::UpdateSlotTypeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::error::UpdateSlotTypeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     output.build()
                 };

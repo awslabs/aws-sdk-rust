@@ -18,7 +18,7 @@ pub enum DescribeDimensionKeysErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The user is not authorized to perform this request.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDimensionKeysError {
@@ -83,21 +83,21 @@ impl DescribeDimensionKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDimensionKeysErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `DescribeDimensionKeysErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDimensionKeysErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDimensionKeysErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `DescribeDimensionKeysErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDimensionKeysErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDimensionKeysErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `DescribeDimensionKeysErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -135,7 +135,7 @@ pub enum GetDimensionKeyDetailsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The user is not authorized to perform this request.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDimensionKeyDetailsError {
@@ -200,21 +200,21 @@ impl GetDimensionKeyDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDimensionKeyDetailsErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `GetDimensionKeyDetailsErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             GetDimensionKeyDetailsErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `GetDimensionKeyDetailsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `GetDimensionKeyDetailsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDimensionKeyDetailsErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetDimensionKeyDetailsErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetDimensionKeyDetailsErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -252,7 +252,7 @@ pub enum GetResourceMetricsErrorKind {
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The user is not authorized to perform this request.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourceMetricsError {
@@ -317,21 +317,21 @@ impl GetResourceMetricsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourceMetricsErrorKind::InternalServiceError`.
+    /// Returns `true` if the error kind is `GetResourceMetricsErrorKind::InternalServiceError`.
     pub fn is_internal_service_error(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceMetricsErrorKind::InternalServiceError(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceMetricsErrorKind::InvalidArgumentException`.
+    /// Returns `true` if the error kind is `GetResourceMetricsErrorKind::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceMetricsErrorKind::InvalidArgumentException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceMetricsErrorKind::NotAuthorizedException`.
+    /// Returns `true` if the error kind is `GetResourceMetricsErrorKind::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(
             &self.kind,

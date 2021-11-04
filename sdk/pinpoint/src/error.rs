@@ -26,7 +26,7 @@ pub enum CreateAppErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAppError {
@@ -95,34 +95,34 @@ impl CreateAppError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAppErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateAppErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateAppErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateAppErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateAppErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateAppErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateAppErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateAppErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAppErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAppErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `CreateAppErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(&self.kind, CreateAppErrorKind::MethodNotAllowedException(_))
     }
-    /// Returns true if the error kind is `CreateAppErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateAppErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateAppErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateAppErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `CreateAppErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(&self.kind, CreateAppErrorKind::PayloadTooLargeException(_))
     }
-    /// Returns true if the error kind is `CreateAppErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateAppErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, CreateAppErrorKind::TooManyRequestsException(_))
     }
@@ -169,7 +169,7 @@ pub enum CreateCampaignErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCampaignError {
@@ -238,40 +238,40 @@ impl CreateCampaignError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCampaignErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateCampaignErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateCampaignErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateCampaignErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateCampaignErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateCampaignErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateCampaignErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateCampaignErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCampaignErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCampaignErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `CreateCampaignErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCampaignErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCampaignErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateCampaignErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateCampaignErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateCampaignErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `CreateCampaignErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCampaignErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCampaignErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateCampaignErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -317,7 +317,7 @@ pub enum CreateEmailTemplateErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEmailTemplateError {
@@ -384,35 +384,35 @@ impl CreateEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEmailTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateEmailTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEmailTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateEmailTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEmailTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEmailTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateEmailTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEmailTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEmailTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `CreateEmailTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEmailTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEmailTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateEmailTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -460,7 +460,7 @@ pub enum CreateExportJobErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateExportJobError {
@@ -529,40 +529,40 @@ impl CreateExportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateExportJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateExportJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateExportJobErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateExportJobErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateExportJobErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateExportJobErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateExportJobErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateExportJobErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExportJobErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExportJobErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `CreateExportJobErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExportJobErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExportJobErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateExportJobErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateExportJobErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateExportJobErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `CreateExportJobErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateExportJobErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `CreateExportJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateExportJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -612,7 +612,7 @@ pub enum CreateImportJobErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateImportJobError {
@@ -681,40 +681,40 @@ impl CreateImportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateImportJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateImportJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateImportJobErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateImportJobErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateImportJobErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateImportJobErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateImportJobErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateImportJobErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImportJobErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImportJobErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `CreateImportJobErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImportJobErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImportJobErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateImportJobErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateImportJobErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateImportJobErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `CreateImportJobErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateImportJobErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `CreateImportJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateImportJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -760,7 +760,7 @@ pub enum CreateInAppTemplateErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateInAppTemplateError {
@@ -827,35 +827,35 @@ impl CreateInAppTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateInAppTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateInAppTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInAppTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInAppTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateInAppTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInAppTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInAppTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateInAppTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInAppTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInAppTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `CreateInAppTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateInAppTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateInAppTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateInAppTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -903,7 +903,7 @@ pub enum CreateJourneyErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateJourneyError {
@@ -972,40 +972,40 @@ impl CreateJourneyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateJourneyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateJourneyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateJourneyErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateJourneyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateJourneyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateJourneyErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateJourneyErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateJourneyErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateJourneyErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateJourneyErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `CreateJourneyErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateJourneyErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateJourneyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateJourneyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateJourneyErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateJourneyErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `CreateJourneyErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateJourneyErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `CreateJourneyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateJourneyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1051,7 +1051,7 @@ pub enum CreatePushTemplateErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePushTemplateError {
@@ -1118,35 +1118,35 @@ impl CreatePushTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePushTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreatePushTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePushTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePushTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreatePushTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePushTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePushTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreatePushTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePushTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePushTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `CreatePushTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePushTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePushTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreatePushTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1194,7 +1194,7 @@ pub enum CreateRecommenderConfigurationErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRecommenderConfigurationError {
@@ -1274,49 +1274,49 @@ impl CreateRecommenderConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateRecommenderConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateRecommenderConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRecommenderConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRecommenderConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateRecommenderConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRecommenderConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRecommenderConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateRecommenderConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRecommenderConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRecommenderConfigurationErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `CreateRecommenderConfigurationErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRecommenderConfigurationErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRecommenderConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateRecommenderConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRecommenderConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRecommenderConfigurationErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `CreateRecommenderConfigurationErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateRecommenderConfigurationErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `CreateRecommenderConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateRecommenderConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1374,7 +1374,7 @@ pub enum CreateSegmentErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSegmentError {
@@ -1443,40 +1443,40 @@ impl CreateSegmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSegmentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateSegmentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateSegmentErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateSegmentErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateSegmentErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, CreateSegmentErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `CreateSegmentErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateSegmentErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSegmentErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSegmentErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `CreateSegmentErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSegmentErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSegmentErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CreateSegmentErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateSegmentErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CreateSegmentErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `CreateSegmentErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSegmentErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSegmentErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateSegmentErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1522,7 +1522,7 @@ pub enum CreateSmsTemplateErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateSmsTemplateError {
@@ -1589,35 +1589,35 @@ impl CreateSmsTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateSmsTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateSmsTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSmsTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSmsTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateSmsTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSmsTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSmsTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateSmsTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSmsTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSmsTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `CreateSmsTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateSmsTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateSmsTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateSmsTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1661,7 +1661,7 @@ pub enum CreateVoiceTemplateErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVoiceTemplateError {
@@ -1728,35 +1728,35 @@ impl CreateVoiceTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateVoiceTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateVoiceTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVoiceTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVoiceTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CreateVoiceTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVoiceTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVoiceTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CreateVoiceTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVoiceTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVoiceTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `CreateVoiceTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateVoiceTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateVoiceTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateVoiceTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1804,7 +1804,7 @@ pub enum DeleteAdmChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAdmChannelError {
@@ -1873,43 +1873,43 @@ impl DeleteAdmChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAdmChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteAdmChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAdmChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAdmChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteAdmChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteAdmChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteAdmChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteAdmChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAdmChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAdmChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteAdmChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAdmChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAdmChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAdmChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteAdmChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteAdmChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteAdmChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAdmChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAdmChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteAdmChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1959,7 +1959,7 @@ pub enum DeleteApnsChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApnsChannelError {
@@ -2028,46 +2028,46 @@ impl DeleteApnsChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApnsChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteApnsChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteApnsChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsChannelErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteApnsChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteApnsChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteApnsChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteApnsChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteApnsChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteApnsChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteApnsChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2117,7 +2117,7 @@ pub enum DeleteApnsSandboxChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApnsSandboxChannelError {
@@ -2188,49 +2188,49 @@ impl DeleteApnsSandboxChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApnsSandboxChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteApnsSandboxChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsSandboxChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsSandboxChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteApnsSandboxChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsSandboxChannelErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsSandboxChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteApnsSandboxChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsSandboxChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsSandboxChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteApnsSandboxChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsSandboxChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsSandboxChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteApnsSandboxChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsSandboxChannelErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsSandboxChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteApnsSandboxChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsSandboxChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsSandboxChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteApnsSandboxChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2280,7 +2280,7 @@ pub enum DeleteApnsVoipChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApnsVoipChannelError {
@@ -2349,49 +2349,49 @@ impl DeleteApnsVoipChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApnsVoipChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteApnsVoipChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsVoipChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsVoipChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteApnsVoipChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsVoipChannelErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsVoipChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteApnsVoipChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsVoipChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsVoipChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteApnsVoipChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsVoipChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsVoipChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteApnsVoipChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsVoipChannelErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsVoipChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteApnsVoipChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsVoipChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsVoipChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteApnsVoipChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2441,7 +2441,7 @@ pub enum DeleteApnsVoipSandboxChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApnsVoipSandboxChannelError {
@@ -2518,49 +2518,49 @@ impl DeleteApnsVoipSandboxChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApnsVoipSandboxChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteApnsVoipSandboxChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsVoipSandboxChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsVoipSandboxChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteApnsVoipSandboxChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsVoipSandboxChannelErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsVoipSandboxChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteApnsVoipSandboxChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsVoipSandboxChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsVoipSandboxChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteApnsVoipSandboxChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsVoipSandboxChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsVoipSandboxChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteApnsVoipSandboxChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsVoipSandboxChannelErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsVoipSandboxChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteApnsVoipSandboxChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApnsVoipSandboxChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApnsVoipSandboxChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteApnsVoipSandboxChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2614,7 +2614,7 @@ pub enum DeleteAppErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAppError {
@@ -2683,34 +2683,34 @@ impl DeleteAppError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAppErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteAppErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteAppErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteAppErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteAppErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteAppErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteAppErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteAppErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAppErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAppErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteAppErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(&self.kind, DeleteAppErrorKind::MethodNotAllowedException(_))
     }
-    /// Returns true if the error kind is `DeleteAppErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAppErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteAppErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteAppErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteAppErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(&self.kind, DeleteAppErrorKind::PayloadTooLargeException(_))
     }
-    /// Returns true if the error kind is `DeleteAppErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteAppErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, DeleteAppErrorKind::TooManyRequestsException(_))
     }
@@ -2757,7 +2757,7 @@ pub enum DeleteBaiduChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBaiduChannelError {
@@ -2826,49 +2826,49 @@ impl DeleteBaiduChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBaiduChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteBaiduChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBaiduChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBaiduChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteBaiduChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBaiduChannelErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBaiduChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteBaiduChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBaiduChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBaiduChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteBaiduChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBaiduChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBaiduChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteBaiduChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBaiduChannelErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBaiduChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteBaiduChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteBaiduChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteBaiduChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteBaiduChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2918,7 +2918,7 @@ pub enum DeleteCampaignErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCampaignError {
@@ -2987,40 +2987,40 @@ impl DeleteCampaignError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCampaignErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteCampaignErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteCampaignErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteCampaignErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteCampaignErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteCampaignErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteCampaignErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteCampaignErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCampaignErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCampaignErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteCampaignErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCampaignErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCampaignErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteCampaignErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteCampaignErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteCampaignErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteCampaignErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCampaignErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCampaignErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteCampaignErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3070,7 +3070,7 @@ pub enum DeleteEmailChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEmailChannelError {
@@ -3139,49 +3139,49 @@ impl DeleteEmailChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEmailChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteEmailChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteEmailChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailChannelErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteEmailChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteEmailChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteEmailChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailChannelErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteEmailChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteEmailChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3231,7 +3231,7 @@ pub enum DeleteEmailTemplateErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEmailTemplateError {
@@ -3300,49 +3300,49 @@ impl DeleteEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEmailTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteEmailTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteEmailTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteEmailTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteEmailTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteEmailTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailTemplateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailTemplateErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteEmailTemplateErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEmailTemplateErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEmailTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteEmailTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3392,7 +3392,7 @@ pub enum DeleteEndpointErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEndpointError {
@@ -3461,40 +3461,40 @@ impl DeleteEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEndpointErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteEndpointErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteEndpointErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteEndpointErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteEndpointErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEndpointErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEndpointErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEndpointErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEndpointErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteEndpointErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteEndpointErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEndpointErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEndpointErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteEndpointErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3544,7 +3544,7 @@ pub enum DeleteEventStreamErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEventStreamError {
@@ -3613,46 +3613,46 @@ impl DeleteEventStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteEventStreamErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteEventStreamErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventStreamErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventStreamErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteEventStreamErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventStreamErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventStreamErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteEventStreamErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventStreamErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventStreamErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteEventStreamErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventStreamErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventStreamErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteEventStreamErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteEventStreamErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteEventStreamErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteEventStreamErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteEventStreamErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteEventStreamErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteEventStreamErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3702,7 +3702,7 @@ pub enum DeleteGcmChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGcmChannelError {
@@ -3771,43 +3771,43 @@ impl DeleteGcmChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGcmChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteGcmChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGcmChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGcmChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteGcmChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteGcmChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteGcmChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteGcmChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGcmChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGcmChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteGcmChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGcmChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGcmChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteGcmChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteGcmChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteGcmChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteGcmChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGcmChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGcmChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteGcmChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3857,7 +3857,7 @@ pub enum DeleteInAppTemplateErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteInAppTemplateError {
@@ -3926,49 +3926,49 @@ impl DeleteInAppTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteInAppTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteInAppTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInAppTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInAppTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteInAppTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInAppTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInAppTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteInAppTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInAppTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInAppTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteInAppTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInAppTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInAppTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteInAppTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInAppTemplateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInAppTemplateErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteInAppTemplateErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteInAppTemplateErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteInAppTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteInAppTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4018,7 +4018,7 @@ pub enum DeleteJourneyErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteJourneyError {
@@ -4087,40 +4087,40 @@ impl DeleteJourneyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteJourneyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteJourneyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteJourneyErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteJourneyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteJourneyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteJourneyErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteJourneyErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteJourneyErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteJourneyErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteJourneyErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteJourneyErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteJourneyErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteJourneyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteJourneyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteJourneyErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteJourneyErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteJourneyErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteJourneyErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteJourneyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteJourneyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4170,7 +4170,7 @@ pub enum DeletePushTemplateErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePushTemplateError {
@@ -4239,49 +4239,49 @@ impl DeletePushTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePushTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeletePushTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePushTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePushTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeletePushTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePushTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePushTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeletePushTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePushTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePushTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeletePushTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePushTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePushTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeletePushTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePushTemplateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePushTemplateErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeletePushTemplateErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePushTemplateErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePushTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeletePushTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4331,7 +4331,7 @@ pub enum DeleteRecommenderConfigurationErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRecommenderConfigurationError {
@@ -4411,49 +4411,49 @@ impl DeleteRecommenderConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteRecommenderConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteRecommenderConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRecommenderConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRecommenderConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteRecommenderConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRecommenderConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRecommenderConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteRecommenderConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRecommenderConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRecommenderConfigurationErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteRecommenderConfigurationErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRecommenderConfigurationErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRecommenderConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteRecommenderConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRecommenderConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRecommenderConfigurationErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteRecommenderConfigurationErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteRecommenderConfigurationErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteRecommenderConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteRecommenderConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4511,7 +4511,7 @@ pub enum DeleteSegmentErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSegmentError {
@@ -4580,40 +4580,40 @@ impl DeleteSegmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSegmentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteSegmentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteSegmentErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteSegmentErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteSegmentErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteSegmentErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteSegmentErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteSegmentErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSegmentErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSegmentErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteSegmentErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSegmentErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSegmentErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSegmentErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteSegmentErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteSegmentErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteSegmentErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSegmentErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSegmentErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteSegmentErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4663,7 +4663,7 @@ pub enum DeleteSmsChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSmsChannelError {
@@ -4732,43 +4732,43 @@ impl DeleteSmsChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSmsChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteSmsChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSmsChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSmsChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteSmsChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, DeleteSmsChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `DeleteSmsChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteSmsChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSmsChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSmsChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteSmsChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSmsChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSmsChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSmsChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteSmsChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteSmsChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteSmsChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSmsChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSmsChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteSmsChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4818,7 +4818,7 @@ pub enum DeleteSmsTemplateErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSmsTemplateError {
@@ -4887,46 +4887,46 @@ impl DeleteSmsTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSmsTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteSmsTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSmsTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSmsTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteSmsTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSmsTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSmsTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteSmsTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSmsTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSmsTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteSmsTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSmsTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSmsTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSmsTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteSmsTemplateErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteSmsTemplateErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteSmsTemplateErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSmsTemplateErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSmsTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteSmsTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4976,7 +4976,7 @@ pub enum DeleteUserEndpointsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUserEndpointsError {
@@ -5045,49 +5045,49 @@ impl DeleteUserEndpointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteUserEndpointsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteUserEndpointsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserEndpointsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserEndpointsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteUserEndpointsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserEndpointsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserEndpointsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteUserEndpointsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserEndpointsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserEndpointsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteUserEndpointsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserEndpointsErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserEndpointsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteUserEndpointsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserEndpointsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserEndpointsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteUserEndpointsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteUserEndpointsErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteUserEndpointsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteUserEndpointsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5137,7 +5137,7 @@ pub enum DeleteVoiceChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVoiceChannelError {
@@ -5206,49 +5206,49 @@ impl DeleteVoiceChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVoiceChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteVoiceChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteVoiceChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceChannelErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteVoiceChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteVoiceChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVoiceChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceChannelErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteVoiceChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteVoiceChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5298,7 +5298,7 @@ pub enum DeleteVoiceTemplateErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVoiceTemplateError {
@@ -5367,49 +5367,49 @@ impl DeleteVoiceTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteVoiceTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DeleteVoiceTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `DeleteVoiceTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `DeleteVoiceTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `DeleteVoiceTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteVoiceTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceTemplateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceTemplateErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `DeleteVoiceTemplateErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteVoiceTemplateErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteVoiceTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteVoiceTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5459,7 +5459,7 @@ pub enum GetAdmChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAdmChannelError {
@@ -5528,40 +5528,40 @@ impl GetAdmChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAdmChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetAdmChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetAdmChannelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetAdmChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetAdmChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetAdmChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetAdmChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetAdmChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAdmChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetAdmChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetAdmChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAdmChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetAdmChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetAdmChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetAdmChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetAdmChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetAdmChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAdmChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetAdmChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetAdmChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5611,7 +5611,7 @@ pub enum GetApnsChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApnsChannelError {
@@ -5680,40 +5680,40 @@ impl GetApnsChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetApnsChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetApnsChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetApnsChannelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetApnsChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetApnsChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetApnsChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetApnsChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetApnsChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetApnsChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetApnsChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetApnsChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetApnsChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetApnsChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetApnsChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5763,7 +5763,7 @@ pub enum GetApnsSandboxChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApnsSandboxChannelError {
@@ -5832,49 +5832,49 @@ impl GetApnsSandboxChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetApnsSandboxChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetApnsSandboxChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsSandboxChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsSandboxChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetApnsSandboxChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsSandboxChannelErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsSandboxChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetApnsSandboxChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsSandboxChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsSandboxChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetApnsSandboxChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsSandboxChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsSandboxChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetApnsSandboxChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsSandboxChannelErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsSandboxChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetApnsSandboxChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsSandboxChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsSandboxChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetApnsSandboxChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5924,7 +5924,7 @@ pub enum GetApnsVoipChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApnsVoipChannelError {
@@ -5993,49 +5993,49 @@ impl GetApnsVoipChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetApnsVoipChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetApnsVoipChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsVoipChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsVoipChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetApnsVoipChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsVoipChannelErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsVoipChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetApnsVoipChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsVoipChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsVoipChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetApnsVoipChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsVoipChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsVoipChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetApnsVoipChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsVoipChannelErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsVoipChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetApnsVoipChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsVoipChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsVoipChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetApnsVoipChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6085,7 +6085,7 @@ pub enum GetApnsVoipSandboxChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApnsVoipSandboxChannelError {
@@ -6156,49 +6156,49 @@ impl GetApnsVoipSandboxChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetApnsVoipSandboxChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetApnsVoipSandboxChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsVoipSandboxChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsVoipSandboxChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetApnsVoipSandboxChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsVoipSandboxChannelErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsVoipSandboxChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetApnsVoipSandboxChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsVoipSandboxChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsVoipSandboxChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetApnsVoipSandboxChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsVoipSandboxChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsVoipSandboxChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetApnsVoipSandboxChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsVoipSandboxChannelErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsVoipSandboxChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetApnsVoipSandboxChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApnsVoipSandboxChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetApnsVoipSandboxChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetApnsVoipSandboxChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6250,7 +6250,7 @@ pub enum GetAppErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAppError {
@@ -6319,31 +6319,31 @@ impl GetAppError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAppErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetAppErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetAppErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetAppErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetAppErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetAppErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetAppErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetAppErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(&self.kind, GetAppErrorKind::InternalServerErrorException(_))
     }
-    /// Returns true if the error kind is `GetAppErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetAppErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(&self.kind, GetAppErrorKind::MethodNotAllowedException(_))
     }
-    /// Returns true if the error kind is `GetAppErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetAppErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetAppErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetAppErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetAppErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(&self.kind, GetAppErrorKind::PayloadTooLargeException(_))
     }
-    /// Returns true if the error kind is `GetAppErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetAppErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetAppErrorKind::TooManyRequestsException(_))
     }
@@ -6390,7 +6390,7 @@ pub enum GetApplicationDateRangeKpiErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApplicationDateRangeKpiError {
@@ -6461,49 +6461,49 @@ impl GetApplicationDateRangeKpiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetApplicationDateRangeKpiErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetApplicationDateRangeKpiErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationDateRangeKpiErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationDateRangeKpiErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetApplicationDateRangeKpiErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationDateRangeKpiErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationDateRangeKpiErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetApplicationDateRangeKpiErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationDateRangeKpiErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationDateRangeKpiErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetApplicationDateRangeKpiErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationDateRangeKpiErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationDateRangeKpiErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetApplicationDateRangeKpiErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationDateRangeKpiErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationDateRangeKpiErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetApplicationDateRangeKpiErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationDateRangeKpiErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationDateRangeKpiErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetApplicationDateRangeKpiErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6555,7 +6555,7 @@ pub enum GetApplicationSettingsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApplicationSettingsError {
@@ -6624,49 +6624,49 @@ impl GetApplicationSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetApplicationSettingsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetApplicationSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationSettingsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationSettingsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetApplicationSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationSettingsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationSettingsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetApplicationSettingsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationSettingsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationSettingsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetApplicationSettingsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationSettingsErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationSettingsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetApplicationSettingsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationSettingsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationSettingsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetApplicationSettingsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetApplicationSettingsErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetApplicationSettingsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetApplicationSettingsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6716,7 +6716,7 @@ pub enum GetAppsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAppsError {
@@ -6785,34 +6785,34 @@ impl GetAppsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAppsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetAppsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetAppsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetAppsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetAppsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetAppsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetAppsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetAppsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAppsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetAppsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetAppsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(&self.kind, GetAppsErrorKind::MethodNotAllowedException(_))
     }
-    /// Returns true if the error kind is `GetAppsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetAppsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetAppsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetAppsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetAppsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(&self.kind, GetAppsErrorKind::PayloadTooLargeException(_))
     }
-    /// Returns true if the error kind is `GetAppsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetAppsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetAppsErrorKind::TooManyRequestsException(_))
     }
@@ -6859,7 +6859,7 @@ pub enum GetBaiduChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBaiduChannelError {
@@ -6928,40 +6928,40 @@ impl GetBaiduChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetBaiduChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetBaiduChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetBaiduChannelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetBaiduChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetBaiduChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetBaiduChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetBaiduChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetBaiduChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBaiduChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetBaiduChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetBaiduChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBaiduChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetBaiduChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetBaiduChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetBaiduChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetBaiduChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetBaiduChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetBaiduChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetBaiduChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetBaiduChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7011,7 +7011,7 @@ pub enum GetCampaignErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCampaignError {
@@ -7080,40 +7080,40 @@ impl GetCampaignError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCampaignErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetCampaignErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetCampaignErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetCampaignErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetCampaignErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetCampaignErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetCampaignErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetCampaignErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetCampaignErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetCampaignErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetCampaignErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetCampaignErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetCampaignErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetCampaignErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7163,7 +7163,7 @@ pub enum GetCampaignActivitiesErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCampaignActivitiesError {
@@ -7232,49 +7232,49 @@ impl GetCampaignActivitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCampaignActivitiesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetCampaignActivitiesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignActivitiesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignActivitiesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetCampaignActivitiesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignActivitiesErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignActivitiesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetCampaignActivitiesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignActivitiesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignActivitiesErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetCampaignActivitiesErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignActivitiesErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignActivitiesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetCampaignActivitiesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignActivitiesErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignActivitiesErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetCampaignActivitiesErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignActivitiesErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignActivitiesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetCampaignActivitiesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7324,7 +7324,7 @@ pub enum GetCampaignDateRangeKpiErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCampaignDateRangeKpiError {
@@ -7393,49 +7393,49 @@ impl GetCampaignDateRangeKpiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCampaignDateRangeKpiErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetCampaignDateRangeKpiErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignDateRangeKpiErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignDateRangeKpiErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetCampaignDateRangeKpiErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignDateRangeKpiErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignDateRangeKpiErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetCampaignDateRangeKpiErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignDateRangeKpiErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignDateRangeKpiErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetCampaignDateRangeKpiErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignDateRangeKpiErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignDateRangeKpiErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetCampaignDateRangeKpiErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignDateRangeKpiErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignDateRangeKpiErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetCampaignDateRangeKpiErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignDateRangeKpiErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignDateRangeKpiErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetCampaignDateRangeKpiErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7485,7 +7485,7 @@ pub enum GetCampaignsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCampaignsError {
@@ -7554,40 +7554,40 @@ impl GetCampaignsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCampaignsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetCampaignsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetCampaignsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetCampaignsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetCampaignsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetCampaignsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetCampaignsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetCampaignsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetCampaignsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignsErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetCampaignsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetCampaignsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetCampaignsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetCampaignsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignsErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetCampaignsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7637,7 +7637,7 @@ pub enum GetCampaignVersionErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCampaignVersionError {
@@ -7706,49 +7706,49 @@ impl GetCampaignVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCampaignVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetCampaignVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignVersionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignVersionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetCampaignVersionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignVersionErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignVersionErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetCampaignVersionErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignVersionErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignVersionErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetCampaignVersionErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignVersionErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignVersionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetCampaignVersionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignVersionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignVersionErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetCampaignVersionErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignVersionErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignVersionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetCampaignVersionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7798,7 +7798,7 @@ pub enum GetCampaignVersionsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCampaignVersionsError {
@@ -7867,49 +7867,49 @@ impl GetCampaignVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetCampaignVersionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetCampaignVersionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignVersionsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignVersionsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetCampaignVersionsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignVersionsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignVersionsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetCampaignVersionsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignVersionsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignVersionsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetCampaignVersionsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignVersionsErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignVersionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetCampaignVersionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignVersionsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignVersionsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetCampaignVersionsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetCampaignVersionsErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetCampaignVersionsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetCampaignVersionsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7959,7 +7959,7 @@ pub enum GetChannelsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetChannelsError {
@@ -8028,40 +8028,40 @@ impl GetChannelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetChannelsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetChannelsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetChannelsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetChannelsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetChannelsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetChannelsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetChannelsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetChannelsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetChannelsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetChannelsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetChannelsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetChannelsErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetChannelsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetChannelsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetChannelsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetChannelsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetChannelsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetChannelsErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetChannelsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetChannelsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8111,7 +8111,7 @@ pub enum GetEmailChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEmailChannelError {
@@ -8180,40 +8180,40 @@ impl GetEmailChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEmailChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetEmailChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetEmailChannelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetEmailChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetEmailChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetEmailChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetEmailChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetEmailChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEmailChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetEmailChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetEmailChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEmailChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetEmailChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetEmailChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetEmailChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetEmailChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetEmailChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEmailChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetEmailChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetEmailChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8263,7 +8263,7 @@ pub enum GetEmailTemplateErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEmailTemplateError {
@@ -8332,43 +8332,43 @@ impl GetEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEmailTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetEmailTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetEmailTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetEmailTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetEmailTemplateErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetEmailTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetEmailTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEmailTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetEmailTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetEmailTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEmailTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetEmailTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetEmailTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetEmailTemplateErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetEmailTemplateErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetEmailTemplateErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEmailTemplateErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetEmailTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetEmailTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8418,7 +8418,7 @@ pub enum GetEndpointErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEndpointError {
@@ -8487,40 +8487,40 @@ impl GetEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEndpointErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetEndpointErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetEndpointErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetEndpointErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetEndpointErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetEndpointErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetEndpointErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetEndpointErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEndpointErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetEndpointErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetEndpointErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEndpointErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetEndpointErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetEndpointErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetEndpointErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetEndpointErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetEndpointErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEndpointErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetEndpointErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetEndpointErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8570,7 +8570,7 @@ pub enum GetEventStreamErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEventStreamError {
@@ -8639,40 +8639,40 @@ impl GetEventStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetEventStreamErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetEventStreamErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetEventStreamErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetEventStreamErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetEventStreamErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetEventStreamErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetEventStreamErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetEventStreamErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventStreamErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetEventStreamErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetEventStreamErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventStreamErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetEventStreamErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetEventStreamErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetEventStreamErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetEventStreamErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetEventStreamErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetEventStreamErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetEventStreamErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetEventStreamErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8722,7 +8722,7 @@ pub enum GetExportJobErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetExportJobError {
@@ -8791,40 +8791,40 @@ impl GetExportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetExportJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetExportJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetExportJobErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetExportJobErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetExportJobErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetExportJobErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetExportJobErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetExportJobErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetExportJobErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetExportJobErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetExportJobErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetExportJobErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetExportJobErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetExportJobErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetExportJobErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetExportJobErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetExportJobErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetExportJobErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetExportJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetExportJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8874,7 +8874,7 @@ pub enum GetExportJobsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetExportJobsError {
@@ -8943,40 +8943,40 @@ impl GetExportJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetExportJobsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetExportJobsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetExportJobsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetExportJobsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetExportJobsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetExportJobsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetExportJobsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetExportJobsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetExportJobsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetExportJobsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetExportJobsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetExportJobsErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetExportJobsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetExportJobsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetExportJobsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetExportJobsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetExportJobsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetExportJobsErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetExportJobsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetExportJobsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9026,7 +9026,7 @@ pub enum GetGcmChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGcmChannelError {
@@ -9095,40 +9095,40 @@ impl GetGcmChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetGcmChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetGcmChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetGcmChannelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetGcmChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetGcmChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetGcmChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetGcmChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetGcmChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGcmChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetGcmChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetGcmChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGcmChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetGcmChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetGcmChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetGcmChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetGcmChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetGcmChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetGcmChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetGcmChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetGcmChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9178,7 +9178,7 @@ pub enum GetImportJobErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetImportJobError {
@@ -9247,40 +9247,40 @@ impl GetImportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetImportJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetImportJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetImportJobErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetImportJobErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetImportJobErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetImportJobErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetImportJobErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetImportJobErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImportJobErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetImportJobErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetImportJobErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImportJobErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetImportJobErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetImportJobErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetImportJobErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetImportJobErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetImportJobErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImportJobErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetImportJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetImportJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9330,7 +9330,7 @@ pub enum GetImportJobsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetImportJobsError {
@@ -9399,40 +9399,40 @@ impl GetImportJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetImportJobsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetImportJobsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetImportJobsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetImportJobsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetImportJobsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetImportJobsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetImportJobsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetImportJobsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImportJobsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetImportJobsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetImportJobsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImportJobsErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetImportJobsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetImportJobsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetImportJobsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetImportJobsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetImportJobsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetImportJobsErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetImportJobsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetImportJobsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9482,7 +9482,7 @@ pub enum GetInAppMessagesErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInAppMessagesError {
@@ -9551,43 +9551,43 @@ impl GetInAppMessagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInAppMessagesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetInAppMessagesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInAppMessagesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetInAppMessagesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetInAppMessagesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetInAppMessagesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetInAppMessagesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetInAppMessagesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInAppMessagesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetInAppMessagesErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetInAppMessagesErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInAppMessagesErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetInAppMessagesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetInAppMessagesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetInAppMessagesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetInAppMessagesErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetInAppMessagesErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInAppMessagesErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetInAppMessagesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetInAppMessagesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9637,7 +9637,7 @@ pub enum GetInAppTemplateErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInAppTemplateError {
@@ -9706,43 +9706,43 @@ impl GetInAppTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInAppTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetInAppTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInAppTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetInAppTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetInAppTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetInAppTemplateErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetInAppTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetInAppTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInAppTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetInAppTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetInAppTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInAppTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetInAppTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetInAppTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetInAppTemplateErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetInAppTemplateErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetInAppTemplateErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInAppTemplateErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetInAppTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetInAppTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9792,7 +9792,7 @@ pub enum GetJourneyErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetJourneyError {
@@ -9861,37 +9861,37 @@ impl GetJourneyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetJourneyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetJourneyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetJourneyErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetJourneyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetJourneyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetJourneyErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetJourneyErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetJourneyErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetJourneyErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetJourneyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetJourneyErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetJourneyErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetJourneyErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(&self.kind, GetJourneyErrorKind::PayloadTooLargeException(_))
     }
-    /// Returns true if the error kind is `GetJourneyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetJourneyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetJourneyErrorKind::TooManyRequestsException(_))
     }
@@ -9938,7 +9938,7 @@ pub enum GetJourneyDateRangeKpiErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetJourneyDateRangeKpiError {
@@ -10007,49 +10007,49 @@ impl GetJourneyDateRangeKpiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetJourneyDateRangeKpiErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetJourneyDateRangeKpiErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyDateRangeKpiErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyDateRangeKpiErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetJourneyDateRangeKpiErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyDateRangeKpiErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyDateRangeKpiErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetJourneyDateRangeKpiErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyDateRangeKpiErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyDateRangeKpiErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetJourneyDateRangeKpiErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyDateRangeKpiErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyDateRangeKpiErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetJourneyDateRangeKpiErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyDateRangeKpiErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyDateRangeKpiErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetJourneyDateRangeKpiErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyDateRangeKpiErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyDateRangeKpiErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetJourneyDateRangeKpiErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10099,7 +10099,7 @@ pub enum GetJourneyExecutionActivityMetricsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetJourneyExecutionActivityMetricsError {
@@ -10183,49 +10183,49 @@ impl GetJourneyExecutionActivityMetricsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetJourneyExecutionActivityMetricsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetJourneyExecutionActivityMetricsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyExecutionActivityMetricsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyExecutionActivityMetricsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetJourneyExecutionActivityMetricsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyExecutionActivityMetricsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyExecutionActivityMetricsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetJourneyExecutionActivityMetricsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyExecutionActivityMetricsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyExecutionActivityMetricsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetJourneyExecutionActivityMetricsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyExecutionActivityMetricsErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyExecutionActivityMetricsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetJourneyExecutionActivityMetricsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyExecutionActivityMetricsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyExecutionActivityMetricsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetJourneyExecutionActivityMetricsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyExecutionActivityMetricsErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyExecutionActivityMetricsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetJourneyExecutionActivityMetricsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10285,7 +10285,7 @@ pub enum GetJourneyExecutionMetricsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetJourneyExecutionMetricsError {
@@ -10356,49 +10356,49 @@ impl GetJourneyExecutionMetricsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetJourneyExecutionMetricsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetJourneyExecutionMetricsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyExecutionMetricsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyExecutionMetricsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetJourneyExecutionMetricsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyExecutionMetricsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyExecutionMetricsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetJourneyExecutionMetricsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyExecutionMetricsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyExecutionMetricsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetJourneyExecutionMetricsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyExecutionMetricsErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyExecutionMetricsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetJourneyExecutionMetricsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyExecutionMetricsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyExecutionMetricsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetJourneyExecutionMetricsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJourneyExecutionMetricsErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetJourneyExecutionMetricsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetJourneyExecutionMetricsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10450,7 +10450,7 @@ pub enum GetPushTemplateErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPushTemplateError {
@@ -10519,40 +10519,40 @@ impl GetPushTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPushTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetPushTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetPushTemplateErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetPushTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetPushTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetPushTemplateErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetPushTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetPushTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPushTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetPushTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetPushTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPushTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetPushTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetPushTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetPushTemplateErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetPushTemplateErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetPushTemplateErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPushTemplateErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetPushTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetPushTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10602,7 +10602,7 @@ pub enum GetRecommenderConfigurationErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRecommenderConfigurationError {
@@ -10675,49 +10675,49 @@ impl GetRecommenderConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRecommenderConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetRecommenderConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommenderConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommenderConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetRecommenderConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommenderConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommenderConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetRecommenderConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommenderConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommenderConfigurationErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetRecommenderConfigurationErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommenderConfigurationErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommenderConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRecommenderConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommenderConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommenderConfigurationErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetRecommenderConfigurationErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommenderConfigurationErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommenderConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetRecommenderConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10769,7 +10769,7 @@ pub enum GetRecommenderConfigurationsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRecommenderConfigurationsError {
@@ -10846,49 +10846,49 @@ impl GetRecommenderConfigurationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetRecommenderConfigurationsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetRecommenderConfigurationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommenderConfigurationsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommenderConfigurationsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetRecommenderConfigurationsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommenderConfigurationsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommenderConfigurationsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetRecommenderConfigurationsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommenderConfigurationsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommenderConfigurationsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetRecommenderConfigurationsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommenderConfigurationsErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommenderConfigurationsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetRecommenderConfigurationsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommenderConfigurationsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommenderConfigurationsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetRecommenderConfigurationsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetRecommenderConfigurationsErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetRecommenderConfigurationsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetRecommenderConfigurationsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10942,7 +10942,7 @@ pub enum GetSegmentErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSegmentError {
@@ -11011,37 +11011,37 @@ impl GetSegmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSegmentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSegmentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetSegmentErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetSegmentErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetSegmentErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetSegmentErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetSegmentErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetSegmentErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetSegmentErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSegmentErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetSegmentErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetSegmentErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetSegmentErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(&self.kind, GetSegmentErrorKind::PayloadTooLargeException(_))
     }
-    /// Returns true if the error kind is `GetSegmentErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetSegmentErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetSegmentErrorKind::TooManyRequestsException(_))
     }
@@ -11088,7 +11088,7 @@ pub enum GetSegmentExportJobsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSegmentExportJobsError {
@@ -11157,49 +11157,49 @@ impl GetSegmentExportJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSegmentExportJobsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSegmentExportJobsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentExportJobsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentExportJobsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetSegmentExportJobsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentExportJobsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentExportJobsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetSegmentExportJobsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentExportJobsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentExportJobsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetSegmentExportJobsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentExportJobsErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentExportJobsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSegmentExportJobsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentExportJobsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentExportJobsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetSegmentExportJobsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentExportJobsErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentExportJobsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetSegmentExportJobsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11249,7 +11249,7 @@ pub enum GetSegmentImportJobsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSegmentImportJobsError {
@@ -11318,49 +11318,49 @@ impl GetSegmentImportJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSegmentImportJobsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSegmentImportJobsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentImportJobsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentImportJobsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetSegmentImportJobsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentImportJobsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentImportJobsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetSegmentImportJobsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentImportJobsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentImportJobsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetSegmentImportJobsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentImportJobsErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentImportJobsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSegmentImportJobsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentImportJobsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentImportJobsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetSegmentImportJobsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentImportJobsErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentImportJobsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetSegmentImportJobsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11410,7 +11410,7 @@ pub enum GetSegmentsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSegmentsError {
@@ -11479,40 +11479,40 @@ impl GetSegmentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSegmentsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSegmentsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetSegmentsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetSegmentsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetSegmentsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetSegmentsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetSegmentsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetSegmentsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetSegmentsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentsErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSegmentsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetSegmentsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetSegmentsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetSegmentsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentsErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetSegmentsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11562,7 +11562,7 @@ pub enum GetSegmentVersionErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSegmentVersionError {
@@ -11631,46 +11631,46 @@ impl GetSegmentVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSegmentVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSegmentVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentVersionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentVersionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetSegmentVersionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentVersionErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentVersionErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetSegmentVersionErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentVersionErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentVersionErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetSegmentVersionErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentVersionErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentVersionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSegmentVersionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetSegmentVersionErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetSegmentVersionErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetSegmentVersionErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentVersionErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentVersionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetSegmentVersionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11720,7 +11720,7 @@ pub enum GetSegmentVersionsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSegmentVersionsError {
@@ -11789,49 +11789,49 @@ impl GetSegmentVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSegmentVersionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSegmentVersionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentVersionsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentVersionsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetSegmentVersionsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentVersionsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentVersionsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetSegmentVersionsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentVersionsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentVersionsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetSegmentVersionsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentVersionsErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentVersionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSegmentVersionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentVersionsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentVersionsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetSegmentVersionsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSegmentVersionsErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetSegmentVersionsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetSegmentVersionsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11881,7 +11881,7 @@ pub enum GetSmsChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSmsChannelError {
@@ -11950,40 +11950,40 @@ impl GetSmsChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSmsChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSmsChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetSmsChannelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetSmsChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetSmsChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetSmsChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetSmsChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetSmsChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSmsChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSmsChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetSmsChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSmsChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetSmsChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSmsChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetSmsChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetSmsChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetSmsChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSmsChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetSmsChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetSmsChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12033,7 +12033,7 @@ pub enum GetSmsTemplateErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSmsTemplateError {
@@ -12102,40 +12102,40 @@ impl GetSmsTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetSmsTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetSmsTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetSmsTemplateErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetSmsTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetSmsTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetSmsTemplateErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetSmsTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetSmsTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSmsTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetSmsTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetSmsTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSmsTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetSmsTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetSmsTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetSmsTemplateErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetSmsTemplateErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetSmsTemplateErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetSmsTemplateErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetSmsTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetSmsTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12185,7 +12185,7 @@ pub enum GetUserEndpointsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUserEndpointsError {
@@ -12254,43 +12254,43 @@ impl GetUserEndpointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetUserEndpointsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetUserEndpointsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserEndpointsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserEndpointsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetUserEndpointsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetUserEndpointsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetUserEndpointsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetUserEndpointsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserEndpointsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserEndpointsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetUserEndpointsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserEndpointsErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserEndpointsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetUserEndpointsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetUserEndpointsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetUserEndpointsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetUserEndpointsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetUserEndpointsErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetUserEndpointsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetUserEndpointsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12340,7 +12340,7 @@ pub enum GetVoiceChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVoiceChannelError {
@@ -12409,40 +12409,40 @@ impl GetVoiceChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetVoiceChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetVoiceChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetVoiceChannelErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `GetVoiceChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetVoiceChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetVoiceChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetVoiceChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetVoiceChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetVoiceChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetVoiceChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetVoiceChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetVoiceChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetVoiceChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetVoiceChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12492,7 +12492,7 @@ pub enum GetVoiceTemplateErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVoiceTemplateError {
@@ -12561,43 +12561,43 @@ impl GetVoiceTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetVoiceTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `GetVoiceTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `GetVoiceTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, GetVoiceTemplateErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `GetVoiceTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `GetVoiceTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `GetVoiceTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetVoiceTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetVoiceTemplateErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetVoiceTemplateErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `GetVoiceTemplateErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetVoiceTemplateErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `GetVoiceTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetVoiceTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12647,7 +12647,7 @@ pub enum ListJourneysErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListJourneysError {
@@ -12716,40 +12716,40 @@ impl ListJourneysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListJourneysErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListJourneysErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListJourneysErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListJourneysErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListJourneysErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListJourneysErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListJourneysErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListJourneysErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListJourneysErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListJourneysErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `ListJourneysErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListJourneysErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `ListJourneysErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListJourneysErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListJourneysErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `ListJourneysErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `ListJourneysErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListJourneysErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `ListJourneysErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListJourneysErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -12785,7 +12785,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -12879,7 +12879,7 @@ pub enum ListTemplatesErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTemplatesError {
@@ -12946,29 +12946,29 @@ impl ListTemplatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTemplatesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTemplatesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListTemplatesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ListTemplatesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListTemplatesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ListTemplatesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ListTemplatesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListTemplatesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplatesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplatesErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `ListTemplatesErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplatesErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplatesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListTemplatesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13016,7 +13016,7 @@ pub enum ListTemplateVersionsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTemplateVersionsError {
@@ -13085,49 +13085,49 @@ impl ListTemplateVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTemplateVersionsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ListTemplateVersionsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplateVersionsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplateVersionsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ListTemplateVersionsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplateVersionsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplateVersionsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ListTemplateVersionsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplateVersionsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplateVersionsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `ListTemplateVersionsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplateVersionsErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplateVersionsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `ListTemplateVersionsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplateVersionsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplateVersionsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `ListTemplateVersionsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTemplateVersionsErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `ListTemplateVersionsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `ListTemplateVersionsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13177,7 +13177,7 @@ pub enum PhoneNumberValidateErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PhoneNumberValidateError {
@@ -13246,49 +13246,49 @@ impl PhoneNumberValidateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PhoneNumberValidateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PhoneNumberValidateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PhoneNumberValidateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PhoneNumberValidateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PhoneNumberValidateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             PhoneNumberValidateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `PhoneNumberValidateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `PhoneNumberValidateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PhoneNumberValidateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PhoneNumberValidateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `PhoneNumberValidateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             PhoneNumberValidateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `PhoneNumberValidateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PhoneNumberValidateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PhoneNumberValidateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PhoneNumberValidateErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `PhoneNumberValidateErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             PhoneNumberValidateErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `PhoneNumberValidateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PhoneNumberValidateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13338,7 +13338,7 @@ pub enum PutEventsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutEventsError {
@@ -13407,34 +13407,34 @@ impl PutEventsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutEventsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutEventsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, PutEventsErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `PutEventsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutEventsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, PutEventsErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `PutEventsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `PutEventsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEventsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PutEventsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `PutEventsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(&self.kind, PutEventsErrorKind::MethodNotAllowedException(_))
     }
-    /// Returns true if the error kind is `PutEventsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutEventsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutEventsErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `PutEventsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `PutEventsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(&self.kind, PutEventsErrorKind::PayloadTooLargeException(_))
     }
-    /// Returns true if the error kind is `PutEventsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutEventsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, PutEventsErrorKind::TooManyRequestsException(_))
     }
@@ -13481,7 +13481,7 @@ pub enum PutEventStreamErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutEventStreamError {
@@ -13550,40 +13550,40 @@ impl PutEventStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutEventStreamErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `PutEventStreamErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, PutEventStreamErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `PutEventStreamErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `PutEventStreamErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, PutEventStreamErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `PutEventStreamErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `PutEventStreamErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEventStreamErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `PutEventStreamErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `PutEventStreamErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEventStreamErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `PutEventStreamErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutEventStreamErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutEventStreamErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `PutEventStreamErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `PutEventStreamErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutEventStreamErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `PutEventStreamErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutEventStreamErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13633,7 +13633,7 @@ pub enum RemoveAttributesErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveAttributesError {
@@ -13702,43 +13702,43 @@ impl RemoveAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RemoveAttributesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `RemoveAttributesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAttributesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAttributesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `RemoveAttributesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, RemoveAttributesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `RemoveAttributesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `RemoveAttributesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAttributesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAttributesErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `RemoveAttributesErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAttributesErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAttributesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RemoveAttributesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, RemoveAttributesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `RemoveAttributesErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `RemoveAttributesErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             RemoveAttributesErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `RemoveAttributesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `RemoveAttributesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13788,7 +13788,7 @@ pub enum SendMessagesErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendMessagesError {
@@ -13857,40 +13857,40 @@ impl SendMessagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendMessagesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `SendMessagesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, SendMessagesErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `SendMessagesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `SendMessagesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, SendMessagesErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `SendMessagesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `SendMessagesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendMessagesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SendMessagesErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `SendMessagesErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendMessagesErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `SendMessagesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `SendMessagesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, SendMessagesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `SendMessagesErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `SendMessagesErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendMessagesErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `SendMessagesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `SendMessagesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -13940,7 +13940,7 @@ pub enum SendUsersMessagesErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendUsersMessagesError {
@@ -14009,46 +14009,46 @@ impl SendUsersMessagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendUsersMessagesErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `SendUsersMessagesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendUsersMessagesErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `SendUsersMessagesErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `SendUsersMessagesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendUsersMessagesErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `SendUsersMessagesErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `SendUsersMessagesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendUsersMessagesErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `SendUsersMessagesErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `SendUsersMessagesErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendUsersMessagesErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `SendUsersMessagesErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `SendUsersMessagesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, SendUsersMessagesErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `SendUsersMessagesErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `SendUsersMessagesErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendUsersMessagesErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `SendUsersMessagesErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `SendUsersMessagesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14084,7 +14084,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -14168,7 +14168,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -14266,7 +14266,7 @@ pub enum UpdateAdmChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAdmChannelError {
@@ -14335,43 +14335,43 @@ impl UpdateAdmChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAdmChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateAdmChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAdmChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAdmChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateAdmChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateAdmChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateAdmChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateAdmChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAdmChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAdmChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateAdmChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAdmChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAdmChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAdmChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateAdmChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateAdmChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateAdmChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAdmChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAdmChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateAdmChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14421,7 +14421,7 @@ pub enum UpdateApnsChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApnsChannelError {
@@ -14490,46 +14490,46 @@ impl UpdateApnsChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApnsChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateApnsChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateApnsChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsChannelErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateApnsChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateApnsChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateApnsChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateApnsChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateApnsChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateApnsChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateApnsChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14579,7 +14579,7 @@ pub enum UpdateApnsSandboxChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApnsSandboxChannelError {
@@ -14650,49 +14650,49 @@ impl UpdateApnsSandboxChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApnsSandboxChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateApnsSandboxChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsSandboxChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsSandboxChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateApnsSandboxChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsSandboxChannelErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsSandboxChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateApnsSandboxChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsSandboxChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsSandboxChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateApnsSandboxChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsSandboxChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsSandboxChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateApnsSandboxChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsSandboxChannelErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsSandboxChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateApnsSandboxChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsSandboxChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsSandboxChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateApnsSandboxChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14742,7 +14742,7 @@ pub enum UpdateApnsVoipChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApnsVoipChannelError {
@@ -14811,49 +14811,49 @@ impl UpdateApnsVoipChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApnsVoipChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateApnsVoipChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsVoipChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsVoipChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateApnsVoipChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsVoipChannelErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsVoipChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateApnsVoipChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsVoipChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsVoipChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateApnsVoipChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsVoipChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsVoipChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateApnsVoipChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsVoipChannelErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsVoipChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateApnsVoipChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsVoipChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsVoipChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateApnsVoipChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -14903,7 +14903,7 @@ pub enum UpdateApnsVoipSandboxChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApnsVoipSandboxChannelError {
@@ -14980,49 +14980,49 @@ impl UpdateApnsVoipSandboxChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApnsVoipSandboxChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateApnsVoipSandboxChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsVoipSandboxChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsVoipSandboxChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateApnsVoipSandboxChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsVoipSandboxChannelErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsVoipSandboxChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateApnsVoipSandboxChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsVoipSandboxChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsVoipSandboxChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateApnsVoipSandboxChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsVoipSandboxChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsVoipSandboxChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateApnsVoipSandboxChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsVoipSandboxChannelErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsVoipSandboxChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateApnsVoipSandboxChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApnsVoipSandboxChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApnsVoipSandboxChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateApnsVoipSandboxChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15076,7 +15076,7 @@ pub enum UpdateApplicationSettingsErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApplicationSettingsError {
@@ -15147,49 +15147,49 @@ impl UpdateApplicationSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApplicationSettingsErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateApplicationSettingsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationSettingsErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationSettingsErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateApplicationSettingsErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationSettingsErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationSettingsErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateApplicationSettingsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationSettingsErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationSettingsErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateApplicationSettingsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationSettingsErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationSettingsErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateApplicationSettingsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationSettingsErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationSettingsErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateApplicationSettingsErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateApplicationSettingsErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateApplicationSettingsErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateApplicationSettingsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15241,7 +15241,7 @@ pub enum UpdateBaiduChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBaiduChannelError {
@@ -15310,49 +15310,49 @@ impl UpdateBaiduChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateBaiduChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateBaiduChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBaiduChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBaiduChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateBaiduChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBaiduChannelErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBaiduChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateBaiduChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBaiduChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBaiduChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateBaiduChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBaiduChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBaiduChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateBaiduChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBaiduChannelErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBaiduChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateBaiduChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateBaiduChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateBaiduChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateBaiduChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15402,7 +15402,7 @@ pub enum UpdateCampaignErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCampaignError {
@@ -15471,40 +15471,40 @@ impl UpdateCampaignError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateCampaignErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateCampaignErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateCampaignErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateCampaignErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateCampaignErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateCampaignErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateCampaignErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateCampaignErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCampaignErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCampaignErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateCampaignErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCampaignErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCampaignErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateCampaignErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateCampaignErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateCampaignErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateCampaignErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateCampaignErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateCampaignErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateCampaignErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15554,7 +15554,7 @@ pub enum UpdateEmailChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEmailChannelError {
@@ -15623,49 +15623,49 @@ impl UpdateEmailChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEmailChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateEmailChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmailChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmailChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateEmailChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmailChannelErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmailChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateEmailChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmailChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmailChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateEmailChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmailChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmailChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateEmailChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmailChannelErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmailChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateEmailChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmailChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmailChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateEmailChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15715,7 +15715,7 @@ pub enum UpdateEmailTemplateErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEmailTemplateError {
@@ -15784,49 +15784,49 @@ impl UpdateEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEmailTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateEmailTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmailTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmailTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateEmailTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmailTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmailTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateEmailTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmailTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmailTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateEmailTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmailTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmailTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateEmailTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmailTemplateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmailTemplateErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateEmailTemplateErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEmailTemplateErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEmailTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateEmailTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -15876,7 +15876,7 @@ pub enum UpdateEndpointErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEndpointError {
@@ -15945,40 +15945,40 @@ impl UpdateEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEndpointErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateEndpointErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateEndpointErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateEndpointErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateEndpointErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateEndpointErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateEndpointErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateEndpointErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEndpointErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEndpointErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateEndpointErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEndpointErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEndpointErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateEndpointErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateEndpointErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateEndpointErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateEndpointErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEndpointErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEndpointErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateEndpointErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16028,7 +16028,7 @@ pub enum UpdateEndpointsBatchErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEndpointsBatchError {
@@ -16097,49 +16097,49 @@ impl UpdateEndpointsBatchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEndpointsBatchErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateEndpointsBatchErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEndpointsBatchErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEndpointsBatchErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateEndpointsBatchErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEndpointsBatchErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEndpointsBatchErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateEndpointsBatchErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEndpointsBatchErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEndpointsBatchErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateEndpointsBatchErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEndpointsBatchErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEndpointsBatchErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateEndpointsBatchErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEndpointsBatchErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEndpointsBatchErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateEndpointsBatchErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEndpointsBatchErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEndpointsBatchErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateEndpointsBatchErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16189,7 +16189,7 @@ pub enum UpdateGcmChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGcmChannelError {
@@ -16258,43 +16258,43 @@ impl UpdateGcmChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGcmChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateGcmChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGcmChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGcmChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateGcmChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateGcmChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateGcmChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateGcmChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGcmChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGcmChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateGcmChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGcmChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGcmChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGcmChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateGcmChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateGcmChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateGcmChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGcmChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGcmChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateGcmChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16344,7 +16344,7 @@ pub enum UpdateInAppTemplateErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateInAppTemplateError {
@@ -16413,49 +16413,49 @@ impl UpdateInAppTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateInAppTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateInAppTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInAppTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInAppTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateInAppTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInAppTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInAppTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateInAppTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInAppTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInAppTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateInAppTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInAppTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInAppTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateInAppTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInAppTemplateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInAppTemplateErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateInAppTemplateErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateInAppTemplateErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateInAppTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateInAppTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16507,7 +16507,7 @@ pub enum UpdateJourneyErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateJourneyError {
@@ -16577,44 +16577,44 @@ impl UpdateJourneyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateJourneyErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateJourneyErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateJourneyErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateJourneyErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateJourneyErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateJourneyErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UpdateJourneyErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateJourneyErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateJourneyErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateJourneyErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateJourneyErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJourneyErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJourneyErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateJourneyErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJourneyErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJourneyErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateJourneyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateJourneyErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateJourneyErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateJourneyErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJourneyErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJourneyErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateJourneyErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16665,7 +16665,7 @@ pub enum UpdateJourneyStateErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateJourneyStateError {
@@ -16734,49 +16734,49 @@ impl UpdateJourneyStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateJourneyStateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateJourneyStateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJourneyStateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJourneyStateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateJourneyStateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJourneyStateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJourneyStateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateJourneyStateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJourneyStateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJourneyStateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateJourneyStateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJourneyStateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJourneyStateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateJourneyStateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJourneyStateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJourneyStateErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateJourneyStateErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJourneyStateErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJourneyStateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateJourneyStateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16826,7 +16826,7 @@ pub enum UpdatePushTemplateErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePushTemplateError {
@@ -16895,49 +16895,49 @@ impl UpdatePushTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePushTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdatePushTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePushTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePushTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdatePushTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePushTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePushTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdatePushTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePushTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePushTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdatePushTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePushTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePushTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePushTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePushTemplateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePushTemplateErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdatePushTemplateErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePushTemplateErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePushTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdatePushTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16987,7 +16987,7 @@ pub enum UpdateRecommenderConfigurationErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRecommenderConfigurationError {
@@ -17067,49 +17067,49 @@ impl UpdateRecommenderConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateRecommenderConfigurationErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateRecommenderConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRecommenderConfigurationErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRecommenderConfigurationErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateRecommenderConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRecommenderConfigurationErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRecommenderConfigurationErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateRecommenderConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRecommenderConfigurationErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRecommenderConfigurationErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateRecommenderConfigurationErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRecommenderConfigurationErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRecommenderConfigurationErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateRecommenderConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRecommenderConfigurationErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRecommenderConfigurationErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateRecommenderConfigurationErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateRecommenderConfigurationErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateRecommenderConfigurationErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateRecommenderConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17167,7 +17167,7 @@ pub enum UpdateSegmentErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSegmentError {
@@ -17236,40 +17236,40 @@ impl UpdateSegmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSegmentErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateSegmentErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateSegmentErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateSegmentErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateSegmentErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateSegmentErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateSegmentErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateSegmentErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSegmentErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSegmentErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateSegmentErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSegmentErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSegmentErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSegmentErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateSegmentErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateSegmentErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateSegmentErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSegmentErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSegmentErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateSegmentErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17319,7 +17319,7 @@ pub enum UpdateSmsChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSmsChannelError {
@@ -17388,43 +17388,43 @@ impl UpdateSmsChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSmsChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateSmsChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSmsChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSmsChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateSmsChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, UpdateSmsChannelErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `UpdateSmsChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateSmsChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSmsChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSmsChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateSmsChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSmsChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSmsChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSmsChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateSmsChannelErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateSmsChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateSmsChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSmsChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSmsChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateSmsChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17474,7 +17474,7 @@ pub enum UpdateSmsTemplateErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateSmsTemplateError {
@@ -17543,46 +17543,46 @@ impl UpdateSmsTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateSmsTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateSmsTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSmsTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSmsTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateSmsTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSmsTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSmsTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateSmsTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSmsTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSmsTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateSmsTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSmsTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSmsTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateSmsTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateSmsTemplateErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateSmsTemplateErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateSmsTemplateErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateSmsTemplateErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateSmsTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateSmsTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17632,7 +17632,7 @@ pub enum UpdateTemplateActiveVersionErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTemplateActiveVersionError {
@@ -17705,49 +17705,49 @@ impl UpdateTemplateActiveVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTemplateActiveVersionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateTemplateActiveVersionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplateActiveVersionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplateActiveVersionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateTemplateActiveVersionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplateActiveVersionErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplateActiveVersionErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateTemplateActiveVersionErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplateActiveVersionErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplateActiveVersionErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateTemplateActiveVersionErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplateActiveVersionErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplateActiveVersionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTemplateActiveVersionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplateActiveVersionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplateActiveVersionErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateTemplateActiveVersionErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTemplateActiveVersionErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTemplateActiveVersionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateTemplateActiveVersionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17799,7 +17799,7 @@ pub enum UpdateVoiceChannelErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateVoiceChannelError {
@@ -17868,49 +17868,49 @@ impl UpdateVoiceChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateVoiceChannelErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateVoiceChannelErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceChannelErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceChannelErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateVoiceChannelErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceChannelErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceChannelErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateVoiceChannelErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceChannelErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateVoiceChannelErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceChannelErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceChannelErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateVoiceChannelErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceChannelErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceChannelErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateVoiceChannelErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceChannelErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceChannelErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateVoiceChannelErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -17960,7 +17960,7 @@ pub enum UpdateVoiceTemplateErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>Provides information about an API request or response.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateVoiceTemplateError {
@@ -18029,49 +18029,49 @@ impl UpdateVoiceTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateVoiceTemplateErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateVoiceTemplateErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceTemplateErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceTemplateErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `UpdateVoiceTemplateErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceTemplateErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceTemplateErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `UpdateVoiceTemplateErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceTemplateErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceTemplateErrorKind::MethodNotAllowedException`.
+    /// Returns `true` if the error kind is `UpdateVoiceTemplateErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceTemplateErrorKind::MethodNotAllowedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceTemplateErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateVoiceTemplateErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceTemplateErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceTemplateErrorKind::PayloadTooLargeException`.
+    /// Returns `true` if the error kind is `UpdateVoiceTemplateErrorKind::PayloadTooLargeException`.
     pub fn is_payload_too_large_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateVoiceTemplateErrorKind::PayloadTooLargeException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateVoiceTemplateErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateVoiceTemplateErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

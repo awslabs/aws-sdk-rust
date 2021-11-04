@@ -42,7 +42,7 @@ impl<'a> ProfileChain<'a> {
 /// A base member of the profile chain
 ///
 /// Base providers do not require input credentials to provide their own credentials,
-/// eg. IMDS, ECS, Environment variables
+/// e.g. IMDS, ECS, Environment variables
 #[derive(Debug, Clone)]
 #[non_exhaustive]
 pub enum BaseProvider<'a> {

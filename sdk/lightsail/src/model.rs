@@ -4154,10 +4154,17 @@ pub struct Container {
     /// <p>The name of the image used for the container.</p>
     ///
     /// <p>Container images sourced from your Lightsail container service, that are registered and
-    /// stored on your service, start with a colon (<code>:</code>). For example,
-    /// <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public
-    /// registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or
-    /// <code>nginx</code>.</p>
+    /// stored on your service, start with a colon (<code>:</code>). For example, if your container
+    /// service name is <code>container-service-1</code>, the container image label is
+    /// <code>mystaticsite</code>, and you want to use the third (<code>3</code>) version of the
+    /// registered container image, then you should specify
+    /// <code>:container-service-1.mystaticsite.3</code>. To use the latest version of a container
+    /// image, specify <code>latest</code> instead of a version number (for example,
+    /// <code>:container-service-1.mystaticsite.latest</code>). Lightsail will automatically use
+    /// the highest numbered version of the registered container image.</p>
+    ///
+    /// <p>Container images sourced from a public registry like Docker Hub don't start with a colon.
+    /// For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
     pub image: std::option::Option<std::string::String>,
     /// <p>The launch command for the container.</p>
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4198,10 +4205,17 @@ pub mod container {
         /// <p>The name of the image used for the container.</p>
         ///
         /// <p>Container images sourced from your Lightsail container service, that are registered and
-        /// stored on your service, start with a colon (<code>:</code>). For example,
-        /// <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public
-        /// registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or
-        /// <code>nginx</code>.</p>
+        /// stored on your service, start with a colon (<code>:</code>). For example, if your container
+        /// service name is <code>container-service-1</code>, the container image label is
+        /// <code>mystaticsite</code>, and you want to use the third (<code>3</code>) version of the
+        /// registered container image, then you should specify
+        /// <code>:container-service-1.mystaticsite.3</code>. To use the latest version of a container
+        /// image, specify <code>latest</code> instead of a version number (for example,
+        /// <code>:container-service-1.mystaticsite.latest</code>). Lightsail will automatically use
+        /// the highest numbered version of the registered container image.</p>
+        ///
+        /// <p>Container images sourced from a public registry like Docker Hub don't start with a colon.
+        /// For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
         pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
             self.image = Some(input.into());
             self
@@ -4209,10 +4223,17 @@ pub mod container {
         /// <p>The name of the image used for the container.</p>
         ///
         /// <p>Container images sourced from your Lightsail container service, that are registered and
-        /// stored on your service, start with a colon (<code>:</code>). For example,
-        /// <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public
-        /// registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or
-        /// <code>nginx</code>.</p>
+        /// stored on your service, start with a colon (<code>:</code>). For example, if your container
+        /// service name is <code>container-service-1</code>, the container image label is
+        /// <code>mystaticsite</code>, and you want to use the third (<code>3</code>) version of the
+        /// registered container image, then you should specify
+        /// <code>:container-service-1.mystaticsite.3</code>. To use the latest version of a container
+        /// image, specify <code>latest</code> instead of a version number (for example,
+        /// <code>:container-service-1.mystaticsite.latest</code>). Lightsail will automatically use
+        /// the highest numbered version of the registered container image.</p>
+        ///
+        /// <p>Container images sourced from a public registry like Docker Hub don't start with a colon.
+        /// For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
         pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image = input;
             self
@@ -5094,6 +5115,8 @@ pub struct Bucket {
         std::option::Option<std::vec::Vec<crate::model::ResourceReceivingAccess>>,
     /// <p>An object that describes the state of the bucket.</p>
     pub state: std::option::Option<crate::model::BucketState>,
+    /// <p>An object that describes the access log configuration for the bucket.</p>
+    pub access_log_config: std::option::Option<crate::model::BucketAccessLogConfig>,
 }
 impl std::fmt::Debug for Bucket {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5116,6 +5139,7 @@ impl std::fmt::Debug for Bucket {
             &self.resources_receiving_access,
         );
         formatter.field("state", &self.state);
+        formatter.field("access_log_config", &self.access_log_config);
         formatter.finish()
     }
 }
@@ -5142,6 +5166,7 @@ pub mod bucket {
         pub(crate) resources_receiving_access:
             std::option::Option<std::vec::Vec<crate::model::ResourceReceivingAccess>>,
         pub(crate) state: std::option::Option<crate::model::BucketState>,
+        pub(crate) access_log_config: std::option::Option<crate::model::BucketAccessLogConfig>,
     }
     impl Builder {
         /// <p>The Lightsail resource type of the bucket (for example, <code>Bucket</code>).</p>
@@ -5413,6 +5438,19 @@ pub mod bucket {
             self.state = input;
             self
         }
+        /// <p>An object that describes the access log configuration for the bucket.</p>
+        pub fn access_log_config(mut self, input: crate::model::BucketAccessLogConfig) -> Self {
+            self.access_log_config = Some(input);
+            self
+        }
+        /// <p>An object that describes the access log configuration for the bucket.</p>
+        pub fn set_access_log_config(
+            mut self,
+            input: std::option::Option<crate::model::BucketAccessLogConfig>,
+        ) -> Self {
+            self.access_log_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Bucket`](crate::model::Bucket)
         pub fn build(self) -> crate::model::Bucket {
             crate::model::Bucket {
@@ -5431,6 +5469,7 @@ pub mod bucket {
                 readonly_access_accounts: self.readonly_access_accounts,
                 resources_receiving_access: self.resources_receiving_access,
                 state: self.state,
+                access_log_config: self.access_log_config,
             }
         }
     }
@@ -5439,6 +5478,129 @@ impl Bucket {
     /// Creates a new builder-style object to manufacture [`Bucket`](crate::model::Bucket)
     pub fn builder() -> crate::model::bucket::Builder {
         crate::model::bucket::Builder::default()
+    }
+}
+
+/// <p>Describes the access log configuration for a bucket in the Amazon Lightsail object storage
+/// service.</p>
+/// <p>For more information about bucket access logs, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-bucket-access-logs">Logging bucket requests using access logging in Amazon Lightsail</a> in the
+/// <i>Amazon Lightsail Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BucketAccessLogConfig {
+    /// <p>A Boolean value that indicates whether bucket access logging is enabled for the
+    /// bucket.</p>
+    pub enabled: std::option::Option<bool>,
+    /// <p>The name of the bucket where the access is saved. The destination can be a Lightsail
+    /// bucket in the same account, and in the same AWS Region as the source bucket.</p>
+    /// <note>
+    /// <p>This parameter is required when enabling the access log for a bucket, and should be
+    /// omitted when disabling the access log.</p>
+    /// </note>
+    pub destination: std::option::Option<std::string::String>,
+    /// <p>The optional object prefix for the bucket access log.</p>
+    /// <p>The prefix is an optional addition to the object key that organizes your access log files
+    /// in the destination bucket. For example, if you specify a <code>logs/</code> prefix, then each
+    /// log object will begin with the <code>logs/</code> prefix in its key (for example,
+    /// <code>logs/2021-11-01-21-32-16-E568B2907131C0C0</code>).</p>
+    /// <note>
+    /// <p>This parameter can be optionally specified when enabling the access log for a bucket,
+    /// and should be omitted when disabling the access log.</p>
+    /// </note>
+    pub prefix: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for BucketAccessLogConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BucketAccessLogConfig");
+        formatter.field("enabled", &self.enabled);
+        formatter.field("destination", &self.destination);
+        formatter.field("prefix", &self.prefix);
+        formatter.finish()
+    }
+}
+/// See [`BucketAccessLogConfig`](crate::model::BucketAccessLogConfig)
+pub mod bucket_access_log_config {
+    /// A builder for [`BucketAccessLogConfig`](crate::model::BucketAccessLogConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) destination: std::option::Option<std::string::String>,
+        pub(crate) prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A Boolean value that indicates whether bucket access logging is enabled for the
+        /// bucket.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        /// <p>A Boolean value that indicates whether bucket access logging is enabled for the
+        /// bucket.</p>
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        /// <p>The name of the bucket where the access is saved. The destination can be a Lightsail
+        /// bucket in the same account, and in the same AWS Region as the source bucket.</p>
+        /// <note>
+        /// <p>This parameter is required when enabling the access log for a bucket, and should be
+        /// omitted when disabling the access log.</p>
+        /// </note>
+        pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination = Some(input.into());
+            self
+        }
+        /// <p>The name of the bucket where the access is saved. The destination can be a Lightsail
+        /// bucket in the same account, and in the same AWS Region as the source bucket.</p>
+        /// <note>
+        /// <p>This parameter is required when enabling the access log for a bucket, and should be
+        /// omitted when disabling the access log.</p>
+        /// </note>
+        pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination = input;
+            self
+        }
+        /// <p>The optional object prefix for the bucket access log.</p>
+        /// <p>The prefix is an optional addition to the object key that organizes your access log files
+        /// in the destination bucket. For example, if you specify a <code>logs/</code> prefix, then each
+        /// log object will begin with the <code>logs/</code> prefix in its key (for example,
+        /// <code>logs/2021-11-01-21-32-16-E568B2907131C0C0</code>).</p>
+        /// <note>
+        /// <p>This parameter can be optionally specified when enabling the access log for a bucket,
+        /// and should be omitted when disabling the access log.</p>
+        /// </note>
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
+            self
+        }
+        /// <p>The optional object prefix for the bucket access log.</p>
+        /// <p>The prefix is an optional addition to the object key that organizes your access log files
+        /// in the destination bucket. For example, if you specify a <code>logs/</code> prefix, then each
+        /// log object will begin with the <code>logs/</code> prefix in its key (for example,
+        /// <code>logs/2021-11-01-21-32-16-E568B2907131C0C0</code>).</p>
+        /// <note>
+        /// <p>This parameter can be optionally specified when enabling the access log for a bucket,
+        /// and should be omitted when disabling the access log.</p>
+        /// </note>
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BucketAccessLogConfig`](crate::model::BucketAccessLogConfig)
+        pub fn build(self) -> crate::model::BucketAccessLogConfig {
+            crate::model::BucketAccessLogConfig {
+                enabled: self.enabled,
+                destination: self.destination,
+                prefix: self.prefix,
+            }
+        }
+    }
+}
+impl BucketAccessLogConfig {
+    /// Creates a new builder-style object to manufacture [`BucketAccessLogConfig`](crate::model::BucketAccessLogConfig)
+    pub fn builder() -> crate::model::bucket_access_log_config::Builder {
+        crate::model::bucket_access_log_config::Builder::default()
     }
 }
 

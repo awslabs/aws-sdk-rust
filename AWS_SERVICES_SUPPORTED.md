@@ -133,6 +133,7 @@ These services have not yet been manually tested by the SDK team and may not hav
 - [x] Amazon Fraud Detector
 - [x] Amazon FSx
 - [x] Amazon Gamelift
+- [x] Amazon Glacier
 - [x] Amazon Global Accelerator
 - [x] Amazon Glue
 - [x] Amazon Greengrass
@@ -198,6 +199,7 @@ These services have not yet been manually tested by the SDK team and may not hav
 - [x] Amazon Opsworkscm
 - [x] Amazon Organizations
 - [x] Amazon Outposts
+- [x] Amazon Panorama
 - [x] Amazon Personalize
 - [x] Amazon Personalize-Events
 - [x] Amazon Personalize-Runtime
@@ -258,6 +260,5 @@ These services have not yet been manually tested by the SDK team and may not hav
 
 ## No support (yet)
 We're working on it! Please file or upvote on the relevant issue to help us prioritize.
-- [ ] Amazon Glacier
 - [ ] Amazon Timestream-Query
 - [ ] Amazon Timestream-Write

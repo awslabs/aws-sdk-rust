@@ -19,6 +19,16 @@ pub fn serialize_operation_crate_operation_create_collection(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_create_dataset(
+    input: &crate::input::CreateDatasetInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_create_dataset_input(&mut object, input);
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_create_project(
     input: &crate::input::CreateProjectInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
@@ -61,6 +71,16 @@ pub fn serialize_operation_crate_operation_delete_collection(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_delete_collection_input(&mut object, input);
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_delete_dataset(
+    input: &crate::input::DeleteDatasetInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_delete_dataset_input(&mut object, input);
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -117,6 +137,16 @@ pub fn serialize_operation_crate_operation_describe_collection(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_describe_collection_input(&mut object, input);
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_describe_dataset(
+    input: &crate::input::DescribeDatasetInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_describe_dataset_input(&mut object, input);
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -219,6 +249,19 @@ pub fn serialize_operation_crate_operation_detect_text(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_detect_text_input(&mut object, input);
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_distribute_dataset_entries(
+    input: &crate::input::DistributeDatasetEntriesInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_distribute_dataset_entries_input(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -338,6 +381,26 @@ pub fn serialize_operation_crate_operation_list_collections(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_list_collections_input(&mut object, input);
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_list_dataset_entries(
+    input: &crate::input::ListDatasetEntriesInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_list_dataset_entries_input(&mut object, input);
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_list_dataset_labels(
+    input: &crate::input::ListDatasetLabelsInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_list_dataset_labels_input(&mut object, input);
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
@@ -574,6 +637,19 @@ pub fn serialize_operation_crate_operation_untag_resource(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_untag_resource_input(&mut object, input);
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_update_dataset_entries(
+    input: &crate::input::UpdateDatasetEntriesInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_update_dataset_entries_input(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

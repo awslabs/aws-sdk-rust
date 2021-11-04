@@ -419,6 +419,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAssessmentFramewor
     }
 }
 
+/// Operation shape for `DeleteAssessmentFrameworkShare`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_assessment_framework_share`](crate::client::Client::delete_assessment_framework_share).
+///
+/// See [`crate::client::fluent_builders::DeleteAssessmentFrameworkShare`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteAssessmentFrameworkShare {
+    _private: (),
+}
+impl DeleteAssessmentFrameworkShare {
+    /// Creates a new builder-style object to manufacture [`DeleteAssessmentFrameworkShareInput`](crate::input::DeleteAssessmentFrameworkShareInput)
+    pub fn builder() -> crate::input::delete_assessment_framework_share_input::Builder {
+        crate::input::delete_assessment_framework_share_input::Builder::default()
+    }
+    /// Creates a new `DeleteAssessmentFrameworkShare` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteAssessmentFrameworkShare {
+    type Output = std::result::Result<
+        crate::output::DeleteAssessmentFrameworkShareOutput,
+        crate::error::DeleteAssessmentFrameworkShareError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_assessment_framework_share_error(response)
+        } else {
+            crate::operation_deser::parse_delete_assessment_framework_share_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteAssessmentReport`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1126,6 +1160,42 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssessmentFrameworks
     }
 }
 
+/// Operation shape for `ListAssessmentFrameworkShareRequests`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_assessment_framework_share_requests`](crate::client::Client::list_assessment_framework_share_requests).
+///
+/// See [`crate::client::fluent_builders::ListAssessmentFrameworkShareRequests`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListAssessmentFrameworkShareRequests {
+    _private: (),
+}
+impl ListAssessmentFrameworkShareRequests {
+    /// Creates a new builder-style object to manufacture [`ListAssessmentFrameworkShareRequestsInput`](crate::input::ListAssessmentFrameworkShareRequestsInput)
+    pub fn builder() -> crate::input::list_assessment_framework_share_requests_input::Builder {
+        crate::input::list_assessment_framework_share_requests_input::Builder::default()
+    }
+    /// Creates a new `ListAssessmentFrameworkShareRequests` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListAssessmentFrameworkShareRequests {
+    type Output = std::result::Result<
+        crate::output::ListAssessmentFrameworkShareRequestsOutput,
+        crate::error::ListAssessmentFrameworkShareRequestsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_assessment_framework_share_requests_error(response)
+        } else {
+            crate::operation_deser::parse_list_assessment_framework_share_requests_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `ListAssessmentReports`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1396,6 +1466,40 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterOrganizationAdmi
     }
 }
 
+/// Operation shape for `StartAssessmentFrameworkShare`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_assessment_framework_share`](crate::client::Client::start_assessment_framework_share).
+///
+/// See [`crate::client::fluent_builders::StartAssessmentFrameworkShare`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartAssessmentFrameworkShare {
+    _private: (),
+}
+impl StartAssessmentFrameworkShare {
+    /// Creates a new builder-style object to manufacture [`StartAssessmentFrameworkShareInput`](crate::input::StartAssessmentFrameworkShareInput)
+    pub fn builder() -> crate::input::start_assessment_framework_share_input::Builder {
+        crate::input::start_assessment_framework_share_input::Builder::default()
+    }
+    /// Creates a new `StartAssessmentFrameworkShare` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartAssessmentFrameworkShare {
+    type Output = std::result::Result<
+        crate::output::StartAssessmentFrameworkShareOutput,
+        crate::error::StartAssessmentFrameworkShareError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_assessment_framework_share_error(response)
+        } else {
+            crate::operation_deser::parse_start_assessment_framework_share_response(response)
+        }
+    }
+}
+
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1592,6 +1696,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAssessmentFramewor
             crate::operation_deser::parse_update_assessment_framework_error(response)
         } else {
             crate::operation_deser::parse_update_assessment_framework_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateAssessmentFrameworkShare`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_assessment_framework_share`](crate::client::Client::update_assessment_framework_share).
+///
+/// See [`crate::client::fluent_builders::UpdateAssessmentFrameworkShare`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateAssessmentFrameworkShare {
+    _private: (),
+}
+impl UpdateAssessmentFrameworkShare {
+    /// Creates a new builder-style object to manufacture [`UpdateAssessmentFrameworkShareInput`](crate::input::UpdateAssessmentFrameworkShareInput)
+    pub fn builder() -> crate::input::update_assessment_framework_share_input::Builder {
+        crate::input::update_assessment_framework_share_input::Builder::default()
+    }
+    /// Creates a new `UpdateAssessmentFrameworkShare` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateAssessmentFrameworkShare {
+    type Output = std::result::Result<
+        crate::output::UpdateAssessmentFrameworkShareOutput,
+        crate::error::UpdateAssessmentFrameworkShareError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_assessment_framework_share_error(response)
+        } else {
+            crate::operation_deser::parse_update_assessment_framework_share_response(response)
         }
     }
 }

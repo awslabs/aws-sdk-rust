@@ -16,7 +16,7 @@ pub enum CancelResourceRequestErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>A resource operation with the specified request token cannot be found.</p>
     RequestTokenNotFoundException(crate::error::RequestTokenNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelResourceRequestError {
@@ -82,14 +82,14 @@ impl CancelResourceRequestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CancelResourceRequestErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CancelResourceRequestErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CancelResourceRequestErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CancelResourceRequestErrorKind::RequestTokenNotFoundException`.
+    /// Returns `true` if the error kind is `CancelResourceRequestErrorKind::RequestTokenNotFoundException`.
     pub fn is_request_token_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -174,7 +174,7 @@ pub enum CreateResourceErrorKind {
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// <p>The specified resource does not support this resource operation.</p>
     UnsupportedActionException(crate::error::UnsupportedActionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateResourceError {
@@ -255,127 +255,127 @@ impl CreateResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::ClientTokenConflictException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::ClientTokenConflictException`.
     pub fn is_client_token_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::ClientTokenConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::ConcurrentOperationException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::ConcurrentOperationException`.
     pub fn is_concurrent_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::ConcurrentOperationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::GeneralServiceException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::GeneralServiceException`.
     pub fn is_general_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::GeneralServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::HandlerFailureException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::HandlerFailureException`.
     pub fn is_handler_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::HandlerFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::HandlerInternalFailureException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::HandlerInternalFailureException`.
     pub fn is_handler_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::HandlerInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::InvalidCredentialsException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::InvalidCredentialsException`.
     pub fn is_invalid_credentials_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::InvalidCredentialsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::NetworkFailureException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::NetworkFailureException`.
     pub fn is_network_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::NetworkFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::NotStabilizedException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::NotStabilizedException`.
     pub fn is_not_stabilized_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::NotStabilizedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::NotUpdatableException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::NotUpdatableException`.
     pub fn is_not_updatable_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::NotUpdatableException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::PrivateTypeException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::PrivateTypeException`.
     pub fn is_private_type_exception(&self) -> bool {
         matches!(&self.kind, CreateResourceErrorKind::PrivateTypeException(_))
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::ServiceInternalErrorException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::ServiceInternalErrorException`.
     pub fn is_service_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::ServiceInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::ServiceLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::ServiceLimitExceededException`.
     pub fn is_service_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::ServiceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::TypeNotFoundException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::TypeNotFoundException`.
     pub fn is_type_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateResourceErrorKind::TypeNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateResourceErrorKind::UnsupportedActionException`.
+    /// Returns `true` if the error kind is `CreateResourceErrorKind::UnsupportedActionException`.
     pub fn is_unsupported_action_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -477,7 +477,7 @@ pub enum DeleteResourceErrorKind {
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// <p>The specified resource does not support this resource operation.</p>
     UnsupportedActionException(crate::error::UnsupportedActionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResourceError {
@@ -558,127 +558,127 @@ impl DeleteResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::ClientTokenConflictException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::ClientTokenConflictException`.
     pub fn is_client_token_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceErrorKind::ClientTokenConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::ConcurrentOperationException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::ConcurrentOperationException`.
     pub fn is_concurrent_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceErrorKind::ConcurrentOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::GeneralServiceException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::GeneralServiceException`.
     pub fn is_general_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceErrorKind::GeneralServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::HandlerFailureException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::HandlerFailureException`.
     pub fn is_handler_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceErrorKind::HandlerFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::HandlerInternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::HandlerInternalFailureException`.
     pub fn is_handler_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceErrorKind::HandlerInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::InvalidCredentialsException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::InvalidCredentialsException`.
     pub fn is_invalid_credentials_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceErrorKind::InvalidCredentialsException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::NetworkFailureException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::NetworkFailureException`.
     pub fn is_network_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceErrorKind::NetworkFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::NotStabilizedException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::NotStabilizedException`.
     pub fn is_not_stabilized_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceErrorKind::NotStabilizedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::NotUpdatableException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::NotUpdatableException`.
     pub fn is_not_updatable_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceErrorKind::NotUpdatableException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::PrivateTypeException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::PrivateTypeException`.
     pub fn is_private_type_exception(&self) -> bool {
         matches!(&self.kind, DeleteResourceErrorKind::PrivateTypeException(_))
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::ServiceInternalErrorException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::ServiceInternalErrorException`.
     pub fn is_service_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceErrorKind::ServiceInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::ServiceLimitExceededException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::ServiceLimitExceededException`.
     pub fn is_service_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceErrorKind::ServiceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::TypeNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::TypeNotFoundException`.
     pub fn is_type_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteResourceErrorKind::TypeNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteResourceErrorKind::UnsupportedActionException`.
+    /// Returns `true` if the error kind is `DeleteResourceErrorKind::UnsupportedActionException`.
     pub fn is_unsupported_action_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -774,7 +774,7 @@ pub enum GetResourceErrorKind {
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// <p>The specified resource does not support this resource operation.</p>
     UnsupportedActionException(crate::error::UnsupportedActionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourceError {
@@ -853,89 +853,89 @@ impl GetResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourceErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `GetResourceErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(&self.kind, GetResourceErrorKind::AlreadyExistsException(_))
     }
-    /// Returns true if the error kind is `GetResourceErrorKind::GeneralServiceException`.
+    /// Returns `true` if the error kind is `GetResourceErrorKind::GeneralServiceException`.
     pub fn is_general_service_exception(&self) -> bool {
         matches!(&self.kind, GetResourceErrorKind::GeneralServiceException(_))
     }
-    /// Returns true if the error kind is `GetResourceErrorKind::HandlerFailureException`.
+    /// Returns `true` if the error kind is `GetResourceErrorKind::HandlerFailureException`.
     pub fn is_handler_failure_exception(&self) -> bool {
         matches!(&self.kind, GetResourceErrorKind::HandlerFailureException(_))
     }
-    /// Returns true if the error kind is `GetResourceErrorKind::HandlerInternalFailureException`.
+    /// Returns `true` if the error kind is `GetResourceErrorKind::HandlerInternalFailureException`.
     pub fn is_handler_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceErrorKind::HandlerInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceErrorKind::InvalidCredentialsException`.
+    /// Returns `true` if the error kind is `GetResourceErrorKind::InvalidCredentialsException`.
     pub fn is_invalid_credentials_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceErrorKind::InvalidCredentialsException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, GetResourceErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `GetResourceErrorKind::NetworkFailureException`.
+    /// Returns `true` if the error kind is `GetResourceErrorKind::NetworkFailureException`.
     pub fn is_network_failure_exception(&self) -> bool {
         matches!(&self.kind, GetResourceErrorKind::NetworkFailureException(_))
     }
-    /// Returns true if the error kind is `GetResourceErrorKind::NotStabilizedException`.
+    /// Returns `true` if the error kind is `GetResourceErrorKind::NotStabilizedException`.
     pub fn is_not_stabilized_exception(&self) -> bool {
         matches!(&self.kind, GetResourceErrorKind::NotStabilizedException(_))
     }
-    /// Returns true if the error kind is `GetResourceErrorKind::NotUpdatableException`.
+    /// Returns `true` if the error kind is `GetResourceErrorKind::NotUpdatableException`.
     pub fn is_not_updatable_exception(&self) -> bool {
         matches!(&self.kind, GetResourceErrorKind::NotUpdatableException(_))
     }
-    /// Returns true if the error kind is `GetResourceErrorKind::PrivateTypeException`.
+    /// Returns `true` if the error kind is `GetResourceErrorKind::PrivateTypeException`.
     pub fn is_private_type_exception(&self) -> bool {
         matches!(&self.kind, GetResourceErrorKind::PrivateTypeException(_))
     }
-    /// Returns true if the error kind is `GetResourceErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `GetResourceErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceErrorKind::ServiceInternalErrorException`.
+    /// Returns `true` if the error kind is `GetResourceErrorKind::ServiceInternalErrorException`.
     pub fn is_service_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceErrorKind::ServiceInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceErrorKind::ServiceLimitExceededException`.
+    /// Returns `true` if the error kind is `GetResourceErrorKind::ServiceLimitExceededException`.
     pub fn is_service_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceErrorKind::ServiceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetResourceErrorKind::TypeNotFoundException`.
+    /// Returns `true` if the error kind is `GetResourceErrorKind::TypeNotFoundException`.
     pub fn is_type_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetResourceErrorKind::TypeNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetResourceErrorKind::UnsupportedActionException`.
+    /// Returns `true` if the error kind is `GetResourceErrorKind::UnsupportedActionException`.
     pub fn is_unsupported_action_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -983,7 +983,7 @@ pub struct GetResourceRequestStatusError {
 pub enum GetResourceRequestStatusErrorKind {
     /// <p>A resource operation with the specified request token cannot be found.</p>
     RequestTokenNotFoundException(crate::error::RequestTokenNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourceRequestStatusError {
@@ -1048,7 +1048,7 @@ impl GetResourceRequestStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourceRequestStatusErrorKind::RequestTokenNotFoundException`.
+    /// Returns `true` if the error kind is `GetResourceRequestStatusErrorKind::RequestTokenNotFoundException`.
     pub fn is_request_token_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1080,7 +1080,7 @@ pub struct ListResourceRequestsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListResourceRequestsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourceRequestsError {
@@ -1212,7 +1212,7 @@ pub enum ListResourcesErrorKind {
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// <p>The specified resource does not support this resource operation.</p>
     UnsupportedActionException(crate::error::UnsupportedActionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListResourcesError {
@@ -1291,107 +1291,107 @@ impl ListResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::GeneralServiceException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::GeneralServiceException`.
     pub fn is_general_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::GeneralServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::HandlerFailureException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::HandlerFailureException`.
     pub fn is_handler_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::HandlerFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::HandlerInternalFailureException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::HandlerInternalFailureException`.
     pub fn is_handler_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::HandlerInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::InvalidCredentialsException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::InvalidCredentialsException`.
     pub fn is_invalid_credentials_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::InvalidCredentialsException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::NetworkFailureException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::NetworkFailureException`.
     pub fn is_network_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::NetworkFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::NotStabilizedException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::NotStabilizedException`.
     pub fn is_not_stabilized_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::NotStabilizedException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::NotUpdatableException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::NotUpdatableException`.
     pub fn is_not_updatable_exception(&self) -> bool {
         matches!(&self.kind, ListResourcesErrorKind::NotUpdatableException(_))
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::PrivateTypeException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::PrivateTypeException`.
     pub fn is_private_type_exception(&self) -> bool {
         matches!(&self.kind, ListResourcesErrorKind::PrivateTypeException(_))
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::ServiceInternalErrorException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::ServiceInternalErrorException`.
     pub fn is_service_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::ServiceInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::ServiceLimitExceededException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::ServiceLimitExceededException`.
     pub fn is_service_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListResourcesErrorKind::ServiceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListResourcesErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::TypeNotFoundException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::TypeNotFoundException`.
     pub fn is_type_not_found_exception(&self) -> bool {
         matches!(&self.kind, ListResourcesErrorKind::TypeNotFoundException(_))
     }
-    /// Returns true if the error kind is `ListResourcesErrorKind::UnsupportedActionException`.
+    /// Returns `true` if the error kind is `ListResourcesErrorKind::UnsupportedActionException`.
     pub fn is_unsupported_action_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1491,7 +1491,7 @@ pub enum UpdateResourceErrorKind {
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// <p>The specified resource does not support this resource operation.</p>
     UnsupportedActionException(crate::error::UnsupportedActionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateResourceError {
@@ -1572,127 +1572,127 @@ impl UpdateResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::AlreadyExistsException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::AlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::ClientTokenConflictException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::ClientTokenConflictException`.
     pub fn is_client_token_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::ClientTokenConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::ConcurrentOperationException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::ConcurrentOperationException`.
     pub fn is_concurrent_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::ConcurrentOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::GeneralServiceException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::GeneralServiceException`.
     pub fn is_general_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::GeneralServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::HandlerFailureException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::HandlerFailureException`.
     pub fn is_handler_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::HandlerFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::HandlerInternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::HandlerInternalFailureException`.
     pub fn is_handler_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::HandlerInternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::InvalidCredentialsException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::InvalidCredentialsException`.
     pub fn is_invalid_credentials_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::InvalidCredentialsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::NetworkFailureException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::NetworkFailureException`.
     pub fn is_network_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::NetworkFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::NotStabilizedException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::NotStabilizedException`.
     pub fn is_not_stabilized_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::NotStabilizedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::NotUpdatableException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::NotUpdatableException`.
     pub fn is_not_updatable_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::NotUpdatableException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::PrivateTypeException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::PrivateTypeException`.
     pub fn is_private_type_exception(&self) -> bool {
         matches!(&self.kind, UpdateResourceErrorKind::PrivateTypeException(_))
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::ResourceConflictException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::ResourceConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::ServiceInternalErrorException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::ServiceInternalErrorException`.
     pub fn is_service_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::ServiceInternalErrorException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::ServiceLimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::ServiceLimitExceededException`.
     pub fn is_service_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::ServiceLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::TypeNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::TypeNotFoundException`.
     pub fn is_type_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateResourceErrorKind::TypeNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateResourceErrorKind::UnsupportedActionException`.
+    /// Returns `true` if the error kind is `UpdateResourceErrorKind::UnsupportedActionException`.
     pub fn is_unsupported_action_exception(&self) -> bool {
         matches!(
             &self.kind,

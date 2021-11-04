@@ -10711,6 +10711,35 @@ pub fn parse_get_host_reservation_purchase_preview_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_instance_types_from_instance_requirements_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetInstanceTypesFromInstanceRequirementsOutput,
+    crate::error::GetInstanceTypesFromInstanceRequirementsError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetInstanceTypesFromInstanceRequirementsError::unhandled)?;
+    Err(crate::error::GetInstanceTypesFromInstanceRequirementsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_instance_types_from_instance_requirements_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetInstanceTypesFromInstanceRequirementsOutput,
+    crate::error::GetInstanceTypesFromInstanceRequirementsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_instance_types_from_instance_requirements_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_instance_types_from_instance_requirements(response.body().as_ref(), output).map_err(crate::error::GetInstanceTypesFromInstanceRequirementsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_launch_template_data_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -10896,6 +10925,38 @@ pub fn parse_get_serial_console_access_status_response(
                 output,
             )
             .map_err(crate::error::GetSerialConsoleAccessStatusError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_spot_placement_scores_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetSpotPlacementScoresOutput,
+    crate::error::GetSpotPlacementScoresError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetSpotPlacementScoresError::unhandled)?;
+    Err(crate::error::GetSpotPlacementScoresError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_spot_placement_scores_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetSpotPlacementScoresOutput,
+    crate::error::GetSpotPlacementScoresError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_spot_placement_scores_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_spot_placement_scores(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetSpotPlacementScoresError::unhandled)?;
         output.build()
     })
 }

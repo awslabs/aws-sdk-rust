@@ -84,6 +84,19 @@ pub fn serialize_operation_crate_operation_create_action_target(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_create_finding_aggregator(
+    input: &crate::input::CreateFindingAggregatorInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_create_finding_aggregator_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_create_insight(
     input: &crate::input::CreateInsightInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
@@ -275,6 +288,19 @@ pub fn serialize_operation_crate_operation_update_action_target(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_update_action_target_input(&mut object, input);
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_update_finding_aggregator(
+    input: &crate::input::UpdateFindingAggregatorInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_update_finding_aggregator_input(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

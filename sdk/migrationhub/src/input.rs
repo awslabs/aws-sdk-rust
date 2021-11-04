@@ -93,7 +93,7 @@ pub type AssociateCreatedArtifactInputOperationRetryAlias = aws_http::AwsErrorRe
 impl AssociateCreatedArtifactInput {
     /// Consumes the builder and constructs an Operation<[`AssociateCreatedArtifact`](crate::operation::AssociateCreatedArtifact)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -125,6 +125,7 @@ impl AssociateCreatedArtifactInput {
             input: &crate::input::AssociateCreatedArtifactInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -189,9 +190,10 @@ impl AssociateCreatedArtifactInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -298,7 +300,7 @@ pub type AssociateDiscoveredResourceInputOperationRetryAlias = aws_http::AwsErro
 impl AssociateDiscoveredResourceInput {
     /// Consumes the builder and constructs an Operation<[`AssociateDiscoveredResource`](crate::operation::AssociateDiscoveredResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -330,6 +332,7 @@ impl AssociateDiscoveredResourceInput {
             input: &crate::input::AssociateDiscoveredResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -390,9 +393,10 @@ impl AssociateDiscoveredResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -472,7 +476,7 @@ pub type CreateProgressUpdateStreamInputOperationRetryAlias = aws_http::AwsError
 impl CreateProgressUpdateStreamInput {
     /// Consumes the builder and constructs an Operation<[`CreateProgressUpdateStream`](crate::operation::CreateProgressUpdateStream)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -504,6 +508,7 @@ impl CreateProgressUpdateStreamInput {
             input: &crate::input::CreateProgressUpdateStreamInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -564,9 +569,10 @@ impl CreateProgressUpdateStreamInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -646,7 +652,7 @@ pub type DeleteProgressUpdateStreamInputOperationRetryAlias = aws_http::AwsError
 impl DeleteProgressUpdateStreamInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProgressUpdateStream`](crate::operation::DeleteProgressUpdateStream)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -678,6 +684,7 @@ impl DeleteProgressUpdateStreamInput {
             input: &crate::input::DeleteProgressUpdateStreamInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -738,9 +745,10 @@ impl DeleteProgressUpdateStreamInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -801,7 +809,7 @@ pub type DescribeApplicationStateInputOperationRetryAlias = aws_http::AwsErrorRe
 impl DescribeApplicationStateInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplicationState`](crate::operation::DescribeApplicationState)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -833,6 +841,7 @@ impl DescribeApplicationStateInput {
             input: &crate::input::DescribeApplicationStateInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -897,9 +906,10 @@ impl DescribeApplicationStateInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -976,7 +986,7 @@ pub type DescribeMigrationTaskInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DescribeMigrationTaskInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMigrationTask`](crate::operation::DescribeMigrationTask)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1008,6 +1018,7 @@ impl DescribeMigrationTaskInput {
             input: &crate::input::DescribeMigrationTaskInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1072,9 +1083,10 @@ impl DescribeMigrationTaskInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1183,7 +1195,7 @@ pub type DisassociateCreatedArtifactInputOperationRetryAlias = aws_http::AwsErro
 impl DisassociateCreatedArtifactInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateCreatedArtifact`](crate::operation::DisassociateCreatedArtifact)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1215,6 +1227,7 @@ impl DisassociateCreatedArtifactInput {
             input: &crate::input::DisassociateCreatedArtifactInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1275,9 +1288,10 @@ impl DisassociateCreatedArtifactInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1386,7 +1400,7 @@ pub type DisassociateDiscoveredResourceInputOperationRetryAlias = aws_http::AwsE
 impl DisassociateDiscoveredResourceInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateDiscoveredResource`](crate::operation::DisassociateDiscoveredResource)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1418,6 +1432,7 @@ impl DisassociateDiscoveredResourceInput {
             input: &crate::input::DisassociateDiscoveredResourceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1478,9 +1493,10 @@ impl DisassociateDiscoveredResourceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1571,7 +1587,7 @@ pub type ImportMigrationTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl ImportMigrationTaskInput {
     /// Consumes the builder and constructs an Operation<[`ImportMigrationTask`](crate::operation::ImportMigrationTask)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1603,6 +1619,7 @@ impl ImportMigrationTaskInput {
             input: &crate::input::ImportMigrationTaskInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1665,9 +1682,10 @@ impl ImportMigrationTaskInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1761,7 +1779,7 @@ pub type ListApplicationStatesInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl ListApplicationStatesInput {
     /// Consumes the builder and constructs an Operation<[`ListApplicationStates`](crate::operation::ListApplicationStates)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1793,6 +1811,7 @@ impl ListApplicationStatesInput {
             input: &crate::input::ListApplicationStatesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1857,9 +1876,10 @@ impl ListApplicationStatesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -1964,7 +1984,7 @@ pub type ListCreatedArtifactsInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl ListCreatedArtifactsInput {
     /// Consumes the builder and constructs an Operation<[`ListCreatedArtifacts`](crate::operation::ListCreatedArtifacts)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1996,6 +2016,7 @@ impl ListCreatedArtifactsInput {
             input: &crate::input::ListCreatedArtifactsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2058,9 +2079,10 @@ impl ListCreatedArtifactsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2166,7 +2188,7 @@ pub type ListDiscoveredResourcesInputOperationRetryAlias = aws_http::AwsErrorRet
 impl ListDiscoveredResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListDiscoveredResources`](crate::operation::ListDiscoveredResources)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2198,6 +2220,7 @@ impl ListDiscoveredResourcesInput {
             input: &crate::input::ListDiscoveredResourcesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2262,9 +2285,10 @@ impl ListDiscoveredResourcesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2350,7 +2374,7 @@ pub type ListMigrationTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPol
 impl ListMigrationTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListMigrationTasks`](crate::operation::ListMigrationTasks)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2382,6 +2406,7 @@ impl ListMigrationTasksInput {
             input: &crate::input::ListMigrationTasksInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2444,9 +2469,10 @@ impl ListMigrationTasksInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2518,7 +2544,7 @@ pub type ListProgressUpdateStreamsInputOperationRetryAlias = aws_http::AwsErrorR
 impl ListProgressUpdateStreamsInput {
     /// Consumes the builder and constructs an Operation<[`ListProgressUpdateStreams`](crate::operation::ListProgressUpdateStreams)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2550,6 +2576,7 @@ impl ListProgressUpdateStreamsInput {
             input: &crate::input::ListProgressUpdateStreamsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2614,9 +2641,10 @@ impl ListProgressUpdateStreamsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2720,7 +2748,7 @@ pub type NotifyApplicationStateInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl NotifyApplicationStateInput {
     /// Consumes the builder and constructs an Operation<[`NotifyApplicationState`](crate::operation::NotifyApplicationState)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2752,6 +2780,7 @@ impl NotifyApplicationStateInput {
             input: &crate::input::NotifyApplicationStateInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2816,9 +2845,10 @@ impl NotifyApplicationStateInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2953,7 +2983,7 @@ pub type NotifyMigrationTaskStateInputOperationRetryAlias = aws_http::AwsErrorRe
 impl NotifyMigrationTaskStateInput {
     /// Consumes the builder and constructs an Operation<[`NotifyMigrationTaskState`](crate::operation::NotifyMigrationTaskState)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2985,6 +3015,7 @@ impl NotifyMigrationTaskStateInput {
             input: &crate::input::NotifyMigrationTaskStateInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3049,9 +3080,10 @@ impl NotifyMigrationTaskStateInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3221,7 +3253,7 @@ pub type PutResourceAttributesInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl PutResourceAttributesInput {
     /// Consumes the builder and constructs an Operation<[`PutResourceAttributes`](crate::operation::PutResourceAttributes)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -3253,6 +3285,7 @@ impl PutResourceAttributesInput {
             input: &crate::input::PutResourceAttributesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -3317,9 +3350,10 @@ impl PutResourceAttributesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,

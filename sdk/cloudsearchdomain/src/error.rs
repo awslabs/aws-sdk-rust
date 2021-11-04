@@ -14,7 +14,7 @@ pub struct SearchError {
 pub enum SearchErrorKind {
     /// <p>Information about any problems encountered while processing a search request.</p>
     SearchException(crate::error::SearchException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SearchError {
@@ -77,7 +77,7 @@ impl SearchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SearchErrorKind::SearchException`.
+    /// Returns `true` if the error kind is `SearchErrorKind::SearchException`.
     pub fn is_search_exception(&self) -> bool {
         matches!(&self.kind, SearchErrorKind::SearchException(_))
     }
@@ -106,7 +106,7 @@ pub struct SuggestError {
 pub enum SuggestErrorKind {
     /// <p>Information about any problems encountered while processing a search request.</p>
     SearchException(crate::error::SearchException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SuggestError {
@@ -169,7 +169,7 @@ impl SuggestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SuggestErrorKind::SearchException`.
+    /// Returns `true` if the error kind is `SuggestErrorKind::SearchException`.
     pub fn is_search_exception(&self) -> bool {
         matches!(&self.kind, SuggestErrorKind::SearchException(_))
     }
@@ -198,7 +198,7 @@ pub struct UploadDocumentsError {
 pub enum UploadDocumentsErrorKind {
     /// <p>Information about any problems encountered while processing an upload request.</p>
     DocumentServiceException(crate::error::DocumentServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UploadDocumentsError {
@@ -261,7 +261,7 @@ impl UploadDocumentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UploadDocumentsErrorKind::DocumentServiceException`.
+    /// Returns `true` if the error kind is `UploadDocumentsErrorKind::DocumentServiceException`.
     pub fn is_document_service_exception(&self) -> bool {
         matches!(
             &self.kind,

@@ -68,7 +68,7 @@ pub type CreateHomeRegionControlInputOperationRetryAlias = aws_http::AwsErrorRet
 impl CreateHomeRegionControlInput {
     /// Consumes the builder and constructs an Operation<[`CreateHomeRegionControl`](crate::operation::CreateHomeRegionControl)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -100,6 +100,7 @@ impl CreateHomeRegionControlInput {
             input: &crate::input::CreateHomeRegionControlInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -164,9 +165,10 @@ impl CreateHomeRegionControlInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -280,7 +282,7 @@ pub type DescribeHomeRegionControlsInputOperationRetryAlias = aws_http::AwsError
 impl DescribeHomeRegionControlsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeHomeRegionControls`](crate::operation::DescribeHomeRegionControls)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -312,6 +314,7 @@ impl DescribeHomeRegionControlsInput {
             input: &crate::input::DescribeHomeRegionControlsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -372,9 +375,10 @@ impl DescribeHomeRegionControlsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -415,7 +419,7 @@ pub type GetHomeRegionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl GetHomeRegionInput {
     /// Consumes the builder and constructs an Operation<[`GetHomeRegion`](crate::operation::GetHomeRegion)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -447,6 +451,7 @@ impl GetHomeRegionInput {
             input: &crate::input::GetHomeRegionInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -508,16 +513,9 @@ impl GetHomeRegionInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetHomeRegionInput`](crate::input::GetHomeRegionInput)

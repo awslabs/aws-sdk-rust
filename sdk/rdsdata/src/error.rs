@@ -23,7 +23,7 @@ pub enum BatchExecuteStatementErrorKind {
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchExecuteStatementError {
@@ -90,35 +90,35 @@ impl BatchExecuteStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchExecuteStatementErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `BatchExecuteStatementErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchExecuteStatementErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchExecuteStatementErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `BatchExecuteStatementErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchExecuteStatementErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `BatchExecuteStatementErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `BatchExecuteStatementErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchExecuteStatementErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `BatchExecuteStatementErrorKind::ServiceUnavailableError`.
+    /// Returns `true` if the error kind is `BatchExecuteStatementErrorKind::ServiceUnavailableError`.
     pub fn is_service_unavailable_error(&self) -> bool {
         matches!(
             &self.kind,
             BatchExecuteStatementErrorKind::ServiceUnavailableError(_)
         )
     }
-    /// Returns true if the error kind is `BatchExecuteStatementErrorKind::StatementTimeoutException`.
+    /// Returns `true` if the error kind is `BatchExecuteStatementErrorKind::StatementTimeoutException`.
     pub fn is_statement_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -163,7 +163,7 @@ pub enum BeginTransactionErrorKind {
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BeginTransactionError {
@@ -230,32 +230,32 @@ impl BeginTransactionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BeginTransactionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `BeginTransactionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BeginTransactionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BeginTransactionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `BeginTransactionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, BeginTransactionErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `BeginTransactionErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `BeginTransactionErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             BeginTransactionErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `BeginTransactionErrorKind::ServiceUnavailableError`.
+    /// Returns `true` if the error kind is `BeginTransactionErrorKind::ServiceUnavailableError`.
     pub fn is_service_unavailable_error(&self) -> bool {
         matches!(
             &self.kind,
             BeginTransactionErrorKind::ServiceUnavailableError(_)
         )
     }
-    /// Returns true if the error kind is `BeginTransactionErrorKind::StatementTimeoutException`.
+    /// Returns `true` if the error kind is `BeginTransactionErrorKind::StatementTimeoutException`.
     pub fn is_statement_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -302,7 +302,7 @@ pub enum CommitTransactionErrorKind {
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CommitTransactionError {
@@ -370,39 +370,39 @@ impl CommitTransactionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CommitTransactionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CommitTransactionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CommitTransactionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CommitTransactionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `CommitTransactionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             CommitTransactionErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `CommitTransactionErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `CommitTransactionErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             CommitTransactionErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `CommitTransactionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `CommitTransactionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, CommitTransactionErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `CommitTransactionErrorKind::ServiceUnavailableError`.
+    /// Returns `true` if the error kind is `CommitTransactionErrorKind::ServiceUnavailableError`.
     pub fn is_service_unavailable_error(&self) -> bool {
         matches!(
             &self.kind,
             CommitTransactionErrorKind::ServiceUnavailableError(_)
         )
     }
-    /// Returns true if the error kind is `CommitTransactionErrorKind::StatementTimeoutException`.
+    /// Returns `true` if the error kind is `CommitTransactionErrorKind::StatementTimeoutException`.
     pub fn is_statement_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -446,7 +446,7 @@ pub enum ExecuteSqlErrorKind {
     /// <p>The service specified by the <code>resourceArn</code> parameter is not
     /// available.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExecuteSqlError {
@@ -512,22 +512,22 @@ impl ExecuteSqlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExecuteSqlErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ExecuteSqlErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ExecuteSqlErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `ExecuteSqlErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ExecuteSqlErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ExecuteSqlErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ExecuteSqlErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ExecuteSqlErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteSqlErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteSqlErrorKind::ServiceUnavailableError`.
+    /// Returns `true` if the error kind is `ExecuteSqlErrorKind::ServiceUnavailableError`.
     pub fn is_service_unavailable_error(&self) -> bool {
         matches!(&self.kind, ExecuteSqlErrorKind::ServiceUnavailableError(_))
     }
@@ -568,7 +568,7 @@ pub enum ExecuteStatementErrorKind {
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExecuteStatementError {
@@ -635,32 +635,32 @@ impl ExecuteStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ExecuteStatementErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `ExecuteStatementErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteStatementErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteStatementErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `ExecuteStatementErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(&self.kind, ExecuteStatementErrorKind::ForbiddenException(_))
     }
-    /// Returns true if the error kind is `ExecuteStatementErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `ExecuteStatementErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteStatementErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteStatementErrorKind::ServiceUnavailableError`.
+    /// Returns `true` if the error kind is `ExecuteStatementErrorKind::ServiceUnavailableError`.
     pub fn is_service_unavailable_error(&self) -> bool {
         matches!(
             &self.kind,
             ExecuteStatementErrorKind::ServiceUnavailableError(_)
         )
     }
-    /// Returns true if the error kind is `ExecuteStatementErrorKind::StatementTimeoutException`.
+    /// Returns `true` if the error kind is `ExecuteStatementErrorKind::StatementTimeoutException`.
     pub fn is_statement_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -707,7 +707,7 @@ pub enum RollbackTransactionErrorKind {
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RollbackTransactionError {
@@ -775,42 +775,42 @@ impl RollbackTransactionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RollbackTransactionErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `RollbackTransactionErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             RollbackTransactionErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `RollbackTransactionErrorKind::ForbiddenException`.
+    /// Returns `true` if the error kind is `RollbackTransactionErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
             RollbackTransactionErrorKind::ForbiddenException(_)
         )
     }
-    /// Returns true if the error kind is `RollbackTransactionErrorKind::InternalServerErrorException`.
+    /// Returns `true` if the error kind is `RollbackTransactionErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
             RollbackTransactionErrorKind::InternalServerErrorException(_)
         )
     }
-    /// Returns true if the error kind is `RollbackTransactionErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `RollbackTransactionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RollbackTransactionErrorKind::NotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RollbackTransactionErrorKind::ServiceUnavailableError`.
+    /// Returns `true` if the error kind is `RollbackTransactionErrorKind::ServiceUnavailableError`.
     pub fn is_service_unavailable_error(&self) -> bool {
         matches!(
             &self.kind,
             RollbackTransactionErrorKind::ServiceUnavailableError(_)
         )
     }
-    /// Returns true if the error kind is `RollbackTransactionErrorKind::StatementTimeoutException`.
+    /// Returns `true` if the error kind is `RollbackTransactionErrorKind::StatementTimeoutException`.
     pub fn is_statement_timeout_exception(&self) -> bool {
         matches!(
             &self.kind,

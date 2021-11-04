@@ -18,7 +18,7 @@ pub enum BatchGetNamedQueryErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetNamedQueryError {
@@ -82,14 +82,14 @@ impl BatchGetNamedQueryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetNamedQueryErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `BatchGetNamedQueryErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetNamedQueryErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetNamedQueryErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `BatchGetNamedQueryErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -126,7 +126,7 @@ pub enum BatchGetQueryExecutionErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetQueryExecutionError {
@@ -190,14 +190,14 @@ impl BatchGetQueryExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetQueryExecutionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `BatchGetQueryExecutionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchGetQueryExecutionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `BatchGetQueryExecutionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `BatchGetQueryExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -234,7 +234,7 @@ pub enum CreateDataCatalogErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDataCatalogError {
@@ -298,14 +298,14 @@ impl CreateDataCatalogError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDataCatalogErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateDataCatalogErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDataCatalogErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDataCatalogErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateDataCatalogErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -342,7 +342,7 @@ pub enum CreateNamedQueryErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateNamedQueryError {
@@ -406,14 +406,14 @@ impl CreateNamedQueryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateNamedQueryErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateNamedQueryErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateNamedQueryErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateNamedQueryErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateNamedQueryErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -450,7 +450,7 @@ pub enum CreatePreparedStatementErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePreparedStatementError {
@@ -514,14 +514,14 @@ impl CreatePreparedStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePreparedStatementErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreatePreparedStatementErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePreparedStatementErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePreparedStatementErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreatePreparedStatementErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -558,7 +558,7 @@ pub enum CreateWorkGroupErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWorkGroupError {
@@ -622,14 +622,14 @@ impl CreateWorkGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWorkGroupErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateWorkGroupErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWorkGroupErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWorkGroupErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateWorkGroupErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -666,7 +666,7 @@ pub enum DeleteDataCatalogErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDataCatalogError {
@@ -730,14 +730,14 @@ impl DeleteDataCatalogError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDataCatalogErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteDataCatalogErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDataCatalogErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDataCatalogErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteDataCatalogErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -774,7 +774,7 @@ pub enum DeleteNamedQueryErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteNamedQueryError {
@@ -838,14 +838,14 @@ impl DeleteNamedQueryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteNamedQueryErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteNamedQueryErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteNamedQueryErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteNamedQueryErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteNamedQueryErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -884,7 +884,7 @@ pub enum DeletePreparedStatementErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource, such as a workgroup, was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePreparedStatementError {
@@ -949,21 +949,21 @@ impl DeletePreparedStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePreparedStatementErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeletePreparedStatementErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePreparedStatementErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePreparedStatementErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeletePreparedStatementErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePreparedStatementErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePreparedStatementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeletePreparedStatementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1001,7 +1001,7 @@ pub enum DeleteWorkGroupErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWorkGroupError {
@@ -1065,14 +1065,14 @@ impl DeleteWorkGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteWorkGroupErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteWorkGroupErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWorkGroupErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWorkGroupErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteWorkGroupErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1116,7 +1116,7 @@ pub enum GetDatabaseErrorKind {
     /// Lambda
     /// <code>4XX</code> exception is returned in a <code>MetadataException</code>.</p>
     MetadataException(crate::error::MetadataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDatabaseError {
@@ -1181,15 +1181,15 @@ impl GetDatabaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDatabaseErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetDatabaseErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, GetDatabaseErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `GetDatabaseErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetDatabaseErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, GetDatabaseErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `GetDatabaseErrorKind::MetadataException`.
+    /// Returns `true` if the error kind is `GetDatabaseErrorKind::MetadataException`.
     pub fn is_metadata_exception(&self) -> bool {
         matches!(&self.kind, GetDatabaseErrorKind::MetadataException(_))
     }
@@ -1224,7 +1224,7 @@ pub enum GetDataCatalogErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDataCatalogError {
@@ -1288,14 +1288,14 @@ impl GetDataCatalogError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDataCatalogErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetDataCatalogErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDataCatalogErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetDataCatalogErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetDataCatalogErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1332,7 +1332,7 @@ pub enum GetNamedQueryErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetNamedQueryError {
@@ -1396,14 +1396,14 @@ impl GetNamedQueryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetNamedQueryErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetNamedQueryErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetNamedQueryErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetNamedQueryErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetNamedQueryErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1442,7 +1442,7 @@ pub enum GetPreparedStatementErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource, such as a workgroup, was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPreparedStatementError {
@@ -1507,21 +1507,21 @@ impl GetPreparedStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPreparedStatementErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetPreparedStatementErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPreparedStatementErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetPreparedStatementErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetPreparedStatementErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPreparedStatementErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetPreparedStatementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetPreparedStatementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1559,7 +1559,7 @@ pub enum GetQueryExecutionErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetQueryExecutionError {
@@ -1623,14 +1623,14 @@ impl GetQueryExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetQueryExecutionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetQueryExecutionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetQueryExecutionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetQueryExecutionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetQueryExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1667,7 +1667,7 @@ pub enum GetQueryResultsErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetQueryResultsError {
@@ -1731,14 +1731,14 @@ impl GetQueryResultsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetQueryResultsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetQueryResultsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetQueryResultsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetQueryResultsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetQueryResultsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1782,7 +1782,7 @@ pub enum GetTableMetadataErrorKind {
     /// Lambda
     /// <code>4XX</code> exception is returned in a <code>MetadataException</code>.</p>
     MetadataException(crate::error::MetadataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTableMetadataError {
@@ -1847,21 +1847,21 @@ impl GetTableMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetTableMetadataErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetTableMetadataErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTableMetadataErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetTableMetadataErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetTableMetadataErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetTableMetadataErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetTableMetadataErrorKind::MetadataException`.
+    /// Returns `true` if the error kind is `GetTableMetadataErrorKind::MetadataException`.
     pub fn is_metadata_exception(&self) -> bool {
         matches!(&self.kind, GetTableMetadataErrorKind::MetadataException(_))
     }
@@ -1896,7 +1896,7 @@ pub enum GetWorkGroupErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetWorkGroupError {
@@ -1960,14 +1960,14 @@ impl GetWorkGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetWorkGroupErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetWorkGroupErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWorkGroupErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetWorkGroupErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetWorkGroupErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2011,7 +2011,7 @@ pub enum ListDatabasesErrorKind {
     /// Lambda
     /// <code>4XX</code> exception is returned in a <code>MetadataException</code>.</p>
     MetadataException(crate::error::MetadataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDatabasesError {
@@ -2076,21 +2076,21 @@ impl ListDatabasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDatabasesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListDatabasesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDatabasesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListDatabasesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListDatabasesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDatabasesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListDatabasesErrorKind::MetadataException`.
+    /// Returns `true` if the error kind is `ListDatabasesErrorKind::MetadataException`.
     pub fn is_metadata_exception(&self) -> bool {
         matches!(&self.kind, ListDatabasesErrorKind::MetadataException(_))
     }
@@ -2125,7 +2125,7 @@ pub enum ListDataCatalogsErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDataCatalogsError {
@@ -2189,14 +2189,14 @@ impl ListDataCatalogsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDataCatalogsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListDataCatalogsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDataCatalogsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListDataCatalogsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListDataCatalogsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2233,7 +2233,7 @@ pub enum ListEngineVersionsErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEngineVersionsError {
@@ -2297,14 +2297,14 @@ impl ListEngineVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListEngineVersionsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListEngineVersionsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListEngineVersionsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListEngineVersionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListEngineVersionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2341,7 +2341,7 @@ pub enum ListNamedQueriesErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListNamedQueriesError {
@@ -2405,14 +2405,14 @@ impl ListNamedQueriesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListNamedQueriesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListNamedQueriesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListNamedQueriesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListNamedQueriesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListNamedQueriesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2449,7 +2449,7 @@ pub enum ListPreparedStatementsErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPreparedStatementsError {
@@ -2513,14 +2513,14 @@ impl ListPreparedStatementsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPreparedStatementsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListPreparedStatementsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPreparedStatementsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListPreparedStatementsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListPreparedStatementsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2557,7 +2557,7 @@ pub enum ListQueryExecutionsErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListQueryExecutionsError {
@@ -2621,14 +2621,14 @@ impl ListQueryExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListQueryExecutionsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListQueryExecutionsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListQueryExecutionsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListQueryExecutionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListQueryExecutionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2672,7 +2672,7 @@ pub enum ListTableMetadataErrorKind {
     /// Lambda
     /// <code>4XX</code> exception is returned in a <code>MetadataException</code>.</p>
     MetadataException(crate::error::MetadataException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTableMetadataError {
@@ -2737,21 +2737,21 @@ impl ListTableMetadataError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTableMetadataErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTableMetadataErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTableMetadataErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTableMetadataErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTableMetadataErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTableMetadataErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTableMetadataErrorKind::MetadataException`.
+    /// Returns `true` if the error kind is `ListTableMetadataErrorKind::MetadataException`.
     pub fn is_metadata_exception(&self) -> bool {
         matches!(&self.kind, ListTableMetadataErrorKind::MetadataException(_))
     }
@@ -2788,7 +2788,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource, such as a workgroup, was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2853,21 +2853,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2905,7 +2905,7 @@ pub enum ListWorkGroupsErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWorkGroupsError {
@@ -2969,14 +2969,14 @@ impl ListWorkGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWorkGroupsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListWorkGroupsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWorkGroupsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListWorkGroupsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListWorkGroupsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3015,7 +3015,7 @@ pub enum StartQueryExecutionErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Indicates that the request was throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartQueryExecutionError {
@@ -3080,21 +3080,21 @@ impl StartQueryExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartQueryExecutionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StartQueryExecutionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartQueryExecutionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StartQueryExecutionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StartQueryExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartQueryExecutionErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StartQueryExecutionErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `StartQueryExecutionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3132,7 +3132,7 @@ pub enum StopQueryExecutionErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopQueryExecutionError {
@@ -3196,14 +3196,14 @@ impl StopQueryExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopQueryExecutionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `StopQueryExecutionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopQueryExecutionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `StopQueryExecutionErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `StopQueryExecutionErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3242,7 +3242,7 @@ pub enum TagResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource, such as a workgroup, was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -3307,15 +3307,15 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3355,7 +3355,7 @@ pub enum UntagResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource, such as a workgroup, was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -3420,21 +3420,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3472,7 +3472,7 @@ pub enum UpdateDataCatalogErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDataCatalogError {
@@ -3536,14 +3536,14 @@ impl UpdateDataCatalogError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDataCatalogErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateDataCatalogErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDataCatalogErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDataCatalogErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateDataCatalogErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3582,7 +3582,7 @@ pub enum UpdatePreparedStatementErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource, such as a workgroup, was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePreparedStatementError {
@@ -3647,21 +3647,21 @@ impl UpdatePreparedStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePreparedStatementErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdatePreparedStatementErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePreparedStatementErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePreparedStatementErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdatePreparedStatementErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePreparedStatementErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePreparedStatementErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePreparedStatementErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3699,7 +3699,7 @@ pub enum UpdateWorkGroupErrorKind {
     /// <p>Indicates that something is wrong with the input to the request. For example, a
     /// required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateWorkGroupError {
@@ -3763,14 +3763,14 @@ impl UpdateWorkGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateWorkGroupErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateWorkGroupErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWorkGroupErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWorkGroupErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateWorkGroupErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,

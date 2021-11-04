@@ -48,6 +48,39 @@ pub fn serialize_operation_crate_operation_put_app_instance_retention_settings(
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_crate_operation_register_app_instance_user_endpoint(
+    input: &crate::input::RegisterAppInstanceUserEndpointInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_register_app_instance_user_endpoint_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_tag_resource(
+    input: &crate::input::TagResourceInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_tag_resource_input(&mut object, input);
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_untag_resource(
+    input: &crate::input::UntagResourceInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_untag_resource_input(&mut object, input);
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_crate_operation_update_app_instance(
     input: &crate::input::UpdateAppInstanceInput,
 ) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
@@ -64,6 +97,19 @@ pub fn serialize_operation_crate_operation_update_app_instance_user(
     let mut out = String::new();
     let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_crate_input_update_app_instance_user_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(aws_smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_crate_operation_update_app_instance_user_endpoint(
+    input: &crate::input::UpdateAppInstanceUserEndpointInput,
+) -> Result<aws_smithy_http::body::SdkBody, aws_smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_crate_input_update_app_instance_user_endpoint_input(
         &mut object,
         input,
     );

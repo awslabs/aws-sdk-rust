@@ -87,7 +87,7 @@ pub type CreateAppInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl CreateAppInstanceInput {
     /// Consumes the builder and constructs an Operation<[`CreateAppInstance`](crate::operation::CreateAppInstance)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -119,6 +119,7 @@ impl CreateAppInstanceInput {
             input: &crate::input::CreateAppInstanceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -179,9 +180,10 @@ impl CreateAppInstanceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -254,7 +256,7 @@ pub type CreateAppInstanceAdminInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl CreateAppInstanceAdminInput {
     /// Consumes the builder and constructs an Operation<[`CreateAppInstanceAdmin`](crate::operation::CreateAppInstanceAdmin)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -306,6 +308,7 @@ impl CreateAppInstanceAdminInput {
             input: &crate::input::CreateAppInstanceAdminInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -365,9 +368,10 @@ impl CreateAppInstanceAdminInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -500,7 +504,7 @@ pub type CreateAppInstanceUserInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl CreateAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`CreateAppInstanceUser`](crate::operation::CreateAppInstanceUser)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -532,6 +536,7 @@ impl CreateAppInstanceUserInput {
             input: &crate::input::CreateAppInstanceUserInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -594,9 +599,10 @@ impl CreateAppInstanceUserInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -654,7 +660,7 @@ pub type DeleteAppInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl DeleteAppInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppInstance`](crate::operation::DeleteAppInstance)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -706,12 +712,8 @@ impl DeleteAppInstanceInput {
             input: &crate::input::DeleteAppInstanceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -759,16 +761,9 @@ impl DeleteAppInstanceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteAppInstanceInput`](crate::input::DeleteAppInstanceInput)
@@ -834,7 +829,7 @@ pub type DeleteAppInstanceAdminInputOperationRetryAlias = aws_http::AwsErrorRetr
 impl DeleteAppInstanceAdminInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppInstanceAdmin`](crate::operation::DeleteAppInstanceAdmin)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -902,12 +897,8 @@ impl DeleteAppInstanceAdminInput {
             input: &crate::input::DeleteAppInstanceAdminInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -955,16 +946,9 @@ impl DeleteAppInstanceAdminInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteAppInstanceAdminInput`](crate::input::DeleteAppInstanceAdminInput)
@@ -1015,7 +999,7 @@ pub type DeleteAppInstanceUserInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl DeleteAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppInstanceUser`](crate::operation::DeleteAppInstanceUser)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1067,12 +1051,8 @@ impl DeleteAppInstanceUserInput {
             input: &crate::input::DeleteAppInstanceUserInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1120,21 +1100,197 @@ impl DeleteAppInstanceUserInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DeleteAppInstanceUserInput`](crate::input::DeleteAppInstanceUserInput)
     pub fn builder() -> crate::input::delete_app_instance_user_input::Builder {
         crate::input::delete_app_instance_user_input::Builder::default()
+    }
+}
+
+/// See [`DeregisterAppInstanceUserEndpointInput`](crate::input::DeregisterAppInstanceUserEndpointInput)
+pub mod deregister_app_instance_user_endpoint_input {
+    /// A builder for [`DeregisterAppInstanceUserEndpointInput`](crate::input::DeregisterAppInstanceUserEndpointInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
+        pub(crate) endpoint_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_instance_user_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn set_app_instance_user_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.app_instance_user_arn = input;
+            self
+        }
+        /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeregisterAppInstanceUserEndpointInput`](crate::input::DeregisterAppInstanceUserEndpointInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeregisterAppInstanceUserEndpointInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeregisterAppInstanceUserEndpointInput {
+                app_instance_user_arn: self.app_instance_user_arn,
+                endpoint_id: self.endpoint_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeregisterAppInstanceUserEndpointInputOperationOutputAlias =
+    crate::operation::DeregisterAppInstanceUserEndpoint;
+#[doc(hidden)]
+pub type DeregisterAppInstanceUserEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DeregisterAppInstanceUserEndpointInput {
+    /// Consumes the builder and constructs an Operation<[`DeregisterAppInstanceUserEndpoint`](crate::operation::DeregisterAppInstanceUserEndpoint)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeregisterAppInstanceUserEndpoint,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeregisterAppInstanceUserEndpointInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_6 = &_input.app_instance_user_arn;
+            let input_6 =
+                input_6
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "app_instance_user_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_6, false);
+            if app_instance_user_arn.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "app_instance_user_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_7 = &_input.endpoint_id;
+            let input_7 =
+                input_7
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "endpoint_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let endpoint_id = aws_smithy_http::label::fmt_string(input_7, false);
+            if endpoint_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "endpoint_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/app-instance-users/{AppInstanceUserArn}/endpoints/{EndpointId}",
+                AppInstanceUserArn = app_instance_user_arn,
+                EndpointId = endpoint_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeregisterAppInstanceUserEndpointInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeregisterAppInstanceUserEndpointInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeregisterAppInstanceUserEndpoint::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeregisterAppInstanceUserEndpoint",
+            "chimesdkidentity",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeregisterAppInstanceUserEndpointInput`](crate::input::DeregisterAppInstanceUserEndpointInput)
+    pub fn builder() -> crate::input::deregister_app_instance_user_endpoint_input::Builder {
+        crate::input::deregister_app_instance_user_endpoint_input::Builder::default()
     }
 }
 
@@ -1180,7 +1336,7 @@ pub type DescribeAppInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPo
 impl DescribeAppInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAppInstance`](crate::operation::DescribeAppInstance)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1194,15 +1350,15 @@ impl DescribeAppInstanceInput {
             _input: &crate::input::DescribeAppInstanceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_6 = &_input.app_instance_arn;
-            let input_6 =
-                input_6
+            let input_8 = &_input.app_instance_arn;
+            let input_8 =
+                input_8
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_arn = aws_smithy_http::label::fmt_string(input_6, false);
+            let app_instance_arn = aws_smithy_http::label::fmt_string(input_8, false);
             if app_instance_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
@@ -1232,12 +1388,8 @@ impl DescribeAppInstanceInput {
             input: &crate::input::DescribeAppInstanceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1285,16 +1437,9 @@ impl DescribeAppInstanceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeAppInstanceInput`](crate::input::DescribeAppInstanceInput)
@@ -1361,7 +1506,7 @@ pub type DescribeAppInstanceAdminInputOperationRetryAlias = aws_http::AwsErrorRe
 impl DescribeAppInstanceAdminInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAppInstanceAdmin`](crate::operation::DescribeAppInstanceAdmin)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1375,30 +1520,30 @@ impl DescribeAppInstanceAdminInput {
             _input: &crate::input::DescribeAppInstanceAdminInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_7 = &_input.app_instance_arn;
-            let input_7 =
-                input_7
+            let input_9 = &_input.app_instance_arn;
+            let input_9 =
+                input_9
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_arn = aws_smithy_http::label::fmt_string(input_7, false);
+            let app_instance_arn = aws_smithy_http::label::fmt_string(input_9, false);
             if app_instance_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_8 = &_input.app_instance_admin_arn;
-            let input_8 =
-                input_8
+            let input_10 = &_input.app_instance_admin_arn;
+            let input_10 =
+                input_10
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_admin_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_admin_arn = aws_smithy_http::label::fmt_string(input_8, false);
+            let app_instance_admin_arn = aws_smithy_http::label::fmt_string(input_10, false);
             if app_instance_admin_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_admin_arn",
@@ -1429,12 +1574,8 @@ impl DescribeAppInstanceAdminInput {
             input: &crate::input::DescribeAppInstanceAdminInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1482,16 +1623,9 @@ impl DescribeAppInstanceAdminInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeAppInstanceAdminInput`](crate::input::DescribeAppInstanceAdminInput)
@@ -1543,7 +1677,7 @@ pub type DescribeAppInstanceUserInputOperationRetryAlias = aws_http::AwsErrorRet
 impl DescribeAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAppInstanceUser`](crate::operation::DescribeAppInstanceUser)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1557,15 +1691,15 @@ impl DescribeAppInstanceUserInput {
             _input: &crate::input::DescribeAppInstanceUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_9 = &_input.app_instance_user_arn;
-            let input_9 =
-                input_9
+            let input_11 = &_input.app_instance_user_arn;
+            let input_11 =
+                input_11
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_user_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_9, false);
+            let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_11, false);
             if app_instance_user_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_user_arn",
@@ -1595,12 +1729,8 @@ impl DescribeAppInstanceUserInput {
             input: &crate::input::DescribeAppInstanceUserInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1648,21 +1778,197 @@ impl DescribeAppInstanceUserInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`DescribeAppInstanceUserInput`](crate::input::DescribeAppInstanceUserInput)
     pub fn builder() -> crate::input::describe_app_instance_user_input::Builder {
         crate::input::describe_app_instance_user_input::Builder::default()
+    }
+}
+
+/// See [`DescribeAppInstanceUserEndpointInput`](crate::input::DescribeAppInstanceUserEndpointInput)
+pub mod describe_app_instance_user_endpoint_input {
+    /// A builder for [`DescribeAppInstanceUserEndpointInput`](crate::input::DescribeAppInstanceUserEndpointInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
+        pub(crate) endpoint_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_instance_user_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn set_app_instance_user_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.app_instance_user_arn = input;
+            self
+        }
+        /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeAppInstanceUserEndpointInput`](crate::input::DescribeAppInstanceUserEndpointInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeAppInstanceUserEndpointInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeAppInstanceUserEndpointInput {
+                app_instance_user_arn: self.app_instance_user_arn,
+                endpoint_id: self.endpoint_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeAppInstanceUserEndpointInputOperationOutputAlias =
+    crate::operation::DescribeAppInstanceUserEndpoint;
+#[doc(hidden)]
+pub type DescribeAppInstanceUserEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeAppInstanceUserEndpointInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeAppInstanceUserEndpoint`](crate::operation::DescribeAppInstanceUserEndpoint)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeAppInstanceUserEndpoint,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeAppInstanceUserEndpointInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_12 = &_input.app_instance_user_arn;
+            let input_12 =
+                input_12
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "app_instance_user_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_12, false);
+            if app_instance_user_arn.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "app_instance_user_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_13 = &_input.endpoint_id;
+            let input_13 =
+                input_13
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "endpoint_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let endpoint_id = aws_smithy_http::label::fmt_string(input_13, false);
+            if endpoint_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "endpoint_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/app-instance-users/{AppInstanceUserArn}/endpoints/{EndpointId}",
+                AppInstanceUserArn = app_instance_user_arn,
+                EndpointId = endpoint_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeAppInstanceUserEndpointInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeAppInstanceUserEndpointInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeAppInstanceUserEndpoint::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeAppInstanceUserEndpoint",
+            "chimesdkidentity",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeAppInstanceUserEndpointInput`](crate::input::DescribeAppInstanceUserEndpointInput)
+    pub fn builder() -> crate::input::describe_app_instance_user_endpoint_input::Builder {
+        crate::input::describe_app_instance_user_endpoint_input::Builder::default()
     }
 }
 
@@ -1709,7 +2015,7 @@ pub type GetAppInstanceRetentionSettingsInputOperationRetryAlias = aws_http::Aws
 impl GetAppInstanceRetentionSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetAppInstanceRetentionSettings`](crate::operation::GetAppInstanceRetentionSettings)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1723,15 +2029,15 @@ impl GetAppInstanceRetentionSettingsInput {
             _input: &crate::input::GetAppInstanceRetentionSettingsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_10 = &_input.app_instance_arn;
-            let input_10 =
-                input_10
+            let input_14 = &_input.app_instance_arn;
+            let input_14 =
+                input_14
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_arn = aws_smithy_http::label::fmt_string(input_10, false);
+            let app_instance_arn = aws_smithy_http::label::fmt_string(input_14, false);
             if app_instance_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
@@ -1761,12 +2067,8 @@ impl GetAppInstanceRetentionSettingsInput {
             input: &crate::input::GetAppInstanceRetentionSettingsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -1814,16 +2116,9 @@ impl GetAppInstanceRetentionSettingsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`GetAppInstanceRetentionSettingsInput`](crate::input::GetAppInstanceRetentionSettingsInput)
@@ -1900,7 +2195,7 @@ pub type ListAppInstanceAdminsInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl ListAppInstanceAdminsInput {
     /// Consumes the builder and constructs an Operation<[`ListAppInstanceAdmins`](crate::operation::ListAppInstanceAdmins)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -1914,15 +2209,15 @@ impl ListAppInstanceAdminsInput {
             _input: &crate::input::ListAppInstanceAdminsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_11 = &_input.app_instance_arn;
-            let input_11 =
-                input_11
+            let input_15 = &_input.app_instance_arn;
+            let input_15 =
+                input_15
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_arn = aws_smithy_http::label::fmt_string(input_11, false);
+            let app_instance_arn = aws_smithy_http::label::fmt_string(input_15, false);
             if app_instance_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
@@ -1939,14 +2234,14 @@ impl ListAppInstanceAdminsInput {
         }
         fn uri_query(_input: &crate::input::ListAppInstanceAdminsInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_12) = &_input.max_results {
+            if let Some(inner_16) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_16).encode(),
                 );
             }
-            if let Some(inner_13) = &_input.next_token {
-                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_13));
+            if let Some(inner_17) = &_input.next_token {
+                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_17));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1965,12 +2260,8 @@ impl ListAppInstanceAdminsInput {
             input: &crate::input::ListAppInstanceAdminsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2018,16 +2309,9 @@ impl ListAppInstanceAdminsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListAppInstanceAdminsInput`](crate::input::ListAppInstanceAdminsInput)
@@ -2089,7 +2373,7 @@ pub type ListAppInstancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolic
 impl ListAppInstancesInput {
     /// Consumes the builder and constructs an Operation<[`ListAppInstances`](crate::operation::ListAppInstances)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2108,14 +2392,14 @@ impl ListAppInstancesInput {
         }
         fn uri_query(_input: &crate::input::ListAppInstancesInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_14) = &_input.max_results {
+            if let Some(inner_18) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_18).encode(),
                 );
             }
-            if let Some(inner_15) = &_input.next_token {
-                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_15));
+            if let Some(inner_19) = &_input.next_token {
+                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_19));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2134,12 +2418,8 @@ impl ListAppInstancesInput {
             input: &crate::input::ListAppInstancesInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2187,21 +2467,209 @@ impl ListAppInstancesInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListAppInstancesInput`](crate::input::ListAppInstancesInput)
     pub fn builder() -> crate::input::list_app_instances_input::Builder {
         crate::input::list_app_instances_input::Builder::default()
+    }
+}
+
+/// See [`ListAppInstanceUserEndpointsInput`](crate::input::ListAppInstanceUserEndpointsInput)
+pub mod list_app_instance_user_endpoints_input {
+    /// A builder for [`ListAppInstanceUserEndpointsInput`](crate::input::ListAppInstanceUserEndpointsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_instance_user_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn set_app_instance_user_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.app_instance_user_arn = input;
+            self
+        }
+        /// <p>The maximum number of endpoints that you want to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of endpoints that you want to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAppInstanceUserEndpointsInput`](crate::input::ListAppInstanceUserEndpointsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListAppInstanceUserEndpointsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListAppInstanceUserEndpointsInput {
+                app_instance_user_arn: self.app_instance_user_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListAppInstanceUserEndpointsInputOperationOutputAlias =
+    crate::operation::ListAppInstanceUserEndpoints;
+#[doc(hidden)]
+pub type ListAppInstanceUserEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListAppInstanceUserEndpointsInput {
+    /// Consumes the builder and constructs an Operation<[`ListAppInstanceUserEndpoints`](crate::operation::ListAppInstanceUserEndpoints)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListAppInstanceUserEndpoints,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListAppInstanceUserEndpointsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_20 = &_input.app_instance_user_arn;
+            let input_20 =
+                input_20
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "app_instance_user_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_20, false);
+            if app_instance_user_arn.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "app_instance_user_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/app-instance-users/{AppInstanceUserArn}/endpoints",
+                AppInstanceUserArn = app_instance_user_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::ListAppInstanceUserEndpointsInput,
+            mut output: &mut String,
+        ) {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_21) = &_input.max_results {
+                query.push_kv(
+                    "max-results",
+                    &aws_smithy_types::primitive::Encoder::from(*inner_21).encode(),
+                );
+            }
+            if let Some(inner_22) = &_input.next_token {
+                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_22));
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListAppInstanceUserEndpointsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListAppInstanceUserEndpointsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAppInstanceUserEndpoints::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAppInstanceUserEndpoints",
+            "chimesdkidentity",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListAppInstanceUserEndpointsInput`](crate::input::ListAppInstanceUserEndpointsInput)
+    pub fn builder() -> crate::input::list_app_instance_user_endpoints_input::Builder {
+        crate::input::list_app_instance_user_endpoints_input::Builder::default()
     }
 }
 
@@ -2271,7 +2739,7 @@ pub type ListAppInstanceUsersInputOperationRetryAlias = aws_http::AwsErrorRetryP
 impl ListAppInstanceUsersInput {
     /// Consumes the builder and constructs an Operation<[`ListAppInstanceUsers`](crate::operation::ListAppInstanceUsers)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2290,20 +2758,20 @@ impl ListAppInstanceUsersInput {
         }
         fn uri_query(_input: &crate::input::ListAppInstanceUsersInput, mut output: &mut String) {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_16) = &_input.app_instance_arn {
+            if let Some(inner_23) = &_input.app_instance_arn {
                 query.push_kv(
                     "app-instance-arn",
-                    &aws_smithy_http::query::fmt_string(&inner_16),
+                    &aws_smithy_http::query::fmt_string(&inner_23),
                 );
             }
-            if let Some(inner_17) = &_input.max_results {
+            if let Some(inner_24) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    &aws_smithy_types::primitive::Encoder::from(*inner_17).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_24).encode(),
                 );
             }
-            if let Some(inner_18) = &_input.next_token {
-                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_18));
+            if let Some(inner_25) = &_input.next_token {
+                query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_25));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2322,12 +2790,8 @@ impl ListAppInstanceUsersInput {
             input: &crate::input::ListAppInstanceUsersInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("content-type"),
-                "application/json",
-            );
             Ok(builder)
         }
         let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -2375,21 +2839,152 @@ impl ListAppInstanceUsersInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
-        if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
-                builder,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
         builder.body(body).expect("should be valid request")
     }
     /// Creates a new builder-style object to manufacture [`ListAppInstanceUsersInput`](crate::input::ListAppInstanceUsersInput)
     pub fn builder() -> crate::input::list_app_instance_users_input::Builder {
         crate::input::list_app_instance_users_input::Builder::default()
+    }
+}
+
+/// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+pub mod list_tags_for_resource_input {
+    /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the resource.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListTagsForResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListTagsForResourceInput {
+                resource_arn: self.resource_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListTagsForResourceInput {
+    /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTagsForResource,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListTagsForResourceInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/tags").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(_input: &crate::input::ListTagsForResourceInput, mut output: &mut String) {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_26) = &_input.resource_arn {
+                query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_26));
+            }
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListTagsForResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListTagsForResourceInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTagsForResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTagsForResource",
+            "chimesdkidentity",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
+        crate::input::list_tags_for_resource_input::Builder::default()
     }
 }
 
@@ -2455,7 +3050,7 @@ pub type PutAppInstanceRetentionSettingsInputOperationRetryAlias = aws_http::Aws
 impl PutAppInstanceRetentionSettingsInput {
     /// Consumes the builder and constructs an Operation<[`PutAppInstanceRetentionSettings`](crate::operation::PutAppInstanceRetentionSettings)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2469,15 +3064,15 @@ impl PutAppInstanceRetentionSettingsInput {
             _input: &crate::input::PutAppInstanceRetentionSettingsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_19 = &_input.app_instance_arn;
-            let input_19 =
-                input_19
+            let input_27 = &_input.app_instance_arn;
+            let input_27 =
+                input_27
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_arn = aws_smithy_http::label::fmt_string(input_19, false);
+            let app_instance_arn = aws_smithy_http::label::fmt_string(input_27, false);
             if app_instance_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
@@ -2507,6 +3102,7 @@ impl PutAppInstanceRetentionSettingsInput {
             input: &crate::input::PutAppInstanceRetentionSettingsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2562,9 +3158,10 @@ impl PutAppInstanceRetentionSettingsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2577,6 +3174,641 @@ impl PutAppInstanceRetentionSettingsInput {
     /// Creates a new builder-style object to manufacture [`PutAppInstanceRetentionSettingsInput`](crate::input::PutAppInstanceRetentionSettingsInput)
     pub fn builder() -> crate::input::put_app_instance_retention_settings_input::Builder {
         crate::input::put_app_instance_retention_settings_input::Builder::default()
+    }
+}
+
+/// See [`RegisterAppInstanceUserEndpointInput`](crate::input::RegisterAppInstanceUserEndpointInput)
+pub mod register_app_instance_user_endpoint_input {
+    /// A builder for [`RegisterAppInstanceUserEndpointInput`](crate::input::RegisterAppInstanceUserEndpointInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::AppInstanceUserEndpointType>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) endpoint_attributes: std::option::Option<crate::model::EndpointAttributes>,
+        pub(crate) client_request_token: std::option::Option<std::string::String>,
+        pub(crate) allow_messages: std::option::Option<crate::model::AllowMessages>,
+    }
+    impl Builder {
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_instance_user_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn set_app_instance_user_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.app_instance_user_arn = input;
+            self
+        }
+        /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>APNS</code>: The mobile notification service for an Apple device.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GCM</code>: The mobile notification service for an Android device.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
+        pub fn r#type(mut self, input: crate::model::AppInstanceUserEndpointType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>APNS</code>: The mobile notification service for an Apple device.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GCM</code>: The mobile notification service for an Android device.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::AppInstanceUserEndpointType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The ARN of the resource to which the endpoint belongs.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the resource to which the endpoint belongs.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The attributes of an <code>Endpoint</code>.</p>
+        pub fn endpoint_attributes(mut self, input: crate::model::EndpointAttributes) -> Self {
+            self.endpoint_attributes = Some(input);
+            self
+        }
+        /// <p>The attributes of an <code>Endpoint</code>.</p>
+        pub fn set_endpoint_attributes(
+            mut self,
+            input: std::option::Option<crate::model::EndpointAttributes>,
+        ) -> Self {
+            self.endpoint_attributes = input;
+            self
+        }
+        /// <p>The idempotency token for each client request. </p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
+            self
+        }
+        /// <p>The idempotency token for each client request. </p>
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.client_request_token = input;
+            self
+        }
+        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
+        /// <code>NONE</code> indicates the endpoint receives no messages.</p>
+        pub fn allow_messages(mut self, input: crate::model::AllowMessages) -> Self {
+            self.allow_messages = Some(input);
+            self
+        }
+        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
+        /// <code>NONE</code> indicates the endpoint receives no messages.</p>
+        pub fn set_allow_messages(
+            mut self,
+            input: std::option::Option<crate::model::AllowMessages>,
+        ) -> Self {
+            self.allow_messages = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RegisterAppInstanceUserEndpointInput`](crate::input::RegisterAppInstanceUserEndpointInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::RegisterAppInstanceUserEndpointInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::RegisterAppInstanceUserEndpointInput {
+                app_instance_user_arn: self.app_instance_user_arn,
+                name: self.name,
+                r#type: self.r#type,
+                resource_arn: self.resource_arn,
+                endpoint_attributes: self.endpoint_attributes,
+                client_request_token: self.client_request_token,
+                allow_messages: self.allow_messages,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type RegisterAppInstanceUserEndpointInputOperationOutputAlias =
+    crate::operation::RegisterAppInstanceUserEndpoint;
+#[doc(hidden)]
+pub type RegisterAppInstanceUserEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl RegisterAppInstanceUserEndpointInput {
+    /// Consumes the builder and constructs an Operation<[`RegisterAppInstanceUserEndpoint`](crate::operation::RegisterAppInstanceUserEndpoint)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RegisterAppInstanceUserEndpoint,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::RegisterAppInstanceUserEndpointInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_28 = &_input.app_instance_user_arn;
+            let input_28 =
+                input_28
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "app_instance_user_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_28, false);
+            if app_instance_user_arn.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "app_instance_user_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/app-instance-users/{AppInstanceUserArn}/endpoints",
+                AppInstanceUserArn = app_instance_user_arn
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::RegisterAppInstanceUserEndpointInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::RegisterAppInstanceUserEndpointInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        if self.client_request_token.is_none() {
+            self.client_request_token = Some(_config.make_token.make_idempotency_token());
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_register_app_instance_user_endpoint(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RegisterAppInstanceUserEndpoint::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RegisterAppInstanceUserEndpoint",
+            "chimesdkidentity",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`RegisterAppInstanceUserEndpointInput`](crate::input::RegisterAppInstanceUserEndpointInput)
+    pub fn builder() -> crate::input::register_app_instance_user_endpoint_input::Builder {
+        crate::input::register_app_instance_user_endpoint_input::Builder::default()
+    }
+}
+
+/// See [`TagResourceInput`](crate::input::TagResourceInput)
+pub mod tag_resource_input {
+    /// A builder for [`TagResourceInput`](crate::input::TagResourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The resource ARN.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The resource ARN.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag key-value pairs.</p>
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The tag key-value pairs.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::TagResourceInput {
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
+#[doc(hidden)]
+pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl TagResourceInput {
+    /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::TagResource,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::TagResourceInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/tags").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(_input: &crate::input::TagResourceInput, mut output: &mut String) {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            query.push_kv("operation", "tag-resource");
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::TagResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::TagResourceInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "chimesdkidentity",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    pub fn builder() -> crate::input::tag_resource_input::Builder {
+        crate::input::tag_resource_input::Builder::default()
+    }
+}
+
+/// See [`UntagResourceInput`](crate::input::UntagResourceInput)
+pub mod untag_resource_input {
+    /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The resource ARN.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The resource ARN.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The tag keys.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.tag_keys.unwrap_or_default();
+            v.push(input.into());
+            self.tag_keys = Some(v);
+            self
+        }
+        /// <p>The tag keys.</p>
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_keys = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UntagResourceInput {
+                resource_arn: self.resource_arn,
+                tag_keys: self.tag_keys,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
+#[doc(hidden)]
+pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UntagResourceInput {
+    /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UntagResource,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UntagResourceInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/tags").expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            query.push_kv("operation", "untag-resource");
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UntagResourceInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri);
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UntagResourceInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "chimesdkidentity",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    pub fn builder() -> crate::input::untag_resource_input::Builder {
+        crate::input::untag_resource_input::Builder::default()
     }
 }
 
@@ -2646,7 +3878,7 @@ pub type UpdateAppInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPoli
 impl UpdateAppInstanceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAppInstance`](crate::operation::UpdateAppInstance)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2660,15 +3892,15 @@ impl UpdateAppInstanceInput {
             _input: &crate::input::UpdateAppInstanceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_20 = &_input.app_instance_arn;
-            let input_20 =
-                input_20
+            let input_29 = &_input.app_instance_arn;
+            let input_29 =
+                input_29
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_arn = aws_smithy_http::label::fmt_string(input_20, false);
+            let app_instance_arn = aws_smithy_http::label::fmt_string(input_29, false);
             if app_instance_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
@@ -2698,6 +3930,7 @@ impl UpdateAppInstanceInput {
             input: &crate::input::UpdateAppInstanceInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2755,9 +3988,10 @@ impl UpdateAppInstanceInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2839,7 +4073,7 @@ pub type UpdateAppInstanceUserInputOperationRetryAlias = aws_http::AwsErrorRetry
 impl UpdateAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAppInstanceUser`](crate::operation::UpdateAppInstanceUser)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -2853,15 +4087,15 @@ impl UpdateAppInstanceUserInput {
             _input: &crate::input::UpdateAppInstanceUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_21 = &_input.app_instance_user_arn;
-            let input_21 =
-                input_21
+            let input_30 = &_input.app_instance_user_arn;
+            let input_30 =
+                input_30
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_user_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_21, false);
+            let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_30, false);
             if app_instance_user_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_user_arn",
@@ -2891,6 +4125,7 @@ impl UpdateAppInstanceUserInput {
             input: &crate::input::UpdateAppInstanceUserInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2950,9 +4185,10 @@ impl UpdateAppInstanceUserInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -2965,6 +4201,258 @@ impl UpdateAppInstanceUserInput {
     /// Creates a new builder-style object to manufacture [`UpdateAppInstanceUserInput`](crate::input::UpdateAppInstanceUserInput)
     pub fn builder() -> crate::input::update_app_instance_user_input::Builder {
         crate::input::update_app_instance_user_input::Builder::default()
+    }
+}
+
+/// See [`UpdateAppInstanceUserEndpointInput`](crate::input::UpdateAppInstanceUserEndpointInput)
+pub mod update_app_instance_user_endpoint_input {
+    /// A builder for [`UpdateAppInstanceUserEndpointInput`](crate::input::UpdateAppInstanceUserEndpointInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
+        pub(crate) endpoint_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) allow_messages: std::option::Option<crate::model::AllowMessages>,
+    }
+    impl Builder {
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.app_instance_user_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+        pub fn set_app_instance_user_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.app_instance_user_arn = input;
+            self
+        }
+        /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_id = input;
+            self
+        }
+        /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
+        /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+        pub fn allow_messages(mut self, input: crate::model::AllowMessages) -> Self {
+            self.allow_messages = Some(input);
+            self
+        }
+        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
+        /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+        pub fn set_allow_messages(
+            mut self,
+            input: std::option::Option<crate::model::AllowMessages>,
+        ) -> Self {
+            self.allow_messages = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateAppInstanceUserEndpointInput`](crate::input::UpdateAppInstanceUserEndpointInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateAppInstanceUserEndpointInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateAppInstanceUserEndpointInput {
+                app_instance_user_arn: self.app_instance_user_arn,
+                endpoint_id: self.endpoint_id,
+                name: self.name,
+                allow_messages: self.allow_messages,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateAppInstanceUserEndpointInputOperationOutputAlias =
+    crate::operation::UpdateAppInstanceUserEndpoint;
+#[doc(hidden)]
+pub type UpdateAppInstanceUserEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateAppInstanceUserEndpointInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateAppInstanceUserEndpoint`](crate::operation::UpdateAppInstanceUserEndpoint)>
+    #[allow(clippy::let_and_return)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateAppInstanceUserEndpoint,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateAppInstanceUserEndpointInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_31 = &_input.app_instance_user_arn;
+            let input_31 =
+                input_31
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "app_instance_user_arn",
+                        details: "cannot be empty or unset",
+                    })?;
+            let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_31, false);
+            if app_instance_user_arn.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "app_instance_user_arn",
+                    details: "cannot be empty or unset",
+                });
+            }
+            let input_32 = &_input.endpoint_id;
+            let input_32 =
+                input_32
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "endpoint_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let endpoint_id = aws_smithy_http::label::fmt_string(input_32, false);
+            if endpoint_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "endpoint_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/app-instance-users/{AppInstanceUserArn}/endpoints/{EndpointId}",
+                AppInstanceUserArn = app_instance_user_arn,
+                EndpointId = endpoint_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateAppInstanceUserEndpointInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PUT").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateAppInstanceUserEndpointInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_app_instance_user_endpoint(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        request
+            .properties_mut()
+            .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+                crate::API_METADATA.clone(),
+            ));
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateAppInstanceUserEndpoint::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateAppInstanceUserEndpoint",
+            "chimesdkidentity",
+        ));
+        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateAppInstanceUserEndpointInput`](crate::input::UpdateAppInstanceUserEndpointInput)
+    pub fn builder() -> crate::input::update_app_instance_user_endpoint_input::Builder {
+        crate::input::update_app_instance_user_endpoint_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateAppInstanceUserEndpointInput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub app_instance_user_arn: std::option::Option<std::string::String>,
+    /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub endpoint_id: std::option::Option<std::string::String>,
+    /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
+    /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+    pub allow_messages: std::option::Option<crate::model::AllowMessages>,
+}
+impl std::fmt::Debug for UpdateAppInstanceUserEndpointInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateAppInstanceUserEndpointInput");
+        formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("allow_messages", &self.allow_messages);
+        formatter.finish()
     }
 }
 
@@ -3013,6 +4501,91 @@ impl std::fmt::Debug for UpdateAppInstanceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceInput {
+    /// <p>The resource ARN.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The tag keys.</p>
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for UntagResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UntagResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tag_keys", &self.tag_keys);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceInput {
+    /// <p>The resource ARN.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The tag key-value pairs.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl std::fmt::Debug for TagResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TagResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RegisterAppInstanceUserEndpointInput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub app_instance_user_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>APNS</code>: The mobile notification service for an Apple device.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>GCM</code>: The mobile notification service for an Android device.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
+    pub r#type: std::option::Option<crate::model::AppInstanceUserEndpointType>,
+    /// <p>The ARN of the resource to which the endpoint belongs.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The attributes of an <code>Endpoint</code>.</p>
+    pub endpoint_attributes: std::option::Option<crate::model::EndpointAttributes>,
+    /// <p>The idempotency token for each client request. </p>
+    pub client_request_token: std::option::Option<std::string::String>,
+    /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
+    /// <code>NONE</code> indicates the endpoint receives no messages.</p>
+    pub allow_messages: std::option::Option<crate::model::AllowMessages>,
+}
+impl std::fmt::Debug for RegisterAppInstanceUserEndpointInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RegisterAppInstanceUserEndpointInput");
+        formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("resource_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("endpoint_attributes", &self.endpoint_attributes);
+        formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("allow_messages", &self.allow_messages);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAppInstanceRetentionSettingsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
@@ -3035,6 +4608,21 @@ impl std::fmt::Debug for PutAppInstanceRetentionSettingsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListTagsForResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTagsForResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppInstanceUsersInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
@@ -3047,6 +4635,27 @@ impl std::fmt::Debug for ListAppInstanceUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppInstanceUsersInput");
         formatter.field("app_instance_arn", &self.app_instance_arn);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAppInstanceUserEndpointsInput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub app_instance_user_arn: std::option::Option<std::string::String>,
+    /// <p>The maximum number of endpoints that you want to return.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListAppInstanceUserEndpointsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAppInstanceUserEndpointsInput");
+        formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -3112,6 +4721,24 @@ impl std::fmt::Debug for GetAppInstanceRetentionSettingsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeAppInstanceUserEndpointInput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub app_instance_user_arn: std::option::Option<std::string::String>,
+    /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub endpoint_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeAppInstanceUserEndpointInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeAppInstanceUserEndpointInput");
+        formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceUserInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub app_instance_user_arn: std::option::Option<std::string::String>,
@@ -3153,6 +4780,24 @@ impl std::fmt::Debug for DescribeAppInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAppInstanceInput");
         formatter.field("app_instance_arn", &self.app_instance_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeregisterAppInstanceUserEndpointInput {
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub app_instance_user_arn: std::option::Option<std::string::String>,
+    /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub endpoint_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeregisterAppInstanceUserEndpointInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeregisterAppInstanceUserEndpointInput");
+        formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

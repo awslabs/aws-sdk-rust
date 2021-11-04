@@ -14,7 +14,7 @@ pub struct BatchDeleteBuildsError {
 pub enum BatchDeleteBuildsErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDeleteBuildsError {
@@ -77,7 +77,7 @@ impl BatchDeleteBuildsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDeleteBuildsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchDeleteBuildsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -109,7 +109,7 @@ pub struct BatchGetBuildBatchesError {
 pub enum BatchGetBuildBatchesErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetBuildBatchesError {
@@ -172,7 +172,7 @@ impl BatchGetBuildBatchesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetBuildBatchesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchGetBuildBatchesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -204,7 +204,7 @@ pub struct BatchGetBuildsError {
 pub enum BatchGetBuildsErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetBuildsError {
@@ -267,7 +267,7 @@ impl BatchGetBuildsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetBuildsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchGetBuildsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -299,7 +299,7 @@ pub struct BatchGetProjectsError {
 pub enum BatchGetProjectsErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetProjectsError {
@@ -362,7 +362,7 @@ impl BatchGetProjectsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetProjectsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchGetProjectsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -394,7 +394,7 @@ pub struct BatchGetReportGroupsError {
 pub enum BatchGetReportGroupsErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetReportGroupsError {
@@ -457,7 +457,7 @@ impl BatchGetReportGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetReportGroupsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchGetReportGroupsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -489,7 +489,7 @@ pub struct BatchGetReportsError {
 pub enum BatchGetReportsErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchGetReportsError {
@@ -552,7 +552,7 @@ impl BatchGetReportsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchGetReportsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `BatchGetReportsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -589,7 +589,7 @@ pub enum CreateProjectErrorKind {
     /// <p>The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource with the same
     /// settings already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProjectError {
@@ -654,18 +654,18 @@ impl CreateProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::AccountLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::AccountLimitExceededException`.
     pub fn is_account_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::AccountLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -704,7 +704,7 @@ pub enum CreateReportGroupErrorKind {
     /// <p>The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource with the same
     /// settings already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateReportGroupError {
@@ -769,21 +769,21 @@ impl CreateReportGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateReportGroupErrorKind::AccountLimitExceededException`.
+    /// Returns `true` if the error kind is `CreateReportGroupErrorKind::AccountLimitExceededException`.
     pub fn is_account_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReportGroupErrorKind::AccountLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReportGroupErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateReportGroupErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateReportGroupErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `CreateReportGroupErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateReportGroupErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -824,7 +824,7 @@ pub enum CreateWebhookErrorKind {
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWebhookError {
@@ -890,25 +890,25 @@ impl CreateWebhookError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWebhookErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `CreateWebhookErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, CreateWebhookErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `CreateWebhookErrorKind::OAuthProviderException`.
+    /// Returns `true` if the error kind is `CreateWebhookErrorKind::OAuthProviderException`.
     pub fn is_o_auth_provider_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWebhookErrorKind::OAuthProviderException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWebhookErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateWebhookErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWebhookErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWebhookErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateWebhookErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -943,7 +943,7 @@ pub struct DeleteBuildBatchError {
 pub enum DeleteBuildBatchErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBuildBatchError {
@@ -1006,7 +1006,7 @@ impl DeleteBuildBatchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteBuildBatchErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteBuildBatchErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1038,7 +1038,7 @@ pub struct DeleteProjectError {
 pub enum DeleteProjectErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProjectError {
@@ -1101,7 +1101,7 @@ impl DeleteProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeleteProjectErrorKind::InvalidInputException(_))
     }
@@ -1130,7 +1130,7 @@ pub struct DeleteReportError {
 pub enum DeleteReportErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteReportError {
@@ -1193,7 +1193,7 @@ impl DeleteReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteReportErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteReportErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeleteReportErrorKind::InvalidInputException(_))
     }
@@ -1222,7 +1222,7 @@ pub struct DeleteReportGroupError {
 pub enum DeleteReportGroupErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteReportGroupError {
@@ -1285,7 +1285,7 @@ impl DeleteReportGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteReportGroupErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteReportGroupErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1317,7 +1317,7 @@ pub struct DeleteResourcePolicyError {
 pub enum DeleteResourcePolicyErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResourcePolicyError {
@@ -1380,7 +1380,7 @@ impl DeleteResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteResourcePolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteResourcePolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1414,7 +1414,7 @@ pub enum DeleteSourceCredentialsErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteSourceCredentialsError {
@@ -1478,14 +1478,14 @@ impl DeleteSourceCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteSourceCredentialsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteSourceCredentialsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteSourceCredentialsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteSourceCredentialsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteSourceCredentialsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1522,7 +1522,7 @@ pub enum DeleteWebhookErrorKind {
     OAuthProviderException(crate::error::OAuthProviderException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWebhookError {
@@ -1587,18 +1587,18 @@ impl DeleteWebhookError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteWebhookErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DeleteWebhookErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, DeleteWebhookErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `DeleteWebhookErrorKind::OAuthProviderException`.
+    /// Returns `true` if the error kind is `DeleteWebhookErrorKind::OAuthProviderException`.
     pub fn is_o_auth_provider_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWebhookErrorKind::OAuthProviderException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWebhookErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteWebhookErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1632,7 +1632,7 @@ pub struct DescribeCodeCoveragesError {
 pub enum DescribeCodeCoveragesErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeCodeCoveragesError {
@@ -1695,7 +1695,7 @@ impl DescribeCodeCoveragesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeCodeCoveragesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeCodeCoveragesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1729,7 +1729,7 @@ pub enum DescribeTestCasesErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTestCasesError {
@@ -1793,14 +1793,14 @@ impl DescribeTestCasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeTestCasesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `DescribeTestCasesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeTestCasesErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeTestCasesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeTestCasesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1835,7 +1835,7 @@ pub enum GetReportGroupTrendErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetReportGroupTrendError {
@@ -1899,14 +1899,14 @@ impl GetReportGroupTrendError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetReportGroupTrendErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetReportGroupTrendErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetReportGroupTrendErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetReportGroupTrendErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetReportGroupTrendErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1941,7 +1941,7 @@ pub enum GetResourcePolicyErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourcePolicyError {
@@ -2005,14 +2005,14 @@ impl GetResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourcePolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `GetResourcePolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourcePolicyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourcePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetResourcePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2050,7 +2050,7 @@ pub enum ImportSourceCredentialsErrorKind {
     /// <p>The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource with the same
     /// settings already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportSourceCredentialsError {
@@ -2119,21 +2119,21 @@ impl ImportSourceCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ImportSourceCredentialsErrorKind::AccountLimitExceededException`.
+    /// Returns `true` if the error kind is `ImportSourceCredentialsErrorKind::AccountLimitExceededException`.
     pub fn is_account_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportSourceCredentialsErrorKind::AccountLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ImportSourceCredentialsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ImportSourceCredentialsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ImportSourceCredentialsErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ImportSourceCredentialsErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `ImportSourceCredentialsErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2171,7 +2171,7 @@ pub enum InvalidateProjectCacheErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InvalidateProjectCacheError {
@@ -2235,14 +2235,14 @@ impl InvalidateProjectCacheError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `InvalidateProjectCacheErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `InvalidateProjectCacheErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             InvalidateProjectCacheErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `InvalidateProjectCacheErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `InvalidateProjectCacheErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2275,7 +2275,7 @@ pub struct ListBuildBatchesError {
 pub enum ListBuildBatchesErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBuildBatchesError {
@@ -2338,7 +2338,7 @@ impl ListBuildBatchesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBuildBatchesErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListBuildBatchesErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2372,7 +2372,7 @@ pub enum ListBuildBatchesForProjectErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBuildBatchesForProjectError {
@@ -2436,14 +2436,14 @@ impl ListBuildBatchesForProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBuildBatchesForProjectErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListBuildBatchesForProjectErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBuildBatchesForProjectErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListBuildBatchesForProjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListBuildBatchesForProjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2476,7 +2476,7 @@ pub struct ListBuildsError {
 pub enum ListBuildsErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBuildsError {
@@ -2539,7 +2539,7 @@ impl ListBuildsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBuildsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListBuildsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, ListBuildsErrorKind::InvalidInputException(_))
     }
@@ -2570,7 +2570,7 @@ pub enum ListBuildsForProjectErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListBuildsForProjectError {
@@ -2634,14 +2634,14 @@ impl ListBuildsForProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListBuildsForProjectErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListBuildsForProjectErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListBuildsForProjectErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListBuildsForProjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListBuildsForProjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2672,7 +2672,7 @@ pub struct ListCuratedEnvironmentImagesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListCuratedEnvironmentImagesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCuratedEnvironmentImagesError {
@@ -2758,7 +2758,7 @@ pub struct ListProjectsError {
 pub enum ListProjectsErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProjectsError {
@@ -2821,7 +2821,7 @@ impl ListProjectsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, ListProjectsErrorKind::InvalidInputException(_))
     }
@@ -2850,7 +2850,7 @@ pub struct ListReportGroupsError {
 pub enum ListReportGroupsErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReportGroupsError {
@@ -2913,7 +2913,7 @@ impl ListReportGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListReportGroupsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListReportGroupsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2945,7 +2945,7 @@ pub struct ListReportsError {
 pub enum ListReportsErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReportsError {
@@ -3008,7 +3008,7 @@ impl ListReportsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListReportsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListReportsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, ListReportsErrorKind::InvalidInputException(_))
     }
@@ -3039,7 +3039,7 @@ pub enum ListReportsForReportGroupErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListReportsForReportGroupError {
@@ -3103,14 +3103,14 @@ impl ListReportsForReportGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListReportsForReportGroupErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListReportsForReportGroupErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListReportsForReportGroupErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `ListReportsForReportGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListReportsForReportGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3143,7 +3143,7 @@ pub struct ListSharedProjectsError {
 pub enum ListSharedProjectsErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSharedProjectsError {
@@ -3206,7 +3206,7 @@ impl ListSharedProjectsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSharedProjectsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListSharedProjectsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3238,7 +3238,7 @@ pub struct ListSharedReportGroupsError {
 pub enum ListSharedReportGroupsErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSharedReportGroupsError {
@@ -3301,7 +3301,7 @@ impl ListSharedReportGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSharedReportGroupsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListSharedReportGroupsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3333,7 +3333,7 @@ pub struct ListSourceCredentialsError {
 pub enum ListSourceCredentialsErrorKind {
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListSourceCredentialsError {
@@ -3396,7 +3396,7 @@ impl ListSourceCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListSourceCredentialsErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `ListSourceCredentialsErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3430,7 +3430,7 @@ pub enum PutResourcePolicyErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutResourcePolicyError {
@@ -3494,14 +3494,14 @@ impl PutResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourcePolicyErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourcePolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutResourcePolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3538,7 +3538,7 @@ pub enum RetryBuildErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RetryBuildError {
@@ -3603,18 +3603,18 @@ impl RetryBuildError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RetryBuildErrorKind::AccountLimitExceededException`.
+    /// Returns `true` if the error kind is `RetryBuildErrorKind::AccountLimitExceededException`.
     pub fn is_account_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RetryBuildErrorKind::AccountLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RetryBuildErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `RetryBuildErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, RetryBuildErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `RetryBuildErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RetryBuildErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3650,7 +3650,7 @@ pub enum RetryBuildBatchErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RetryBuildBatchError {
@@ -3714,14 +3714,14 @@ impl RetryBuildBatchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RetryBuildBatchErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `RetryBuildBatchErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             RetryBuildBatchErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `RetryBuildBatchErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `RetryBuildBatchErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3758,7 +3758,7 @@ pub enum StartBuildErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartBuildError {
@@ -3823,18 +3823,18 @@ impl StartBuildError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartBuildErrorKind::AccountLimitExceededException`.
+    /// Returns `true` if the error kind is `StartBuildErrorKind::AccountLimitExceededException`.
     pub fn is_account_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartBuildErrorKind::AccountLimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `StartBuildErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StartBuildErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, StartBuildErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `StartBuildErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartBuildErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3870,7 +3870,7 @@ pub enum StartBuildBatchErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartBuildBatchError {
@@ -3934,14 +3934,14 @@ impl StartBuildBatchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartBuildBatchErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StartBuildBatchErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartBuildBatchErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `StartBuildBatchErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StartBuildBatchErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3976,7 +3976,7 @@ pub enum StopBuildErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopBuildError {
@@ -4040,11 +4040,11 @@ impl StopBuildError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopBuildErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StopBuildErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, StopBuildErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `StopBuildErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopBuildErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(&self.kind, StopBuildErrorKind::ResourceNotFoundException(_))
     }
@@ -4076,7 +4076,7 @@ pub enum StopBuildBatchErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopBuildBatchError {
@@ -4140,14 +4140,14 @@ impl StopBuildBatchError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopBuildBatchErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `StopBuildBatchErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopBuildBatchErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `StopBuildBatchErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `StopBuildBatchErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4182,7 +4182,7 @@ pub enum UpdateProjectErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateProjectError {
@@ -4246,11 +4246,11 @@ impl UpdateProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, UpdateProjectErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4285,7 +4285,7 @@ pub enum UpdateProjectVisibilityErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateProjectVisibilityError {
@@ -4349,14 +4349,14 @@ impl UpdateProjectVisibilityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateProjectVisibilityErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateProjectVisibilityErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProjectVisibilityErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProjectVisibilityErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateProjectVisibilityErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4391,7 +4391,7 @@ pub enum UpdateReportGroupErrorKind {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateReportGroupError {
@@ -4455,14 +4455,14 @@ impl UpdateReportGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateReportGroupErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateReportGroupErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateReportGroupErrorKind::InvalidInputException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateReportGroupErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateReportGroupErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4499,7 +4499,7 @@ pub enum UpdateWebhookErrorKind {
     OAuthProviderException(crate::error::OAuthProviderException),
     /// <p>The specified Amazon Web Services resource cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateWebhookError {
@@ -4564,18 +4564,18 @@ impl UpdateWebhookError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateWebhookErrorKind::InvalidInputException`.
+    /// Returns `true` if the error kind is `UpdateWebhookErrorKind::InvalidInputException`.
     pub fn is_invalid_input_exception(&self) -> bool {
         matches!(&self.kind, UpdateWebhookErrorKind::InvalidInputException(_))
     }
-    /// Returns true if the error kind is `UpdateWebhookErrorKind::OAuthProviderException`.
+    /// Returns `true` if the error kind is `UpdateWebhookErrorKind::OAuthProviderException`.
     pub fn is_o_auth_provider_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWebhookErrorKind::OAuthProviderException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWebhookErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateWebhookErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,

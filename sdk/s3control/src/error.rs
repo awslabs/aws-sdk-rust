@@ -12,7 +12,7 @@ pub struct CreateAccessPointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAccessPointErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAccessPointError {
@@ -96,7 +96,7 @@ pub struct CreateAccessPointForObjectLambdaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAccessPointForObjectLambdaErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAccessPointForObjectLambdaError {
@@ -189,7 +189,7 @@ pub enum CreateBucketErrorKind {
     BucketAlreadyExists(crate::error::BucketAlreadyExists),
     /// <p>The Outposts bucket you tried to create already exists, and you own it. </p>
     BucketAlreadyOwnedByYou(crate::error::BucketAlreadyOwnedByYou),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBucketError {
@@ -253,11 +253,11 @@ impl CreateBucketError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateBucketErrorKind::BucketAlreadyExists`.
+    /// Returns `true` if the error kind is `CreateBucketErrorKind::BucketAlreadyExists`.
     pub fn is_bucket_already_exists(&self) -> bool {
         matches!(&self.kind, CreateBucketErrorKind::BucketAlreadyExists(_))
     }
-    /// Returns true if the error kind is `CreateBucketErrorKind::BucketAlreadyOwnedByYou`.
+    /// Returns `true` if the error kind is `CreateBucketErrorKind::BucketAlreadyOwnedByYou`.
     pub fn is_bucket_already_owned_by_you(&self) -> bool {
         matches!(
             &self.kind,
@@ -296,7 +296,7 @@ pub enum CreateJobErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p></p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateJobError {
@@ -362,19 +362,19 @@ impl CreateJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::IdempotencyException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::IdempotencyException`.
     pub fn is_idempotency_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::IdempotencyException(_))
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `CreateJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `CreateJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, CreateJobErrorKind::TooManyRequestsException(_))
     }
@@ -404,7 +404,7 @@ pub struct CreateMultiRegionAccessPointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateMultiRegionAccessPointErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateMultiRegionAccessPointError {
@@ -488,7 +488,7 @@ pub struct DeleteAccessPointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAccessPointErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccessPointError {
@@ -572,7 +572,7 @@ pub struct DeleteAccessPointForObjectLambdaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAccessPointForObjectLambdaErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccessPointForObjectLambdaError {
@@ -659,7 +659,7 @@ pub struct DeleteAccessPointPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAccessPointPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccessPointPolicyError {
@@ -743,7 +743,7 @@ pub struct DeleteAccessPointPolicyForObjectLambdaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAccessPointPolicyForObjectLambdaErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccessPointPolicyForObjectLambdaError {
@@ -832,7 +832,7 @@ pub struct DeleteBucketError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketError {
@@ -916,7 +916,7 @@ pub struct DeleteBucketLifecycleConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketLifecycleConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketLifecycleConfigurationError {
@@ -1003,7 +1003,7 @@ pub struct DeleteBucketPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketPolicyError {
@@ -1087,7 +1087,7 @@ pub struct DeleteBucketTaggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBucketTaggingErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBucketTaggingError {
@@ -1177,7 +1177,7 @@ pub enum DeleteJobTaggingErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p></p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteJobTaggingError {
@@ -1242,18 +1242,18 @@ impl DeleteJobTaggingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteJobTaggingErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteJobTaggingErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteJobTaggingErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteJobTaggingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DeleteJobTaggingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteJobTaggingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DeleteJobTaggingErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DeleteJobTaggingErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1285,7 +1285,7 @@ pub struct DeleteMultiRegionAccessPointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMultiRegionAccessPointErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMultiRegionAccessPointError {
@@ -1369,7 +1369,7 @@ pub struct DeletePublicAccessBlockError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePublicAccessBlockErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePublicAccessBlockError {
@@ -1453,7 +1453,7 @@ pub struct DeleteStorageLensConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStorageLensConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStorageLensConfigurationError {
@@ -1540,7 +1540,7 @@ pub struct DeleteStorageLensConfigurationTaggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStorageLensConfigurationTaggingErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStorageLensConfigurationTaggingError {
@@ -1637,7 +1637,7 @@ pub enum DescribeJobErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p></p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJobError {
@@ -1703,22 +1703,22 @@ impl DescribeJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeJobErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `DescribeJobErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DescribeJobErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `DescribeJobErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeJobErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeJobErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeJobErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `DescribeJobErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DescribeJobErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `DescribeJobErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `DescribeJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1751,7 +1751,7 @@ pub struct DescribeMultiRegionAccessPointOperationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMultiRegionAccessPointOperationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeMultiRegionAccessPointOperationError {
@@ -1840,7 +1840,7 @@ pub struct GetAccessPointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccessPointErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccessPointError {
@@ -1924,7 +1924,7 @@ pub struct GetAccessPointConfigurationForObjectLambdaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccessPointConfigurationForObjectLambdaErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccessPointConfigurationForObjectLambdaError {
@@ -2013,7 +2013,7 @@ pub struct GetAccessPointForObjectLambdaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccessPointForObjectLambdaErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccessPointForObjectLambdaError {
@@ -2100,7 +2100,7 @@ pub struct GetAccessPointPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccessPointPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccessPointPolicyError {
@@ -2184,7 +2184,7 @@ pub struct GetAccessPointPolicyForObjectLambdaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccessPointPolicyForObjectLambdaErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccessPointPolicyForObjectLambdaError {
@@ -2273,7 +2273,7 @@ pub struct GetAccessPointPolicyStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccessPointPolicyStatusErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccessPointPolicyStatusError {
@@ -2357,7 +2357,7 @@ pub struct GetAccessPointPolicyStatusForObjectLambdaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccessPointPolicyStatusForObjectLambdaErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccessPointPolicyStatusForObjectLambdaError {
@@ -2446,7 +2446,7 @@ pub struct GetBucketError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketError {
@@ -2530,7 +2530,7 @@ pub struct GetBucketLifecycleConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketLifecycleConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketLifecycleConfigurationError {
@@ -2617,7 +2617,7 @@ pub struct GetBucketPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketPolicyError {
@@ -2701,7 +2701,7 @@ pub struct GetBucketTaggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBucketTaggingErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBucketTaggingError {
@@ -2791,7 +2791,7 @@ pub enum GetJobTaggingErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p></p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetJobTaggingError {
@@ -2856,18 +2856,18 @@ impl GetJobTaggingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetJobTaggingErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `GetJobTaggingErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetJobTaggingErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `GetJobTaggingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `GetJobTaggingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetJobTaggingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `GetJobTaggingErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `GetJobTaggingErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2899,7 +2899,7 @@ pub struct GetMultiRegionAccessPointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMultiRegionAccessPointErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMultiRegionAccessPointError {
@@ -2983,7 +2983,7 @@ pub struct GetMultiRegionAccessPointPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMultiRegionAccessPointPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMultiRegionAccessPointPolicyError {
@@ -3070,7 +3070,7 @@ pub struct GetMultiRegionAccessPointPolicyStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMultiRegionAccessPointPolicyStatusErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMultiRegionAccessPointPolicyStatusError {
@@ -3162,7 +3162,7 @@ pub enum GetPublicAccessBlockErrorKind {
     /// <p>Amazon S3 throws this exception if you make a <code>GetPublicAccessBlock</code> request
     /// against an account that doesn't have a <code>PublicAccessBlockConfiguration</code> set.</p>
     NoSuchPublicAccessBlockConfiguration(crate::error::NoSuchPublicAccessBlockConfiguration),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPublicAccessBlockError {
@@ -3227,7 +3227,7 @@ impl GetPublicAccessBlockError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPublicAccessBlockErrorKind::NoSuchPublicAccessBlockConfiguration`.
+    /// Returns `true` if the error kind is `GetPublicAccessBlockErrorKind::NoSuchPublicAccessBlockConfiguration`.
     pub fn is_no_such_public_access_block_configuration(&self) -> bool {
         matches!(
             &self.kind,
@@ -3259,7 +3259,7 @@ pub struct GetStorageLensConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStorageLensConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStorageLensConfigurationError {
@@ -3343,7 +3343,7 @@ pub struct GetStorageLensConfigurationTaggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStorageLensConfigurationTaggingErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStorageLensConfigurationTaggingError {
@@ -3430,7 +3430,7 @@ pub struct ListAccessPointsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAccessPointsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAccessPointsError {
@@ -3514,7 +3514,7 @@ pub struct ListAccessPointsForObjectLambdaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAccessPointsForObjectLambdaErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAccessPointsForObjectLambdaError {
@@ -3607,7 +3607,7 @@ pub enum ListJobsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p></p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListJobsError {
@@ -3672,15 +3672,15 @@ impl ListJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::InternalServiceException(_))
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::InvalidNextTokenException(_))
     }
-    /// Returns true if the error kind is `ListJobsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListJobsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListJobsErrorKind::InvalidRequestException(_))
     }
@@ -3709,7 +3709,7 @@ pub struct ListMultiRegionAccessPointsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMultiRegionAccessPointsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListMultiRegionAccessPointsError {
@@ -3793,7 +3793,7 @@ pub struct ListRegionalBucketsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRegionalBucketsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListRegionalBucketsError {
@@ -3877,7 +3877,7 @@ pub struct ListStorageLensConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStorageLensConfigurationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStorageLensConfigurationsError {
@@ -3964,7 +3964,7 @@ pub struct PutAccessPointConfigurationForObjectLambdaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAccessPointConfigurationForObjectLambdaErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAccessPointConfigurationForObjectLambdaError {
@@ -4053,7 +4053,7 @@ pub struct PutAccessPointPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAccessPointPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAccessPointPolicyError {
@@ -4137,7 +4137,7 @@ pub struct PutAccessPointPolicyForObjectLambdaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAccessPointPolicyForObjectLambdaErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutAccessPointPolicyForObjectLambdaError {
@@ -4226,7 +4226,7 @@ pub struct PutBucketLifecycleConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketLifecycleConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketLifecycleConfigurationError {
@@ -4313,7 +4313,7 @@ pub struct PutBucketPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketPolicyError {
@@ -4397,7 +4397,7 @@ pub struct PutBucketTaggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutBucketTaggingErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutBucketTaggingError {
@@ -4489,7 +4489,7 @@ pub enum PutJobTaggingErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>Amazon S3 throws this exception if you have too many tags in your tag set.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutJobTaggingError {
@@ -4555,25 +4555,25 @@ impl PutJobTaggingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutJobTaggingErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `PutJobTaggingErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutJobTaggingErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `PutJobTaggingErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `PutJobTaggingErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutJobTaggingErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `PutJobTaggingErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `PutJobTaggingErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutJobTaggingErrorKind::TooManyRequestsException(_)
         )
     }
-    /// Returns true if the error kind is `PutJobTaggingErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `PutJobTaggingErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, PutJobTaggingErrorKind::TooManyTagsException(_))
     }
@@ -4603,7 +4603,7 @@ pub struct PutMultiRegionAccessPointPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutMultiRegionAccessPointPolicyErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutMultiRegionAccessPointPolicyError {
@@ -4690,7 +4690,7 @@ pub struct PutPublicAccessBlockError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutPublicAccessBlockErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutPublicAccessBlockError {
@@ -4774,7 +4774,7 @@ pub struct PutStorageLensConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutStorageLensConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutStorageLensConfigurationError {
@@ -4858,7 +4858,7 @@ pub struct PutStorageLensConfigurationTaggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutStorageLensConfigurationTaggingErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutStorageLensConfigurationTaggingError {
@@ -4953,7 +4953,7 @@ pub enum UpdateJobPriorityErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p></p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateJobPriorityError {
@@ -5019,25 +5019,25 @@ impl UpdateJobPriorityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateJobPriorityErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateJobPriorityErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJobPriorityErrorKind::BadRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJobPriorityErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateJobPriorityErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJobPriorityErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJobPriorityErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateJobPriorityErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateJobPriorityErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateJobPriorityErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateJobPriorityErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5080,7 +5080,7 @@ pub enum UpdateJobStatusErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p></p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateJobStatusError {
@@ -5147,26 +5147,26 @@ impl UpdateJobStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateJobStatusErrorKind::BadRequestException`.
+    /// Returns `true` if the error kind is `UpdateJobStatusErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateJobStatusErrorKind::BadRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateJobStatusErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `UpdateJobStatusErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateJobStatusErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateJobStatusErrorKind::JobStatusException`.
+    /// Returns `true` if the error kind is `UpdateJobStatusErrorKind::JobStatusException`.
     pub fn is_job_status_exception(&self) -> bool {
         matches!(&self.kind, UpdateJobStatusErrorKind::JobStatusException(_))
     }
-    /// Returns true if the error kind is `UpdateJobStatusErrorKind::NotFoundException`.
+    /// Returns `true` if the error kind is `UpdateJobStatusErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateJobStatusErrorKind::NotFoundException(_))
     }
-    /// Returns true if the error kind is `UpdateJobStatusErrorKind::TooManyRequestsException`.
+    /// Returns `true` if the error kind is `UpdateJobStatusErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,

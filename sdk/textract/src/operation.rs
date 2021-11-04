@@ -167,6 +167,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDocumentTextDetection
     }
 }
 
+/// Operation shape for `GetExpenseAnalysis`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_expense_analysis`](crate::client::Client::get_expense_analysis).
+///
+/// See [`crate::client::fluent_builders::GetExpenseAnalysis`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetExpenseAnalysis {
+    _private: (),
+}
+impl GetExpenseAnalysis {
+    /// Creates a new builder-style object to manufacture [`GetExpenseAnalysisInput`](crate::input::GetExpenseAnalysisInput)
+    pub fn builder() -> crate::input::get_expense_analysis_input::Builder {
+        crate::input::get_expense_analysis_input::Builder::default()
+    }
+    /// Creates a new `GetExpenseAnalysis` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetExpenseAnalysis {
+    type Output = std::result::Result<
+        crate::output::GetExpenseAnalysisOutput,
+        crate::error::GetExpenseAnalysisError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_expense_analysis_error(response)
+        } else {
+            crate::operation_deser::parse_get_expense_analysis_response(response)
+        }
+    }
+}
+
 /// Operation shape for `StartDocumentAnalysis`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -231,6 +265,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDocumentTextDetecti
             crate::operation_deser::parse_start_document_text_detection_error(response)
         } else {
             crate::operation_deser::parse_start_document_text_detection_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StartExpenseAnalysis`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_expense_analysis`](crate::client::Client::start_expense_analysis).
+///
+/// See [`crate::client::fluent_builders::StartExpenseAnalysis`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartExpenseAnalysis {
+    _private: (),
+}
+impl StartExpenseAnalysis {
+    /// Creates a new builder-style object to manufacture [`StartExpenseAnalysisInput`](crate::input::StartExpenseAnalysisInput)
+    pub fn builder() -> crate::input::start_expense_analysis_input::Builder {
+        crate::input::start_expense_analysis_input::Builder::default()
+    }
+    /// Creates a new `StartExpenseAnalysis` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartExpenseAnalysis {
+    type Output = std::result::Result<
+        crate::output::StartExpenseAnalysisOutput,
+        crate::error::StartExpenseAnalysisError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_expense_analysis_error(response)
+        } else {
+            crate::operation_deser::parse_start_expense_analysis_response(response)
         }
     }
 }

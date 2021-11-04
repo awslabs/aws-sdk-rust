@@ -24,7 +24,7 @@ pub enum AssociateAwsAccountWithPartnerAccountErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateAwsAccountWithPartnerAccountError {
@@ -107,42 +107,42 @@ impl AssociateAwsAccountWithPartnerAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateAwsAccountWithPartnerAccountErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateAwsAccountWithPartnerAccountErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateAwsAccountWithPartnerAccountErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateAwsAccountWithPartnerAccountErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `AssociateAwsAccountWithPartnerAccountErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateAwsAccountWithPartnerAccountErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateAwsAccountWithPartnerAccountErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `AssociateAwsAccountWithPartnerAccountErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateAwsAccountWithPartnerAccountErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateAwsAccountWithPartnerAccountErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateAwsAccountWithPartnerAccountErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateAwsAccountWithPartnerAccountErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateAwsAccountWithPartnerAccountErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AssociateAwsAccountWithPartnerAccountErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateAwsAccountWithPartnerAccountErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateAwsAccountWithPartnerAccountErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AssociateAwsAccountWithPartnerAccountErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -203,7 +203,7 @@ pub enum AssociateWirelessDeviceWithThingErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateWirelessDeviceWithThingError {
@@ -280,42 +280,42 @@ impl AssociateWirelessDeviceWithThingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateWirelessDeviceWithThingErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateWirelessDeviceWithThingErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWirelessDeviceWithThingErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWirelessDeviceWithThingErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `AssociateWirelessDeviceWithThingErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWirelessDeviceWithThingErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWirelessDeviceWithThingErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `AssociateWirelessDeviceWithThingErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWirelessDeviceWithThingErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWirelessDeviceWithThingErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateWirelessDeviceWithThingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWirelessDeviceWithThingErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWirelessDeviceWithThingErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AssociateWirelessDeviceWithThingErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWirelessDeviceWithThingErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWirelessDeviceWithThingErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AssociateWirelessDeviceWithThingErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -368,7 +368,7 @@ pub enum AssociateWirelessGatewayWithCertificateErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateWirelessGatewayWithCertificateError {
@@ -451,42 +451,42 @@ impl AssociateWirelessGatewayWithCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateWirelessGatewayWithCertificateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateWirelessGatewayWithCertificateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWirelessGatewayWithCertificateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWirelessGatewayWithCertificateErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `AssociateWirelessGatewayWithCertificateErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWirelessGatewayWithCertificateErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWirelessGatewayWithCertificateErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `AssociateWirelessGatewayWithCertificateErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWirelessGatewayWithCertificateErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWirelessGatewayWithCertificateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateWirelessGatewayWithCertificateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWirelessGatewayWithCertificateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWirelessGatewayWithCertificateErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AssociateWirelessGatewayWithCertificateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWirelessGatewayWithCertificateErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWirelessGatewayWithCertificateErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AssociateWirelessGatewayWithCertificateErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -547,7 +547,7 @@ pub enum AssociateWirelessGatewayWithThingErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateWirelessGatewayWithThingError {
@@ -628,42 +628,42 @@ impl AssociateWirelessGatewayWithThingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateWirelessGatewayWithThingErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `AssociateWirelessGatewayWithThingErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWirelessGatewayWithThingErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWirelessGatewayWithThingErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `AssociateWirelessGatewayWithThingErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWirelessGatewayWithThingErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWirelessGatewayWithThingErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `AssociateWirelessGatewayWithThingErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWirelessGatewayWithThingErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWirelessGatewayWithThingErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateWirelessGatewayWithThingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWirelessGatewayWithThingErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWirelessGatewayWithThingErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AssociateWirelessGatewayWithThingErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateWirelessGatewayWithThingErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateWirelessGatewayWithThingErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AssociateWirelessGatewayWithThingErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -716,7 +716,7 @@ pub enum CreateDestinationErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDestinationError {
@@ -784,39 +784,39 @@ impl CreateDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDestinationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDestinationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDestinationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDestinationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateDestinationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateDestinationErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `CreateDestinationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateDestinationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDestinationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDestinationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateDestinationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDestinationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDestinationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateDestinationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDestinationErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDestinationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateDestinationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -861,7 +861,7 @@ pub enum CreateDeviceProfileErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDeviceProfileError {
@@ -928,35 +928,35 @@ impl CreateDeviceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDeviceProfileErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateDeviceProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeviceProfileErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeviceProfileErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateDeviceProfileErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeviceProfileErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeviceProfileErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateDeviceProfileErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeviceProfileErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeviceProfileErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateDeviceProfileErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDeviceProfileErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDeviceProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateDeviceProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1000,7 +1000,7 @@ pub enum CreateServiceProfileErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateServiceProfileError {
@@ -1067,35 +1067,35 @@ impl CreateServiceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateServiceProfileErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateServiceProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServiceProfileErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServiceProfileErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateServiceProfileErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServiceProfileErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServiceProfileErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateServiceProfileErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServiceProfileErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServiceProfileErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateServiceProfileErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateServiceProfileErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateServiceProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateServiceProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1141,7 +1141,7 @@ pub enum CreateWirelessDeviceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWirelessDeviceError {
@@ -1209,42 +1209,42 @@ impl CreateWirelessDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWirelessDeviceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateWirelessDeviceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessDeviceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessDeviceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateWirelessDeviceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessDeviceErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessDeviceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateWirelessDeviceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessDeviceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateWirelessDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessDeviceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateWirelessDeviceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessDeviceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessDeviceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateWirelessDeviceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1289,7 +1289,7 @@ pub enum CreateWirelessGatewayErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWirelessGatewayError {
@@ -1356,35 +1356,35 @@ impl CreateWirelessGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWirelessGatewayErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateWirelessGatewayErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessGatewayErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessGatewayErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateWirelessGatewayErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessGatewayErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessGatewayErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateWirelessGatewayErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessGatewayErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessGatewayErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateWirelessGatewayErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessGatewayErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessGatewayErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateWirelessGatewayErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1430,7 +1430,7 @@ pub enum CreateWirelessGatewayTaskErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWirelessGatewayTaskError {
@@ -1498,42 +1498,42 @@ impl CreateWirelessGatewayTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWirelessGatewayTaskErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateWirelessGatewayTaskErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessGatewayTaskErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessGatewayTaskErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateWirelessGatewayTaskErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessGatewayTaskErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessGatewayTaskErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateWirelessGatewayTaskErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessGatewayTaskErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessGatewayTaskErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateWirelessGatewayTaskErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessGatewayTaskErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessGatewayTaskErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateWirelessGatewayTaskErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessGatewayTaskErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessGatewayTaskErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateWirelessGatewayTaskErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1580,7 +1580,7 @@ pub enum CreateWirelessGatewayTaskDefinitionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateWirelessGatewayTaskDefinitionError {
@@ -1663,42 +1663,42 @@ impl CreateWirelessGatewayTaskDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateWirelessGatewayTaskDefinitionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `CreateWirelessGatewayTaskDefinitionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessGatewayTaskDefinitionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessGatewayTaskDefinitionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `CreateWirelessGatewayTaskDefinitionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessGatewayTaskDefinitionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessGatewayTaskDefinitionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `CreateWirelessGatewayTaskDefinitionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessGatewayTaskDefinitionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessGatewayTaskDefinitionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateWirelessGatewayTaskDefinitionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessGatewayTaskDefinitionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessGatewayTaskDefinitionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateWirelessGatewayTaskDefinitionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateWirelessGatewayTaskDefinitionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `CreateWirelessGatewayTaskDefinitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateWirelessGatewayTaskDefinitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1757,7 +1757,7 @@ pub enum DeleteDestinationErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDestinationError {
@@ -1825,39 +1825,39 @@ impl DeleteDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDestinationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteDestinationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDestinationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDestinationErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteDestinationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteDestinationErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `DeleteDestinationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteDestinationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDestinationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDestinationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDestinationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDestinationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDestinationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteDestinationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDestinationErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDestinationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteDestinationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1904,7 +1904,7 @@ pub enum DeleteDeviceProfileErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDeviceProfileError {
@@ -1972,42 +1972,42 @@ impl DeleteDeviceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDeviceProfileErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteDeviceProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeviceProfileErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeviceProfileErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteDeviceProfileErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeviceProfileErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeviceProfileErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteDeviceProfileErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeviceProfileErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeviceProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDeviceProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeviceProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeviceProfileErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteDeviceProfileErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDeviceProfileErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDeviceProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteDeviceProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2054,7 +2054,7 @@ pub enum DeleteServiceProfileErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteServiceProfileError {
@@ -2122,42 +2122,42 @@ impl DeleteServiceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteServiceProfileErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteServiceProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServiceProfileErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServiceProfileErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DeleteServiceProfileErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServiceProfileErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServiceProfileErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteServiceProfileErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServiceProfileErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServiceProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteServiceProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServiceProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServiceProfileErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteServiceProfileErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteServiceProfileErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteServiceProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteServiceProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2202,7 +2202,7 @@ pub enum DeleteWirelessDeviceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWirelessDeviceError {
@@ -2269,35 +2269,35 @@ impl DeleteWirelessDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteWirelessDeviceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteWirelessDeviceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWirelessDeviceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWirelessDeviceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteWirelessDeviceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWirelessDeviceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWirelessDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteWirelessDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWirelessDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWirelessDeviceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteWirelessDeviceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWirelessDeviceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWirelessDeviceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteWirelessDeviceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2341,7 +2341,7 @@ pub enum DeleteWirelessGatewayErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWirelessGatewayError {
@@ -2408,35 +2408,35 @@ impl DeleteWirelessGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteWirelessGatewayErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteWirelessGatewayErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWirelessGatewayErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWirelessGatewayErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteWirelessGatewayErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWirelessGatewayErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWirelessGatewayErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteWirelessGatewayErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWirelessGatewayErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWirelessGatewayErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteWirelessGatewayErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWirelessGatewayErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWirelessGatewayErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteWirelessGatewayErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2480,7 +2480,7 @@ pub enum DeleteWirelessGatewayTaskErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWirelessGatewayTaskError {
@@ -2547,35 +2547,35 @@ impl DeleteWirelessGatewayTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteWirelessGatewayTaskErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteWirelessGatewayTaskErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWirelessGatewayTaskErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWirelessGatewayTaskErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteWirelessGatewayTaskErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWirelessGatewayTaskErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWirelessGatewayTaskErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteWirelessGatewayTaskErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWirelessGatewayTaskErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWirelessGatewayTaskErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteWirelessGatewayTaskErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWirelessGatewayTaskErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWirelessGatewayTaskErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteWirelessGatewayTaskErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2619,7 +2619,7 @@ pub enum DeleteWirelessGatewayTaskDefinitionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWirelessGatewayTaskDefinitionError {
@@ -2699,35 +2699,35 @@ impl DeleteWirelessGatewayTaskDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteWirelessGatewayTaskDefinitionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DeleteWirelessGatewayTaskDefinitionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWirelessGatewayTaskDefinitionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWirelessGatewayTaskDefinitionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DeleteWirelessGatewayTaskDefinitionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWirelessGatewayTaskDefinitionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWirelessGatewayTaskDefinitionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteWirelessGatewayTaskDefinitionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWirelessGatewayTaskDefinitionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWirelessGatewayTaskDefinitionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteWirelessGatewayTaskDefinitionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWirelessGatewayTaskDefinitionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWirelessGatewayTaskDefinitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteWirelessGatewayTaskDefinitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2781,7 +2781,7 @@ pub enum DisassociateAwsAccountFromPartnerAccountErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateAwsAccountFromPartnerAccountError {
@@ -2858,28 +2858,28 @@ impl DisassociateAwsAccountFromPartnerAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateAwsAccountFromPartnerAccountErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DisassociateAwsAccountFromPartnerAccountErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateAwsAccountFromPartnerAccountErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateAwsAccountFromPartnerAccountErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateAwsAccountFromPartnerAccountErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateAwsAccountFromPartnerAccountErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateAwsAccountFromPartnerAccountErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DisassociateAwsAccountFromPartnerAccountErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateAwsAccountFromPartnerAccountErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateAwsAccountFromPartnerAccountErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DisassociateAwsAccountFromPartnerAccountErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2934,7 +2934,7 @@ pub enum DisassociateWirelessDeviceFromThingErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateWirelessDeviceFromThingError {
@@ -3017,42 +3017,42 @@ impl DisassociateWirelessDeviceFromThingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateWirelessDeviceFromThingErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisassociateWirelessDeviceFromThingErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWirelessDeviceFromThingErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWirelessDeviceFromThingErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DisassociateWirelessDeviceFromThingErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWirelessDeviceFromThingErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWirelessDeviceFromThingErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DisassociateWirelessDeviceFromThingErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWirelessDeviceFromThingErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWirelessDeviceFromThingErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateWirelessDeviceFromThingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWirelessDeviceFromThingErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWirelessDeviceFromThingErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DisassociateWirelessDeviceFromThingErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWirelessDeviceFromThingErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWirelessDeviceFromThingErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DisassociateWirelessDeviceFromThingErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3109,7 +3109,7 @@ pub enum DisassociateWirelessGatewayFromCertificateErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateWirelessGatewayFromCertificateError {
@@ -3189,35 +3189,35 @@ impl DisassociateWirelessGatewayFromCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateWirelessGatewayFromCertificateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisassociateWirelessGatewayFromCertificateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWirelessGatewayFromCertificateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWirelessGatewayFromCertificateErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DisassociateWirelessGatewayFromCertificateErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWirelessGatewayFromCertificateErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWirelessGatewayFromCertificateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateWirelessGatewayFromCertificateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWirelessGatewayFromCertificateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWirelessGatewayFromCertificateErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DisassociateWirelessGatewayFromCertificateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWirelessGatewayFromCertificateErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWirelessGatewayFromCertificateErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DisassociateWirelessGatewayFromCertificateErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3275,7 +3275,7 @@ pub enum DisassociateWirelessGatewayFromThingErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateWirelessGatewayFromThingError {
@@ -3358,42 +3358,42 @@ impl DisassociateWirelessGatewayFromThingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateWirelessGatewayFromThingErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `DisassociateWirelessGatewayFromThingErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWirelessGatewayFromThingErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWirelessGatewayFromThingErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `DisassociateWirelessGatewayFromThingErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWirelessGatewayFromThingErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWirelessGatewayFromThingErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `DisassociateWirelessGatewayFromThingErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWirelessGatewayFromThingErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWirelessGatewayFromThingErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateWirelessGatewayFromThingErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWirelessGatewayFromThingErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWirelessGatewayFromThingErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DisassociateWirelessGatewayFromThingErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateWirelessGatewayFromThingErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateWirelessGatewayFromThingErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DisassociateWirelessGatewayFromThingErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3452,7 +3452,7 @@ pub enum GetDestinationErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDestinationError {
@@ -3519,32 +3519,32 @@ impl GetDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDestinationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDestinationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDestinationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDestinationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetDestinationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDestinationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetDestinationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDestinationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDestinationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDestinationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetDestinationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, GetDestinationErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `GetDestinationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetDestinationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetDestinationErrorKind::ValidationException(_))
     }
@@ -3585,7 +3585,7 @@ pub enum GetDeviceProfileErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeviceProfileError {
@@ -3652,35 +3652,35 @@ impl GetDeviceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetDeviceProfileErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetDeviceProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeviceProfileErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeviceProfileErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetDeviceProfileErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeviceProfileErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeviceProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetDeviceProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeviceProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeviceProfileErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetDeviceProfileErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetDeviceProfileErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetDeviceProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetDeviceProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3724,7 +3724,7 @@ pub enum GetLogLevelsByResourceTypesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLogLevelsByResourceTypesError {
@@ -3793,35 +3793,35 @@ impl GetLogLevelsByResourceTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetLogLevelsByResourceTypesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetLogLevelsByResourceTypesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLogLevelsByResourceTypesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetLogLevelsByResourceTypesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetLogLevelsByResourceTypesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLogLevelsByResourceTypesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetLogLevelsByResourceTypesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetLogLevelsByResourceTypesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLogLevelsByResourceTypesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetLogLevelsByResourceTypesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetLogLevelsByResourceTypesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetLogLevelsByResourceTypesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetLogLevelsByResourceTypesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetLogLevelsByResourceTypesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3863,7 +3863,7 @@ pub enum GetPartnerAccountErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPartnerAccountError {
@@ -3929,28 +3929,28 @@ impl GetPartnerAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPartnerAccountErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetPartnerAccountErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPartnerAccountErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetPartnerAccountErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetPartnerAccountErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPartnerAccountErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetPartnerAccountErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetPartnerAccountErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPartnerAccountErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetPartnerAccountErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetPartnerAccountErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3993,7 +3993,7 @@ pub enum GetResourceLogLevelErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourceLogLevelError {
@@ -4060,35 +4060,35 @@ impl GetResourceLogLevelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetResourceLogLevelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetResourceLogLevelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceLogLevelErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceLogLevelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetResourceLogLevelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceLogLevelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceLogLevelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetResourceLogLevelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceLogLevelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceLogLevelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetResourceLogLevelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetResourceLogLevelErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetResourceLogLevelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetResourceLogLevelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4130,7 +4130,7 @@ pub enum GetServiceEndpointErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServiceEndpointError {
@@ -4196,28 +4196,28 @@ impl GetServiceEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetServiceEndpointErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetServiceEndpointErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceEndpointErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceEndpointErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetServiceEndpointErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceEndpointErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceEndpointErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetServiceEndpointErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceEndpointErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceEndpointErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetServiceEndpointErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4260,7 +4260,7 @@ pub enum GetServiceProfileErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetServiceProfileError {
@@ -4327,35 +4327,35 @@ impl GetServiceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetServiceProfileErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetServiceProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceProfileErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceProfileErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetServiceProfileErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceProfileErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceProfileErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetServiceProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceProfileErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceProfileErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetServiceProfileErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetServiceProfileErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetServiceProfileErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetServiceProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4399,7 +4399,7 @@ pub enum GetWirelessDeviceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetWirelessDeviceError {
@@ -4466,35 +4466,35 @@ impl GetWirelessDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetWirelessDeviceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetWirelessDeviceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessDeviceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessDeviceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetWirelessDeviceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessDeviceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetWirelessDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessDeviceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetWirelessDeviceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessDeviceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessDeviceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetWirelessDeviceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4538,7 +4538,7 @@ pub enum GetWirelessDeviceStatisticsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetWirelessDeviceStatisticsError {
@@ -4607,35 +4607,35 @@ impl GetWirelessDeviceStatisticsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetWirelessDeviceStatisticsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetWirelessDeviceStatisticsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessDeviceStatisticsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessDeviceStatisticsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetWirelessDeviceStatisticsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessDeviceStatisticsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessDeviceStatisticsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetWirelessDeviceStatisticsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessDeviceStatisticsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessDeviceStatisticsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetWirelessDeviceStatisticsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessDeviceStatisticsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessDeviceStatisticsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetWirelessDeviceStatisticsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4679,7 +4679,7 @@ pub enum GetWirelessGatewayErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetWirelessGatewayError {
@@ -4746,35 +4746,35 @@ impl GetWirelessGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetWirelessGatewayErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4818,7 +4818,7 @@ pub enum GetWirelessGatewayCertificateErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetWirelessGatewayCertificateError {
@@ -4892,35 +4892,35 @@ impl GetWirelessGatewayCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetWirelessGatewayCertificateErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayCertificateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayCertificateErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayCertificateErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayCertificateErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayCertificateErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayCertificateErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayCertificateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayCertificateErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayCertificateErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayCertificateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayCertificateErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayCertificateErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayCertificateErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4966,7 +4966,7 @@ pub enum GetWirelessGatewayFirmwareInformationErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetWirelessGatewayFirmwareInformationError {
@@ -5046,35 +5046,35 @@ impl GetWirelessGatewayFirmwareInformationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetWirelessGatewayFirmwareInformationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayFirmwareInformationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayFirmwareInformationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayFirmwareInformationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayFirmwareInformationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayFirmwareInformationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayFirmwareInformationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayFirmwareInformationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayFirmwareInformationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayFirmwareInformationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayFirmwareInformationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayFirmwareInformationErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayFirmwareInformationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayFirmwareInformationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5130,7 +5130,7 @@ pub enum GetWirelessGatewayStatisticsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetWirelessGatewayStatisticsError {
@@ -5199,35 +5199,35 @@ impl GetWirelessGatewayStatisticsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetWirelessGatewayStatisticsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayStatisticsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayStatisticsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayStatisticsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayStatisticsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayStatisticsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayStatisticsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayStatisticsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayStatisticsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayStatisticsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayStatisticsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayStatisticsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayStatisticsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayStatisticsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5273,7 +5273,7 @@ pub enum GetWirelessGatewayTaskErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetWirelessGatewayTaskError {
@@ -5340,35 +5340,35 @@ impl GetWirelessGatewayTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetWirelessGatewayTaskErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayTaskErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayTaskErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayTaskErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayTaskErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayTaskErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayTaskErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayTaskErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayTaskErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayTaskErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayTaskErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayTaskErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayTaskErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayTaskErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5412,7 +5412,7 @@ pub enum GetWirelessGatewayTaskDefinitionErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetWirelessGatewayTaskDefinitionError {
@@ -5488,35 +5488,35 @@ impl GetWirelessGatewayTaskDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetWirelessGatewayTaskDefinitionErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayTaskDefinitionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayTaskDefinitionErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayTaskDefinitionErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayTaskDefinitionErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayTaskDefinitionErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayTaskDefinitionErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayTaskDefinitionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayTaskDefinitionErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayTaskDefinitionErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayTaskDefinitionErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetWirelessGatewayTaskDefinitionErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `GetWirelessGatewayTaskDefinitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetWirelessGatewayTaskDefinitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5564,7 +5564,7 @@ pub enum ListDestinationsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDestinationsError {
@@ -5630,28 +5630,28 @@ impl ListDestinationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDestinationsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListDestinationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDestinationsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListDestinationsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListDestinationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDestinationsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListDestinationsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDestinationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDestinationsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListDestinationsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListDestinationsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5692,7 +5692,7 @@ pub enum ListDeviceProfilesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDeviceProfilesError {
@@ -5758,28 +5758,28 @@ impl ListDeviceProfilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDeviceProfilesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListDeviceProfilesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeviceProfilesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeviceProfilesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListDeviceProfilesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeviceProfilesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeviceProfilesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDeviceProfilesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDeviceProfilesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListDeviceProfilesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListDeviceProfilesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5820,7 +5820,7 @@ pub enum ListPartnerAccountsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPartnerAccountsError {
@@ -5886,28 +5886,28 @@ impl ListPartnerAccountsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPartnerAccountsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListPartnerAccountsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPartnerAccountsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListPartnerAccountsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListPartnerAccountsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPartnerAccountsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListPartnerAccountsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListPartnerAccountsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPartnerAccountsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListPartnerAccountsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListPartnerAccountsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5948,7 +5948,7 @@ pub enum ListServiceProfilesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListServiceProfilesError {
@@ -6014,28 +6014,28 @@ impl ListServiceProfilesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListServiceProfilesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListServiceProfilesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServiceProfilesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListServiceProfilesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListServiceProfilesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServiceProfilesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListServiceProfilesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListServiceProfilesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListServiceProfilesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListServiceProfilesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListServiceProfilesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6078,7 +6078,7 @@ pub enum ListTagsForResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -6145,35 +6145,35 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6215,7 +6215,7 @@ pub enum ListWirelessDevicesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWirelessDevicesError {
@@ -6281,28 +6281,28 @@ impl ListWirelessDevicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWirelessDevicesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListWirelessDevicesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWirelessDevicesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListWirelessDevicesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListWirelessDevicesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWirelessDevicesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListWirelessDevicesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListWirelessDevicesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWirelessDevicesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListWirelessDevicesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListWirelessDevicesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6343,7 +6343,7 @@ pub enum ListWirelessGatewaysErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWirelessGatewaysError {
@@ -6409,28 +6409,28 @@ impl ListWirelessGatewaysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWirelessGatewaysErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListWirelessGatewaysErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWirelessGatewaysErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListWirelessGatewaysErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListWirelessGatewaysErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWirelessGatewaysErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListWirelessGatewaysErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListWirelessGatewaysErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWirelessGatewaysErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListWirelessGatewaysErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListWirelessGatewaysErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6471,7 +6471,7 @@ pub enum ListWirelessGatewayTaskDefinitionsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWirelessGatewayTaskDefinitionsError {
@@ -6548,28 +6548,28 @@ impl ListWirelessGatewayTaskDefinitionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWirelessGatewayTaskDefinitionsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ListWirelessGatewayTaskDefinitionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWirelessGatewayTaskDefinitionsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ListWirelessGatewayTaskDefinitionsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ListWirelessGatewayTaskDefinitionsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWirelessGatewayTaskDefinitionsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ListWirelessGatewayTaskDefinitionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListWirelessGatewayTaskDefinitionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWirelessGatewayTaskDefinitionsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListWirelessGatewayTaskDefinitionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListWirelessGatewayTaskDefinitionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6620,7 +6620,7 @@ pub enum PutResourceLogLevelErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutResourceLogLevelError {
@@ -6687,35 +6687,35 @@ impl PutResourceLogLevelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutResourceLogLevelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `PutResourceLogLevelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourceLogLevelErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourceLogLevelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `PutResourceLogLevelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourceLogLevelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourceLogLevelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutResourceLogLevelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourceLogLevelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourceLogLevelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutResourceLogLevelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutResourceLogLevelErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `PutResourceLogLevelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutResourceLogLevelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6759,7 +6759,7 @@ pub enum ResetAllResourceLogLevelsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetAllResourceLogLevelsError {
@@ -6826,35 +6826,35 @@ impl ResetAllResourceLogLevelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResetAllResourceLogLevelsErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ResetAllResourceLogLevelsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetAllResourceLogLevelsErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ResetAllResourceLogLevelsErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ResetAllResourceLogLevelsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetAllResourceLogLevelsErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ResetAllResourceLogLevelsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ResetAllResourceLogLevelsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetAllResourceLogLevelsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ResetAllResourceLogLevelsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ResetAllResourceLogLevelsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetAllResourceLogLevelsErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ResetAllResourceLogLevelsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ResetAllResourceLogLevelsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6898,7 +6898,7 @@ pub enum ResetResourceLogLevelErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetResourceLogLevelError {
@@ -6965,35 +6965,35 @@ impl ResetResourceLogLevelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ResetResourceLogLevelErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `ResetResourceLogLevelErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetResourceLogLevelErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `ResetResourceLogLevelErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `ResetResourceLogLevelErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetResourceLogLevelErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `ResetResourceLogLevelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ResetResourceLogLevelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetResourceLogLevelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ResetResourceLogLevelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ResetResourceLogLevelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ResetResourceLogLevelErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ResetResourceLogLevelErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ResetResourceLogLevelErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7035,7 +7035,7 @@ pub enum SendDataToWirelessDeviceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendDataToWirelessDeviceError {
@@ -7101,28 +7101,28 @@ impl SendDataToWirelessDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `SendDataToWirelessDeviceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `SendDataToWirelessDeviceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendDataToWirelessDeviceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `SendDataToWirelessDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `SendDataToWirelessDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendDataToWirelessDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `SendDataToWirelessDeviceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `SendDataToWirelessDeviceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             SendDataToWirelessDeviceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `SendDataToWirelessDeviceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `SendDataToWirelessDeviceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7167,7 +7167,7 @@ pub enum TagResourceErrorKind {
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -7235,30 +7235,30 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -7298,7 +7298,7 @@ pub enum TestWirelessDeviceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TestWirelessDeviceError {
@@ -7364,28 +7364,28 @@ impl TestWirelessDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TestWirelessDeviceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `TestWirelessDeviceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestWirelessDeviceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `TestWirelessDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TestWirelessDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestWirelessDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TestWirelessDeviceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `TestWirelessDeviceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             TestWirelessDeviceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `TestWirelessDeviceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TestWirelessDeviceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7428,7 +7428,7 @@ pub enum UntagResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -7495,29 +7495,29 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ConflictException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -7558,7 +7558,7 @@ pub enum UpdateDestinationErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDestinationError {
@@ -7625,35 +7625,35 @@ impl UpdateDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDestinationErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateDestinationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDestinationErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDestinationErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateDestinationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDestinationErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDestinationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDestinationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDestinationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDestinationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateDestinationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDestinationErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDestinationErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateDestinationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7699,7 +7699,7 @@ pub enum UpdateLogLevelsByResourceTypesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateLogLevelsByResourceTypesError {
@@ -7774,42 +7774,42 @@ impl UpdateLogLevelsByResourceTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateLogLevelsByResourceTypesErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateLogLevelsByResourceTypesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLogLevelsByResourceTypesErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLogLevelsByResourceTypesErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `UpdateLogLevelsByResourceTypesErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLogLevelsByResourceTypesErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLogLevelsByResourceTypesErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateLogLevelsByResourceTypesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLogLevelsByResourceTypesErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLogLevelsByResourceTypesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateLogLevelsByResourceTypesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLogLevelsByResourceTypesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLogLevelsByResourceTypesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateLogLevelsByResourceTypesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateLogLevelsByResourceTypesErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateLogLevelsByResourceTypesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateLogLevelsByResourceTypesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7856,7 +7856,7 @@ pub enum UpdatePartnerAccountErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePartnerAccountError {
@@ -7922,28 +7922,28 @@ impl UpdatePartnerAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePartnerAccountErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdatePartnerAccountErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePartnerAccountErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePartnerAccountErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePartnerAccountErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePartnerAccountErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePartnerAccountErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdatePartnerAccountErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePartnerAccountErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePartnerAccountErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdatePartnerAccountErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7986,7 +7986,7 @@ pub enum UpdateWirelessDeviceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateWirelessDeviceError {
@@ -8053,35 +8053,35 @@ impl UpdateWirelessDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateWirelessDeviceErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateWirelessDeviceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWirelessDeviceErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWirelessDeviceErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateWirelessDeviceErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWirelessDeviceErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWirelessDeviceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateWirelessDeviceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWirelessDeviceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWirelessDeviceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateWirelessDeviceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWirelessDeviceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWirelessDeviceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateWirelessDeviceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8125,7 +8125,7 @@ pub enum UpdateWirelessGatewayErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The input did not meet the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateWirelessGatewayError {
@@ -8192,35 +8192,35 @@ impl UpdateWirelessGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateWirelessGatewayErrorKind::AccessDeniedException`.
+    /// Returns `true` if the error kind is `UpdateWirelessGatewayErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWirelessGatewayErrorKind::AccessDeniedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWirelessGatewayErrorKind::InternalServerException`.
+    /// Returns `true` if the error kind is `UpdateWirelessGatewayErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWirelessGatewayErrorKind::InternalServerException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWirelessGatewayErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateWirelessGatewayErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWirelessGatewayErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWirelessGatewayErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateWirelessGatewayErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateWirelessGatewayErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateWirelessGatewayErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateWirelessGatewayErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,

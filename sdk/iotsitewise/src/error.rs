@@ -32,7 +32,7 @@ pub enum AssociateAssetsErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateAssetsError {
@@ -100,42 +100,42 @@ impl AssociateAssetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateAssetsErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `AssociateAssetsErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateAssetsErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateAssetsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `AssociateAssetsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateAssetsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateAssetsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `AssociateAssetsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateAssetsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateAssetsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `AssociateAssetsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateAssetsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateAssetsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `AssociateAssetsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AssociateAssetsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AssociateAssetsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `AssociateAssetsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, AssociateAssetsErrorKind::ThrottlingException(_))
     }
@@ -184,7 +184,7 @@ pub enum BatchAssociateProjectAssetsErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchAssociateProjectAssetsError {
@@ -253,35 +253,35 @@ impl BatchAssociateProjectAssetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchAssociateProjectAssetsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `BatchAssociateProjectAssetsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchAssociateProjectAssetsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `BatchAssociateProjectAssetsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `BatchAssociateProjectAssetsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchAssociateProjectAssetsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchAssociateProjectAssetsErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `BatchAssociateProjectAssetsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchAssociateProjectAssetsErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchAssociateProjectAssetsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BatchAssociateProjectAssetsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchAssociateProjectAssetsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchAssociateProjectAssetsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchAssociateProjectAssetsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -327,7 +327,7 @@ pub enum BatchDisassociateProjectAssetsErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchDisassociateProjectAssetsError {
@@ -402,28 +402,28 @@ impl BatchDisassociateProjectAssetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchDisassociateProjectAssetsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `BatchDisassociateProjectAssetsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDisassociateProjectAssetsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDisassociateProjectAssetsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `BatchDisassociateProjectAssetsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDisassociateProjectAssetsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDisassociateProjectAssetsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BatchDisassociateProjectAssetsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchDisassociateProjectAssetsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchDisassociateProjectAssetsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchDisassociateProjectAssetsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -484,7 +484,7 @@ pub enum BatchPutAssetPropertyValueErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BatchPutAssetPropertyValueError {
@@ -557,49 +557,49 @@ impl BatchPutAssetPropertyValueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `BatchPutAssetPropertyValueErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `BatchPutAssetPropertyValueErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchPutAssetPropertyValueErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `BatchPutAssetPropertyValueErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `BatchPutAssetPropertyValueErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchPutAssetPropertyValueErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `BatchPutAssetPropertyValueErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `BatchPutAssetPropertyValueErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchPutAssetPropertyValueErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `BatchPutAssetPropertyValueErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `BatchPutAssetPropertyValueErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchPutAssetPropertyValueErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `BatchPutAssetPropertyValueErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `BatchPutAssetPropertyValueErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchPutAssetPropertyValueErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `BatchPutAssetPropertyValueErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `BatchPutAssetPropertyValueErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             BatchPutAssetPropertyValueErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `BatchPutAssetPropertyValueErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `BatchPutAssetPropertyValueErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -656,7 +656,7 @@ pub enum CreateAccessPolicyErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAccessPolicyError {
@@ -723,35 +723,35 @@ impl CreateAccessPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAccessPolicyErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateAccessPolicyErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccessPolicyErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccessPolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateAccessPolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccessPolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccessPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAccessPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccessPolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccessPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAccessPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAccessPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAccessPolicyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateAccessPolicyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -807,7 +807,7 @@ pub enum CreateAssetErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAssetError {
@@ -876,43 +876,43 @@ impl CreateAssetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAssetErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `CreateAssetErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssetErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssetErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateAssetErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssetErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssetErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateAssetErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, CreateAssetErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `CreateAssetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAssetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreateAssetErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreateAssetErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateAssetErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssetErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAssetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateAssetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateAssetErrorKind::ThrottlingException(_))
     }
@@ -967,7 +967,7 @@ pub enum CreateAssetModelErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAssetModelError {
@@ -1036,49 +1036,49 @@ impl CreateAssetModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateAssetModelErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `CreateAssetModelErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssetModelErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssetModelErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateAssetModelErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssetModelErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssetModelErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateAssetModelErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssetModelErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssetModelErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateAssetModelErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssetModelErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssetModelErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateAssetModelErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssetModelErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssetModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateAssetModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateAssetModelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateAssetModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateAssetModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1131,7 +1131,7 @@ pub enum CreateDashboardErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDashboardError {
@@ -1198,35 +1198,35 @@ impl CreateDashboardError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateDashboardErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateDashboardErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDashboardErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDashboardErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateDashboardErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDashboardErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDashboardErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateDashboardErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDashboardErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDashboardErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateDashboardErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateDashboardErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateDashboardErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateDashboardErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateDashboardErrorKind::ThrottlingException(_))
     }
@@ -1274,7 +1274,7 @@ pub enum CreateGatewayErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGatewayError {
@@ -1341,35 +1341,35 @@ impl CreateGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateGatewayErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateGatewayErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGatewayErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGatewayErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateGatewayErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGatewayErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGatewayErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateGatewayErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGatewayErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGatewayErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `CreateGatewayErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateGatewayErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateGatewayErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateGatewayErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateGatewayErrorKind::ThrottlingException(_))
     }
@@ -1417,7 +1417,7 @@ pub enum CreatePortalErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePortalError {
@@ -1484,32 +1484,32 @@ impl CreatePortalError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePortalErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreatePortalErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePortalErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePortalErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreatePortalErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePortalErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePortalErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreatePortalErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, CreatePortalErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `CreatePortalErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreatePortalErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePortalErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePortalErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreatePortalErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreatePortalErrorKind::ThrottlingException(_))
     }
@@ -1557,7 +1557,7 @@ pub enum CreateProjectErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateProjectError {
@@ -1624,35 +1624,35 @@ impl CreateProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateProjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `CreateProjectErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `CreateProjectErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, CreateProjectErrorKind::ThrottlingException(_))
     }
@@ -1695,7 +1695,7 @@ pub enum DeleteAccessPolicyErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAccessPolicyError {
@@ -1761,28 +1761,28 @@ impl DeleteAccessPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAccessPolicyErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteAccessPolicyErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccessPolicyErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccessPolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteAccessPolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccessPolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccessPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAccessPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAccessPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAccessPolicyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteAccessPolicyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1830,7 +1830,7 @@ pub enum DeleteAssetErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAssetError {
@@ -1897,32 +1897,32 @@ impl DeleteAssetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAssetErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `DeleteAssetErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssetErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssetErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteAssetErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssetErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssetErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteAssetErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteAssetErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `DeleteAssetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAssetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteAssetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteAssetErrorKind::ThrottlingException(_))
     }
@@ -1968,7 +1968,7 @@ pub enum DeleteAssetModelErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAssetModelError {
@@ -2035,35 +2035,35 @@ impl DeleteAssetModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteAssetModelErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `DeleteAssetModelErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssetModelErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssetModelErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteAssetModelErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssetModelErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssetModelErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteAssetModelErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssetModelErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssetModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteAssetModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteAssetModelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteAssetModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteAssetModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2109,7 +2109,7 @@ pub enum DeleteDashboardErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDashboardError {
@@ -2175,28 +2175,28 @@ impl DeleteDashboardError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteDashboardErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteDashboardErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDashboardErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDashboardErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteDashboardErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDashboardErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDashboardErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteDashboardErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteDashboardErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteDashboardErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteDashboardErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteDashboardErrorKind::ThrottlingException(_))
     }
@@ -2238,7 +2238,7 @@ pub enum DeleteGatewayErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGatewayError {
@@ -2304,28 +2304,28 @@ impl DeleteGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteGatewayErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteGatewayErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGatewayErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGatewayErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteGatewayErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGatewayErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGatewayErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteGatewayErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteGatewayErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteGatewayErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteGatewayErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteGatewayErrorKind::ThrottlingException(_))
     }
@@ -2370,7 +2370,7 @@ pub enum DeletePortalErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePortalError {
@@ -2437,35 +2437,35 @@ impl DeletePortalError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePortalErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `DeletePortalErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePortalErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePortalErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeletePortalErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePortalErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePortalErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeletePortalErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePortalErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePortalErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeletePortalErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePortalErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePortalErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeletePortalErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeletePortalErrorKind::ThrottlingException(_))
     }
@@ -2508,7 +2508,7 @@ pub enum DeleteProjectErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProjectError {
@@ -2574,28 +2574,28 @@ impl DeleteProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteProjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteProjectErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DeleteProjectErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DeleteProjectErrorKind::ThrottlingException(_))
     }
@@ -2637,7 +2637,7 @@ pub enum DescribeAccessPolicyErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccessPolicyError {
@@ -2703,28 +2703,28 @@ impl DescribeAccessPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAccessPolicyErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeAccessPolicyErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccessPolicyErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccessPolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeAccessPolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccessPolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccessPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAccessPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAccessPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAccessPolicyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeAccessPolicyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2769,7 +2769,7 @@ pub enum DescribeAssetErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAssetError {
@@ -2835,28 +2835,28 @@ impl DescribeAssetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAssetErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeAssetErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssetErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssetErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeAssetErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssetErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAssetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeAssetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeAssetErrorKind::ThrottlingException(_))
     }
@@ -2898,7 +2898,7 @@ pub enum DescribeAssetModelErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAssetModelError {
@@ -2964,28 +2964,28 @@ impl DescribeAssetModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAssetModelErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeAssetModelErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssetModelErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssetModelErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeAssetModelErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssetModelErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssetModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAssetModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssetModelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssetModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeAssetModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3030,7 +3030,7 @@ pub enum DescribeAssetPropertyErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAssetPropertyError {
@@ -3096,28 +3096,28 @@ impl DescribeAssetPropertyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAssetPropertyErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeAssetPropertyErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssetPropertyErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssetPropertyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeAssetPropertyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssetPropertyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssetPropertyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeAssetPropertyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeAssetPropertyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeAssetPropertyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeAssetPropertyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3162,7 +3162,7 @@ pub enum DescribeDashboardErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDashboardError {
@@ -3228,28 +3228,28 @@ impl DescribeDashboardError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDashboardErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeDashboardErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDashboardErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDashboardErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeDashboardErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDashboardErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDashboardErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeDashboardErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDashboardErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDashboardErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeDashboardErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3292,7 +3292,7 @@ pub enum DescribeDefaultEncryptionConfigurationErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDefaultEncryptionConfigurationError {
@@ -3366,21 +3366,21 @@ impl DescribeDefaultEncryptionConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeDefaultEncryptionConfigurationErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeDefaultEncryptionConfigurationErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDefaultEncryptionConfigurationErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDefaultEncryptionConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeDefaultEncryptionConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeDefaultEncryptionConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeDefaultEncryptionConfigurationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeDefaultEncryptionConfigurationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3432,7 +3432,7 @@ pub enum DescribeGatewayErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGatewayError {
@@ -3498,28 +3498,28 @@ impl DescribeGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGatewayErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeGatewayErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGatewayErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGatewayErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeGatewayErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGatewayErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGatewayErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeGatewayErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGatewayErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGatewayErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeGatewayErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeGatewayErrorKind::ThrottlingException(_))
     }
@@ -3561,7 +3561,7 @@ pub enum DescribeGatewayCapabilityConfigurationErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGatewayCapabilityConfigurationError {
@@ -3638,28 +3638,28 @@ impl DescribeGatewayCapabilityConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeGatewayCapabilityConfigurationErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeGatewayCapabilityConfigurationErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGatewayCapabilityConfigurationErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGatewayCapabilityConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeGatewayCapabilityConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGatewayCapabilityConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGatewayCapabilityConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeGatewayCapabilityConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeGatewayCapabilityConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeGatewayCapabilityConfigurationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeGatewayCapabilityConfigurationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3714,7 +3714,7 @@ pub enum DescribeLoggingOptionsErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeLoggingOptionsError {
@@ -3780,28 +3780,28 @@ impl DescribeLoggingOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeLoggingOptionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeLoggingOptionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLoggingOptionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLoggingOptionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeLoggingOptionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLoggingOptionsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLoggingOptionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeLoggingOptionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeLoggingOptionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeLoggingOptionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeLoggingOptionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3846,7 +3846,7 @@ pub enum DescribePortalErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePortalError {
@@ -3912,28 +3912,28 @@ impl DescribePortalError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePortalErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribePortalErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePortalErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePortalErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribePortalErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePortalErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePortalErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribePortalErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePortalErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePortalErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribePortalErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribePortalErrorKind::ThrottlingException(_))
     }
@@ -3975,7 +3975,7 @@ pub enum DescribeProjectErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeProjectError {
@@ -4041,28 +4041,28 @@ impl DescribeProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeProjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeProjectErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeProjectErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, DescribeProjectErrorKind::ThrottlingException(_))
     }
@@ -4112,7 +4112,7 @@ pub enum DescribeStorageConfigurationErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStorageConfigurationError {
@@ -4186,42 +4186,42 @@ impl DescribeStorageConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeStorageConfigurationErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `DescribeStorageConfigurationErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStorageConfigurationErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStorageConfigurationErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DescribeStorageConfigurationErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStorageConfigurationErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStorageConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeStorageConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStorageConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStorageConfigurationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `DescribeStorageConfigurationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStorageConfigurationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStorageConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DescribeStorageConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeStorageConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeStorageConfigurationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DescribeStorageConfigurationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4275,7 +4275,7 @@ pub enum DisassociateAssetsErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateAssetsError {
@@ -4342,35 +4342,35 @@ impl DisassociateAssetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateAssetsErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `DisassociateAssetsErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateAssetsErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateAssetsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `DisassociateAssetsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateAssetsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateAssetsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DisassociateAssetsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateAssetsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateAssetsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `DisassociateAssetsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisassociateAssetsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisassociateAssetsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `DisassociateAssetsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4418,7 +4418,7 @@ pub enum GetAssetPropertyAggregatesErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAssetPropertyAggregatesError {
@@ -4487,35 +4487,35 @@ impl GetAssetPropertyAggregatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAssetPropertyAggregatesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetAssetPropertyAggregatesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssetPropertyAggregatesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssetPropertyAggregatesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetAssetPropertyAggregatesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssetPropertyAggregatesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssetPropertyAggregatesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetAssetPropertyAggregatesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssetPropertyAggregatesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssetPropertyAggregatesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetAssetPropertyAggregatesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssetPropertyAggregatesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssetPropertyAggregatesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetAssetPropertyAggregatesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4565,7 +4565,7 @@ pub enum GetAssetPropertyValueErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAssetPropertyValueError {
@@ -4632,35 +4632,35 @@ impl GetAssetPropertyValueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAssetPropertyValueErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetAssetPropertyValueErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssetPropertyValueErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssetPropertyValueErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetAssetPropertyValueErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssetPropertyValueErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssetPropertyValueErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetAssetPropertyValueErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssetPropertyValueErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssetPropertyValueErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetAssetPropertyValueErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssetPropertyValueErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssetPropertyValueErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetAssetPropertyValueErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4708,7 +4708,7 @@ pub enum GetAssetPropertyValueHistoryErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAssetPropertyValueHistoryError {
@@ -4781,35 +4781,35 @@ impl GetAssetPropertyValueHistoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetAssetPropertyValueHistoryErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetAssetPropertyValueHistoryErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssetPropertyValueHistoryErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssetPropertyValueHistoryErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetAssetPropertyValueHistoryErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssetPropertyValueHistoryErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssetPropertyValueHistoryErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetAssetPropertyValueHistoryErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssetPropertyValueHistoryErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssetPropertyValueHistoryErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetAssetPropertyValueHistoryErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetAssetPropertyValueHistoryErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetAssetPropertyValueHistoryErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetAssetPropertyValueHistoryErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4861,7 +4861,7 @@ pub enum GetInterpolatedAssetPropertyValuesErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetInterpolatedAssetPropertyValuesError {
@@ -4941,35 +4941,35 @@ impl GetInterpolatedAssetPropertyValuesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetInterpolatedAssetPropertyValuesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `GetInterpolatedAssetPropertyValuesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInterpolatedAssetPropertyValuesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `GetInterpolatedAssetPropertyValuesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `GetInterpolatedAssetPropertyValuesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInterpolatedAssetPropertyValuesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `GetInterpolatedAssetPropertyValuesErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `GetInterpolatedAssetPropertyValuesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInterpolatedAssetPropertyValuesErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetInterpolatedAssetPropertyValuesErrorKind::ServiceUnavailableException`.
+    /// Returns `true` if the error kind is `GetInterpolatedAssetPropertyValuesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetInterpolatedAssetPropertyValuesErrorKind::ServiceUnavailableException(_)
         )
     }
-    /// Returns true if the error kind is `GetInterpolatedAssetPropertyValuesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `GetInterpolatedAssetPropertyValuesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5023,7 +5023,7 @@ pub enum ListAccessPoliciesErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAccessPoliciesError {
@@ -5088,21 +5088,21 @@ impl ListAccessPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAccessPoliciesErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListAccessPoliciesErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccessPoliciesErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccessPoliciesErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListAccessPoliciesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAccessPoliciesErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListAccessPoliciesErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListAccessPoliciesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5144,7 +5144,7 @@ pub enum ListAssetModelsErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssetModelsError {
@@ -5209,21 +5209,21 @@ impl ListAssetModelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssetModelsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListAssetModelsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssetModelsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssetModelsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListAssetModelsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssetModelsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssetModelsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListAssetModelsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListAssetModelsErrorKind::ThrottlingException(_))
     }
@@ -5264,7 +5264,7 @@ pub enum ListAssetRelationshipsErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssetRelationshipsError {
@@ -5330,28 +5330,28 @@ impl ListAssetRelationshipsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssetRelationshipsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListAssetRelationshipsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssetRelationshipsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssetRelationshipsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListAssetRelationshipsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssetRelationshipsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssetRelationshipsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAssetRelationshipsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssetRelationshipsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssetRelationshipsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListAssetRelationshipsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5396,7 +5396,7 @@ pub enum ListAssetsErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssetsError {
@@ -5462,22 +5462,22 @@ impl ListAssetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssetsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListAssetsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(&self.kind, ListAssetsErrorKind::InternalFailureException(_))
     }
-    /// Returns true if the error kind is `ListAssetsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListAssetsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListAssetsErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `ListAssetsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAssetsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssetsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssetsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListAssetsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListAssetsErrorKind::ThrottlingException(_))
     }
@@ -5519,7 +5519,7 @@ pub enum ListAssociatedAssetsErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAssociatedAssetsError {
@@ -5585,28 +5585,28 @@ impl ListAssociatedAssetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListAssociatedAssetsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListAssociatedAssetsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssociatedAssetsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssociatedAssetsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListAssociatedAssetsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssociatedAssetsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssociatedAssetsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListAssociatedAssetsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListAssociatedAssetsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListAssociatedAssetsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListAssociatedAssetsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5649,7 +5649,7 @@ pub enum ListDashboardsErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListDashboardsError {
@@ -5714,21 +5714,21 @@ impl ListDashboardsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListDashboardsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListDashboardsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDashboardsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListDashboardsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListDashboardsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListDashboardsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListDashboardsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListDashboardsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListDashboardsErrorKind::ThrottlingException(_))
     }
@@ -5767,7 +5767,7 @@ pub enum ListGatewaysErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListGatewaysError {
@@ -5832,21 +5832,21 @@ impl ListGatewaysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListGatewaysErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListGatewaysErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGatewaysErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListGatewaysErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListGatewaysErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListGatewaysErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListGatewaysErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListGatewaysErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListGatewaysErrorKind::ThrottlingException(_))
     }
@@ -5885,7 +5885,7 @@ pub enum ListPortalsErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPortalsError {
@@ -5950,18 +5950,18 @@ impl ListPortalsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPortalsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListPortalsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPortalsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListPortalsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListPortalsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, ListPortalsErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `ListPortalsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListPortalsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListPortalsErrorKind::ThrottlingException(_))
     }
@@ -6000,7 +6000,7 @@ pub enum ListProjectAssetsErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProjectAssetsError {
@@ -6065,21 +6065,21 @@ impl ListProjectAssetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProjectAssetsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListProjectAssetsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProjectAssetsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListProjectAssetsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListProjectAssetsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProjectAssetsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListProjectAssetsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListProjectAssetsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6121,7 +6121,7 @@ pub enum ListProjectsErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProjectsError {
@@ -6186,21 +6186,21 @@ impl ListProjectsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProjectsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListProjectsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListProjectsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListProjectsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, ListProjectsErrorKind::ThrottlingException(_))
     }
@@ -6251,7 +6251,7 @@ pub enum ListTagsForResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>You are not authorized.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -6320,49 +6320,49 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ThrottlingException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6416,7 +6416,7 @@ pub enum PutDefaultEncryptionConfigurationErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutDefaultEncryptionConfigurationError {
@@ -6496,35 +6496,35 @@ impl PutDefaultEncryptionConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutDefaultEncryptionConfigurationErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `PutDefaultEncryptionConfigurationErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDefaultEncryptionConfigurationErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `PutDefaultEncryptionConfigurationErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `PutDefaultEncryptionConfigurationErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDefaultEncryptionConfigurationErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutDefaultEncryptionConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PutDefaultEncryptionConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDefaultEncryptionConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutDefaultEncryptionConfigurationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutDefaultEncryptionConfigurationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutDefaultEncryptionConfigurationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutDefaultEncryptionConfigurationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutDefaultEncryptionConfigurationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6581,7 +6581,7 @@ pub enum PutLoggingOptionsErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutLoggingOptionsError {
@@ -6648,35 +6648,35 @@ impl PutLoggingOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutLoggingOptionsErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `PutLoggingOptionsErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLoggingOptionsErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `PutLoggingOptionsErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `PutLoggingOptionsErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLoggingOptionsErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutLoggingOptionsErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PutLoggingOptionsErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLoggingOptionsErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutLoggingOptionsErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutLoggingOptionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutLoggingOptionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutLoggingOptionsErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutLoggingOptionsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6732,7 +6732,7 @@ pub enum PutStorageConfigurationErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutStorageConfigurationError {
@@ -6805,49 +6805,49 @@ impl PutStorageConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutStorageConfigurationErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `PutStorageConfigurationErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutStorageConfigurationErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `PutStorageConfigurationErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `PutStorageConfigurationErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutStorageConfigurationErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `PutStorageConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `PutStorageConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutStorageConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `PutStorageConfigurationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutStorageConfigurationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutStorageConfigurationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutStorageConfigurationErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `PutStorageConfigurationErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutStorageConfigurationErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `PutStorageConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `PutStorageConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutStorageConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutStorageConfigurationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `PutStorageConfigurationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6911,7 +6911,7 @@ pub enum TagResourceErrorKind {
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>You are not authorized.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -6981,44 +6981,44 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::UnauthorizedException(_))
     }
@@ -7074,7 +7074,7 @@ pub enum UntagResourceErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>You are not authorized.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -7143,46 +7143,46 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ThrottlingException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::UnauthorizedException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::UnauthorizedException(_))
     }
@@ -7227,7 +7227,7 @@ pub enum UpdateAccessPolicyErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAccessPolicyError {
@@ -7293,28 +7293,28 @@ impl UpdateAccessPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAccessPolicyErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateAccessPolicyErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccessPolicyErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccessPolicyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateAccessPolicyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccessPolicyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccessPolicyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAccessPolicyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAccessPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAccessPolicyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateAccessPolicyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7364,7 +7364,7 @@ pub enum UpdateAssetErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAssetError {
@@ -7432,39 +7432,39 @@ impl UpdateAssetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAssetErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `UpdateAssetErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssetErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssetErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateAssetErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssetErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssetErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateAssetErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateAssetErrorKind::InvalidRequestException(_))
     }
-    /// Returns true if the error kind is `UpdateAssetErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `UpdateAssetErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssetErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssetErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAssetErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssetErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssetErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateAssetErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateAssetErrorKind::ThrottlingException(_))
     }
@@ -7518,7 +7518,7 @@ pub enum UpdateAssetModelErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAssetModelError {
@@ -7587,49 +7587,49 @@ impl UpdateAssetModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAssetModelErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `UpdateAssetModelErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssetModelErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssetModelErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateAssetModelErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssetModelErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssetModelErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateAssetModelErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssetModelErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssetModelErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateAssetModelErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssetModelErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssetModelErrorKind::ResourceAlreadyExistsException`.
+    /// Returns `true` if the error kind is `UpdateAssetModelErrorKind::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssetModelErrorKind::ResourceAlreadyExistsException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssetModelErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAssetModelErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssetModelErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssetModelErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateAssetModelErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7680,7 +7680,7 @@ pub enum UpdateAssetPropertyErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAssetPropertyError {
@@ -7747,35 +7747,35 @@ impl UpdateAssetPropertyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateAssetPropertyErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `UpdateAssetPropertyErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssetPropertyErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssetPropertyErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateAssetPropertyErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssetPropertyErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssetPropertyErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateAssetPropertyErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssetPropertyErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssetPropertyErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateAssetPropertyErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateAssetPropertyErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateAssetPropertyErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateAssetPropertyErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7821,7 +7821,7 @@ pub enum UpdateDashboardErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDashboardError {
@@ -7887,28 +7887,28 @@ impl UpdateDashboardError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateDashboardErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateDashboardErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDashboardErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDashboardErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateDashboardErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDashboardErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDashboardErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateDashboardErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateDashboardErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateDashboardErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateDashboardErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateDashboardErrorKind::ThrottlingException(_))
     }
@@ -7953,7 +7953,7 @@ pub enum UpdateGatewayErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGatewayError {
@@ -8020,35 +8020,35 @@ impl UpdateGatewayError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGatewayErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `UpdateGatewayErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewayErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewayErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateGatewayErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewayErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewayErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateGatewayErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewayErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewayErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGatewayErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewayErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewayErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateGatewayErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateGatewayErrorKind::ThrottlingException(_))
     }
@@ -8099,7 +8099,7 @@ pub enum UpdateGatewayCapabilityConfigurationErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGatewayCapabilityConfigurationError {
@@ -8182,42 +8182,42 @@ impl UpdateGatewayCapabilityConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateGatewayCapabilityConfigurationErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `UpdateGatewayCapabilityConfigurationErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewayCapabilityConfigurationErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewayCapabilityConfigurationErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateGatewayCapabilityConfigurationErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewayCapabilityConfigurationErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewayCapabilityConfigurationErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateGatewayCapabilityConfigurationErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewayCapabilityConfigurationErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewayCapabilityConfigurationErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdateGatewayCapabilityConfigurationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewayCapabilityConfigurationErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewayCapabilityConfigurationErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateGatewayCapabilityConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateGatewayCapabilityConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateGatewayCapabilityConfigurationErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateGatewayCapabilityConfigurationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8281,7 +8281,7 @@ pub enum UpdatePortalErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePortalError {
@@ -8348,35 +8348,35 @@ impl UpdatePortalError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePortalErrorKind::ConflictingOperationException`.
+    /// Returns `true` if the error kind is `UpdatePortalErrorKind::ConflictingOperationException`.
     pub fn is_conflicting_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePortalErrorKind::ConflictingOperationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePortalErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdatePortalErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePortalErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePortalErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdatePortalErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePortalErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePortalErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdatePortalErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePortalErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePortalErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdatePortalErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdatePortalErrorKind::ThrottlingException(_))
     }
@@ -8419,7 +8419,7 @@ pub enum UpdateProjectErrorKind {
     /// on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateProjectError {
@@ -8485,28 +8485,28 @@ impl UpdateProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::InternalFailureException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProjectErrorKind::InternalFailureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProjectErrorKind::InvalidRequestException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateProjectErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateProjectErrorKind::ThrottlingException`.
+    /// Returns `true` if the error kind is `UpdateProjectErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(&self.kind, UpdateProjectErrorKind::ThrottlingException(_))
     }

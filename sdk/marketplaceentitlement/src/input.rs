@@ -110,7 +110,7 @@ pub type GetEntitlementsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy
 impl GetEntitlementsInput {
     /// Consumes the builder and constructs an Operation<[`GetEntitlements`](crate::operation::GetEntitlements)>
     #[allow(clippy::let_and_return)]
-    pub fn make_operation(
+    pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
@@ -142,6 +142,7 @@ impl GetEntitlementsInput {
             input: &crate::input::GetEntitlementsInput,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
+            #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
@@ -204,9 +205,10 @@ impl GetEntitlementsInput {
         Ok(op)
     }
     fn assemble(
-        mut builder: http::request::Builder,
+        builder: http::request::Builder,
         body: aws_smithy_http::body::SdkBody,
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
         if let Some(content_length) = body.content_length() {
             builder = aws_smithy_http::header::set_header_if_absent(
                 builder,

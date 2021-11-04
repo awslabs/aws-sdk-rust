@@ -15,7 +15,7 @@ pub enum AbortEnvironmentUpdateErrorKind {
     /// <p>The specified account does not have sufficient privileges for one or more AWS
     /// services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AbortEnvironmentUpdateError {
@@ -80,7 +80,7 @@ impl AbortEnvironmentUpdateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AbortEnvironmentUpdateErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `AbortEnvironmentUpdateErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -116,7 +116,7 @@ pub enum ApplyEnvironmentManagedActionErrorKind {
     ElasticBeanstalkServiceException(crate::error::ElasticBeanstalkServiceException),
     /// <p>Cannot modify the managed action in its current state.</p>
     ManagedActionInvalidStateException(crate::error::ManagedActionInvalidStateException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ApplyEnvironmentManagedActionError {
@@ -187,14 +187,14 @@ impl ApplyEnvironmentManagedActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ApplyEnvironmentManagedActionErrorKind::ElasticBeanstalkServiceException`.
+    /// Returns `true` if the error kind is `ApplyEnvironmentManagedActionErrorKind::ElasticBeanstalkServiceException`.
     pub fn is_elastic_beanstalk_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ApplyEnvironmentManagedActionErrorKind::ElasticBeanstalkServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ApplyEnvironmentManagedActionErrorKind::ManagedActionInvalidStateException`.
+    /// Returns `true` if the error kind is `ApplyEnvironmentManagedActionErrorKind::ManagedActionInvalidStateException`.
     pub fn is_managed_action_invalid_state_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -232,7 +232,7 @@ pub enum AssociateEnvironmentOperationsRoleErrorKind {
     /// <p>The specified account does not have sufficient privileges for one or more AWS
     /// services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AssociateEnvironmentOperationsRoleError {
@@ -300,7 +300,7 @@ impl AssociateEnvironmentOperationsRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AssociateEnvironmentOperationsRoleErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `AssociateEnvironmentOperationsRoleErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -332,7 +332,7 @@ pub struct CheckDNSAvailabilityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CheckDNSAvailabilityErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CheckDNSAvailabilityError {
@@ -421,7 +421,7 @@ pub enum ComposeEnvironmentsErrorKind {
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// <p>The specified account has reached its limit of environments.</p>
     TooManyEnvironmentsException(crate::error::TooManyEnvironmentsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ComposeEnvironmentsError {
@@ -485,14 +485,14 @@ impl ComposeEnvironmentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ComposeEnvironmentsErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `ComposeEnvironmentsErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
             ComposeEnvironmentsErrorKind::InsufficientPrivilegesException(_)
         )
     }
-    /// Returns true if the error kind is `ComposeEnvironmentsErrorKind::TooManyEnvironmentsException`.
+    /// Returns `true` if the error kind is `ComposeEnvironmentsErrorKind::TooManyEnvironmentsException`.
     pub fn is_too_many_environments_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -525,7 +525,7 @@ pub struct CreateApplicationError {
 pub enum CreateApplicationErrorKind {
     /// <p>The specified account has reached its limit of applications.</p>
     TooManyApplicationsException(crate::error::TooManyApplicationsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateApplicationError {
@@ -588,7 +588,7 @@ impl CreateApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateApplicationErrorKind::TooManyApplicationsException`.
+    /// Returns `true` if the error kind is `CreateApplicationErrorKind::TooManyApplicationsException`.
     pub fn is_too_many_applications_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -641,7 +641,7 @@ pub enum CreateApplicationVersionErrorKind {
     TooManyApplicationsException(crate::error::TooManyApplicationsException),
     /// <p>The specified account has reached its limit of application versions.</p>
     TooManyApplicationVersionsException(crate::error::TooManyApplicationVersionsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateApplicationVersionError {
@@ -718,35 +718,35 @@ impl CreateApplicationVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateApplicationVersionErrorKind::CodeBuildNotInServiceRegionException`.
+    /// Returns `true` if the error kind is `CreateApplicationVersionErrorKind::CodeBuildNotInServiceRegionException`.
     pub fn is_code_build_not_in_service_region_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationVersionErrorKind::CodeBuildNotInServiceRegionException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationVersionErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `CreateApplicationVersionErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationVersionErrorKind::InsufficientPrivilegesException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationVersionErrorKind::S3LocationNotInServiceRegionException`.
+    /// Returns `true` if the error kind is `CreateApplicationVersionErrorKind::S3LocationNotInServiceRegionException`.
     pub fn is_s3_location_not_in_service_region_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationVersionErrorKind::S3LocationNotInServiceRegionException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationVersionErrorKind::TooManyApplicationsException`.
+    /// Returns `true` if the error kind is `CreateApplicationVersionErrorKind::TooManyApplicationsException`.
     pub fn is_too_many_applications_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateApplicationVersionErrorKind::TooManyApplicationsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateApplicationVersionErrorKind::TooManyApplicationVersionsException`.
+    /// Returns `true` if the error kind is `CreateApplicationVersionErrorKind::TooManyApplicationVersionsException`.
     pub fn is_too_many_application_versions_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -795,7 +795,7 @@ pub enum CreateConfigurationTemplateErrorKind {
     TooManyBucketsException(crate::error::TooManyBucketsException),
     /// <p>The specified account has reached its limit of configuration templates.</p>
     TooManyConfigurationTemplatesException(crate::error::TooManyConfigurationTemplatesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateConfigurationTemplateError {
@@ -864,21 +864,21 @@ impl CreateConfigurationTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateConfigurationTemplateErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `CreateConfigurationTemplateErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationTemplateErrorKind::InsufficientPrivilegesException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationTemplateErrorKind::TooManyBucketsException`.
+    /// Returns `true` if the error kind is `CreateConfigurationTemplateErrorKind::TooManyBucketsException`.
     pub fn is_too_many_buckets_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateConfigurationTemplateErrorKind::TooManyBucketsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateConfigurationTemplateErrorKind::TooManyConfigurationTemplatesException`.
+    /// Returns `true` if the error kind is `CreateConfigurationTemplateErrorKind::TooManyConfigurationTemplatesException`.
     pub fn is_too_many_configuration_templates_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -919,7 +919,7 @@ pub enum CreateEnvironmentErrorKind {
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// <p>The specified account has reached its limit of environments.</p>
     TooManyEnvironmentsException(crate::error::TooManyEnvironmentsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEnvironmentError {
@@ -983,14 +983,14 @@ impl CreateEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateEnvironmentErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateEnvironmentErrorKind::InsufficientPrivilegesException(_)
         )
     }
-    /// Returns true if the error kind is `CreateEnvironmentErrorKind::TooManyEnvironmentsException`.
+    /// Returns `true` if the error kind is `CreateEnvironmentErrorKind::TooManyEnvironmentsException`.
     pub fn is_too_many_environments_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1028,7 +1028,7 @@ pub enum CreatePlatformVersionErrorKind {
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// <p>You have exceeded the maximum number of allowed platforms associated with the account.</p>
     TooManyPlatformsException(crate::error::TooManyPlatformsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePlatformVersionError {
@@ -1097,21 +1097,21 @@ impl CreatePlatformVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePlatformVersionErrorKind::ElasticBeanstalkServiceException`.
+    /// Returns `true` if the error kind is `CreatePlatformVersionErrorKind::ElasticBeanstalkServiceException`.
     pub fn is_elastic_beanstalk_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlatformVersionErrorKind::ElasticBeanstalkServiceException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlatformVersionErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `CreatePlatformVersionErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePlatformVersionErrorKind::InsufficientPrivilegesException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePlatformVersionErrorKind::TooManyPlatformsException`.
+    /// Returns `true` if the error kind is `CreatePlatformVersionErrorKind::TooManyPlatformsException`.
     pub fn is_too_many_platforms_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1152,7 +1152,7 @@ pub enum CreateStorageLocationErrorKind {
     S3SubscriptionRequiredException(crate::error::S3SubscriptionRequiredException),
     /// <p>The specified account has reached its limit of Amazon S3 buckets.</p>
     TooManyBucketsException(crate::error::TooManyBucketsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStorageLocationError {
@@ -1221,21 +1221,21 @@ impl CreateStorageLocationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateStorageLocationErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `CreateStorageLocationErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStorageLocationErrorKind::InsufficientPrivilegesException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStorageLocationErrorKind::S3SubscriptionRequiredException`.
+    /// Returns `true` if the error kind is `CreateStorageLocationErrorKind::S3SubscriptionRequiredException`.
     pub fn is_s3_subscription_required_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateStorageLocationErrorKind::S3SubscriptionRequiredException(_)
         )
     }
-    /// Returns true if the error kind is `CreateStorageLocationErrorKind::TooManyBucketsException`.
+    /// Returns `true` if the error kind is `CreateStorageLocationErrorKind::TooManyBucketsException`.
     pub fn is_too_many_buckets_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1270,7 +1270,7 @@ pub enum DeleteApplicationErrorKind {
     /// <p>Unable to perform the specified operation because another operation that effects an
     /// element in this activity is already in progress.</p>
     OperationInProgressException(crate::error::OperationInProgressException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApplicationError {
@@ -1333,7 +1333,7 @@ impl DeleteApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApplicationErrorKind::OperationInProgressException`.
+    /// Returns `true` if the error kind is `DeleteApplicationErrorKind::OperationInProgressException`.
     pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1386,7 +1386,7 @@ pub enum DeleteApplicationVersionErrorKind {
     /// <p>Unable to delete the Amazon S3 source bundle associated with the application version.
     /// The application version was deleted successfully.</p>
     SourceBundleDeletionException(crate::error::SourceBundleDeletionException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApplicationVersionError {
@@ -1460,28 +1460,28 @@ impl DeleteApplicationVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteApplicationVersionErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `DeleteApplicationVersionErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationVersionErrorKind::InsufficientPrivilegesException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationVersionErrorKind::OperationInProgressException`.
+    /// Returns `true` if the error kind is `DeleteApplicationVersionErrorKind::OperationInProgressException`.
     pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationVersionErrorKind::OperationInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationVersionErrorKind::S3LocationNotInServiceRegionException`.
+    /// Returns `true` if the error kind is `DeleteApplicationVersionErrorKind::S3LocationNotInServiceRegionException`.
     pub fn is_s3_location_not_in_service_region_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteApplicationVersionErrorKind::S3LocationNotInServiceRegionException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteApplicationVersionErrorKind::SourceBundleDeletionException`.
+    /// Returns `true` if the error kind is `DeleteApplicationVersionErrorKind::SourceBundleDeletionException`.
     pub fn is_source_bundle_deletion_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1523,7 +1523,7 @@ pub enum DeleteConfigurationTemplateErrorKind {
     /// <p>Unable to perform the specified operation because another operation that effects an
     /// element in this activity is already in progress.</p>
     OperationInProgressException(crate::error::OperationInProgressException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteConfigurationTemplateError {
@@ -1588,7 +1588,7 @@ impl DeleteConfigurationTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteConfigurationTemplateErrorKind::OperationInProgressException`.
+    /// Returns `true` if the error kind is `DeleteConfigurationTemplateErrorKind::OperationInProgressException`.
     pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1620,7 +1620,7 @@ pub struct DeleteEnvironmentConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteEnvironmentConfigurationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEnvironmentConfigurationError {
@@ -1717,7 +1717,7 @@ pub enum DeletePlatformVersionErrorKind {
     OperationInProgressException(crate::error::OperationInProgressException),
     /// <p>You cannot delete the platform version because there are still environments running on it.</p>
     PlatformVersionStillReferencedException(crate::error::PlatformVersionStillReferencedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePlatformVersionError {
@@ -1789,28 +1789,28 @@ impl DeletePlatformVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePlatformVersionErrorKind::ElasticBeanstalkServiceException`.
+    /// Returns `true` if the error kind is `DeletePlatformVersionErrorKind::ElasticBeanstalkServiceException`.
     pub fn is_elastic_beanstalk_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePlatformVersionErrorKind::ElasticBeanstalkServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePlatformVersionErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `DeletePlatformVersionErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePlatformVersionErrorKind::InsufficientPrivilegesException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePlatformVersionErrorKind::OperationInProgressException`.
+    /// Returns `true` if the error kind is `DeletePlatformVersionErrorKind::OperationInProgressException`.
     pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePlatformVersionErrorKind::OperationInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePlatformVersionErrorKind::PlatformVersionStillReferencedException`.
+    /// Returns `true` if the error kind is `DeletePlatformVersionErrorKind::PlatformVersionStillReferencedException`.
     pub fn is_platform_version_still_referenced_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1850,7 +1850,7 @@ pub enum DescribeAccountAttributesErrorKind {
     /// <p>The specified account does not have sufficient privileges for one or more AWS
     /// services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeAccountAttributesError {
@@ -1915,7 +1915,7 @@ impl DescribeAccountAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeAccountAttributesErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `DescribeAccountAttributesErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1947,7 +1947,7 @@ pub struct DescribeApplicationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeApplicationsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeApplicationsError {
@@ -2031,7 +2031,7 @@ pub struct DescribeApplicationVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeApplicationVersionsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeApplicationVersionsError {
@@ -2117,7 +2117,7 @@ pub struct DescribeConfigurationOptionsError {
 pub enum DescribeConfigurationOptionsErrorKind {
     /// <p>The specified account has reached its limit of Amazon S3 buckets.</p>
     TooManyBucketsException(crate::error::TooManyBucketsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConfigurationOptionsError {
@@ -2180,7 +2180,7 @@ impl DescribeConfigurationOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConfigurationOptionsErrorKind::TooManyBucketsException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationOptionsErrorKind::TooManyBucketsException`.
     pub fn is_too_many_buckets_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2212,7 +2212,7 @@ pub struct DescribeConfigurationSettingsError {
 pub enum DescribeConfigurationSettingsErrorKind {
     /// <p>The specified account has reached its limit of Amazon S3 buckets.</p>
     TooManyBucketsException(crate::error::TooManyBucketsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeConfigurationSettingsError {
@@ -2280,7 +2280,7 @@ impl DescribeConfigurationSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeConfigurationSettingsErrorKind::TooManyBucketsException`.
+    /// Returns `true` if the error kind is `DescribeConfigurationSettingsErrorKind::TooManyBucketsException`.
     pub fn is_too_many_buckets_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2315,7 +2315,7 @@ pub enum DescribeEnvironmentHealthErrorKind {
     /// <p>One or more input parameters is not valid. Please correct the input parameters and try
     /// the operation again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEnvironmentHealthError {
@@ -2381,14 +2381,14 @@ impl DescribeEnvironmentHealthError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEnvironmentHealthErrorKind::ElasticBeanstalkServiceException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentHealthErrorKind::ElasticBeanstalkServiceException`.
     pub fn is_elastic_beanstalk_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeEnvironmentHealthErrorKind::ElasticBeanstalkServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeEnvironmentHealthErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentHealthErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2423,7 +2423,7 @@ pub struct DescribeEnvironmentManagedActionHistoryError {
 pub enum DescribeEnvironmentManagedActionHistoryErrorKind {
     /// <p>A generic service exception has occurred.</p>
     ElasticBeanstalkServiceException(crate::error::ElasticBeanstalkServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEnvironmentManagedActionHistoryError {
@@ -2491,7 +2491,7 @@ impl DescribeEnvironmentManagedActionHistoryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEnvironmentManagedActionHistoryErrorKind::ElasticBeanstalkServiceException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentManagedActionHistoryErrorKind::ElasticBeanstalkServiceException`.
     pub fn is_elastic_beanstalk_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2527,7 +2527,7 @@ pub struct DescribeEnvironmentManagedActionsError {
 pub enum DescribeEnvironmentManagedActionsErrorKind {
     /// <p>A generic service exception has occurred.</p>
     ElasticBeanstalkServiceException(crate::error::ElasticBeanstalkServiceException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEnvironmentManagedActionsError {
@@ -2595,7 +2595,7 @@ impl DescribeEnvironmentManagedActionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEnvironmentManagedActionsErrorKind::ElasticBeanstalkServiceException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentManagedActionsErrorKind::ElasticBeanstalkServiceException`.
     pub fn is_elastic_beanstalk_service_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2630,7 +2630,7 @@ pub enum DescribeEnvironmentResourcesErrorKind {
     /// <p>The specified account does not have sufficient privileges for one or more AWS
     /// services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEnvironmentResourcesError {
@@ -2695,7 +2695,7 @@ impl DescribeEnvironmentResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeEnvironmentResourcesErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `DescribeEnvironmentResourcesErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2727,7 +2727,7 @@ pub struct DescribeEnvironmentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEnvironmentsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEnvironmentsError {
@@ -2811,7 +2811,7 @@ pub struct DescribeEventsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEventsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeEventsError {
@@ -2900,7 +2900,7 @@ pub enum DescribeInstancesHealthErrorKind {
     /// <p>One or more input parameters is not valid. Please correct the input parameters and try
     /// the operation again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeInstancesHealthError {
@@ -2966,14 +2966,14 @@ impl DescribeInstancesHealthError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeInstancesHealthErrorKind::ElasticBeanstalkServiceException`.
+    /// Returns `true` if the error kind is `DescribeInstancesHealthErrorKind::ElasticBeanstalkServiceException`.
     pub fn is_elastic_beanstalk_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeInstancesHealthErrorKind::ElasticBeanstalkServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeInstancesHealthErrorKind::InvalidRequestException`.
+    /// Returns `true` if the error kind is `DescribeInstancesHealthErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3011,7 +3011,7 @@ pub enum DescribePlatformVersionErrorKind {
     /// <p>The specified account does not have sufficient privileges for one or more AWS
     /// services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribePlatformVersionError {
@@ -3079,14 +3079,14 @@ impl DescribePlatformVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribePlatformVersionErrorKind::ElasticBeanstalkServiceException`.
+    /// Returns `true` if the error kind is `DescribePlatformVersionErrorKind::ElasticBeanstalkServiceException`.
     pub fn is_elastic_beanstalk_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribePlatformVersionErrorKind::ElasticBeanstalkServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribePlatformVersionErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `DescribePlatformVersionErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3124,7 +3124,7 @@ pub enum DisassociateEnvironmentOperationsRoleErrorKind {
     /// <p>The specified account does not have sufficient privileges for one or more AWS
     /// services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisassociateEnvironmentOperationsRoleError {
@@ -3192,7 +3192,7 @@ impl DisassociateEnvironmentOperationsRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisassociateEnvironmentOperationsRoleErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `DisassociateEnvironmentOperationsRoleErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3226,7 +3226,7 @@ pub struct ListAvailableSolutionStacksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAvailableSolutionStacksErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAvailableSolutionStacksError {
@@ -3310,7 +3310,7 @@ pub struct ListPlatformBranchesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPlatformBranchesErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPlatformBranchesError {
@@ -3399,7 +3399,7 @@ pub enum ListPlatformVersionsErrorKind {
     /// <p>The specified account does not have sufficient privileges for one or more AWS
     /// services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPlatformVersionsError {
@@ -3465,14 +3465,14 @@ impl ListPlatformVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPlatformVersionsErrorKind::ElasticBeanstalkServiceException`.
+    /// Returns `true` if the error kind is `ListPlatformVersionsErrorKind::ElasticBeanstalkServiceException`.
     pub fn is_elastic_beanstalk_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPlatformVersionsErrorKind::ElasticBeanstalkServiceException(_)
         )
     }
-    /// Returns true if the error kind is `ListPlatformVersionsErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `ListPlatformVersionsErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3510,7 +3510,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The type of the specified Amazon Resource Name (ARN) isn't supported for this operation.</p>
     ResourceTypeNotSupportedException(crate::error::ResourceTypeNotSupportedException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -3577,21 +3577,21 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InsufficientPrivilegesException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceTypeNotSupportedException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceTypeNotSupportedException`.
     pub fn is_resource_type_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3626,7 +3626,7 @@ pub enum RebuildEnvironmentErrorKind {
     /// <p>The specified account does not have sufficient privileges for one or more AWS
     /// services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RebuildEnvironmentError {
@@ -3689,7 +3689,7 @@ impl RebuildEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RebuildEnvironmentErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `RebuildEnvironmentErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3719,7 +3719,7 @@ pub struct RequestEnvironmentInfoError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RequestEnvironmentInfoErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RequestEnvironmentInfoError {
@@ -3803,7 +3803,7 @@ pub struct RestartAppServerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RestartAppServerErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestartAppServerError {
@@ -3887,7 +3887,7 @@ pub struct RetrieveEnvironmentInfoError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RetrieveEnvironmentInfoErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RetrieveEnvironmentInfoError {
@@ -3971,7 +3971,7 @@ pub struct SwapEnvironmentCNAMEsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SwapEnvironmentCNAMEsErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SwapEnvironmentCNAMEsError {
@@ -4058,7 +4058,7 @@ pub enum TerminateEnvironmentErrorKind {
     /// <p>The specified account does not have sufficient privileges for one or more AWS
     /// services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TerminateEnvironmentError {
@@ -4121,7 +4121,7 @@ impl TerminateEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TerminateEnvironmentErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `TerminateEnvironmentErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4151,7 +4151,7 @@ pub struct UpdateApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateApplicationErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApplicationError {
@@ -4238,7 +4238,7 @@ pub enum UpdateApplicationResourceLifecycleErrorKind {
     /// <p>The specified account does not have sufficient privileges for one or more AWS
     /// services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApplicationResourceLifecycleError {
@@ -4306,7 +4306,7 @@ impl UpdateApplicationResourceLifecycleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateApplicationResourceLifecycleErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `UpdateApplicationResourceLifecycleErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4338,7 +4338,7 @@ pub struct UpdateApplicationVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateApplicationVersionErrorKind {
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApplicationVersionError {
@@ -4427,7 +4427,7 @@ pub enum UpdateConfigurationTemplateErrorKind {
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// <p>The specified account has reached its limit of Amazon S3 buckets.</p>
     TooManyBucketsException(crate::error::TooManyBucketsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateConfigurationTemplateError {
@@ -4493,14 +4493,14 @@ impl UpdateConfigurationTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateConfigurationTemplateErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationTemplateErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateConfigurationTemplateErrorKind::InsufficientPrivilegesException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateConfigurationTemplateErrorKind::TooManyBucketsException`.
+    /// Returns `true` if the error kind is `UpdateConfigurationTemplateErrorKind::TooManyBucketsException`.
     pub fn is_too_many_buckets_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4538,7 +4538,7 @@ pub enum UpdateEnvironmentErrorKind {
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// <p>The specified account has reached its limit of Amazon S3 buckets.</p>
     TooManyBucketsException(crate::error::TooManyBucketsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEnvironmentError {
@@ -4602,14 +4602,14 @@ impl UpdateEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateEnvironmentErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateEnvironmentErrorKind::InsufficientPrivilegesException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateEnvironmentErrorKind::TooManyBucketsException`.
+    /// Returns `true` if the error kind is `UpdateEnvironmentErrorKind::TooManyBucketsException`.
     pub fn is_too_many_buckets_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4655,7 +4655,7 @@ pub enum UpdateTagsForResourceErrorKind {
     /// <p>To calculate this, the operation considers both the number of tags the resource already has
     /// and the tags this operation would add if it succeeded.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateTagsForResourceError {
@@ -4726,35 +4726,35 @@ impl UpdateTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateTagsForResourceErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `UpdateTagsForResourceErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTagsForResourceErrorKind::InsufficientPrivilegesException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTagsForResourceErrorKind::OperationInProgressException`.
+    /// Returns `true` if the error kind is `UpdateTagsForResourceErrorKind::OperationInProgressException`.
     pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTagsForResourceErrorKind::OperationInProgressException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTagsForResourceErrorKind::ResourceTypeNotSupportedException`.
+    /// Returns `true` if the error kind is `UpdateTagsForResourceErrorKind::ResourceTypeNotSupportedException`.
     pub fn is_resource_type_not_supported_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateTagsForResourceErrorKind::ResourceTypeNotSupportedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateTagsForResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `UpdateTagsForResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4795,7 +4795,7 @@ pub enum ValidateConfigurationSettingsErrorKind {
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// <p>The specified account has reached its limit of Amazon S3 buckets.</p>
     TooManyBucketsException(crate::error::TooManyBucketsException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ValidateConfigurationSettingsError {
@@ -4866,14 +4866,14 @@ impl ValidateConfigurationSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ValidateConfigurationSettingsErrorKind::InsufficientPrivilegesException`.
+    /// Returns `true` if the error kind is `ValidateConfigurationSettingsErrorKind::InsufficientPrivilegesException`.
     pub fn is_insufficient_privileges_exception(&self) -> bool {
         matches!(
             &self.kind,
             ValidateConfigurationSettingsErrorKind::InsufficientPrivilegesException(_)
         )
     }
-    /// Returns true if the error kind is `ValidateConfigurationSettingsErrorKind::TooManyBucketsException`.
+    /// Returns `true` if the error kind is `ValidateConfigurationSettingsErrorKind::TooManyBucketsException`.
     pub fn is_too_many_buckets_exception(&self) -> bool {
         matches!(
             &self.kind,

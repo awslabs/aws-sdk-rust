@@ -18,7 +18,7 @@ pub enum AcknowledgeJobErrorKind {
     JobNotFoundException(crate::error::JobNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcknowledgeJobError {
@@ -83,18 +83,18 @@ impl AcknowledgeJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AcknowledgeJobErrorKind::InvalidNonceException`.
+    /// Returns `true` if the error kind is `AcknowledgeJobErrorKind::InvalidNonceException`.
     pub fn is_invalid_nonce_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcknowledgeJobErrorKind::InvalidNonceException(_)
         )
     }
-    /// Returns true if the error kind is `AcknowledgeJobErrorKind::JobNotFoundException`.
+    /// Returns `true` if the error kind is `AcknowledgeJobErrorKind::JobNotFoundException`.
     pub fn is_job_not_found_exception(&self) -> bool {
         matches!(&self.kind, AcknowledgeJobErrorKind::JobNotFoundException(_))
     }
-    /// Returns true if the error kind is `AcknowledgeJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AcknowledgeJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, AcknowledgeJobErrorKind::ValidationException(_))
     }
@@ -131,7 +131,7 @@ pub enum AcknowledgeThirdPartyJobErrorKind {
     JobNotFoundException(crate::error::JobNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AcknowledgeThirdPartyJobError {
@@ -197,28 +197,28 @@ impl AcknowledgeThirdPartyJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `AcknowledgeThirdPartyJobErrorKind::InvalidClientTokenException`.
+    /// Returns `true` if the error kind is `AcknowledgeThirdPartyJobErrorKind::InvalidClientTokenException`.
     pub fn is_invalid_client_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcknowledgeThirdPartyJobErrorKind::InvalidClientTokenException(_)
         )
     }
-    /// Returns true if the error kind is `AcknowledgeThirdPartyJobErrorKind::InvalidNonceException`.
+    /// Returns `true` if the error kind is `AcknowledgeThirdPartyJobErrorKind::InvalidNonceException`.
     pub fn is_invalid_nonce_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcknowledgeThirdPartyJobErrorKind::InvalidNonceException(_)
         )
     }
-    /// Returns true if the error kind is `AcknowledgeThirdPartyJobErrorKind::JobNotFoundException`.
+    /// Returns `true` if the error kind is `AcknowledgeThirdPartyJobErrorKind::JobNotFoundException`.
     pub fn is_job_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             AcknowledgeThirdPartyJobErrorKind::JobNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `AcknowledgeThirdPartyJobErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `AcknowledgeThirdPartyJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -262,7 +262,7 @@ pub enum CreateCustomActionTypeErrorKind {
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCustomActionTypeError {
@@ -331,35 +331,35 @@ impl CreateCustomActionTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreateCustomActionTypeErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreateCustomActionTypeErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomActionTypeErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomActionTypeErrorKind::InvalidTagsException`.
+    /// Returns `true` if the error kind is `CreateCustomActionTypeErrorKind::InvalidTagsException`.
     pub fn is_invalid_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomActionTypeErrorKind::InvalidTagsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomActionTypeErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreateCustomActionTypeErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomActionTypeErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomActionTypeErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreateCustomActionTypeErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreateCustomActionTypeErrorKind::TooManyTagsException(_)
         )
     }
-    /// Returns true if the error kind is `CreateCustomActionTypeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreateCustomActionTypeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -416,7 +416,7 @@ pub enum CreatePipelineErrorKind {
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreatePipelineError {
@@ -488,64 +488,64 @@ impl CreatePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePipelineErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::InvalidActionDeclarationException`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::InvalidActionDeclarationException`.
     pub fn is_invalid_action_declaration_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePipelineErrorKind::InvalidActionDeclarationException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::InvalidBlockerDeclarationException`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::InvalidBlockerDeclarationException`.
     pub fn is_invalid_blocker_declaration_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePipelineErrorKind::InvalidBlockerDeclarationException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::InvalidStageDeclarationException`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::InvalidStageDeclarationException`.
     pub fn is_invalid_stage_declaration_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePipelineErrorKind::InvalidStageDeclarationException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::InvalidStructureException`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::InvalidStructureException`.
     pub fn is_invalid_structure_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePipelineErrorKind::InvalidStructureException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::InvalidTagsException`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::InvalidTagsException`.
     pub fn is_invalid_tags_exception(&self) -> bool {
         matches!(&self.kind, CreatePipelineErrorKind::InvalidTagsException(_))
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePipelineErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::PipelineNameInUseException`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::PipelineNameInUseException`.
     pub fn is_pipeline_name_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
             CreatePipelineErrorKind::PipelineNameInUseException(_)
         )
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, CreatePipelineErrorKind::TooManyTagsException(_))
     }
-    /// Returns true if the error kind is `CreatePipelineErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `CreatePipelineErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreatePipelineErrorKind::ValidationException(_))
     }
@@ -585,7 +585,7 @@ pub enum DeleteCustomActionTypeErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCustomActionTypeError {
@@ -651,14 +651,14 @@ impl DeleteCustomActionTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteCustomActionTypeErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteCustomActionTypeErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteCustomActionTypeErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteCustomActionTypeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteCustomActionTypeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -695,7 +695,7 @@ pub enum DeletePipelineErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeletePipelineError {
@@ -759,14 +759,14 @@ impl DeletePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeletePipelineErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeletePipelineErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeletePipelineErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeletePipelineErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeletePipelineErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeletePipelineErrorKind::ValidationException(_))
     }
@@ -798,7 +798,7 @@ pub enum DeleteWebhookErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteWebhookError {
@@ -862,14 +862,14 @@ impl DeleteWebhookError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteWebhookErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `DeleteWebhookErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteWebhookErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteWebhookErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteWebhookErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, DeleteWebhookErrorKind::ValidationException(_))
     }
@@ -902,7 +902,7 @@ pub enum DeregisterWebhookWithThirdPartyErrorKind {
     /// <p>The specified webhook was entered in an invalid format or cannot be
     /// found.</p>
     WebhookNotFoundException(crate::error::WebhookNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterWebhookWithThirdPartyError {
@@ -971,14 +971,14 @@ impl DeregisterWebhookWithThirdPartyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterWebhookWithThirdPartyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeregisterWebhookWithThirdPartyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterWebhookWithThirdPartyErrorKind::ValidationException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterWebhookWithThirdPartyErrorKind::WebhookNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterWebhookWithThirdPartyErrorKind::WebhookNotFoundException`.
     pub fn is_webhook_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1017,7 +1017,7 @@ pub enum DisableStageTransitionErrorKind {
     StageNotFoundException(crate::error::StageNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DisableStageTransitionError {
@@ -1082,21 +1082,21 @@ impl DisableStageTransitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DisableStageTransitionErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `DisableStageTransitionErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableStageTransitionErrorKind::PipelineNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisableStageTransitionErrorKind::StageNotFoundException`.
+    /// Returns `true` if the error kind is `DisableStageTransitionErrorKind::StageNotFoundException`.
     pub fn is_stage_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DisableStageTransitionErrorKind::StageNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DisableStageTransitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DisableStageTransitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1134,7 +1134,7 @@ pub enum EnableStageTransitionErrorKind {
     StageNotFoundException(crate::error::StageNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for EnableStageTransitionError {
@@ -1199,21 +1199,21 @@ impl EnableStageTransitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `EnableStageTransitionErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `EnableStageTransitionErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableStageTransitionErrorKind::PipelineNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `EnableStageTransitionErrorKind::StageNotFoundException`.
+    /// Returns `true` if the error kind is `EnableStageTransitionErrorKind::StageNotFoundException`.
     pub fn is_stage_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             EnableStageTransitionErrorKind::StageNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `EnableStageTransitionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `EnableStageTransitionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1249,7 +1249,7 @@ pub enum GetActionTypeErrorKind {
     ActionTypeNotFoundException(crate::error::ActionTypeNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetActionTypeError {
@@ -1313,14 +1313,14 @@ impl GetActionTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetActionTypeErrorKind::ActionTypeNotFoundException`.
+    /// Returns `true` if the error kind is `GetActionTypeErrorKind::ActionTypeNotFoundException`.
     pub fn is_action_type_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetActionTypeErrorKind::ActionTypeNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetActionTypeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetActionTypeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetActionTypeErrorKind::ValidationException(_))
     }
@@ -1352,7 +1352,7 @@ pub enum GetJobDetailsErrorKind {
     JobNotFoundException(crate::error::JobNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetJobDetailsError {
@@ -1416,11 +1416,11 @@ impl GetJobDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetJobDetailsErrorKind::JobNotFoundException`.
+    /// Returns `true` if the error kind is `GetJobDetailsErrorKind::JobNotFoundException`.
     pub fn is_job_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetJobDetailsErrorKind::JobNotFoundException(_))
     }
-    /// Returns true if the error kind is `GetJobDetailsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetJobDetailsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetJobDetailsErrorKind::ValidationException(_))
     }
@@ -1455,7 +1455,7 @@ pub enum GetPipelineErrorKind {
     PipelineVersionNotFoundException(crate::error::PipelineVersionNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPipelineError {
@@ -1520,21 +1520,21 @@ impl GetPipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPipelineErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `GetPipelineErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPipelineErrorKind::PipelineNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetPipelineErrorKind::PipelineVersionNotFoundException`.
+    /// Returns `true` if the error kind is `GetPipelineErrorKind::PipelineVersionNotFoundException`.
     pub fn is_pipeline_version_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPipelineErrorKind::PipelineVersionNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetPipelineErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetPipelineErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, GetPipelineErrorKind::ValidationException(_))
     }
@@ -1570,7 +1570,7 @@ pub enum GetPipelineExecutionErrorKind {
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPipelineExecutionError {
@@ -1637,21 +1637,21 @@ impl GetPipelineExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPipelineExecutionErrorKind::PipelineExecutionNotFoundException`.
+    /// Returns `true` if the error kind is `GetPipelineExecutionErrorKind::PipelineExecutionNotFoundException`.
     pub fn is_pipeline_execution_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPipelineExecutionErrorKind::PipelineExecutionNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetPipelineExecutionErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `GetPipelineExecutionErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPipelineExecutionErrorKind::PipelineNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetPipelineExecutionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetPipelineExecutionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1689,7 +1689,7 @@ pub enum GetPipelineStateErrorKind {
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPipelineStateError {
@@ -1753,14 +1753,14 @@ impl GetPipelineStateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetPipelineStateErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `GetPipelineStateErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetPipelineStateErrorKind::PipelineNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetPipelineStateErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetPipelineStateErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1799,7 +1799,7 @@ pub enum GetThirdPartyJobDetailsErrorKind {
     JobNotFoundException(crate::error::JobNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetThirdPartyJobDetailsError {
@@ -1865,28 +1865,28 @@ impl GetThirdPartyJobDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `GetThirdPartyJobDetailsErrorKind::InvalidClientTokenException`.
+    /// Returns `true` if the error kind is `GetThirdPartyJobDetailsErrorKind::InvalidClientTokenException`.
     pub fn is_invalid_client_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetThirdPartyJobDetailsErrorKind::InvalidClientTokenException(_)
         )
     }
-    /// Returns true if the error kind is `GetThirdPartyJobDetailsErrorKind::InvalidJobException`.
+    /// Returns `true` if the error kind is `GetThirdPartyJobDetailsErrorKind::InvalidJobException`.
     pub fn is_invalid_job_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetThirdPartyJobDetailsErrorKind::InvalidJobException(_)
         )
     }
-    /// Returns true if the error kind is `GetThirdPartyJobDetailsErrorKind::JobNotFoundException`.
+    /// Returns `true` if the error kind is `GetThirdPartyJobDetailsErrorKind::JobNotFoundException`.
     pub fn is_job_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             GetThirdPartyJobDetailsErrorKind::JobNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `GetThirdPartyJobDetailsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `GetThirdPartyJobDetailsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1929,7 +1929,7 @@ pub enum ListActionExecutionsErrorKind {
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListActionExecutionsError {
@@ -1997,28 +1997,28 @@ impl ListActionExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListActionExecutionsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListActionExecutionsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListActionExecutionsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListActionExecutionsErrorKind::PipelineExecutionNotFoundException`.
+    /// Returns `true` if the error kind is `ListActionExecutionsErrorKind::PipelineExecutionNotFoundException`.
     pub fn is_pipeline_execution_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListActionExecutionsErrorKind::PipelineExecutionNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListActionExecutionsErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `ListActionExecutionsErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListActionExecutionsErrorKind::PipelineNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListActionExecutionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListActionExecutionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2058,7 +2058,7 @@ pub enum ListActionTypesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListActionTypesError {
@@ -2122,14 +2122,14 @@ impl ListActionTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListActionTypesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListActionTypesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListActionTypesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListActionTypesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListActionTypesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListActionTypesErrorKind::ValidationException(_))
     }
@@ -2164,7 +2164,7 @@ pub enum ListPipelineExecutionsErrorKind {
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPipelineExecutionsError {
@@ -2229,21 +2229,21 @@ impl ListPipelineExecutionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPipelineExecutionsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListPipelineExecutionsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPipelineExecutionsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListPipelineExecutionsErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `ListPipelineExecutionsErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPipelineExecutionsErrorKind::PipelineNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListPipelineExecutionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListPipelineExecutionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2280,7 +2280,7 @@ pub enum ListPipelinesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListPipelinesError {
@@ -2344,14 +2344,14 @@ impl ListPipelinesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListPipelinesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListPipelinesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListPipelinesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListPipelinesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListPipelinesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListPipelinesErrorKind::ValidationException(_))
     }
@@ -2388,7 +2388,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -2454,28 +2454,28 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidArnException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListTagsForResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2513,7 +2513,7 @@ pub enum ListWebhooksErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListWebhooksError {
@@ -2577,14 +2577,14 @@ impl ListWebhooksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `ListWebhooksErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `ListWebhooksErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             ListWebhooksErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `ListWebhooksErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `ListWebhooksErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, ListWebhooksErrorKind::ValidationException(_))
     }
@@ -2616,7 +2616,7 @@ pub enum PollForJobsErrorKind {
     ActionTypeNotFoundException(crate::error::ActionTypeNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PollForJobsError {
@@ -2680,14 +2680,14 @@ impl PollForJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PollForJobsErrorKind::ActionTypeNotFoundException`.
+    /// Returns `true` if the error kind is `PollForJobsErrorKind::ActionTypeNotFoundException`.
     pub fn is_action_type_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PollForJobsErrorKind::ActionTypeNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PollForJobsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PollForJobsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, PollForJobsErrorKind::ValidationException(_))
     }
@@ -2719,7 +2719,7 @@ pub enum PollForThirdPartyJobsErrorKind {
     ActionTypeNotFoundException(crate::error::ActionTypeNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PollForThirdPartyJobsError {
@@ -2783,14 +2783,14 @@ impl PollForThirdPartyJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PollForThirdPartyJobsErrorKind::ActionTypeNotFoundException`.
+    /// Returns `true` if the error kind is `PollForThirdPartyJobsErrorKind::ActionTypeNotFoundException`.
     pub fn is_action_type_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PollForThirdPartyJobsErrorKind::ActionTypeNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PollForThirdPartyJobsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PollForThirdPartyJobsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2829,7 +2829,7 @@ pub enum PutActionRevisionErrorKind {
     StageNotFoundException(crate::error::StageNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutActionRevisionError {
@@ -2895,28 +2895,28 @@ impl PutActionRevisionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutActionRevisionErrorKind::ActionNotFoundException`.
+    /// Returns `true` if the error kind is `PutActionRevisionErrorKind::ActionNotFoundException`.
     pub fn is_action_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutActionRevisionErrorKind::ActionNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutActionRevisionErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `PutActionRevisionErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutActionRevisionErrorKind::PipelineNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutActionRevisionErrorKind::StageNotFoundException`.
+    /// Returns `true` if the error kind is `PutActionRevisionErrorKind::StageNotFoundException`.
     pub fn is_stage_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutActionRevisionErrorKind::StageNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutActionRevisionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutActionRevisionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2961,7 +2961,7 @@ pub enum PutApprovalResultErrorKind {
     StageNotFoundException(crate::error::StageNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutApprovalResultError {
@@ -3029,42 +3029,42 @@ impl PutApprovalResultError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutApprovalResultErrorKind::ActionNotFoundException`.
+    /// Returns `true` if the error kind is `PutApprovalResultErrorKind::ActionNotFoundException`.
     pub fn is_action_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutApprovalResultErrorKind::ActionNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutApprovalResultErrorKind::ApprovalAlreadyCompletedException`.
+    /// Returns `true` if the error kind is `PutApprovalResultErrorKind::ApprovalAlreadyCompletedException`.
     pub fn is_approval_already_completed_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutApprovalResultErrorKind::ApprovalAlreadyCompletedException(_)
         )
     }
-    /// Returns true if the error kind is `PutApprovalResultErrorKind::InvalidApprovalTokenException`.
+    /// Returns `true` if the error kind is `PutApprovalResultErrorKind::InvalidApprovalTokenException`.
     pub fn is_invalid_approval_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutApprovalResultErrorKind::InvalidApprovalTokenException(_)
         )
     }
-    /// Returns true if the error kind is `PutApprovalResultErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `PutApprovalResultErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutApprovalResultErrorKind::PipelineNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutApprovalResultErrorKind::StageNotFoundException`.
+    /// Returns `true` if the error kind is `PutApprovalResultErrorKind::StageNotFoundException`.
     pub fn is_stage_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutApprovalResultErrorKind::StageNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutApprovalResultErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutApprovalResultErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3105,7 +3105,7 @@ pub enum PutJobFailureResultErrorKind {
     JobNotFoundException(crate::error::JobNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutJobFailureResultError {
@@ -3170,21 +3170,21 @@ impl PutJobFailureResultError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutJobFailureResultErrorKind::InvalidJobStateException`.
+    /// Returns `true` if the error kind is `PutJobFailureResultErrorKind::InvalidJobStateException`.
     pub fn is_invalid_job_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutJobFailureResultErrorKind::InvalidJobStateException(_)
         )
     }
-    /// Returns true if the error kind is `PutJobFailureResultErrorKind::JobNotFoundException`.
+    /// Returns `true` if the error kind is `PutJobFailureResultErrorKind::JobNotFoundException`.
     pub fn is_job_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutJobFailureResultErrorKind::JobNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutJobFailureResultErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutJobFailureResultErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3224,7 +3224,7 @@ pub enum PutJobSuccessResultErrorKind {
     OutputVariablesSizeExceededException(crate::error::OutputVariablesSizeExceededException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutJobSuccessResultError {
@@ -3292,28 +3292,28 @@ impl PutJobSuccessResultError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutJobSuccessResultErrorKind::InvalidJobStateException`.
+    /// Returns `true` if the error kind is `PutJobSuccessResultErrorKind::InvalidJobStateException`.
     pub fn is_invalid_job_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutJobSuccessResultErrorKind::InvalidJobStateException(_)
         )
     }
-    /// Returns true if the error kind is `PutJobSuccessResultErrorKind::JobNotFoundException`.
+    /// Returns `true` if the error kind is `PutJobSuccessResultErrorKind::JobNotFoundException`.
     pub fn is_job_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutJobSuccessResultErrorKind::JobNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutJobSuccessResultErrorKind::OutputVariablesSizeExceededException`.
+    /// Returns `true` if the error kind is `PutJobSuccessResultErrorKind::OutputVariablesSizeExceededException`.
     pub fn is_output_variables_size_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutJobSuccessResultErrorKind::OutputVariablesSizeExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutJobSuccessResultErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutJobSuccessResultErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3356,7 +3356,7 @@ pub enum PutThirdPartyJobFailureResultErrorKind {
     JobNotFoundException(crate::error::JobNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutThirdPartyJobFailureResultError {
@@ -3429,28 +3429,28 @@ impl PutThirdPartyJobFailureResultError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutThirdPartyJobFailureResultErrorKind::InvalidClientTokenException`.
+    /// Returns `true` if the error kind is `PutThirdPartyJobFailureResultErrorKind::InvalidClientTokenException`.
     pub fn is_invalid_client_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutThirdPartyJobFailureResultErrorKind::InvalidClientTokenException(_)
         )
     }
-    /// Returns true if the error kind is `PutThirdPartyJobFailureResultErrorKind::InvalidJobStateException`.
+    /// Returns `true` if the error kind is `PutThirdPartyJobFailureResultErrorKind::InvalidJobStateException`.
     pub fn is_invalid_job_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutThirdPartyJobFailureResultErrorKind::InvalidJobStateException(_)
         )
     }
-    /// Returns true if the error kind is `PutThirdPartyJobFailureResultErrorKind::JobNotFoundException`.
+    /// Returns `true` if the error kind is `PutThirdPartyJobFailureResultErrorKind::JobNotFoundException`.
     pub fn is_job_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutThirdPartyJobFailureResultErrorKind::JobNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutThirdPartyJobFailureResultErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutThirdPartyJobFailureResultErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3495,7 +3495,7 @@ pub enum PutThirdPartyJobSuccessResultErrorKind {
     JobNotFoundException(crate::error::JobNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutThirdPartyJobSuccessResultError {
@@ -3568,28 +3568,28 @@ impl PutThirdPartyJobSuccessResultError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutThirdPartyJobSuccessResultErrorKind::InvalidClientTokenException`.
+    /// Returns `true` if the error kind is `PutThirdPartyJobSuccessResultErrorKind::InvalidClientTokenException`.
     pub fn is_invalid_client_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutThirdPartyJobSuccessResultErrorKind::InvalidClientTokenException(_)
         )
     }
-    /// Returns true if the error kind is `PutThirdPartyJobSuccessResultErrorKind::InvalidJobStateException`.
+    /// Returns `true` if the error kind is `PutThirdPartyJobSuccessResultErrorKind::InvalidJobStateException`.
     pub fn is_invalid_job_state_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutThirdPartyJobSuccessResultErrorKind::InvalidJobStateException(_)
         )
     }
-    /// Returns true if the error kind is `PutThirdPartyJobSuccessResultErrorKind::JobNotFoundException`.
+    /// Returns `true` if the error kind is `PutThirdPartyJobSuccessResultErrorKind::JobNotFoundException`.
     pub fn is_job_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutThirdPartyJobSuccessResultErrorKind::JobNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutThirdPartyJobSuccessResultErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutThirdPartyJobSuccessResultErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3645,7 +3645,7 @@ pub enum PutWebhookErrorKind {
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutWebhookError {
@@ -3717,47 +3717,47 @@ impl PutWebhookError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutWebhookErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `PutWebhookErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutWebhookErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `PutWebhookErrorKind::InvalidTagsException`.
+    /// Returns `true` if the error kind is `PutWebhookErrorKind::InvalidTagsException`.
     pub fn is_invalid_tags_exception(&self) -> bool {
         matches!(&self.kind, PutWebhookErrorKind::InvalidTagsException(_))
     }
-    /// Returns true if the error kind is `PutWebhookErrorKind::InvalidWebhookAuthenticationParametersException`.
+    /// Returns `true` if the error kind is `PutWebhookErrorKind::InvalidWebhookAuthenticationParametersException`.
     pub fn is_invalid_webhook_authentication_parameters_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutWebhookErrorKind::InvalidWebhookAuthenticationParametersException(_)
         )
     }
-    /// Returns true if the error kind is `PutWebhookErrorKind::InvalidWebhookFilterPatternException`.
+    /// Returns `true` if the error kind is `PutWebhookErrorKind::InvalidWebhookFilterPatternException`.
     pub fn is_invalid_webhook_filter_pattern_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutWebhookErrorKind::InvalidWebhookFilterPatternException(_)
         )
     }
-    /// Returns true if the error kind is `PutWebhookErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutWebhookErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(&self.kind, PutWebhookErrorKind::LimitExceededException(_))
     }
-    /// Returns true if the error kind is `PutWebhookErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `PutWebhookErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutWebhookErrorKind::PipelineNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutWebhookErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `PutWebhookErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, PutWebhookErrorKind::TooManyTagsException(_))
     }
-    /// Returns true if the error kind is `PutWebhookErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutWebhookErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, PutWebhookErrorKind::ValidationException(_))
     }
@@ -3798,7 +3798,7 @@ pub enum RegisterWebhookWithThirdPartyErrorKind {
     /// <p>The specified webhook was entered in an invalid format or cannot be
     /// found.</p>
     WebhookNotFoundException(crate::error::WebhookNotFoundException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterWebhookWithThirdPartyError {
@@ -3867,14 +3867,14 @@ impl RegisterWebhookWithThirdPartyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterWebhookWithThirdPartyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RegisterWebhookWithThirdPartyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterWebhookWithThirdPartyErrorKind::ValidationException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterWebhookWithThirdPartyErrorKind::WebhookNotFoundException`.
+    /// Returns `true` if the error kind is `RegisterWebhookWithThirdPartyErrorKind::WebhookNotFoundException`.
     pub fn is_webhook_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -3923,7 +3923,7 @@ pub enum RetryStageExecutionErrorKind {
     StageNotRetryableException(crate::error::StageNotRetryableException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RetryStageExecutionError {
@@ -3993,42 +3993,42 @@ impl RetryStageExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RetryStageExecutionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `RetryStageExecutionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             RetryStageExecutionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `RetryStageExecutionErrorKind::NotLatestPipelineExecutionException`.
+    /// Returns `true` if the error kind is `RetryStageExecutionErrorKind::NotLatestPipelineExecutionException`.
     pub fn is_not_latest_pipeline_execution_exception(&self) -> bool {
         matches!(
             &self.kind,
             RetryStageExecutionErrorKind::NotLatestPipelineExecutionException(_)
         )
     }
-    /// Returns true if the error kind is `RetryStageExecutionErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `RetryStageExecutionErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RetryStageExecutionErrorKind::PipelineNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RetryStageExecutionErrorKind::StageNotFoundException`.
+    /// Returns `true` if the error kind is `RetryStageExecutionErrorKind::StageNotFoundException`.
     pub fn is_stage_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             RetryStageExecutionErrorKind::StageNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `RetryStageExecutionErrorKind::StageNotRetryableException`.
+    /// Returns `true` if the error kind is `RetryStageExecutionErrorKind::StageNotRetryableException`.
     pub fn is_stage_not_retryable_exception(&self) -> bool {
         matches!(
             &self.kind,
             RetryStageExecutionErrorKind::StageNotRetryableException(_)
         )
     }
-    /// Returns true if the error kind is `RetryStageExecutionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RetryStageExecutionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4072,7 +4072,7 @@ pub enum StartPipelineExecutionErrorKind {
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartPipelineExecutionError {
@@ -4137,21 +4137,21 @@ impl StartPipelineExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StartPipelineExecutionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StartPipelineExecutionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartPipelineExecutionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `StartPipelineExecutionErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `StartPipelineExecutionErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StartPipelineExecutionErrorKind::PipelineNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StartPipelineExecutionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StartPipelineExecutionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4199,7 +4199,7 @@ pub enum StopPipelineExecutionErrorKind {
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopPipelineExecutionError {
@@ -4268,35 +4268,35 @@ impl StopPipelineExecutionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `StopPipelineExecutionErrorKind::ConflictException`.
+    /// Returns `true` if the error kind is `StopPipelineExecutionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopPipelineExecutionErrorKind::ConflictException(_)
         )
     }
-    /// Returns true if the error kind is `StopPipelineExecutionErrorKind::DuplicatedStopRequestException`.
+    /// Returns `true` if the error kind is `StopPipelineExecutionErrorKind::DuplicatedStopRequestException`.
     pub fn is_duplicated_stop_request_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopPipelineExecutionErrorKind::DuplicatedStopRequestException(_)
         )
     }
-    /// Returns true if the error kind is `StopPipelineExecutionErrorKind::PipelineExecutionNotStoppableException`.
+    /// Returns `true` if the error kind is `StopPipelineExecutionErrorKind::PipelineExecutionNotStoppableException`.
     pub fn is_pipeline_execution_not_stoppable_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopPipelineExecutionErrorKind::PipelineExecutionNotStoppableException(_)
         )
     }
-    /// Returns true if the error kind is `StopPipelineExecutionErrorKind::PipelineNotFoundException`.
+    /// Returns `true` if the error kind is `StopPipelineExecutionErrorKind::PipelineNotFoundException`.
     pub fn is_pipeline_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             StopPipelineExecutionErrorKind::PipelineNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `StopPipelineExecutionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `StopPipelineExecutionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4344,7 +4344,7 @@ pub enum TagResourceErrorKind {
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
@@ -4412,33 +4412,33 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::InvalidTagsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidTagsException`.
     pub fn is_invalid_tags_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidTagsException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             TagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
     }
-    /// Returns true if the error kind is `TagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::ValidationException(_))
     }
@@ -4480,7 +4480,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -4547,29 +4547,29 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ConcurrentModificationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ConcurrentModificationException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidArnException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InvalidArnException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::InvalidTagsException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidTagsException`.
     pub fn is_invalid_tags_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InvalidTagsException(_))
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UntagResourceErrorKind::ResourceNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UntagResourceErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ValidationException(_))
     }
@@ -4606,7 +4606,7 @@ pub enum UpdateActionTypeErrorKind {
     RequestFailedException(crate::error::RequestFailedException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateActionTypeError {
@@ -4671,21 +4671,21 @@ impl UpdateActionTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdateActionTypeErrorKind::ActionTypeNotFoundException`.
+    /// Returns `true` if the error kind is `UpdateActionTypeErrorKind::ActionTypeNotFoundException`.
     pub fn is_action_type_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateActionTypeErrorKind::ActionTypeNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateActionTypeErrorKind::RequestFailedException`.
+    /// Returns `true` if the error kind is `UpdateActionTypeErrorKind::RequestFailedException`.
     pub fn is_request_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdateActionTypeErrorKind::RequestFailedException(_)
         )
     }
-    /// Returns true if the error kind is `UpdateActionTypeErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdateActionTypeErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4730,7 +4730,7 @@ pub enum UpdatePipelineErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdatePipelineError {
@@ -4798,42 +4798,42 @@ impl UpdatePipelineError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `UpdatePipelineErrorKind::InvalidActionDeclarationException`.
+    /// Returns `true` if the error kind is `UpdatePipelineErrorKind::InvalidActionDeclarationException`.
     pub fn is_invalid_action_declaration_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineErrorKind::InvalidActionDeclarationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineErrorKind::InvalidBlockerDeclarationException`.
+    /// Returns `true` if the error kind is `UpdatePipelineErrorKind::InvalidBlockerDeclarationException`.
     pub fn is_invalid_blocker_declaration_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineErrorKind::InvalidBlockerDeclarationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineErrorKind::InvalidStageDeclarationException`.
+    /// Returns `true` if the error kind is `UpdatePipelineErrorKind::InvalidStageDeclarationException`.
     pub fn is_invalid_stage_declaration_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineErrorKind::InvalidStageDeclarationException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineErrorKind::InvalidStructureException`.
+    /// Returns `true` if the error kind is `UpdatePipelineErrorKind::InvalidStructureException`.
     pub fn is_invalid_structure_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineErrorKind::InvalidStructureException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `UpdatePipelineErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             UpdatePipelineErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `UpdatePipelineErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `UpdatePipelineErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, UpdatePipelineErrorKind::ValidationException(_))
     }

@@ -65,6 +65,38 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCollection {
     }
 }
 
+/// Operation shape for `CreateDataset`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_dataset`](crate::client::Client::create_dataset).
+///
+/// See [`crate::client::fluent_builders::CreateDataset`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateDataset {
+    _private: (),
+}
+impl CreateDataset {
+    /// Creates a new builder-style object to manufacture [`CreateDatasetInput`](crate::input::CreateDatasetInput)
+    pub fn builder() -> crate::input::create_dataset_input::Builder {
+        crate::input::create_dataset_input::Builder::default()
+    }
+    /// Creates a new `CreateDataset` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateDataset {
+    type Output =
+        std::result::Result<crate::output::CreateDatasetOutput, crate::error::CreateDatasetError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_dataset_error(response)
+        } else {
+            crate::operation_deser::parse_create_dataset_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateProject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -195,6 +227,38 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCollection {
             crate::operation_deser::parse_delete_collection_error(response)
         } else {
             crate::operation_deser::parse_delete_collection_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteDataset`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_dataset`](crate::client::Client::delete_dataset).
+///
+/// See [`crate::client::fluent_builders::DeleteDataset`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteDataset {
+    _private: (),
+}
+impl DeleteDataset {
+    /// Creates a new builder-style object to manufacture [`DeleteDatasetInput`](crate::input::DeleteDatasetInput)
+    pub fn builder() -> crate::input::delete_dataset_input::Builder {
+        crate::input::delete_dataset_input::Builder::default()
+    }
+    /// Creates a new `DeleteDataset` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteDataset {
+    type Output =
+        std::result::Result<crate::output::DeleteDatasetOutput, crate::error::DeleteDatasetError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_dataset_error(response)
+        } else {
+            crate::operation_deser::parse_delete_dataset_response(response)
         }
     }
 }
@@ -361,6 +425,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCollection {
             crate::operation_deser::parse_describe_collection_error(response)
         } else {
             crate::operation_deser::parse_describe_collection_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeDataset`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_dataset`](crate::client::Client::describe_dataset).
+///
+/// See [`crate::client::fluent_builders::DescribeDataset`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeDataset {
+    _private: (),
+}
+impl DescribeDataset {
+    /// Creates a new builder-style object to manufacture [`DescribeDatasetInput`](crate::input::DescribeDatasetInput)
+    pub fn builder() -> crate::input::describe_dataset_input::Builder {
+        crate::input::describe_dataset_input::Builder::default()
+    }
+    /// Creates a new `DescribeDataset` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeDataset {
+    type Output = std::result::Result<
+        crate::output::DescribeDatasetOutput,
+        crate::error::DescribeDatasetError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_dataset_error(response)
+        } else {
+            crate::operation_deser::parse_describe_dataset_response(response)
         }
     }
 }
@@ -661,6 +759,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectText {
             crate::operation_deser::parse_detect_text_error(response)
         } else {
             crate::operation_deser::parse_detect_text_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DistributeDatasetEntries`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`distribute_dataset_entries`](crate::client::Client::distribute_dataset_entries).
+///
+/// See [`crate::client::fluent_builders::DistributeDatasetEntries`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DistributeDatasetEntries {
+    _private: (),
+}
+impl DistributeDatasetEntries {
+    /// Creates a new builder-style object to manufacture [`DistributeDatasetEntriesInput`](crate::input::DistributeDatasetEntriesInput)
+    pub fn builder() -> crate::input::distribute_dataset_entries_input::Builder {
+        crate::input::distribute_dataset_entries_input::Builder::default()
+    }
+    /// Creates a new `DistributeDatasetEntries` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DistributeDatasetEntries {
+    type Output = std::result::Result<
+        crate::output::DistributeDatasetEntriesOutput,
+        crate::error::DistributeDatasetEntriesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_distribute_dataset_entries_error(response)
+        } else {
+            crate::operation_deser::parse_distribute_dataset_entries_response(response)
         }
     }
 }
@@ -1031,6 +1163,74 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCollections {
             crate::operation_deser::parse_list_collections_error(response)
         } else {
             crate::operation_deser::parse_list_collections_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListDatasetEntries`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_dataset_entries`](crate::client::Client::list_dataset_entries).
+///
+/// See [`crate::client::fluent_builders::ListDatasetEntries`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListDatasetEntries {
+    _private: (),
+}
+impl ListDatasetEntries {
+    /// Creates a new builder-style object to manufacture [`ListDatasetEntriesInput`](crate::input::ListDatasetEntriesInput)
+    pub fn builder() -> crate::input::list_dataset_entries_input::Builder {
+        crate::input::list_dataset_entries_input::Builder::default()
+    }
+    /// Creates a new `ListDatasetEntries` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListDatasetEntries {
+    type Output = std::result::Result<
+        crate::output::ListDatasetEntriesOutput,
+        crate::error::ListDatasetEntriesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_dataset_entries_error(response)
+        } else {
+            crate::operation_deser::parse_list_dataset_entries_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListDatasetLabels`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_dataset_labels`](crate::client::Client::list_dataset_labels).
+///
+/// See [`crate::client::fluent_builders::ListDatasetLabels`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListDatasetLabels {
+    _private: (),
+}
+impl ListDatasetLabels {
+    /// Creates a new builder-style object to manufacture [`ListDatasetLabelsInput`](crate::input::ListDatasetLabelsInput)
+    pub fn builder() -> crate::input::list_dataset_labels_input::Builder {
+        crate::input::list_dataset_labels_input::Builder::default()
+    }
+    /// Creates a new `ListDatasetLabels` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListDatasetLabels {
+    type Output = std::result::Result<
+        crate::output::ListDatasetLabelsOutput,
+        crate::error::ListDatasetLabelsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_dataset_labels_error(response)
+        } else {
+            crate::operation_deser::parse_list_dataset_labels_response(response)
         }
     }
 }
@@ -1702,6 +1902,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
             crate::operation_deser::parse_untag_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateDatasetEntries`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_dataset_entries`](crate::client::Client::update_dataset_entries).
+///
+/// See [`crate::client::fluent_builders::UpdateDatasetEntries`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateDatasetEntries {
+    _private: (),
+}
+impl UpdateDatasetEntries {
+    /// Creates a new builder-style object to manufacture [`UpdateDatasetEntriesInput`](crate::input::UpdateDatasetEntriesInput)
+    pub fn builder() -> crate::input::update_dataset_entries_input::Builder {
+        crate::input::update_dataset_entries_input::Builder::default()
+    }
+    /// Creates a new `UpdateDatasetEntries` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateDatasetEntries {
+    type Output = std::result::Result<
+        crate::output::UpdateDatasetEntriesOutput,
+        crate::error::UpdateDatasetEntriesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_dataset_entries_error(response)
+        } else {
+            crate::operation_deser::parse_update_dataset_entries_response(response)
         }
     }
 }

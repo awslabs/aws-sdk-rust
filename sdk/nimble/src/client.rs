@@ -340,6 +340,13 @@ where
     pub fn put_studio_members(&self) -> fluent_builders::PutStudioMembers<C, M, R> {
         fluent_builders::PutStudioMembers::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `StartStreamingSession` operation.
+    ///
+    /// See [`StartStreamingSession`](crate::client::fluent_builders::StartStreamingSession) for more information about the
+    /// operation and its arguments.
+    pub fn start_streaming_session(&self) -> fluent_builders::StartStreamingSession<C, M, R> {
+        fluent_builders::StartStreamingSession::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `StartStudioSSOConfigurationRepair` operation.
     ///
     /// See [`StartStudioSSOConfigurationRepair`](crate::client::fluent_builders::StartStudioSSOConfigurationRepair) for more information about the
@@ -348,6 +355,13 @@ where
         &self,
     ) -> fluent_builders::StartStudioSSOConfigurationRepair<C, M, R> {
         fluent_builders::StartStudioSSOConfigurationRepair::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `StopStreamingSession` operation.
+    ///
+    /// See [`StopStreamingSession`](crate::client::fluent_builders::StopStreamingSession) for more information about the
+    /// operation and its arguments.
+    pub fn stop_streaming_session(&self) -> fluent_builders::StopStreamingSession<C, M, R> {
+        fluent_builders::StopStreamingSession::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `TagResource` operation.
     ///
@@ -460,17 +474,24 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -492,12 +513,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_eula_ids(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>A collection of EULA IDs.</p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>A collection of EULA IDs.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -554,17 +575,24 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -583,12 +611,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ec2_subnet_ids`](Self::set_ec2_subnet_ids).
         ///
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from.
+        /// These subnets must support the specified instance types. </p>
         pub fn ec2_subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ec2_subnet_ids(inp);
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from.
+        /// These subnets must support the specified instance types. </p>
         pub fn set_ec2_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -600,7 +630,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_launch_profile_protocol_versions`](Self::set_launch_profile_protocol_versions).
         ///
-        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid
+        /// version is "2021-03-31".</p>
         pub fn launch_profile_protocol_versions(
             mut self,
             inp: impl Into<std::string::String>,
@@ -608,7 +639,8 @@ pub mod fluent_builders {
             self.inner = self.inner.launch_profile_protocol_versions(inp);
             self
         }
-        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid
+        /// version is "2021-03-31".</p>
         pub fn set_launch_profile_protocol_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -646,12 +678,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_studio_component_ids`](Self::set_studio_component_ids).
         ///
-        /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
+        /// <p>Unique identifiers for a collection of studio components that can be used with this
+        /// launch profile.</p>
         pub fn studio_component_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_component_ids(inp);
             self
         }
-        /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
+        /// <p>Unique identifiers for a collection of studio components that can be used with this
+        /// launch profile.</p>
         pub fn set_studio_component_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -659,12 +693,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_studio_component_ids(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -673,7 +707,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -682,7 +717,8 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -744,17 +780,24 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -789,12 +832,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -803,7 +846,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -812,7 +856,8 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -825,7 +870,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateStreamingSession`.
     ///
-    /// <p>Creates a streaming session in a studio.</p> <p>After invoking this operation, you must poll GetStreamingSession until the streaming session is in state READY.</p>
+    /// <p>Creates a streaming session in a studio.</p>
+    /// <p>After invoking this operation, you must poll GetStreamingSession until the streaming
+    /// session is in state READY.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateStreamingSession<
         C = aws_smithy_client::erase::DynConnector,
@@ -874,17 +921,24 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -938,12 +992,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_streaming_image_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -952,7 +1006,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -961,7 +1016,8 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -974,7 +1030,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateStreamingSessionStream`.
     ///
-    /// <p>Creates a streaming session stream for a streaming session.</p> <p>After invoking this API, invoke GetStreamingSessionStream with the returned streamId to poll the resource until it is in state READY.</p>
+    /// <p>Creates a streaming session stream for a streaming session.</p>
+    /// <p>After invoking this API, invoke GetStreamingSessionStream with the returned streamId
+    /// to poll the resource until it is in state READY.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateStreamingSessionStream<
         C = aws_smithy_client::erase::DynConnector,
@@ -1023,17 +1081,24 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1048,22 +1113,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_expiration_in_seconds(input);
             self
         }
-        /// <p>The session ID.</p>
+        /// <p>The streaming session ID.</p>
         pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.session_id(inp);
             self
         }
-        /// <p>The session ID.</p>
+        /// <p>The streaming session ID.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_session_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -1071,7 +1136,26 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateStudio`.
     ///
-    /// <p>Create a new Studio.</p> <p>When creating a Studio, two IAM roles must be provided: the admin role and the user Role. These roles are assumed by your users when they log in to the Nimble Studio portal.</p> <p>The user role must have the AmazonNimbleStudio-StudioUser managed policy attached for the portal to function properly.</p> <p>The Admin Role must have the AmazonNimbleStudio-StudioAdmin managed policy attached for the portal to function properly.</p> <p>You may optionally specify a KMS key in the StudioEncryptionConfiguration.</p> <p>In Nimble Studio, resource names, descriptions, initialization scripts, and other data you provide are always encrypted at rest using an KMS key. By default, this key is owned by Amazon Web Services and managed on your behalf. You may provide your own KMS key when calling CreateStudio to encrypt this data using a key you own and manage.</p> <p>When providing an KMS key during studio creation, Nimble Studio creates KMS grants in your account to provide your studio user and admin roles access to these KMS keys.</p> <p>If you delete this grant, the studio will no longer be accessible to your portal users.</p> <p>If you delete the studio KMS key, your studio will no longer be accessible.</p>
+    /// <p>Create a new Studio.</p>
+    /// <p>When creating a Studio, two IAM roles must be provided: the admin role and the user
+    /// Role. These roles are assumed by your users when they log in to the Nimble Studio
+    /// portal.</p>
+    /// <p>The user role must have the AmazonNimbleStudio-StudioUser managed policy attached for
+    /// the portal to function properly.</p>
+    /// <p>The Admin Role must have the AmazonNimbleStudio-StudioAdmin managed policy attached
+    /// for the portal to function properly.</p>
+    /// <p>You may optionally specify a KMS key in the StudioEncryptionConfiguration.</p>
+    /// <p>In Nimble Studio, resource names, descriptions, initialization scripts, and other
+    /// data you provide are always encrypted at rest using an KMS key. By default, this key is
+    /// owned by Amazon Web Services and managed on your behalf. You may provide your own KMS
+    /// key when calling CreateStudio to encrypt this data using a key you own and
+    /// manage.</p>
+    /// <p>When providing an KMS key during studio creation, Nimble Studio creates KMS
+    /// grants in your account to provide your studio user and admin roles access to these KMS
+    /// keys.</p>
+    /// <p>If you delete this grant, the studio will no longer be accessible to your portal
+    /// users.</p>
+    /// <p>If you delete the studio KMS key, your studio will no longer be accessible.</p>
     #[derive(std::fmt::Debug)]
     pub struct CreateStudio<
         C = aws_smithy_client::erase::DynConnector,
@@ -1120,17 +1204,22 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
+        /// portal.</p>
         pub fn admin_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.admin_role_arn(inp);
             self
         }
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
+        /// portal.</p>
         pub fn set_admin_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1138,12 +1227,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_admin_role_arn(input);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1174,12 +1267,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_studio_encryption_configuration(input);
             self
         }
-        /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
+        /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed
+        /// by Nimble Studio users.</p>
         pub fn studio_name(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_name(inp);
             self
         }
-        /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
+        /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed
+        /// by Nimble Studio users.</p>
         pub fn set_studio_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_name(input);
             self
@@ -1188,7 +1283,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1197,7 +1293,8 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1207,12 +1304,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
+        /// portal.</p>
         pub fn user_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_role_arn(inp);
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
+        /// portal.</p>
         pub fn set_user_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1272,17 +1371,24 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1379,12 +1485,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_script_parameters(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -1406,7 +1512,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1415,7 +1522,8 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1490,27 +1598,34 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(inp);
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1518,12 +1633,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_profile_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -1580,27 +1695,34 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(inp);
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1608,22 +1730,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_profile_id(input);
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_id(inp);
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -1680,17 +1802,24 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1708,12 +1837,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_streaming_image_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -1721,7 +1850,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteStreamingSession`.
     ///
-    /// <p>Deletes streaming session resource.</p> <p>After invoking this operation, use GetStreamingSession to poll the resource until it transitions to a DELETED state.</p> <p>A streaming session will count against your streaming session quota until it is marked DELETED.</p>
+    /// <p>Deletes streaming session resource.</p>
+    /// <p>After invoking this operation, use GetStreamingSession to poll the resource until it
+    /// transitions to a DELETED state.</p>
+    /// <p>A streaming session will count against your streaming session quota until it is marked
+    /// DELETED.</p>
     #[derive(std::fmt::Debug)]
     pub struct DeleteStreamingSession<
         C = aws_smithy_client::erase::DynConnector,
@@ -1770,37 +1903,44 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The session ID.</p>
+        /// <p>The streaming session ID.</p>
         pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.session_id(inp);
             self
         }
-        /// <p>The session ID.</p>
+        /// <p>The streaming session ID.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_session_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -1857,27 +1997,34 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -1934,17 +2081,24 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1962,12 +2116,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_studio_component_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -2024,37 +2178,44 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_id(inp);
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -2111,9 +2272,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The EULA ID.</p>
@@ -2178,17 +2342,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(inp);
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2196,12 +2363,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_profile_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -2209,7 +2376,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetLaunchProfileDetails`.
     ///
-    /// <p>Launch profile details include the launch profile resource and summary information of resources that are used by, or available to, the launch profile. This includes the name and description of all studio components used by the launch profiles, and the name and description of streaming images that can be used with this launch profile.</p>
+    /// <p>Launch profile details include the launch profile resource and summary information of
+    /// resources that are used by, or available to, the launch profile. This includes the name
+    /// and description of all studio components used by the launch profiles, and the name and
+    /// description of streaming images that can be used with this launch profile.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetLaunchProfileDetails<
         C = aws_smithy_client::erase::DynConnector,
@@ -2258,17 +2428,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(inp);
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2276,12 +2449,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_profile_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -2338,17 +2511,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(inp);
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2360,7 +2536,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_launch_profile_protocol_versions`](Self::set_launch_profile_protocol_versions).
         ///
-        /// <p>A collection of launch profile protocol versions.</p>
+        /// <p>The launch profile protocol versions supported by the client.</p>
         pub fn launch_profile_protocol_versions(
             mut self,
             inp: impl Into<std::string::String>,
@@ -2368,7 +2544,7 @@ pub mod fluent_builders {
             self.inner = self.inner.launch_profile_protocol_versions(inp);
             self
         }
-        /// <p>A collection of launch profile protocol versions.</p>
+        /// <p>The launch profile protocol versions supported by the client.</p>
         pub fn set_launch_profile_protocol_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2389,22 +2565,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_purpose(input);
             self
         }
-        /// <p>The platform.</p>
+        /// <p>The platform where this Launch Profile will be used, either WINDOWS or LINUX.</p>
         pub fn platform(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.platform(inp);
             self
         }
-        /// <p>The platform.</p>
+        /// <p>The platform where this Launch Profile will be used, either WINDOWS or LINUX.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_platform(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -2461,17 +2637,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(inp);
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2479,22 +2658,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_profile_id(input);
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_id(inp);
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -2551,9 +2730,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The streaming image ID.</p>
@@ -2569,12 +2751,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_streaming_image_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -2582,7 +2764,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetStreamingSession`.
     ///
-    /// <p>Gets StreamingSession resource.</p> <p>Invoke this operation to poll for a streaming session state while creating or deleting a session.</p>
+    /// <p>Gets StreamingSession resource.</p>
+    /// <p>anvoke this operation to poll for a streaming session state while creating or deleting
+    /// a session.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetStreamingSession<
         C = aws_smithy_client::erase::DynConnector,
@@ -2631,27 +2815,30 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The session ID.</p>
+        /// <p>The streaming session ID.</p>
         pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.session_id(inp);
             self
         }
-        /// <p>The session ID.</p>
+        /// <p>The streaming session ID.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_session_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -2659,7 +2846,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetStreamingSessionStream`.
     ///
-    /// <p>Gets a StreamingSessionStream for a streaming session.</p> <p>Invoke this operation to poll the resource after invoking CreateStreamingSessionStream.</p> <p>After the StreamingSessionStream changes to the state READY, the url property will contain a stream to be used with the DCV streaming client.</p>
+    /// <p>Gets a StreamingSessionStream for a streaming session.</p>
+    /// <p>Invoke this operation to poll the resource after invoking
+    /// CreateStreamingSessionStream.</p>
+    /// <p>After the StreamingSessionStream changes to the state READY, the url property will
+    /// contain a stream to be used with the DCV streaming client.</p>
     #[derive(std::fmt::Debug)]
     pub struct GetStreamingSessionStream<
         C = aws_smithy_client::erase::DynConnector,
@@ -2708,37 +2899,40 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The session ID.</p>
+        /// <p>The streaming session ID.</p>
         pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.session_id(inp);
             self
         }
-        /// <p>The session ID.</p>
+        /// <p>The streaming session ID.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_session_id(input);
             self
         }
-        /// <p>The stream ID.</p>
+        /// <p>The streaming session stream ID.</p>
         pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.stream_id(inp);
             self
         }
-        /// <p>The stream ID.</p>
+        /// <p>The streaming session stream ID.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stream_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -2795,17 +2989,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -2862,9 +3059,12 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// <p>The studio component ID.</p>
@@ -2880,12 +3080,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_studio_component_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -2942,27 +3142,30 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_id(inp);
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -3019,21 +3222,24 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `eulaIds`.
         ///
         /// To override the contents of this collection use [`set_eula_ids`](Self::set_eula_ids).
         ///
-        /// <p>A collection of EULA IDs.</p>
+        /// <p>The list of EULA IDs that have been previously accepted.</p>
         pub fn eula_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.eula_ids(inp);
             self
         }
-        /// <p>A collection of EULA IDs.</p>
+        /// <p>The list of EULA IDs that have been previously accepted.</p>
         pub fn set_eula_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3041,22 +3247,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_eula_ids(input);
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -3113,21 +3319,24 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
         /// Appends an item to `eulaIds`.
         ///
         /// To override the contents of this collection use [`set_eula_ids`](Self::set_eula_ids).
         ///
-        /// <p>A collection of EULA IDs.</p>
+        /// <p>The list of EULA IDs that should be returned</p>
         pub fn eula_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.eula_ids(inp);
             self
         }
-        /// <p>A collection of EULA IDs.</p>
+        /// <p>The list of EULA IDs that should be returned</p>
         pub fn set_eula_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3135,12 +3344,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_eula_ids(input);
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3197,17 +3406,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(inp);
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3215,32 +3427,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_profile_id(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request.</p>
+        /// <p>The max number of results to return in the response.</p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>The maximum number of results to be returned per request.</p>
+        /// <p>The max number of results to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -3297,37 +3509,40 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of results to be returned per request.</p>
+        /// <p>The max number of results to return in the response.</p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>The maximum number of results to be returned per request.</p>
+        /// <p>The max number of results to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_id(inp);
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal_id(input);
             self
@@ -3336,12 +3551,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
-        /// <p>A list of states.</p>
+        /// <p>Filter this request to launch profiles in any of the given states.</p>
         pub fn states(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.states(inp);
             self
         }
-        /// <p>A list of states.</p>
+        /// <p>Filter this request to launch profiles in any of the given states.</p>
         pub fn set_states(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3349,12 +3564,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_states(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -3362,7 +3577,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListStreamingImages`.
     ///
-    /// <p>List the streaming image resources available to this studio.</p> <p>This list will contain both images provided by Amazon Web Services, as well as streaming images that you have created in your studio.</p>
+    /// <p>List the streaming image resources available to this studio.</p>
+    /// <p>This list will contain both images provided by Amazon Web Services, as well as
+    /// streaming images that you have created in your studio.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListStreamingImages<
         C = aws_smithy_client::erase::DynConnector,
@@ -3411,37 +3628,40 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The owner.</p>
+        /// <p>Filter this request to streaming images with the given owner</p>
         pub fn owner(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owner(inp);
             self
         }
-        /// <p>The owner.</p>
+        /// <p>Filter this request to streaming images with the given owner</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_owner(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -3498,57 +3718,60 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The user ID of the user that created the streaming session.</p>
+        /// <p>Filters the request to streaming sessions created by the given user.</p>
         pub fn created_by(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.created_by(inp);
             self
         }
-        /// <p>The user ID of the user that created the streaming session.</p>
+        /// <p>Filters the request to streaming sessions created by the given user.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_created_by(input);
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The user ID of the user that owns the streaming session.</p>
+        /// <p>Filters the request to streaming session owned by the given user</p>
         pub fn owned_by(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owned_by(inp);
             self
         }
-        /// <p>The user ID of the user that owns the streaming session.</p>
+        /// <p>Filters the request to streaming session owned by the given user</p>
         pub fn set_owned_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_owned_by(input);
             self
         }
-        /// <p>A collection of session IDs.</p>
+        /// <p>Filters the request to only the provided session IDs.</p>
         pub fn session_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.session_ids(inp);
             self
         }
-        /// <p>A collection of session IDs.</p>
+        /// <p>Filters the request to only the provided session IDs.</p>
         pub fn set_session_ids(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_session_ids(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -3605,27 +3828,30 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of results to be returned per request.</p>
+        /// <p>The max number of results to return in the response.</p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>The maximum number of results to be returned per request.</p>
+        /// <p>The max number of results to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3634,12 +3860,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
-        /// <p>A list of states.</p>
+        /// <p>Filters the request to studio components that are in one of the given states. </p>
         pub fn states(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.states(inp);
             self
         }
-        /// <p>A list of states.</p>
+        /// <p>Filters the request to studio components that are in one of the given states. </p>
         pub fn set_states(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3647,12 +3873,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_states(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -3661,12 +3887,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_types`](Self::set_types).
         ///
-        /// <p>The types.</p>
+        /// <p>Filters the request to studio components that are of one of the given types.</p>
         pub fn types(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.types(inp);
             self
         }
-        /// <p>The types.</p>
+        /// <p>Filters the request to studio components that are of one of the given types.</p>
         pub fn set_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3726,37 +3952,40 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of results to be returned per request.</p>
+        /// <p>The max number of results to return in the response.</p>
         pub fn max_results(mut self, inp: i32) -> Self {
             self.inner = self.inner.max_results(inp);
             self
         }
-        /// <p>The maximum number of results to be returned per request.</p>
+        /// <p>The max number of results to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -3764,7 +3993,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListStudios`.
     ///
-    /// <p>List studios in your Amazon Web Services account in the requested Amazon Web Services Region.</p>
+    /// <p>List studios in your Amazon Web Services account in the requested Amazon Web Services
+    /// Region.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListStudios<
         C = aws_smithy_client::erase::DynConnector,
@@ -3813,17 +4043,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(inp);
             self
         }
-        /// <p>The token for the next set of results, or null if there are no more results.</p>
+        /// <p>The token to request the next page of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3831,7 +4064,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Gets the tags for a resource, given its Amazon Resource Names (ARN).</p> <p>This operation supports ARNs for all resource types in Nimble Studio that support tags, including studio, studio component, launch profile, streaming image, and streaming session. All resources that can be tagged will contain an ARN property, so you do not have to create this ARN yourself.</p>
+    /// <p>Gets the tags for a resource, given its Amazon Resource Names (ARN).</p>
+    /// <p>This operation supports ARNs for all resource types in Nimble Studio that support
+    /// tags, including studio, studio component, launch profile, streaming image, and streaming
+    /// session. All resources that can be tagged will contain an ARN property, so you do not
+    /// have to create this ARN yourself.</p>
     #[derive(std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -3880,17 +4117,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the target resource for tagging operations.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
         pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(inp);
             self
         }
-        /// <p>The ARN of the target resource for tagging operations.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -3947,17 +4187,24 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -3975,12 +4222,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_store_id(input);
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(inp);
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4005,12 +4252,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_members(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -4067,17 +4314,24 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -4112,12 +4366,108 @@ pub mod fluent_builders {
             self.inner = self.inner.set_members(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
+        pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_studio_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartStreamingSession`.
+    ///
+    /// <p> Transitions sessions from the STOPPED state into the READY state. The
+    /// START_IN_PROGRESS state is the intermediate state between the STOPPED and READY
+    /// states.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct StartStreamingSession<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::start_streaming_session_input::Builder,
+    }
+    impl<C, M, R> StartStreamingSession<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `StartStreamingSession`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartStreamingSessionOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartStreamingSessionError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::StartStreamingSessionInputOperationOutputAlias,
+                crate::output::StartStreamingSessionOutput,
+                crate::error::StartStreamingSessionError,
+                crate::input::StartStreamingSessionInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The streaming session ID for the StartStreamingSessionRequest.</p>
+        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(inp);
+            self
+        }
+        /// <p>The streaming session ID for the StartStreamingSessionRequest.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_session_id(input);
+            self
+        }
+        /// <p>The studio ID for the StartStreamingSessionRequest.</p>
+        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(inp);
+            self
+        }
+        /// <p>The studio ID for the StartStreamingSessionRequest.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -4125,7 +4475,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartStudioSSOConfigurationRepair`.
     ///
-    /// <p>Repairs the SSO configuration for a given studio.</p> <p>If the studio has a valid Amazon Web Services SSO configuration currently associated with it, this operation will fail with a validation error.</p> <p>If the studio does not have a valid Amazon Web Services SSO configuration currently associated with it, then a new Amazon Web Services SSO application is created for the studio and the studio is changed to the READY state.</p> <p>After the Amazon Web Services SSO application is repaired, you must use the Amazon Nimble Studio console to add administrators and users to your studio.</p>
+    /// <p>Repairs the Amazon Web Services SSO configuration for a given studio.</p>
+    /// <p>If the studio has a valid Amazon Web Services SSO configuration currently associated with
+    /// it, this operation will fail with a validation error.</p>
+    /// <p>If the studio does not have a valid Amazon Web Services SSO configuration currently
+    /// associated with it, then a new Amazon Web Services SSO application is created for the studio
+    /// and the studio is changed to the READY state.</p>
+    /// <p>After the Amazon Web Services SSO application is repaired, you must use the Amazon Nimble Studio console to add administrators and users to your studio.</p>
     #[derive(std::fmt::Debug)]
     pub struct StartStudioSSOConfigurationRepair<
         C = aws_smithy_client::erase::DynConnector,
@@ -4174,27 +4530,129 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
+        pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_studio_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StopStreamingSession`.
+    ///
+    /// <p>Transitions sessions from the READY state into the STOPPED state. The STOP_IN_PROGRESS
+    /// state is the intermediate state between the READY and STOPPED states.</p>
+    #[derive(std::fmt::Debug)]
+    pub struct StopStreamingSession<
+        C = aws_smithy_client::erase::DynConnector,
+        M = aws_hyper::AwsMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::stop_streaming_session_input::Builder,
+    }
+    impl<C, M, R> StopStreamingSession<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `StopStreamingSession`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StopStreamingSessionOutput,
+            aws_smithy_http::result::SdkError<crate::error::StopStreamingSessionError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::StopStreamingSessionInputOperationOutputAlias,
+                crate::output::StopStreamingSessionOutput,
+                crate::error::StopStreamingSessionError,
+                crate::input::StopStreamingSessionInputOperationRetryAlias,
+            >,
+        {
+            let input = self.inner.build().map_err(|err| {
+                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
+        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(inp);
+            self
+        }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The streaming session ID for the StopStreamingSessionRequest.</p>
+        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(inp);
+            self
+        }
+        /// <p>The streaming session ID for the StopStreamingSessionRequest.</p>
+        pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_session_id(input);
+            self
+        }
+        /// <p>The studioId for the StopStreamingSessionRequest.</p>
+        pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(inp);
+            self
+        }
+        /// <p>The studioId for the StopStreamingSessionRequest.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -4251,17 +4709,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the target resource for tagging operations.</p>
+        /// <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
         pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(inp);
             self
         }
-        /// <p>The ARN of the target resource for tagging operations.</p>
+        /// <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4270,7 +4731,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4279,7 +4741,8 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k, v);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
+        /// resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4341,17 +4804,20 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the target resource for tagging operations.</p>
+        /// <p>Identifies the Amazon Resource Name(ARN) key from which you are removing tags. </p>
         pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(inp);
             self
         }
-        /// <p>The ARN of the target resource for tagging operations.</p>
+        /// <p>Identifies the Amazon Resource Name(ARN) key from which you are removing tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4360,12 +4826,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>An array of tag keys to delete.</p>
+        /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
         pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(inp);
             self
         }
-        /// <p>An array of tag keys to delete.</p>
+        /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4425,17 +4891,24 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -4450,12 +4923,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(inp);
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4467,7 +4940,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_launch_profile_protocol_versions`](Self::set_launch_profile_protocol_versions).
         ///
-        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid
+        /// version is "2021-03-31".</p>
         pub fn launch_profile_protocol_versions(
             mut self,
             inp: impl Into<std::string::String>,
@@ -4475,7 +4949,8 @@ pub mod fluent_builders {
             self.inner = self.inner.launch_profile_protocol_versions(inp);
             self
         }
-        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid
+        /// version is "2021-03-31".</p>
         pub fn set_launch_profile_protocol_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4513,12 +4988,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_studio_component_ids`](Self::set_studio_component_ids).
         ///
-        /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
+        /// <p>Unique identifiers for a collection of studio components that can be used with this
+        /// launch profile.</p>
         pub fn studio_component_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_component_ids(inp);
             self
         }
-        /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
+        /// <p>Unique identifiers for a collection of studio components that can be used with this
+        /// launch profile.</p>
         pub fn set_studio_component_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4526,12 +5003,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_studio_component_ids(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -4588,27 +5065,34 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn launch_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_profile_id(inp);
             self
         }
-        /// <p>The launch profile ID.</p>
+        /// <p>The Launch Profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4629,22 +5113,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_persona(input);
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_id(inp);
             self
         }
-        /// <p>The principal ID.</p>
+        /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -4701,17 +5185,24 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -4749,12 +5240,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_streaming_image_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
@@ -4762,7 +5253,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateStudio`.
     ///
-    /// <p>Update a Studio resource.</p> <p>Currently, this operation only supports updating the displayName of your studio.</p>
+    /// <p>Update a Studio resource.</p>
+    /// <p>Currently, this operation only supports updating the displayName of your
+    /// studio.</p>
     #[derive(std::fmt::Debug)]
     pub struct UpdateStudio<
         C = aws_smithy_client::erase::DynConnector,
@@ -4811,17 +5304,22 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
+        /// portal.</p>
         pub fn admin_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.admin_role_arn(inp);
             self
         }
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
+        /// portal.</p>
         pub fn set_admin_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4829,12 +5327,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_admin_role_arn(input);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -4849,22 +5351,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_display_name(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
+        /// portal.</p>
         pub fn user_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_role_arn(inp);
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
+        /// portal.</p>
         pub fn set_user_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4924,17 +5428,24 @@ pub mod fluent_builders {
             let input = self.inner.build().map_err(|err| {
                 aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
             })?;
-            let op = input.make_operation(&self.handle.conf).map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
             self.handle.client.call(op).await
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(inp);
             self
         }
-        /// <p>To make an idempotent API request using one of these actions, specify a client token in the request. You should not reuse the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails with a ValidationException error.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
+        /// client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -5044,12 +5555,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_studio_component_id(input);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn studio_id(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.studio_id(inp);
             self
         }
-        /// <p>The studio ID.</p>
+        /// <p>The studio ID. </p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_studio_id(input);
             self

@@ -26,7 +26,7 @@ pub enum DeleteScalingPolicyErrorKind {
     /// <p>An exception was thrown for a validation issue. Review the available parameters for the
     /// API request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteScalingPolicyError {
@@ -92,28 +92,28 @@ impl DeleteScalingPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteScalingPolicyErrorKind::ConcurrentUpdateException`.
+    /// Returns `true` if the error kind is `DeleteScalingPolicyErrorKind::ConcurrentUpdateException`.
     pub fn is_concurrent_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteScalingPolicyErrorKind::ConcurrentUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteScalingPolicyErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteScalingPolicyErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteScalingPolicyErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteScalingPolicyErrorKind::ObjectNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteScalingPolicyErrorKind::ObjectNotFoundException`.
     pub fn is_object_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteScalingPolicyErrorKind::ObjectNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteScalingPolicyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteScalingPolicyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -160,7 +160,7 @@ pub enum DeleteScheduledActionErrorKind {
     /// <p>An exception was thrown for a validation issue. Review the available parameters for the
     /// API request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteScheduledActionError {
@@ -226,28 +226,28 @@ impl DeleteScheduledActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeleteScheduledActionErrorKind::ConcurrentUpdateException`.
+    /// Returns `true` if the error kind is `DeleteScheduledActionErrorKind::ConcurrentUpdateException`.
     pub fn is_concurrent_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteScheduledActionErrorKind::ConcurrentUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteScheduledActionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeleteScheduledActionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteScheduledActionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteScheduledActionErrorKind::ObjectNotFoundException`.
+    /// Returns `true` if the error kind is `DeleteScheduledActionErrorKind::ObjectNotFoundException`.
     pub fn is_object_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeleteScheduledActionErrorKind::ObjectNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeleteScheduledActionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeleteScheduledActionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -294,7 +294,7 @@ pub enum DeregisterScalableTargetErrorKind {
     /// <p>An exception was thrown for a validation issue. Review the available parameters for the
     /// API request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterScalableTargetError {
@@ -360,28 +360,28 @@ impl DeregisterScalableTargetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DeregisterScalableTargetErrorKind::ConcurrentUpdateException`.
+    /// Returns `true` if the error kind is `DeregisterScalableTargetErrorKind::ConcurrentUpdateException`.
     pub fn is_concurrent_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterScalableTargetErrorKind::ConcurrentUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterScalableTargetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DeregisterScalableTargetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterScalableTargetErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterScalableTargetErrorKind::ObjectNotFoundException`.
+    /// Returns `true` if the error kind is `DeregisterScalableTargetErrorKind::ObjectNotFoundException`.
     pub fn is_object_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             DeregisterScalableTargetErrorKind::ObjectNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `DeregisterScalableTargetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DeregisterScalableTargetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -424,7 +424,7 @@ pub enum DescribeScalableTargetsErrorKind {
     /// <p>An exception was thrown for a validation issue. Review the available parameters for the
     /// API request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeScalableTargetsError {
@@ -490,28 +490,28 @@ impl DescribeScalableTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeScalableTargetsErrorKind::ConcurrentUpdateException`.
+    /// Returns `true` if the error kind is `DescribeScalableTargetsErrorKind::ConcurrentUpdateException`.
     pub fn is_concurrent_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalableTargetsErrorKind::ConcurrentUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalableTargetsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeScalableTargetsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalableTargetsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalableTargetsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeScalableTargetsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalableTargetsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalableTargetsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeScalableTargetsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -554,7 +554,7 @@ pub enum DescribeScalingActivitiesErrorKind {
     /// <p>An exception was thrown for a validation issue. Review the available parameters for the
     /// API request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeScalingActivitiesError {
@@ -620,28 +620,28 @@ impl DescribeScalingActivitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeScalingActivitiesErrorKind::ConcurrentUpdateException`.
+    /// Returns `true` if the error kind is `DescribeScalingActivitiesErrorKind::ConcurrentUpdateException`.
     pub fn is_concurrent_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingActivitiesErrorKind::ConcurrentUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingActivitiesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeScalingActivitiesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingActivitiesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingActivitiesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeScalingActivitiesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingActivitiesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingActivitiesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeScalingActivitiesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -689,7 +689,7 @@ pub enum DescribeScalingPoliciesErrorKind {
     /// <p>An exception was thrown for a validation issue. Review the available parameters for the
     /// API request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeScalingPoliciesError {
@@ -758,35 +758,35 @@ impl DescribeScalingPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeScalingPoliciesErrorKind::ConcurrentUpdateException`.
+    /// Returns `true` if the error kind is `DescribeScalingPoliciesErrorKind::ConcurrentUpdateException`.
     pub fn is_concurrent_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingPoliciesErrorKind::ConcurrentUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingPoliciesErrorKind::FailedResourceAccessException`.
+    /// Returns `true` if the error kind is `DescribeScalingPoliciesErrorKind::FailedResourceAccessException`.
     pub fn is_failed_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingPoliciesErrorKind::FailedResourceAccessException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingPoliciesErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeScalingPoliciesErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingPoliciesErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingPoliciesErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeScalingPoliciesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScalingPoliciesErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScalingPoliciesErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeScalingPoliciesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -830,7 +830,7 @@ pub enum DescribeScheduledActionsErrorKind {
     /// <p>An exception was thrown for a validation issue. Review the available parameters for the
     /// API request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeScheduledActionsError {
@@ -896,28 +896,28 @@ impl DescribeScheduledActionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `DescribeScheduledActionsErrorKind::ConcurrentUpdateException`.
+    /// Returns `true` if the error kind is `DescribeScheduledActionsErrorKind::ConcurrentUpdateException`.
     pub fn is_concurrent_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScheduledActionsErrorKind::ConcurrentUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScheduledActionsErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `DescribeScheduledActionsErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScheduledActionsErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScheduledActionsErrorKind::InvalidNextTokenException`.
+    /// Returns `true` if the error kind is `DescribeScheduledActionsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(
             &self.kind,
             DescribeScheduledActionsErrorKind::InvalidNextTokenException(_)
         )
     }
-    /// Returns true if the error kind is `DescribeScheduledActionsErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `DescribeScheduledActionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -971,7 +971,7 @@ pub enum PutScalingPolicyErrorKind {
     /// <p>An exception was thrown for a validation issue. Review the available parameters for the
     /// API request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutScalingPolicyError {
@@ -1039,42 +1039,42 @@ impl PutScalingPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutScalingPolicyErrorKind::ConcurrentUpdateException`.
+    /// Returns `true` if the error kind is `PutScalingPolicyErrorKind::ConcurrentUpdateException`.
     pub fn is_concurrent_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutScalingPolicyErrorKind::ConcurrentUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `PutScalingPolicyErrorKind::FailedResourceAccessException`.
+    /// Returns `true` if the error kind is `PutScalingPolicyErrorKind::FailedResourceAccessException`.
     pub fn is_failed_resource_access_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutScalingPolicyErrorKind::FailedResourceAccessException(_)
         )
     }
-    /// Returns true if the error kind is `PutScalingPolicyErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `PutScalingPolicyErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutScalingPolicyErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `PutScalingPolicyErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutScalingPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutScalingPolicyErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutScalingPolicyErrorKind::ObjectNotFoundException`.
+    /// Returns `true` if the error kind is `PutScalingPolicyErrorKind::ObjectNotFoundException`.
     pub fn is_object_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutScalingPolicyErrorKind::ObjectNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutScalingPolicyErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutScalingPolicyErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1125,7 +1125,7 @@ pub enum PutScheduledActionErrorKind {
     /// <p>An exception was thrown for a validation issue. Review the available parameters for the
     /// API request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutScheduledActionError {
@@ -1192,35 +1192,35 @@ impl PutScheduledActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `PutScheduledActionErrorKind::ConcurrentUpdateException`.
+    /// Returns `true` if the error kind is `PutScheduledActionErrorKind::ConcurrentUpdateException`.
     pub fn is_concurrent_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutScheduledActionErrorKind::ConcurrentUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `PutScheduledActionErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `PutScheduledActionErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutScheduledActionErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `PutScheduledActionErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `PutScheduledActionErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutScheduledActionErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `PutScheduledActionErrorKind::ObjectNotFoundException`.
+    /// Returns `true` if the error kind is `PutScheduledActionErrorKind::ObjectNotFoundException`.
     pub fn is_object_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
             PutScheduledActionErrorKind::ObjectNotFoundException(_)
         )
     }
-    /// Returns true if the error kind is `PutScheduledActionErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `PutScheduledActionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1264,7 +1264,7 @@ pub enum RegisterScalableTargetErrorKind {
     /// <p>An exception was thrown for a validation issue. Review the available parameters for the
     /// API request.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterScalableTargetError {
@@ -1330,28 +1330,28 @@ impl RegisterScalableTargetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    /// Returns true if the error kind is `RegisterScalableTargetErrorKind::ConcurrentUpdateException`.
+    /// Returns `true` if the error kind is `RegisterScalableTargetErrorKind::ConcurrentUpdateException`.
     pub fn is_concurrent_update_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterScalableTargetErrorKind::ConcurrentUpdateException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterScalableTargetErrorKind::InternalServiceException`.
+    /// Returns `true` if the error kind is `RegisterScalableTargetErrorKind::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterScalableTargetErrorKind::InternalServiceException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterScalableTargetErrorKind::LimitExceededException`.
+    /// Returns `true` if the error kind is `RegisterScalableTargetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
             RegisterScalableTargetErrorKind::LimitExceededException(_)
         )
     }
-    /// Returns true if the error kind is `RegisterScalableTargetErrorKind::ValidationException`.
+    /// Returns `true` if the error kind is `RegisterScalableTargetErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
