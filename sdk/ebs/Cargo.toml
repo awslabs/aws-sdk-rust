@@ -8,51 +8,60 @@ edition = "2018"
 license = "Apache-2.0"
 repository = "https://github.com/awslabs/aws-sdk-rust"
 readme = "README.md"
-
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]
 [dependencies.aws-endpoint]
 path = "..//aws-endpoint"
 version = "0.0.23-alpha"
+
 [dependencies.aws-http]
 path = "..//aws-http"
 version = "0.0.23-alpha"
+
 [dependencies.aws-hyper]
 path = "..//aws-hyper"
 version = "0.0.23-alpha"
 optional = true
+
 [dependencies.aws-sig-auth]
 path = "..//aws-sig-auth"
 version = "0.0.23-alpha"
+
 [dependencies.aws-smithy-client]
 path = "..//aws-smithy-client"
 version = "0.27.0-alpha.1"
 optional = true
+
 [dependencies.aws-smithy-http]
 path = "..//aws-smithy-http"
 version = "0.27.0-alpha.1"
+
 [dependencies.aws-smithy-json]
 path = "..//aws-smithy-json"
 version = "0.27.0-alpha.1"
+
 [dependencies.aws-smithy-types]
 path = "..//aws-smithy-types"
 version = "0.27.0-alpha.1"
+
 [dependencies.aws-types]
 path = "..//aws-types"
 version = "0.0.23-alpha"
+
 [dependencies.bytes]
 version = "1"
+
 [dependencies.fastrand]
 version = "1"
+
 [dependencies.http]
 version = "0.2"
 [dev-dependencies.tokio]
 version = "1"
 features = ["macros", "test-util", "rt"]
+
 [features]
 client = ["aws-hyper", "aws-smithy-client"]
 rustls = ["aws-hyper/rustls"]
 native-tls = ["aws-hyper/native-tls"]
 default = ["client", "rustls"]
-
-
