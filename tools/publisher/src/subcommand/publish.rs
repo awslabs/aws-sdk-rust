@@ -12,7 +12,7 @@ use crate::package::{
 use crate::repo::discover_repository;
 use crate::{CRATE_OWNER, REPO_CRATE_PATH, REPO_NAME};
 use anyhow::Result;
-use crates_io_api::AsyncClient;
+use crates_io_api::{AsyncClient, Error};
 use dialoguer::Confirm;
 use lazy_static::lazy_static;
 use std::sync::Arc;
@@ -81,6 +81,8 @@ pub async fn subcommand_publish(continue_from: Option<&str>) -> Result<()> {
         for task in tasks {
             task.await??;
         }
+        info!("sleeping 30 seconds after completion of the batch");
+        tokio::time::sleep(Duration::from_secs(30)).await;
     }
 
     Ok(())
@@ -88,7 +90,11 @@ pub async fn subcommand_publish(continue_from: Option<&str>) -> Result<()> {
 
 async fn is_published(handle: &PackageHandle) -> Result<bool> {
     let expected_version = handle.version.to_string();
-    let crate_info = CRATES_IO_CLIENT.get_crate(&handle.name).await?;
+    let crate_info = match CRATES_IO_CLIENT.get_crate(&handle.name).await {
+        Ok(info) => info,
+        Err(Error::NotFound(_)) => return Ok(false),
+        Err(other) => return Err(other.into()),
+    };
     Ok(crate_info
         .versions
         .iter()
