@@ -9,10 +9,14 @@ publish = false
 
 [dependencies]
 anyhow = "1.0"
+async-trait = "0.1.51"
 cargo_toml = "0.10.1"
 clap = "2.33"
+crates_io_api = "0.7.3"
+lazy_static = "1"
 dialoguer = "0.8"
 num_cpus = "1.13"
+regex = "1.5.4"
 semver = "1.0"
 thiserror = "1.0"
 tokio = { version = "1.12", features = ["full"] }

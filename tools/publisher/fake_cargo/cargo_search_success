@@ -1,0 +1,4 @@
+#!/bin/bash
+# Fake `cargo search aws-sdk-dynamodb` for unit testing
+echo 'aws-sdk-dynamodb = "0.0.22-alpha"          # AWS SDK for Amazon DynamoDB'
+echo 'aws-sdk-dynamodbstreams = "0.0.22-alpha"   # AWS SDK for Amazon DynamoDB Streams'

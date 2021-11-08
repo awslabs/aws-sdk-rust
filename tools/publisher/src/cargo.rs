@@ -5,82 +5,70 @@
 
 //! Module for interacting with Cargo.
 
+mod add_owner;
+mod get_owners;
+mod publish;
+mod yank;
+
+pub use add_owner::AddOwner;
+pub use get_owners::GetOwners;
+pub use publish::Publish;
+pub use yank::Yank;
+
 use anyhow::{Context, Result};
-use std::path::{Path, PathBuf};
+use async_trait::async_trait;
+use std::borrow::Cow;
 use std::process::{Command, Output};
 
-macro_rules! cmd {
-    [ $( $x:expr ),* ] => {
-        {
-            let mut cmd = Cmd::new();
-            $(cmd.push($x);)*
-            cmd
-        }
-    };
+#[async_trait]
+pub trait CargoOperation {
+    type Output;
+
+    /// Runs the command asynchronously.
+    async fn spawn(&self) -> Result<Self::Output>;
+
+    /// Returns a plan string that can be output to the user to describe the command.
+    fn plan(&self) -> Option<Cow<'static, str>>;
 }
 
 /// Confirms that cargo exists on the path.
-pub async fn confirm_installed_on_path() -> Result<()> {
-    cmd!["cargo", "--version"]
-        .spawn()
-        .await
-        .context("cargo is not installed on the PATH")?;
+pub fn confirm_installed_on_path() -> Result<()> {
+    handle_failure(
+        "discover cargo version",
+        &Command::new("cargo")
+            .arg("version")
+            .output()
+            .context("cargo is not installed on the PATH")?,
+    )
+    .context("cargo is not installed on the PATH")
+}
+
+/// Returns (stdout, stderr)
+fn output_text(output: &Output) -> (String, String) {
+    (
+        String::from_utf8_lossy(&output.stdout).to_string(),
+        String::from_utf8_lossy(&output.stderr).to_string(),
+    )
+}
+
+fn handle_failure(operation_name: &str, output: &Output) -> Result<(), anyhow::Error> {
+    if !output.status.success() {
+        return Err(capture_error(operation_name, output));
+    }
     Ok(())
 }
 
-/// Returns a `Cmd` that, when spawned, will asynchronously run `cargo publish` in the given crate path.
-pub fn publish_task(crate_path: &Path) -> Cmd {
-    cmd!["cargo", "publish"].working_dir(crate_path)
-}
-
-#[derive(Default)]
-pub struct Cmd {
-    parts: Vec<String>,
-    working_dir: Option<PathBuf>,
-}
-
-impl Cmd {
-    fn new() -> Cmd {
-        Default::default()
-    }
-
-    fn push(&mut self, part: impl Into<String>) {
-        self.parts.push(part.into());
-    }
-
-    fn working_dir(mut self, working_dir: impl AsRef<Path>) -> Self {
-        self.working_dir = Some(working_dir.as_ref().into());
-        self
-    }
-
-    /// Returns a plan string that can be output to the user to describe the command.
-    pub fn plan(&self) -> String {
-        let mut plan = String::new();
-        if let Some(working_dir) = &self.working_dir {
-            plan.push_str(&format!("[in {:?}]: ", working_dir));
-        }
-        plan.push_str(&self.parts.join(" "));
-        plan
-    }
-
-    /// Runs the command asynchronously.
-    pub async fn spawn(mut self) -> Result<Output> {
-        let working_dir = self
-            .working_dir
-            .take()
-            .unwrap_or_else(|| std::env::current_dir().unwrap());
-        let mut command: Command = self.into();
-        tokio::task::spawn_blocking(move || Ok(command.current_dir(working_dir).output()?)).await?
-    }
-}
-
-impl From<Cmd> for Command {
-    fn from(cmd: Cmd) -> Self {
-        assert!(!cmd.parts.is_empty());
-        let mut command = Command::new(&cmd.parts[0]);
-        for i in 1..cmd.parts.len() {
-            command.arg(&cmd.parts[i]);
-        }
-        command
-    }
+fn capture_error(operation_name: &str, output: &Output) -> anyhow::Error {
+    let message = format!(
+        "Failed to {name}:\nStatus: {status}\nStdout: {stdout}\nStderr: {stderr}\n",
+        name = operation_name,
+        status = if let Some(code) = output.status.code() {
+            format!("{}", code)
+        } else {
+            "Killed by signal".to_string()
+        },
+        stdout = String::from_utf8_lossy(&output.stdout),
+        stderr = String::from_utf8_lossy(&output.stderr)
+    );
+    anyhow::Error::msg(message)
 }

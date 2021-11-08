@@ -12,9 +12,18 @@ use cargo_toml::{Dependency, DepsSet, Manifest};
 use semver::Version;
 use std::collections::{BTreeMap, BTreeSet};
 use std::error::Error as StdError;
+use std::fmt;
 use std::path::{Path, PathBuf};
 use tokio::fs;
 use tracing::warn;
+
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd)]
+pub enum PackageCategory {
+    SmithyRuntime,
+    AwsRuntime,
+    AwsSdk,
+    Unknown,
+}
 
 /// Information required to identify a package (crate).
 #[derive(Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
@@ -32,12 +41,24 @@ impl PackageHandle {
     }
 }
 
+impl fmt::Display for PackageHandle {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}-{}", self.name, self.version)
+    }
+}
+
 /// Represents a crate (called Package since crate is a reserved word).
-#[derive(Debug)]
+#[derive(Debug, Eq, PartialEq, PartialOrd, Ord)]
 pub struct Package {
+    /// Package name and version information
     pub handle: PackageHandle,
+    /// Package category (Generated, SmithyRuntime, AwsRuntime, etc.)
+    pub category: PackageCategory,
+    /// Location to the crate on the current file system
     pub crate_path: PathBuf,
+    /// Location to the crate manifest on the current file system
     pub manifest_path: PathBuf,
+    /// Dependencies used by this package
     pub local_dependencies: BTreeSet<PackageHandle>,
 }
 
@@ -48,8 +69,18 @@ impl Package {
         local_dependencies: BTreeSet<PackageHandle>,
     ) -> Self {
         let manifest_path = manifest_path.into();
+        let category = if handle.name.starts_with("aws-smithy-") {
+            PackageCategory::SmithyRuntime
+        } else if handle.name.starts_with("aws-sdk-") {
+            PackageCategory::AwsSdk
+        } else if handle.name.starts_with("aws-") {
+            PackageCategory::AwsRuntime
+        } else {
+            PackageCategory::Unknown
+        };
         Self {
             handle,
+            category,
             crate_path: manifest_path.parent().unwrap().into(),
             manifest_path,
             local_dependencies,
@@ -66,7 +97,7 @@ impl Package {
 pub type PackageBatch = Vec<Package>;
 
 /// Stats about the packages.
-#[derive(Copy, Clone, Debug, Default)]
+#[derive(Copy, Clone, Debug, Default, Eq, PartialEq)]
 pub struct PackageStats {
     /// Number of Smithy runtime crates
     pub smithy_runtime_crates: usize,
@@ -81,17 +112,18 @@ impl PackageStats {
         self.smithy_runtime_crates + self.aws_runtime_crates + self.aws_sdk_crates
     }
 
-    fn calculate(packages: &[Package]) -> PackageStats {
+    fn calculate(batches: &[PackageBatch]) -> PackageStats {
         let mut stats = PackageStats::default();
-        for package in packages {
-            if package.handle.name.starts_with("smithy-") {
-                stats.smithy_runtime_crates += 1;
-            } else if package.handle.name.starts_with("aws-sdk-") {
-                stats.aws_sdk_crates += 1;
-            } else if package.handle.name.starts_with("aws-") {
-                stats.aws_runtime_crates += 1;
-            } else {
-                warn!("Unrecognized crate name: {}", package.handle.name);
+        for batch in batches {
+            for package in batch {
+                match package.category {
+                    PackageCategory::SmithyRuntime => stats.smithy_runtime_crates += 1,
+                    PackageCategory::AwsRuntime => stats.aws_runtime_crates += 1,
+                    PackageCategory::AwsSdk => stats.aws_sdk_crates += 1,
+                    PackageCategory::Unknown => {
+                        warn!("Unrecognized crate: {}", package.handle.name);
+                    }
+                }
             }
         }
         stats
@@ -106,9 +138,42 @@ pub async fn discover_package_batches(
 ) -> Result<(Vec<PackageBatch>, PackageStats)> {
     let manifest_paths = discover_package_manifests(path).await?;
     let packages = read_packages(fs, manifest_paths).await?;
-    let stats = PackageStats::calculate(&packages);
     validate_packages(&packages)?;
-    Ok((batch_packages(packages)?, stats))
+
+    let batches = batch_packages(packages)?;
+    let stats = PackageStats::calculate(&batches);
+    Ok((batches, stats))
+}
+
+/// Modifies the given `batches` so that publishing will continue from the given
+/// `package_name`. The `stats` are modified to reflect how many crates will be published
+/// after the filtering.
+pub fn continue_batches_from(
+    package_name: &str,
+    batches: &mut Vec<PackageBatch>,
+    stats: &mut PackageStats,
+) -> Result<(), anyhow::Error> {
+    while !batches.is_empty() {
+        let found = {
+            let first_batch = batches.iter().next().unwrap();
+            first_batch.iter().any(|p| p.handle.name == package_name)
+        };
+        if !found {
+            batches.remove(0);
+        } else {
+            let first_batch = &mut batches[0];
+            while !first_batch.is_empty() && first_batch[0].handle.name != package_name {
+                first_batch.remove(0);
+            }
+            break;
+        }
+    }
+    *stats = PackageStats::calculate(batches);
+    if batches.is_empty() {
+        Err(anyhow::Error::msg("no more batches to publish"))
+    } else {
+        Ok(())
+    }
 }
 
 type BoxError = Box<dyn StdError + Send + Sync + 'static>;
@@ -146,7 +211,7 @@ pub async fn discover_package_manifests(path: impl AsRef<Path>) -> Result<Vec<Pa
 
 /// Parses a semver version number and adds additional error context when parsing fails.
 pub fn parse_version(manifest_path: &Path, version: &str) -> Result<Version, Error> {
-    Version::parse(&version)
+    Version::parse(version)
         .map_err(|err| Error::InvalidCrateVersion(manifest_path.into(), version.into(), err.into()))
 }
 
@@ -160,7 +225,7 @@ fn read_dependencies(path: &Path, dependencies: &DepsSet) -> Result<Vec<PackageH
                     let version = detailed
                         .version
                         .as_ref()
-                        .map(|version| parse_version(path, &version))
+                        .map(|version| parse_version(path, version))
                         .ok_or_else(|| Error::MissingVersion(path.into(), name.into()))??;
                     result.push(PackageHandle::new(name, version));
                 }
@@ -222,7 +287,7 @@ async fn read_packages(fs: Fs, manifest_paths: Vec<PathBuf>) -> Result<Vec<Packa
     let mut result = Vec::new();
     for path in &manifest_paths {
         let contents: Vec<u8> = fs.read_file(path).await?;
-        result.push(read_package(&path, &contents)?);
+        result.push(read_package(path, &contents)?);
     }
     Ok(result)
 }
@@ -257,6 +322,11 @@ fn batch_packages(packages: Vec<Package>) -> Result<Vec<PackageBatch>> {
     // Push the final batch
     if !packages.is_empty() {
         batches.push(packages);
+    }
+
+    // Sort packages within batches so that `--continue-from` work consistently
+    for batch in batches.iter_mut() {
+        batch.sort();
     }
     Ok(batches)
 }
@@ -378,7 +448,7 @@ mod tests {
             )
         );
         assert_eq!(
-            "A,B;C,F,D;E;",
+            "A,B;C,D,F;E;",
             fmt_batches(
                 batch_packages(vec![
                     package("A", &[]),
@@ -387,6 +457,23 @@ mod tests {
                     package("D", &["A", "B"]),
                     package("F", &["B"]),
                     package("E", &["C", "D", "F"]),
+                ])
+                .unwrap()
+            )
+        );
+        assert_eq!(
+            "A,F;B;C;E,G;D,H,I;",
+            fmt_batches(
+                batch_packages(vec![
+                    package("F", &[]),
+                    package("G", &["C"]),
+                    package("I", &["G"]),
+                    package("H", &["G"]),
+                    package("D", &["B", "C"]),
+                    package("E", &["C"]),
+                    package("C", &["B"]),
+                    package("A", &[]),
+                    package("B", &["A"]),
                 ])
                 .unwrap()
             )
@@ -438,5 +525,57 @@ mod tests {
             "crate A has multiple versions: 1.1.0 and 1.0.0",
             format!("{}", error)
         );
+    }
+
+    #[test]
+    fn test_continue_batches_from() {
+        let mut batches = vec![
+            vec![
+                pkg_ver("aws-a", "1.0.0", &[]),
+                pkg_ver("aws-b", "1.1.0", &[]),
+            ],
+            vec![
+                pkg_ver("aws-smithy-c", "1.0.0", &[]),
+                pkg_ver("aws-smithy-d", "1.1.0", &[]),
+            ],
+            vec![
+                pkg_ver("aws-sdk-e", "1.0.0", &[]),
+                pkg_ver("aws-sdk-f", "1.1.0", &[]),
+            ],
+        ];
+        let mut stats = PackageStats::default();
+        continue_batches_from("aws-smithy-d", &mut batches, &mut stats).unwrap();
+
+        assert_eq!(
+            vec![
+                vec![pkg_ver("aws-smithy-d", "1.1.0", &[])],
+                vec![
+                    pkg_ver("aws-sdk-e", "1.0.0", &[]),
+                    pkg_ver("aws-sdk-f", "1.1.0", &[])
+                ],
+            ],
+            batches
+        );
+        assert_eq!(
+            PackageStats {
+                smithy_runtime_crates: 1,
+                aws_runtime_crates: 0,
+                aws_sdk_crates: 2,
+            },
+            stats
+        );
+    }
+
+    #[test]
+    fn test_continue_batches_from_package_not_found() {
+        let mut batches = vec![vec![
+            pkg_ver("aws-a", "1.0.0", &[]),
+            pkg_ver("aws-b", "1.1.0", &[]),
+        ]];
+        let mut stats = PackageStats::default();
+        assert!(continue_batches_from("does-not-exist", &mut batches, &mut stats).is_err());
+
+        let mut batches = vec![];
+        assert!(continue_batches_from("does-not-exist", &mut batches, &mut stats).is_err());
     }
 }

@@ -64,10 +64,10 @@ fn dependency_order_visit(
             return Err(Error::DependencyCycle);
         }
         if package_handle != dependency
-            && packages.contains_key(&dependency)
+            && packages.contains_key(dependency)
             && !visited.contains(dependency)
         {
-            dependency_order_visit(&dependency, packages, stack, visited, result)?;
+            dependency_order_visit(dependency, packages, stack, visited, result)?;
         }
     }
     result.push(package_handle.clone());

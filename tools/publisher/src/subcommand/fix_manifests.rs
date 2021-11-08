@@ -58,7 +58,7 @@ fn package_versions(manifests: &[Manifest]) -> Result<BTreeMap<String, Version>>
             .ok_or_else(|| {
                 anyhow::Error::msg(format!("{:?} is missing a package version", manifest.path))
             })?;
-        let version = parse_version(&manifest.path, &version)?;
+        let version = parse_version(&manifest.path, version)?;
         versions.insert(name.into(), version);
     }
     Ok(versions)

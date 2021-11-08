@@ -1,0 +1,4 @@
+#!/bin/bash
+>&2 echo "     Updating crates.io index"
+echo "rcoh (Russell Cohen)"
+echo "github:awslabs:rust-sdk-owners (rust-sdk-owners)"

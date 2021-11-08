@@ -5,6 +5,7 @@
 
 use crate::subcommand::fix_manifests::subcommand_fix_manifests;
 use crate::subcommand::publish::subcommand_publish;
+use crate::subcommand::yank_category::subcommand_yank_category;
 use anyhow::Result;
 use clap::{crate_authors, crate_description, crate_name, crate_version};
 
@@ -17,6 +18,7 @@ mod subcommand;
 
 pub const REPO_NAME: &str = "aws-sdk-rust";
 pub const REPO_CRATE_PATH: &str = "sdk";
+pub const CRATE_OWNER: &str = "github:awslabs:rust-sdk-owners";
 
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -27,10 +29,15 @@ async fn main() -> Result<()> {
         .init();
 
     let matches = clap_app().get_matches();
-    if let Some(_matches) = matches.subcommand_matches("publish") {
-        subcommand_publish().await?;
+    if let Some(matches) = matches.subcommand_matches("publish") {
+        let continue_from = matches.value_of("continue-from");
+        subcommand_publish(continue_from).await?;
     } else if let Some(_matches) = matches.subcommand_matches("fix-manifests") {
         subcommand_fix_manifests().await?;
+    } else if let Some(matches) = matches.subcommand_matches("yank-category") {
+        let category = matches.value_of("category").unwrap();
+        let version = matches.value_of("version").unwrap();
+        subcommand_yank_category(category, version).await?;
     } else {
         clap_app().print_long_help().unwrap();
     }
@@ -48,6 +55,35 @@ fn clap_app() -> clap::App<'static, 'static> {
                 .about("fixes path dependencies in manifests to also have version numbers"),
         )
         .subcommand(
-            clap::SubCommand::with_name("publish").about("publishes the AWS SDK to crates.io"),
+            clap::SubCommand::with_name("publish")
+                .about("publishes the AWS SDK to crates.io")
+                .arg(
+                    clap::Arg::with_name("continue-from")
+                        .long("continue-from")
+                        .required(false)
+                        .takes_value(true)
+                        .help(
+                            "Crate name to continue publishing from, if, for example, \
+                            publishing failed half way through previously.",
+                        ),
+                ),
+        )
+        .subcommand(
+            clap::SubCommand::with_name("yank-category")
+                .about("yanks a category of packages with the given version number")
+                .arg(
+                    clap::Arg::with_name("category")
+                        .long("category")
+                        .required(true)
+                        .takes_value(true)
+                        .help("package category to yank (smithy-runtime, aws-runtime, or aws-sdk)"),
+                )
+                .arg(
+                    clap::Arg::with_name("version")
+                        .long("version")
+                        .required(true)
+                        .takes_value(true)
+                        .help("version number to yank"),
+                ),
         )
 }
